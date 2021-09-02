@@ -38,9 +38,35 @@ fs.readdirSync(input_json_folder).forEach(file => {
 
 console.log(flow_cat_list)
 
-const column_names = [ "row_id","type","from","condition","condition_var","condition_type","condition_name","save_name","message_text","choice_1",
-"choice_2","choice_3","choice_4","choice_5","choice_6","choice_7","choice_8","choice_9","choice_10","image","audio","video",
-"obj_id","_nodeId","no_response","_ui_type", "_ui_position"];
+const column_names = [
+    'row_id',
+    'type',
+    'from',
+    'condition',
+    'condition_var',
+    'condition_type',
+    'condition_name',
+    'save_name',
+    'message_text',
+    'choice_1',
+    'choice_2',
+    'choice_3',
+    'choice_4',
+    'choice_5',
+    'choice_6',
+    'choice_7',
+    'choice_8',
+    'choice_9',
+    'choice_10',
+    'image',
+    'audio',
+    'video',
+    'obj_id',
+    '_nodeId',
+    'no_response',
+    '_ui_type',
+    '_ui_position'
+];
 
 
 
@@ -128,14 +154,11 @@ async function outputFiles() {
             //var output_path = path.join(__dirname, "../examples/csv/"+ flow_cat + "/" + flow_sheet_name + ".csv");
             var output_path = path.join(__dirname, "../parentText/csv/"+ flow_cat + "/" + flow_sheet_name + ".csv");
 
-
-
-      
-       
-        
-        let csvString = await converter.json2csvAsync(curr_flow_csv);
-        fs.writeFileSync(output_path, csvString);
-        
+            let csvString = await converter.json2csvAsync(curr_flow_csv);
+            if (!csvString || csvString === '\n') {
+                csvString = column_names.join(',');
+            }
+            fs.writeFileSync(output_path, csvString);
 
     }
     var content_csv = [];
