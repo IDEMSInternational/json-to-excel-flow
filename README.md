@@ -34,11 +34,33 @@ deactivate
 
 ## Running the scripts
 
+The scripts here transform a Rapid Pro JSON export file into one or more 'topical' Excel spreadsheets, for the purpose of authoring the content and logic of flows, in a tabular format.
+
+A Rapid Pro JSON export file may contain many flows, which can be grouped by topic. Those grouped flows are the basis of a single Excel spreadsheet, which would contain several sheets, one for each flow in the topic group.
+
+### Create Excel rows
+
+Takes a Rapid Pro JSON export and groups the flows within it according to a mapping configuration file. In addition, each flow within a group is transformed into a JSON format representing rows in a spreadsheet. A single JSON file is created for each topic group, as well as a 'catch-all' file for flows that could not be grouped.
+
 ```
-node scripts/create_excel_rows.js
+node scripts/create_excel_rows.js <input_file> <mapping_file> <output_dir>
+```
+
+- `input_file` is the Rapid Pro JSON export.
+- `mapping_file` describes how to group the flows in the input file.
+- `output_dir` is the directory where the output JSON files will go.
+
+### Create CSV files
+```
 node scripts/create_csv_files.js
+```
+
+### Create single Excel file
+```
 python scripts/create_single_excel.py
 ```
+
+There is a JS version of the Python script above, but it is not yet ready to replace the original script.
 
 Combine multiple CSV files into one Excel spreadsheet. Where `input_dir` is the path to a directory with the CSV files to be combined, and `output_file` is the path to the Excel spreadsheet that will be created.
 ```
