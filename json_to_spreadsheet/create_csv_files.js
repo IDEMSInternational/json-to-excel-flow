@@ -19,16 +19,14 @@ var converter = require("json-2-csv");
 //const flow_cat = "no_switch_nodes";
 //const flow_cat = "welcome"
 
-//const flow_cat = "check-ins"; 
 
-//var input_path  = path.join(__dirname, "../examples/json/" + flow_cat +".json");
 
 /*
 var input_path  = path.join(__dirname, "../parentText/json/" + flow_cat +".json");
 var full_json_string = fs.readFileSync(input_path).toString();
 var row_obj = JSON.parse(full_json_string);
 */
-const input_json_folder = path.join(__dirname, "../parentText/json");
+const input_json_folder = path.join(__dirname, "../examples/outputs/json/funDoo");
 var flow_cat_list = [];
 
 
@@ -76,7 +74,8 @@ flow_cat_list.forEach(flow_cat => {
     var full_json_string = fs.readFileSync(input_path).toString();
     var row_obj = JSON.parse(full_json_string);
 
-    var output_dir = path.join(__dirname, "../parentText/csv/" + flow_cat); 
+    //var output_dir = path.join(__dirname, "../parentText/csv/" + flow_cat); 
+    var output_dir = path.join(__dirname, "../examples/outputs/csv/" + flow_cat); 
     if (!fs.existsSync(output_dir)){
         fs.mkdirSync(output_dir);
     }
@@ -151,8 +150,8 @@ async function outputFiles() {
             }
             
             flow_names[flow] = flow_sheet_name;
-            //var output_path = path.join(__dirname, "../examples/csv/"+ flow_cat + "/" + flow_sheet_name + ".csv");
-            var output_path = path.join(__dirname, "../parentText/csv/"+ flow_cat + "/" + flow_sheet_name + ".csv");
+            var output_path = path.join(__dirname, "../examples/outputs/csv/"+ flow_cat + "/" + flow_sheet_name + ".csv");
+            //var output_path = path.join(__dirname, "../parentText/csv/"+ flow_cat + "/" + flow_sheet_name + ".csv");
 
             let csvString = await converter.json2csvAsync(curr_flow_csv);
             if (!csvString || csvString === '\n') {
@@ -174,8 +173,8 @@ async function outputFiles() {
 
 
 
-    //var output_path = path.join(__dirname, "../examples/csv/" + flow_cat + "/==content_list==.csv");
-    var output_path = path.join(__dirname, "../parentText/csv/" + flow_cat + "/==content_list==.csv");
+    var output_path = path.join(__dirname, "../examples/outputs/csv/" + flow_cat + "/==content_list==.csv");
+    //var output_path = path.join(__dirname, "../parentText/csv/" + flow_cat + "/==content_list==.csv");
     let csvString = await converter.json2csvAsync(content_csv);
     fs.writeFileSync(output_path, csvString);
 
