@@ -3,8 +3,11 @@ import pandas as pd
 import glob
 from os import listdir
 from os.path import isfile, join
+import sys
 
-csv_folder_path = '../parentText/csv'
+input_args = sys.argv
+csv_folder_path = input_args[1]
+excel_folder = input_args[2]
 
 
 flow_cat_list =[o for o in os.listdir(csv_folder_path) 
@@ -12,11 +15,11 @@ flow_cat_list =[o for o in os.listdir(csv_folder_path)
 
 
 for flow_cat in flow_cat_list:
-    path = '../parentText/csv/' + flow_cat
+    path = csv_folder_path + '/' + flow_cat
     all_files = glob.glob(os.path.join(path, "*.csv"))
 
 
-    writer = pd.ExcelWriter('../parentText/excel/' +flow_cat   + '.xlsx', engine='xlsxwriter')
+    writer = pd.ExcelWriter( excel_folder + '/' +flow_cat   + '.xlsx', engine='xlsxwriter')
 
     for f in all_files:
         df = pd.read_csv(f)
