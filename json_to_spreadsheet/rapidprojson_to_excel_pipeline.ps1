@@ -74,8 +74,9 @@ if($lang){
 # populate folders
 
 #json
-# node create_excel_rows.js $input_flows $mapping_file $output_json_dir $lang
+node create_excel_rows_with_translation.js $input_flows $mapping_file $output_json_dir $deployment $house_type $lang $lang_output_json_dir
 Write-Output "Produced json rows"
+
 
 #csv
 node .\create_csv_files.js $output_json_dir $output_csv_dir
