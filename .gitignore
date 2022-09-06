@@ -1,6 +1,8 @@
 scripts/node_modules
 scripts/package-lock.json
 examples/outputs
-parentText
+parentText/csv
+parentText/excel
+parentText/json
 mapatext
 node_modules/
