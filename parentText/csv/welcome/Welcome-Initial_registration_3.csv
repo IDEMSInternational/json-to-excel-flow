@@ -1,0 +1,24 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,17453a43-a851-4f95-a1a3-6226c5aa7f31,,split_by_expression,1315;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"These tips are for YOU. So that our chats can be as helpful as possible, could you please tell me whether you are a WOMAN or MAN?
+
+If you would prefer not to answer, type ""N"".",Woman,Man,,,,,,,,,,,,,4ab70e9a-c8c0-4f0e-a271-4f2b6ee1f189,,execute_actions,1440;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"These tips are for YOU. So that our chats can be as helpful as possible, could you please tell us whether you are a WOMAN or MAN?
+
+If you would prefer not to answer, type ""N"".",Woman,Man,,,,,,,,,,,,,e442c9e5-4214-4755-a98d-a6a903edf520,,execute_actions,1190;200
+4,wait_for_response,2;3,,,,,gender,,,,,,,,,,,,,,,,3e88a00f-ccb8-4807-9f25-74f7f0781c7d,,wait_for_response,1090;460
+5,save_value,4,woman,,has_any_word,Woman,gender,woman,,,,,,,,,,,,,,,f4e2608c-42a7-4ea5-b859-317d9e5c2875,,execute_actions,830;660
+6,save_value,4,man,,has_any_word,Man,gender,man,,,,,,,,,,,,,,,fb56528d-4e96-48e2-8452-77ea00afd7f3,,execute_actions,1070;680
+7,save_value,6,,,,,chatbot name,@fields.chatbot_name_male,,,,,,,,,,,,,,,85cf02c0-a441-47e0-9d5a-840882accd21,,execute_actions,1070;780
+8,save_value,7,,,,,deployment,@fields.deployment,,,,,,,,,,,,,,,02eb6b20-127a-4c6f-8aaf-35021df782a0,,execute_actions,1090;880
+9,start_new_flow,8,,,,,,PLH - Internal - Define attachments paths,,,,,,,,,,,,,,89d00fef-a0a2-48f9-8a6c-27348218fa29,8af1c27f-a913-4f71-8ddd-273943713560,,split_by_subflow,1090;1580
+10,split_by_group,5;9;9,;Complete;Expired,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,ea99d018-e671-478d-a1ac-186aa330e686,273d1200-ff19-45c2-a691-3cb7292e27f9,,split_by_expression,375;960
+11,split_by_group,10,ABTest_test-personalisation_alternative,,,,,ABTest_test-gender-personalisation_Default,,,,,,,,,,,,,,dd8f19e2-f05c-4a3e-91f4-0aab17f0ef85,94e1e0f8-793b-4f97-a1ea-6cfdb6f778a3,,split_by_expression,625;1360
+12,save_value,11,ABTest_test-gender-personalisation_alternative,,,,gender personalisation,,,,,,,,,,,,,,,,fb902584-3d05-44fd-91b0-afdcde0d7490,,execute_actions,750;1560
+13,save_value,11;11,ABTest_test-gender-personalisation_Default;,,,,gender personalisation,@fields.gender,,,,,,,,,,,,,,,ce735c8d-83f4-4865-ac98-b5a0aebe90aa,,execute_actions,500;1560
+14,split_by_group,10;10,ABTest_test-personalisation_Default;,,,,,ABTest_test-gender-personalisation_Default,,,,,,,,,,,,,,dd8f19e2-f05c-4a3e-91f4-0aab17f0ef85,4e505337-5082-44f5-9321-8641cb1ab8d0,,split_by_expression,125;1160
+15,save_value,14,ABTest_test-gender-personalisation_alternative,,,,gender personalisation,,,,,,,,,,,,,,,,5604d7e4-fd80-442e-b570-a914056223a9,,execute_actions,250;1560
+16,save_value,14;14,ABTest_test-gender-personalisation_Default;,,,,gender personalisation,@fields.gender,,,,,,,,,,,,,,,c26068e0-56f6-491e-8679-119de8b90eea,,execute_actions,;1560
+17,save_value,4,n,,has_any_word,N,gender,no,,,,,,,,,,,,,,,7e9fe1ba-a4e0-480a-a317-b080988e1988,,execute_actions,1580;680
+18,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1d6c5b18-dabb-4338-8ad8-21dcdc9ffe4b,,execute_actions,1820;420
+19,go_to,18,,,,,,1,,,,,,,,,,,,,,,,,,

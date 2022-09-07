@@ -1,0 +1,28 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.program_version,,,,,,,,,,,,,,,ee748441-8055-4cc4-a683-26af7fc2512d,,split_by_contact_field,400;80
+2,save_value,1,4,@fields.program_version,has_any_word,4,morning excluded days,"1,2,3,4,5",,,,,,,,,,,,,,,25ed9abf-0a5d-4f88-9ba3-1c2f45971d30,,execute_actions,100;340
+3,save_value,2,,,,,main excluded days,"1,2,3,4,5",,,,,,,,,,,,,,,25ed9abf-0a5d-4f88-9ba3-1c2f45971d30,,execute_actions,100;340
+4,save_value,3,,,,,evening excluded days,"1,2,3,4,5",,,,,,,,,,,,,,,25ed9abf-0a5d-4f88-9ba3-1c2f45971d30,,execute_actions,100;340
+5,save_value,1,5,@fields.program_version,has_any_word,5,morning excluded days,"0,6",,,,,,,,,,,,,,,f9b2a7f5-e6da-4086-8bdd-92c064f89e56,,execute_actions,420;340
+6,save_value,5,,,,,main excluded days,"0,6",,,,,,,,,,,,,,,f9b2a7f5-e6da-4086-8bdd-92c064f89e56,,execute_actions,420;340
+7,save_value,6,,,,,evening excluded days,"0,6",,,,,,,,,,,,,,,f9b2a7f5-e6da-4086-8bdd-92c064f89e56,,execute_actions,420;340
+8,save_value,1,,,,,morning excluded days,na,,,,,,,,,,,,,,,c8e20da1-a676-49e9-ba41-e02a9370e21f,,execute_actions,720;340
+9,save_value,8,,,,,main excluded days,na,,,,,,,,,,,,,,,c8e20da1-a676-49e9-ba41-e02a9370e21f,,execute_actions,720;340
+10,save_value,9,,,,,evening excluded days,na,,,,,,,,,,,,,,,c8e20da1-a676-49e9-ba41-e02a9370e21f,,execute_actions,720;340
+11,split_by_value,10;4;7,,,,,,@fields.program_version,,,,,,,,,,,,,,,8e0628c2-d19e-41b9-824a-10fd44bf3eb5,,split_by_contact_field,420;600
+12,save_value,11,3,@fields.program_version,has_any_word,3,morning days to add,3,,,,,,,,,,,,,,,b0aa4a1c-78c7-4d12-9149-af42b08f417f,,execute_actions,80;740
+13,save_value,12,,,,,main days to add,3,,,,,,,,,,,,,,,b0aa4a1c-78c7-4d12-9149-af42b08f417f,,execute_actions,80;740
+14,save_value,13,,,,,evening days to add,3,,,,,,,,,,,,,,,b0aa4a1c-78c7-4d12-9149-af42b08f417f,,execute_actions,80;740
+15,save_value,14,,,,,morning counter,1,,,,,,,,,,,,,,,bb7bad6f-fc48-436a-8b3b-b949d445e6ae,,execute_actions,80;980
+16,save_value,15,,,,,main counter,2,,,,,,,,,,,,,,,bb7bad6f-fc48-436a-8b3b-b949d445e6ae,,execute_actions,80;980
+17,save_value,16,,,,,evening counter,3,,,,,,,,,,,,,,,bb7bad6f-fc48-436a-8b3b-b949d445e6ae,,execute_actions,80;980
+18,save_value,11,,,,,morning days to add,1,,,,,,,,,,,,,,,c60f6f1b-354d-4022-bba7-244156ab98d4,,execute_actions,700;700
+19,save_value,18,,,,,main days to add,1,,,,,,,,,,,,,,,c60f6f1b-354d-4022-bba7-244156ab98d4,,execute_actions,700;700
+20,save_value,19,,,,,evening days to add,1,,,,,,,,,,,,,,,c60f6f1b-354d-4022-bba7-244156ab98d4,,execute_actions,700;700
+21,save_value,20,,,,,morning counter,"@(if (datetime_diff(now(),datetime(date(now()) &"" "" &time(fields.morning_time_of_day)),""h"")>0, if(is_error(regex_match(fields.morning_excluded_days,weekday(now()))),0, 1),1))",,,,,,,,,,,,,,,ebe761b7-a058-47f4-8ad2-adc7436d5efd,,execute_actions,700;940
+22,save_value,21,,,,,main counter,"@(if (datetime_diff(now(),datetime(date(now()) &"" "" &time(fields.main_time_of_day)),""h"")>0, if(is_error(regex_match(fields.main_excluded_days,weekday(now()))),0, 1),1))",,,,,,,,,,,,,,,ebe761b7-a058-47f4-8ad2-adc7436d5efd,,execute_actions,700;940
+23,save_value,22,,,,,evening counter,"@(if (datetime_diff(now(),datetime(date(now()) &"" "" &time(fields.evening_time_of_day)),""h"")>0, if(is_error(regex_match(fields.evening_excluded_days,weekday(now()))),0, 1),1))",,,,,,,,,,,,,,,ebe761b7-a058-47f4-8ad2-adc7436d5efd,,execute_actions,700;940
+24,split_by_value,17;23,,,,,,@fields.program_version,,,,,,,,,,,,,,,2cce603b-bd85-4bf2-a5e4-6d57afdb1073,,split_by_contact_field,420;1260
+25,save_value,24,2,@fields.program_version,has_any_word,2,frequency,2,,,,,,,,,,,,,,,c7346ff2-926f-488f-900e-b684bf224479,,execute_actions,200;1360
+26,save_value,24,,,,,frequency,1,,,,,,,,,,,,,,,8621d942-a068-44a2-964b-3ed0cfb6399a,,execute_actions,600;1360
+27,start_new_flow,25;26,,,,,,Define next campaign event,,,,,,,,,,,,,,0abc79bd-ff51-46c5-8842-bea52f6cd05e,13cab1e0-608d-4613-a94f-a7413358e0e2,,split_by_subflow,340;1520

@@ -1,0 +1,33 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,add_to_group,start,,,,,,completed programme,,,,,,,,,,,,,,0c044dad-7251-469f-8297-0b886501eadd,0d65d44f-9da5-4b19-8a1a-7c1fac16f32d,,execute_actions,430;
+2,save_value,1,,,,,completed programme on,@(now()),,,,,,,,,,,,,,,0d65d44f-9da5-4b19-8a1a-7c1fac16f32d,,execute_actions,430;
+3,split_by_value,2,,,,,,@fields.user_name,,,,,,,,,,,,,,,f68a6ac7-1731-4e6a-842f-402cc7f4e1c8,,split_by_expression,1815;60
+4,send_message,3,,@fields.user_name,has_text,user_name,,Congratulations for finishing the ParentText programme @fields.user_name! What a great accomplishment!,,,,,,,,,,,"@(fields.certificate_path & ""certificate_of_participation.jpg",,,,551beb79-ba82-4bc8-876c-9b577b221a63,,execute_actions,1690;260
+5,send_message,3,,,,,,Congratulations for finishing the ParentText programme! What a great accomplishment!,,,,,,,,,,,"@(fields.certificate_path & ""certificate_of_participation.jpg",,,,c124a9f3-3232-4fc0-ac41-3564dfb3a8ff,,execute_actions,1940;260
+6,split_by_group,4;5,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,e7d21697-e6de-49aa-ba3d-cf9ac5e6a9d8,,split_by_expression,1295;460
+7,split_by_group,6,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,3b4c3ad8-db01-4684-99ae-8e66e59e76c6,,split_by_expression,1545;860
+8,send_message,7,ABTest_test-gamification_alternative,,,,,You have added @fields.n_skills/@fields.total_skills layers to your House of Support! What an achievement!,,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,54b3b9d8-6870-4127-a101-443aab9b9166,,execute_actions,1670;1060
+9,send_message,7;7,ABTest_test-gamification_Default;,,,,,You have added @fields.n_skills/@fields.total_skills layers to your House of Support! What an achievement!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,d4ced71e-605a-4b3b-8833-89a9233ffbcd,,execute_actions,1420;1060
+10,split_by_group,6;6,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,4e3b1aaa-8d8e-4291-b46d-eb1ec6e88f20,,split_by_expression,1045;660
+11,send_message,10,ABTest_test-gamification_alternative,,,,,You have collected @fields.n_skills/@fields.total_skills skills! What an achievement!,,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,169c03c0-c2c4-43ab-8147-d18bd909c145,,execute_actions,1170;1060
+12,send_message,10;10,ABTest_test-gamification_Default;,,,,,You have collected @fields.n_skills/@fields.total_skills skills! What an achievement!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,1ad058ed-fea0-4b76-beff-fb7ecd43a3a7,,execute_actions,920;1060
+13,split_by_group,11;12;8;9,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,ac235e81-2cd8-4ec7-9fae-34e457902a84,,split_by_expression,2425;1200
+14,send_message,13,ABTest_test-first-person_alternative,,,,,Would you like to tell me about your experience?,Yes,No,,,,,,,,,,,,,4fbf829e-5651-4d15-acaf-fb0f1d72b483,,execute_actions,2550;1400
+15,send_message,13;13,ABTest_test-first-person_Default;,,,,,Would you like to tell us about your experience?,Yes,No,,,,,,,,,,,,,2d6aae7f-f3c5-4657-8ffc-a302dcb11b25,,execute_actions,2300;1400
+16,wait_for_response,14;15,,,,,Result 2,,,,,,,,,,,,,,,,0230710e-6d75-442c-b681-a2bd5d8adccf,,wait_for_response,2630;1600
+17,start_new_flow,16,yes y,,has_any_word,Yes,,PLH - Survey - Acceptability,,,,,,,,,,,,,,82056237-1445-4915-8e4e-6891e7af5267,36537908-b25f-4b93-882d-539f6187ed8c,,split_by_subflow,1960;1520
+18,send_message,16,no n,,has_any_word,No,,That is okay!,,,,,,,,,,,,,,,b9bee7ae-e816-474a-aae5-bb9757841458,,execute_actions,2590;2000
+19,send_message,16,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,3bb8c33f-bb73-418b-aa80-ea3b859b6581,,execute_actions,3030;1960
+20,go_to,19,,,,,,13,,,,,,,,,,,,,,,,,,
+21,split_by_group,17;17;18,Complete;Expired;,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,18ea7bb6-e6da-466b-ac5f-1855dce6d77b,,split_by_expression,595;1640
+22,send_message,21,ABTest_test-first-person_alternative,,,,,Would you like to continue receiving daily messages from me?,Yes,No,,,,,,,,,,,,,234f98a3-f668-4607-8484-714b132bf556,,execute_actions,720;1840
+23,send_message,21;21,ABTest_test-first-person_Default;,,,,,Would you like to continue receiving daily messages from us?,Yes,No,,,,,,,,,,,,,64f98c0b-cb00-4a7a-b710-5de57a23b7bd,,execute_actions,470;1840
+24,wait_for_response,22;23,,,,,Result 6,,,,,,,,,,,,,,,,1e24732c-e1ea-4473-a563-d23653ee3bfe,,wait_for_response,740;2000
+25,split_by_value,24,yes y,,has_any_word,Yes,,@fields.user_name,,,,,,,,,,,,,,,a8455a75-efb7-4036-beb0-6436c68eca30,,split_by_expression,125;2100
+26,send_message,25,,@fields.user_name,has_text,user_name,,"Great! If you ever want to stop receiving messages, go to ""Technical Support"" and then select ""User Experience"". Chat to you later @fields.user_name!",,,,,,,,,,,,,,,94ead449-0b60-46cc-950e-d9d67f0b0f9e,,execute_actions,;2300
+27,send_message,25,,,,,,"Great! If you ever want to stop receiving messages, go to ""Technical Support"" and then select ""User Experience"". Chat to you later!",,,,,,,,,,,,,,,c9c82fd2-450a-4b30-bc72-4d620309499e,,execute_actions,250;2300
+28,remove_from_group,24,no n,,has_any_word,No,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,c3e85c9e-20b5-48b6-88c4-2c707ce869d5,,execute_actions,2060;2580
+29,send_message,28,,,,,,"That is okay! You can always revisit the parenting tips by typing ""Help"".",,,,,,,,,,,,,,,3b7883eb-95d8-48cd-9db1-125896b99e1d,,execute_actions,2550;2600
+30,send_message,29,,,,,,Thanks again for being part of ParentText and for your commitment to your children’s wellbeing and happiness. You are a star!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,ed3ad6a1-0043-48cd-ab3a-770471074501,,execute_actions,2550;2740
+31,send_message,24,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,c0fe7d27-0031-45c1-b410-d76965996b39,,execute_actions,2120;2300
+32,go_to,31,,,,,,21,,,,,,,,,,,,,,,,,,

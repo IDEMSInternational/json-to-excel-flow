@@ -1,0 +1,22 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a897a3c6-2b97-4aa3-9b36-fd83b827ccab,,execute_actions,690;
+2,split_by_group,1,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,6c4a68c8-75b0-4d66-b27e-fea0a78ae166,,split_by_expression,565;140
+3,send_message,2,ABTest_test-first-person_alternative,,,,,How can I help you?,Help with children,Review parenting toolkit,Emotional and family support,Emergencies,COVID-19 info,Technical support,Share with a friend!,Exit the help menu,,,,,,,4ca35eef-16cf-43fc-b1ff-faec3c8853ef,,execute_actions,690;340
+4,send_message,2;2,ABTest_test-first-person_Default;,,,,,What do you need help with?,Help with children,Review parenting toolkit,Emotional and family support,Emergencies,COVID-19 info,Technical support,Share with a friend!,Exit the help menu,,,,,,,cbc48a81-a6c5-4542-b772-f2a0bd935d65,,execute_actions,440;340
+5,wait_for_response,3;4,,,,,response_help,,,,,,,,,,,,,,,,d821117c-35d3-4f03-b674-6f5fe0e25045,,wait_for_response,180;780
+6,start_new_flow,5,children,,has_any_word,Children,,PLH - Help - Children,,,,,,,,,,,,,,6e784a93-6758-4b64-aed1-e8cb65e1d160,8a07aeea-3679-4b37-8689-3fffe59467d7,,split_by_subflow,;1660
+7,start_new_flow,5,Review parenting toolkit,,has_only_phrase,Review,,PLH - Help - Access toolkit,,,,,,,,,,,,,,ddc9840d-140f-494d-bd3e-9617183ba7ee,b92566da-d33c-42c9-982b-c4f1d5e9888c,,split_by_subflow,200;1520
+8,start_new_flow,5,emotional family,,has_any_word,emotional,,PLH - Help - Stress,,,,,,,,,,,,,,1dd44c2b-0338-497b-9ce1-8f0068f36d4e,61e48d89-ca78-49a7-8840-186c82af0c24,,split_by_subflow,400;1740
+9,start_new_flow,5,Emergencies,,has_any_word,Emergencies,,PLH - Safeguarding - SOS,,,,,,,,,,,,,,4594b367-bf49-4544-8e32-6362e64e7214,e88e5305-0d57-45a9-b652-f6af2bef9de1,,split_by_subflow,1030;1660
+10,start_new_flow,5,COVID-19 Info,,has_only_phrase,Covid,,PLH - Help - COVID info,,,,,,,,,,,,,,ef396365-8c0d-429c-a99b-e8a457d878ed,32711388-8276-48fd-9fb4-35aa88b751dd,,split_by_subflow,890;1800
+11,start_new_flow,5,Technical,,has_any_word,Technical,,PLH - Help - Settings - Entry,,,,,,,,,,,,,,aeae100d-bf65-4f7f-a1bf-3b57c2c68497,d91a5fc8-a6d8-4b2c-84e9-ec65f4bd2644,,split_by_subflow,2020;1600
+12,start_new_flow,5,share friend,,has_any_word,Share,,PLH - Supportive - Share - Link,,,,,,,,,,,,,,a8233166-1c54-4c76-a8fa-9e6fe9be489e,101e9bf3-f905-4e43-ae67-52292411f786,,split_by_subflow,910;1520
+13,split_by_value,5,exit menu,,has_any_word,Exit,,@fields.user_name,,,,,,,,,,,,,,,347e227b-552e-45fe-962f-8e847e76fcc1,,split_by_expression,1545;840
+14,split_by_group,13,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,39d2f0a5-9999-42ef-a58b-141c6a058227,,split_by_expression,1295;1040
+15,send_message,14,ABTest_test-first-person_alternative,,,,,I hope that was helpful. Chat later @fields.user_name!,,,,,,,,,,,,,,,fafa415a-dd4c-4682-8d74-3df674ff4019,,execute_actions,1420;1440
+16,send_message,14;14,ABTest_test-first-person_Default;,,,,,We hope that was helpful. Chat later @fields.user_name!,,,,,,,,,,,,,,,6a97ef8a-7776-47ba-9fb4-e3e428d6c8cf,,execute_actions,1170;1440
+17,split_by_group,13,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,01aa6e03-e8fc-4022-b97d-807b7839b4b8,,split_by_expression,1795;1240
+18,send_message,17,ABTest_test-first-person_alternative,,,,,I hope that was helpful. Chat later!,,,,,,,,,,,,,,,981cd719-3206-49cd-adaa-e491ff72a975,,execute_actions,1920;1440
+19,send_message,17;17,ABTest_test-first-person_Default;,,,,,We hope that was helpful. Chat later!,,,,,,,,,,,,,,,e5eaf44f-1259-4aef-8cb3-2a33925f1aee,,execute_actions,1670;1440
+20,send_message,5,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,8b21d677-aad5-4250-bbf4-aba8e766bedf,,execute_actions,2100;680
+21,go_to,20,,,,,,2,,,,,,,,,,,,,,,,,,

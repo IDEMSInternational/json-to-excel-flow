@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Hi! Thank you for signing up to receive ParentText tips. Please tell us which language you would like:
+1. English",,,,,,,,,,,"@(""https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/"" & fields.deployment & ""/resourceGroup/image/universal/you_deserve_a_star.jpg",,,,f6a50c43-b9da-4daf-a842-372c255d4ab5,,execute_actions,520;280
+2,wait_for_response,1,,,,,language,,,,,,,,,,,,,,,,dfe19fd3-8bab-4eee-96f0-c068600cda75,,wait_for_response,520;620
+3,set_language,2,1,,has_any_word,english,,eng,,,,,,,,,,,,,,,6b629b10-c91f-4b85-9b28-0e26809b8de8,,execute_actions,340;760
+4,send_message,2,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,15577f66-a426-45d1-945e-f7f170a53264,,execute_actions,960;440
+5,go_to,4,,,,,,1,,,,,,,,,,,,,,,,,,

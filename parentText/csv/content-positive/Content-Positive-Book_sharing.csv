@@ -1,0 +1,107 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Shared reading,,,,,,,,,,,,,,,94ada383-6c63-496c-b24b-115b2cd37214,,execute_actions,1180;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,26ea647d-c541-43aa-99a1-2fcfda09c650,,split_by_subflow,1220;80
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,c3f909fd-935f-4dc4-9ed2-8fa59ba3776f,,split_by_contact_field,1160;220
+4,split_by_value,3,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,c254a324-6ed6-4085-9914-7e327e1568a2,,split_by_expression,2105;340
+5,send_message,4,,@fields.child_nickname,has_text,child_nickname,,"Book-sharing can be a great learning tool for your child. You can use simple pictures in books, magazines, or newspapers to do lots of things that you and @fields.child_nickname can enjoy.",,,,,,,,,,,,,,,3a9ec8c2-a267-4dad-b4ea-c36c359ea35a,,execute_actions,1980;540
+6,send_message,4,,,,,,"Book-sharing can be a great learning tool for your child. You can use simple pictures in books, magazines, or newspapers to do lots of things that you and your child can enjoy.",,,,,,,,,,,,,,,bbac6754-c201-4884-aac2-30cd1f70cc78,,execute_actions,2230;540
+7,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,fe69e720-ef23-4e4f-a849-e64ed0f48d97,,split_by_contact_field,1160;800
+8,send_message,7,high,@fields.type_of_media,has_any_word,High,,Here's a video to take you through the shared book reading activity!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Shared_Book_Reading.m4v,,d9c79c70-750f-47d1-aa08-d71aa783ea01,,execute_actions,250;900
+9,send_message,7,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message that takes you through the shared book reading activity!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Shared_Book_Reading.mp3,,,7004f9d1-4ccd-45c6-90d9-e359b6ae62cb,,execute_actions,1220;940
+10,wait_for_response,8;9,,,,,Result 4,,,,,,,,,,,,,,,,9faaaae9-e56f-48e5-8044-f36b6bf8c5a7,60,wait_for_response,250;1320
+11,start_new_flow,10;10;7,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,4abcfa39-098d-4728-b207-59415ffc9869,,split_by_subflow,2290;1320
+12,send_message,5;6,,,,,,Would you like to learn more about how you can help your child develop through book sharing?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/parent_sharing_book_with_child_on_couch.jpg,,,,aa129316-c794-4260-bc38-158c64fabe16,,execute_actions,3090;300
+13,wait_for_response,12,,,,,Result 1,,,,,,,,,,,,,,,,04e3bd28-87ad-475b-8bc6-c5b36651f95f,3600,wait_for_response,2310;780
+14,go_to,13,yes y,,has_any_word,Yes,,7,,,,,,,,,,,,,,,,,,
+15,send_message,13,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,7abd1bdb-b39e-4fa4-9880-77ac52e17fca,,execute_actions,3110;800
+16,go_to,15,,,,,,12,,,,,,,,,,,,,,,,,,
+17,split_by_value,13;13,no n;No Response,,has_any_word;,No;,,@fields.user_name,,,,,,,,,,,,,,,ef9d68ef-1e11-4525-8d18-a73034fe5ea4,,split_by_expression,2905;1000
+18,send_message,17,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,48413d84-de99-4146-a41c-9ba5b4330f1b,,execute_actions,2780;1200
+19,send_message,17,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,d38f1454-b06c-40f2-863c-91be08b045ee,,execute_actions,3030;1200
+20,send_message,11;11,Complete;Expired,,,,,"Here are some tips for sharing books with your child:
+1. Follow your child's interest
+2. Use a lively voice
+3. Pointing and naming
+4. Be positive and supportive
+5. Making actions and links
+6. Talking about feelings
+7. Babies and books go well together
+To learn more about one of these tips, type ""1"" to ""7"". You can also type ""N"" to move on.",,,,,,,,,,,,,,,c88b8584-5b65-435a-b27b-ba81ee869949,,execute_actions,2290;1460
+21,wait_for_response,20,,,,,list_of_tips,,,,,,,,,,,,,,,,afaf3aef-e17d-4358-9d96-1a926f61d4a0,,wait_for_response,1080;1740
+22,split_by_group,21,no n,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,672078bb-f2bf-43f7-835a-f53fe8c7384c,,split_by_expression,4395;1760
+23,split_by_group,22,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,7ab1ea79-d86e-45cc-b82b-c56fb233105c,,split_by_expression,4895;2160
+24,split_by_value,23,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,64bfde6f-afa0-4306-88f2-07f02a617704,,split_by_expression,5145;2960
+25,send_message,24,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,021e127b-b166-4ee5-8be5-db8c21797c1f,,execute_actions,5020;3160
+26,send_message,24,,,,,,"Well done! You have added another layer to your House of Support! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,4378cfc4-3f3b-433d-910f-57e7a7a860f3,,execute_actions,5270;3160
+27,split_by_value,23;23,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,e4c8d5d0-3e8c-41b8-856c-1ecc0a80c757,,split_by_expression,4645;2760
+28,send_message,27,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,6a5dbf59-6bed-4692-b751-99f8185d5870,,execute_actions,4520;3160
+29,send_message,27,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,55570e6f-6c63-4083-b17e-834381e44fc2,,execute_actions,4770;3160
+30,split_by_group,22;22,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,aae1d897-f1fd-408f-98bf-7dcf8839cdf4,,split_by_expression,3895;1960
+31,split_by_value,30,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,52107a80-029f-4465-ba45-581836ded99c,,split_by_expression,4145;2560
+32,send_message,31,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,dfb1d583-ed12-46ad-b0d0-26df5c97fecc,,execute_actions,4020;3160
+33,send_message,31,,,,,,"Well done! You have added another layer to your House of Support! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,e377978b-b1fc-440b-be88-8a54db32c640,,execute_actions,4270;3160
+34,split_by_value,30;30,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,b6b74b29-c22d-4d2d-b613-288f04734dcc,,split_by_expression,3645;2360
+35,send_message,34,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,e4a4804c-959b-4b6d-beac-1ef21b2e26f2,,execute_actions,3520;3160
+36,send_message,34,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try to spend some time reading or looking at a book or magazine with your child. Sharing books with your child will help them to learn to speak, think, and focus better. It also builds their brain!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,c0e0540d-8100-4e16-97cd-58d2daf6ced3,,execute_actions,3770;3160
+37,save_value,25;26;28;29;32;33;35;36,,,,,current type assessed,tip,,,,,,,,,,,,,,,68d34bf4-a63c-4a03-841f-1646dfbc2af5,,execute_actions,2430;5380
+38,save_value,37,,,,,current activity,book_sharing,,,,,,,,,,,,,,,68d34bf4-a63c-4a03-841f-1646dfbc2af5,,execute_actions,2430;5380
+39,start_new_flow,38,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,30a877f2-77f7-4c0a-ae82-87f7c7380923,,split_by_subflow,2430;5540
+40,split_by_value,39;39,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,33245435-6787-4dc3-9033-934c082b6342,,split_by_contact_field,2700;5680
+41,split_by_value,40,yes,@fields.from_theme,has_any_word,Yes,,@fields.user_name,,,,,,,,,,,,,,,7e359e56-371e-4791-9176-4f05e80ecf6b,,split_by_expression,2575;6040
+42,send_message,41,,@fields.user_name,has_text,user_name,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later @fields.user_name!",,,,,,,,,,,,,,,ced44193-d6db-40a4-a734-db13f3e55aba,,execute_actions,2450;6240
+43,send_message,41,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later!",,,,,,,,,,,,,,,c8962520-1147-403c-aaa8-d5c80a97473b,,execute_actions,2700;6240
+44,split_by_value,40,,,,,,@fields.user_name,,,,,,,,,,,,,,,44ce2cae-0d66-42d4-b731-80e060262b6e,,split_by_expression,3295;5800
+45,send_message,44,,@fields.user_name,has_text,user_name,,Chat to you later @fields.user_name!,,,,,,,,,,,,,,,6205c86b-0a57-4bb1-b7b3-212d8512f084,,execute_actions,3170;6000
+46,send_message,44,,,,,,Chat to you later!,,,,,,,,,,,,,,,8482b4a9-46e0-4f56-857c-2881937a8ab0,,execute_actions,3420;6000
+47,split_by_value,21,1,,has_any_word,1,,@fields.child_nickname,,,,,,,,,,,,,,,99450b05-8046-4a0b-aa43-29ff5b6474bf,,split_by_expression,395;3300
+48,send_message,47,,@fields.child_nickname,has_text,child_nickname,,"1. Follow your child’s interest
+Talk about what interests @fields.child_nickname. When your child shows interest in a picture (pointing, patting, looking), use this as a chance to talk about what has attracted your child’s interest",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_1.png,,,,de08bab8-4623-4978-9c74-fb507d9627f0,,execute_actions,270;3500
+49,send_message,47,,,,,,"1. Follow your child’s interest
+Talk about what interests your child. When your child shows interest in a picture (pointing, patting, looking), use this as a chance to talk about what has attracted your child’s interest",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_1.png,,,,537ed878-d641-4bc2-9dc8-687ada32d672,,execute_actions,520;3500
+50,send_message,21,2,,has_any_word,2,,"2. Use a lively voice
+Speak with a lively or animated voice. This will help to keep the child’s attention on the book.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_2.png,,,,601f731f-9322-4da4-a10c-46df489a9025,,execute_actions,1280;3540
+51,split_by_value,21,3,,has_any_word,3,,@fields.child_nickname,,,,,,,,,,,,,,,a66eb4b2-3503-4313-803b-e923d9fce3a8,,split_by_expression,665;3760
+52,send_message,51,,@fields.child_nickname,has_text,child_nickname,,"3. Pointing and naming
+Pointing to and naming an object or person in the book will help @fields.child_nickname learn new words. Children learn through repetition, so repeat the word and look for other opportunities to use the word (in the book or elsewhere). ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_3.png,,,,89503f14-1eb3-463c-b717-f55e59528bf4,,execute_actions,540;4160
+53,send_message,51,,,,,,"3. Pointing and naming
+Pointing to and naming an object or person in the book will help your child learn new words. Children learn through repetition, so repeat the word and look for other opportunities to use the word (in the book or elsewhere). ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_3.png,,,,cbd7a48e-eed0-4ca9-9c8c-36f69d0951b1,,execute_actions,1040;4160
+54,split_by_value,52;53,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,fecacec9-57ad-4aa6-9950-0246565db892,,split_by_expression,915;4460
+55,send_message,54,,@fields.child_nickname,has_text,child_nickname,,"If @fields.child_nickname knows a word and can say that word, ask “What’s that?” and give them the opportunity to say the word and point to it.",,,,,,,,,,,,,,,18a44293-549c-4864-b806-bed6f7d2659d,,execute_actions,790;4860
+56,send_message,54,,,,,,"If your child knows a word and can say that word, ask “What’s that?” and give them the opportunity to say the word and point to it.",,,,,,,,,,,,,,,60348744-3f93-4212-a145-98402e9e888c,,execute_actions,1040;4860
+57,split_by_value,21,4,,has_any_word,4,,@fields.child_nickname,,,,,,,,,,,,,,,31004eb5-4679-467c-8934-790f502ebfca,,split_by_expression,1445;3960
+58,send_message,57,,@fields.child_nickname,has_text,child_nickname,,"4. Be positive and supportive
+Always respond positively to whatever @fields.child_nickname says about the pictures. For example, if your child points to a red tomato and says “Apple”, you can say “Yes, you’re right, it’s red - it's a tomato!”",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_4.png,,,,c9e63c85-4806-4644-89c7-dbf31c8fbd14,,execute_actions,1320;4160
+59,send_message,57,,,,,,"4. Be positive and supportive
+Always respond positively to whatever your child says about the pictures. For example, if your child points to a red tomato and says “Apple”, you can say “Yes, you’re right, it’s red - it's a tomato!”",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_4.png,,,,56ab4602-1360-4f40-9286-15d57f64aa35,,execute_actions,1820;4160
+60,split_by_value,21,5,,has_any_word,5,,@fields.child_nickname,,,,,,,,,,,,,,,cd18902a-66cc-489d-9f1c-d22a6e7cd535,,split_by_expression,1695;4660
+61,send_message,60,,@fields.child_nickname,has_text,child_nickname,,"5. Making actions and links
+Connect things in the book with familiar things in @fields.child_nickname’s world. For example, if the baby in the book is wearing shoes, ask @fields.child_nickname to point out their own shoes. If someone in the book is waving, you and @fields.child_nickname can do the same. ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_5.png,,,,63899df8-ff6f-45e2-b763-8efab8bb1d41,,execute_actions,1570;4860
+62,send_message,60,,,,,,"5. Making actions and links
+Connect things in the book with familiar things in your child’s world. For example, if the baby in the book is wearing shoes, ask your child to point out their own shoes. If someone in the book is waving, you and your child can do the same. ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/book_sharing_5.png,,,,f12d69b7-ab4b-4358-b39e-53be02e49a13,,execute_actions,1820;4860
+63,split_by_value,21,6,,has_any_word,6,,@fields.child_nickname,,,,,,,,,,,,,,,85286d19-485c-42a5-b034-e339801a0ff0,,split_by_expression,125;5100
+64,send_message,63,,@fields.child_nickname,has_text,child_nickname,,"6. Talking about feelings
+Books are a great way for children to learn more about feelings. You can use your face and voice to help them understand emotion words like happy, sad, angry, or scared. You can use what is happening in the book to talk about @fields.child_nickname’s own feelings, and why other people might feel a certain way.",,,,,,,,,,,,,,,15d70117-53bc-43b7-8d6b-25d85fae0555,,execute_actions,;5300
+65,send_message,63,,,,,,"6. Talking about feelings
+Books are a great way for children to learn more about feelings. You can use your face and voice to help them understand emotion words like happy, sad, angry, or scared. You can use what is happening in the book to talk about your child’s own feelings, and why other people might feel a certain way.",,,,,,,,,,,,,,,955a5c13-a24a-4aa6-b005-6216b3c9ab8c,,execute_actions,250;5300
+66,send_message,64;65,,,,,,"Here are some examples! 
+“Look, she is smiling. Why do you think she is smiling? What made you smile today?”
+“The monkey is sad because he is all on his own. Can you remember when you were last sad?”
+“That tiger looks angry. Why do you think he is angry? Do you remember when I got angry this morning?” ",,,,,,,,,,,,,,,29f02cac-3cda-4e39-a584-15cd5650b683,,execute_actions,520;5620
+67,send_message,21,7,,has_any_word,7,,"7. Babies and Books!
+Even very young babies enjoy book-sharing and looking at the pictures together with a parent or caregiver. In fact, regular book-sharing helps their development and learning. And it is okay for them to put the book in their mouth - they are exploring!",,,,,,,,,,,,,,,07cf12de-7a84-47f0-ba1c-addce7acf889,,execute_actions,1820;5360
+68,send_message,48;49;50;55;56;58;59;61;62;66;67,,,,,,"Please select another number if you want to learn more about sharing books with your child:
+
+1. Follow your child's interest
+2. Use a lively voice
+3. Pointing and naming
+4. Be positive and supportive
+5. Making actions and links
+6. Talking about feelings
+7. Babies and books go well together
+
+You can also type ""N"" to move on.",,,,,,,,,,,,,,,25dfc1d4-fefb-4675-a7fa-24b4849cc6f2,,execute_actions,1840;6440
+69,save_value,68,,,,,book sharing list of tips,"@(fields.book_sharing_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,e9c32de2-7feb-4160-8197-2db30336e763,,execute_actions,1840;6900
+70,save_value,69,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8868114e-39cd-455b-b742-776fafb64ee7,,execute_actions,1840;7120
+71,go_to,70,,,,,,21,,,,,,,,,,,,,,,,,,
+72,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,ffa679e5-e18f-4922-a10c-7cf0e4a0b44b,,execute_actions,2350;3200
+73,go_to,72,,,,,,20,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,146 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Supporting children with disabilities,,,,,,,,,,,,,,,d40e8d8d-14ff-4d29-ae7d-7b7e8228c67a,,execute_actions,590;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,630eca93-4891-468d-b8ea-2c6cec7873f6,,split_by_subflow,590;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,3e34e7b0-99eb-4cf7-81fe-5f46caa7414c,,split_by_contact_field,510;380
+4,send_message,3,,,,,,"All children, including those living with disabilities, need love, respect and time especially at difficult times.",,,,,,,,,,,,,,,f18d806d-773c-4a77-8f6d-9f98dc5a17b1,,execute_actions,2920;160
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,013ef2ed-abd7-4b59-a28e-1d0d59c9a04b,,split_by_contact_field,120;560
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you support children living with disabilities.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Children_With_Disabilities.m4v,,eca645f4-0ab9-4586-8124-8eaa66caf8be,,execute_actions,;660
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message to help you support children living with disabilities.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Children_With_Disabilities.mp3,,,75bbcc76-92f4-43d5-8a01-ba23c81aec4a,,execute_actions,470;780
+8,wait_for_response,6;7,,,,,Result 4,,,,,,,,,,,,,,,,ab2bbd88-b392-4216-b9d6-3ea696e45a30,120,wait_for_response,;920
+9,start_new_flow,5;8;8,;;No Response,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,34f75e73-3e35-47fa-80dc-2007d7772baf,,split_by_subflow,940;1040
+10,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,c7ec6ed6-b063-4412-a1ce-3054bee16903,,execute_actions,2940;320
+11,wait_for_response,10,,,,,Result 5,,,,,,,,,,,,,,,,3cb7946e-d7bd-4014-9449-82f166bced0e,900,wait_for_response,920;500
+12,go_to,11,yes y,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+13,send_message,11,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,3207f7e2-c044-4d33-a3d8-82e6c21988da,,execute_actions,3020;500
+14,go_to,13,,,,,,10,,,,,,,,,,,,,,,,,,
+15,send_message,11;11,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to learn more about how to support children living with disabilities.",,,,,,,,,,,,,,,a05c6114-e2d9-4e18-a0a1-4a074d765558,,execute_actions,3330;800
+16,send_message,15,,,,,,"Here is a link to disability services in your area that may also be helpful:
+[INSERT LOCAL LINK]",,,,,,,,,,,,,,,f2d01994-e5dd-4296-872e-1d31f706ac68,,execute_actions,3330;1000
+17,split_by_value,16,,,,,,@fields.user_name,,,,,,,,,,,,,,,04d603a4-06ac-4071-aec7-8ee031265f76,,split_by_expression,3185;1200
+18,send_message,17,,@fields.user_name,has_text,user_name,,Chat later @fields.user_name!,,,,,,,,,,,,,,,26133dc4-4d25-4895-a1ef-0bf1d4540a41,,execute_actions,3060;1400
+19,send_message,17,,,,,,Chat later!,,,,,,,,,,,,,,,c6e5c3b6-05eb-4818-86e1-3a50f8c6ee03,,execute_actions,3310;1400
+20,send_message,9;9,Complete;Expired,,,,,"Here are 6 simple tips that you can do to support children living with disabilities: 
+
+1. Keep your child safe and well
+2. Try to understand what they are feeling
+3. Communicate and talk with them
+4. Praise them!
+5. Make things that you do the same every day to help them feel secure
+6. Ask for help if you can
+
+Type ""1"" to ""6"" to learn more about each tip. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,80a2963b-14e0-4a6e-8490-962de40638d4,,execute_actions,940;1420
+21,wait_for_response,20,,,,,list_of_tips,,,,,,,,,,,,,,,,ad5c8d20-c07d-4815-b50d-9ea42c39b4c9,,wait_for_response,570;2260
+22,send_message,21,no n ,,has_any_word,No,,Here is a comic on how you can reinforce your child's strength.,,,,,,,,,,,,,,,c16298c7-b428-485d-879e-390c466fa8e0,,execute_actions,3410;3480
+23,send_message,22,,,,,,"Child: ""la la la la….""
+
+Teen: ""la la la la…""
+
+Disabled Child: ""la la la la…""
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/disability_comic_1.png,,,,bf28b539-9a43-4974-b7e6-85fefec2d3c1,,execute_actions,3410;3660
+24,send_message,23,,,,,,"Parent: ""It was so lovely to hear you singing while I was preparing dinner. Food is ready! Please tidy the room and put away the toys.""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/disability_comic_2.png,,,,d4c3b49b-e98d-4f4e-9202-3ae82777f986,,execute_actions,3390;3880
+25,send_message,24,,,,,,"Teen: ""Here is the toy box. We can put the toys inside.""
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/disability_comic_3.png,,,,c8466f34-2a55-4d46-abbe-6d3b1da3a6df,,execute_actions,3370;4720
+26,send_message,25,,,,,,"Disabled Child: ""Please remember my favourite car!""
+
+Child: ""I have it right here!""
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/disability_comic_4.png,,,,a862525f-706e-438d-8d73-31a8d2e91c2a,,execute_actions,3370;4900
+27,send_message,26,,,,,,"Parent: ""I am so happy you have tidied up your toys together! It is dinnertime!""
+
+Disabled child: ""Can you help me come to dinner?""
+
+(5)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/disability_comic_5.png,,,,f9d8bcca-393a-47ff-a715-1af287173d2b,,execute_actions,3370;5120
+28,send_message,27,,,,,,"Parent: ""Thank you for asking. Let's go together. You are so strong!""
+
+(6)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/disability_comic_6.png,,,,dacb92ef-1553-4718-a574-2ea79021796a,,execute_actions,3370;5360
+29,split_by_group,28,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,5c22c7ad-8e1e-4f28-acfd-0f0978926a7f,,split_by_expression,2215;4100
+30,split_by_group,29,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,d523d0fa-417b-4eb4-8fb0-841b66be3c1d,,split_by_expression,2465;4500
+31,send_message,30,ABTest_test-gamification_alternative,,,,,"You have added another layer to your House of Support! Children living with disabilities need love, respect and time – just like any other child.",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,69a8bab0-140d-41b5-92bd-4449fbde83c8,,execute_actions,2590;4700
+32,send_message,30;30,ABTest_test-gamification_Default;,,,,,"Well done for adding another tool to your Parenting Toolkit! Children living with disabilities need love, respect and time – just like any other child.",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,02c5f814-2c22-4b3f-a5d4-e0f48321fdff,,execute_actions,2340;4700
+33,split_by_group,29;29,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,2be442f3-e8e1-415f-87d2-7c65f109fe87,,split_by_expression,1965;4300
+34,send_message,33,ABTest_test-gamification_alternative,,,,,"You have added another layer to your House of Support! Children living with disabilities need love, respect and time – just like any other child.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,7b2c0cac-3355-4293-9747-6a5e2325222f,,execute_actions,2090;4700
+35,send_message,33;33,ABTest_test-gamification_Default;,,,,,"Well done for adding another tool to your Parenting Toolkit! Children living with disabilities need love, respect and time – just like any other child.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,614ca256-995d-4a73-a519-2254ca5f06a9,,execute_actions,1840;4700
+36,send_message,31;32;34;35,,,,,,"Here is a link to disability services in your area that may also be helpful:
+[INSERT LOCAL LINK]",,,,,,,,,,,,,,,32266e46-3f3e-4090-83bf-376f015c4329,,execute_actions,1760;4920
+37,save_value,36,,,,,current type assessed,tip,,,,,,,,,,,,,,,f4ab288c-09cd-46fa-b2a0-e017222f003a,,execute_actions,510;5820
+38,save_value,37,,,,,current activity,disabilities,,,,,,,,,,,,,,,f4ab288c-09cd-46fa-b2a0-e017222f003a,,execute_actions,510;5820
+39,start_new_flow,38,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,f98b227f-dd05-49fc-ad47-72b7768bd057,,split_by_subflow,510;6040
+40,send_message,39,Complete,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat later!",,,,,,,,,,,,,,,587c70c8-6430-49b2-94c0-92111b633f3d,,execute_actions,490;6220
+41,split_by_value,21,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,bc5e4cd6-33ea-4eee-bfda-a813cda20ba1,,split_by_expression,2735;1620
+42,send_message,41,,@fields.child_nickname,has_text,child_nickname,,"Step 1. Keep your child safe and well 
+
+• Keep your country's COVID-19 rules, and also help @fields.child_nickname_disabled to be active - do whatever exercise you can with them inside or outside your home
+• Keep emergency contact numbers somewhere easy to see",,,,,,,,,,,,,,,b2a27c00-12d4-4e49-8fee-113e2ce6d0ae,,execute_actions,2610;1820
+43,send_message,41,,,,,,"Step 1. Keep your child safe and well 
+
+• Keep your country's COVID-19 rules, and also help your child to be active - do whatever exercise you can with them inside or outside your home
+• Keep emergency contact numbers somewhere easy to see",,,,,,,,,,,,,,,1af6b80a-3594-4694-8b5e-f703eeb220aa,,execute_actions,2860;1820
+44,split_by_value,21,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,487cb54e-1ba4-4a4c-88ea-b6174c601282,,split_by_expression,265;2400
+45,send_message,44,,@fields.child_nickname,has_text,child_nickname,,"Step 2. Try to understand how they are feeling
+
+• @fields.child_nickname_disabled may be feeling a lot of stress, anxiety, and frustration.
+• Tell them that you love them
+• Praise them for being good and for trying to be good! ",,,,,,,,,,,,,,,8ee766f3-4917-4553-8892-455979c7d243,,execute_actions,140;2800
+46,send_message,44,,,,,,"Step 2. Try to understand how they are feeling
+
+• Your child may be feeling a lot of stress, anxiety, and frustration.
+• Tell them that you love them
+• Praise them for being good and for trying to be good! ",,,,,,,,,,,,,,,a850b9ce-b2b3-41be-b9f4-f20e8602c0ba,,execute_actions,390;2800
+47,split_by_value,21,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,debf2f77-4d9b-4cc8-8917-66e5120302a0,,split_by_expression,1185;3280
+48,send_message,47,,@fields.child_nickname,has_text,child_nickname,,"Step 3. Talking and communicating with your child
+
+• Get down to @fields.child_nickname_disabled’s level when you speak. 
+• Look at them and smile
+• Give them time to tell you or show you what they think
+• Tell @fields.child_nickname_disabled that you understand",,,,,,,,,,,,,,,3c1863be-4939-4015-8600-2d81afdf6753,,execute_actions,1060;3480
+49,send_message,47,,,,,,"Step 3. Talking and communicating with your child
+
+• Get down to your child’s level when you speak. 
+• Look at them and smile
+• Give them time to tell you or show you what they think
+• Tell your child that you understand",,,,,,,,,,,,,,,98a6de5e-36d4-47ec-9660-ea2e81a13be9,,execute_actions,1310;3480
+50,send_message,21,4,,has_number_eq,4,,"Step 4. Praise them!
+
+• Praise them for behaving well, and for trying. 
+• Focus on what they can do, not what they can't.
+• Only help children when they need it. It is also good to build independence!",,,,,,,,,,,,,,,d21580bf-7dd2-49a3-a4ad-bc266178e846,,execute_actions,1330;3020
+51,split_by_value,21,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,719f6275-99fe-45f0-bb5a-8898be0948cd,,split_by_expression,1515;2060
+52,send_message,51,,@fields.child_nickname,has_text,child_nickname,,"Step 5. Make daily plans to help them feel secure
+
+• Having things that are the same each day helps children feel secure and safe.
+• Make a daily plan that includes some things they like to do.
+• Help @fields.child_nickname_disabled connect to friends and family members through phone, writing cards, or drawing pictures.",,,,,,,,,,,,,,,36eca6db-2bb8-4a39-a967-99478148ca07,,execute_actions,1390;2260
+53,send_message,51,,,,,,"Step 5. Make daily plans to help them feel secure
+
+• Having things that are the same each day helps children feel secure and safe.
+• Make a daily plan that includes some things they like to do.
+• Help your child connect to friends and family members through phone, writing cards, or drawing pictures.",,,,,,,,,,,,,,,d68f5652-732f-4cb7-bcd0-84c90c7a52d9,,execute_actions,1640;2260
+54,split_by_value,52;53,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,37b62c26-0fe9-4c30-9055-9c6f598f7304,,split_by_expression,755;2600
+55,send_message,54,,@fields.child_nickname,has_text,child_nickname,,"• Give @fields.child_nickname_disabled choices: this gives them a sense of control and builds self-esteem.
+• Use simple language and clear instructions. If words aren't good for them, try gestures and pictures. ",,,,,,,,,,,,,,,1bece629-7a41-42fe-9239-a061e05e29d9,,execute_actions,630;2800
+56,send_message,54,,,,,,"• Give your child choices: this gives them a sense of control and builds self-esteem.
+• Use simple language and clear instructions. If words aren't good for them, try gestures and pictures. ",,,,,,,,,,,,,,,4a57c73d-c322-4fdf-b1af-614144aca870,,execute_actions,880;2800
+57,send_message,21,6,,has_number_eq,6,,"Step 6. Ask for help if you can
+• Share the load with other adult family members.
+•  You are not alone! Keep connected with people who understand your situation.",,,,,,,,,,,,,,,719f17c9-1bda-4a25-b853-3fc3e246b157,,execute_actions,550;3200
+58,send_message,57,,,,,,"• Share your challenges AND your successes.
+• It is normal to feel stressed, frustrated, and afraid at this time.
+• Be kind to yourself and take a break when you need to!",,,,,,,,,,,,,,,17ef421b-9baa-4c3e-8d4f-87b6f3f74988,,execute_actions,590;3660
+59,send_message,42;43;45;46;48;49;50;55;56;58,,,,,,"Please select another number if you want to learn more about how to support children living with disabilities:
+
+1. Keep your child safe and well
+2. Try to understand what they are feeling
+3. Communicate and talk with them
+4. Praise them!
+5. Make things that you do the same every day to help them feel secure
+6. Ask for help if you can
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,6623b8fa-2f96-496d-9f78-6a2be907a729,,execute_actions,450;3940
+60,save_value,59,,,,,disability list of tips,"@(fields.disability_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,038f61af-8e11-4372-9cb7-e26633342eca,,execute_actions,900;5020
+61,go_to,60,,,,,,21,,,,,,,,,,,,,,,,,,
+62,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,c6267c81-1a1c-4b57-9ef5-9bebae68e51e,,execute_actions,1740;1500
+63,go_to,62,,,,,,20,,,,,,,,,,,,,,,,,,

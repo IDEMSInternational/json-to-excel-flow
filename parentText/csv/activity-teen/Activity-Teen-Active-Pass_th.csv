@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Pass the Snap  
+•	This game is best with at least 3 people.
+•	Start in a circle and pass one snap around the circle (or clap if you cannot snap).
+•	You snap once to throw the snap.
+•	You can bounce the snap, throw it in the air, and catch it a few times before passing it. 
+•	The direction (up, down, straight, curved, rolling the ground) and force (hard, soft, medium) that you throw the snap should affect how the person catches it.  
+•	Look at the person you are throwing the snap to.  
+•	The person who will catch it has to snap once to catch it.
+•	When everyone gets good at this, you can start moving around the room, still passing around the snap.  
+•	Can you throw under the leg?  Behind the back?  Through your head?  Intercept a pass? Have fun with the snap!  ",,,,,,,,,,,,,,,69fed6f0-4ede-4a19-b0cf-a58711bb5ce7,,execute_actions,;

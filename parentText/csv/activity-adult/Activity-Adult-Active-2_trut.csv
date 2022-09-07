@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"2 Truths, 1 Lie
+•	Think of three statements about yourself. Two must be true and one must be a lie.
+•	It might help to think of wishes, dreams, likes or dislikes. For example, I hate bananas, I love ice cream and I really wish I could sing. 
+•	Say them to your partner or friends. Ask them to guess which one is a lie. 
+•	Did they guess correctly? Was it a surprise?
+•	Now ask them to do the same. Did you learn something new about each other? ",,,,,,,,,,,,,,,8da6a93d-621e-49e5-9584-fccef58bf881,,execute_actions,;

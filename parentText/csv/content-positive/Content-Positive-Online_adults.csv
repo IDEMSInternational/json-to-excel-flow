@@ -1,0 +1,92 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Keeping your child safe online,,,,,,,,,,,,,,,b731849e-0e74-4d6c-a19e-9914c45c7575,,execute_actions,340;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,712a8a43-3186-497a-836a-9f9f95710ed8,,split_by_subflow,520;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,7a1c2674-be28-480b-ae4d-a065c8d0eea5,,split_by_contact_field,180;820
+4,send_message,3,,,,,,We are now spending a lot more time online. Being connected helps us stay positive…but it also presents risks and dangers.,,,,,,,,,,,,,,,d5eedd42-cedf-4358-bb98-4a3b73c2aa02,,execute_actions,2680;1160
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,5b9e3f30-e9d9-4c5e-b550-8c6eea39f509,,split_by_contact_field,180;4220
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you keep yourself safe online.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Online_Safety.m4v,,c743935e-b4da-4310-8222-e9a3aaf3e644,,execute_actions,40;4400
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message to help you keep yourself safe online.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Online_Child_Safety.mp3,,,939e1eba-837b-4348-b15d-d9f757f909fb,,execute_actions,340;4400
+8,wait_for_response,6;7,,,,,Result 6,,,,,,,,,,,,,,,,9c694994-c0b3-4095-b163-929ce3edfad2,120,wait_for_response,20;4620
+9,start_new_flow,5;8;8,;;No Response,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,30794066-5f17-4608-ac6d-cd2e135be918,,split_by_subflow,240;7220
+10,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,5ac8f517-490d-4b2a-8f4f-aa160e59cc68,,execute_actions,500;3220
+11,wait_for_response,10,,,,,Result 4,,,,,,,,,,,,,,,,bcba0d19-15f4-406b-8caf-d4e228a57798,,wait_for_response,320;3500
+12,go_to,11,YES Y,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+13,split_by_value,11,NO N,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,61849af6-527e-49a4-b08c-447715dbd649,,split_by_expression,685;3740
+14,send_message,13,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,5780bed1-b954-487a-b657-b95204c2c5bb,,execute_actions,560;3940
+15,send_message,13,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,785649d1-0189-49a7-855b-4dc9a878cb13,,execute_actions,810;3940
+16,send_message,11,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b20f8fb4-c95d-4769-9526-173be4979d2d,,execute_actions,2660;3520
+17,go_to,16,,,,,,10,,,,,,,,,,,,,,,,,,
+18,send_message,9;9,Complete;Expired,,,,,"Here are 5 tips that can help you keep yourself safe online:
+
+1. Learn about the risks and dangers
+2. Quick tech fixes
+3. Create healthy and safe online habits
+4. Maintain privacy
+5. Report and seek help
+
+To learn more about one of these, type ""1"" to ""5"". You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,7d733799-5202-4fb6-982d-9fcd63242e59,,execute_actions,200;7380
+19,wait_for_response,18,,,,,list_of_tips,,,,,,,,,,,,,,,,22625555-6e96-4051-b8a9-1d66fb6abab6,,wait_for_response,220;7840
+20,send_message,19,1,,has_number_eq,1,,"1. Learn about risks and dangers
+
+• Adults targeting people for sexual purposes on social media, gaming, and messaging platforms.
+• Harmful content – like violence, hating women, hating foreigners, encouraging suicide and self-harm, misinformation, pornography
+• Sharing personal information and sexual photos or videos.
+• Cyberbullying from other people and strangers.",,,,,,,,,,,,,,,23f12885-2c66-4352-8b1f-6d9259c40f85,,execute_actions,;8420
+21,send_message,19,2,,has_number_eq,2,,"2. Quick tech fixes
+
+• Turn on SafeSearch on your browser to filter adult content.
+https://www.internetmatters.org/blog/parental-controls/entertainment-search-engines/
+• Set up parental controls.
+https://www.internetmatters.org/parental-controls/
+• Set up strict privacy settings on online apps and games.
+ https://www.internetmatters.org/blog/parental-controls/social-media/
+• Cover webcams when not in use.",,,,,,,,,,,,,,,86469ed5-a1a8-47d7-b3e8-5a74d7945f6e,,execute_actions,260;8500
+22,send_message,19,3,,has_number_eq,3,,"3. Create healthy and safe online habits
+
+You can also create healthy and safe online habits like creating device-free spaces and times in your house (eating, playing, schoolwork, and sleeping).",,,,,,,,,,,,,,,cfc31b3f-fc26-4735-aef1-c77bd6c062c1,,execute_actions,500;8520
+23,send_message,19,4,,has_number_eq,4,,"4. Maintain privacy
+
+Keep personal information private, especially from strangers. – some people are not who they say they are!",,,,,,,,,,,,,,,efedbc1b-a177-4955-b817-0033f96166b7,,execute_actions,2720;8480
+24,send_message,23,,,,,,"Remember that what goes online stays online (messages, photos, and videos).",,,,,,,,,,,,,,,b40e43cb-0d45-46fc-b0d5-0d3ab4277ab5,,execute_actions,2700;8780
+25,send_message,19,5,,has_number_eq,5,,"5. Report and seek help
+
+Report to INHOPE Hotlines and IWF portals to get support if you experience online violence or other things that are not acceptable.
+
+INHOPE Hotlines: https://www.inhope.org/EN#hotlineReferral
+IWF portals: https://report.iwf.org.uk/en
+Child Helpline: https://www.childhelplineinternational.org/",,,,,,,,,,,,,,,100b157e-7965-4b67-b540-23e097673410,,execute_actions,2940;8440
+26,send_message,20;21;22;24;25,,,,,,"Please select another number if you want to learn another way to protect yourself online:
+
+1. Learn about the risks and dangers
+2. Quick tech fixes
+3. Create healthy and safe online habits
+4. Maintain privacy
+5. Report and seek help
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,1e79fcd7-0b37-4440-97ed-2d60218561ac,,execute_actions,360;9040
+27,save_value,26,,,,,online adult list of tips,"@(fields.online_adult_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,7c76dfda-22bf-4c04-86cc-74df916f7abc,,execute_actions,360;9400
+28,save_value,27,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a180c5a5-0480-4a5d-a2fa-5db64234ae10,,execute_actions,360;9520
+29,go_to,28,,,,,,19,,,,,,,,,,,,,,,,,,
+30,split_by_group,19,no n ,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,134dea17-e809-4f98-95eb-d26e408a2280,,split_by_expression,1765;4940
+31,split_by_group,30,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,395b8267-5238-4485-8ee3-7cd1a8e51b45,,split_by_expression,2265;5340
+32,split_by_value,31,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,4f20e7bd-fb93-4b8f-9918-8187e522e095,,split_by_expression,2515;6140
+33,send_message,32,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,09208039-c997-4f70-809d-76f8634b81bc,,execute_actions,2390;6340
+34,send_message,32,,,,,,"Well done! You have added another layer to your House of Support! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,c1abad36-0077-426c-b973-983044911503,,execute_actions,2640;6340
+35,split_by_value,31;31,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,a071f7f4-f9d4-4b3e-8c78-6e5b4749b662,,split_by_expression,2015;5940
+36,send_message,35,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,fa5a8bf4-f474-4bb2-bd19-fac2c304413e,,execute_actions,1890;6340
+37,send_message,35,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,c9cff12b-6203-4dc8-af9e-b457355c1a87,,execute_actions,2140;6340
+38,split_by_group,30;30,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,79c6afd6-62c8-408c-ab74-9c647710d403,,split_by_expression,1265;5140
+39,split_by_value,38,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,e1da307a-edd9-4938-9c1c-48fe0606d125,,split_by_expression,1515;5740
+40,send_message,39,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,6414952c-e248-4bd8-8b7f-3bf8d9f665b0,,execute_actions,1390;6340
+41,send_message,39,,,,,,"Well done! You have added another layer to your House of Support! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,cca4cbec-4911-4c91-b696-3140b5325466,,execute_actions,1640;6340
+42,split_by_value,38;38,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,746ecb91-05a4-4d0a-965b-81993e273e44,,split_by_expression,1015;5540
+43,send_message,42,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,4d534aae-624d-417d-885d-0fb71027973d,,execute_actions,890;6340
+44,send_message,42,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try to use one of these tips for online safety. Digital parenting is just like parenting in the real world. You have taken a BIG STEP to keeping your child safe online. Good for you!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,0daa61ea-190a-4d0f-9bf1-e50d226f3c21,,execute_actions,1140;6340
+45,save_value,33;34;36;37;40;41;43;44,,,,,current type assessed,tip,,,,,,,,,,,,,,,3e964494-5ca2-4bfc-91b3-87f9cc30212b,,execute_actions,3000;6400
+46,save_value,45,,,,,current activity,online_adult,,,,,,,,,,,,,,,3e964494-5ca2-4bfc-91b3-87f9cc30212b,,execute_actions,3000;6400
+47,start_new_flow,46,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,5f9bca74-6ff9-4fe3-95b7-fe79ed9672f8,,split_by_subflow,3000;6580
+48,split_by_value,47;47,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,f47f5ba3-22c7-40d9-be0d-2110d7751915,,split_by_expression,3145;6740
+49,send_message,48,,@fields.user_name,has_text,user_name,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,23b16700-934e-4e92-ace8-98627deef2e7,,execute_actions,3020;6940
+50,send_message,48,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later!",,,,,,,,,,,,,,,3d4ae5d8-eece-49ba-883c-349a853ef265,,execute_actions,3270;6940
+51,send_message,19,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a9c61c72-b203-4e94-a582-0e0b43871199,,execute_actions,2720;7620
+52,go_to,51,,,,,,18,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,20 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,from theme,no,,,,,,,,,,,,,,,e40064e6-78f3-4efb-9499-cf26026247db,,execute_actions,340;
+2,split_by_group,1,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,a5b5bbf3-3d29-4966-a860-34d387b86783,,split_by_expression,485;80
+3,send_message,2,ABTest_test-first-person_alternative,,,,,How can I help you?,Relaxation and stress reduction,Dealing with financial stress,Family relationships,COVID bereavement support,Other services,Go back to the help menu,,,,,,,,,631510c5-464f-4210-b4c6-b00aeb094730,,execute_actions,610;280
+4,send_message,2;2,ABTest_test-first-person_Default;,,,,,How can we help you?,Relaxation and stress reduction,Dealing with financial stress,Family relationships,COVID bereavement support,Other services,Go back to the help menu,,,,,,,,,49a2fb5a-6094-4848-b382-0f0643692464,,execute_actions,360;280
+5,wait_for_response,3;4,,,,,response_stress,,,,,,,,,,,,,,,,da41c8cf-6f60-4ed7-9e68-c59aa5ce3d72,,wait_for_response,180;520
+6,start_new_flow,5,relaxation reduction,,has_any_word,Relaxation and stress reduction,,PLH - Handler - Activity - Adults,,,,,,,,,,,,,,523c1886-d0b6-4c0a-9206-78ef88fb634b,fb724a6f-a7d8-4678-a634-f0772a7e3373,,split_by_subflow,;760
+7,split_by_value,5,financial,,has_any_word,Dealing with financial stress,,"@(or(fields.parent_teenager = ""true"",fields.parent_young_child = ""true""))",,,,,,,,,,,,,,,b26d09aa-56bf-4bc9-ac5b-0f7d9e6883fc,,split_by_expression,260;860
+8,start_new_flow,7,false,"@(or(fields.parent_teenager = ""true"",fields.parent_young_child = ""true""))",has_any_word,false,,PLH - Content - Positive - Budget adults,,,,,,,,,,,,,,30d3d9bf-4ce1-4034-94bb-8c10cb89e6d1,77daf2f1-bd26-41c4-93e8-376b52b9eac2,,split_by_subflow,160;980
+9,start_new_flow,7,,,,,,PLH - Content - Positive - Budget with children,,,,,,,,,,,,,,7b46af18-d9da-428f-bb8b-2f5e04add8e8,2b2873b5-84f5-4f66-9b8f-3de2565b2ca3,,split_by_subflow,630;980
+10,start_new_flow,5,back,,has_any_word,Back,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,ed5049a7-17e4-4cfa-b618-33641fd8b1e1,,split_by_subflow,1070;760
+11,start_new_flow,5,other services,,has_any_word,Other services,,PLH - Help - Emergency,,,,,,,,,,,,,,fef35f4c-5463-42e9-941a-d6ed815c2269,6b36c4b8-a40f-415c-8872-3b6ee5a79690,,split_by_subflow,1330;720
+12,start_new_flow,5,covid bereavement,,has_any_word,Covid,,PLH - Content - Extra - Covid bereavement,,,,,,,,,,,,,,5c080ee8-3f89-454a-94fb-bd47e1ff3a22,1e1a2b21-fa78-45b6-ab7f-068555355984,,split_by_subflow,1290;580
+13,send_message,5,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,fec0fb2f-888b-4b88-8aa0-99dc9834179a,,execute_actions,1010;400
+14,go_to,13,,,,,,2,,,,,,,,,,,,,,,,,,
+15,split_by_value,5,family relationships,,has_any_word,Family relationships,,@fields.get_ipv_content,,,,,,,,,,,,,,,6779bd07-a74e-4df7-9b9a-b6a491e8c0de,,split_by_contact_field,870;940
+16,start_new_flow,15,yes,@fields.get_ipv_content,has_any_word,Yes,,PLH - Content - Positive - IPV,,,,,,,,,,,,,,902cc573-5ec6-43f3-8ebd-57a042bf1cf2,7e172226-3ec3-47b0-9bb6-411fa5a1e151,,split_by_subflow,1090;1160
+17,start_new_flow,15,no,@fields.get_ipv_content,has_any_word,No,,PLH - Content - Positive - Family,,,,,,,,,,,,,,dc87cd8d-5d4b-44f6-91d9-5cfa7b1ed631,bf66c3a8-3aa4-4813-beda-cba6ea0eda9e,,split_by_subflow,1290;1040
+18,start_new_flow,15,,,,,,PLH - Welcome - Initial registration - Relationship,,,,,,,,,,,,,,758e1e77-1ce7-45ec-a5a9-4f76b2553747,fae07b7a-9fd2-4bdd-8b92-228744eea493,,split_by_subflow,810;1240
+19,go_to,18,Complete,,,,,15,,,,,,,,,,,,,,,,,,

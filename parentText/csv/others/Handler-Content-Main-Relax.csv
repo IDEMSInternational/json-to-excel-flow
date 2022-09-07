@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.next_tip_main,,,,,,,,,,,,,,,aaed7829-05d9-4721-a1c9-15bdf6d13c66,,split_by_contact_field,420;
+2,start_new_flow,1,3,@fields.next_tip_main,has_number_eq,3,,PLH - Content - Relax - Take a pause - Timed intro,,,,,,,,,,,,,,c992a749-280f-459b-ae03-d18dbb90d50b,72805f82-6c8a-4c03-8e79-bd542671030b,,split_by_subflow,40;140
+3,start_new_flow,1,20,@fields.next_tip_main,has_any_word,20,,PLH - Content - Relax - CheckIn - Loving Kindness,,,,,,,,,,,,,,42642986-0774-45f1-94dc-d90b004e497d,57dff8d2-8fbd-4a0a-a585-e990bbfd83e0,,split_by_subflow,760;200
+4,start_new_flow,1,21,@fields.next_tip_main,has_any_word,21,,PLH - Content - Relax - Exercise,,,,,,,,,,,,,,d1e88e1c-34f1-4b60-af2c-a99adc885d7c,5f54f5a2-e692-483e-9693-ae23bd55074c,,split_by_subflow,540;220
+5,start_new_flow,1,22,@fields.next_tip_main,has_any_word,22,,PLH - Content - Relax - Anger management 2,,,,,,,,,,,,,,27a51012-8e86-4e10-9b34-da64a710aa68,189a1df0-d2e1-4c4a-9849-5f43ef774825,,split_by_subflow,880;380
+6,save_value,2;3;4;5,Expired;Expired;Expired;Expired,,,,has expired,tip,,,,,,,,,,,,,,,c9f697cc-c150-45c9-9471-da2502fe8df8,,execute_actions,80;360
+7,send_message,6,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,fe137d50-76ab-4b35-989e-4d912009d8e1,,execute_actions,80;460
+8,start_new_flow,1,,,,,,PLH - Handler - Content - Main - Positive,,,,,,,,,,,,,,e6b22cd8-fd8d-4fc9-bba3-fc5bc369aee1,ff74a28f-b6ad-4c3a-891e-850c8fe80c9f,,split_by_subflow,1020;160
+9,save_flow_result,8,Complete,,,,main content,@child.results.main_content,,,,,,,,,,,,,,,9b5c361c-36ca-4b2c-8671-78499beea349,,execute_actions,380;600

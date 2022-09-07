@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Get active!
+•	Come up with three types of exercise together. For example, walking, jogging, soccer or dancing
+•	Pick one together and try it out. 
+•	If you both like it, decide how often you are going to do it. Once or twice a week? Every morning?
+•	Together think of ways to make it even more fun. Can you jog to a certain point? Take turns in being the coach? Motivate each other with a small free reward? ",,,,,,,,,,,,,,,5d6c41af-09d6-4d79-9980-f24b9ae2d3a3,,execute_actions,;

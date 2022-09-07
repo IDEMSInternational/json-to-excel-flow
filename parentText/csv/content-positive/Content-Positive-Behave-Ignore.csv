@@ -1,0 +1,142 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Ignoring demanding behaviours,,,,,,,,,,,,,,,e36eef61-00a8-4ba4-966a-c497dbf5514e,,execute_actions,1800;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,cf88c1cb-4b99-4480-bdc3-7fc638322006,,split_by_subflow,1820;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,c3701f3c-9bf2-4ccf-b37f-2b47cc27e9d0,,split_by_contact_field,1510;300
+4,split_by_value,3,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,ce62ac08-9e1f-463b-98fc-4875f5c5963d,,split_by_expression,2535;340
+5,send_message,4,,@fields.child_nickname,has_text,child_nickname,,"Ignore negative attention seeking and demanding behaviours like whining or tantrums. Your @fields.child_nickname’s behaviour might at first get worse, but with time they will learn that it does not work. Be consistent and patient. And make sure that you are also giving @fields.child_nickname plenty of positive attention at other times. You can do it!",,,,,,,,,,,,,,,2bbf3112-b55f-4b71-bcf3-747f3bf0c413,,execute_actions,2410;540
+6,send_message,4,,,,,,"Ignore negative attention seeking and demanding behaviours like whining or tantrums. Your child’s behaviour might at first get worse, but with time they will learn that it does not work. Be consistent and patient. And make sure that you are also giving your child plenty of positive attention at other times. You can do it!",,,,,,,,,,,,,,,d2b90a71-0352-4e34-8b6a-136983dd53e9,,execute_actions,2660;540
+7,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,6529b931-e836-4466-b9b7-ccc7628b1e50,,split_by_contact_field,950;960
+8,split_by_value,7,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,34008ba0-211f-4e89-8f11-dc69bd7bafdf,,split_by_expression,705;1120
+9,send_message,8,,@fields.child_nickname,has_text,child_nickname,,Here's a video to help you manage @fields.child_nickname's temper tantrums.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Ignore.m4v,,025f611e-0f34-4f9d-bb81-cfbe464233b4,,execute_actions,580;1520
+10,send_message,8,,,,,,Here's a video to help you manage your child's temper tantrums.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Ignore.m4v,,7cd7ea5d-5057-477f-9175-148b0adc2ee0,,execute_actions,830;1520
+11,split_by_value,7,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,a9b9671a-a328-47f0-870a-385e82351d39,,split_by_expression,1675;1320
+12,send_message,11,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message to help you manage @fields.child_nickname's temper tantrums.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Ignore.mp3,,,6500c74b-369d-4cec-ac60-111e4f59d8f9,,execute_actions,1550;1520
+13,send_message,11,,,,,,Here's an audio message to help you manage your child's temper tantrums.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Ignore.mp3,,,8d62bbd7-f04c-4940-84e6-5ca48b554006,,execute_actions,1800;1520
+14,wait_for_response,10;12;13;9,,,,,Result 5,,,,,,,,,,,,,,,,1a1575f2-f3e6-4773-867c-0ed7f8158976,120,wait_for_response,830;1740
+15,start_new_flow,14;14;7,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,87df807d-295f-4df4-ae72-5244ef92251d,,split_by_subflow,2000;1780
+16,send_message,5;6,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/misbehaving_children.jpg,,,,9ff91550-8182-4ba0-85d2-0c3f1c377dda,,execute_actions,2370;840
+17,wait_for_response,16,,,,,Result 1,,,,,,,,,,,,,,,,5d966c1e-ffe6-4a2b-befa-0854316cf33f,3600,wait_for_response,2330;1000
+18,go_to,17,y yes ,,has_any_word,Y,,7,,,,,,,,,,,,,,,,,,
+19,send_message,17,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,df05f90b-e2b3-4fb0-a5ba-55b82b66ef85,,execute_actions,2940;780
+20,go_to,19,,,,,,16,,,,,,,,,,,,,,,,,,
+21,send_message,17;17,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,e75b613e-4184-486a-94c5-befe745897ea,,execute_actions,2820;1620
+22,send_message,15;15,Complete;Expired,,,,,"Here are 6 steps on how we can reduce negative attention seeking and demanding behaviours like tantrums using what we call Ignore:
+
+1. Try to redirect your child’s attention
+2. Make sure it is a behaviour you can ignore
+3. Ignore the behaviour not your child
+4. Praise your child immediately for the next positive behaviour
+5. Be consistent when ignoring
+6. Make sure you are giving your child plenty of positive attention at other times.
+
+To learn more about one of these tips, type ""1"" to ""6"". You can also type ""N"" to move on.",,,,,,,,,,,,,,,54c6423b-cc6e-496d-b2cb-f5e4777ff309,,execute_actions,2310;1920
+23,wait_for_response,22,,,,,list_of_tips,,,,,,,,,,,,,,,,dc749cad-d032-41fe-900a-a696053b8d7d,,wait_for_response,560;2380
+24,send_message,23,1,,has_number_eq,1,,"1. Try to redirect your child's attention
+
+When they start demanding for something or whining, first try to redirect them to a positive behaviour or activity. Praise them for that positive behaviour! ",,,,,,,,,,,,,,,5bf508f0-09cd-4c76-8c30-eed571587eb7,,execute_actions,250;2520
+25,send_message,23,2,,has_number_eq,2,,"2. Make sure it is a behaviour you can ignore
+
+These are behaviours like whining, demanding, showing off, tantrums, and lots of other negative attention seeking and demanding behaviours that might make us think of the child as a bad child. But there are no bad children, only difficult behaviours!",,,,,,,,,,,,,,,6592be1a-27b6-4cd0-b336-046c247f8ba6,,execute_actions,1490;2520
+26,send_message,25,,,,,,"If we respond to these behaviours, our children learn that this behaviour will get them attention. They sometimes also learn that if they increase the demand, they will get their way.",,,,,,,,,,,,,,,6c2b4a3c-98bd-445c-8968-35a3cc54601a,,execute_actions,1490;3040
+27,split_by_value,26,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,c3201efb-dca8-4004-84dc-08f56578d2fa,,split_by_expression,1095;3260
+28,send_message,27,,@fields.child_nickname,has_text,child_nickname,,"For example, if @fields.child_nickname whines for sweets at the store, you might initially say “no” but then give in to @fields.child_nickname when they start to have a tantrum. This happens to all of us!",,,,,,,,,,,,,,,959782f5-9866-461d-8db2-acc51525725e,,execute_actions,970;3460
+29,send_message,27,,,,,,"For example, if your child whines for sweets at the store, you might initially say “no” but then give in to your child when they start to have a tantrum. This happens to all of us!",,,,,,,,,,,,,,,d7590f1a-e597-4f4f-a17c-f6949903b0ab,,execute_actions,1220;3460
+30,split_by_value,23,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,03bcfae5-fe7b-4b31-a51b-ea47460cbe31,,split_by_expression,2165;2560
+31,send_message,30,,@fields.child_nickname,has_text,child_nickname,,"3. Ignore the behaviour not your child.
+
+Ignoring behaviour means removing physical and verbal attention. You should still be aware of what @fields.child_nickname is doing.",,,,,,,,,,,,,,,1cc19fa7-aff7-45a5-8a62-18588738b4f2,,execute_actions,2040;2760
+32,send_message,30,,,,,,"3. Ignore the behaviour not your child.
+
+Ignoring behaviour means removing physical and verbal attention. You should still be aware of what your child is doing.",,,,,,,,,,,,,,,96b7541b-2f66-4c45-b24b-fbc5fa35af0d,,execute_actions,2290;2760
+33,send_message,31;32,,,,,,"When you ignore your child's behaviour (but not your child!), your child learns that the demanding behaviour will not work.",,,,,,,,,,,,,,,9e1e90f7-fb58-4f3c-9278-b247d1e332ef,,execute_actions,2290;3000
+34,send_message,33,,,,,,This takes time AND patience. Normally your child will try to test you and behave worse. This is a good time to Take a Pause and Keep Calm.,,,,,,,,,,,,,,,55d16cf0-d0a6-40b5-8c65-8f93e15aacf6,,execute_actions,2290;3180
+35,split_by_value,23,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,8dee1ce3-53fd-496f-a0d5-b7c798ac51b1,,split_by_expression,395;3660
+36,send_message,35,,@fields.child_nickname,has_text,child_nickname,,"4. Praise your child immediately for the next positive behaviour
+
+Having a tantrum can be just as traumatic and difficult for your child as it is for you. Make sure you give @fields.child_nickname plenty of positive attention and love as soon as they have calmed down. ",,,,,,,,,,,,,,,aaca9f1b-c2b2-432f-8193-b7a70d291ed7,,execute_actions,270;3860
+37,send_message,35,,,,,,"4. Praise your child immediately for the next positive behaviour
+
+Having a tantrum can be just as traumatic and difficult for your child as it is for you. Make sure you give your child plenty of positive attention and love as soon as they have calmed down. ",,,,,,,,,,,,,,,b84ad5fa-0043-4e96-b71a-9cd5144b937f,,execute_actions,520;3860
+38,split_by_value,36;37,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,03db2f93-6089-48d3-83cc-e363c848a414,,split_by_expression,125;4140
+39,send_message,38,,@fields.child_nickname,has_text,child_nickname,,"At this time, it is more important that you involve @fields.child_nickname in a positive activity instead of talking about what just happened. You can do that later like at night or the next day. Right now @fields.child_nickname needs love.",,,,,,,,,,,,,,,c643355f-8fe4-4306-b638-6880b07c4cf6,,execute_actions,;4340
+40,send_message,38,,,,,,"At this time, it is more important that you involve your child in a positive activity instead of talking about what just happened. You can do that later like at night or the next day. Right now your child needs love.",,,,,,,,,,,,,,,62c90a5f-ee2a-416a-bd01-d30e15a7a62f,,execute_actions,250;4340
+41,send_message,23,5,,has_number_eq,5,,"5. Be consistent when ignoring
+
+Your child's behaviour might continue to get worse.  It is important that you continue to ignore the behaviour.",,,,,,,,,,,,,,,2a0133c1-8566-4450-ac7a-33c56c5454b0,,execute_actions,1510;3920
+42,send_message,41,,,,,,"Often, your child's response will grow more agitated when you start ignoring a specific behaviour as your child tries to test your resolve. ",,,,,,,,,,,,,,,077fa09b-ce0d-4710-97ef-0df9e4e36216,,execute_actions,1510;4120
+43,split_by_value,42,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,5f28a597-3ba7-4686-a19d-50993c3b8f4b,,split_by_expression,1365;4500
+44,send_message,43,,@fields.child_nickname,has_text,child_nickname,,"Try to remain consistent. Over time, @fields.child_nickname will learn that the demanding behaviour no longer works.",,,,,,,,,,,,,,,1dbb3e24-3186-4786-9a08-08d9884bc748,,execute_actions,1240;4700
+45,send_message,43,,,,,,"Try to remain consistent. Over time, your child will learn that the demanding behaviour no longer works.",,,,,,,,,,,,,,,ee726a6d-3e8f-42fc-99f6-222c7dee6edb,,execute_actions,1490;4700
+46,send_message,23,6,,has_number_eq,6,,"6. Make sure you are giving your child plenty of positive attention at other times
+
+Children need attention. If children get plenty of attention for just being themselves, as well as for the “good” things that they do, it helps them to feel good about themselves, and they do more of what they are asked.",,,,,,,,,,,,,,,daa6032d-f783-4cd0-9c3b-ce2499451c9a,,execute_actions,2310;3880
+47,send_message,46,,,,,,"If you find yourself ignoring your child's behaviour a lot, it is either because you are not being consistent (sometimes ignoring and sometimes giving in) OR you are not spending enough positive time with your child. One-on-One Time is super important!",,,,,,,,,,,,,,,d9d1b6c6-7dce-4857-bb9d-87f6857d6b34,,execute_actions,2310;4420
+48,send_message,24;28;29;34;39;40;44;45;47,,,,,,"Please select another number if you want to learn more about how to use ignore to reduce tantrums or other difficult behaviours:
+
+1. Try to redirect your child’s attention
+2. Make sure it is a behaviour you can ignore
+3. Ignore the behaviour not your child
+4. Praise your child immediately for the next positive behaviour
+5. Be consistent when ignoring
+6. Make sure you are giving your child plenty of positive attention at other times
+
+You can also type ""N"" to move on.",,,,,,,,,,,,,,,40e643b4-28fd-4306-9c52-f9920a10ffaf,,execute_actions,1820;4980
+49,save_value,48,,,,,ignore list of tips,"@(fields.ignore_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,cfe396ed-b33c-4fd2-a254-0e460d64cf63,,execute_actions,1800;6880
+50,save_value,49,,,,,last interaction,@(now()),,,,,,,,,,,,,,,e88201d6-aac1-4396-9ea3-7d3970758341,,execute_actions,1820;7040
+51,go_to,50,,,,,,23,,,,,,,,,,,,,,,,,,
+52,send_message,23,n no,,has_any_word,N,,Here is a comic on combining consequences and ignore.,,,,,,,,,,,,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+53,send_message,52,,,,,,"Parent 1: ""Bailey, please clear the dishes after dinner"" 
+
+Parent 2: ""Sam, time to get ready for bed. Come with me.""
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_1.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+54,send_message,53,,,,,,"Child: ""I don't want to clear the dishes. I want to play with my new toy car. ""
+
+Parent 1: ""The household rule is that you have to help clean up after dinner before you can play with your toys.""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_2.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+55,send_message,54,,,,,,"Child: ""But it is not fair! Sam doesn't have to clean up after dinner!""
+
+Parent 1: ""Bailey, either you clear the table now, or you will not be able to play with your toys later tonight""
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_3.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+56,send_message,55,,,,,,"Parent 1: ""Because you did not listen, you cannot play with your toys. Please get ready for bed. 
+
+Child: ""But that is not fair!""
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_4.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+57,send_message,56,,,,,,"Child: ""But that is not fair. Waaaah!""
+
+(5)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_5.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+58,send_message,57,,,,,,"Parent 1: ""It is so nice to see that you got ready for bed all by yourself!""
+
+Child: ""Now can I play with my toy car?""
+
+(6)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_6.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+59,send_message,58,,,,,,"Parent 1: ""You can play with your car tomorrow. It is bedtime. Come, my sweetie, I will tell your favourite bedtime story.""
+
+(7)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_7.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+60,send_message,59,,,,,,"Parent 1: ""Once upon a time...""
+
+(8)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/rules_at_dinner_8.png,,,,454c107f-8562-42e6-9398-2e6963494760,,execute_actions,2920;2400
+61,split_by_group,60,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,785484f0-6f6b-4b4e-bf88-7667f8c627b7,,split_by_expression,3835;5220
+62,split_by_group,61,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,5daefdc8-4067-4039-b253-50efdc542106,,split_by_expression,4335;5620
+63,split_by_value,62,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,02c31252-244a-4b27-8712-63b97c044e19,,split_by_expression,4585;6420
+64,send_message,63,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added a layer to your House of Support. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,9ac414c5-0b36-417c-935a-5b9c369fdbd2,,execute_actions,4460;6620
+65,send_message,63,,,,,,"Well done! You have added a layer to your House of Support. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,72747811-a6b3-41dd-ba9a-7450d416735f,,execute_actions,4710;6620
+66,split_by_value,62;62,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,7cde4f98-6af6-4757-8b93-b85f7e67757e,,split_by_expression,4085;6220
+67,send_message,66,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,ee41eb6e-668b-4eea-933d-3145845be686,,execute_actions,3960;6620
+68,send_message,66,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,06a1b166-d64b-49d9-b862-eff61b9a94ca,,execute_actions,4210;6620
+69,split_by_group,61;61,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,2f3d0616-57f3-40df-811f-11a8b8e936e1,,split_by_expression,3335;5420
+70,split_by_value,69,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,2a7dedf7-b486-4315-96a5-12d55edc28be,,split_by_expression,3585;6020
+71,send_message,70,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added a layer to your House of Support. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,160e3a20-d5c5-4dd0-90af-fef23100ef71,,execute_actions,3460;6620
+72,send_message,70,,,,,,"Well done! You have added a layer to your House of Support. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,4d8f19ca-b0e1-4713-8f7d-d4f40ff472af,,execute_actions,3710;6620
+73,split_by_value,69;69,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,afdbc4c1-9307-4477-b0cb-455701fdd858,,split_by_expression,3085;5820
+74,send_message,73,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,065c367d-9bf9-42e4-bd70-067aaf824094,,execute_actions,2960;6620
+75,send_message,73,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try to identify one negative attention-seeking behaviour that you can try to first redirect and then ignore if it continues. Remember to ignore the behaviour, not your child! It is not easy, but if you are patient and give it time, it really works. You can do this!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,0356dda1-00ad-4e31-912c-547d7869b57e,,execute_actions,3210;6620
+76,save_value,64;65;67;68;71;72;74;75,,,,,current type assessed,tip,,,,,,,,,,,,,,,1f99eaf6-8ca8-4f6a-b38f-b266523e79b1,,execute_actions,4710;6980
+77,save_value,76,,,,,current activity,ignore,,,,,,,,,,,,,,,1f99eaf6-8ca8-4f6a-b38f-b266523e79b1,,execute_actions,4710;6980
+78,start_new_flow,77,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,de7e2c27-0324-4ae7-975c-014e5f7464ef,,split_by_subflow,4730;7180
+79,send_message,78;78,Complete;Expired,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. ",,,,,,,,,,,,,,,a07f850b-b91a-4e0e-812c-3eda59659b05,,execute_actions,2330;5000
+80,send_message,23,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,4a455d02-6382-41db-b1a4-1395b0701aeb,,execute_actions,1980;2420
+81,go_to,80,,,,,,22,,,,,,,,,,,,,,,,,,

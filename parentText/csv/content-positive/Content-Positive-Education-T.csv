@@ -1,0 +1,23 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Helping your children learn,,,,,,,,,,,,,,,2813fff0-344e-4767-a6c6-6c99fd7d5f1d,,execute_actions,1000;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,b9b0caec-4b14-473e-95a9-0a48597722b7,,split_by_subflow,980;120
+3,send_message,2;2,Complete;Expired,,,,,"COVID-19 has interrupted our children's education with school closures and remote learning. It is normal to feel overwhelmed about to do this alone, especially when we also have stress about work and money. ",,,,,,,,,,,,,,,797f18be-2d85-40a0-bcf0-aed3fd449340,,execute_actions,650;260
+4,split_by_value,3,,,,,,@fields.toolkit,,,,,,,,,,,,,,,df8db311-5559-4e43-844b-49b058a0effd,,split_by_contact_field,650;700
+5,split_by_group,4,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,79e2d84e-6541-4bbb-b052-a7e77b0e3934,,split_by_expression,165;440
+6,send_message,5,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/Family_writing_together.jpg,,,,af4e2c27-2cb1-4e81-b973-35b7ff76369a,,execute_actions,290;640
+7,send_message,5;5,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/Family_writing_together.jpg,,,,96928772-8361-4886-9a53-69f777d7a7ee,,execute_actions,40;640
+8,send_message,4,,,,,,Would you like to learn more about how to support your children with remote learning and returning to school?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/Family_writing_together.jpg,,,,324aae9a-0dcd-4d9b-999c-1719e3bf2e49,,execute_actions,1260;420
+9,wait_for_response,6;7;8,,,,,Result 1,,,,,,,,,,,,,,,,00a8eca6-d127-4169-ae16-7931ae305b3e,,wait_for_response,470;860
+10,save_value,9,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,1335accf-5db5-4ba6-bf67-80ae08e215d5,,execute_actions,1240;940
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,1335accf-5db5-4ba6-bf67-80ae08e215d5,,execute_actions,1240;940
+12,start_new_flow,11,,,,,,PLH - Content - Positive - Education,,,,,,,,,,,,,,d281a3b5-b601-492a-9a2c-da0a67303ec3,e18bdd83-0b7e-44ee-84f7-c4888ed38511,,split_by_subflow,1240;1320
+13,save_value,12,Expired,,,,has expired,tip,,,,,,,,,,,,,,,13c9d136-a5d0-4ecc-aeb8-60feaaab855b,,execute_actions,1660;1300
+14,send_message,13,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,fba54b6b-4619-416d-99f0-6bb4a69b4cc8,,execute_actions,1680;1420
+15,save_value,12;14,Complete;,,,,from theme,no,,,,,,,,,,,,,,,74587484-6f5b-488b-a8a6-1dd89db5bc03,,execute_actions,1160;1540
+16,split_by_value,9,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,64e31d6f-95a1-4242-a89a-acf8019ee98b,,split_by_expression,815;1040
+17,send_message,16,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,383b5255-ef3e-43e1-8dc0-6d20020b5303,,execute_actions,690;1240
+18,send_message,16,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,3769a9d1-a60f-4789-959f-83fe5265e49e,,execute_actions,940;1240
+19,save_value,17;18,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f375f094-b131-4da7-a6e5-b46ce84f4e85,,execute_actions,940;1420
+20,send_message,9,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,c0b64b7f-9a04-4442-9f9c-16e8f2a0f1a0,,execute_actions,;1000
+21,save_value,20,,,,,last interaction,@(now()),,,,,,,,,,,,,,,e349de85-5678-497f-b6b5-0aa9c075e707,,execute_actions,;1340
+22,go_to,21,,,,,,4,,,,,,,,,,,,,,,,,,

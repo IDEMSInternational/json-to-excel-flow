@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_random,start,,,,,,,,,,,,,,,,,,,,,102039b8-c3cd-49f0-be1a-edf37887c73c,,split_by_random,540;120
+2,start_new_flow,1,1,,,,,PLH - Activity - Adult - Calm - A short pause,,,,,,,,,,,,,,de702ee9-7c7d-41b0-9f48-701a569671fd,c3940ec9-4045-418f-80aa-731eea906035,,split_by_subflow,100;380
+3,split_by_value,1,2,,,,,@fields.gender,,,,,,,,,,,,,,,21bd7873-ef44-4b91-a786-5ac959b077d1,,split_by_contact_field,1280;340
+4,start_new_flow,3,woman,@fields.gender,has_any_word,Woman,,PLH - Activity - Adult - Calm - Give yourself a hug,,,,,,,,,,,,,,1df1eab8-bb2a-40cd-bcb2-006b7ae98a93,f897aae0-ed2d-4174-80f8-8cf1577eac21,,split_by_subflow,1260;480
+5,start_new_flow,1,3,,,,,PLH - Activity - Adult - Calm - Taking care of yourself,,,,,,,,,,,,,,d4e9ae3c-6dcb-4dfe-a27b-c2c1d588c9fd,2e7474b7-932a-4d7b-8656-9b51f9923803,,split_by_subflow,300;580
+6,start_new_flow,1,4,,,,,PLH - Activity - Adult - Calm - Magical number,,,,,,,,,,,,,,58b29099-8d7c-4cb6-aa48-f9c9b33d7053,ff761b33-b08b-48ee-892c-4e28ad77100e,,split_by_subflow,500;440
+7,start_new_flow,1,5,,,,,PLH - Activity - Adult - Calm - Stop and listen,,,,,,,,,,,,,,391ac259-ef10-4694-8688-01ba3e630f4e,233c1988-9c8e-46f1-9b94-ac4178d74d79,,split_by_subflow,740;540
+8,start_new_flow,1;3,6;,,,,,PLH - Activity - Adult - Calm - Release some energy,,,,,,,,,,,,,,c4be77c9-6dc0-461d-a6e7-bf430676eede,a698a426-c778-4d40-b9b6-111dd39d8908,,split_by_subflow,980;360

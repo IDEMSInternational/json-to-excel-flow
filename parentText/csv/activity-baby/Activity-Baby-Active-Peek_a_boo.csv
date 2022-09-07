@@ -1,0 +1,4 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Peek-a-Boo! 
+• Cover your face with your hands. 
+• Quickly show your face and say ""Peek-a-Boo!"" or ""Hello!"" Babies love it!",,,,,,,,,,,,,,,3b42b025-a31a-4203-9784-1a5ab9c52b0e,,execute_actions,380;60

@@ -1,0 +1,61 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.next_tip_main,,,,,,,,,,,,,,,0f580213-0117-4eb9-a761-e5b17ca9a017,,split_by_contact_field,460;40
+2,start_new_flow,1,4,@fields.next_tip_main,has_number_eq,4,,PLH - Content - Positive - Introduction,,,,,,,,,,,,,,afaf6a89-ab4b-410e-935b-0c0138957a52,b49cdce1-d1a0-4d5a-8aec-09aac94cff87,,split_by_subflow,20;160
+3,split_by_value,1,5,@fields.next_tip_main,has_number_eq,5,,@fields.age_group_for_tips,,,,,,,,,,,,,,,574bffd7-b2ee-4b5d-ac52-61fef83c0dd5,,split_by_contact_field,260;220
+4,start_new_flow,3,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Supportive - Activities for babies,,,,,,,,,,,,,,f11b99bb-15a8-4120-b767-df879ba708d7,e7a40629-42a1-4c0b-a546-da6f0b744c5a,,split_by_subflow,220;320
+5,start_new_flow,3,,,,,,PLH - Content - Positive - Positive instructions,,,,,,,,,,,,,,b1e03180-c408-4311-8ebe-fbbaf623d635,d2ae1c1c-31cb-4004-a86f-3e53d01eec70,,split_by_subflow,260;480
+6,split_by_value,1,6,@fields.next_tip_main,has_any_word,6,,@fields.age_group_for_tips,,,,,,,,,,,,,,,778086cd-2389-4719-a6d9-7ccfe5664c57,,split_by_contact_field,40;480
+7,start_new_flow,6,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - Book sharing - Timed intro,,,,,,,,,,,,,,c8fe4261-f046-499a-87b8-02b0d6f832c4,f647fb31-acb8-4153-a9a3-342da640bc21,,split_by_subflow,240;620
+8,start_new_flow,6,,,,,,PLH - Content - Positive - Behave - Praise - Timed intro,,,,,,,,,,,,,,99fa3778-38a3-4135-8e06-0766f70e5b32,1046d3e9-68f3-4b61-bf3d-e75ad4815994,,split_by_subflow,20;720
+9,start_new_flow,1,7,@fields.next_tip_main,has_any_word,7,,PLH - Content - Positive - Behave - Routines - Timed intro,,,,,,,,,,,,,,04d446a8-a4f3-45dc-b1d7-d9749682f6f0,0f4e2c40-0a64-45c3-b20c-d938f2bdfb77,,split_by_subflow,500;200
+10,split_by_value,1,9,@fields.next_tip_main,has_any_word,9,,@fields.age_group_for_tips,,,,,,,,,,,,,,,c7cd9ee9-f80a-42dc-a379-56d5f7cc6c58,,split_by_contact_field,1360;200
+11,start_new_flow,10,,,,,,PLH - Supportive - Covid,,,,,,,,,,,,,,f40a3a39-2ba6-476c-8bd8-ce171420a03d,3554dfb1-2fa7-49c8-b5f7-d8cf2b9462ae,,split_by_subflow,1540;60
+12,split_by_value,1,10,@fields.next_tip_main,has_any_word,10,,@fields.age_group_for_tips,,,,,,,,,,,,,,,941b66af-86b2-4cbd-9841-4af1dea4d92a,,split_by_contact_field,1220;1420
+13,start_new_flow,12,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Supportive - Activities for babies,,,,,,,,,,,,,,f11b99bb-15a8-4120-b767-df879ba708d7,bf082f14-ecc7-4fe4-b9f6-feded8d38fa5,,split_by_subflow,980;1440
+14,start_new_flow,12,,,,,,PLH - Content - Positive - Rules,,,,,,,,,,,,,,60b7961b-13a8-4670-a966-748ec8f06766,a734229b-bb1c-44b5-bfa3-74c42873c079,,split_by_subflow,1300;1540
+15,split_by_value,1,,,,,,@fields.next_tip_main,,,,,,,,,,,,,,,587e27b1-e044-4d11-926b-ce31e17b5a98,,split_by_contact_field,540;760
+16,split_by_value,15,11,@fields.next_tip_main,has_any_word,11,,@fields.age_group_for_tips,,,,,,,,,,,,,,,24087199-4ef1-4c14-b7f8-96cf8095119a,,split_by_contact_field,40;860
+17,start_new_flow,10;16,baby;baby,@fields.age_group_for_tips;@fields.age_group_for_tips,has_any_word;has_any_word,Baby;Baby,,PLH - Supportive - Activities for babies,,,,,,,,,,,,,,f11b99bb-15a8-4120-b767-df879ba708d7,423f7268-1a7a-4930-bbea-cdc18a9f67fe,,split_by_subflow,1300;320
+18,start_new_flow,16,,,,,,PLH - Content - Positive - Education - Timed intro,,,,,,,,,,,,,,77fc6ec8-4697-4616-88e4-60149dee837f,33bbdcc9-869e-4538-ae04-bf83f1a498c7,,split_by_subflow,80;960
+19,split_by_value,15,12,@fields.next_tip_main,has_any_word,12,,@fields.age_group_for_tips,,,,,,,,,,,,,,,d3d2aac0-e537-485b-b9cc-b2d03bf210cc,,split_by_contact_field,40;1120
+20,start_new_flow,19,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - Online adults - Timed intro,,,,,,,,,,,,,,b6b6dd4d-fe12-4458-b879-316b6a040f69,df79b140-64e5-4e71-b977-8193ad3003ae,,split_by_subflow,;1240
+21,start_new_flow,19,,,,,,PLH - Content - Positive - Online children - Timed intro,,,,,,,,,,,,,,fb332ce0-4787-438a-b5a8-7727a9a15b28,d5c4d245-bfe6-41da-9f39-bb5f3779772d,,split_by_subflow,100;1380
+22,split_by_value,15,13,@fields.next_tip_main,has_any_word,13,,@fields.age_group_for_tips,,,,,,,,,,,,,,,befe40e3-8f0a-4aa9-8089-ad4858ab7edb,,split_by_contact_field,540;980
+23,start_new_flow,22,teen,@fields.age_group_for_tips,has_any_word,Teen,,PLH - Supportive - Share,,,,,,,,,,,,,,8fc0dab6-c0f8-4d6c-bd8d-51944d9505fc,7a1e8bb9-879e-4a1e-aebe-53de248becea,,split_by_subflow,560;1300
+24,start_new_flow,22,,,,,,PLH - Content - Positive - Behave - Redirect - Timed intro,,,,,,,,,,,,,,221299f8-2b0e-41d7-a05a-e8e82305a56b,1c9674d6-5529-430c-8d19-6618f6757887,,split_by_subflow,560;1100
+25,split_by_value,15,14,@fields.next_tip_main,has_any_word,14,,@fields.age_group_for_tips,,,,,,,,,,,,,,,0d9cb1ef-e3d6-4976-b669-ef9f6409ef4b,,split_by_contact_field,320;900
+26,start_new_flow,25,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - Behave - Crying - Timed intro,,,,,,,,,,,,,,375ae513-10e5-48ec-a148-0398b5bb4cc1,7ff54557-299f-4717-9225-4e437cd4460c,,split_by_subflow,300;1200
+27,start_new_flow,25,,,,,,PLH - Content - Positive - Community safety,,,,,,,,,,,,,,0e983cc8-388d-4d56-b540-5c491edbc7a6,c10bd609-23af-4b8f-b750-b15bb7d3edda,,split_by_subflow,300;1040
+28,split_by_value,15,15,@fields.next_tip_main,has_any_word,15,,@fields.age_group_for_tips,,,,,,,,,,,,,,,7cacde2e-189d-454d-bec3-1620a1dcb5b8,,split_by_contact_field,920;920
+29,start_new_flow,28,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Supportive - Help reminder,,,,,,,,,,,,,,8d48227f-e7a0-4aa6-a29e-d9370ca061e0,5beb2790-017e-4227-8f1c-828ead3561ca,,split_by_subflow,880;1040
+30,start_new_flow,28,,,,,,PLH - Content - Positive - Behave - Consequences - Timed intro,,,,,,,,,,,,,,7f995aa0-ae29-44e3-b0ad-cd38af7b589e,80035e23-62c9-4b43-bfac-9675f23d9deb,,split_by_subflow,920;1180
+31,split_by_value,15,16,@fields.next_tip_main,has_any_word,16,,@fields.age_group_for_tips,,,,,,,,,,,,,,,c8495f8e-9c4e-4a36-af1d-e5a24d27b600,,split_by_contact_field,1340;840
+32,start_new_flow,31,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Supportive - Activities for babies,,,,,,,,,,,,,,f11b99bb-15a8-4120-b767-df879ba708d7,c6ceb3f8-3064-4737-bef0-1f76ab0d9f2a,,split_by_subflow,1200;960
+33,start_new_flow,31,teen,@fields.age_group_for_tips,has_any_word,Teen,,PLH - Content - Positive - Behave - ProblemSolving - Timed intro,,,,,,,,,,,,,,24b6c98b-2aaa-4030-b5f7-9f5affa4dc04,d752be2e-b626-41bb-9d9b-1d710136b662,,split_by_subflow,1420;980
+34,start_new_flow,31,,,,,,PLH - Content - Positive - Behave - Ignore - Timed intro,,,,,,,,,,,,,,b570fa21-cd75-421e-a222-b25c274d2204,e0a6c476-6797-4e93-86f4-60954bc22dae,,split_by_subflow,1280;1180
+35,split_by_value,15,,,,,,@fields.next_tip_main,,,,,,,,,,,,,,,c0f8caac-687d-48d3-9d9b-1844e62e63b7,,split_by_contact_field,500;1640
+36,split_by_value,35,17,@fields.next_tip_main,has_any_word,17,,@fields.age_group_for_tips,,,,,,,,,,,,,,,06cb0588-9a89-4018-8d31-a2ba7c781ac5,,split_by_contact_field,240;2020
+37,start_new_flow,36,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Supportive - Behave reminder,,,,,,,,,,,,,,8489d8d5-3dc8-463b-9e17-60d5a930e390,caf633f0-a62e-4a1d-9f73-b9300aa1e74a,,split_by_subflow,240;2340
+38,start_new_flow,36,,,,,,PLH - Content - Positive - Behave - Emotion - Timed intro,,,,,,,,,,,,,,46d1dfc6-ec21-4df5-942c-8813b26560e7,e111a1c3-6423-47f5-a877-632a634eba1b,,split_by_subflow,300;2180
+39,split_by_value,35,18,@fields.next_tip_main,has_any_word,18,,@fields.age_group_for_tips,,,,,,,,,,,,,,,a5a4e56e-75e0-445f-b996-bd8907ad5aae,,split_by_contact_field,80;1580
+40,start_new_flow,39,teen,@fields.age_group_for_tips,has_any_word,Teen,,PLH - Content - Positive - Behave - Crisis - Timed intro,,,,,,,,,,,,,,834191e5-450d-4af3-b192-4350e4a7d457,47684b92-574c-40fb-a599-9b9a50541287,,split_by_subflow,60;1700
+41,start_new_flow,39,,,,,,PLH - Content - Positive - Safe or unsafe touch - Timed intro,,,,,,,,,,,,,,7debb382-39f6-49c0-9b2e-5da96bcdb277,664bc91a-fc7e-40d4-893a-7bc9052ee373,,split_by_subflow,40;1880
+42,split_by_value,35,19,@fields.next_tip_main,has_any_word,19,,@fields.age_group_for_tips,,,,,,,,,,,,,,,7cc42df9-da96-43ea-8fd8-61531fc25624,,split_by_contact_field,560;1780
+43,start_new_flow,42,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - Budget adults - Timed intro,,,,,,,,,,,,,,66e68eea-54bf-4390-89c0-a9be9baa3bd4,d5a8834d-e009-4a18-8e84-734e945a0f07,,split_by_subflow,500;1900
+44,start_new_flow,42,,,,,,PLH - Content - Positive - Budget with children - Timed intro,,,,,,,,,,,,,,82a70d44-3235-4748-83fd-d5fa929a4766,06df579e-9549-40a9-b608-86525f123dff,,split_by_subflow,800;1980
+45,split_by_value,35,23,@fields.next_tip_main,has_any_word,23,,@fields.age_group_for_tips,,,,,,,,,,,,,,,5a8b0021-1f5d-47e0-a93b-4a2a6a2d4daf,,split_by_contact_field,640;2140
+46,start_new_flow,45,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - CheckIn - Budget adults,,,,,,,,,,,,,,c20a1a93-a885-4459-b1ae-8d5cc96c0efd,f31128e8-fa4d-4ca7-a458-25b1fc9ffa58,,split_by_subflow,580;2240
+47,start_new_flow,45,,,,,,PLH - Content - Positive - CheckIn - Budget with children,,,,,,,,,,,,,,3f4c9cc6-e130-488f-84f8-bab22e99e7d4,32031e7b-5168-4cea-8acf-11152f56f701,,split_by_subflow,820;2260
+48,save_flow_result,35,,,,,main content,no,,,,,,,,,,,,,,,818fca03-16d7-42ab-9909-8f045676495d,,execute_actions,780;1660
+49,save_value,14;18;2;20;21;24;26;27;30;33;34;38;40;41;43;44;46;47;5;7;8;9,Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired,,,,has expired,tip,,,,,,,,,,,,,,,cf9d2886-3090-41de-8949-32b4851c2dc6,,execute_actions,500;440
+50,send_message,49,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,dcc8696c-774e-4483-9611-1c0eb1e3fa06,,execute_actions,500;560
+51,save_value,11;13;17;23;29;32;37;4,Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired,,,,has expired,tip,,,,,,,,,,,,,,,5ec514b4-2dba-498b-9b30-8498c07636ea,,execute_actions,1120;620
+52,send_message,51,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,9417e3da-d4ce-4826-b908-0956f92b8847,,execute_actions,1100;720
+53,split_by_value,1,8,@fields.next_tip_main,has_any_word,8,,@fields.get_ipv_content,,,,,,,,,,,,,,,65074094-34aa-4c8a-840b-3135e7b7c12d,,split_by_contact_field,720;200
+54,start_new_flow,53,yes,@fields.get_ipv_content,has_any_word,Yes,,PLH - Content - Positive - IPV,,,,,,,,,,,,,,902cc573-5ec6-43f3-8ebd-57a042bf1cf2,25570ae5-bc7d-438c-9d31-b815d05a4ba5,,split_by_subflow,740;340
+55,go_to,54,Expired,,,,,49,,,,,,,,,,,,,,,,,,
+56,start_new_flow,53,no,@fields.get_ipv_content,has_any_word,No,,PLH - Content - Positive - Family - Timed intro,,,,,,,,,,,,,,ea204181-4853-488e-bba1-f7690fd04c66,7b134bb0-dd49-4cd3-bcde-ce5ea34678db,,split_by_subflow,960;340
+57,go_to,56,Expired,,,,,49,,,,,,,,,,,,,,,,,,
+58,start_new_flow,53,,,,,,PLH - Welcome - Initial registration - Relationship,,,,,,,,,,,,,,758e1e77-1ce7-45ec-a5a9-4f76b2553747,da89229c-db50-464a-afa7-bd0e4ff3faf8,,split_by_subflow,980;160
+59,go_to,58,Complete,,,,,53,,,,,,,,,,,,,,,,,,
+60,go_to,58,Expired,,,,,51,,,,,,,,,,,,,,,,,,

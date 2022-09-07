@@ -1,0 +1,40 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,55b96e8c-3fb0-4116-87ca-2ae46a07b6b7,,split_by_expression,1565;
+2,split_by_value,1,,@fields.user_name,has_text,user_name,,@fields.child_nickname,,,,,,,,,,,,,,,c6cd7158-3c42-47bc-bd4e-1a1b33554664,,split_by_expression,1315;200
+3,send_message,2,,@fields.child_nickname,has_text,child_nickname,,Hi @fields.user_name! Did you praise @fields.child_nickname during one-on-one time or any other time during the day? ,Yes,No,,,,,,,,,,,,,0e226cdb-0a90-4119-a383-44a23896c6f7,,execute_actions,1190;600
+4,send_message,2,,,,,,Hi @fields.user_name! Did you praise your child during one-on-one time or any other time during the day? ,Yes,No,,,,,,,,,,,,,a2636cf4-8ce8-4f00-ae61-1f12113a5d01,,execute_actions,1440;600
+5,split_by_value,1,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,0db74e22-e8b7-47b5-bcc9-30e30dd39a80,,split_by_expression,1815;400
+6,send_message,5,,@fields.child_nickname,has_text,child_nickname,,Hi! Did you praise @fields.child_nickname during one-on-one time or any other time during the day? ,Yes,No,,,,,,,,,,,,,76a85e33-2c78-41d3-a71c-5e0f2965a25d,,execute_actions,1690;600
+7,send_message,5,,,,,,Hi! Did you praise your child during one-on-one time or any other time during the day? ,Yes,No,,,,,,,,,,,,,a786807e-598d-49dc-899d-72675064a09a,,execute_actions,1940;600
+8,wait_for_response,3;4;6;7,,,,,checkin_managed,,,,,,,,,,,,,,,,39700f56-5846-461d-a0cd-90d8669c7221,,wait_for_response,1940;800
+9,save_value,8,yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,ca496443-e4db-4740-b6e8-69be08039791,,execute_actions,580;900
+10,send_message,8,no n,,has_any_word,No,,"It can be hard sometime to remember. Next time you spend one-on-one time, try and think of one thing you can praise them for. You can even say “thank you for spending time with me!”.",,,,,,,,,,,,,,,108c62a6-f5be-4f79-b14f-dac100571dec,,execute_actions,2330;980
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,0a0fc57b-2a1c-4928-970c-a8624c48d213,,execute_actions,2330;1400
+12,send_message,8,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,11016bb8-c6b9-4d69-b554-ffceebb592b1,,execute_actions,2630;820
+13,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,3c39c3ad-d96c-4029-9527-d2f48b661cad,,execute_actions,2630;940
+14,go_to,13,,,,,,1,,,,,,,,,,,,,,,,,,
+15,split_by_value,9,,,,,,@fields.user_name,,,,,,,,,,,,,,,85f008a4-7006-4ce3-8e2d-753ba083ef83,,split_by_expression,455;1000
+16,send_message,15,,@fields.user_name,has_text,user_name,,"Well done, great job for remembering @fields.user_name. How did your child or teen respond?",Surprised,Happy,My child did not like it,I don't know,,,,,,,,,,,2a6e9c61-6550-4952-9b15-8a8c1bba299f,,execute_actions,330;1200
+17,send_message,15,,,,,,"Well done, great job for remembering. How did your child or teen respond?",Surprised,Happy,My child did not like it,I don't know,,,,,,,,,,,724849df-6e57-4c29-92cf-598466983c45,,execute_actions,580;1200
+18,wait_for_response,16;17,,,,,checkin_how,,,,,,,,,,,,,,,,1d1072fe-ac97-4761-a499-9ab207d82799,,wait_for_response,310;1460
+19,split_by_value,18,surprised,,has_any_word,1,,@fields.child_nickname,,,,,,,,,,,,,,,945429c5-7187-4164-9b0c-9cd97ea04229,,split_by_expression,125;1660
+20,send_message,19,,@fields.child_nickname,has_text,child_nickname,,"Remember, it takes some time for @fields.child_nickname to get used to you praising them. The more time you spend with them, the better it will go!",,,,,,,,,,,,,,,3fe2f9c2-744b-4fa6-9230-8e63284586a4,,execute_actions,;1860
+21,send_message,19,,,,,,"Remember, it takes some time for your child or teen to get used to you praising them. The more time you spend with them, the better it will go!",,,,,,,,,,,,,,,2225babe-f745-440f-9c22-ebab2d5a1f38,,execute_actions,250;1860
+22,split_by_value,18,happy,,has_any_word,2,,@fields.child_nickname,,,,,,,,,,,,,,,5d1b0289-a646-4536-bd98-13ccee0efcec,,split_by_expression,865;1880
+23,send_message,22,,@fields.child_nickname,has_text,child_nickname,,"Well done for noticing how @fields.child_nickname felt, keep it up!",,,,,,,,,,,,,,,c182425c-1c90-42dc-9bce-1fc9e41ccbed,,execute_actions,740;2080
+24,send_message,22,,,,,,"Well done for noticing how your child or teen felt, keep it up!",,,,,,,,,,,,,,,3eb7aa39-1900-4f2f-af27-7acc68a5ede0,,execute_actions,990;2080
+25,split_by_value,18,My child did not like it,,has_only_phrase,3,,@fields.child_nickname,,,,,,,,,,,,,,,c5f2c78a-6d02-4426-b9aa-0bac02be3e33,,split_by_expression,2205;2100
+26,send_message,25,,@fields.child_nickname,has_text,child_nickname,,"It happens, just be patient. Make sure to keep spending time with @fields.child_nickname, so they will value your opinion more and more. When your praise is genuine, you will see the benefits soon!",,,,,,,,,,,,,,,d197293d-30b3-43e2-bc19-9275b47743a8,,execute_actions,2080;2300
+27,send_message,25,,,,,,"It happens, just be patient. Make sure to keep spending time with your child or teen, so they will value your opinion more and more. When your praise is genuine, you will see the benefits soon!",,,,,,,,,,,,,,,131eef15-9634-490e-86e2-3ba03d09d7ce,,execute_actions,2330;2300
+28,send_message,18,I don't know,,has_only_phrase,4,,"No problem, try to notice how they respond next time!",,,,,,,,,,,,,,,875508b1-5517-4ae4-a5f6-8cf1ec34abf8,,execute_actions,2610;2080
+29,send_message,18,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,ab443fe1-3c63-4927-a1a1-7e1929cc7880,,execute_actions,1070;1340
+30,go_to,29,,,,,,15,,,,,,,,,,,,,,,,,,
+31,send_message,11;20;21;23;24;26;27;28,,,,,,Would you like to review the content?,Yes,No,,,,,,,,,,,,,b6218070-9841-4fc7-bfa3-4134c9c350bc,,execute_actions,2950;1500
+32,wait_for_response,31,,,,,Result 3,,,,,,,,,,,,,,,,30025ce8-9507-4ccf-91f7-59273f7056b0,,wait_for_response,2950;2080
+33,save_value,32,yes y,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,1570af10-f1c4-4316-8c94-d71523032d85,,execute_actions,2890;2640
+34,start_new_flow,33,,,,,,PLH - Content - Positive - Behave - Praise,,,,,,,,,,,,,,3894dff4-93f0-42a8-92a3-6220bff18bc8,6f76c60e-d3c8-4e38-805e-6b4349b2f326,,split_by_subflow,2850;2740
+35,split_by_value,32,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,4b4a3002-8924-48d8-8ad0-2a8e8b75afbd,,split_by_expression,3255;2420
+36,send_message,35,,@fields.user_name,has_text,user_name,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later @fields.user_name! ",,,,,,,,,,,,,,,600f6f4c-df83-4d7b-8632-b4d1b632a6bd,,execute_actions,3130;2620
+37,send_message,35,,,,,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later! ",,,,,,,,,,,,,,,586dc760-75a5-4a45-9648-25b11e11e7b9,,execute_actions,3380;2620
+38,send_message,32,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,383e9c6c-dd9b-46d1-9a93-bd41947bfdb9,,execute_actions,3460;1620
+39,go_to,38,,,,,,31,,,,,,,,,,,,,,,,,,

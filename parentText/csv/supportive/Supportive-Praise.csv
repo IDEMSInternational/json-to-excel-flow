@@ -1,0 +1,164 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,d109fc86-18af-4643-9f4f-d20a3f2c1407,,split_by_expression,6415;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! How is your parenting going today? ,Great,Okay,Bad,,,,,,,,,,,,47708101-b349-4283-9fa0-6bda8517cb03,,execute_actions,6290;200
+3,send_message,1,,,,,,Hi! How is your parenting going today? ,Great,Okay,Bad,,,,,,,,,,,,64b0b9e8-2835-4fee-bf03-d6bae5cccc64,,execute_actions,6540;200
+4,wait_for_response,2;3,,,,,praise_interaction,,,,,,,,,,,,,,,,f2322bda-eaea-4d8a-bc55-bdd5a8c9771c,,wait_for_response,6540;360
+5,save_value,4,great,,has_any_word,Great,last interaction,@(now()),,,,,,,,,,,,,,,3b21a816-b5e7-4ee8-8253-6061e47efb01,,execute_actions,3760;700
+6,split_by_value,5,,,,,,@fields.gender,,,,,,,,,,,,,,,f0c447c2-a63c-4df4-a091-4466cc203a3b,,split_by_contact_field,3760;800
+7,split_random,6,man,@fields.gender,has_any_word,man,,,,,,,,,,,,,,,,,1bf5b422-c03b-45d8-b69c-2ff8b94fc23d,,split_by_random,1310;980
+8,split_random,7,1,,,,,,,,,,,,,,,,,,,,bd7cd3ae-5fc4-488a-b02f-f576672645aa,,split_by_random,520;1160
+9,split_by_value,8,1,,,,,@fields.user_name,,,,,,,,,,,,,,,bb952527-1e1a-4d10-b5d0-123dc6630c2e,,split_by_expression,125;1260
+10,send_message,9,,@fields.user_name,has_text,user_name,,Thank you for being a superman and being there for your family today! Keep it up @fields.user_name!,,,,,,,,,,,,,,,e037af75-0c9e-4109-9daa-638065219128,,execute_actions,;1460
+11,send_message,9,,,,,,Thank you for being a superman and being there for your family today! Keep it up!,,,,,,,,,,,,,,,e4770dc8-9da0-4230-9be6-0199d37dc40e,,execute_actions,250;1460
+12,split_by_value,8,2,,,,,@fields.user_name,,,,,,,,,,,,,,,7e3266bf-5b98-4b28-9b8e-77550fe77096,,split_by_expression,2095;1480
+13,send_message,12,,@fields.user_name,has_text,user_name,,Well done for being a man who supports their family @fields.user_name. You are a real hero.,,,,,,,,,,,,,,,9ba1b527-520c-4b6c-974e-f4c7f6e65c37,,execute_actions,1970;1680
+14,send_message,12,,,,,,Well done for being a man who supports their family. You are a real hero.,,,,,,,,,,,,,,,c06fa311-adf5-4842-93f4-ae969d58ff23,,execute_actions,2470;1680
+15,split_by_value,8,3,,,,,@fields.user_name,,,,,,,,,,,,,,,eb5ae224-3933-41d8-b4a2-16708a89532d,,split_by_expression,5105;1700
+16,send_message,15,,@fields.user_name,has_text,user_name,,You’re a man who puts a lot of thought into everything you do. We see it and appreciate it @fields.user_name.,,,,,,,,,,,,,,,a677e223-cd63-4a8b-9ff2-e0be972fd307,,execute_actions,4980;1900
+17,send_message,15,,,,,,You’re a man who puts a lot of thought into everything you do. We see it and appreciate it.,,,,,,,,,,,,,,,7c5bd204-c345-47a6-9e53-11190bf9f786,,execute_actions,5230;1900
+18,split_by_value,8,4,,,,,@fields.user_name,,,,,,,,,,,,,,,f20e87f5-7bca-467a-81f2-1bdbe8d7a1ee,,split_by_expression,395;2640
+19,send_message,18,,@fields.user_name,has_text,user_name,,Thank you for your dedication @fields.user_name! The world needs more men like you.,,,,,,,,,,,,,,,07960bab-dfbc-411b-96df-0e2b6122c3cb,,execute_actions,270;3040
+20,send_message,18,,,,,,Thank you for your dedication! The world needs more men like you.,,,,,,,,,,,,,,,63f6b803-989d-4456-96b8-bc216082685e,,execute_actions,520;3040
+21,split_by_value,8,5,,,,,@fields.user_name,,,,,,,,,,,,,,,27ac5233-2daa-4bcd-a221-f0e2e65f156f,,split_by_expression,2615;2840
+22,send_message,21,,@fields.user_name,has_text,user_name,,You are such a great example for all men! Keep up the good work @fields.user_name!,,,,,,,,,,,,,,,be1e4e60-e626-459b-b7db-28fa5cfd501c,,execute_actions,2490;3040
+23,send_message,21,,,,,,You are such a great example for all men! Keep up the good work.,,,,,,,,,,,,,,,25fcb7ff-5ee2-45ef-b2ca-0d9ed8eda01e,,execute_actions,2990;3040
+24,split_random,6,woman,@fields.gender,has_any_word,woman,,,,,,,,,,,,,,,,,a1780cb1-d320-48db-aaae-bc918cc1fe0d,,split_by_random,8880;1140
+25,split_random,24,1,,,,,,,,,,,,,,,,,,,,5e6eb0f3-ce69-4d21-8b37-d94e18662d98,,split_by_random,8780;1460
+26,split_by_value,25,1,,,,,@fields.user_name,,,,,,,,,,,,,,,dbf4c5b1-c7a3-430f-8d71-1b24e495d711,,split_by_expression,7325;1960
+27,send_message,26,,@fields.user_name,has_text,user_name,,Hooray @fields.user_name! Other women around the world are cheering for you right now!,,,,,,,,,,,,,,,e6908e8f-ff91-4442-b6ef-06c5ab839f42,,execute_actions,7200;2160
+28,send_message,26,,,,,,Hooray! Other women around the world are cheering for you right now!,,,,,,,,,,,,,,,555ea80b-c598-4f8c-8c43-af2c7d8bec0c,,execute_actions,7700;2160
+29,split_by_value,25,2,,,,,@fields.user_name,,,,,,,,,,,,,,,d93acdf7-ee22-4c2f-882c-dcb5c8560b92,,split_by_expression,9295;2400
+30,send_message,29,,@fields.user_name,has_text,user_name,,Thank you for being an inspiration to other women. Keep shining that light of yours @fields.user_name! ,,,,,,,,,,,,,,,65e9bff9-d6cb-4c18-965c-2266d73e7dd3,,execute_actions,9170;2600
+31,send_message,29,,,,,,Thank you for being an inspiration to other women. Keep shining that light of yours! ,,,,,,,,,,,,,,,4c974427-8680-4be8-b627-f3ef2bc2cd83,,execute_actions,9420;2600
+32,split_by_value,25,3,,,,,@fields.user_name,,,,,,,,,,,,,,,4396265a-ac9e-405b-85b4-3dbeccebf602,,split_by_expression,11515;2180
+33,send_message,32,,@fields.user_name,has_text,user_name,,Thank you for your dedication @fields.user_name! The world needs more women like you.,,,,,,,,,,,,,,,e7efbcc4-e826-402a-b58b-72cc0df6a9bb,,execute_actions,11390;2380
+34,send_message,32,,,,,,Thank you for your dedication! The world needs more women like you.,,,,,,,,,,,,,,,c1c0bbb8-c8f9-449e-9a9f-3d5c9c424946,,execute_actions,11640;2380
+35,split_random,24;6;7,2;;2,,,,,,,,,,,,,,,,,,,,99546b2a-5140-48d5-8b41-0ac27f437871,,split_by_random,4960;3140
+36,split_by_value,35,1,,,,,@fields.user_name,,,,,,,,,,,,,,,b64c5bf2-39fb-4d38-a6c8-c50c409694d5,,split_by_expression,2865;3260
+37,send_message,36,,@fields.user_name,has_text,user_name,,So good to hear that you are doing well @fields.user_name. What a wonderful feeling!,,,,,,,,,,,,,,,f505e8c6-c80b-4d41-9c28-2df3a5a3bf16,,execute_actions,2740;3660
+38,send_message,36,,,,,,So good to hear that you are doing well. What a wonderful feeling!,,,,,,,,,,,,,,,60829d9c-0a78-4643-bf82-fa16fe571804,,execute_actions,2990;3660
+39,split_by_value,35,2,,,,,@fields.user_name,,,,,,,,,,,,,,,27a6fb0a-8ffb-44cc-8ee7-7c8881430849,,split_by_expression,4835;3460
+40,send_message,39,,@fields.user_name,has_text,user_name,,"Hooray @fields.user_name! Trust that your hard work is bearing sweet fruits, even if you can’t taste them yet!",,,,,,,,,,,,,,,10666f6b-5a86-4ba9-8bb7-548017939b4e,,execute_actions,4710;3660
+41,send_message,39,,,,,,"Hooray! Trust that your hard work is bearing sweet fruits, even if you can’t taste them yet!",,,,,,,,,,,,,,,3666e000-e0cf-4615-a5a3-6377bd8b75c3,,execute_actions,4960;3660
+42,split_by_value,35,3,,,,,@fields.user_name,,,,,,,,,,,,,,,ff412b79-982a-4c11-b620-134d59b1f8a6,,split_by_expression,7055;3680
+43,send_message,42,,@fields.user_name,has_text,user_name,,Thank you for bringing the sunshine of positive attention into your family. Keep shining @fields.user_name!,,,,,,,,,,,,,,,6dcd6d27-f70c-47fd-9d5a-2b5b07c4f22c,,execute_actions,6930;4080
+44,send_message,42,,,,,,Thank you for bringing the sunshine of positive attention into your family. Keep shining!,,,,,,,,,,,,,,,27b36d75-6593-4b51-a88a-ee2264567dea,,execute_actions,7180;4080
+45,split_by_value,35,4,,,,,@fields.user_name,,,,,,,,,,,,,,,e2014ad8-56b1-42bb-821f-0eaa855ff92b,,split_by_expression,9025;3880
+46,send_message,45,,@fields.user_name,has_text,user_name,,Ten points for you today! Together we can overcome any challenge @fields.user_name.,,,,,,,,,,,,,,,35a9ee9d-15c0-4eed-8c88-6a4e69fd9de1,,execute_actions,8900;4080
+47,send_message,45,,,,,,Ten points for you today! Together we can overcome any challenge.,,,,,,,,,,,,,,,26744daa-ffcd-44bb-a3df-df5e048e066a,,execute_actions,9150;4080
+48,split_by_value,35,5,,,,,@fields.user_name,,,,,,,,,,,,,,,6967d95f-bb1a-417a-843e-24a1d756c29a,,split_by_expression,3135;4240
+49,send_message,48,,@fields.user_name,has_text,user_name,,Has anyone told you how incredible you are for being there for your children during a global pandemic? There’s no guidebook for these challenging times but you’re doing it! That makes you amazing @fields.user_name!,,,,,,,,,,,,,,,79ffb69d-51ef-4faf-9aa9-ac28b4f30747,,execute_actions,3010;4840
+50,send_message,48,,,,,,Has anyone told you how incredible you are for being there for your children during a global pandemic? There’s no guidebook for these challenging times but you’re doing it! That makes you amazing!,,,,,,,,,,,,,,,42e6453d-ca0a-44eb-a479-b07ceacc12c3,,execute_actions,3760;4840
+51,split_by_value,35,6,,,,,@fields.user_name,,,,,,,,,,,,,,,fb38fb3f-1164-49d4-a93c-fbe41126d354,,split_by_expression,5375;4440
+52,send_message,51,,@fields.user_name,has_text,user_name,,"Thank you for your kindness and patience today @fields.user_name! Even when it’s tough, your words of praise, your smile and your attention are like sunshine for your children.",,,,,,,,,,,,,,,026badd5-6e9f-4782-8ad9-212db5a3b81f,,execute_actions,5250;4840
+53,send_message,51,,,,,,"Thank you for your kindness and patience today! Even when it’s tough, your words of praise, your smile and your attention are like sunshine for your children.",,,,,,,,,,,,,,,aed2ae42-3fdb-45c0-a4c3-4eabb68ddeb1,,execute_actions,6250;4840
+54,split_by_value,35,7,,,,,@fields.user_name,,,,,,,,,,,,,,,733e2e1d-cdd9-46e5-99c7-a1a1083d7bca,,split_by_expression,7865;4640
+55,send_message,54,,@fields.user_name,has_text,user_name,,Your curiosity and creativity are paying off! Give yourself a hug @fields.user_name!,,,,,,,,,,,,,,,daad4950-79e8-403b-859d-c159761f2c67,,execute_actions,7740;4840
+56,send_message,54,,,,,,Your curiosity and creativity are paying off! Give yourself a hug!,,,,,,,,,,,,,,,943ef990-8e30-4b16-9741-fd8843f0d450,,execute_actions,8490;4840
+57,send_message,35,8,,,,,Every time you take a pause is an act of kindness. Be kind to yourself and your family today!,,,,,,,,,,,,,,,21279c5b-e585-46c2-9241-d22f21baa00e,,execute_actions,10230;4860
+58,save_value,4,okay,,has_any_word,Okay,last interaction,@(now()),,,,,,,,,,,,,,,6bb34342-60a4-41af-a211-ffd5880320cc,,execute_actions,6870;5240
+59,split_by_value,58,,,,,,@fields.time_of_day,,,,,,,,,,,,,,,b33cb378-09fb-4b1d-8b4f-9ccd88e9a1be,,split_by_contact_field,6850;5380
+60,split_random,59,evening,@fields.time_of_day,has_any_word,Evening,,,,,,,,,,,,,,,,,82a54c2e-10e2-49ff-b4ab-03dae0cb03d3,,split_by_random,1580;5500
+61,split_by_value,60,1,,,,,@fields.user_name,,,,,,,,,,,,,,,9d20c02c-3824-4cbc-b9dd-2d10be318974,,split_by_expression,1455;7580
+62,send_message,61,,@fields.user_name,has_text,user_name,,You made it to the end of the day! Now it’s time for you. You deserve a break @fields.user_name!,,,,,,,,,,,,,,,17c4e24d-7ce6-41f6-8119-5b251d2c012f,,execute_actions,1330;7980
+63,send_message,61,,,,,,You made it to the end of the day! Now it’s time for you. You deserve a break!,,,,,,,,,,,,,,,0f61e8d3-67db-4a11-b0d9-67e2b73bc893,,execute_actions,1580;7980
+64,split_by_value,60,2,,,,,@fields.user_name,,,,,,,,,,,,,,,e30857ec-2f44-4a5b-a46a-1eab7a16d2cc,,split_by_expression,3905;8140
+65,send_message,64,,@fields.user_name,has_text,user_name,,Well done for getting to the end of the day @fields.user_name! Sometimes that’s all we can do. Get some rest and try again tomorrow!,,,,,,,,,,,,,,,5820c1f7-f3a7-4ea9-9e9b-914227a02930,,execute_actions,3780;8740
+66,send_message,64,,,,,,Well done for getting to the end of the day! Sometimes that’s all we can do. Get some rest and try again tomorrow!,,,,,,,,,,,,,,,6197b46e-3490-4d08-8325-0c4ee51739cc,,execute_actions,4030;8740
+67,split_by_value,60,3,,,,,@fields.user_name,,,,,,,,,,,,,,,daf99023-0329-48ae-9b05-e87867e907e4,,split_by_expression,4235;7780
+68,send_message,67,,@fields.user_name,has_text,user_name,,You made a difference today just by showing up. Your down time starts now @fields.user_name!,,,,,,,,,,,,,,,ab7f06b4-97ac-4baa-ba82-8f4f433dd414,,execute_actions,4110;7980
+69,send_message,67,,,,,,You made a difference today just by showing up. Your down time starts now!,,,,,,,,,,,,,,,22d8ad0c-db3f-42cc-bcec-ca5387f350dc,,execute_actions,4360;7980
+70,split_by_value,60,4,,,,,@fields.user_name,,,,,,,,,,,,,,,dca426ea-e8a6-4113-94f6-bb22985b353a,,split_by_expression,5625;8340
+71,send_message,70,,@fields.user_name,has_text,user_name,,"Happy, sad, angry, excited, worried? Well done @fields.user_name for recognizing how you and others felt today! And remember, tomorrow is a brand new day.",,,,,,,,,,,,,,,647410d5-c758-4de3-9a36-3e6b93b02faa,,execute_actions,5500;8740
+72,send_message,70,,,,,,"Happy, sad, angry, excited, worried? Well done for recognizing how you and others felt today! And remember, tomorrow is a brand new day.",,,,,,,,,,,,,,,c49049f8-a022-401f-902f-92f8301acc84,,execute_actions,6250;8740
+73,split_by_value,60,5,,,,,@fields.user_name,,,,,,,,,,,,,,,cc6da63a-8231-4a6f-a0d6-abde07ec125d,,split_by_expression,1185;8860
+74,send_message,73,,@fields.user_name,has_text,user_name,,"Thank you for your kindness and patience today @fields.user_name! Even when it’s tough, your words of praise, your smile and your attention are like sunshine for your children.",,,,,,,,,,,,,,,0f29c591-5e58-4117-9e97-46315ff2001f,,execute_actions,1060;9060
+75,send_message,73,,,,,,"Thank you for your kindness and patience today! Even when it’s tough, your words of praise, your smile and your attention are like sunshine for your children.",,,,,,,,,,,,,,,078e70bc-7b33-41d9-89ad-b6e4a92f36e9,,execute_actions,1310;9060
+76,split_by_value,60,6,,,,,@fields.gender,,,,,,,,,,,,,,,4ca8131b-c6e2-462a-b8ad-c33c0d87bf33,,split_by_contact_field,4360;5620
+77,split_by_value,76,man,@fields.gender,has_any_word,Man,,@fields.user_name,,,,,,,,,,,,,,,a0613640-70af-46ff-8b96-14222e2aacd1,,split_by_expression,1805;5920
+78,send_message,77,,@fields.user_name,has_text,user_name,,Well done for being a man who supports their family @fields.user_name. You are a real hero.,,,,,,,,,,,,,,,ec94b080-ee2b-4afd-85ee-57040120f1b0,,execute_actions,1680;6120
+79,send_message,77,,,,,,Well done for being a man who supports their family. You are a real hero.,,,,,,,,,,,,,,,1533d8d1-5ff7-47e0-af37-1d634d8d063f,,execute_actions,1930;6120
+80,split_by_value,76,woman,@fields.gender,has_any_word,Woman,,@fields.user_name,,,,,,,,,,,,,,,af44d611-48ce-4113-a85e-a5491a307aaa,,split_by_expression,4545;6200
+81,send_message,80,,@fields.user_name,has_text,user_name,,It’s not always easy to be a woman in this world. But you are leading the way @fields.user_name!,,,,,,,,,,,,,,,dc106ef8-6435-4690-8a96-424af1bcecee,,execute_actions,4420;6600
+82,send_message,80,,,,,,It’s not always easy to be a woman in this world. But you are leading the way!,,,,,,,,,,,,,,,4c1ae204-5a11-4e8f-8ebd-51c2912c8223,,execute_actions,4670;6600
+83,split_random,59;76,,,,,,,,,,,,,,,,,,,,,6deee034-34f0-46ea-892e-fba175e316b1,,split_by_random,7180;5560
+84,send_message,83,1,,,,,Every time you take a pause is an act of kindness. Be kind to yourself and your family today!,,,,,,,,,,,,,,,adbc07da-f93e-43ef-bb24-51ed579e8100,,execute_actions,6870;5860
+85,split_by_value,83,2,,,,,@fields.user_name,,,,,,,,,,,,,,,a6992874-c250-4637-8270-cc4f6c049370,,split_by_expression,7575;6620
+86,send_message,85,,@fields.user_name,has_text,user_name,,Thank you for making so much effort to be a better parent. You are loved and appreciated @fields.user_name!,,,,,,,,,,,,,,,2e3d9da6-9cfa-4d73-9408-2ff380eb0b6e,,execute_actions,7450;6820
+87,send_message,85,,,,,,Thank you for making so much effort to be a better parent. You are loved and appreciated!,,,,,,,,,,,,,,,5c68f67e-e693-421f-bc13-3c68690c4a06,,execute_actions,7700;6820
+88,split_by_value,83,3,,,,,@fields.user_name,,,,,,,,,,,,,,,963d4c77-cbb1-45b5-a474-f084f543741d,,split_by_expression,11165;9580
+89,send_message,88,,@fields.user_name,has_text,user_name,,Thank you for showing up for your family today and try your best! Your effort is appreciated @fields.user_name!,,,,,,,,,,,,,,,cd3550be-0ca6-46aa-8b38-bd15d4a4d025,,execute_actions,11040;9780
+90,send_message,88,,,,,,Thank you for showing up for your family today and try your best! Your effort is appreciated!,,,,,,,,,,,,,,,4fca357b-36df-4143-8835-ee09216defec,,execute_actions,11290;9780
+91,split_by_value,83,4,,,,,@fields.user_name,,,,,,,,,,,,,,,365bd19a-ed38-4a14-a321-1201cfc88acd,,split_by_expression,10645;9100
+92,send_message,91,,@fields.user_name,has_text,user_name,,Well done for trying to figure everything out @fields.user_name! Nobody has all the answers but you really do your best!,,,,,,,,,,,,,,,7ea01842-5c07-4d75-beef-00ed2f609420,,execute_actions,10520;9300
+93,send_message,91,,,,,,Well done for trying to figure everything out. Nobody has all the answers but you really do your best!,,,,,,,,,,,,,,,7c263023-3cd5-4284-91be-170085a0c64c,,execute_actions,10770;9300
+94,split_by_value,83,5,,,,,@fields.user_name,,,,,,,,,,,,,,,c7203369-da2c-4c44-922e-f43c8172ef60,,split_by_expression,9585;8540
+95,send_message,94,,@fields.user_name,has_text,user_name,,Taking care of yourself is taking care of your kids! Keep it up @fields.user_name!,,,,,,,,,,,,,,,4cbf893e-54b2-423f-8820-229c06f917c4,,execute_actions,9460;8740
+96,send_message,94,,,,,,Taking care of yourself is taking care of your kids! Keep it up!,,,,,,,,,,,,,,,9be3340b-00ec-431e-8bee-fb20d121f486,,execute_actions,10210;8740
+97,split_by_value,83,6,,,,,@fields.user_name,,,,,,,,,,,,,,,ed8fd701-5a5b-4835-a07c-98248394f846,,split_by_expression,10375;6960
+98,send_message,97,,@fields.user_name,has_text,user_name,,Thank you @fields.user_name for being patient with yourself and your family. Every little bit helps! ,,,,,,,,,,,,,,,ea587d50-c27f-47eb-88f9-96d4833991bb,,execute_actions,10250;7160
+99,send_message,97,,,,,,Thank you for being patient with yourself and your family. Every little bit helps! ,,,,,,,,,,,,,,,e3e4fcc1-6de2-4403-8036-27a0a991c71d,,execute_actions,10500;7160
+100,split_by_value,83,7,,,,,@fields.user_name,,,,,,,,,,,,,,,5db653e3-f1fb-4794-a00f-7b926048c460,,split_by_expression,10915;5660
+101,send_message,100,,@fields.user_name,has_text,user_name,,Top marks for effort @fields.user_name! It’s not easy but you tried your best. That’s all you can ever do!,,,,,,,,,,,,,,,d4d972d7-aeed-46f1-b791-8afd075d9828,,execute_actions,10790;5860
+102,send_message,100,,,,,,Top marks for effort! It’s not easy but you tried your best. That’s all you can ever do!,,,,,,,,,,,,,,,52b085e4-b87d-4982-b8a1-fe263d4df2ab,,execute_actions,11290;5860
+103,send_message,83,8,,,,,Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!,,,,,,,,,,,,,,,2281136d-5085-46c5-ad3c-96eace2932bf,,execute_actions,11660;7520
+104,split_by_value,83,9,,,,,@fields.user_name,,,,,,,,,,,,,,,7d3bf99b-6e7f-4408-8662-2b47911635c2,,split_by_expression,12325;6400
+105,send_message,104,,@fields.user_name,has_text,user_name,,Your commitment is an inspiration. Keep calm and carry on @fields.user_name! ,,,,,,,,,,,,,,,342acb35-ab19-4a05-9cb0-0dba37e942f1,,execute_actions,12200;6600
+106,send_message,104,,,,,,Your commitment is an inspiration. Keep calm and carry on! ,,,,,,,,,,,,,,,13f04594-2b45-47c6-a363-7b831deb0745,,execute_actions,12450;6600
+107,split_by_value,83,10,,,,,@fields.user_name,,,,,,,,,,,,,,,4cc8074a-e106-464f-bfb8-fee504dad796,,split_by_expression,8655;7240
+108,send_message,107,,@fields.user_name,has_text,user_name,,Thank you @fields.user_name for getting up every morning and trying again. Even when you are tired. That is real courage and dedication! ,,,,,,,,,,,,,,,47dfdbba-b6b2-452a-a368-bdf8458b11e8,,execute_actions,8530;7440
+109,send_message,107,,,,,,Thank you for getting up every morning and trying again. Even when you are tired. That is real courage and dedication! ,,,,,,,,,,,,,,,8962bc20-fae4-4bc0-abfd-1f93f223d37d,,execute_actions,8780;7440
+110,save_value,4,bad,,has_any_word,Bad,last interaction,@(now()),,,,,,,,,,,,,,,aebe50cb-92c9-4a27-9df9-dfe7e6bd25cf,,execute_actions,6850;9940
+111,split_random,110,,,,,,,,,,,,,,,,,,,,,b78c941e-88a7-49b7-a860-efd69519883e,,split_by_random,6850;10080
+112,split_random,111,2,,,,,,,,,,,,,,,,,,,,8678e97f-577c-4e57-81e1-944382d80f07,,split_by_random,8780;10180
+113,split_by_value,112,1,,,,,@fields.user_name,,,,,,,,,,,,,,,5639eee3-cb32-43e4-b376-fefc2c963470,,split_by_expression,8115;10940
+114,send_message,113,,@fields.user_name,has_text,user_name,,"Sorry to hear that you are going through a tough time @fields.user_name. You are not alone. Reach out to a friend or someone you can talk to for support. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,69c845f4-fab2-4332-aa23-a4c3835e0f50,,execute_actions,7990;11540
+115,send_message,113,,,,,,"Sorry to hear that you are going through a tough time. You are not alone. Reach out to a friend or someone you can talk to for support. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,d94ceece-7bb6-4b86-b7b7-85dbda033793,,execute_actions,8490;11540
+116,split_by_value,112,2,,,,,@fields.user_name,,,,,,,,,,,,,,,c0b751c2-b71c-41a8-90a6-c97dfed8a67e,,split_by_expression,9835;11140
+117,send_message,116,,@fields.user_name,has_text,user_name,,"Sorry to hear that you are struggling @fields.user_name. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,9e9e9afc-c374-4060-b12e-027156df9bee,,execute_actions,9710;11540
+118,send_message,116,,,,,,"Sorry to hear that you are struggling. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,dbeafc8c-249a-4dda-9558-4c62a5d64dfc,,execute_actions,10210;11540
+119,split_by_value,112,3,,,,,@fields.user_name,,,,,,,,,,,,,,,b03d8615-79b8-4281-b5f9-2af0b35046e4,,split_by_expression,11805;11340
+120,send_message,119,,@fields.user_name,has_text,user_name,,"Sorry to hear that you are struggling. Take a moment to reflect on one thing that went well for you today @fields.user_name.  Even the smallest things can help. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,e8f437ae-7bae-4a5c-970c-bccda0adbcc0,,execute_actions,11680;11540
+121,send_message,119,,,,,,"Sorry to hear that you are struggling. Take a moment to reflect on one thing that went well for you today. Even the smallest things can help. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,75271e06-1e1e-4e3e-be48-b1a53b419b0c,,execute_actions,12180;11540
+122,split_by_value,112,4,,,,,@fields.user_name,,,,,,,,,,,,,,,d9d08e06-9859-401b-8dd7-4244e64093f1,,split_by_expression,8365;12580
+123,send_message,122,,@fields.user_name,has_text,user_name,,"Sorry to hear that you are struggling @fields.user_name. Parenting can be very difficult at times. Take a pause and remind yourself that you are trying your best. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,c2169648-3d10-45ba-9a5e-818d6e99351f,,execute_actions,8240;12980
+124,send_message,122,,,,,,"Sorry to hear that you are struggling. Parenting can be very difficult at times. Take a pause and remind yourself that you are trying your best. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,06b58dd2-a556-4882-a298-ad9ca14417b1,,execute_actions,8490;12980
+125,split_by_value,112,5,,,,,@fields.user_name,,,,,,,,,,,,,,,99d4c854-aea3-4890-9573-955aee3bc4dd,,split_by_expression,10085;12360
+126,send_message,125,,@fields.user_name,has_text,user_name,,"Sorry to hear that things are difficult between you and your children @fields.user_name. There’s no such thing as a perfect parent or the perfect child. We are all just trying our best! Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,5140fdb6-0830-4a02-81b9-6b31e48046df,,execute_actions,9960;12560
+127,send_message,125,,,,,,"Sorry to hear that things are difficult between you and your children. There’s no such thing as a perfect parent or the perfect child. We are all just trying our best! Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,c06a3607-e2bd-4ef9-9ce4-17838317278d,,execute_actions,10210;12560
+128,split_by_value,112,6,,,,,@fields.user_name,,,,,,,,,,,,,,,36e3aca6-da66-4690-bf12-e69c5f8b2df7,,split_by_expression,12055;12780
+129,send_message,128,,@fields.user_name,has_text,user_name,,"Sorry to hear that things are difficult between you and your children @fields.user_name. Sometimes it’s easy, sometimes it’s not. Let go of the mistakes and celebrate the wins, however small! Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,add581a0-1c90-4ea4-bac0-bf1a6dfe77b4,,execute_actions,11930;12980
+130,send_message,128,,,,,,"Sorry to hear that things are difficult between you and your children. Sometimes it’s easy, sometimes it’s not. Let go of the mistakes and celebrate the wins, however small! Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,4af738a8-7a79-46cd-9e6f-f8501ab86781,,execute_actions,12180;12980
+131,split_by_value,112,7,,,,,@fields.time_of_day,,,,,,,,,,,,,,,2859f1cc-cc94-4d9b-96ee-1d872d5d0f7a,,split_by_contact_field,6870;13420
+132,split_by_value,131,evening,@fields.time_of_day,has_any_word,Evening,,@fields.user_name,,,,,,,,,,,,,,,0fba070b-7f66-4c45-b65b-106d4c41964e,,split_by_expression,6705;13560
+133,send_message,132,,@fields.user_name,has_text,user_name,,"Sorry to hear that things are difficult @fields.user_name. Whatever you feel you did ‘wrong’ today, let it go and try again tomorrow. It’s ok! 
+
+Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,63223404-020c-4ec4-891f-288b007c2fb3,,execute_actions,6580;13760
+134,send_message,132,,,,,,"Sorry to hear that things are difficult. Whatever you feel you did ‘wrong’ today, let it go and try again tomorrow. It’s ok! 
+
+Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,ce9d3889-83c5-4630-a339-e67e53cb402e,,execute_actions,6830;13760
+135,split_random,111;131,1;,,,,,,,,,,,,,,,,,,,,13f8464b-1932-49e7-96b0-e2074d3d6f04,,split_by_random,1930;10180
+136,split_by_value,135,1,,,,,@fields.user_name,,,,,,,,,,,,,,,fba99dd7-871c-49f0-a7c7-6eb2613fbfc6,,split_by_expression,665;10320
+137,send_message,136,,@fields.user_name,has_text,user_name,,"Sorry to hear that you are struggling @fields.user_name. It is perfectly normal to have difficult days, especially during these stressful times. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,35f1c70a-555b-4124-8bfe-73dd2857c428,,execute_actions,540;10920
+138,send_message,136,,,,,,"Sorry to hear that you are struggling. It is perfectly normal to have difficult days, especially during these stressful times. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,e628d629-0de1-4b03-be98-fdb1c84d9d0d,,execute_actions,1040;10920
+139,split_by_value,135,2,,,,,@fields.user_name,,,,,,,,,,,,,,,4f668f86-51d3-4f77-aad8-5307bfc6c4e7,,split_by_expression,3385;10520
+140,send_message,139,,@fields.user_name,has_text,user_name,,"Sorry to hear that things are difficult between you and your children. I know it can be really tough @fields.user_name Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,c6dccc57-8a3b-4d37-b97a-7b7a30f72b05,,execute_actions,3260;10920
+141,send_message,139,,,,,,"Sorry to hear that things are difficult between you and your children. I know it can be really tough. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,219af530-55b1-4613-aee7-398d65b3b81e,,execute_actions,3760;10920
+142,split_by_value,135,3,,,,,@fields.user_name,,,,,,,,,,,,,,,bf61f2b5-83c3-4470-a920-e30e81805c5c,,split_by_expression,5875;10720
+143,send_message,142,,@fields.user_name,has_text,user_name,,"Sorry to hear that things are difficult between you and your children. You deserve a star just for trying @fields.user_name. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,60e986da-f425-4ff2-b2bc-7b9a2435b092,,execute_actions,5750;10920
+144,send_message,142,,,,,,"Sorry to hear that things are difficult between you and your children. You deserve a star just for trying. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,eafd0019-7848-481f-9381-87166146ee04,,execute_actions,6250;10920
+145,split_by_value,135,4,,,,,@fields.user_name,,,,,,,,,,,,,,,fa0acf7d-4b6c-487f-9b74-72395ae698ea,,split_by_expression,915;12140
+146,send_message,145,,@fields.user_name,has_text,user_name,,"Sorry to hear that things are difficult between you and your children. It’s not always easy to be a parent during these difficult times @fields.user_name Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,bde80211-aa59-47ea-b1c9-0105cc3face4,,execute_actions,790;12340
+147,send_message,145,,,,,,"Sorry to hear that things are difficult between you and your children. It’s not always easy to be a parent during these difficult times. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,2faea078-d241-462c-b8a1-96f2447b0658,,execute_actions,1040;12340
+148,split_by_value,135,5,,,,,@fields.user_name,,,,,,,,,,,,,,,ca7058d7-9503-4dea-93df-e8d070196a6a,,split_by_expression,3635;11720
+149,send_message,148,,@fields.user_name,has_text,user_name,,"Sorry to hear that you are having a tough time with your child. These things take time and patience to change. Be kind to yourself and know that you are not alone @fields.user_name. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,f174a4d9-b155-4362-b76b-840c2f4e00a3,,execute_actions,3510;12120
+150,send_message,148,,,,,,"Sorry to hear that you are having a tough time with your child. These things take time and patience to change. Be kind to yourself and know that you are not alone. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,e2849e4e-eb7a-40c0-8af7-c3829521f778,,execute_actions,3760;12120
+151,split_by_value,135,6,,,,,@fields.user_name,,,,,,,,,,,,,,,73264bf1-7cac-430a-ae53-a3e62898b060,,split_by_expression,6125;11920
+152,send_message,151,,@fields.user_name,has_text,user_name,,"Sorry to hear you are struggling @fields.user_name. Give yourself a big hug for trying. Tomorrow is another day. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,ae6a3b2f-d6fa-4712-aa30-3fe4823f8ca8,,execute_actions,6000;12120
+153,send_message,151,,,,,,"Sorry to hear you are struggling. Give yourself a big hug for trying. Tomorrow is another day. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,80a33691-a353-4c48-8587-43c3028e138a,,execute_actions,6250;12120
+154,split_by_value,135,7,,,,,@fields.user_name,,,,,,,,,,,,,,,395e6992-0bdc-4c05-813f-6a15a3b770ab,,split_by_expression,2345;13180
+155,send_message,154,,@fields.user_name,has_text,user_name,,"Be gentle with yourself @fields.user_name. Just because something didn’t go well today, or you lost your temper, this doesn’t define who you are as a parent. Remind yourself of the things you did well today, even if they may seem small.",,,,,,,,,,,,,,,b00c2677-2ce2-4445-a146-a6bb65a50566,,execute_actions,2220;13380
+156,send_message,154,,,,,,"Be gentle with yourself. Just because something didn’t go well today, or you lost your temper, this doesn’t define who you are as a parent. Remind yourself of the things you did well today, even if they may seem small.",,,,,,,,,,,,,,,780c98f6-d71c-4f1f-91e3-ba772d0b503a,,execute_actions,2470;13380
+157,save_value,4,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8573fe2a-b367-4444-937c-bccd517b82fe,,execute_actions,10500;680
+158,send_message,157,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,081f2b8f-e18e-4a11-a803-3719cdf4b529,,execute_actions,11350;780
+159,go_to,158,,,,,,1,,,,,,,,,,,,,,,,,,

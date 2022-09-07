@@ -1,0 +1,8322 @@
+{
+  "PLH - Content - Relax - CheckIn - Loving Kindness": [
+    {
+      "row_id": 1,
+      "_nodeId": "fbb70aba-149b-4cf1-8ac9-748aa036109e",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        935,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Hi @fields.user_name! How are you feeling?",
+      "choice_1": "Great",
+      "choice_2": "Okay",
+      "choice_3": "Bad",
+      "_nodeId": "9edb5f0d-0baa-4afa-80ff-e34ca3811ee9",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        810,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Hi! How are you feeling?",
+      "choice_1": "Great",
+      "choice_2": "Okay",
+      "choice_3": "Bad",
+      "_nodeId": "d842510d-64a9-49c0-baf6-f1c1f3c5f36b",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1060,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "2ffb570c-0f9e-4649-bd82-b11badef642c",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 1",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        1080,
+        340
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "So good to hear that you are doing well. What a wonderful feeling!",
+      "_nodeId": "eaedae55-d375-4ec6-a1b9-45ef1e243d7a",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        590,
+        500
+      ],
+      "condition": [
+        [
+          "great"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Great"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!",
+      "_nodeId": "425a9d6f-b12b-41a2-bdfc-8bb266b0ce65",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1120,
+        500
+      ],
+      "condition": [
+        [
+          "ok okay"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Ok"
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Sorry to hear that you are not having a good day. It is completely normal to be going through a difficult time now. Remember that you are not alone.",
+      "_nodeId": "0d051ca6-7d89-48b3-9b4d-e4145dbdef27",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1420,
+        480
+      ],
+      "condition": [
+        [
+          "bad"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Bad"
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "888cd3a2-6c03-476c-a4be-f7dc44f1700b",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        1120,
+        760
+      ],
+      "condition": [
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Here's a video to help you get through the day!",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Loving_Kindness.m4v",
+      "_nodeId": "e698c546-a1e2-4b3f-90a4-389a568118d7",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        860
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Here's an audio message to help you get through the day!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Loving_Kindness.mp3",
+      "_nodeId": "89cdaa8c-bc0c-45c9-83e6-b16b265f9158",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        650,
+        920
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "medium"
+      ]
+    },
+    {
+      "row_id": 11,
+      "_nodeId": "b8aa733c-ce0f-4d14-a744-e60845e2792d",
+      "from": [
+        10,
+        9
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 2",
+      "no_response": 120,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        120,
+        1140
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "send_message",
+      "message_text": "Here is a short activity that can help when you are feeling like needing some more support to get through the day.",
+      "_nodeId": "53b31eae-0ec9-4864-9c4e-e9613b05214f",
+      "from": [
+        11,
+        11,
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1200,
+        1000
+      ],
+      "condition": [
+        null,
+        "No Response",
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "send_message",
+      "message_text": "Recognise what is happening for you in this moment. What are you thinking? Are your thoughts positive or negative. How do you feel? Do you feel pleasant or unpleasant? How does your body feel? Do you feel tense or relaxed?",
+      "_nodeId": "e2419197-cdd8-4f78-a41b-3c1f5aa568b5",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1200,
+        1160
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "Sit comfortably and close your eyes. Connect to your heart in a kind and gentle way. You may want to place one hand on your heart or chest. Say the following words silently to yourself:",
+      "_nodeId": "9d68bae8-34bc-4a0c-97ac-aff05565f178",
+      "from": [
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1200,
+        1380
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "May I be peaceful.\nMay I be safe.\nMay I be healthy.",
+      "_nodeId": "427cc6ec-0cd0-4958-bab8-74c34f69ba17",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1140,
+        1600
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "send_message",
+      "message_text": "May I be happy.\nMay there be love in my family.\nMay I feel loved.",
+      "_nodeId": "cc4e3dde-5129-48d7-bbdb-70ae9c9e7f66",
+      "from": [
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1140,
+        1940
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "send_message",
+      "message_text": "Take a moment to reflect on your experience. Notice if you feel any different.",
+      "_nodeId": "fa268345-f8a9-47b8-8275-8f191f8505d1",
+      "from": [
+        16
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        490,
+        1420
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "_nodeId": "dfe91049-3068-4f3b-8dcc-e37244886bf3",
+      "from": [
+        17
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        325,
+        1720
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "send_message",
+      "message_text": "If you ever need additional support to help you cope with any stress or other emotional difficulties, type \"Help\". Chat to you later @fields.user_name!",
+      "_nodeId": "0b469506-f652-4fb2-a064-137aba308461",
+      "from": [
+        18
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        200,
+        1920
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 20,
+      "type": "send_message",
+      "message_text": "If you ever need additional support to help you cope with any stress or other emotional difficulties, type \"Help\". Chat to you later!",
+      "_nodeId": "c82d335d-4e4e-4f7a-94e6-abad24fcaa37",
+      "from": [
+        18
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        450,
+        1920
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "1f4d2653-92b0-483e-bc0c-4b5e3b8aaad1",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1360,
+        340
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 22,
+      "type": "go_to",
+      "from": [
+        21
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - CheckIn - Notice how you feel": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Hello! How are you feeling right now? Happy, sad, angry, excited, worried?",
+      "_nodeId": "399a3b50-dbe0-4d2c-a259-8d2dfeae79a1",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        380,
+        60
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Notice where you feel it in your body. Notice what thoughts are connected to that feeling. Take a deep breath.",
+      "_nodeId": "2d31abd9-1fa2-4bb9-bc67-48e8f32d834c",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        400,
+        220
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Thank yourself for taking the time to check in with your feelings and thoughts! Remember, you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat later!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg",
+      "_nodeId": "59ec499c-03e4-41ac-84d8-9e85372f1873",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        420,
+        400
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Quick Pause": [
+    {
+      "row_id": 1,
+      "_nodeId": "77ff9da7-9fe3-4801-a414-60960fdc82ed",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        545,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Hi @fields.user_name! How are you feeling right now? Would you like to take a quick pause together? It might be helpful.",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "fc3214ae-b146-4bd1-8d8c-d814f93b63b9",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        420,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Hi! How are you feeling right now? Would you like to take a quick pause together? It might be helpful.",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "19510a0f-34ce-4be5-8d7c-97eeb9110b3a",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        670,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "3399e4f9-d04d-408a-b0e5-fdc34122b543",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "know_more",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        200,
+        360
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "92bd58aa-4554-4163-b799-8c1ab465e18a",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        500
+      ],
+      "condition": [
+        [
+          "Yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 6,
+      "_nodeId": "9ad99786-df97-4767-a702-fa6354cb71e8",
+      "from": [
+        5
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        40,
+        600
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Here's a quick video to help you take a pause!",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Short_Pause.m4v",
+      "_nodeId": "b491e4ba-2336-463e-90cb-bc14eecb99e1",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        780
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "Here's an audio message to help you take a pause!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Short_Pause.mp3",
+      "_nodeId": "e3359e69-6b9c-483e-9412-14147762a1fd",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        260,
+        780
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "medium"
+      ]
+    },
+    {
+      "row_id": 9,
+      "_nodeId": "502d78b0-4aa2-4642-9b9c-8cd40ef20211",
+      "from": [
+        7,
+        8
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 1",
+      "no_response": 60,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        340,
+        960
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Sit down, close your eyes and listen to your breath as it goes in and out. Notice how you feel. When you are ready, open your eyes again. Everything is okay.",
+      "_nodeId": "0a7fcd5b-3730-4b6c-9012-aa7b64049793",
+      "from": [
+        6,
+        9,
+        9
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1720,
+        800
+      ],
+      "condition": [
+        null,
+        null,
+        "No Response"
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "_nodeId": "374bae4c-bd90-485a-b7eb-5e21c92ccbda",
+      "from": [
+        10
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1345,
+        980
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "_nodeId": "7c153d5a-f953-41b4-a08c-b171a26e7e95",
+      "from": [
+        11
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "34748c8b-842c-472a-a8ee-b86c7b76914f",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1095,
+        1180
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "send_message",
+      "message_text": "I hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg",
+      "_nodeId": "5584054e-df5c-4a74-a02f-b0a0af8fd167",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1220,
+        1580
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "We hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg",
+      "_nodeId": "401248d2-285d-4012-8996-f07aff1365c0",
+      "from": [
+        12,
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        970,
+        1580
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 15,
+      "_nodeId": "57cd5528-f2b7-4af1-80b2-0e36dce226b1",
+      "from": [
+        11
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "34748c8b-842c-472a-a8ee-b86c7b76914f",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1595,
+        1380
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "send_message",
+      "message_text": "I hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg",
+      "_nodeId": "35fd475a-b0c4-46e9-b6bb-f2f719275fc4",
+      "from": [
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1720,
+        1580
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "send_message",
+      "message_text": "We hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg",
+      "_nodeId": "b36edb37-3755-407b-9ba1-abb6dba2654c",
+      "from": [
+        15,
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1470,
+        1580
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "type": "send_message",
+      "message_text": "That is okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "3ccc0b94-d23d-44c0-bdfe-a5d430829cc3",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        790,
+        540
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "3ccc0b94-d23d-44c0-bdfe-a5d430829cc3",
+      "from": [
+        18
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        790,
+        540
+      ]
+    },
+    {
+      "row_id": 20,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "b37c5de1-c264-426d-81a6-fa4a43b43088",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1720,
+        340
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "b37c5de1-c264-426d-81a6-fa4a43b43088",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1720,
+        340
+      ]
+    },
+    {
+      "row_id": 22,
+      "type": "go_to",
+      "from": [
+        21
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - CheckIn - Three is a magical number": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Hello! Did you know that 3 is a magical number? Breathe in to the count of three and breathe out to the count of three. How do you feel now? Do you feel any different?",
+      "_nodeId": "8548f0ab-ccb4-4080-bb78-a5bb3d6209bc",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        600,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "d6f323e6-2dc6-498e-ba6b-526f0ee101c2",
+      "from": [
+        1
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        520,
+        240
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Here's a video to guide through this activity!",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Magical_Number.m4v",
+      "_nodeId": "ff625137-4cc5-4ffc-9446-46617e9c823b",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        220,
+        580
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Here's an audio message to guide you through this activity!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Magical_Number.mp3",
+      "_nodeId": "2fb9dae2-9399-4b28-9391-54c97703f13b",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        500,
+        540
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "medium"
+      ]
+    },
+    {
+      "row_id": 5,
+      "_nodeId": "df4134e1-6593-47cd-b3db-694be18d7077",
+      "from": [
+        3,
+        4
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 1",
+      "no_response": 120,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        320,
+        780
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "What are your three favourite foods? Can you name three things you can see right now? \nCan you hear three sounds you can hear right now? \nWhat are the three things you are grateful for right now?\nBreathe in to the count of three and breathe out to the count of three. How do you feel now? Do you feel any different? \nThree is a magical number! ",
+      "_nodeId": "c038b3ac-98f6-48f0-a17e-0d95e3131610",
+      "from": [
+        2,
+        5,
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        780,
+        560
+      ],
+      "condition": [
+        null,
+        null,
+        "No Response"
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "We hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "4eced17e-1832-4799-857e-e74fe0845d5f",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        360,
+        1080
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Exercise": [
+    {
+      "row_id": 1,
+      "type": "save_flow_result",
+      "message_text": "Keeping healthy",
+      "save_name": "skill",
+      "_nodeId": "878d8f2e-df70-46d8-8024-4a5088461970",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2380,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "0f7985f1-fc6d-4497-abce-ad3b3b1889cc",
+      "from": [
+        1
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update incomplete toolkits",
+      "obj_id": "5754719c-42f8-4256-82c4-7953bc4870ec",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        2380,
+        100
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "83ab28f4-f8a3-4ca0-8752-40121a0058bd",
+      "from": [
+        2,
+        2
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.from_theme",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        2950,
+        220
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "e9c7446e-174f-44ea-a4fe-a4fcc02bd2dc",
+      "from": [
+        3,
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2135,
+        280
+      ],
+      "condition": [
+        [
+          "yes"
+        ],
+        null
+      ],
+      "condition_var": [
+        "@fields.from_theme",
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        null
+      ],
+      "condition_name": [
+        "Yes",
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Hello @fields.user_name! How are you feeling? If you are feeling overwhelmed or stressed, here's a fun activity that can also release some stress.",
+      "_nodeId": "c20827cf-b8a7-4939-b003-ba960be4b36e",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2010,
+        480
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Hello! How are you feeling? If you are feeling overwhelmed or stressed, here's a fun activity that can also release some stress.",
+      "_nodeId": "604a6aa4-c121-4857-8247-d160124e09d8",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2260,
+        480
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Would you like to learn more about this tip?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/dancing_family.jpg",
+      "_nodeId": "d66fc8ec-a3b6-4ed7-9872-c1547084f5bf",
+      "from": [
+        5,
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2260,
+        660
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "9884f4af-4df4-41e3-a6df-3cd4380d2698",
+      "from": [
+        7
+      ],
+      "type": "wait_for_response",
+      "save_name": "know_more",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        2340,
+        820
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "8a1484b0-44f0-48ce-a9cf-5931c006f5bf",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        100,
+        900
+      ],
+      "condition": [
+        [
+          "YES Y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 10,
+      "_nodeId": "d596e2aa-cced-4186-8cdd-9a92c1e49fae",
+      "from": [
+        9
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        80,
+        1300
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "send_message",
+      "message_text": "Here's a fun video of a physical activity that can help you release stress and keep healthy!",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Exercise.m4v",
+      "_nodeId": "6467557d-4e27-40d5-bd9e-6ffe93843843",
+      "from": [
+        10
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        1620
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "send_message",
+      "message_text": "Here's an audio message to guide you through a fun physical activity!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Exercise.mp3",
+      "_nodeId": "fc142c3f-5181-4ad0-8168-fb05edfa680e",
+      "from": [
+        10
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1930,
+        1460
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "medium"
+      ]
+    },
+    {
+      "row_id": 13,
+      "_nodeId": "c313e896-a369-4d19-aed8-bb45c5aa0ab6",
+      "from": [
+        11,
+        12
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 4",
+      "no_response": 120,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        100,
+        1820
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "Stand up and stretch your arms up like you are reaching to the sky. Pretend to push away any clouds and let the sun shine down on you. Stretch to both sides. Stretch to the front and to the back.",
+      "_nodeId": "51d1ac51-eabb-40b9-9abc-e764f879fa19",
+      "from": [
+        10,
+        13,
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2560,
+        1460
+      ],
+      "condition": [
+        null,
+        null,
+        "No Response"
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "Let your hand hang by your side. As you breathe in, squeeze your shoulders tightly up to your ears, scrunch your eyes and face, and hold your breath. Release your breath and then relax your shoulders and body.",
+      "_nodeId": "3a068873-d080-4dc9-9eb6-9a933cd8fab6",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2540,
+        1680
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "send_message",
+      "message_text": "Relax your arms and let your arms swing sideways, and turn your upper body. Your arms should gently hit your back as you twist from side to side.",
+      "_nodeId": "94dd016b-87e6-46a3-a064-669afa74a798",
+      "from": [
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2520,
+        1900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "send_message",
+      "message_text": "Place one foot in front of the other and make small circles from ankles, remember to turn to both sides. Do each foot with four circles in each direction.",
+      "_nodeId": "39265759-a5c3-4c62-943b-e03bd402d4d5",
+      "from": [
+        16
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2500,
+        2140
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "type": "send_message",
+      "message_text": "Now shake your whole body as fast as you can. Shake it up high! Shake it down low! Shake it all around!",
+      "_nodeId": "8b9e2042-ad76-4e64-a2f7-e629b299a712",
+      "from": [
+        17
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2500,
+        2380
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "send_message",
+      "message_text": "Close your eyes and raise your arms slowly above your head as you breathe in. Lower your arms slowly to your side as you breathe out.",
+      "_nodeId": "e138fcf8-0998-4a5d-8e18-da1ba4a19729",
+      "from": [
+        18
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2480,
+        2560
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 20,
+      "type": "send_message",
+      "message_text": "Take a moment to reflect on your experience.",
+      "_nodeId": "448934f2-6563-4601-a45a-a14e226a2807",
+      "from": [
+        19
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2480,
+        2760
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "_nodeId": "49b41d6d-b8fa-4c9a-9e98-bf43179dc401",
+      "from": [
+        20
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update toolkits",
+      "obj_id": "302bcfa6-93f7-4f45-88b2-2d31ca59a1aa",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        1890,
+        2780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 22,
+      "_nodeId": "a79568b4-d3a7-47d2-99f6-4dbcbb8fc5aa",
+      "from": [
+        21,
+        21
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1015,
+        2960
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 23,
+      "_nodeId": "6cb70442-943d-44de-a3c6-f8593bf81a49",
+      "from": [
+        22
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1515,
+        3360
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 24,
+      "_nodeId": "8402eaec-ddf7-4e0a-b56b-23ba73cedade",
+      "from": [
+        23
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1765,
+        4160
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 25,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "2bdbd07b-5013-4237-81cb-9a10f6334045",
+      "from": [
+        24
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1640,
+        4360
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 26,
+      "type": "send_message",
+      "message_text": "Well done! You have added another layer to your House of Support. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "e01b977a-6b1e-4393-a5be-c145f0830226",
+      "from": [
+        24
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1890,
+        4360
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 27,
+      "_nodeId": "fccf1bc7-e501-4bfe-8e88-252e4ddc5f2e",
+      "from": [
+        23,
+        23
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1265,
+        3960
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 28,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "3c8ea566-e98a-42e9-98d0-9f8b36dce171",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1140,
+        4360
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 29,
+      "type": "send_message",
+      "message_text": "Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "bba48881-1713-4dfa-a7ed-9af8c18e79c5",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1390,
+        4360
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 30,
+      "_nodeId": "4681301e-6f48-4dfd-b66b-dc656d53874f",
+      "from": [
+        22,
+        22
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        515,
+        3160
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 31,
+      "_nodeId": "71035745-28e9-47c7-aab5-9b90ad112462",
+      "from": [
+        30
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        765,
+        3760
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 32,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "5df0348e-3e2f-4736-8e68-3090f1d7e60d",
+      "from": [
+        31
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        640,
+        4360
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 33,
+      "type": "send_message",
+      "message_text": "Well done! You have added another layer to your House of Support. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "bbcd90fb-2767-446f-a008-c2202fa8b34d",
+      "from": [
+        31
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        890,
+        4360
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 34,
+      "_nodeId": "7e6debe6-ab0b-4777-83ea-e143aa2c2383",
+      "from": [
+        30,
+        30
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        265,
+        3560
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 35,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "9b5df075-07fc-4821-b04b-b6c3b28dafaf",
+      "from": [
+        34
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        140,
+        4360
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 36,
+      "type": "send_message",
+      "message_text": "Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try doing some physical exercise every day. It is a great way to reduce stress and keep healthy. Even 5 minutes a day can make a difference!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "d139bfdf-5593-4f0e-8fa2-7e03ed650283",
+      "from": [
+        34
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        390,
+        4360
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 37,
+      "_nodeId": "bbe1253a-d99a-4c60-86aa-ce87d5fd6c39",
+      "from": [
+        8
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2805,
+        920
+      ],
+      "condition": [
+        [
+          "NO N"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 38,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "_nodeId": "8fe70028-0c59-4bf2-b0de-aad0239c6c86",
+      "from": [
+        37
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2680,
+        1120
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 39,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "36a80274-926e-4cbc-a151-956838370591",
+      "from": [
+        37
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2930,
+        1120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 40,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "c9b39729-57b8-4513-924e-e88d585fb384",
+      "from": [
+        38,
+        39
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3190,
+        1180
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 41,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "b769d1f6-8324-4548-83e1-133189851d33",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2950,
+        620
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 42,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "79d42310-d6b4-4943-ba34-2b719b2de270",
+      "from": [
+        41
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2950,
+        760
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 43,
+      "type": "go_to",
+      "from": [
+        42
+      ],
+      "message_text": 7,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 44,
+      "type": "send_message",
+      "message_text": "Would you like some  other relaxation activities?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "b5ffd36a-2197-431e-919c-c6bc17e4f98e",
+      "from": [
+        25,
+        26,
+        28,
+        29,
+        32,
+        33,
+        35,
+        36
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3230,
+        2740
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 45,
+      "_nodeId": "ccec8ee0-8dc5-4bb7-9899-b33cc809964a",
+      "from": [
+        44
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 3",
+      "no_response": 3600,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        3270,
+        2900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 46,
+      "_nodeId": "b7769504-076e-4500-ae97-afecbddeb2f3",
+      "from": [
+        45
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Handler - Activity - Adults",
+      "obj_id": "523c1886-d0b6-4c0a-9206-78ef88fb634b",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        3070,
+        4640
+      ],
+      "condition": [
+        [
+          "Yes Y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 47,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean. ",
+      "_nodeId": "13e56c9b-45f3-4522-b072-153bda62e5a1",
+      "from": [
+        45
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2640,
+        4380
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 48,
+      "type": "go_to",
+      "from": [
+        47
+      ],
+      "message_text": 44,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 49,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress.",
+      "_nodeId": "1f896871-2ccc-40ac-b7fd-3300a29e7332",
+      "from": [
+        45,
+        45
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3370,
+        4600
+      ],
+      "condition": [
+        [
+          "No N"
+        ],
+        "No Response"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        null
+      ],
+      "condition_name": [
+        "No",
+        null
+      ]
+    },
+    {
+      "row_id": 50,
+      "type": "save_value",
+      "message_text": "exercise",
+      "save_name": "current activity",
+      "_nodeId": "d587514d-1f21-4c1c-94d1-1e5045137f9f",
+      "from": [
+        46,
+        46,
+        49
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3070,
+        4900
+      ],
+      "condition": [
+        "Complete",
+        "Expired",
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 51,
+      "type": "save_value",
+      "message_text": "tip",
+      "save_name": "current type assessed",
+      "_nodeId": "d587514d-1f21-4c1c-94d1-1e5045137f9f",
+      "from": [
+        50
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3070,
+        4900
+      ]
+    },
+    {
+      "row_id": 52,
+      "_nodeId": "b8a70a02-dbd2-4731-aa9b-fc849233c231",
+      "from": [
+        51
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Feedback - Feedback for content",
+      "obj_id": "2d088e4d-2c71-4480-9cac-0403ba3c5461",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        3070,
+        5080
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Feedback": [
+    {
+      "row_id": 1,
+      "type": "save_value",
+      "message_text": "relaxation",
+      "save_name": "current type assessed",
+      "_nodeId": "daf1a253-eced-40cd-916b-b7cf1e652e1c",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        355,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "save_value",
+      "message_text": "relaxation activities in general",
+      "save_name": "current activity",
+      "_nodeId": "daf1a253-eced-40cd-916b-b7cf1e652e1c",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        355,
+        0
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "cd662f24-e0dd-4623-a26a-1a4aee631d9c",
+      "from": [
+        2
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Feedback - Feedback for content",
+      "obj_id": "2d088e4d-2c71-4480-9cac-0403ba3c5461",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        625,
+        180
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "36c4fbd8-a61a-40f0-8fc1-2771661a8533",
+      "from": [
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        500,
+        380
+      ],
+      "condition": [
+        "Complete"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "_nodeId": "401318f5-c710-484a-ad5e-fe94bea069be",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        375,
+        580
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "9db91787-47ef-4a65-b29d-83f6e0459fb1",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        625,
+        580
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Take a pause - Timed intro": [
+    {
+      "row_id": 1,
+      "type": "save_flow_result",
+      "message_text": "Taking a Pause",
+      "save_name": "skill",
+      "_nodeId": "01ed46a9-4450-4c17-a102-4be9d7f55303",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        730,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "8770a6ca-1cab-403e-b86e-0dc3b83255a8",
+      "from": [
+        1
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update incomplete toolkits",
+      "obj_id": "5754719c-42f8-4256-82c4-7953bc4870ec",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        770,
+        80
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "7564cc47-9389-4c54-9ae1-a8e97995857f",
+      "from": [
+        2,
+        2
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1555,
+        300
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "4ae06d02-0fd2-489b-9dd0-b6f741b4188e",
+      "from": [
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.gender_personalisation",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1180,
+        500
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Hello @fields.user_name! This is a stressful time, especially for fathers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.\n\nToday's tip is about how to keep calm and manage stress in our busy lives. ",
+      "_nodeId": "545e10b4-eece-43cf-8d53-ffcb1c253448",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        930,
+        900
+      ],
+      "condition": [
+        [
+          "man"
+        ]
+      ],
+      "condition_var": [
+        "@fields.gender_personalisation"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "man"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Hello @fields.user_name! This is a stressful time, especially for mothers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.\n\nToday's tip is about how to keep calm and manage stress in our busy lives. ",
+      "_nodeId": "b29248cf-3f32-4729-8b92-0acaf1a9a13d",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1180,
+        900
+      ],
+      "condition": [
+        [
+          "woman"
+        ]
+      ],
+      "condition_var": [
+        "@fields.gender_personalisation"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "woman"
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Hello @fields.user_name! This is a stressful time, especially for parents. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.\n\nToday's tip is about how to keep calm and manage stress in our busy lives. ",
+      "_nodeId": "7f3a056e-44c3-45a8-af11-6f7f3bbeb0c9",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1430,
+        900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "b8d90dec-5ee1-46ba-8caa-5d0b55a8f4c3",
+      "from": [
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.gender_personalisation",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1930,
+        700
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Hello! This is a stressful time, especially for fathers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.\n\nToday's tip is about how to keep calm and manage stress in our busy lives. ",
+      "_nodeId": "6a574011-c8bc-4b3c-9ad8-6b922e7ed6ad",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1680,
+        900
+      ],
+      "condition": [
+        [
+          "man"
+        ]
+      ],
+      "condition_var": [
+        "@fields.gender_personalisation"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "man"
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Hello! This is a stressful time, especially for mothers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.\n\nToday's tip is about how to keep calm and manage stress in our busy lives. ",
+      "_nodeId": "3c8a5ce6-776a-434a-b8ae-cdb7f41a72c3",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1930,
+        900
+      ],
+      "condition": [
+        [
+          "woman"
+        ]
+      ],
+      "condition_var": [
+        "@fields.gender_personalisation"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "woman"
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "send_message",
+      "message_text": "Hello! This is a stressful time, especially for parents. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.\n\nToday's tip is about how to keep calm and manage stress in our busy lives. ",
+      "_nodeId": "3bff6beb-6b33-4dc0-9ffc-0daf9273ef1c",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2180,
+        900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "_nodeId": "f75ea8f5-28b1-4171-bd2a-47bb07d76edd",
+      "from": [
+        10,
+        11,
+        5,
+        6,
+        7,
+        9
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.toolkit",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        590,
+        1200
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "send_message",
+      "message_text": "We know that you have already received this tip (well done!). Would you like to review it again?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/misbehaving_children.jpg",
+      "_nodeId": "008f3020-2158-4957-b64b-597a7fbf0c65",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        270,
+        1280
+      ],
+      "condition": [
+        [
+          "@results.skill"
+        ]
+      ],
+      "condition_var": [
+        "@fields.toolkit"
+      ],
+      "condition_type": [
+        "has_phrase"
+      ],
+      "condition_name": [
+        "already completed"
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "Would you like to learn more about this tip?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/misbehaving_children.jpg",
+      "_nodeId": "34d467e0-8f7e-486b-a643-ffc9c70ce297",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        790,
+        1300
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 15,
+      "_nodeId": "9fa9e4c7-72d4-4a00-bbf0-ff350ef22908",
+      "from": [
+        13,
+        14
+      ],
+      "type": "wait_for_response",
+      "save_name": "know_more",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        290,
+        1620
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "aa0aaf1a-2762-4c7c-9f9d-5e61f1c29bfd",
+      "from": [
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        1760
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "save_value",
+      "message_text": "yes",
+      "save_name": "from theme",
+      "_nodeId": "76caaf0c-5fa8-4ba1-a714-0a1d29911ac7",
+      "from": [
+        16
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        750,
+        1480
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "_nodeId": "f7ee366b-7e4e-449b-bee9-c8caac2e7ce5",
+      "from": [
+        17
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Relax - Take a pause",
+      "obj_id": "cb2e0d0a-0c54-4d40-8fba-09b1456779fa",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        770,
+        1780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "save_value",
+      "message_text": "tip",
+      "save_name": "has expired",
+      "_nodeId": "eb71f925-b332-4659-af3e-2683513718a3",
+      "from": [
+        18
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2400,
+        1060
+      ],
+      "condition": [
+        "Expired"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 20,
+      "type": "send_message",
+      "message_text": "It looks like you are busy right now. You can always type \"GoBack\" to restart this parenting tip or \"Help\" for other support.",
+      "_nodeId": "5e74f434-d4bd-4fb5-8231-f8c20d2f71c2",
+      "from": [
+        19
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2600,
+        1160
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "type": "save_value",
+      "message_text": "no",
+      "save_name": "from theme",
+      "_nodeId": "b49e41e1-aad5-43a6-9b60-ce7ceda5f43e",
+      "from": [
+        18,
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2400,
+        1340
+      ],
+      "condition": [
+        "Complete",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 22,
+      "_nodeId": "4a45d0dc-9c11-49a2-9854-cfc0f45e0cd9",
+      "from": [
+        15
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        145,
+        2180
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 23,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "_nodeId": "227444d0-d39a-4939-8277-8ce2167e13b6",
+      "from": [
+        22
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        2380
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 24,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "f9bb3b6f-bc31-498b-b82c-3f385818b0ab",
+      "from": [
+        22
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        270,
+        2380
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 25,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "8743c4f9-3a03-4359-863b-1c0519e6a2ef",
+      "from": [
+        23,
+        24
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        1960
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 26,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "eea78350-2911-4ede-99a2-10f781816fb0",
+      "from": [
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        410,
+        1860
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 27,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean. ",
+      "_nodeId": "53be4691-361a-40d5-8afb-259578f315fe",
+      "from": [
+        26
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        450,
+        1480
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 28,
+      "type": "go_to",
+      "from": [
+        27
+      ],
+      "message_text": 12,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Take a pause": [
+    {
+      "row_id": 1,
+      "type": "save_flow_result",
+      "message_text": "Taking a Pause",
+      "save_name": "skill",
+      "_nodeId": "d1c7481d-b6c7-4c90-bc50-4f1be0245392",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        310,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "22e31c0a-662d-45fd-b275-64150786621b",
+      "from": [
+        1
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update incomplete toolkits",
+      "obj_id": "5754719c-42f8-4256-82c4-7953bc4870ec",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        290,
+        120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "a9dba51a-90fd-4bf9-86fa-e9d2896e8868",
+      "from": [
+        2,
+        2
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.from_theme",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        310,
+        260
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Taking a Pause is a simple relaxation activity that you can do whenever you are feeling stressed or worried. It can also be helpful when you find your child is irritating you or has done something wrong.",
+      "_nodeId": "e80a7e2e-240b-40c3-9928-03a413afb1e9",
+      "from": [
+        3,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        310,
+        400
+      ],
+      "condition": [
+        [
+          "yes"
+        ],
+        null
+      ],
+      "condition_var": [
+        "@fields.from_theme",
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        null
+      ],
+      "condition_name": [
+        "Yes",
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Would you like to learn more about this tip?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "3c28fd6b-d876-4770-8c1e-a9def5c3a4f2",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        310,
+        640
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "_nodeId": "76b90e21-1f8d-43c4-9c9d-a67d2d521b85",
+      "from": [
+        5
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 1",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        0,
+        860
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "_nodeId": "eacd6295-e42e-4cb1-a4fa-0653b03efa7f",
+      "from": [
+        6
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        2680,
+        100
+      ],
+      "condition": [
+        [
+          "YES Y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "Here's a video about how to keep calm and manage stress in our busy lives.",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Keep_Calm_And_Manage_Stress_Including_Take_A_Pause.m4v",
+      "_nodeId": "2a3b8861-25d4-492f-88ce-1fa88f17fa6d",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2580,
+        240
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Here's an audio message to help you take a pause!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/take_a_pause.mp3",
+      "_nodeId": "b2bf21c6-2f2a-46dd-b5b9-8a058fc7c720",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2800,
+        260
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "medium"
+      ]
+    },
+    {
+      "row_id": 10,
+      "_nodeId": "80aca0a9-c5b2-43ba-9cc8-552d357ecf65",
+      "from": [
+        8,
+        9
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 3",
+      "no_response": 120,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        2600,
+        440
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "send_message",
+      "message_text": "Let's take a pause together! Take a deep breath and ask yourself, \"What am I thinking?\"\n\nNotice if your thoughts are positive or negative. Notice if your emotions are pleasant or unpleasant. Whatever you are feeling, it is okay. Notice how your body feels. Notice anything that hurts or is tense. \nFocus on your breath as it goes in and out. Do this for about 10 breaths. \nNow, expand your awareness to your whole body. Listen to the sounds in the room. \nTake a moment to reflect on whether you feel any different. ",
+      "_nodeId": "31185234-648b-4fdf-b67e-4680528de721",
+      "from": [
+        10,
+        10,
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3080,
+        160
+      ],
+      "condition": [
+        null,
+        "No Response",
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "send_message",
+      "message_text": "Here is a comic to remind you of taking a pause!",
+      "_nodeId": "a31e1747-87c7-4c08-9c1b-90ab183e8e9a",
+      "from": [
+        11
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2760,
+        960
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "send_message",
+      "message_text": "“How am I going to get through this?”\n\n(1)",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/managing_stress_comic_1.png",
+      "_nodeId": "a31e1747-87c7-4c08-9c1b-90ab183e8e9a",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2760,
+        960
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "“Whatever it is, I am okay.” \n\n(2)",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/managing_stress_comic_2.png",
+      "_nodeId": "a31e1747-87c7-4c08-9c1b-90ab183e8e9a",
+      "from": [
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2760,
+        960
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "“Breathe in. Breathe out.\"\n\n(3)",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/managing_stress_comic_3.png",
+      "_nodeId": "a31e1747-87c7-4c08-9c1b-90ab183e8e9a",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2760,
+        960
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "send_message",
+      "message_text": "“I can do this. We will get through it together.”\n\n(4)",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/managing_stress_comic_4.png",
+      "_nodeId": "a31e1747-87c7-4c08-9c1b-90ab183e8e9a",
+      "from": [
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2760,
+        960
+      ]
+    },
+    {
+      "row_id": 17,
+      "_nodeId": "e3c8eecc-14c8-49f5-99f3-057b7d63893f",
+      "from": [
+        16
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update toolkits",
+      "obj_id": "302bcfa6-93f7-4f45-88b2-2d31ca59a1aa",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        2440,
+        1560
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "_nodeId": "5a12b29b-cffe-48af-b626-76515fabffdc",
+      "from": [
+        17,
+        17
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1525,
+        1720
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 19,
+      "_nodeId": "9f7b8b38-05ff-4c84-b890-62db9a583c4d",
+      "from": [
+        18
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2025,
+        2120
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 20,
+      "_nodeId": "5d993535-1fdc-471e-a685-0395c70e7dd5",
+      "from": [
+        19
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2275,
+        2920
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause @fields.user_name. You have added another layer to your House of Support! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "579891ea-5903-4261-9fd6-8184b8dcdacf",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2150,
+        3120
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 22,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause. You have added another layer to your House of Support! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "84fea9cd-7a7f-4b08-bd59-de730f71aee3",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2400,
+        3120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 23,
+      "_nodeId": "3958e573-d07e-4d0e-9056-695ae24281fa",
+      "from": [
+        19,
+        19
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1775,
+        2720
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 24,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause @fields.user_name. You have added another skill to your Parenting Toolkit! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "12a03921-fede-4d1e-a281-2d7ccd9fe610",
+      "from": [
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1650,
+        3120
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 25,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause. You have added another skill to your Parenting Toolkit! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "b8d6943d-52db-4370-81cd-451bae5ac09f",
+      "from": [
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1900,
+        3120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 26,
+      "_nodeId": "e3f5b67e-3271-4946-b1bd-48256daa3134",
+      "from": [
+        18,
+        18
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1025,
+        1920
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 27,
+      "_nodeId": "306f5ef0-c464-4cd6-8b89-bbec74c34ddd",
+      "from": [
+        26
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1275,
+        2520
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 28,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause @fields.user_name. You have added another layer to your House of Support! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "462b4de0-9a50-42b5-b666-7fbbc0f089ce",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1150,
+        3120
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 29,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause. You have added another layer to your House of Support! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "6320cf71-162a-44c8-99dd-d56dd8e99e9b",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1400,
+        3120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 30,
+      "_nodeId": "e286fd7e-c73f-42b3-9baf-497857499008",
+      "from": [
+        26,
+        26
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        775,
+        2320
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 31,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause @fields.user_name. You have added another skill to your Parenting Toolkit! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "071e4cbb-c7f2-4c5e-96de-e0c0d1876b2c",
+      "from": [
+        30
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        650,
+        3120
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 32,
+      "type": "send_message",
+      "message_text": "Well done for Taking a Pause. You have added another skill to your Parenting Toolkit! Over the next few days, try taking a pause whenever you are feeling stressed. It gives you a chance to be calmer. Even a few deep breaths or connecting with the ground beneath you can make a difference. You can also Take a Pause with your Child!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "89d589ea-67c7-4f7c-a3a4-1cd1d0ffde28",
+      "from": [
+        30
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        900,
+        3120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 33,
+      "type": "save_value",
+      "message_text": "tip",
+      "save_name": "current type assessed",
+      "_nodeId": "99b82b7e-a4cf-4d58-90fa-9d6fd8754ba5",
+      "from": [
+        21,
+        22,
+        24,
+        25,
+        28,
+        29,
+        31,
+        32
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2400,
+        3480
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 34,
+      "type": "save_value",
+      "message_text": "take_a_pause",
+      "save_name": "current activity",
+      "_nodeId": "99b82b7e-a4cf-4d58-90fa-9d6fd8754ba5",
+      "from": [
+        33
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2400,
+        3480
+      ]
+    },
+    {
+      "row_id": 35,
+      "_nodeId": "b3c47ea6-200b-41c7-bc74-3c05201877d3",
+      "from": [
+        34
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Feedback - Feedback for content",
+      "obj_id": "2d088e4d-2c71-4480-9cac-0403ba3c5461",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        2400,
+        3680
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 36,
+      "type": "send_message",
+      "message_text": "Chat later!",
+      "_nodeId": "7b0527cc-46e5-420e-a767-59cfed8fe79d",
+      "from": [
+        35
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        590,
+        3820
+      ],
+      "condition": [
+        "Complete"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 37,
+      "_nodeId": "b09794cf-d330-48d4-939f-6f2e5cbc6502",
+      "from": [
+        6
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        145,
+        1060
+      ],
+      "condition": [
+        [
+          "NO N"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 38,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "_nodeId": "cd77b973-c3d8-4aa1-bbe5-32ee2fad5f1c",
+      "from": [
+        37
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        1260
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 39,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "d3673e14-dc0f-4f70-b6c6-315ea0534f78",
+      "from": [
+        37
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        270,
+        1260
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 40,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "fbd1544d-6f17-48ca-aa1c-a8aff0ec42d7",
+      "from": [
+        38,
+        39
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        370,
+        1440
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 41,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "aac107e8-2bb4-4050-b248-926dc4dfdb16",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        510,
+        820
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 42,
+      "type": "go_to",
+      "from": [
+        41
+      ],
+      "message_text": 5,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Anger management": [
+    {
+      "row_id": 1,
+      "type": "save_flow_result",
+      "message_text": "Managing anger",
+      "save_name": "skill",
+      "_nodeId": "cc3f4699-020e-482e-b86e-8bfbf9bcd42e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2850,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "b40a1318-0917-4a72-b446-8900367d1ef6",
+      "from": [
+        1
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update incomplete toolkits",
+      "obj_id": "5754719c-42f8-4256-82c4-7953bc4870ec",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        2930,
+        80
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "8abe1bbf-92e1-4d9b-85f9-5551cde1fd4d",
+      "from": [
+        2,
+        2
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.from_theme",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        3110,
+        220
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "a80b830f-06cc-4d99-88eb-62f373e49b5e",
+      "from": [
+        3,
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        3275,
+        380
+      ],
+      "condition": [
+        [
+          "yes"
+        ],
+        null
+      ],
+      "condition_var": [
+        "@fields.from_theme",
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        null
+      ],
+      "condition_name": [
+        "Yes",
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Hello @fields.user_name! We love our children and teenagers, but stress from caregiving and money can make us angry. Here is how we can maintain control and keep calm.",
+      "_nodeId": "d289f861-0c35-4e30-8fd6-5c78f550c47c",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3150,
+        580
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Hello! We love our children and teenagers, but stress from caregiving and money can make us angry. Here is how we can maintain control and keep calm.",
+      "_nodeId": "ec15a94a-3f7a-4879-ae83-96f9d296cbe4",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3400,
+        580
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Would you like to learn more about this tip?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/misbehaving_children.jpg",
+      "_nodeId": "6214e3f1-86b3-47d5-9e1b-91098a86c315",
+      "from": [
+        5,
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2710,
+        280
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "bf64db5b-7f19-4301-b304-a10132d5587c",
+      "from": [
+        7
+      ],
+      "type": "wait_for_response",
+      "save_name": "know_more",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        200,
+        600
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "ce760817-e3cb-401c-b835-a5034030d2ec",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        60,
+        800
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 10,
+      "_nodeId": "324e30da-a9a9-42a6-983d-9d5e87e5b79a",
+      "from": [
+        9
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        160,
+        1360
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "send_message",
+      "message_text": "Here's a video to help you maintain control and keep calm when you get angry.",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/When_we_are_angry.m4v",
+      "_nodeId": "50627133-138e-42fe-b17f-c467f91788dd",
+      "from": [
+        10
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        1520
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "send_message",
+      "message_text": "Here's an audio message to help you maintain control and keep calm when you get angry.",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/When_we_are_angry.mp3",
+      "_nodeId": "554860d6-6e5f-453d-aded-f5bf481bf6c7",
+      "from": [
+        10
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        220,
+        1540
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "medium"
+      ]
+    },
+    {
+      "row_id": 13,
+      "_nodeId": "b0736500-9a42-4805-b818-a4e7e494fd3b",
+      "from": [
+        11,
+        12
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 3",
+      "no_response": 120,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        60,
+        1760
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "Stress from caregiving can make us angry. Here is how we can maintain control and keep calm.",
+      "_nodeId": "be325af2-426a-425c-92f0-78265ea852ae",
+      "from": [
+        10,
+        13,
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2750,
+        1420
+      ],
+      "condition": [
+        null,
+        null,
+        "No Response"
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "Think about what makes you angry? When does it happen? How do you normally react?\n\nPrevent anger from starting in the first place. Get some sleep or rest when you are tired. Try to eat something when you are hungry. Ask someone for support when you are feeling alone.",
+      "_nodeId": "5ea71ad9-ffe2-420d-ae4e-614c21100006",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2750,
+        1580
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "send_message",
+      "message_text": "Here are some things that can prevent bad things from happening when you are angry: \n\n1. Cut back on drinking alcohol or don’t drink, especially when the kids are awake.\n2. Do you have weapons or things that can be used to hurt others? Lock them up, hide them or take them out of the home.\n3. It’s ok to have your children stay somewhere safe or take them to a place where they can get help.",
+      "_nodeId": "4c7337ff-be39-40f4-8991-b2ca0e29d42f",
+      "from": [
+        15
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2750,
+        1860
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "_nodeId": "053f7790-e41d-4a67-9d4c-6c6126a7b5b5",
+      "from": [
+        16
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update toolkits",
+      "obj_id": "302bcfa6-93f7-4f45-88b2-2d31ca59a1aa",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        2710,
+        2240
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "_nodeId": "6d9ac53a-d7f8-46bd-a04f-9107981380dd",
+      "from": [
+        17,
+        17
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1835,
+        2380
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 19,
+      "_nodeId": "a1d60c59-e135-4c4a-97e2-bfc7b6c70f3b",
+      "from": [
+        18
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2335,
+        2780
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 20,
+      "_nodeId": "5b57d42d-5206-4091-8ee3-bde4b86803af",
+      "from": [
+        19
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2585,
+        3580
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "852ddc52-7183-42a7-b955-78c26062019d",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2460,
+        3780
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 22,
+      "type": "send_message",
+      "message_text": "Well done! You have added another layer to your House of Support. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "456b05b0-d69c-45b4-a9e2-ba0fe9537b6c",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2710,
+        3780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 23,
+      "_nodeId": "6e0e975a-f446-4db7-b666-cfc19e199e0d",
+      "from": [
+        19,
+        19
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2085,
+        3380
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 24,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "5aa4918f-4404-4405-abfc-8605ccb89d55",
+      "from": [
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1960,
+        3780
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 25,
+      "type": "send_message",
+      "message_text": "Well done! You have added another skill to your Parenting Toolkit. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "@(fields.house_of_support_path & \"house_\" & fields.n_skills & \".jpg",
+      "_nodeId": "e697040e-7457-4198-8394-92e6bbff8865",
+      "from": [
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2210,
+        3780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 26,
+      "_nodeId": "7b0f69c4-29cb-4525-b4f3-153366923b0d",
+      "from": [
+        18,
+        18
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "2f20c6e6-ec2b-443e-9768-65642f643034",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1335,
+        2580
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 27,
+      "_nodeId": "c74cbb06-5d1c-4ed8-b317-a96d6700f6cf",
+      "from": [
+        26
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1585,
+        3180
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 28,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "da90588b-50b3-4981-af3f-a4b11c9321be",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1460,
+        3780
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 29,
+      "type": "send_message",
+      "message_text": "Well done! You have added another layer to your House of Support. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "207e56da-5592-4eb6-a229-3ca92780c4d4",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1710,
+        3780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 30,
+      "_nodeId": "5003d6a2-bb34-4fb2-9d4d-6b02ed67df05",
+      "from": [
+        26,
+        26
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1085,
+        2980
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 31,
+      "type": "send_message",
+      "message_text": "Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "17f9f4d4-c5b5-4515-9a86-d8152bf20fea",
+      "from": [
+        30
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        960,
+        3780
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 32,
+      "type": "send_message",
+      "message_text": "Well done! You have added another skill to your Parenting Toolkit. Over the next few days, take 10 deep breaths or do some exercise when you feel angry. Learning how to manage your anger can help you avoid some difficult situations.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "7d51c1b1-960a-45b2-91c1-a61473a0f4b8",
+      "from": [
+        30
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1210,
+        3780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 33,
+      "type": "save_value",
+      "message_text": "anger_management",
+      "save_name": "current activity",
+      "_nodeId": "85ee6f1a-8708-47a9-87de-39bfed78c589",
+      "from": [
+        21,
+        22,
+        24,
+        25,
+        28,
+        29,
+        31,
+        32
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2710,
+        4120
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 34,
+      "type": "save_value",
+      "message_text": "tip",
+      "save_name": "current type assessed",
+      "_nodeId": "85ee6f1a-8708-47a9-87de-39bfed78c589",
+      "from": [
+        33
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2710,
+        4120
+      ]
+    },
+    {
+      "row_id": 35,
+      "_nodeId": "15ec4648-aa18-44b9-a8fa-82db90a8e592",
+      "from": [
+        34
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Feedback - Feedback for content",
+      "obj_id": "2d088e4d-2c71-4480-9cac-0403ba3c5461",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        940,
+        4280
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 36,
+      "_nodeId": "12380444-61e3-4985-96ce-453af1f35c51",
+      "from": [
+        35,
+        35
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        775,
+        4480
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 37,
+      "type": "send_message",
+      "message_text": "Chat to you later @fields.user_name!",
+      "_nodeId": "d0cb4387-8e55-4a9a-9faa-403b9fb01e3b",
+      "from": [
+        36
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        650,
+        4680
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 38,
+      "type": "send_message",
+      "message_text": "Chat to you later!",
+      "_nodeId": "5c77a6a9-e79b-46b6-af17-fbcc705f50ab",
+      "from": [
+        36
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        900,
+        4680
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 39,
+      "_nodeId": "db4f2016-44b0-4d99-bef7-b1b4f16257d8",
+      "from": [
+        8
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        405,
+        820
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 40,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "_nodeId": "b9854626-f673-460b-bf2c-7a2391e0dd6a",
+      "from": [
+        39
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        280,
+        1020
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 41,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "07668eaf-0600-4195-b1da-5fbf0f7ff1c3",
+      "from": [
+        39
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        530,
+        1020
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 42,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "334d3d00-d4da-4577-a5de-5f4c6a4959d1",
+      "from": [
+        40,
+        41
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        630,
+        1200
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 43,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "bdd11a56-84ed-4d7d-992e-312717000cf8",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2730,
+        700
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 44,
+      "type": "go_to",
+      "from": [
+        43
+      ],
+      "message_text": 7,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - CheckIn - Anger management": [
+    {
+      "row_id": 1,
+      "_nodeId": "a382307c-fce7-4523-8b7d-a69d1b928ad8",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1045,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "b3b209e4-9f0e-4e3b-a0d3-6567fdf4e572",
+      "from": [
+        1
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "34748c8b-842c-472a-a8ee-b86c7b76914f",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        795,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Hi @fields.user_name! I would love to check in with how you are doing! Have you managed to keep calm whenever you get angry over the past few days? ",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "89ce4435-d9d6-4a0d-bcab-18a7225391af",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        920,
+        600
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Hi @fields.user_name! We would love to check in with how you are doing! Have you managed to keep calm whenever you get angry over the past few days? ",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "a6024a66-4e7b-42c7-9099-76c0669c373a",
+      "from": [
+        2,
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        670,
+        600
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "_nodeId": "32f6187d-ea92-4d70-b9d3-9dc5ac3fdf6d",
+      "from": [
+        1
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "34748c8b-842c-472a-a8ee-b86c7b76914f",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1295,
+        400
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Hi! I would love to check in with how you are doing! Have you managed to keep calm whenever you get angry over the past few days? ",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "ae47296f-15e7-4e10-96ce-f112e5e0a8a9",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1420,
+        600
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Hi! We would love to check in with how you are doing! Have you managed to keep calm whenever you get angry over the past few days? ",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "fcd8728f-ab4c-4698-a60b-d5e14966f924",
+      "from": [
+        5,
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1170,
+        600
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "95894689-5ca6-442a-988f-90a34c269e78",
+      "from": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "type": "wait_for_response",
+      "save_name": "checkin_managed",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        650,
+        800
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "c0934475-6fd0-4927-bd6f-4cb2bfd23ac0",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        60,
+        760
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Great job! You should be proud of yourself! Research shows that every time you control your anger in front of your child, you increase your child's brain development.",
+      "_nodeId": "08033056-eb5a-4474-8d91-8ca892bdbcec",
+      "from": [
+        9
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        60,
+        860
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "0397abd6-4297-4f7f-9145-284c1ac5acfd",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2010,
+        1020
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 12,
+      "_nodeId": "c8221f4b-8c62-404b-9223-96e0226525b3",
+      "from": [
+        11
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.age_group_for_tips",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        1990,
+        1140
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "_nodeId": "cbe8b459-cadf-42e7-aab2-c8c01ecaa3c7",
+      "from": [
+        12
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1785,
+        1240
+      ],
+      "condition": [
+        [
+          "baby"
+        ]
+      ],
+      "condition_var": [
+        "@fields.age_group_for_tips"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Baby"
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "Sorry to hear that you are finding this challenging. If you are getting angry because @fields.child_nickname won’t stop crying, it’s OK to leave them on their back in a safe location, like a crib, and walk away for a bit. Stay nearby so that you can monitor @fields.child_nickname. Check on @fields.child_nickname every 5-10 minutes.",
+      "_nodeId": "3ddb4a4c-90ef-476a-b105-bbb0a3b7e7f9",
+      "from": [
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1660,
+        1440
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "Sorry to hear that you are finding this challenging. If you are getting angry because your baby won’t stop crying, it’s OK to leave them on their back in a safe location, like a crib, and walk away for a bit. Stay nearby so that you can monitor your baby. Check on your baby every 5-10 minutes.",
+      "_nodeId": "98507421-1900-4971-9ed2-22c40c658c1e",
+      "from": [
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1910,
+        1440
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "send_message",
+      "message_text": "It is completely normal to experience this challenge. Next time you feel yourself getting angry try to manage this by taking deep breaths in. This can allow you to relax and reduce stress, which can help with managing your emotions. Every time you do this, you increase your child's brain development!",
+      "_nodeId": "619e5f0f-bab2-417f-a722-1fae6eb33f24",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2170,
+        1440
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "a607c7ef-cb66-4fc7-84e4-d8f3c9f0a6c6",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2170,
+        800
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "a607c7ef-cb66-4fc7-84e4-d8f3c9f0a6c6",
+      "from": [
+        17
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2170,
+        800
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "go_to",
+      "from": [
+        18
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 20,
+      "type": "send_message",
+      "message_text": "Would you like to review the content?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "eb4183b2-955e-4ece-9635-7f111ba87236",
+      "from": [
+        10,
+        14,
+        15,
+        16
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        60,
+        1060
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "_nodeId": "6c8711cb-8676-41ee-b14a-ec21e02de28b",
+      "from": [
+        20
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 2",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        40,
+        1480
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 22,
+      "_nodeId": "071d8b8e-5b62-4d08-bac7-0dd7e4d19f42",
+      "from": [
+        21
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Relax - Anger management",
+      "obj_id": "39f83807-d432-4b59-80d8-6061c761f59c",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        0,
+        1900
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 23,
+      "_nodeId": "151e79ca-de62-415a-9eff-6aede3a0206c",
+      "from": [
+        21
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        425,
+        1660
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 24,
+      "type": "send_message",
+      "message_text": "That is okay! Remember you can access parenting content at anytime by typing \"Help\". Chat to you later @fields.user_name!",
+      "_nodeId": "32a21c1e-4320-46a4-87d8-1c4e4a526078",
+      "from": [
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        300,
+        1860
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 25,
+      "type": "send_message",
+      "message_text": "That is okay! Remember you can access parenting content at anytime by typing \"Help\". Chat to you later!",
+      "_nodeId": "9960a25d-158f-4b43-9281-a57562ae867c",
+      "from": [
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        550,
+        1860
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 26,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "9ce108fb-b884-45b8-9d03-61cb9a2fbf80",
+      "from": [
+        21
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1440,
+        1520
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 27,
+      "type": "go_to",
+      "from": [
+        26
+      ],
+      "message_text": 20,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Anger management 2": [
+    {
+      "row_id": 1,
+      "_nodeId": "e2007a02-ff1e-4ed1-84f3-ed5bf0ffa8c3",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        425,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Hi @fields.user_name! Managing anger can be really difficult. Take a break when you feel you are getting angry at your children or someone else.",
+      "_nodeId": "fcf3da66-9af4-44ba-84ec-1133dfa7311c",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        300,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Hi! Managing anger can be really difficult. Take a break when you feel you are getting angry at your children or someone else.",
+      "_nodeId": "d1e0bc9f-f528-47b0-9b93-49746506d3d1",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        550,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Would you like to learn more about this tip?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "f5a3d12d-febd-4821-b6d5-c8b77bb6a0e4",
+      "from": [
+        2,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        180,
+        400
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "_nodeId": "62fe2df0-3523-4ce8-a437-f60fdeda27e2",
+      "from": [
+        4
+      ],
+      "type": "wait_for_response",
+      "save_name": "know_more",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        180,
+        540
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Go somewhere else for 5 minutes to regain control of your emotions. If you have safe outdoor space, go outside. You can get through this!",
+      "_nodeId": "5fd823fa-f9e2-4ecd-912e-482169b6f347",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        680
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "5fd823fa-f9e2-4ecd-912e-482169b6f347",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        680
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "f7ac21b3-a9b6-47f9-94bb-a51b2bb9bf7a",
+      "from": [
+        7
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        180,
+        920
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Here's a video to help you manage your anger!",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Anger_Management.m4v",
+      "_nodeId": "f49afa6c-ea7e-46e2-8c4c-1557d2111f97",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        1020
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Here's an audio message to help you manage your anger!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/dealing_with_anger.mp3",
+      "_nodeId": "7a1a3b8f-d61a-48ff-b927-205e6a192f9e",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        260,
+        1020
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Medium"
+      ]
+    },
+    {
+      "row_id": 11,
+      "_nodeId": "d1361804-2512-463d-9450-f62c79ddd9ca",
+      "from": [
+        10,
+        9
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 1",
+      "no_response": 120,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        20,
+        1160
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "send_message",
+      "message_text": "Did you know that research shows if you control your anger or do something positive, you increase your child's brain development? Be proud of yourself when you manage to do it!",
+      "_nodeId": "9784aecc-755d-423c-b5c4-c4df5028fef8",
+      "from": [
+        11,
+        11,
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1450,
+        800
+      ],
+      "condition": [
+        null,
+        "No Response",
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "_nodeId": "1ae4d699-8c91-4d5e-96da-e602426470e9",
+      "from": [
+        12
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.age_group_for_tips",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        1470,
+        1060
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "_nodeId": "648a46f9-0ca7-472c-b804-5e598d777e5c",
+      "from": [
+        13
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1265,
+        1180
+      ],
+      "condition": [
+        [
+          "baby"
+        ]
+      ],
+      "condition_var": [
+        "@fields.age_group_for_tips"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Baby"
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "If you are getting angry because @fields.child_nickname won’t stop crying, it’s OK to leave them on their back in a safe location, like a crib, and walk away for a bit. Stay nearby so that you can monitor @fields.child_nickname. Check on @fields.child_nickname every 5-10 minutes.",
+      "_nodeId": "6525dad1-e2d3-4766-b33b-5e0335b5ed66",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1140,
+        1380
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "send_message",
+      "message_text": "If you are getting angry because your baby won’t stop crying, it’s OK to leave them on their back in a safe location, like a crib, and walk away for a bit. Stay nearby so that you can monitor your baby. Check on your baby every 5-10 minutes.",
+      "_nodeId": "da70bd26-c2d7-4dbe-8647-a5e8be3648f6",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1390,
+        1380
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "_nodeId": "b64cf54f-a2cc-4142-97b8-6f91d6f47891",
+      "from": [
+        13,
+        15,
+        16
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        935,
+        1700
+      ],
+      "condition": [
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "type": "send_message",
+      "message_text": "We hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",
+      "_nodeId": "8272f2ac-074d-4597-996b-c51887550ade",
+      "from": [
+        17
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        810,
+        1900
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "send_message",
+      "message_text": "We hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "11f312c5-8e93-422e-a7a9-5d9612e8bfa4",
+      "from": [
+        17
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1060,
+        1900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 20,
+      "type": "send_message",
+      "message_text": "That's okay! You can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "61ecbd8f-3cf5-45fe-9998-d9a53c7a8fba",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1490,
+        540
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 21,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "61ecbd8f-3cf5-45fe-9998-d9a53c7a8fba",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1490,
+        540
+      ]
+    },
+    {
+      "row_id": 22,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "fcbd73ec-4250-47bb-9828-a37ad390357a",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        690,
+        500
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 23,
+      "type": "save_value",
+      "message_text": "@(now())",
+      "save_name": "last interaction",
+      "_nodeId": "fcbd73ec-4250-47bb-9828-a37ad390357a",
+      "from": [
+        22
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        690,
+        500
+      ]
+    },
+    {
+      "row_id": 24,
+      "type": "go_to",
+      "from": [
+        23
+      ],
+      "message_text": 4,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - CheckIn - Connect": [
+    {
+      "row_id": 1,
+      "_nodeId": "3c184099-31e0-4b47-9f89-3894f7669f44",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        560,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Hi @fields.user_name! How are you feeling?",
+      "choice_1": "Great",
+      "choice_2": "Okay",
+      "choice_3": "Bad",
+      "_nodeId": "e64c51ff-f59c-4a40-a618-610fb2d2cf68",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        435,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Hi! How are you feeling?",
+      "choice_1": "Great",
+      "choice_2": "Okay",
+      "choice_3": "Bad",
+      "_nodeId": "4c7cb93d-4113-439d-8634-c78e8f7f6102",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "b831577f-4ef3-42d7-bf88-e50d8ca411d9",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "checkin_how",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        685,
+        340
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "So good to hear that you are doing well. What a wonderful feeling!",
+      "_nodeId": "70acf714-b70f-46f0-a394-846c100cdd64",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        55,
+        500
+      ],
+      "condition": [
+        [
+          "great"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Great"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!",
+      "_nodeId": "187427c2-dde0-4352-abec-da28e041df39",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        375,
+        500
+      ],
+      "condition": [
+        [
+          "ok okay"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Ok"
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Sorry to hear that you are not having a good day. It is completely normal to be going through a difficult time now. Remember that you are not alone.",
+      "_nodeId": "e0f4dd41-db27-4d67-afe9-227a770f0ebc",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        905,
+        480
+      ],
+      "condition": [
+        [
+          "bad"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Bad"
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "When you take care of yourself, you take care of your children. We all need to connect. Try to talk to friends, family, and other support networks every day. If it has been a while since you reached out to someone, do it now!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/two_parents_talking_together.jpg",
+      "_nodeId": "33c7e33f-a524-4901-8c37-0db78c044bc2",
+      "from": [
+        5,
+        6,
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        335,
+        760
+      ],
+      "condition": [
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "8fd44b20-2c2b-4ed8-8004-9ab114b3f5ae",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1225,
+        340
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "go_to",
+      "from": [
+        9
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - CheckIn - List of things": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Hi! How are you feeling?",
+      "choice_1": "Great",
+      "choice_2": "Okay",
+      "choice_3": "Bad",
+      "_nodeId": "d1b82b15-1a1d-4150-8ff2-6ad480dc0d98",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        460,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "85ac1161-8e84-4a21-ae25-b49b891feb4d",
+      "from": [
+        1
+      ],
+      "type": "wait_for_response",
+      "save_name": "checkin_how",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        440,
+        160
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "So good to hear that you are doing well. What a wonderful feeling!",
+      "_nodeId": "365f92db-909c-4b2a-8ff2-f3f845b1e1b9",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        140,
+        320
+      ],
+      "condition": [
+        [
+          "great"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Great"
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!",
+      "_nodeId": "925eb82f-5adf-409d-806f-4ff9bb75169d",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        400,
+        320
+      ],
+      "condition": [
+        [
+          "ok okay"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Ok"
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Sorry to hear that you are not having a good day. It is completely normal to be going through a difficult time now. Remember that you are not alone. Here is an activity that might also help...",
+      "_nodeId": "0da9d2c1-63ef-4f24-838b-682944acd5c2",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        660,
+        320
+      ],
+      "condition": [
+        [
+          "bad"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Bad"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Make a list of healthy activities that you like to do. Here are some suggestions:\n• Listening to your favourite music\n• Going for a walk (if allowed)\n• Doing some exercise\n• Drinking a cup of tea by yourself\n• Calling up a friend\n• Singing, dancing, praying, or reading\n• Sitting in the sun with your eyes closed\n• Watching your favourite T.V. show\nPick one and do it today!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/adults_talking_on_stools.jpg",
+      "_nodeId": "859b06fa-bb51-49d6-b553-41384bfedc1e",
+      "from": [
+        3,
+        4,
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        420,
+        680
+      ],
+      "condition": [
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "We hope that was helpful! Remember you can always type \"Help\" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",
+      "_nodeId": "08231d5d-a495-41a1-a752-ec62f2f41361",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        420,
+        1160
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "b349c743-17b2-4617-b270-ff6d7199e3bd",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        840,
+        120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "go_to",
+      "from": [
+        8
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Content - Relax - Keeping calm": [
+    {
+      "row_id": 1,
+      "type": "save_flow_result",
+      "message_text": "Keeping Calm",
+      "save_name": "skill",
+      "_nodeId": "4ad1309a-05ac-47b3-874d-acfb15bcf429",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        500,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "7f0ca304-b111-48f7-9789-93a634ef3e6b",
+      "from": [
+        1
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Update toolkits",
+      "obj_id": "302bcfa6-93f7-4f45-88b2-2d31ca59a1aa",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        520,
+        80
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "ffc53f87-beae-467b-b770-2b22fce3849b",
+      "from": [
+        2,
+        2
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        520,
+        220
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Here is a video to help you take a pause.",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/animated/resourceType/video/eng/take_a_pause.mp4",
+      "_nodeId": "c5f3109d-1255-488a-974b-7021197d27e1",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        260,
+        320
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Here is an audio message to help you take a pause.",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/animated/resourceType/audio/eng/take_a_pause.mp3",
+      "_nodeId": "f73ed0f5-c36d-4ccf-90f9-1bedae14db45",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        500,
+        340
+      ],
+      "condition": [
+        [
+          "medium"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Medium"
+      ]
+    },
+    {
+      "row_id": 6,
+      "_nodeId": "4e5dc760-f334-4ffc-b3b3-64fa47812757",
+      "from": [
+        4,
+        5
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 2",
+      "no_response": 60,
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        480,
+        500
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "1. Close your eyes. \n2. Take a deep breath in and let it go.\n3. Notice how you feel.\n4. Listen to your breath as it goes in and out. \n5. When you are ready open your eyes again. \n6. You are in control!",
+      "_nodeId": "7ef2cc2d-034e-4be1-b491-862ccf244d2f",
+      "from": [
+        3,
+        3,
+        6,
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        800,
+        320
+      ],
+      "condition": [
+        [
+          "low"
+        ],
+        null,
+        null,
+        "No Response"
+      ],
+      "condition_var": [
+        "@fields.type_of_media",
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        "Low",
+        null,
+        null,
+        null
+      ]
+    }
+  ]
+}

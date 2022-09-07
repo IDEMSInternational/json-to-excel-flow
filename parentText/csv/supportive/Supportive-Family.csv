@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,a077872c-e665-4290-a728-d26a2fe5b72a,,split_by_expression,545;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Would you like to learn more about how to resolve conflicts in the family?,Give me more information,I am not interested,,,,,,,,,,,,,3e7ce15d-2c45-459a-a6b4-5e9ff9f005bc,,execute_actions,420;200
+3,send_message,1,,,,,,Hi! Would you like to learn more about how to resolve conflicts in the family?,Give me more information,I am not interested,,,,,,,,,,,,,0e7a6887-59df-4a57-bee2-25cf137164e5,,execute_actions,670;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,19ba5d3b-4006-40b7-8e97-3fd1f758d772,,wait_for_response,670;440
+5,save_value,4,more information,,has_any_word,More,last interaction,@(now()),,,,,,,,,,,,,,,7f1e4fe5-568b-41c9-bd93-d4e0d4cc3154,,execute_actions,;440
+6,start_new_flow,5,,,,,,PLH - Content - Positive - Family,,,,,,,,,,,,,,dc87cd8d-5d4b-44f6-91d9-5cfa7b1ed631,a03bec2e-e670-40b2-8864-430fb2bb4f11,,split_by_subflow,20;540
+7,split_by_value,4,not no interested,,has_any_word,Not,,@fields.user_name,,,,,,,,,,,,,,,efd80c3a-6f5c-4a4d-8d76-52535171c2a1,,split_by_expression,815;640
+8,send_message,7,,@fields.user_name,has_text,user_name,,"That's okay! You can always get more information by typing ""Help"". Chat later @fields.user_name!",,,,,,,,,,,,,,,73b47900-5845-4604-8c4b-8425686b3b9d,,execute_actions,690;840
+9,send_message,7,,,,,,"That's okay! You can always get more information by typing ""Help"". Chat later!",,,,,,,,,,,,,,,efb1d712-42c7-488c-b84b-c6431d75ea40,,execute_actions,940;840
+10,save_value,8;9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,497dc8ff-1836-4be4-809f-55b5cdf89615,,execute_actions,670;1000
+11,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,190f809e-9c95-4a1f-ac96-b4377917fd7f,,execute_actions,1300;520
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,985ff3d8-74fa-45d5-a293-394789840401,,execute_actions,1300;840
+13,go_to,12,,,,,,1,,,,,,,,,,,,,,,,,,

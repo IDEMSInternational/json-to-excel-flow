@@ -1,0 +1,169 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Coping with crying,,,,,,,,,,,,,,,3ff73fdc-75fe-46dd-a43d-38237749d805,,execute_actions,890;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,3b5d0829-4a64-4e4e-9eca-b6a16cbbf2fc,,split_by_subflow,1090;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,6ae0b9a7-b4a6-4be2-98df-ef5d1449e0d4,,split_by_contact_field,560;180
+4,split_by_value,3,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,ec163313-5704-46d6-b900-1fb5e07aa0b8,,split_by_expression,1690;340
+5,send_message,4,man,@fields.gender_personalisation,has_any_word,man,,"The sound of a baby crying can be very distressing, especially for a father It is completely natural to want to make it stop. You might also think that you are not a good parent or that your baby is crying to spite you. But all babies cry. It is one of the main ways a baby can tell you that something is wrong.",,,,,,,,,,,,,,,8e83f7d8-0f2d-4c78-b2a9-99c9af4a3f4d,,execute_actions,1440;540
+6,send_message,4,woman,@fields.gender_personalisation,has_any_word,woman,,"The sound of a baby crying can be very distressing, especially for a mother. It is completely natural to want to make it stop. You might also think that you are not a good parent or that your baby is crying to spite you. But all babies cry. It is one of the main ways a baby can tell you that something is wrong.",,,,,,,,,,,,,,,08a39953-abfa-49a1-8325-c80f02abc5d7,,execute_actions,1690;540
+7,send_message,4,,,,,,"The sound of a baby crying can be very distressing, especially for a parent. It is completely natural to want to make it stop. You might also think that you are not a good parent or that your baby is crying to spite you. But all babies cry. It is one of the main ways a baby can tell you that something is wrong.",,,,,,,,,,,,,,,02b91049-4b38-407d-bf0c-36dbbdfd066b,,execute_actions,1940;540
+8,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,6b68ab9f-09a1-43ec-a66a-dffc0e2206a9,,split_by_contact_field,540;1240
+9,split_by_value,8,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,460329e1-b87c-4ea4-b308-09ae0ef99728,,split_by_expression,765;1440
+10,send_message,9,,@fields.child_nickname,has_text,child_nickname,,Here's a video that might help you when @fields.child_nickname cries.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Crying.m4v,,bfd7ac78-3128-4aac-a416-92fdcd5e249c,,execute_actions,640;1840
+11,send_message,9,,,,,,Here's a video that might help you when your baby cries.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Crying.m4v,,56dfa2da-1eb8-476c-8c59-ec8571305b16,,execute_actions,890;1840
+12,split_by_value,8,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,f6746c70-3102-4410-a9ac-85a69f6af033,,split_by_expression,1255;1640
+13,send_message,12,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message to help you when @fields.child_nickname cries.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Crying.mp3,,,10c7d3f8-edac-4412-920c-7b6af12899b8,,execute_actions,1130;1840
+14,send_message,12,,,,,,Here's an audio message to help you when your baby cries.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Crying.mp3,,,e2ccd104-3219-4016-a197-6dcd40f26622,,execute_actions,1380;1840
+15,wait_for_response,10;11;13;14,,,,,Result 4,,,,,,,,,,,,,,,,0d262fe0-e290-41f5-8d36-a53450df43bb,120,wait_for_response,1940;2020
+16,start_new_flow,15;15;8,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,74643743-dd4e-4f7d-aa0e-60bc3469f244,,split_by_subflow,1380;2240
+17,send_message,5;6;7,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/parent_and_baby.jpg,,,,413dd878-bb8c-4579-8acb-f8a792ca1b59,,execute_actions,2280;720
+18,wait_for_response,17,,,,,Result 1,,,,,,,,,,,,,,,,c7ef0e0d-6c90-4dd0-b0d8-e124235f0f23,3600,wait_for_response,1010;880
+19,go_to,18,y yes,,has_any_word,Y,,8,,,,,,,,,,,,,,,,,,
+20,send_message,18,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,560c9da6-80ce-47f0-9cac-da3d1f2de74b,,execute_actions,2300;260
+21,go_to,20,,,,,,17,,,,,,,,,,,,,,,,,,
+22,split_by_value,18;18,no n;No Response,,has_any_word;,No;,,@fields.user_name,,,,,,,,,,,,,,,6f975c6b-5a45-4fce-8eba-09b09656ffc5,,split_by_expression,2505;980
+23,send_message,22,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,30beac35-3756-4ef1-987c-9790d6fecc1a,,execute_actions,2380;1180
+24,send_message,22,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,46781342-5a38-4d0c-b666-a3bfb31224c0,,execute_actions,3880;1180
+25,send_message,16;16,Complete;Expired,,,,,"Here are some tips that might help when your baby cries:
+
+1. Why babies cry
+2. Respond as soon as you can
+3. Check to see why your baby is crying
+4. Comfort your baby
+5. Take a break if you need it
+6. Be gentle and patient with yourself
+7. If you think your baby is injured or sick, call or visit a clinic
+
+To learn more about one of these, type ""1"" to ""7"". You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,61bd9187-1bcd-4ae8-853d-c34174bbaf1f,,execute_actions,1380;2380
+26,wait_for_response,25,,,,,list_of_tips,,,,,,,,,,,,,,,,744e7ec5-61a5-4c5c-9242-aa1167d61cda,,wait_for_response,1030;2820
+27,send_message,26,1,,has_number_eq,1,,"1. Why do babies cry?
+
+Crying is a normal part of your baby's development. Sometimes babies even have crying patterns. Crying usually increases at 2-3 weeks old and is generally highest when your baby is around 6 to 8 weeks. Often babies will start crying less around 3 to 4 months. Of course, remember that every baby is different!",,,,,,,,,,,,,,,a0b5cb94-ecc5-43d2-9479-2ea134787ac6,,execute_actions,890;4120
+28,send_message,26,2,,has_number_eq,2,,"2. Respond as soon as you can
+
+Go to your baby when you hear them crying. You will not spoil your baby by picking them up. Babies who are carried and cuddled frequently, during both fussy and contented periods, may actually cry less.",,,,,,,,,,,,,,,8faf1fec-53f6-4212-9cb8-641e97765703,,execute_actions,1030;2960
+29,send_message,26,3,,has_number_eq,3,,"3.  Check to see why your baby is crying
+
+There are lots of reasons why babies cry. It might be hunger, pain, too much going on, rough handling, feeling cold/hot, wanting contact or attention, or feeling irritable. Babies can cry when they sense tension in the room. And sometimes they cry for no reason at all! ",,,,,,,,,,,,,,,e313c40b-ec8a-46bd-96cb-e78ba79230f9,,execute_actions,1380;4200
+30,split_by_value,26,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,18abbc81-b76d-4187-897b-ab87e96c8555,,split_by_expression,125;4460
+31,send_message,30,,@fields.child_nickname,has_text,child_nickname,,"4. Comfort your baby
+
+Try swaddling, gently rocking, or singing or soft music. You might need to feed @fields.child_nickname or change their diaper. They may be too hot or too cold. Or maybe they just need to be held. Take a Pause and try to relax - @fields.child_nickname can actually sense tension from you, too!",,,,,,,,,,,,,,,f7c5d22b-21a5-4d96-8f66-b173fc854189,,execute_actions,;4660
+32,send_message,30,,,,,,"4. Comfort your baby
+
+Try swaddling, gently rocking, or singing or soft music. You might need to feed your baby or change their diaper. They may be too hot or too cold. Or maybe they just need to be held. Take a Pause and try to relax - your baby can actually sense tension from you, too!",,,,,,,,,,,,,,,bffa873b-d75c-4dd8-a02b-f2dec97dd6e3,,execute_actions,250;4660
+33,split_by_value,26,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,d0545451-0ff0-4e62-a460-d6bf943870c5,,split_by_expression,395;3040
+34,send_message,33,,@fields.child_nickname,has_text,child_nickname,,"5. Take a break!
+
+If you are getting angry because @fields.child_nickname won’t stop crying, it’s OK to leave them on their back in a safe place and walk away for a bit. Stay nearby so that you can monitor @fields.child_nickname. Check on @fields.child_nickname every 5-10 minutes. ",,,,,,,,,,,,,,,1339cab7-06e8-4acd-a8f7-1665c538b054,,execute_actions,270;3240
+35,send_message,33,,,,,,"5. Take a break!
+
+If you are getting angry because your baby won’t stop crying, it’s OK to leave them on their back in a safe place and walk away for a bit. Stay nearby so that you can monitor your baby. Check on your baby every 5-10 minutes. ",,,,,,,,,,,,,,,0817cf23-6dc6-4092-927a-d822dab5da50,,execute_actions,520;3240
+36,send_message,34;35,,,,,,"Call someone for help - a family member, a friend. Sometimes just talking with someone is enough, but if you feel overwhelmed, ask someone for help. Calling for help is a sign of strength.",,,,,,,,,,,,,,,082c70ef-8743-4da2-97ee-a41b15de1531,,execute_actions,520;4960
+37,split_by_group,26,6,,has_number_eq,6,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,24403746-e6d1-45ff-b8ee-51b9a05135da,,split_by_expression,3255;3340
+38,split_by_value,37,ABTest_test-first-person_alternative,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,06061d68-9021-4e9f-a24e-c2be873f2187,,split_by_expression,3630;3740
+39,send_message,38,man,@fields.gender_personalisation,has_any_word,man,,"6. Be gentle and patient with yourself
+
+I know this is not easy. You are not a bad father if your baby continues to cry after you have done all you can to calm them. You are doing your best!",,,,,,,,,,,,,,,f9addba0-24a8-4ff0-a04a-046f54622c87,,execute_actions,3380;3940
+40,send_message,38,woman,@fields.gender_personalisation,has_any_word,woman,,"6. Be gentle and patient with yourself
+
+I know this is not easy. You are not a bad mother if your baby continues to cry after you have done all you can to calm them. You are doing your best!",,,,,,,,,,,,,,,d8c84311-b559-433e-8b62-a3e3ccf32988,,execute_actions,3630;3940
+41,send_message,38,,,,,,"6. Be gentle and patient with yourself
+
+I know this is not easy. You are not a bad parent if your baby continues to cry after you have done all you can to calm them. You are doing your best!",,,,,,,,,,,,,,,f4b237d4-0df4-4e6a-8492-e70e4282e2a9,,execute_actions,3880;3940
+42,split_by_value,37;37,ABTest_test-first-person_Default;,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,41ce0f83-deb3-45f1-8a64-f3bd07d787d6,,split_by_expression,2880;3540
+43,send_message,42,man,@fields.gender_personalisation,has_any_word,man,,"6. Be gentle and patient with yourself
+
+We know that this is not easy. You are not a bad father if your baby continues to cry after you have done all you can to calm them. You are doing your best!",,,,,,,,,,,,,,,beaed816-11ab-4499-995d-e085d351b044,,execute_actions,2630;3940
+44,send_message,42,woman,@fields.gender_personalisation,has_any_word,woman,,"6. Be gentle and patient with yourself
+
+We know that this is not easy. You are not a bad mother if your baby continues to cry after you have done all you can to calm them. You are doing your best!",,,,,,,,,,,,,,,e4c323db-babd-441c-9a94-968df66c2850,,execute_actions,2880;3940
+45,send_message,42,,,,,,"6. Be gentle and patient with yourself
+
+We know that this is not easy. You are not a bad parent if your baby continues to cry after you have done all you can to calm them. You are doing your best!",,,,,,,,,,,,,,,f132c919-9008-4951-93fd-de978cb45521,,execute_actions,3130;3940
+46,send_message,26,7,,has_number_eq,7,,"7. If you think your baby is injured or sick, call or visit a clinic
+
+If your baby cries for a long time and does not stop, they might be injured or sick. You should seek medical help immediately. ",,,,,,,,,,,,,,,7419a2be-8f7c-4228-b7e8-db9dbba3c41d,,execute_actions,3940;2860
+47,send_message,27;28;29;31;32;36;39;40;41;43;44;45;46,,,,,,"Please select another number if you want to learn more about what to do when your baby is crying:
+
+1. Why babies cry
+2. Respond as soon as you can
+3. Check to see why your baby is crying
+4. Comfort your baby
+5. Take a break if you need it
+6. Be gentle and patient with yourself
+7. If you think your baby is injured or sick, call or visit a clinic
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,77150c95-5484-4566-9563-81795a6a7d97,,execute_actions,1380;4760
+48,save_value,47,,,,,crying list of tips,"@(fields.crying_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,15992d8f-a427-4cb3-88f3-90f645035922,,execute_actions,1380;5260
+49,save_value,48,,,,,last interaction,@(now()),,,,,,,,,,,,,,,bb248222-1a50-47fd-97dc-d04083b4f5b2,,execute_actions,1380;5360
+50,go_to,49,,,,,,26,,,,,,,,,,,,,,,,,,
+51,send_message,26,no n,,has_any_word,No,,Here is a comic on coping with a colicky baby,,,,,,,,,,,,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+52,send_message,51,,,,,,"Parent 1: ""We should do something.""
+
+Parent 2: ""Okay, I'll try feeding them.""
+
+Baby: ""aaaaaaaa""
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/crying_baby_comic_1.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+53,send_message,52,,,,,,"Baby: ""aaaaaaaa""
+
+Parent 1:  ""What is wrong with them?""
+
+Parent 2: ""I don't know. It has been an hour and they are still crying. I cannot take it anymore. They are driving me crazy, I just want to shake them!""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/crying_baby_comic_2.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+54,send_message,53,,,,,,"Parent 2: ""I can see that this has been a stressful night for you. How about you get some sleep while I take Frankie into the other room. I will try wrapping them up in a blanket.""
+
+Parent 1: ""Thank you. I was getting so angry at myself.""
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/crying_baby_comic_3.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+55,send_message,54,,,,,,"Parent 1: ""How did you manage to get them to sleep?""
+
+Parent 2: ""I think they wore themselves out but we should take them to the clinic tomorrow morning.""
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/crying_baby_comic_4.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+56,split_by_group,55,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,54d9ca8a-94eb-42dc-85e3-9e8aba02dd2d,,split_by_expression,7235;5980
+57,split_by_group,56,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,2b49b237-61c6-4804-9512-99881f16bead,,split_by_expression,8735;6380
+58,split_by_value,57,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,9bba6837-ff42-44d2-9160-d4109afe11ec,,split_by_expression,9485;7180
+59,split_by_value,58,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,1117da48-7535-4468-be95-0ce36d5f9e5e,,split_by_expression,9110;8580
+60,send_message,59,man,@fields.gender_personalisation,has_any_word,man,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,fc9b82b4-2b9d-41fd-b949-9608bd436abb,,execute_actions,8860;8980
+61,send_message,59,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,1db567bf-374c-4cae-b04d-92192e858288,,execute_actions,9110;8980
+62,send_message,59,,,,,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,fc966a7e-91d9-4445-8d8c-1742503aeab2,,execute_actions,9360;8980
+63,split_by_value,58,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,ce55f9fe-d491-49fa-87a6-d8d6fb61c804,,split_by_expression,9860;8780
+64,send_message,63,man,@fields.gender_personalisation,has_any_word,man,,"Well done! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,ab0bf778-8f08-47bc-909c-28449b97ec3c,,execute_actions,9610;8980
+65,send_message,63,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,7e600371-c702-47d9-9a49-bf31522c9b5e,,execute_actions,9860;8980
+66,send_message,63,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,ffced313-6013-4e53-9f1b-d7ae80d598a7,,execute_actions,10110;8980
+67,split_by_value,57;57,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,84a4cc30-3b37-411d-9070-4f827d8a8b6f,,split_by_expression,7985;6980
+68,split_by_value,67,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,7d79a5ce-368d-42cc-9d4b-13ea79b573be,,split_by_expression,7610;8180
+69,send_message,68,man,@fields.gender_personalisation,has_any_word,man,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,d9091b91-ad53-4d98-a3f2-401bcf32d642,,execute_actions,7360;8980
+70,send_message,68,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,dd211992-2af4-4b1a-ba10-f08ca9355888,,execute_actions,7610;8980
+71,send_message,68,,,,,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,2a13c3b0-c7e0-4088-b4cf-8e5a28c592be,,execute_actions,7860;8980
+72,split_by_value,67,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,3cc78aa4-4247-4a8c-a2b6-7a4d545f7482,,split_by_expression,8360;8380
+73,send_message,72,man,@fields.gender_personalisation,has_any_word,man,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,076a0ae6-5c0d-4b22-b7ad-5da0e63a3a27,,execute_actions,8110;8980
+74,send_message,72,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,21b8d15c-f981-47e0-bb4c-dfc9671c42db,,execute_actions,8360;8980
+75,send_message,72,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,52a9f59c-6be4-4466-8a46-ba3c5f9b74cf,,execute_actions,8610;8980
+76,split_by_group,56;56,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,83a036d8-a006-4e82-8947-aebc717c5170,,split_by_expression,5735;6180
+77,split_by_value,76,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,a73dbf58-7607-472c-af3b-66409cc8f346,,split_by_expression,6485;6780
+78,split_by_value,77,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,b00a6acf-8b45-4e01-8ff5-4526a215de08,,split_by_expression,6110;7780
+79,send_message,78,man,@fields.gender_personalisation,has_any_word,man,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,865629d3-f018-4fc2-9ee4-414b10c784e6,,execute_actions,5860;8980
+80,send_message,78,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,f78d1b12-d459-4c53-af2b-3f7884d81adf,,execute_actions,6110;8980
+81,send_message,78,,,,,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,c1d295bb-821e-4735-be0a-c63a32395ca4,,execute_actions,6360;8980
+82,split_by_value,77,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,9d87adc9-67fc-414e-900d-b541d73cb56c,,split_by_expression,6860;7980
+83,send_message,82,man,@fields.gender_personalisation,has_any_word,man,,"Well done! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,7a1ce276-3847-4166-a304-e960c70cc90b,,execute_actions,6610;8980
+84,send_message,82,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,a21e9053-d721-412f-839d-7f706e174350,,execute_actions,6860;8980
+85,send_message,82,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,6d4c7774-37c4-480f-8f74-6005289f5a8c,,execute_actions,7110;8980
+86,split_by_value,76;76,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,4930eb2a-e0fd-46fc-8fc5-dbfdd7d301f5,,split_by_expression,4985;6580
+87,split_by_value,86,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,6f8b012c-443f-4444-b3c4-407c6590b9ed,,split_by_expression,4610;7380
+88,send_message,87,man,@fields.gender_personalisation,has_any_word,man,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,51d70e8c-52f2-400d-aedd-13fcec99749b,,execute_actions,4360;8980
+89,send_message,87,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,3918356e-b9b9-4f1c-9f4c-e4c976e88867,,execute_actions,4610;8980
+90,send_message,87,,,,,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,6b5d37b1-47a9-484b-84ba-e289368e6913,,execute_actions,4860;8980
+91,split_by_value,86,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,64ee8576-3d0c-4064-80f1-601aa409d38b,,split_by_expression,5360;7580
+92,send_message,91,man,@fields.gender_personalisation,has_any_word,man,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad fathers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,730ad7af-507f-479e-84b0-db1cda373b2d,,execute_actions,5110;8980
+93,send_message,91,woman,@fields.gender_personalisation,has_any_word,woman,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad mothers. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,b6b41f92-fab5-427a-a176-46662a40c3da,,execute_actions,5360;8980
+94,send_message,91,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try using some of these tips when your baby is crying. Remember that there are no bad parents. We are all learning here!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,5059f508-790c-47e2-94e5-ceeccc71a16c,,execute_actions,5610;8980
+95,save_value,60;61;62;64;65;66;69;70;71;73;74;75;79;80;81;83;84;85;88;89;90;92;93;94,,,,,current type assessed,tip,,,,,,,,,,,,,,,a723c7fb-9852-431e-98a5-c6271b10fb7a,,execute_actions,4080;9640
+96,save_value,95,,,,,current activity,crying,,,,,,,,,,,,,,,a723c7fb-9852-431e-98a5-c6271b10fb7a,,execute_actions,4080;9640
+97,start_new_flow,96,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,01de7166-3f76-4f0b-ac93-9f4cc890781d,,split_by_subflow,4060;9260
+98,send_message,97;97,Complete;Expired,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later!",,,,,,,,,,,,,,,7a11c7bf-d733-4645-9283-9e59234957de,,execute_actions,4080;9100
+99,send_message,26,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,d2f2aae7-7012-424b-b69a-ed8ca0d9ff5b,,execute_actions,3880;2340
+100,go_to,99,,,,,,25,,,,,,,,,,,,,,,,,,

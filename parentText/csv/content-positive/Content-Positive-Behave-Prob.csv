@@ -1,0 +1,27 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Solving problems with your teen,,,,,,,,,,,,,,,7891d154-7851-411e-a62c-cdb98137d201,,execute_actions,620;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,0f9e9ac3-7845-449b-9896-55ae08e709d0,,split_by_subflow,620;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,1430a4df-f87e-4b51-a269-900622b72ae5,,split_by_expression,1005;240
+4,send_message,3,,@fields.user_name,has_text,user_name,,Hello @fields.user_name! Today's tip is about how we can help our children learn how to solve problems and conflicts.,,,,,,,,,,,,,,,1d31c4c0-839b-4738-b87e-7049b1aff432,,execute_actions,880;440
+5,send_message,3,,,,,,Hello! Today's tip is about how we can help our children learn how to solve problems and conflicts.,,,,,,,,,,,,,,,b66e36f6-cb55-4c92-895e-0e1b651abf18,,execute_actions,1130;440
+6,split_by_value,4;5,,,,,,@fields.toolkit,,,,,,,,,,,,,,,905cfe08-031c-427b-bc49-f0020d7338b1,,split_by_contact_field,760;620
+7,split_by_group,6,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,88a3daaf-911f-4103-82eb-6b30186ee2bc,,split_by_expression,125;700
+8,send_message,7,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,86b285b7-ff40-4dea-b501-5fba6434479f,,execute_actions,500;900
+9,send_message,7;7,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,e3c662fa-764d-4be2-86b2-b8b791297e9a,,execute_actions,;900
+10,send_message,6,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,97daa2ca-1681-4c3d-ba6d-cc01466196fd,,execute_actions,1250;900
+11,wait_for_response,10;8;9,,,,,know_more,,,,,,,,,,,,,,,,ada7df2d-a82d-451d-9d77-d60b0831e0d0,,wait_for_response,780;1020
+12,save_value,11,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,737c7b87-f19d-4ee2-82bc-3ae0da309b33,,execute_actions,1150;1160
+13,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,737c7b87-f19d-4ee2-82bc-3ae0da309b33,,execute_actions,1150;1160
+14,start_new_flow,13,,,,,,PLH - Content - Positive - Behave - ProblemSolving,,,,,,,,,,,,,,f09d56a4-f6ec-4824-8eda-92a4c527a0c2,e4aa18bb-6e77-4158-9f6f-80374753baad,,split_by_subflow,1170;1340
+15,save_value,14,Complete,,,,from theme,no,,,,,,,,,,,,,,,97294e46-d1bf-47f1-b1bb-76a455302267,,execute_actions,560;1260
+16,split_by_value,15,,,,,,@fields.user_name,,,,,,,,,,,,,,,6deaecd4-bd41-4b45-bb59-563d5e3dca88,,split_by_expression,375;1380
+17,send_message,16,,@fields.user_name,has_text,user_name,,"Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Tech Support."" Chat to you later @fields.user_name!",,,,,,,,,,,,,,,24aef9e4-0d07-46f3-8d80-0b0ca919d914,,execute_actions,250;1580
+18,send_message,16,,,,,,"Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Tech Support."" Chat to you later!",,,,,,,,,,,,,,,d9c83c15-ed94-45b6-b3e3-75ee7d0d8f7f,,execute_actions,500;1580
+19,save_value,14,Expired,,,,from theme,no,,,,,,,,,,,,,,,842305b0-4549-47a1-a5ac-0de619be5a0d,,execute_actions,1350;1680
+20,save_value,19,,,,,has expired,yes,,,,,,,,,,,,,,,842305b0-4549-47a1-a5ac-0de619be5a0d,,execute_actions,1350;1680
+21,send_message,20,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,2937de47-dfea-44f8-bb7b-58c2284bf978,,execute_actions,1350;1860
+22,send_message,11,no n,,has_any_word,No,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,2c981e72-c156-43b7-9610-7dbd3d953533,,execute_actions,1790;1160
+23,save_value,22,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8bb5bd2b-1d31-45f3-837d-e941b8ab1dcd,,execute_actions,1850;1320
+24,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,ab541b7d-1c08-43b2-857e-ad6df3aaa8f3,,execute_actions,1830;680
+25,send_message,24,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,e51134f9-0578-43b4-a150-94010425bc83,,execute_actions,1670;540
+26,go_to,25,,,,,,6,,,,,,,,,,,,,,,,,,

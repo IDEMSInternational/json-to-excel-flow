@@ -1,0 +1,27 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,fbb70aba-149b-4cf1-8ac9-748aa036109e,,split_by_expression,935;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! How are you feeling?,Great,Okay,Bad,,,,,,,,,,,,9edb5f0d-0baa-4afa-80ff-e34ca3811ee9,,execute_actions,810;200
+3,send_message,1,,,,,,Hi! How are you feeling?,Great,Okay,Bad,,,,,,,,,,,,d842510d-64a9-49c0-baf6-f1c1f3c5f36b,,execute_actions,1060;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,2ffb570c-0f9e-4649-bd82-b11badef642c,,wait_for_response,1080;340
+5,send_message,4,great,,has_any_word,Great,,So good to hear that you are doing well. What a wonderful feeling!,,,,,,,,,,,,,,,eaedae55-d375-4ec6-a1b9-45ef1e243d7a,,execute_actions,590;500
+6,send_message,4,ok okay,,has_any_word,Ok,,Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!,,,,,,,,,,,,,,,425a9d6f-b12b-41a2-bdfc-8bb266b0ce65,,execute_actions,1120;500
+7,send_message,4,bad,,has_any_word,Bad,,Sorry to hear that you are not having a good day. It is completely normal to be going through a difficult time now. Remember that you are not alone.,,,,,,,,,,,,,,,0d051ca6-7d89-48b3-9b4d-e4145dbdef27,,execute_actions,1420;480
+8,split_by_value,5;6;7,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,888cd3a2-6c03-476c-a4be-f7dc44f1700b,,split_by_contact_field,1120;760
+9,send_message,8,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you get through the day!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Loving_Kindness.m4v,,e698c546-a1e2-4b3f-90a4-389a568118d7,,execute_actions,;860
+10,send_message,8,medium,@fields.type_of_media,has_any_word,medium,,Here's an audio message to help you get through the day!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Loving_Kindness.mp3,,,89cdaa8c-bc0c-45c9-83e6-b16b265f9158,,execute_actions,650;920
+11,wait_for_response,10;9,,,,,Result 2,,,,,,,,,,,,,,,,b8aa733c-ce0f-4d14-a744-e60845e2792d,120,wait_for_response,120;1140
+12,send_message,11;11;8,;No Response;,,,,,Here is a short activity that can help when you are feeling like needing some more support to get through the day.,,,,,,,,,,,,,,,53b31eae-0ec9-4864-9c4e-e9613b05214f,,execute_actions,1200;1000
+13,send_message,12,,,,,,Recognise what is happening for you in this moment. What are you thinking? Are your thoughts positive or negative. How do you feel? Do you feel pleasant or unpleasant? How does your body feel? Do you feel tense or relaxed?,,,,,,,,,,,,,,,e2419197-cdd8-4f78-a41b-3c1f5aa568b5,,execute_actions,1200;1160
+14,send_message,13,,,,,,Sit comfortably and close your eyes. Connect to your heart in a kind and gentle way. You may want to place one hand on your heart or chest. Say the following words silently to yourself:,,,,,,,,,,,,,,,9d68bae8-34bc-4a0c-97ac-aff05565f178,,execute_actions,1200;1380
+15,send_message,14,,,,,,"May I be peaceful.
+May I be safe.
+May I be healthy.",,,,,,,,,,,,,,,427cc6ec-0cd0-4958-bab8-74c34f69ba17,,execute_actions,1140;1600
+16,send_message,15,,,,,,"May I be happy.
+May there be love in my family.
+May I feel loved.",,,,,,,,,,,,,,,cc4e3dde-5129-48d7-bbdb-70ae9c9e7f66,,execute_actions,1140;1940
+17,send_message,16,,,,,,Take a moment to reflect on your experience. Notice if you feel any different.,,,,,,,,,,,,,,,fa268345-f8a9-47b8-8275-8f191f8505d1,,execute_actions,490;1420
+18,split_by_value,17,,,,,,@fields.user_name,,,,,,,,,,,,,,,dfe91049-3068-4f3b-8dcc-e37244886bf3,,split_by_expression,325;1720
+19,send_message,18,,@fields.user_name,has_text,user_name,,"If you ever need additional support to help you cope with any stress or other emotional difficulties, type ""Help"". Chat to you later @fields.user_name!",,,,,,,,,,,,,,,0b469506-f652-4fb2-a064-137aba308461,,execute_actions,200;1920
+20,send_message,18,,,,,,"If you ever need additional support to help you cope with any stress or other emotional difficulties, type ""Help"". Chat to you later!",,,,,,,,,,,,,,,c82d335d-4e4e-4f7a-94e6-abad24fcaa37,,execute_actions,450;1920
+21,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1f4d2653-92b0-483e-bc0c-4b5e3b8aaad1,,execute_actions,1360;340
+22,go_to,21,,,,,,1,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Here are the contact details of your local medical services:,,,,,,,,,,,,,,,6405388e-3ea0-461c-adb3-974c24dd569c,,execute_actions,520;40
+2,send_message,1,,,,,,##REFERRALS##,,,,,,,,,,,,,,,35b52473-ae79-4cd3-b950-885f0f849a56,,execute_actions,520;160
+3,send_message,2,,,,,,You should be proud of yourself for exploring ways to get help for you and your family.,,,,,,,,,,,,,,,a7c0fecf-2ffe-4325-969e-044874845f56,,execute_actions,520;260
+4,send_message,3,,,,,,"Type ""SOS"" at any time if you would like the details of any other emergency service or hotline. Remember everything you say will be completely private!",,,,,,,,,,,,,,,ab212c73-c458-4aab-b052-2d3e0804e7c1,,execute_actions,520;400

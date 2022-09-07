@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,668a4547-8aff-4d7f-80a4-7b9c8b15a30e,,split_by_expression,265;
+2,send_message,1,,@fields.child_nickname,has_text,child_nickname,,What kind of activity do you want for @fields.child_nickname?,Active,Calm,Fun,,,,,,,,,,,,3755f2cb-f080-4906-8040-dc6f39a314c6,,execute_actions,140;200
+3,send_message,1,,,,,,What kind of activity do you want for your child?,Active,Calm,Fun,,,,,,,,,,,,485f1e40-cbb9-4d71-a7d0-0f732275f77c,,execute_actions,390;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,3f4ef85e-8bcd-4ce6-b9bc-6917710b7ec6,,wait_for_response,470;360
+5,save_value,4,active,,has_any_word,Active,last interaction,@(now()),,,,,,,,,,,,,,,501a272d-4628-4585-a6c7-bb9d944ab483,,execute_actions,;600
+6,save_value,4,calm,,has_any_word,Calm,last interaction,@(now()),,,,,,,,,,,,,,,54247dab-c1f6-4308-8fc5-a9a025aa651b,,execute_actions,530;620
+7,save_value,4,fun,,has_any_word,Random,last interaction,@(now()),,,,,,,,,,,,,,,aeffdcf8-25b9-4081-9e45-65c990982172,,execute_actions,1030;560
+8,split_random,7,,,,,,,,,,,,,,,,,,,,,050c4aa4-9812-4474-bd3d-d76f281fc80d,,split_by_random,1030;660
+9,start_new_flow,5;8,;1,,,,,PLH - Handler - Activity - Young children - Active,,,,,,,,,,,,,,11b412bd-a5e4-46cf-bac1-1890e0a82443,7ef6e08b-c579-47c1-8385-b28b11856c39,,split_by_subflow,;800
+10,start_new_flow,6;8,;2,,,,,PLH - Handler - Activity - Young children - Calm,,,,,,,,,,,,,,c9b62c05-a1df-4df2-8d48-481c58039069,0e3c57d1-6296-4f0c-9671-f72b96dd6ec9,,split_by_subflow,550;800
+11,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1eaf3749-7b7c-4588-a3b9-30628cc84e13,,execute_actions,870;420
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,709eba11-60f2-4798-b187-70ef80d06adf,,execute_actions,870;320
+13,go_to,12,,,,,,1,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,31 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Establishing daily routines,,,,,,,,,,,,,,,7e3e840c-c80a-49d0-a981-9808eb695609,,execute_actions,1000;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,ccc73827-5fd3-4c5b-a399-0090f89d6791,,split_by_subflow,1020;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,d09b8bc0-a098-474d-b201-7f42d541aad7,,split_by_expression,1245;280
+4,send_message,3,,@fields.user_name,has_text,user_name,,Hello @fields.user_name! Today's Parenting Tip is about how we can create daily routines to keep our children feeling safe and secure.,,,,,,,,,,,,,,,ac7437c1-fb67-4db6-852d-df29f8aab29c,,execute_actions,1120;480
+5,send_message,3,,,,,,Hello! Today's Parenting Tip is about how we can create daily routines to keep our children feeling safe and secure.,,,,,,,,,,,,,,,2dfed661-70f2-4044-a453-676c6a2fbe8f,,execute_actions,1370;480
+6,send_message,4;5,,,,,,"COVID-19 has interrupted our daily work, home and school routines. This is hard for children, teenagers and for you. Making new routines can help.",,,,,,,,,,,,,,,a393ff70-3b0e-4d89-8f93-dcf9d2231c44,,execute_actions,1100;840
+7,split_by_value,6,,,,,,@fields.toolkit,,,,,,,,,,,,,,,77a86e4f-1817-4cb8-a638-3046d0d738d8,,split_by_contact_field,600;240
+8,split_by_group,7,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,c10e47d3-f79f-4ac8-a72c-086ef6ce2e07,,split_by_expression,125;580
+9,send_message,8,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,3c2b351a-00d7-4568-82bd-5851f9dacf65,,execute_actions,250;780
+10,send_message,8;8,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,8bb294fc-abb4-4f51-bb00-cbbdeff98716,,execute_actions,;780
+11,send_message,7,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,b716a572-daa4-499b-b795-d2f62ab5dd78,,execute_actions,740;820
+12,wait_for_response,10;11;9,,,,,know_more,,,,,,,,,,,,,,,,efdfb961-2a78-4f6e-bbd2-2992b1dcb0b2,,wait_for_response,960;1240
+13,save_value,12,YES Y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,ee9f0bab-7dee-4bf5-9aac-8fdedca8170b,,execute_actions,720;980
+14,save_value,13,,,,,chosen difficult age,@fields.age_group_for_tips,,,,,,,,,,,,,,,ee9f0bab-7dee-4bf5-9aac-8fdedca8170b,,execute_actions,720;980
+15,save_value,14,,,,,last interaction,@(now()),,,,,,,,,,,,,,,ee9f0bab-7dee-4bf5-9aac-8fdedca8170b,,execute_actions,720;980
+16,start_new_flow,15,,,,,,PLH - Content - Positive - Behave - Routines,,,,,,,,,,,,,,3a875a61-978c-4873-a2c1-e085f036266a,86decef1-685f-4be2-b4fe-e842e070f31c,,split_by_subflow,720;1420
+17,save_value,16,Complete,,,,from theme,no,,,,,,,,,,,,,,,8eca3437-d624-45c9-bcfc-32ed76e8820f,,execute_actions,580;1560
+18,split_by_value,17,,,,,,@fields.user_name,,,,,,,,,,,,,,,54bb0741-0210-47c2-b026-eb9f06b259fb,,split_by_expression,455;1640
+19,send_message,18,,@fields.user_name,has_text,user_name,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later @fields.user_name!",,,,,,,,,,,,,,,f542298b-b565-4694-9eac-c0f02bdfbf68,,execute_actions,330;1840
+20,send_message,18,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later!",,,,,,,,,,,,,,,b317e36d-1b2f-4644-8de3-9cdd018fbe16,,execute_actions,580;1840
+21,save_value,16,Expired,,,,from theme,no,,,,,,,,,,,,,,,abbe07f1-646d-45c0-b574-4b6ee2f94684,,execute_actions,940;1500
+22,save_value,21,,,,,has expired,tip,,,,,,,,,,,,,,,abbe07f1-646d-45c0-b574-4b6ee2f94684,,execute_actions,940;1500
+23,send_message,22,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,29aceecb-ceae-4eb8-887e-5588fcbb323e,,execute_actions,960;1880
+24,split_by_value,12,NO N,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,095f8261-c69f-4e9c-96e9-11f2261a29b7,,split_by_expression,1615;1040
+25,send_message,24,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Technical Support"". Chat to you later @fields.user_name!",,,,,,,,,,,,,,,29f597eb-a95e-444c-b144-e8c68d91f90b,,execute_actions,1490;1240
+26,send_message,24,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Technical Support"". Chat to you later!",,,,,,,,,,,,,,,e2923141-32e9-42bb-a43a-f30a04eb9d21,,execute_actions,1740;1240
+27,save_value,25;26,,,,,last interaction,@(now()),,,,,,,,,,,,,,,e1ecd5c3-3e60-416d-8318-159c76304449,,execute_actions,1760;1500
+28,send_message,12,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,0cb60016-392e-4c1c-91b8-488a3ec8127d,,execute_actions,1960;820
+29,save_value,28,,,,,last interaction,@(now()),,,,,,,,,,,,,,,e2857d8b-5586-43db-93a0-e5d8c9df4a3c,,execute_actions,1960;940
+30,go_to,29,,,,,,7,,,,,,,,,,,,,,,,,,

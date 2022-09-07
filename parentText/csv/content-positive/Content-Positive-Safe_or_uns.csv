@@ -1,0 +1,25 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Understanding safe/unsafe touch,,,,,,,,,,,,,,,8ddaa6c5-3bff-4f4a-8c4a-7e4fcd34111a,,execute_actions,1000;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,2af8095a-0cd6-4a79-b9d9-121d0a3a8f0a,,split_by_subflow,1020;100
+3,send_message,2;2,Complete;Expired,,,,,Today's tip is about how we can help to protect our children.,,,,,,,,,,,,,,,2e8d8e89-9a08-4579-8939-6f55472a4ea1,,execute_actions,670;260
+4,send_message,3,,,,,,"The idea of talking to children about abuse can be scary. We don't know what to say. But there are some simple things that can help them understand when it is not OK to be touched, and that they can tell you if something ever happens. ",,,,,,,,,,,,,,,ba918f3d-e058-4fcd-8371-c7e570939935,,execute_actions,1200;340
+5,send_message,4,,,,,,When you are walking or doing something together it can be easier to chat. ,,,,,,,,,,,,,,,1a2f421f-30ff-4b15-b917-dfdc4898d2c9,,execute_actions,1500;380
+6,split_by_value,5,,,,,,@fields.toolkit,,,,,,,,,,,,,,,5c0075f5-2d6b-4b0e-bee2-7f8fb8d4bc02,,split_by_contact_field,650;680
+7,split_by_group,6,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,26b743cd-f633-482c-a0c6-8ca0dcce031a,,split_by_expression,165;440
+8,send_message,7,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,6610c90b-bd24-4878-ae08-76563f70770c,,execute_actions,290;640
+9,send_message,7;7,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,f9fe1445-beb8-437d-84f3-b65cd7fbfc04,,execute_actions,40;640
+10,send_message,6,,,,,,Do you want to learn more about how to protect your child from abuse?,Yes,No,,,,,,,,,,,,,c3c81680-efe7-48b1-bdc2-8e64531771a6,,execute_actions,1260;780
+11,wait_for_response,10;8;9,,,,,know_more,,,,,,,,,,,,,,,,cf7b6dbe-c48e-4d7f-bbe8-7221c23d984b,,wait_for_response,470;860
+12,save_value,11,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,19bc8a3a-356d-4867-aaff-ff70641c83f4,,execute_actions,1240;980
+13,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,19bc8a3a-356d-4867-aaff-ff70641c83f4,,execute_actions,1240;980
+14,start_new_flow,13,,,,,,PLH - Content - Positive - Safe or unsafe touch,,,,,,,,,,,,,,8c08b215-0afe-44fc-9b39-46adc04d087f,93415c7f-1c88-4836-98d6-86c4119ca971,,split_by_subflow,1240;1360
+15,save_value,14,Expired,,,,has expired,tip,,,,,,,,,,,,,,,a192f5f0-73a4-4981-96f2-b90a02605dcc,,execute_actions,1660;1300
+16,send_message,15,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,997f9ee2-48b6-480a-a0d5-1a3321804372,,execute_actions,1680;1420
+17,save_value,14;16,Complete;,,,,from theme,no,,,,,,,,,,,,,,,008d2b8e-99b4-44a3-8828-d98863913aa7,,execute_actions,1160;1540
+18,split_by_value,11,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,f3f0801e-a449-4739-a438-7392ea790289,,split_by_expression,815;1040
+19,send_message,18,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,358cf193-74c7-409e-847d-e1f6813af8f5,,execute_actions,690;1240
+20,send_message,18,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,fbdb73cc-f397-46c2-b7d5-eeb4cf4fd091,,execute_actions,940;1240
+21,save_value,19;20,,,,,last interaction,@(now()),,,,,,,,,,,,,,,9bf60a3a-a494-4d94-a73c-292b4f1e6719,,execute_actions,940;1420
+22,send_message,11,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,cb1f7c2e-e1a7-4f0a-9a8d-2b321c3bd241,,execute_actions,;1000
+23,save_value,22,,,,,last interaction,@(now()),,,,,,,,,,,,,,,0a1b3d72-4279-42dd-8022-b4b578bda3da,,execute_actions,;1340
+24,go_to,23,,,,,,6,,,,,,,,,,,,,,,,,,

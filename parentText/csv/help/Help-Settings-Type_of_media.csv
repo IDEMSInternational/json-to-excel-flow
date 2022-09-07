@@ -1,0 +1,18 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,3e9107ea-a537-4c74-99ec-ba5f42ea11ec,,split_by_contact_field,420;20
+2,send_message,1,high,@fields.type_of_media,has_any_word,High,,"Your current setting for receiving media content is: High - text, audios, images, videos (high data).
+Would you like to change it? ",Yes,No,,,,,,,,,,,,,e3cb273a-f973-4f88-a9ce-cf420f54a96b,,execute_actions,200;160
+3,send_message,1,medium,@fields.type_of_media,has_any_word,Medium,,"Your current setting for receiving media content is: Medium - text, audios, images (low data).
+Would you like to change it?",Yes,No,,,,,,,,,,,,,e33db9ec-91c4-447d-8832-f00f47156140,,execute_actions,440;160
+4,send_message,1,low,@fields.type_of_media,has_any_word,Low,,"Your current setting for receiving media content is: Low - text only (almost no data).
+Would you like to change it?  ",Yes,No,,,,,,,,,,,,,d9239aed-c4dd-47dc-8e49-5e2a1eb10e65,,execute_actions,680;180
+5,wait_for_response,2;3;4,,,,,Result 2,,,,,,,,,,,,,,,,22659ebf-7c1d-4a1d-b801-fe59b8202173,,wait_for_response,400;420
+6,send_message,5,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b4bf8dac-4fc7-448f-ab81-134971946c26,,execute_actions,760;480
+7,go_to,6,,,,,,1,,,,,,,,,,,,,,,,,,
+8,send_message,1;5,;yes y,,;has_any_word,;Yes,,How would you like your messages?,Text only (almost no data),"Text, audio, image (low data)","Text, audio, image, video (high data)",Go back to the previous options,,,,,,,,,,,61231aac-d63c-4181-8674-c9dc507761be,,execute_actions,200;600
+9,wait_for_response,8,,,,,media_content,,,,,,,,,,,,,,,,16a31637-ae1e-4c67-9480-b87caece6d5e,,wait_for_response,360;1100
+10,save_value,9,high video,,has_any_word,high,type of media,high,,,,,,,,,,,,,,,fd91d5cf-de58-493e-879a-a03018c6b73c,,execute_actions,120;1260
+11,save_value,9,low,,has_any_word,Medium,type of media,medium,,,,,,,,,,,,,,,dcc02d96-b761-408c-ae0a-3f1807eebf89,,execute_actions,280;1360
+12,save_value,9,only,,has_any_word,Low,type of media,low,,,,,,,,,,,,,,,711a5f05-c10c-4605-9b5c-c26b3ec28225,,execute_actions,560;1340
+13,send_message,9,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,2794ab55-db03-4f45-9fb9-b99aa688b4c4,,execute_actions,840;1020
+14,go_to,13,,,,,,8,,,,,,,,,,,,,,,,,,

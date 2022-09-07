@@ -1,0 +1,33 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,What would you like to do?,Change your personal information,Change the way you experience the messages,Stop receiving the messages,Go back to the previous options,,,,,,,,,,,65504513-0d37-42b3-b051-0611713951b4,,execute_actions,460;60
+2,wait_for_response,1,,,,,resposnse_settings,,,,,,,,,,,,,,,,e85aecc5-5e40-43ba-aef7-192a267ac44e,,wait_for_response,360;300
+3,start_new_flow,2,personal,,has_any_word,Personal,,PLH - Help - Settings - Manage information user,,,,,,,,,,,,,,60715ca3-6ddb-490c-8d01-5073a391bb68,f7983002-6528-49f1-8d5c-c6eeed9f6142,,split_by_subflow,160;620
+4,send_message,2,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,becc6445-f167-48ea-93ee-edaa34196d48,,execute_actions,1040;180
+5,go_to,4,,,,,,1,,,,,,,,,,,,,,,,,,
+6,send_message,3,Complete,,,,,Would you like to go back to tech support? ,Yes,No,,,,,,,,,,,,,60c78d28-c626-4b96-ba18-530c61202998,,execute_actions,640;1440
+7,wait_for_response,6,,,,,Result 3,,,,,,,,,,,,,,,,d6c38ef9-3ea0-4498-9441-bb3cc415b3f8,,wait_for_response,740;1640
+8,go_to,7,yes y ,,has_any_word,Yes,,1,,,,,,,,,,,,,,,,,,
+9,send_message,7,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,3cd98b9f-3735-403f-b03f-0499cd4f0d21,,execute_actions,1040;1680
+10,go_to,9,,,,,,6,,,,,,,,,,,,,,,,,,
+11,send_message,2,experience,,has_any_word,User experience,,"What would you like to change?
+Type ""EXIT"" to stop receiving messages.",Type of media content,Age group for tips,Language,Go back to the previous options,,,,,,,,,,,12e32ae9-efa8-4841-8613-4ff300c35569,,execute_actions,440;500
+12,wait_for_response,11,,,,,Result 4,,,,,,,,,,,,,,,,81dc0523-39b8-48e1-bb38-30957bb1ad49,,wait_for_response,380;980
+13,start_new_flow,12,media,,has_any_word,Multimedia,,PLH - Help - Settings - Type of media content,,,,,,,,,,,,,,c86e7956-19f0-441f-8380-79ef754abd68,181e27cb-8ee8-4f77-a1fb-7b7465095969,,split_by_subflow,360;1200
+14,go_to,13,Complete,,,,,6,,,,,,,,,,,,,,,,,,
+15,start_new_flow,12,language ,,has_any_word,Language,,PLH - Help - Settings - Language,,,,,,,,,,,,,,e13b423b-a16b-44c2-a0e7-0f29e18ed4cf,e23dfbe2-3df6-48eb-a58a-bdaa1f984b36,,split_by_subflow,600;1200
+16,go_to,15,Complete,,,,,6,,,,,,,,,,,,,,,,,,
+17,start_new_flow,12,age group,,has_any_word,Age,,PLH - Help - Settings - Change age group for tips,,,,,,,,,,,,,,8e81de48-c05c-4b46-bc08-610c8e3ba2e9,b3fb50c7-be52-4007-a906-236b094e92d9,,split_by_subflow,820;1200
+18,go_to,17,Complete,,,,,6,,,,,,,,,,,,,,,,,,
+19,go_to,12,back,,has_any_word,Back,,1,,,,,,,,,,,,,,,,,,
+20,start_new_flow,12;2,exit;stop,,has_any_word;has_any_word,Exit;Stop,,PLH - Help - Settings - Leave the program,,,,,,,,,,,,,,60861329-61ab-4836-9afa-fab172759f14,77e31730-8032-4b7a-ade5-c417f31b423a,,split_by_subflow,900;560
+21,split_by_group,20,Complete,,,,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,b28d52b1-f235-474b-82c6-7da6c1b1489c,,split_by_groups,1020;760
+22,go_to,21,in program,,,,,6,,,,,,,,,,,,,,,,,,
+23,send_message,12,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,791a8239-cddf-42d1-a1bb-7ea9af351c6a,,execute_actions,980;900
+24,go_to,23,,,,,,11,,,,,,,,,,,,,,,,,,
+25,start_new_flow,2,back,,has_any_word,back,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,b4531b71-1e94-4c97-b997-5f2ec1116b5e,,split_by_subflow,900;380
+26,send_message,7,no not n,,has_any_word,No,,Would you like to go back to Help?,Yes,No,,,,,,,,,,,,,24d1df87-eab2-4b03-97a9-1154f1838d95,,execute_actions,900;1940
+27,wait_for_response,26,,,,,Result 5,,,,,,,,,,,,,,,,56db2230-f0a7-4468-a937-42a82b853ecc,,wait_for_response,960;2100
+28,go_to,27,yes y,,has_any_word,Yes,,25,,,,,,,,,,,,,,,,,,
+29,send_message,27,no n back,,has_any_word,No,,"Ok, thanks. Chat to you later!",,,,,,,,,,,,,,,22b77a7c-1734-4cdb-80b7-15df7e5623c0,,execute_actions,940;2240
+30,send_message,27,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,b04e5d3f-0c31-48bd-97e6-2e919c547ffe,,execute_actions,520;1960
+31,go_to,30,,,,,,26,,,,,,,,,,,,,,,,,,

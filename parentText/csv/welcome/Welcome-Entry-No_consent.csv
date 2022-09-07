@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Are you sure you do not want to get these messages? If you do not want to receive any more messages, please type ""STOP MESSAGES."" If you made a mistake, please type ""back"" and choose another option.",,,,,,,,,,,,,,,54488f53-80f0-485c-aeb4-85ff0b210c87,,execute_actions,560;100
+2,wait_for_response,1,,,,,Result 2,,,,,,,,,,,,,,,,aebfa4f7-6d28-4aa2-ad36-c9b00d092ef3,,wait_for_response,560;360
+3,start_new_flow,2,stop messages,,has_only_phrase,leave,,PLH - Welcome - Entry - No consent - Interview,,,,,,,,,,,,,,bf1cf6b2-97bf-4f5e-abd9-35c2747f9391,581f37ad-4f73-474c-b605-a2bda6aab193,,split_by_subflow,380;720
+4,send_message,3;3,Complete;Expired,,,,,"If you ever return to participate in the programme, type ""START_MESSAGES"". 
+
+We hope to see you again soon, and we wish you a happy and peaceful day! ",,,,,,,,,,,,,,,f6a81d18-0509-489a-aabb-ec655280d8e1,,execute_actions,400;940
+5,send_message,2,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,eb78cdbe-6aeb-4a9f-a27a-59c387603853,,execute_actions,1000;400
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

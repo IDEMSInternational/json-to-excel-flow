@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.toolkit,,,,,,,,,,,,,,,86287252-c324-48d3-89d1-155fb7725329,,split_by_contact_field,480;40
+2,split_by_value,1,,,,,,@fields.week_toolkit_incompletes,,,,,,,,,,,,,,,b5a877c7-4268-4d1a-a475-48903330e197,,split_by_contact_field,480;200
+3,save_value,2,,,,,week toolkit incompletes,"@(fields.week_toolkit_incompletes & parent.results.skill & "","")",,,,,,,,,,,,,,,e7365f94-7d02-456d-adfd-f5e43918c9ca,,execute_actions,620;340
+4,split_by_value,2;3,@parent.results.skill;,@fields.week_toolkit_incompletes;,has_phrase;,has skill;,,@fields.incomplete_toolkit,,,,,,,,,,,,,,,548be85b-905d-42a3-848c-7ac57a232c2d,,split_by_contact_field,520;500
+5,save_value,4,,,,,incomplete toolkit,"@(fields.incomplete_toolkit & parent.results.skill & "","")",,,,,,,,,,,,,,,53f602ff-26a5-41b5-aa9f-7d0c803717a4,,execute_actions,580;640

@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Co-chef
+•	Ask your teen what kind of meal they would like to eat.
+•	Prepare it together! The first time, you may need to guide them. 
+•	Once your teen knows how to prepare the meal, let them take the lead and follow their instructions.
+•	 Let each child and teen in the house have a turn at being the head chef.
+•	You can even help them make a budget for ingredients!",,,,,,,,,,,,,,,5eaba5e3-4da4-4542-8dbd-c19ee5a7e692,,execute_actions,240;20

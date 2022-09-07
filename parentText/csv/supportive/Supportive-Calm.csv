@@ -1,0 +1,182 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,225d68d1-9d90-430d-a3a6-0e6936bc9758,,split_by_expression,1935;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! How are you feeling? ,Great,Okay,Bad,,,,,,,,,,,,a9d08b07-e500-4f58-bc95-76c07436e5d5,,execute_actions,1810;200
+3,send_message,1,,,,,,Hi! How are you feeling? ,Great,Okay,Bad,,,,,,,,,,,,48135e82-5c3d-4741-8d72-9b495da83ba7,,execute_actions,2060;200
+4,wait_for_response,2;3,,,,,calm_interaction,,,,,,,,,,,,,,,,8f9ec36a-a54a-4ac2-8ba0-b7fe47a83b25,,wait_for_response,1520;340
+5,split_random,4,great,,has_any_word,Great,,,,,,,,,,,,,,,,,24725871-4cfd-453a-a3c4-98bacb85d505,,split_by_random,600;460
+6,split_random,5,1,,,,,,,,,,,,,,,,,,,,e2df705a-ccea-4b77-87a0-b1d353ab6715,,split_by_random,540;600
+7,send_message,6,1,,,,,So good to hear that you are doing well. What a wonderful feeling!,,,,,,,,,,,,,,,a8fac695-184d-4830-b980-2e5218bf60cf,,execute_actions,560;1120
+8,split_by_group,6,2,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,4b197abf-25dc-4820-8186-8cbcea7c341d,,split_by_expression,905;720
+9,send_message,8,ABTest_test-first-person_alternative,,,,,That's wonderful! I am happy to hear that you are feeling good.  ,,,,,,,,,,,,,,,88d32372-e1f5-4830-84e1-455a264ab8f8,,execute_actions,1280;1120
+10,send_message,8;8,ABTest_test-first-person_Default;,,,,,That's wonderful! We are happy to hear that you are feeling good. ,,,,,,,,,,,,,,,a5ed359a-fe79-4b3a-8aa8-a76925b3d29f,,execute_actions,780;1120
+11,split_by_group,6,3,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,af8f74d4-bb44-470b-b838-bd98eb98b179,,split_by_expression,415;1740
+12,send_message,11,ABTest_test-first-person_alternative,,,,,What a great feeling! I hope that good feeling continues throughout the entire day.,,,,,,,,,,,,,,,4461a726-7ff9-4edd-b884-a1a597404b30,,execute_actions,540;1940
+13,send_message,11;11,ABTest_test-first-person_Default;,,,,,What a great feeling! We hope that good feeling continues throughout the entire day.,,,,,,,,,,,,,,,ab8c805f-0a17-49e3-a077-38f3ae98eaa5,,execute_actions,290;1940
+14,send_message,6,4,,,,,"That is excellent news. When you feel good, your family around you also feels good!",,,,,,,,,,,,,,,97306abc-e6ec-4d9e-b0a2-9bfff5dcc9f8,,execute_actions,1300;1720
+15,split_by_group,6,5,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,1b5598f0-c670-449c-9b73-d71a22569dc4,,split_by_expression,145;2540
+16,send_message,15,ABTest_test-first-person_alternative,,,,,It makes me very happy to hear that you are feeling good! Take that good energy and share it with others!,,,,,,,,,,,,,,,de81894e-2de6-4681-9e54-8743ef65a4fc,,execute_actions,270;2740
+17,send_message,15;15,ABTest_test-first-person_Default;,,,,,It makes us very happy to hear that you are feeling good! Take that good energy and share it with others!,,,,,,,,,,,,,,,9e3f0448-19a2-43b5-bcf9-d4a99f157d40,,execute_actions,20;2740
+18,split_by_group,6,6,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,aaae49fa-7cb7-46b8-b1e8-7035c199736b,,split_by_expression,1155;2320
+19,send_message,18,ABTest_test-first-person_alternative,,,,,What fantastic news! I hope you continue to feel good throughout the day.,,,,,,,,,,,,,,,15861f72-2df2-4448-bc7e-dd01a48338db,,execute_actions,1280;2520
+20,send_message,18;18,ABTest_test-first-person_Default;,,,,,What fantastic news! We hope you continue to feel good throughout the day.,,,,,,,,,,,,,,,cad6b93e-f161-45bd-b756-a95438804d03,,execute_actions,1030;2520
+21,split_random,5,2,,,,,,,,,,,,,,,,,,,,33f26861-4803-405f-bfb3-0a6d550bc425,,split_by_random,2060;600
+22,send_message,21,1,,,,,Lovely! Take a breath just to appreciate the moment.,,,,,,,,,,,,,,,fe9f2d33-3d9f-4bd0-899a-68ddcd7f9c70,,execute_actions,2060;1120
+23,send_message,21,2,,,,,"Marvellous! When you feel good, it is easier to keep it positive throughout the day.",,,,,,,,,,,,,,,051bcf7e-f85c-4b2d-abb5-e7f08ba94bdb,,execute_actions,2800;1120
+24,split_by_group,21,3,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,fbce97b6-c0b5-4704-91bd-e627051f3ded,,split_by_expression,1665;1300
+25,send_message,24,ABTest_test-first-person_alternative,,,,,Hooray! I am delighted to hear that you are doing well.,,,,,,,,,,,,,,,0b3a25aa-b758-43ac-b55b-1a4a70e7ed6a,,execute_actions,1790;1500
+26,send_message,24;24,ABTest_test-first-person_Default;,,,,,Hooray! We are delighted to hear that you are doing well.,,,,,,,,,,,,,,,dd371c36-f1a1-4813-8053-1554664204cf,,execute_actions,1540;1500
+27,split_by_group,21,4,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,2e94953a-5e7d-4185-ab28-9fec42bd21a8,,split_by_expression,2655;1520
+28,send_message,27,ABTest_test-first-person_alternative,,,,,Fabulous! I am so happy to hear this.,,,,,,,,,,,,,,,ca4e0305-3515-4377-8cfb-d604532ab0b7,,execute_actions,2780;1720
+29,send_message,27;27,ABTest_test-first-person_Default;,,,,,Fabulous! We are so happy to hear this.,,,,,,,,,,,,,,,1987d300-a781-4dba-826f-3710bcb95729,,execute_actions,2530;1720
+30,split_by_group,21,5,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,44217641-c4da-4046-b75e-2eddb079b096,,split_by_expression,2265;2100
+31,send_message,30,ABTest_test-first-person_alternative,,,,,I am glad to hear this! I am sure your family is happy to see you this way as well.,,,,,,,,,,,,,,,17fa494d-c7e7-4a26-a24a-c6e0cb6dc486,,execute_actions,2390;2300
+32,send_message,30;30,ABTest_test-first-person_Default;,,,,,We are glad to hear this! We are sure your family is happy to see you this way as well.,,,,,,,,,,,,,,,617103e5-92b4-4c9d-8439-061be2167240,,execute_actions,2140;2300
+33,split_random,4,okay ok,,has_any_word,Okay,,,,,,,,,,,,,,,,,dec33c3c-fe11-48f1-b9c1-ab876bbc8f78,,split_by_random,3260;480
+34,split_random,33,1,,,,,,,,,,,,,,,,,,,,07a8634f-9cbb-433f-bb3d-46fbf5832684,,split_by_random,3120;600
+35,send_message,34,1,,,,,Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!,,,,,,,,,,,,,,,571db9e5-12cf-43c7-bc41-acb26908ecec,,execute_actions,3100;1140
+36,send_message,34,2,,,,,It is completely normal to feel okay. You do not need to feel great everyday. ,,,,,,,,,,,,,,,91a4a477-8acc-41ba-875c-2a9bd937c8bc,,execute_actions,3320;1140
+37,send_message,34,3,,,,,"Thank you for sharing! All feelings, whether they are good, bad, or okay are welcome here.  ",,,,,,,,,,,,,,,2e17ea56-8e26-4ec6-912c-60e31dc0e741,,execute_actions,3540;1160
+38,send_message,34,4,,,,,"Part of keeping healthy is allowing yourself to feel all your emotions: the good, the bad, and the ones in the middle. ",,,,,,,,,,,,,,,f848e22c-86ef-469b-b1c7-d4063b2588f1,,execute_actions,3120;1980
+39,send_message,34,5,,,,,"We all experience days where we just feel fine, and that is completely okay! ",,,,,,,,,,,,,,,c1b16beb-25b4-4b74-bd7d-555acf04a96e,,execute_actions,3340;1940
+40,send_message,34,6,,,,,You should not feel pressured to feel happy and great all the time. All feelings are valid and healthy!,,,,,,,,,,,,,,,5d282b66-8b57-4b10-ab41-d73c879a71c5,,execute_actions,3580;1940
+41,split_random,33,2,,,,,,,,,,,,,,,,,,,,b89d8a60-684a-432c-a2e7-3e67e14c9cf4,,split_by_random,3900;600
+42,send_message,41,1,,,,,Life is filled with ups and downs. It is important to recognise and accept how are you feeling. Please remember to be kind to yourself.,,,,,,,,,,,,,,,c76c2c0d-c0c1-457a-93a7-11b41552dad9,,execute_actions,3840;1140
+43,send_message,41,2,,,,,"We are made to feel different emotions, and learning to identify them is a great skill. Good job! You know we are here to support you. ",,,,,,,,,,,,,,,2ebf52f0-e9c5-44de-b467-9ef868b27405,,execute_actions,4120;1160
+44,send_message,41,3,,,,,Feeling okay is perfectly normal. Try asking how your family members are feeling today. This can help everyone to understand each other better. ,,,,,,,,,,,,,,,a69b3361-e096-4eed-ae3a-09d4c9aee356,,execute_actions,3860;1960
+45,send_message,41,4,,,,,There are days when we just go with the flow and it is completely perfect.,,,,,,,,,,,,,,,192e402b-5e08-4fc8-8826-af954f9b6622,,execute_actions,4120;2000
+46,send_message,41,5,,,,,"Learning to identify and accept your emotions will allow you to build a stronger relationship with yourself, your family and your community. Well done!",,,,,,,,,,,,,,,cd1a3eff-c46e-43e1-bfcd-f778850388c3,,execute_actions,3980;2800
+47,split_random,4,bad,,has_any_word,Bad,,,,,,,,,,,,,,,,,1bf73b4f-81be-4617-ba47-6807ed4219ce,,split_by_random,5170;460
+48,split_random,47,1,,,,,,,,,,,,,,,,,,,,95720030-6957-4d07-beb9-188bd6866ef2,,split_by_random,4600;600
+49,send_message,48,1,,,,,Sorry to hear that you are not having a good day. It is completely normal to be going through a difficult time now. Remember that you are not alone. Here is an activity that might also help...,,,,,,,,,,,,,,,1a2a7f40-8978-4309-8741-0f4e8136859e,,execute_actions,4460;1120
+50,split_by_group,48,2,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,bb626c28-7fb6-4247-9fbf-67344279b581,,split_by_expression,4805;920
+51,send_message,50,ABTest_test-first-person_alternative,,,,,I am sorry to hear that you are not feeling great today. Remember to take it one day at the time. Tomorrow is a new day. ,,,,,,,,,,,,,,,ee922b95-10b8-4fe2-b6bd-6ca0c54e6880,,execute_actions,4930;1120
+52,send_message,50;50,ABTest_test-first-person_Default;,,,,,We are sorry to hear that you are not feeling great today. Remember to take it one day at the time. Tomorrow is a new day. ,,,,,,,,,,,,,,,bc09d832-a4e5-4f93-9585-95ca230fd28c,,execute_actions,4680;1120
+53,send_message,48,3,,,,,"Everyone has challenging days, but you do not need experience it alone. Try reaching out to family and friends for support. ",,,,,,,,,,,,,,,2e768859-0b3c-4357-99c9-b2718d9e6e8b,,execute_actions,5150;1120
+54,send_message,48,4,,,,,"It is completely normal to not feel great all the time. Parents all around the world have felt how you are feeling right now, and it is okay! You are doing great!",,,,,,,,,,,,,,,d19b231b-6363-40e4-9ade-433168bcd783,,execute_actions,4480;2020
+55,send_message,48,5,,,,,"Just like everyone else, you are allowed to have days where they are not feeling great. Be gentle and patient with yourself. Tomorrow is a new day! ",,,,,,,,,,,,,,,7373fd7b-e005-4b5e-ba8a-fb3cba40d114,,execute_actions,4970;2020
+56,send_message,48,6,,,,,Having a bad day is not a reflection of your abilities or of you as a parent. Just showing up shows you care.,,,,,,,,,,,,,,,f9d5b85e-2e37-4758-b3dd-e90721aa8433,,execute_actions,5190;2020
+57,split_random,47,2,,,,,,,,,,,,,,,,,,,,59d92c82-50dc-4dd6-90de-620d0aabd464,,split_by_random,5510;600
+58,send_message,57,1,,,,,"Thank you for sharing how you are feeling today. If you would like, try this relaxation activity that can help recenter and ground your emotions.",,,,,,,,,,,,,,,25621e42-7839-4284-a17b-fff60b137846,,execute_actions,5470;1260
+59,send_message,57,2,,,,,"Thank you for sharing how you are feeling. Is there anything someone can do to help you feeling better? If so, try reaching out to them, a support system is so important.",,,,,,,,,,,,,,,24d84edd-501b-4481-a510-5729746710c7,,execute_actions,5710;1260
+60,send_message,57,3,,,,,"We have all experienced difficult days, but remember its important to experience all emotions. Try to do something that can help you feel better, like going for a walk or talking to someone you care about.",,,,,,,,,,,,,,,1b57239a-9843-4cb2-8a2d-abc112217b15,,execute_actions,5930;1280
+61,send_message,57,4,,,,,We all have difficult days that make us feel upset. Remember to be kind to yourself and others during these days. How you are feeling is not a representation of your abilities!,,,,,,,,,,,,,,,fae8022a-15cf-4af4-9093-53e71421ef79,,execute_actions,5490;2520
+62,send_message,57,5,,,,,"We all have bad days, and we know it can sometimes be difficult to deal with your emotions. Learning how to cope with them in a posiitve way, sets you aside from others. If you have a few minutes to spare, use them to take care of yourself and focus on your breathing. Take this time to reflect on your feelings and try and redirect these emotions into something positive. ",,,,,,,,,,,,,,,a5166a79-50b0-44eb-9871-c8e52e7c01b2,,execute_actions,5810;2760
+63,save_value,10;12;13;14;16;17;19;20;22;23;25;26;28;29;31;32;35;36;37;38;39;40;42;43;44;45;46;49;51;52;53;54;55;56;58;59;60;61;62;7;9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,947ab56c-8820-45d2-94c6-9c64e92aa3b8,,execute_actions,4340;3280
+64,save_flow_result,63,,,,,skill,Keeping Calm,,,,,,,,,,,,,,,947ab56c-8820-45d2-94c6-9c64e92aa3b8,,execute_actions,4340;3280
+65,start_new_flow,64,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,877a1fc0-9486-4711-a6e4-31f998f7332e,,split_by_subflow,3360;6080
+66,split_by_value,65;65,Complete;Expired,,,,,@(parent.results.time_of_day),,,,,,,,,,,,,,,1fa341e1-e2d3-4aaf-9cf4-6a092d7354f5,,split_by_expression,3340;6220
+67,split_random,66,morning,@(parent.results.time_of_day),has_any_word,Morning,,,,,,,,,,,,,,,,,cc6d48e0-8581-4499-8bfa-85290cd6d3a6,,split_by_random,3000;6160
+68,split_random,67,1,,,,,,,,,,,,,,,,,,,,8c60155d-165a-4352-be56-5b9589887d2f,,split_by_random,2410;6160
+69,send_message,68,1,,,,,Have you only got 30 seconds? Let's take a quick pause together. It might be helpful. ,,,,,,,,,,,,,,,9c6af25c-a6b2-446e-8a19-f2eff91dfbfe,,execute_actions,740;6320
+70,split_by_value,69,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,04f8f3e1-2670-4537-872f-76429fc205f5,,split_by_contact_field,740;6480
+71,send_message,70,low,@fields.type_of_media,has_any_word,Low,,"Sit down, close your eyes and listen to your breath as it goes in and out. Notice how you feel. When you are ready open your eyes again.",,,,,,,,,,,,,,,facc8f95-fabc-4002-86b3-02b1a23341fd,,execute_actions,740;6580
+72,send_message,70,,,,,,Listen to your breath.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Listen_to_your breath.mp3,,,a30fc3cf-9eb7-4033-b2e6-4634e92c59f8,,execute_actions,760;6780
+73,send_message,71;72,,,,,,Try this whenever you are feeling stressed and you need a break to reconnect.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,bfcfcee2-0916-4f8b-8833-e5c5c8bad13c,,execute_actions,760;6920
+74,send_message,68,2,,,,,"Do you sometimes feel your feelings are too much?
+Talk to someone. 
+Talk to someone you trust. Talk to a friend. Talk to family. Talk to a plant.
+Get your worries off your chest and then let them go. Even if it’s just for a moment. 
+How do you feel now?
+A joy shared is twice the joy. A problem shared is half the problem.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/adults_talking_on_stools.jpg,,,,71dd5844-90d6-4c88-86c8-fb429ebac6e4,,execute_actions,1520;6340
+75,split_by_value,74,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,86265003-1512-413f-bb6e-d30b8c1c2ae0,,split_by_contact_field,1520;6740
+76,send_message,75,,,,,,When feelings are too much.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/When_feelings_are_too_much.mp3,,,356d0c0a-e64c-42e7-8c2e-af1b4e250663,,execute_actions,1790;6860
+77,send_message,68,3,,,,,Do your children ever make you feel like screaming? Give yourself a 10-second pause.,,,,,,,,,,,,,,,1337125d-3021-4e2a-a082-b65a4224b026,,execute_actions,2780;6280
+78,split_by_value,77,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,586de32d-5da9-4d95-bfa3-10776439a5ed,,split_by_contact_field,2510;6460
+79,send_message,78,low,@fields.type_of_media,has_any_word,Low,,Breath in and out slowly 5 times. Then try responding in a calmer way.,,,,,,,,,,,,,,,e851d775-00df-479a-9cd5-7a90926614f0,,execute_actions,2510;6600
+80,send_message,78,,,,,,Five deep breaths.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/5_deep_breaths.mp3,,,ff2c4556-7e03-4abe-8138-1392027c5156,,execute_actions,2780;6760
+81,send_message,79;80,,,,,,Millions of parents say this helps - A LOT.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,3c4908ec-fbdb-44f3-a819-6a78ececee5a,,execute_actions,2510;6900
+82,send_message,68,4,,,,,Here is something fun to help you let go of stress:,,,,,,,,,,,,,,,9f51ad89-9cf8-487b-8db2-daf4f8b4f993,,execute_actions,3180;6340
+83,split_by_value,82,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,b4d1110d-050d-46a2-af3a-bb8868dfb4eb,,split_by_contact_field,3140;6480
+84,send_message,83,low,@fields.type_of_media,has_any_word,Low,,"Choose a song that reflects what you need in this moment. Do you need a gentle song to soothe your tired soul or an upbeat song to help you shake some stress out?
+
+Make a space and move your body to the music. Remember to breathe while you move. Let your breath and the movement go together.
+
+Even a few minutes of movement can be enough to release stress and lift your mood!",,,,,,,,,,,,,,,d84e51f1-a03f-457f-80ae-f6b681b4b5de,,execute_actions,3040;6600
+85,send_message,83,,,,,,Choose a song that reflects what you need.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/A_song_that_reflects_what_you_need.mp3,,,0e35a134-25c9-43a8-aeee-a79644284a33,,execute_actions,3260;6600
+86,split_random,66,,,,,,,,,,,,,,,,,,,,,bf4908ce-2ce6-49d4-b9db-dc303fcf0147,,split_by_random,1500;4880
+87,split_random,86,1,,,,,,,,,,,,,,,,,,,,f9ddf4ec-619a-4655-a601-fe6dcd62d676,,split_by_random,1400;5000
+88,send_message,87,1,,,,,Here's a short relaxation activity to end the day:,,,,,,,,,,,,,,,6e80d7b8-e069-485c-9025-b41816861c04,,execute_actions,580;5060
+89,split_by_value,88,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,8408d103-d6db-4d20-a2d9-6330f7c8f1a0,,split_by_contact_field,560;5240
+90,send_message,89,low,@fields.type_of_media,has_any_word,Low,,Close your eyes and think about the day. Name 1 thing that you are grateful for. Name 1 thing that you did well. Name 1 think that you love. You earned a goodnight of sleep!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,ef2d28cd-f595-48eb-9558-f582090991c9,,execute_actions,540;5380
+91,send_message,89,,,,,,End of the day.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/End_of_the_day.mp3,,,6e48f163-403a-4daf-b4bd-954a997260e6,,execute_actions,270;5620
+92,send_message,91,,,,,,You earned a goodnight of sleep!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,00c6df21-9d79-418d-8356-84466e5f9dd7,,execute_actions,;5760
+93,send_message,87,2,,,,,"At the end of the day, take a minute to think about the day.  
+Think about one positive or fun thing you did.
+Praise yourself for one thing you did well today.
+Think of one thing you can do differently tomorrow. 
+Think of one thing that you are grateful for.",,,,,,,,,,,,,,,4f26f623-0a9b-407c-adf5-fa1dc24becfd,,execute_actions,1320;5120
+94,split_by_value,93,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,2f8491c4-7575-4111-ba01-1b2d47da100e,,split_by_contact_field,1300;5500
+95,send_message,94,,,,,,Take a minute to think about the day.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Take_a_minute_to_think_about_the_day.mp3,,,c2ac4ec5-31c1-4bb7-b7f7-60491c8d7134,,execute_actions,1340;5740
+96,send_message,94;95,low;,@fields.type_of_media;,has_any_word;,Low;,,You are a star!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,5e6fe97e-c650-424d-8c17-3a382624e8da,,execute_actions,1300;5900
+97,send_message,87,3,,,,,Do you sometimes feel like you are getting everything wrong?  Here's a short activity that might help!,,,,,,,,,,,,,,,7a9b59f2-318d-4136-bdc5-3762cc57a414,,execute_actions,2060;5120
+98,split_by_value,97,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,eaf2bef5-a5e5-4a09-935c-7ee3ccd2cccc,,split_by_contact_field,1790;5280
+99,send_message,98,low,@fields.type_of_media,has_any_word,Low,,"Take a moment to think over the day. Think of one thing you did today that you are proud of.
+Wrap your arms around your body and give yourself a hug.
+Think of one thing you did today that you don’t feel proud of. What can you do differently tomorrow?
+And wrap your arms around your body and give yourself a hug.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,97585ea2-0046-49b1-b611-121dfd508d14,,execute_actions,1790;5380
+100,send_message,98,,,,,,Be kind to yourself.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Be_kind_to_yourself.mp3,,,d82e4612-eaca-478b-b62f-dd9d1ed0e706,,execute_actions,2080;5740
+101,send_message,100,,,,,,It’s ok. You are doing your best so be kind to yourself. Get some rest and try again tomorrow!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,1fe95536-5099-4486-9443-51d1fb9d9df8,,execute_actions,2080;5860
+102,send_message,87,4,,,,,"Let's take a moment to stop what you are doing and connect with your breath.  
+
+What is one thing you can be grateful for right now?
+What is one thing that brings you happiness?
+What is one thing that you love?
+
+They don't have to be big. Sometimes the small things in life count the most!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,1c10b73c-5b8f-4736-95bc-65065eb84392,,execute_actions,2800;5080
+103,split_by_value,102,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,7ed76c17-2672-4840-930a-999d7427020e,,split_by_contact_field,2800;5460
+104,send_message,103,,,,,,Connect with your breath.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Connect_with_your_breath.mp3,,,192eda2d-db9b-47e4-be10-8fecc7253d71,,execute_actions,2820;5560
+105,send_message,87,5,,,,,"Let’s use the magic power of three to stay present and relax. At the end of a tough day, thinking of three things to be grateful for can help us find the courage to try again tomorrow.  ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,e4c5a953-e345-4dd1-8e9d-8a993e9703af,,execute_actions,3080;4980
+106,split_by_value,105,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,a623d5d3-3696-4d36-8068-9efa5d4e5238,,split_by_contact_field,3040;5220
+107,send_message,106,,,,,,The magic power of three.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/The_magic_power_of_three.mp3,,,d11af3ca-17d4-4279-aa5a-e1d83a1f840f,,execute_actions,3080;5360
+108,split_random,67;86,2;2,,,,,,,,,,,,,,,,,,,,5a2b44a4-ebfd-4eb2-9db5-46024c3958db,,split_by_random,1440;3520
+109,send_message,108,1,,,,,Here is a short relaxation activity for you:,,,,,,,,,,,,,,,8cdbb17f-7ca9-4876-aef8-4a9056edd052,,execute_actions,600;3640
+110,split_by_value,109,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,67e58fb0-71db-47b0-a352-c355b983efeb,,split_by_contact_field,600;3800
+111,send_message,110,low,@fields.type_of_media,has_any_word,Low,,"Sit down and close your eyes.
+How many sounds can you hear? Listen to the sounds inside and outside the room. Count them on your fingers.
+After ten seconds, how many fingers do you have up? What sounds did you hear?
+Try again for another ten seconds. Did you hear any new sounds? Did you hear any sounds inside your own body? Notice how you feel now.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,a0552929-5ca5-42cc-b284-909e7a1e10ef,,execute_actions,540;3920
+112,send_message,110,,,,,,Listen to the sounds.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Listen_to_the_sounds.mp3,,,bb20db48-d0b8-4e29-b396-932172aabf6d,,execute_actions,540;4300
+113,send_message,112,,,,,, Notice how you feel now.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,2ea61750-e2bb-4896-87a5-fc0d0867a4d3,,execute_actions,540;4420
+114,send_message,108,2,,,,,This activity uses the magic power of three breaths to stay connected and relaxed.,,,,,,,,,,,,,,,f4b2c279-5439-4575-bfca-f04cc9c01589,,execute_actions,1340;3660
+115,split_by_value,114,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,be484251-6411-4218-baba-a4bd8d679258,,split_by_contact_field,1340;3820
+116,send_message,115,low,@fields.type_of_media,has_any_word,Low,,"Breathe in to the count of three. 1, 2, 3.
+Breath out to the count of three. 1, 2, 3.
+Breathe in to the count of three. 1, 2, 3.
+Breath out to the count of three. 1, 2, 3.
+Breathe in to the count of three. 1, 2, 3.
+Breath out to the count of three. 1, 2, 3.",,,,,,,,,,,,,,,9003dc5b-f4bd-4013-b1e8-ea073f6e0a9e,,execute_actions,1300;4080
+117,send_message,115,,,,,,Breathe in to the count of three.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Breathe_in_to_the_count_of_three.mp3,,,d3c2e508-5c12-409d-b022-09d872f9f6ab,,execute_actions,1400;3940
+118,send_message,116;117,,,,,,How do you feel now? Do you feel any different? Deep breathing helps our whole body and mind to calm down. ,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,19cfc80e-0a21-4c5d-8966-6de4aaabc8d0,,execute_actions,1340;4420
+119,send_message,108,3,,,,,Here's an activity to relax your body:,,,,,,,,,,,,,,,52ce9e76-a199-4256-9827-75a0be7ec3ea,,execute_actions,2080;3660
+120,split_by_value,119,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,4eabab91-b922-48ac-9029-0574d34ace5e,,split_by_contact_field,2080;3820
+121,send_message,120,low,@fields.type_of_media,has_any_word,Low,,"Sit comfortably and close your eyes if you can.
+Imagine a golden ring scanning your body from your feet to your head. 
+Pay attention as it moves up and down your body. Are there any areas that feel tense? Numb? Painful? 
+Focus on those areas for a moment. Breathe in to the area and when you breathe out, try to let go of any tension or pain. 
+Do this for a few breaths. 
+Open your eyes. How does your body feel now?
+
+Try this next time you find yourself lying in bed unable to sleep!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,c0f79869-ce70-45e0-b584-5a84d54f5c68,,execute_actions,2100;4080
+122,send_message,120,,,,,,Body relaxation.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Body_relaxation.mp3,,,d85dd951-9bd5-4dec-bace-7eb318d76b60,,execute_actions,2430;4600
+123,send_message,122,,,,,,Try this next time you find yourself lying in bed unable to sleep!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,45efa8ea-b746-4373-a259-e797fd6d2982,,execute_actions,2430;4720
+124,send_message,108,4,,,,,Do you ever feel something so strongly that you want to run away from it? Here's a short activity that might help!,,,,,,,,,,,,,,,41f0e4e5-6c62-4c59-8e43-356592a68806,,execute_actions,2860;3640
+125,split_by_value,124,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,4778c4f0-1750-4532-a19e-fa653770d999,,split_by_contact_field,2820;3860
+126,send_message,125,low,@fields.type_of_media,has_any_word,Low,,"Instead of moving away from the feeling, let’s move towards it for a moment.
+It’s ok. Close your eyes if you feel comfortable. Take a deep breath.
+
+Become curious. Where are you feeling it in your body? Is it hot or cold? Hard or soft? Tight or loose?
+Ask yourself some questions. What is it telling me? What does it need? How can I be kind to myself in this moment?
+
+If your mind starts to wander, it’s normal. Just bring it back to the feeling. Keep breathing and feeling.
+Reassure yourself. It’s ok to feel. Feeling is healing!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,14961139-adc1-4bd3-a9fe-6c6f473e70df,,execute_actions,2840;3980
+127,send_message,125,,,,,,Dealing with difficult feelings.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Dealing_with_difficult_feelings.mp3,,,4d8f114a-79d8-419a-8fc2-350add914058,,execute_actions,2900;4520
+128,send_message,127,,,,,,It’s ok to feel. Feeling is healing!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,834a3102-d82b-4623-b095-ecae38e9d60a,,execute_actions,2900;4660
+129,send_message,108,5,,,,,Here is a quick relaxation activity...,,,,,,,,,,,,,,,6a0f4059-1a11-40fb-b9af-f5adb69c3ce7,,execute_actions,3160;3660
+130,split_by_value,129,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,58c5d7da-8dd1-4a76-88a0-06090a0e0d08,,split_by_contact_field,3140;3860
+131,send_message,130,low,@fields.type_of_media,has_any_word,Low,,"Notice your connection with the ground beneath you.
+What parts of your body touch the ground? What parts of your body don’t? 
+Notice where it feels warm and where it feels cool.
+Feel the ground underneath you supporting you. Let your body sink into the support of the ground. ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/calm_adult.jpg,,,,628f28ef-5751-4b91-98d0-5fe7eb9787ab,,execute_actions,3100;3980
+132,send_message,130,,,,,,Connection with the ground.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/relaxation/eng/Connection_with_the_ground.mp3,,,921d73cf-e25a-4efa-ba58-5d285438b899,,execute_actions,3300;4300
+133,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,6ac24403-244e-4f33-b426-163f869eb7a6,,execute_actions,2860;300
+134,go_to,133,,,,,,1,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,35 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-exit_Default,,,,,,,,,,,,,,d3570b75-6313-49b7-ab91-de37aff18c4a,644d88d7-efc5-4781-beb9-3bf05577e8ea,,split_by_expression,1145;
+2,start_new_flow,1,ABTest_test-exit_alternative,,,,,PLH - Help - Exit messages child,,,,,,,,,,,,,,97a45420-535f-456d-8d66-233e6dba823c,0b244f0d-d08f-46a6-a17e-6816b4a7bec4,,split_by_subflow,1270;200
+3,start_new_flow,1;1,ABTest_test-exit_Default;,,,,,PLH - Help - Exit messages parent,,,,,,,,,,,,,,e9fae28e-db9b-4553-8766-1f607b3d4cab,f6e64d47-6660-4115-8f19-49f85b070706,,split_by_subflow,1020;200
+4,send_message,2;2;3;3,Complete;Expired;Complete;Expired,,,,,"If you do not want to receive any more messages, please type ""STOP MESSAGES.""
+If you made a mistake, please type ""back"" and choose another option.",,,,,,,,,,,,,,,bfa4e807-72d4-4dbf-adf1-99cc89791668,,execute_actions,980;380
+5,wait_for_response,4,,,,,leave,,,,,,,,,,,,,,,,7e8835ef-6b1a-4529-9e7e-39c388db5f34,,wait_for_response,980;580
+6,save_value,5;5,stop messages;stop_messages,,has_only_phrase;has_only_phrase,leave;leave,exit message,"@(fields.exit_message&"",leave,""&now()&""|"")",,,,,,,,,,,,,,,e94b899e-95bc-4645-92ac-31d388e62d4a,,execute_actions,490;660
+7,remove_from_group,6,,,,,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,5dee05fd-63bd-45ba-8796-9eaac9fc67e9,,execute_actions,800;760
+8,save_value,5,no n not back,,has_any_word,stay,exit message,"@(fields.exit_message&"",stay,""&now()&""|"")",,,,,,,,,,,,,,,2785d4cc-97b3-458f-98f1-f3fa05248950,,execute_actions,1290;780
+9,send_message,5,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,be823905-4249-43b2-af3e-236042bfb62a,,execute_actions,1920;540
+10,go_to,9,,,,,,4,,,,,,,,,,,,,,,,,,
+11,split_by_group,7,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,56d02e02-d88d-45ea-97e8-b50a69fd4467,,split_by_expression,675;860
+12,send_message,11,ABTest_test-first-person_alternative,,,,,Could you please tell me why you want to stop receiving these messages?,Content is not relevant,Not enough time,Data load is too high,Too many messages,Technical problems,Other,,,,,,,,,ca725498-267d-42df-8e1e-fa1d01a9a387,,execute_actions,800;1060
+13,send_message,11;11,ABTest_test-first-person_Default;,,,,,Could you please tell us why you want to stop receiving these messages?,Content is not relevant,Not enough time,Data load is too high,Too many messages,Technical problems,Other,,,,,,,,,7ee5e97b-0205-455c-8787-fc1d25cdbfb0,,execute_actions,550;1060
+14,wait_for_response,12;13,,,,,reason_for_leaving,,,,,,,,,,,,,,,,a7e51d0c-177b-494d-9910-34cb426e408c,,wait_for_response,530;1320
+15,save_value,14;14;14;14;14;14,Content is not relevant;Not enough time;Data load is too high;Too many messages;Technical problems;Other,,has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase;has_any_word,Content not relevant;time;Data;Too many msg;Technical;Other pb,reason for leaving,@results.reason_for_leaving.category,,,,,,,,,,,,,,,da610b4f-e10d-4588-9adb-4712a39ce729,,execute_actions,980;1520
+16,send_message,15,,,,,,Thank you so much for your response and feedback!,,,,,,,,,,,,,,,5a9f954c-c08a-450a-a273-c82569e8e867,,execute_actions,960;1620
+17,send_message,14,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,67f7551c-b0e7-40aa-9d19-1c83a7401c66,,execute_actions,1860;1140
+18,go_to,17,,,,,,11,,,,,,,,,,,,,,,,,,
+19,split_by_group,16,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,04fd1dc6-c205-4f3c-9e2c-69b83cca7ef4,,split_by_expression,245;1740
+20,send_message,19,ABTest_test-first-person_alternative,,,,,Would you like to tell me a little bit more about your experience?,Yes,No,,,,,,,,,,,,,2e19de9c-f3b0-4e80-8550-be877edeae7a,,execute_actions,370;1940
+21,send_message,19;19,ABTest_test-first-person_Default;,,,,,Would you like to tell us a little bit more about your experience?,Yes,No,,,,,,,,,,,,,d95500b4-908c-4e16-bb88-86db344a697c,,execute_actions,120;1940
+22,wait_for_response,20;21,,,,,Result 3,,,,,,,,,,,,,,,,7c88e6fe-a0f7-4937-b894-5b0b4843fecb,,wait_for_response,100;2100
+23,start_new_flow,22,yes y,,has_any_word,Yes,,PLH - Survey - Acceptability,,,,,,,,,,,,,,82056237-1445-4915-8e4e-6891e7af5267,26c39c7b-d5de-457f-a941-db1f9fa716ad,,split_by_subflow,;2460
+24,start_new_flow,22;23;23,no n;Complete;Expired,,has_any_word;;,No,,PLH - Help - Settings - Leave the program - Interview,,,,,,,,,,,,,,43d603c8-f56d-4a3a-acc3-f25472c85db3,b2ebfcdc-6e5d-49b6-99d9-080de7b7637e,,split_by_subflow,1640;2060
+25,split_by_group,24;24,Complete;Expired,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,a0a9f9a1-33df-4fb9-b5e1-8d08fcf7ffb8,,split_by_expression,1515;2200
+26,send_message,25,ABTest_test-first-person_alternative,,,,,"Thank you so much for participating in the programme! If you want to return to the programme, type ""START_MESSAGES"". 
+
+I hope to see you again soon, and I wish you a happy and peaceful day! ",,,,,,,,,,,,,,,6c34e487-885c-4127-aca1-8f39f07d890f,,execute_actions,1640;2400
+27,send_message,25;25,ABTest_test-first-person_Default;,,,,,"Thank you so much for participating in the programme! If you want to return to the programme, type ""START_MESSAGES"". 
+
+We hope to see you again soon, and we wish you a happy and peaceful day! ",,,,,,,,,,,,,,,82f1d8b3-0abc-4d56-90b8-7ff92374aaa2,,execute_actions,1390;2400
+28,send_message,22,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,5a3e494d-fa18-4c6b-9828-c77fa9e5986b,,execute_actions,530;2440
+29,go_to,28,,,,,,19,,,,,,,,,,,,,,,,,,

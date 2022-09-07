@@ -1,0 +1,87 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,survey covid count,"@(if( fields.survey_covid_count  < fields.max_skip_survey, if(fields.survey_covid_count = 0, 0, fields.survey_covid_count +1),0))",,,,,,,,,,,,,,,f836d786-6539-4d5f-bdf7-44584a445cf9,,execute_actions,2030;
+2,split_by_value,1,,,,,,@fields.user_name,,,,,,,,,,,,,,,a6429730-2605-40d0-a7da-0a1884a09e86,,split_by_expression,1655;120
+3,split_by_group,2,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,c865c240-bf20-4d0d-afc4-de862116ce40,,split_by_expression,1405;320
+4,send_message,3,ABTest_test-first-person_alternative,,,,,"Hi @fields.user_name! I am delighted that you have signed up for these messages. It shows that you care!
+
+Can I ask you 2 quick questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,65c9db50-95bb-4619-b948-81911b053b70,,execute_actions,1530;720
+5,send_message,3;3,ABTest_test-first-person_Default;,,,,,"Hi @fields.user_name! We are delighted that you have signed up for these messages. It shows that you care!
+
+Can we ask you 2 quick questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,81cd4652-4600-45b6-a97c-dd90025fac9d,,execute_actions,1280;720
+6,split_by_group,2,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,2bb743bf-a39f-4fd9-ab26-dfe10d18c7fb,,split_by_expression,1905;520
+7,send_message,6,ABTest_test-first-person_alternative,,,,,"Hi! I am delighted that you have signed up for these messages. It shows that you care!
+
+Can I ask you 2 quick questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,eac1fdab-e110-40f5-883b-8496c7966a1b,,execute_actions,2030;720
+8,send_message,6;6,ABTest_test-first-person_Default;,,,,,"Hi! We are delighted that you have signed up for these messages. It shows that you care!
+
+Can we ask you 2 quick questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,4edf5787-7d86-4249-a747-294ac2f00e07,,execute_actions,1780;720
+9,wait_for_response,4;5;7;8,,,,,consent_survey,,,,,,,,,,,,,,,,56b7eb95-aa99-4c54-b98d-1bc1c6c45232,,wait_for_response,1260;980
+10,save_value,9,YES Y ,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,3052d86c-2702-41cd-a2de-e4b318aaca65,,execute_actions,2050;1140
+11,save_value,10,,,,,surveycovid datestamps,"@(fields.surveycovid_datestamps & ""yes,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,3052d86c-2702-41cd-a2de-e4b318aaca65,,execute_actions,2050;1140
+12,send_message,11,,,,,,Thanks! ,,,,,,,,,,,,,,,944072fe-c6e0-4976-a8ad-693ba3ed4593,,execute_actions,2900;1300
+13,save_value,9,NO N,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,8d05735f-482b-422b-ab4f-576ef8d1cfe9,,execute_actions,770;1100
+14,save_value,13,,,,,surveycovid datestamps,"@(fields.surveycovid_datestamps & ""no,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,8d05735f-482b-422b-ab4f-576ef8d1cfe9,,execute_actions,770;1100
+15,split_by_value,14,,,,,,@fields.survey_covid_count,,,,,,,,,,,,,,,0da50620-8c4b-46ae-bd59-49faf709ca42,,split_by_contact_field,790;1260
+16,split_by_value,15,@fields.max_skip_survey,@fields.survey_covid_count,has_number_lte,<= Fields,,@fields.user_name,,,,,,,,,,,,,,,8c94be12-e142-458c-8bac-da2116ceee75,,split_by_expression,375;1700
+17,split_by_group,16,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,945a0262-cd8f-40ce-9d04-fcc36b0066fd,,split_by_expression,125;1900
+18,send_message,17,ABTest_test-first-person_alternative,,,,,It is okay if this is not a good time. I will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,63eff325-ff2f-4dc9-a69c-f4c84d61c2b6,,execute_actions,250;2300
+19,send_message,17;17,ABTest_test-first-person_Default;,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,28ddd30d-7db3-4ace-98da-21bb60958cb6,,execute_actions,;2300
+20,split_by_group,16,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,dcd38464-6303-471d-8776-3daec51b12a6,,split_by_expression,625;2100
+21,send_message,20,ABTest_test-first-person_alternative,,,,,It is okay if this is not a good time. I will try again tomorrow. Chat later!,,,,,,,,,,,,,,,68eeef25-0479-4c06-8319-5bb42efc60ca,,execute_actions,750;2300
+22,send_message,20;20,ABTest_test-first-person_Default;,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later!,,,,,,,,,,,,,,,15b73156-e376-4f9a-9f32-ca9e3ddd5bb2,,execute_actions,500;2300
+23,split_by_value,15,,,,,,@fields.user_name,,,,,,,,,,,,,,,32e1f2c9-79c7-4968-86a0-59db718f0b3a,,split_by_expression,1035;1360
+24,send_message,23,,@fields.user_name,has_text,user_name,,It is okay if this is not a good time. Chat later @fields.user_name!,,,,,,,,,,,,,,,58b74344-826a-4f64-9ba8-90fcb9d26f09,,execute_actions,910;1560
+25,send_message,23,,,,,,It is okay if this is not a good time. Chat later!,,,,,,,,,,,,,,,3ddcd808-aeae-4ade-bd42-e0848fc8d118,,execute_actions,1160;1560
+26,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,524599ef-802d-4d87-a240-d69eae9278fb,,execute_actions,3040;940
+27,send_message,26,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,6bb1d24b-56c6-4b98-9bbd-438d0f9ca725,,execute_actions,3410;760
+28,go_to,27,,,,,,2,,,,,,,,,,,,,,,,,,
+29,send_message,12,,,,,,Which is most like your experience?,Curfews,Non-essential shops closed,Non-essential production closed,Cancellation of recreational venues and closing of public places like parks,Stay-at-home orders and total movement controls,Social distancing and movement restrictions,No restrictions,Does not apply,Prefer not to answer,,,,,,0e40747a-3312-4f8a-baec-61f3b2290726,,execute_actions,3430;1060
+30,wait_for_response,29,,,,,main diff,,,,,,,,,,,,,,,,c75584ff-77d9-454d-9d24-fada410987cb,,wait_for_response,2900;1600
+31,save_value,30;30;30;30;30;30;30;30;30,Curfews;shops;production;recreational venues;Stay-at-home orders;distancing;no restrictions;apply;prefer,,has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_only_phrase;has_any_word;has_any_word,Curfews;Shops;Production;Recreational venues;Stay at home;Distancing;no Restrictions;Apply;Prefer,survey covid experience,@results.main_diff.category,,,,,,,,,,,,,,,3230035a-738f-416a-a4dc-796edd60787b,,execute_actions,3470;2360
+32,send_message,31,,,,,,"How has COVID-19 affected your family? You can choose multiple options with a space in between each (e.g., 1 2 5):
+1. Someone in my family has had COVID-19 symptoms (e.g., dry cough, fatigue, headache, high temperature, loss of smell or taste)
+2. Someone in my family has died from COVID-19
+3. My family has been experiencing financial stress due to COVID-19
+4. My family has been experiencing emotional stress due to COVID-19
+5. My family has not been negatively affected by COVID-19
+6. Other
+0. Prefer not to answer",,,,,,,,,,,,,,,223d4a99-0257-47cd-8794-f3ac97ee6c4c,,execute_actions,2920;2440
+33,send_message,30,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,18385b3a-5b6f-49b1-bf45-8fefce0fa94d,,execute_actions,3790;940
+34,go_to,33,,,,,,29,,,,,,,,,,,,,,,,,,
+35,wait_for_response,32,,,,,affected,,,,,,,,,,,,,,,,a7917c68-ae90-4d5e-ac23-67997339f994,,wait_for_response,2900;2940
+36,save_value,35,,,has_number,Has number,surveyCOVID,@results.affected,,,,,,,,,,,,,,,95461fe5-827a-47c6-bd83-2272461cf29e,,execute_actions,2900;3080
+37,save_value,36,,,,,survey covid count,0,,,,,,,,,,,,,,,95461fe5-827a-47c6-bd83-2272461cf29e,,execute_actions,2900;3080
+38,save_value,37,,,,,surveycovid completion,"@(fields.surveycovid_completion & fields.survey_number & "","" & now() &""|"")",,,,,,,,,,,,,,,95461fe5-827a-47c6-bd83-2272461cf29e,,execute_actions,2900;3080
+39,split_by_value,38,,,,,,@fields.user_name,,,,,,,,,,,,,,,e4c1ede2-ff1c-4878-a95c-2c794739043d,,split_by_expression,2505;3300
+40,split_by_group,39,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,ee9396c5-9634-444d-98bc-cc47ff1c354d,,split_by_expression,2255;3500
+41,send_message,40,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions @fields.user_name. I really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that I am here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,f5915421-1d5d-4488-b049-5a45cbc510a0,,execute_actions,2380;3900
+42,send_message,40;40,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions @fields.user_name. We really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that we are here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,11431b32-7ebd-4841-b106-a8aeea2a350d,,execute_actions,2130;3900
+43,split_by_group,39,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,c989f7b3-be8f-4d24-ba36-08192d3bc539,,split_by_expression,2755;3700
+44,send_message,43,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions. I really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that I am here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,c80e5933-863e-486d-8698-17a88c77c258,,execute_actions,2880;3900
+45,send_message,43;43,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions. We really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that we are here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,92a1d463-a8ee-4d3c-b3c3-83a47a9b1adb,,execute_actions,2630;3900
+46,send_message,35,,,,,,"Sorry, I don't understand what you mean.
+
+You can choose multiple options with a space in between each (e.g., 1 2 5)",,,,,,,,,,,,,,,21c90fb0-da34-4f61-8118-9eb51d34f565,,execute_actions,3450;2920
+47,go_to,46,,,,,,35,,,,,,,,,,,,,,,,,,
+48,send_message,41;42;44;45,,,,,,Are your children currently going to school/daycare? ,Yes,No,,,,,,,,,,,,,0ed34305-b43b-4bb6-821e-6898d40f44b1,,execute_actions,3430;4040
+49,wait_for_response,48,,,,,school,,,,,,,,,,,,,,,,78e1e92b-4772-492b-8684-3696a546b27d,,wait_for_response,3510;4220
+50,save_value,49;49,yes y;no n,,has_any_word;has_any_word,Yes;No,survey covid school,@results.school.category,,,,,,,,,,,,,,,5480d4bf-dcda-47e6-9a13-60324ac0f8fc,,execute_actions,3510;4400
+51,send_message,49,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,f644af4c-55fb-4d67-bfcb-2160cf8bad61,,execute_actions,3830;4220
+52,go_to,51,,,,,,48,,,,,,,,,,,,,,,,,,
+53,send_message,50,,,,,,It is normal to feel overwhelmed or stressed about your children's education during this time. Would you like to learn more about how to support your children with remote learning and returning to school?,Yes,No,,,,,,,,,,,,,4bc3e31d-684e-402e-bafd-ea49363d513c,,execute_actions,2920;4340
+54,wait_for_response,53,,,,,Result 5,,,,,,,,,,,,,,,,35d0e6e1-a782-4695-a88e-1beb039e8765,3600,wait_for_response,2900;4620
+55,save_value,54,yes y,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,67e45157-f5d4-4764-804d-1f32e54719f5,,execute_actions,1160;4760
+56,start_new_flow,55,,,,,,PLH - Content - Positive - Education,,,,,,,,,,,,,,d281a3b5-b601-492a-9a2c-da0a67303ec3,b274ce94-5d86-418c-b2f0-8480aaaa8f36,,split_by_subflow,1220;4880
+57,send_message,54,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,5565e69f-929d-4e18-a874-7b6dc4a27c71,,execute_actions,3470;4720
+58,go_to,57,,,,,,53,,,,,,,,,,,,,,,,,,
+59,split_by_value,54;54,no n;No Response,,has_any_word;,No;,,@fields.user_name,,,,,,,,,,,,,,,36e7ba23-e2c4-4ff1-a89b-da58d5da870c,,split_by_expression,3185;4920
+60,send_message,59,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,030b5c9c-6ae1-47c3-8aae-61d45db12b84,,execute_actions,3060;5120
+61,send_message,59,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,5e22fd21-3958-4b49-a011-3eb7a8a82159,,execute_actions,3310;5120

@@ -1,0 +1,51 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,90379c01-fde7-49df-b76a-5859e5c01393,,split_by_expression,1705;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Were you able to have a conversation with your child or teen about COVID-19?,Yes,No,,,,,,,,,,,,,75fc7895-8695-4e14-9ba2-990b46e225a4,,execute_actions,1580;200
+3,send_message,1,,,,,,Hi! Were you able to have a conversation with your child or teen about COVID-19?,Yes,No,,,,,,,,,,,,,aedba44b-9b37-4f7c-9a85-96710e39c4fa,,execute_actions,1830;200
+4,wait_for_response,2;3,,,,,checkin_managed,,,,,,,,,,,,,,,,5a2cfcf7-0309-4e8e-a91e-f1982a5f0eca,,wait_for_response,1830;400
+5,save_value,4,yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,c24cf7bd-dfe5-4688-888e-04b372d2dc41,,execute_actions,620;340
+6,save_value,4,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,b30fbc78-e501-4a47-b875-02372abe77c7,,execute_actions,1560;740
+7,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,52e26108-3cf5-46bc-95d1-052e056b2497,,execute_actions,2900;420
+8,save_value,7,,,,,last interaction,@(now()),,,,,,,,,,,,,,,52e26108-3cf5-46bc-95d1-052e056b2497,,execute_actions,2900;420
+9,go_to,8,,,,,,1,,,,,,,,,,,,,,,,,,
+10,split_by_value,5,,,,,,@fields.user_name,,,,,,,,,,,,,,,fcd0ba42-11c4-4e90-a273-e25995c13813,,split_by_expression,475;440
+11,send_message,10,,@fields.user_name,has_text,user_name,,Well done @fields.user_name for making the time to do this! How did it go?,Great,Neutral,Bad,,,,,,,,,,,,b15ddfb5-f559-4e32-82ad-4cf9d774db1f,,execute_actions,350;640
+12,send_message,10,,,,,,Well done for making the time to do this! How did it go?,Great,Neutral,Bad,,,,,,,,,,,,1b4ca529-2a56-4521-b2c1-3887481cdad9,,execute_actions,600;640
+13,wait_for_response,11;12,,,,,checkin_how,,,,,,,,,,,,,,,,7f651f8f-2e37-4404-b312-de3e4104b4ef,,wait_for_response,330;880
+14,split_by_group,13,great,,has_any_word,Great,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,08052633-6c4c-4248-8cee-b2b1cab739c9,,split_by_expression,125;1020
+15,send_message,14,ABTest_test-first-person_alternative,,,,,"I am happy to hear that it went well Discussing COVID-19 with your children, helps keep them safe!",,,,,,,,,,,,,,,cc351eef-53e2-4f12-b924-74397cee1ffa,,execute_actions,250;1220
+16,send_message,14;14,ABTest_test-first-person_Default;,,,,,"We are happy to hear that it went well! Discussing COVID-19 with your children, helps keep them safe!",,,,,,,,,,,,,,,eb595a25-efbf-4bd2-badc-561f2d8946d8,,execute_actions,;1220
+17,send_message,13,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,6451603d-457c-4505-a27a-92a831faa57d,,execute_actions,1130;1000
+18,go_to,17,,,,,,10,,,,,,,,,,,,,,,,,,
+19,split_by_value,13;13;6,neutral;bad;,,has_any_word;has_any_word;,Neutral;Bad;,,@fields.user_name,,,,,,,,,,,,,,,b9fba2c7-0bf5-4ea3-99f4-124187511bd6,,split_by_expression,2305;1320
+20,send_message,19,,@fields.user_name,has_text,user_name,,That is okay @fields.user_name! What has been difficult for you about discussing COVID-19 with your child or teen?,It was hard to identify resources available,I did not have any time,"As an adult, I feel I am responsible for protecting my child, but I don't know a lot about COVID-19",I felt uncomfortable or confused,My child reacted negatively,My child asked me questions I did not the answers to,,,,,,,,,acc7d9df-7866-4b7a-a71d-9fb1842c33e9,,execute_actions,2180;1520
+21,send_message,19,,,,,,That is okay! What has been difficult for you about discussing COVID-19 with your child or teen?,It was hard to identify resources available,I did not have any time,"As an adult, I feel I am responsible for protecting my child, but I don't know a lot about COVID-19",I felt uncomfortable or confused,My child reacted negatively,My child asked me questions I did not the answers to,,,,,,,,,66b29ee7-e3ff-4502-b667-9a65fba40de4,,execute_actions,2430;1520
+22,wait_for_response,20;21,,,,,checkin_problem,,,,,,,,,,,,,,,,1a5a30a5-5dae-47db-b7e6-587eeda3c4c9,,wait_for_response,1540;2100
+23,split_by_group,22,It was hard to identify resources available,,has_only_phrase,It was hard to identify resources av,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,604e80bd-d833-40a0-af59-3b5547411c97,,split_by_expression,1295;2280
+24,send_message,23,ABTest_test-first-person_alternative,,,,,I completely understand. It is difficult to identify what reliable resources are. The WHO and UNICEF websites are great places to start:,,,,,,,,,,,,,,,c7b91acc-2762-4d63-9a90-d626e980ec55,,execute_actions,1420;2680
+25,send_message,23;23,ABTest_test-first-person_Default;,,,,,We completely understand. It is difficult to identify what reliable resources are. The WHO and UNICEF websites are great places to start:,,,,,,,,,,,,,,,e7afb7b5-9f1e-4f0e-9bd3-abd9eaa88288,,execute_actions,1170;2680
+26,split_by_value,22,I did not have any time,,has_only_phrase,I did not have any time,,@fields.child_nickname,,,,,,,,,,,,,,,838dc945-a97f-4f79-b355-b4f087d97e85,,split_by_expression,2015;2480
+27,send_message,26,,@fields.child_nickname,has_text,child_nickname,,"It can be hard to find time during your day, with work, chores, and everything else. Can you think of a time this week when you can spend at least 10 minutes chatting to @fields.child_nickname about COVID-19? This is really important!",,,,,,,,,,,,,,,e71858e7-76e5-4eb0-a839-e03f0211ac9c,,execute_actions,1890;2680
+28,send_message,26,,,,,,"It can be hard to find time during your day, with work, chores, and everything else. Can you think of a time this week when you can spend at least 10 minutes chatting to your child or teen about COVID-19? This is really important!",,,,,,,,,,,,,,,75444d93-a66c-497d-b20a-b6269f86652e,,execute_actions,2140;2680
+29,send_message,22,I felt uncomfortable or confused,,has_only_phrase,I felt uncomfortable or confused,,"It is completely normal to feel uncomfortable, confused, or even scared. Everyone feels this way at times. The WHO and UNICEF and websites and local COVID-19 hotlines are great places to find advice on how you and your family can stay safe during COVID-19.",,,,,,,,,,,,,,,aeca5745-364d-4930-a4d7-ad6c678463eb,,execute_actions,2900;2700
+30,send_message,22,My child reacted negatively,,has_only_phrase,My child reacted negatively,,It is completely normal for children to act out or react negatively during these unprecedented times. Give them space to share how they are feeling and let them know you are there for them. You can also try distracting them with fun activities and games.,,,,,,,,,,,,,,,0f08e1a2-db37-4b95-af1b-1d8feb4c346f,,execute_actions,3140;2960
+31,split_by_value,22;22,"As an adult, I feel I am responsible for protecting my child, but I don't know a lot about COVID-19;My child asked me questions I did not the answers to",,has_only_phrase;has_only_phrase,"As an adult, I feel I am responsible;My child asked me questions I did no",,@fields.child_nickname,,,,,,,,,,,,,,,de9c77fb-7c8f-4289-b7b8-aa3b2bcdbdb1,,split_by_expression,2575;3060
+32,send_message,31,,@fields.child_nickname,has_text,child_nickname,,"It is difficult to know everything about COVID-19, especially when the information is changing all the time. The most important role as a parent is to be supportive and let @fields.child_nickname know that you are here for them. It is OKAY to not know all everything.
+Some useful resource for COVID-19 are:",,,,,,,,,,,,,,,5fcd377e-aaf0-4f18-8847-ea096733b0d9,,execute_actions,2450;3260
+33,send_message,31,,,,,,"It is difficult to know everything about COVID-19, especially when the information is changing all the time. The most important role as a parent is to be supportive and let your child know that you are here for them. It is OKAY to not know all everything.
+Some useful resource for COVID-19 are:",,,,,,,,,,,,,,,462744d7-8229-479e-9600-6692ed8a2bcb,,execute_actions,2700;3260
+34,send_message,24;25;29;32;33,,,,,,"WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public
+UNICEF: https://www.unicef.org/coronavirus/covid-19",,,,,,,,,,,,,,,d59f8b5c-b780-424b-8f36-c05ba6e38db2,,execute_actions,1130;3460
+35,send_message,34,,,,,,"You could also check your local COVID-19 hotline:
+##Local Covid-19 Hotline##",,,,,,,,,,,,,,,e092e2f8-f623-4b90-9798-03f2d7918dfd,,execute_actions,1150;3660
+36,send_message,22,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,9297d10c-ff5b-481a-a10a-d471916f4043,,execute_actions,3180;1700
+37,go_to,36,,,,,,19,,,,,,,,,,,,,,,,,,
+38,send_message,15;16;27;28;30;35,,,,,,Would you like to review the content? ,Yes,No,,,,,,,,,,,,,6516fbe6-086e-4ed4-a27d-e0ebb78f8923,,execute_actions,250;1660
+39,wait_for_response,38,,,,,Result 3,,,,,,,,,,,,,,,,690e0a03-20bf-4fcd-83e9-e0dcbb81bd63,,wait_for_response,250;1820
+40,save_value,39,yes y,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,ebe4e3ba-131d-4799-a9e0-268dd83f69a3,,execute_actions,290;2160
+41,start_new_flow,40,,,,,,PLH - Content - Extra - COVID,,,,,,,,,,,,,,8c6fb5bf-5f90-4a33-8fdb-ecd3ffd4b906,6a7604fa-48f1-489b-b375-01cb05afa2ad,,split_by_subflow,270;2260
+42,split_by_value,39,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,8855a0e4-0f50-4513-bfde-1e0a192fd0dc,,split_by_expression,925;1860
+43,send_message,42,,@fields.user_name,has_text,user_name,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later @fields.user_name! ",,,,,,,,,,,,,,,f713523c-a3ae-48ab-bb51-b874bf2016f9,,execute_actions,800;2060
+44,send_message,42,,,,,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later! ",,,,,,,,,,,,,,,2ce8cfde-f8a5-4b6d-9165-441ba2039bb1,,execute_actions,1050;2060
+45,send_message,39,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,6db536ab-b315-41cb-8195-7ace794b222c,,execute_actions,780;1540
+46,go_to,45,,,,,,38,,,,,,,,,,,,,,,,,,

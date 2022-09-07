@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Rain on the Mountain
+•	Call out, “There’s rain on the mountain”.
+•	Everyone else replies “Run, run, run” while running around the space. 
+•	Call out different instructions. For example, touch something red or hop like a frog.
+•	Keep playing and change the instructions each time. 
+•	You can use this as a fun way to learn colours or even tidy up! ",,,,,,,,,,,,,,,97e275ac-075f-4569-a87a-f5b790a492ee,,execute_actions,140;

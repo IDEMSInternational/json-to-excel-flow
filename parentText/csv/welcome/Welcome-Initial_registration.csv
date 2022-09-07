@@ -1,0 +1,16 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,start_new_flow,start,,,,,,PLH - Welcome - Initial registration - Media,,,,,,,,,,,,,,8d5d3818-7718-4a82-a12e-07778c6d61bd,2c3579be-c562-4b78-9c8f-725a03b8ed6f,,split_by_subflow,850;
+2,start_new_flow,1,Complete,,,,,PLH - Welcome - Initial registration - Gender,,,,,,,,,,,,,,ac47332f-6ecf-468a-b44c-50402b03d970,3c88c04d-5273-4a54-b9af-a43f7f17063a,,split_by_subflow,310;180
+3,split_by_group,2,Complete,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,03ad0f8d-f996-48ea-a870-5c92c2123cf5,,split_by_expression,145;340
+4,send_message,3,ABTest_test-first-person_alternative,,,,,"Thank you! Anytime you need support, just type ""Help"" and I will do my best to help you. ",,,,,,,,,,,,,,,6cb6a145-0cc6-415d-8413-80413a233f78,,execute_actions,270;540
+5,send_message,3;3,ABTest_test-first-person_Default;,,,,,"Thank you! Anytime you need support, just type ""Help"" and we will do our best to help you. ",,,,,,,,,,,,,,,f02b0784-53ee-4fd5-82f9-02089c20cff4,,execute_actions,20;540
+6,start_new_flow,4;5,,,,,,PLH - Welcome - Initial registration - Region,,,,,,,,,,,,,,aa2b13d1-03d5-4b9c-9105-1839eb70dbf7,5fe7e692-389b-40f9-a422-a02fbb9cba11,,split_by_subflow,;820
+7,split_by_group,6,Complete,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,ea99d018-e671-478d-a1ac-186aa330e686,d91ad6ff-7627-46ef-830e-00717e611f93,,split_by_expression,455;960
+8,start_new_flow,7,ABTest_test-personalisation_alternative,,,,,PLH - Internal - Empty,,,,,,,,,,,,,,4b369cbf-188c-4a1a-8599-ce726d4bd831,8d77e1ee-1741-4774-8bbe-ee55206185f7,,split_by_subflow,830;1160
+9,start_new_flow,7;7,ABTest_test-personalisation_Default;,,,,,PLH - Welcome - Initial registration - Nickname,,,,,,,,,,,,,,f320923d-275c-45ba-9f38-83dac7cf501d,7115a97e-99b5-4fef-8a5f-b425638ac1f1,,split_by_subflow,330;1160
+10,start_new_flow,8;9,Complete;Complete,,,,,PLH - Welcome - Initial registration - Age group for tips,,,,,,,,,,,,,,9b51bb16-8aff-4319-99cf-8de73457913d,ab30a47b-e5d1-4e8b-bbe8-aa44898fb090,,split_by_subflow,830;1300
+11,split_by_group,10,Complete,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,ea99d018-e671-478d-a1ac-186aa330e686,ffafb295-9b2b-4800-b0c9-5d8b2d893a1b,,split_by_expression,705;1440
+12,start_new_flow,11,ABTest_test-personalisation_alternative,,,,,PLH - Internal - Empty,,,,,,,,,,,,,,4b369cbf-188c-4a1a-8599-ce726d4bd831,ee309091-ed33-40fb-a389-991f34bb1ec8,,split_by_subflow,830;1640
+13,start_new_flow,11;11,ABTest_test-personalisation_Default;,,,,,PLH - Welcome - Initial registration - Child nickname,,,,,,,,,,,,,,c3a82457-5766-4278-bced-1e1a0dfc66fe,4af81f2c-c0b2-4b97-ba37-d3ff1eeb0312,,split_by_subflow,580;1640
+14,save_value,1;10;12;13;2;6;8;9,Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired,,,,has expired,welcome_registration,,,,,,,,,,,,,,,9acefb03-873e-4b6c-82aa-1e21efbe4477,,execute_actions,1590;540
+15,send_message,14,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,410faf07-3205-4a5f-86b6-9272556d509e,,execute_actions,1630;660

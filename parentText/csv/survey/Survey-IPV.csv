@@ -1,0 +1,31 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,survey ipv count,"@(if( fields.survey_ipv_count  < fields.max_skip_survey, if(fields.survey_ipv_count = 0, 0, fields.survey_ipv_count +1),0))",,,,,,,,,,,,,,,ee426d3f-0c7b-45e4-b721-0c58932f7c04,,execute_actions,360;
+2,split_by_value,1,,,,,,@fields.get_ipv_content,,,,,,,,,,,,,,,74df1140-80f0-431c-8407-879f5b154b4d,,split_by_contact_field,;60
+3,start_new_flow,2,,,,,,PLH - Welcome - Initial registration - Relationship,,,,,,,,,,,,,,758e1e77-1ce7-45ec-a5a9-4f76b2553747,00f42eeb-1109-4be0-b754-4da0e2f313ba,,split_by_subflow,60;420
+4,go_to,3,Complete,,,,,2,,,,,,,,,,,,,,,,,,
+5,split_by_group,2,yes,@fields.get_ipv_content,has_any_word,Yes,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,906688e9-3f76-4477-aa39-7267791f67fd,,split_by_expression,505;180
+6,send_message,5,ABTest_test-first-person_alternative,,,,,"Can I also ask you a few quick questions about your relationship with your partner?
+Everything you say will be completely private.
+
+If you do not want to answer any questions, it is completely okay. ",Yes,No,,,,,,,,,,,,,d8459122-70d6-4ae4-a1ef-b59a12292b8b,,execute_actions,630;380
+7,send_message,5;5,ABTest_test-first-person_Default;,,,,,"Can we also ask you a few quick questions about your relationship with your partner?
+Everything you say will be completely private.
+
+If you do not want to answer any questions, it is completely okay. ",Yes,No,,,,,,,,,,,,,73610900-f714-4909-9abc-b1f304964111,,execute_actions,380;380
+8,wait_for_response,6;7,,,,,consent_survey,,,,,,,,,,,,,,,,1e4ac1ba-2ef1-423a-baaf-6b407e9a2aeb,,wait_for_response,360;660
+9,save_value,8,yes y,,has_any_word,Yes,survey ipv count,0,,,,,,,,,,,,,,,e7fe6f9a-da10-4155-b881-bc2cc6161886,,execute_actions,220;880
+10,add_to_group,9,,,,,,ipv baseline,,,,,,,,,,,,,,ac41f936-c7bb-4be5-a442-042162de2685,e7fe6f9a-da10-4155-b881-bc2cc6161886,,execute_actions,220;880
+11,save_value,10,,,,,surveyipv datestamps,"@(fields.surveyipv_datestamps & ""yes,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,e7fe6f9a-da10-4155-b881-bc2cc6161886,,execute_actions,220;880
+12,send_message,11,,,,,,"To answer these questions, click this link to take you to an external site for extra privacy:
+[URL]",,,,,,,,,,,,,,,b5b30e4a-e507-4192-bd11-6a824cc40733,,execute_actions,40;1520
+13,save_value,8,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,13d80b1d-f7cb-42f7-bd06-d22c15baeef4,,execute_actions,850;800
+14,save_value,13,,,,,surveyipv datestamps,"@(fields.surveyipv_datestamps & ""no,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,13d80b1d-f7cb-42f7-bd06-d22c15baeef4,,execute_actions,850;800
+15,split_by_value,14,,,,,,@fields.survey_ipv_count,,,,,,,,,,,,,,,319a34ac-e03f-4040-b1a5-6d0706719e23,,split_by_contact_field,830;960
+16,split_by_value,15,@fields.max_skip_survey,@fields.survey_ipv_count,has_number_lte,ask again,,@fields.user_name,,,,,,,,,,,,,,,2f7382c3-2305-43de-b213-a8e2eb1d463f,,split_by_expression,1015;1260
+17,send_message,16,,@fields.user_name,has_text,user_name,,It is okay if this is not a good time. We will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,5df024ca-e80a-4fa5-8857-c3c19e720111,,execute_actions,890;1460
+18,send_message,16,,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later!,,,,,,,,,,,,,,,1127ae82-ffc6-46b1-b4e8-d947b7ed31e8,,execute_actions,1140;1460
+19,split_by_value,15,,,,,,@fields.user_name,,,,,,,,,,,,,,,849538d1-d0f4-4d34-98ac-efa7b909aa2d,,split_by_expression,1525;1000
+20,send_message,19,,@fields.user_name,has_text,user_name,,It is okay if this is not a good time. Chat later @fields.user_name!,,,,,,,,,,,,,,,c798fdd9-3219-49cf-9267-0a710c418748,,execute_actions,1400;1200
+21,send_message,19,,,,,,It is okay if this is not a good time. Chat later!,,,,,,,,,,,,,,,d11b1e25-21c9-4342-a5a8-7fc65dfb8f5a,,execute_actions,1650;1200
+22,send_message,8,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,079c286e-6556-488a-83d8-820cf5f639c9,,execute_actions,1240;440
+23,go_to,22,,,,,,5,,,,,,,,,,,,,,,,,,

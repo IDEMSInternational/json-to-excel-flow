@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Down in a ditch!
+•	Sit on a chair and put your toddler on your lap facing you. Hold them firmly under the arms.
+•	Gently bounce your legs and say in a soft voice “Baby horse, baby horse, baby horse, baby horse”
+•	Bounce your legs a bit more and say a bit louder “Little horse, little horse, little horse, little horse”
+•	Bounce your legs more and say louder “Big horse, big horse, big horse, big horse”
+•	When you call out “Down in a ditch!” open your knees and let your child drop down between them. Make sure you hold them so they don’t fall far! ",,,,,,,,,,,,,,,610ee186-1e81-440f-8825-be1bd1dd3cd4,,execute_actions,;

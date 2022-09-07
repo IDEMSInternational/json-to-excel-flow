@@ -1,0 +1,130 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Giving positive instructions,,,,,,,,,,,,,,,2f34d2b5-d41b-4984-be95-12cf24a96dac,,execute_actions,3720;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,789c9535-ae4f-45f9-820b-8c39f5a67cbf,,split_by_subflow,3800;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,00d60407-ee10-48a1-b798-6d131b231e38,,split_by_contact_field,840;180
+4,send_message,3;3,yes;,@fields.from_theme;,has_any_word;,Yes;,,It‘s hard to feel positive when our kids or teenagers are driving us crazy. We often end up saying “Stop doing that!” But children are much more likely to do what we ask if we give them positive instructions and lots of praise for what they do right. ,,,,,,,,,,,,,,,050a486b-6f4d-4f0e-86de-3c3122005c0c,,execute_actions,3780;280
+5,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,76f59b8d-556d-4955-b77d-648443dff9b1,,execute_actions,1190;340
+6,wait_for_response,5,,,,,know_more,,,,,,,,,,,,,,,,4a6d888c-994f-49fe-a458-5fdc7b04fda2,,wait_for_response,330;360
+7,split_by_value,6,YES Y,,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,3d46b9e0-a2b2-4ed9-a728-2c3939ffe6d7,,split_by_contact_field,3330;680
+8,send_message,7,high,@fields.type_of_media,has_any_word,High,,Here's a positive video to help you get your children to follow your instructions more often!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Positive_Instructions.m4v,,62996086-8ea4-41af-875d-815e26e90348,,execute_actions,550;700
+9,send_message,7,medium,@fields.type_of_media,has_any_word,Medium,,Here's a positive audio message to help you get your children to follow your instructions more often!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Positive_Instructions.mp3,,,6f728310-5780-4fb3-819b-aa345e5c0b32,,execute_actions,3310;800
+10,wait_for_response,8;9,,,,,Result 4,,,,,,,,,,,,,,,,314e21e9-f26f-4919-bda5-b4a8fe0f0e5c,120,wait_for_response,550;900
+11,start_new_flow,10;10;7,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,7ce5614d-5f37-49bc-8f9b-dd7b508e3011,,split_by_subflow,3310;1180
+12,split_by_value,6,NO N,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,2536a7ea-e316-48bc-a7d2-68a4b7dedce6,,split_by_expression,145;920
+13,send_message,12,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,fdb5bc3d-4e32-4685-b0ad-d329a081a6cf,,execute_actions,20;1120
+14,send_message,12,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,1a5cb199-d59d-4a0e-bc21-a783f2119cb3,,execute_actions,270;1120
+15,save_value,13;14,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a19f075e-010b-470c-9be7-b9a214e17c85,,execute_actions,;1300
+16,send_message,6,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,65b724f0-330d-42cf-a40b-44fee35db804,,execute_actions,920;520
+17,go_to,16,,,,,,5,,,,,,,,,,,,,,,,,,
+18,send_message,11;11,Complete;Expired,,,,,"Here are 4 steps to help you get your children to follow your instructions more often:
+
+1. Get their attention
+2. Be positive, specific, and realistic
+3. One instruction at a time
+4. Praise them for doing it! 
+
+To learn more about one of these steps, type ""1"" to ""4"". You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,172248c6-e289-4450-b746-69946b7b8d3b,,execute_actions,3310;1320
+19,wait_for_response,18,,,,,tip_list,,,,,,,,,,,,,,,,46484a54-1c15-41b6-8352-ae2517248b92,,wait_for_response,3820;1540
+20,split_by_value,19,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,f39286f3-0586-4f7f-a072-db0c42b3520d,,split_by_expression,695;1980
+21,send_message,20,,@fields.child_nickname,has_text,child_nickname,,"Step 1. Get Your Child's Attention
+Look at @fields.child_nickname and say their name when you give your child an instruction. Get down to their level.",,,,,,,,,,,,,,,9285030c-3a0e-421b-8c4f-a29f21625cfe,,execute_actions,570;2180
+22,send_message,20,,,,,,"Step 1. Get Your Child's Attention
+Look at your child and say their name when you give your child an instruction. Get down to their level.",,,,,,,,,,,,,,,ecc04ae6-9199-4989-94b6-08248153338d,,execute_actions,820;2180
+23,split_by_value,19,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,adcb25d5-3905-4134-b259-c02f67042491,,split_by_expression,3475;1720
+24,send_message,23,,@fields.child_nickname,has_text,child_nickname,,"Step 2. Be Specific, Positive, and Realistic!
+Describe exactly what you want @fields.child_nickname to do. Say, 'Please wash your hands for 20 seconds before coming to dinner, instead of 'Wash your hands.'",,,,,,,,,,,,,,,abe9200a-cf97-4e56-9aed-e1e5a0dd25e6,,execute_actions,3350;1920
+25,send_message,23,,,,,,"Step 2. Be Specific, Positive, and Realistic!
+Describe exactly what you want your child to do. Say, 'Please wash your hands for 20 seconds before coming to dinner, instead of 'Wash your hands.'",,,,,,,,,,,,,,,ad861b44-85a1-49b5-973f-30ad2c3e0819,,execute_actions,3600;1920
+26,split_by_value,24;25,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,3d26c156-846e-4128-9a02-fee89816ff44,,split_by_expression,3185;2360
+27,send_message,26,,@fields.child_nickname,has_text,child_nickname,,"Use positive words when telling @fields.child_nickname what to do. Say, ‘Please put your clothes away in the cupboard,’ instead of ‘Don’t make a mess’.",,,,,,,,,,,,,,,40e1065f-0f0e-4c58-91a0-2e588ab0642d,,execute_actions,3060;2560
+28,send_message,26,,,,,,"Use positive words when telling your child what to do. Say, ‘Please put your clothes away in the cupboard,’ instead of ‘Don’t make a mess’.",,,,,,,,,,,,,,,e2d82496-4e4d-4e3c-99d9-71f7e29b4c36,,execute_actions,3310;2560
+29,send_message,27;28,,,,,,Can your child actually do what you are asking them? It is very hard for a child to keep quiet inside for a whole day but maybe they can keep quiet for 15 minutes.,,,,,,,,,,,,,,,c1a81bb4-9800-4ff8-ae65-e1436a553e7e,,execute_actions,3040;2760
+30,send_message,19,3,,has_number_eq,3,,"Step 3. Give Instructions One at a Time
+Children are much more likely to do what you ask if you break things up into smaller steps.",,,,,,,,,,,,,,,62b0ec25-8f0e-4a17-a672-c5a92b039b14,,execute_actions,3820;1940
+31,send_message,19,4,,has_number_eq,4,,"Step 4. Praise Your Children When They Follow Instructions
+They will feel good about it and be more likely to follow instructions in the future!",,,,,,,,,,,,,,,1654a2cc-ab9c-45b1-8b6b-48c521101d38,,execute_actions,4160;1960
+32,send_message,21;22;29;30;31,,,,,,"Please select another number if you want to learn more about how to get your children to follow instructions more often:
+
+1. Get their attention
+2. Be positive, specific, and realistic
+3. One instruction at a time
+4. Praise them for doing it! 
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,3f634324-f9ed-438c-84f2-4a9168e5c313,,execute_actions,3840;2560
+33,save_value,32,,,,,last interaction,@(now()),,,,,,,,,,,,,,,de52b3bf-0796-460b-abe9-ce8a7ed1f9e1,,execute_actions,3900;2900
+34,go_to,33,,,,,,19,,,,,,,,,,,,,,,,,,
+35,send_message,19,n no,,has_any_word,N,,Here is a comic on using positive words and praise with your teen. ,,,,,,,,,,,,,,,cc848407-589e-431d-9986-61ae54ab48c3,,execute_actions,1250;3140
+36,send_message,35,,,,,,"Teen: “Can I watch some T.V. after dinner?” 
+
+Parent: “When you clear the table, you can watch an hour of T.V.” 
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/positive_instructions_comic_1.png,,,,cc848407-589e-431d-9986-61ae54ab48c3,,execute_actions,1250;3140
+37,send_message,36,,,,,,"Parent: “I really appreciate it when you help clean up after dinner. Thank you, Dylan”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/positive_instructions_comic_2.png,,,,cc848407-589e-431d-9986-61ae54ab48c3,,execute_actions,1250;3140
+38,send_message,37,,,,,,"Parent and teen watching T.V. together. 
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/positive_instructions_comic_3.png,,,,cc848407-589e-431d-9986-61ae54ab48c3,,execute_actions,1250;3140
+39,split_by_group,38,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,9fe3aadb-09d8-4119-86f8-1edafaaf05a2,,split_by_expression,2145;3800
+40,split_by_group,39,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,e76b6c2e-ff7a-4aa7-bc1c-c38e537486bb,,split_by_expression,2645;4200
+41,split_by_value,40,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,a862873d-42f4-4879-a766-2f7a6aef6fa1,,split_by_expression,2895;5000
+42,send_message,41,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,1f3f3a1a-e588-48e8-a120-dc13e0288201,,execute_actions,2770;5200
+43,send_message,41,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,99a161b5-0691-4ea7-b6b4-9abeca3e5839,,execute_actions,3020;5200
+44,split_by_value,40;40,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,a8f7c17e-125e-42c2-ab25-7bc091fbf5ee,,split_by_expression,2395;4800
+45,send_message,44,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,0bc067c2-27dd-460d-a38c-9b11b1ce3245,,execute_actions,2270;5200
+46,send_message,44,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,2136caf3-6b61-44a2-8992-f40a3c7e3b76,,execute_actions,2520;5200
+47,split_by_group,39;39,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,40de6b32-14e1-4d3a-bd21-c459bd957854,,split_by_expression,1645;4000
+48,split_by_value,47,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,119226e6-323f-4631-964d-04fad31a23fc,,split_by_expression,1895;4600
+49,send_message,48,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,a5a25851-c3b0-41d9-9e5d-a1f1e6fa4393,,execute_actions,1770;5200
+50,send_message,48,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,ab8a254f-5ff8-4f95-bc58-4e01cc11fe36,,execute_actions,2020;5200
+51,split_by_value,47;47,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,af6fe5de-325a-4800-85a9-8a9a200a45d5,,split_by_expression,1395;4400
+52,send_message,51,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,c331dbdd-0b0c-4fda-b35b-ae1b09b82821,,execute_actions,1270;5200
+53,send_message,51,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try to be aware about how you give your child instructions:
+1. Get their attention
+2. Be positive
+3. One instruction at a time
+4. Praise them for doing it!
+It will make a HUGE DIFFERENCE if you can learn these 4 simple steps!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,198ee557-ef52-48f9-853a-1f958ec1f3f6,,execute_actions,1520;5200
+54,save_value,42;43;45;46;49;50;52;53,,,,,current type assessed,tip,,,,,,,,,,,,,,,17894ce5-3f71-4a26-852e-6c62c0edd796,,execute_actions,1250;6020
+55,save_value,54,,,,,current activity,positive_instructions,,,,,,,,,,,,,,,17894ce5-3f71-4a26-852e-6c62c0edd796,,execute_actions,1250;6020
+56,start_new_flow,55,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,8d6c23fa-250f-4e09-bba7-483cebcaf1bd,,split_by_subflow,1230;6200
+57,split_by_value,56;56,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,e8a24695-7caa-4323-8556-12c7112b6340,,split_by_expression,1065;5560
+58,send_message,57,,@fields.user_name,has_text,user_name,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later @fields.user_name!",,,,,,,,,,,,,,,e4fc2910-3ae5-4896-81f7-cbfa0321ec45,,execute_actions,940;5760
+59,send_message,57,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later!",,,,,,,,,,,,,,,714d7919-d1e4-41c4-9c9b-d2e9fe0b0ceb,,execute_actions,1190;5760
+60,send_message,19,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,32813b3b-cb1b-4325-940b-9ea58867828d,,execute_actions,4120;1320
+61,go_to,60,,,,,,18,,,,,,,,,,,,,,,,,,

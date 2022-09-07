@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Here are some useful numbers in :
+
+Police: 
+Ambulance: 
+Violence at home: 
+Drug: 
+Childline: 
+Lifeline (Counselling): ",,,,,,,,,,,,,,,56ca638b-3017-4a55-9f89-8c196dcc925e,,execute_actions,440;20
+2,send_message,1,,,,,,"Please type ""back"" if you want to go back to the previous options.",,,,,,,,,,,,,,,1316ed5d-a83b-4b1d-82b8-270f79c7c4ba,,execute_actions,440;420
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,50c5c0f1-03dc-4fa5-8bcb-b663d4c61b3d,,wait_for_response,440;560
+4,start_new_flow,3,back,,has_any_word,Back,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,76cdf0f6-82a3-4915-ac01-0341fcde2a2c,,split_by_subflow,380;820
+5,send_message,3,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b99a23f3-6087-4c1b-a26e-c88150b66f12,,execute_actions,740;480
+6,go_to,5,,,,,,2,,,,,,,,,,,,,,,,,,

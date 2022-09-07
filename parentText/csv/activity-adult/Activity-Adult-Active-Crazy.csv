@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Crazy Chicken
+•	Shake your hand in the air 8 times while counting to 8
+•	Do it as fast and loud as you can
+•	Repeat with your other hand and both feet
+•	Do it 7 times, then 6 times until you get to 1.
+•	Call out “Crazy chicken” as loud as you can!
+•	Have you released all your stress? If not, do it again even faster and louder! ",,,,,,,,,,,,,,,a5a25ea4-9472-42b0-9d9f-a86b3d6970f1,,execute_actions,;

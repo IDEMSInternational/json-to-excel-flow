@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Transform the object
+•	Everyday household items like brooms, mops, or scarfs can become fun props for games
+•	Place an object in the center of the room and whenever someone has an idea, they jump in and show the rest what the object can be
+•	For example, a broom might be ridden as a horse or a microphone or a guitar!",,,,,,,,,,,,,,,75e04fb2-f256-433a-b813-c4278ccfbf97,,execute_actions,;

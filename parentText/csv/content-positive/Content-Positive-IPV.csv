@@ -1,0 +1,100 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,IPV,,,,,,,,,,,,,,,fad6a846-5068-4977-819a-68c093791714,,execute_actions,1090;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,959eced7-b362-4286-8875-ae3ef63170a5,,split_by_subflow,1090;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,65e67b12-ae7a-4bad-95e6-24015764f5eb,,split_by_contact_field,1010;380
+4,send_message,3,,,,,,Having a loving relationship with our partner can have a big impact on how we feel. It also helps make our children feel loved and safe.,,,,,,,,,,,,,,,6dc58f6e-84cf-4f82-9eec-a1d97ba190bb,,execute_actions,2430;160
+5,split_by_value,4,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,fd732336-4676-42d1-a252-095c689ac739,,split_by_expression,2410;380
+6,split_by_value,3;5,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,e2e68682-41ac-4804-b0e0-d62b8df7efb8,,split_by_contact_field,120;560
+7,send_message,6,high,@fields.type_of_media,has_any_word,High,,Here’s a video on how you can develop a loving and peaceful relationship with your partner!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/IPV.m4v,,a691965f-2e20-4278-9b70-d18dbd7a92ea,,execute_actions,;660
+8,send_message,6,medium,@fields.type_of_media,has_any_word,Medium,,Here’s an audio message on how you can develop a loving and peaceful relationship with your partner!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/IPV.mp3,,,072dbb54-10e8-433d-afe2-41ddfce4710a,,execute_actions,1030;680
+9,wait_for_response,7;8,,,,,Result 4,,,,,,,,,,,,,,,,28a2ad92-9cc6-4719-be20-9f000373646f,120,wait_for_response,;920
+10,start_new_flow,6;9;9,;;No Response,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,241cdb13-8b3e-477a-85de-f945f64080da,,split_by_subflow,1190;1040
+11,send_message,5,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,bf97539c-7bff-4d66-a2ee-097cda8fa249,,execute_actions,2690;360
+12,wait_for_response,11,,,,,know_more,,,,,,,,,,,,,,,,9c4d6c3c-8376-4d6c-af55-ef270829aa4a,,wait_for_response,2610;500
+13,go_to,12,yes y,,has_any_word,Yes,,6,,,,,,,,,,,,,,,,,,
+14,send_message,12,no n,,has_any_word,No,,"That's okay! You can always type ""Help"" at anytime if you need any support with relationships with your partner or other adults. Chat to you later!",,,,,,,,,,,,,,,72aba1ce-6d1c-4204-bf50-c046f2b27c22,,execute_actions,2830;800
+15,send_message,12,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,0d26528a-3df0-4106-836a-faa804b9d8f5,,execute_actions,2770;640
+16,go_to,15,,,,,,11,,,,,,,,,,,,,,,,,,
+17,split_by_value,10;10,Complete;Expired,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,a8844772-d46e-4b61-93a6-d27ed06f25d2,,split_by_expression,1460;1260
+18,send_message,17,man,@fields.gender_personalisation,has_any_word,man,,"Here are 5 simple tips on how you can develop a loving and peaceful relationship with your partner:
+  
+  1. Treat each other as equals
+  2. Become a confident father and a supportive partner
+  3. Share family responsibilities
+  4. Resolve conflict peacefully
+  5. Listen and talk to each other
+  
+Type ""1"" to ""5"" to learn more about these tips. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,5a92c24d-3861-4ab7-a728-5a7882a02d2b,,execute_actions,1210;1460
+19,send_message,17,woman,@fields.gender_personalisation,has_any_word,woman,,"Here are 5 simple tips on how you can develop a loving and peaceful relationship with your partner:
+  
+  1. Treat each other as equals
+  2. Become a confident mother and a supportive partner
+  3. Share family responsibilities
+  4. Resolve conflict peacefully
+  5. Listen and talk to each other
+  
+Type ""1"" to ""5"" to learn more about these tips. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,5626b7d1-0847-4f35-8855-0efe1198902c,,execute_actions,1460;1460
+20,send_message,17,,,,,,"Here are 5 simple tips on how you can develop a loving and peaceful relationship with your partner:
+  
+  1. Treat each other as equals
+  2. Become a confident parent and a supportive partner
+  3. Share family responsibilities
+  4. Resolve conflict peacefully
+  5. Listen and talk to each other
+  
+Type ""1"" to ""5"" to learn more about these tips. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,d028bc23-9862-4dfb-accc-6fb63a8fcc06,,execute_actions,1710;1460
+21,wait_for_response,18;19;20,,,,,list_of_tips,,,,,,,,,,,,,,,,b747f4de-a00f-4902-8d1a-269bb1d812d9,,wait_for_response,2290;1920
+22,split_by_group,21,no n ,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,963e9e28-3326-4b2e-bf85-961c258ab458,,split_by_expression,3445;3480
+23,split_by_group,22,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,38c6d427-4704-4deb-88fd-7b633a40756a,,split_by_expression,3695;3880
+24,send_message,23,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try using some of these tips in your relationships with your partner. Having a loving relationship with your partner can have a big impact on how you feel and can also help your children feel loved and safe!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,755ca851-ffaa-4053-b23a-78e15adb7173,,execute_actions,3820;4080
+25,send_message,23;23,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try using some of these tips in your relationships with your partner. Having a loving relationship with your partner can have a big impact on how you feel and can also help your children feel loved and safe!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,4b2ac23d-d287-47cf-bf40-c44ae60310ad,,execute_actions,3570;4080
+26,split_by_group,22;22,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,86bec73d-40cd-44aa-b774-51309cf19742,,split_by_expression,3195;3680
+27,send_message,26,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try using some of these tips in your relationships with your partner. Having a loving relationship with your partner can have a big impact on how you feel and can also help your children feel loved and safe!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,aea6736e-c649-4d81-8eda-31e033c11a3b,,execute_actions,3320;4080
+28,send_message,26;26,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try using some of these tips in your relationships with your partner. Having a loving relationship with your partner can have a big impact on how you feel and can also help your children feel loved and safe!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,08f3eebf-2a2c-4b93-b77f-6fb913508fad,,execute_actions,3070;4080
+29,save_value,24;25;27;28,,,,,current type assessed,tip,,,,,,,,,,,,,,,c320f3f3-184b-4eb2-b3df-81bd0e53644a,,execute_actions,3010;4680
+30,save_value,29,,,,,current activity,ipv,,,,,,,,,,,,,,,c320f3f3-184b-4eb2-b3df-81bd0e53644a,,execute_actions,3010;4680
+31,start_new_flow,30,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,c0b7028e-e043-4a09-b9bc-f832224857aa,,split_by_subflow,2330;4880
+32,split_by_value,31,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,aef4108b-197e-4464-95d6-004f4b460658,,split_by_expression,615;5420
+33,split_by_group,32,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,d006e497-b619-46e3-bba3-a91f5611156f,,split_by_expression,365;5620
+34,send_message,33,ABTest_test-first-person_alternative,,,,,"I understand that these times can be very challenging. Please type ""help"" if you want any extra support or information. Chat later @fields.user_name!",,,,,,,,,,,,,,,bbf855c9-0cc8-4e3c-9283-2969afb81e0e,,execute_actions,490;6020
+35,send_message,33;33,ABTest_test-first-person_Default;,,,,,"We understand that these times can be very challenging. Please type ""help"" if you want any extra support or information. Chat later @fields.user_name!",,,,,,,,,,,,,,,e9f32dd9-e293-4e14-b8eb-0a8b86cb415a,,execute_actions,240;6020
+36,split_by_group,32,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,1bc85c0e-2f64-48b4-9001-85cf60a61e08,,split_by_expression,865;5820
+37,send_message,36,ABTest_test-first-person_alternative,,,,,"I understand that these times can be very challenging. Please type ""help"" if you want any extra support or information. Chat later!",,,,,,,,,,,,,,,82679aef-4913-473a-a873-0358f3ef4f3c,,execute_actions,990;6020
+38,send_message,36;36,ABTest_test-first-person_Default;,,,,,"We understand that these times can be very challenging. Please type ""help"" if you want any extra support or information. Chat later!",,,,,,,,,,,,,,,586c24e3-3eee-45f9-82e8-7955fe6bfc70,,execute_actions,740;6020
+39,start_new_flow,21,1,,has_number_eq,1,,PLH - Content - Positive - IPV - Tip 1,,,,,,,,,,,,,,8feee754-528f-460f-9472-5f4b62eab9f3,7fc6f9e8-5f83-4915-95dd-02fb4445997e,,split_by_subflow,160;2060
+40,start_new_flow,21,2,,has_number_eq,2,,PLH - Content - Positive - IPV - Tip 2,,,,,,,,,,,,,,8631289b-d920-4190-b729-75f09fba6aca,aa4521e8-450b-4a0d-919f-5b2cdfcb508b,,split_by_subflow,1170;2080
+41,start_new_flow,21,3,,has_number_eq,3,,PLH - Content - Positive - IPV - Tip 3,,,,,,,,,,,,,,81058468-c9eb-4ffa-adbb-a3853e95b1ba,f5b18672-42cf-4af3-a5f1-29925daea3be,,split_by_subflow,1030;2780
+42,start_new_flow,21,4,,has_number_eq,4,,PLH - Content - Positive - IPV - Tip 4,,,,,,,,,,,,,,56ab11c9-a317-41ef-89e0-4b6e192eee60,0537ee33-283f-4a6a-aa29-fd9680e74888,,split_by_subflow,2330;2780
+43,start_new_flow,21,5,,has_number_eq,5,,PLH - Content - Positive - IPV - Tip 5,,,,,,,,,,,,,,088f4eca-1c0c-4ef2-bc4d-42b0ae3cd25b,7899f5f5-1436-4b9e-a258-8aa19e8061e9,,split_by_subflow,2570;2800
+44,split_by_value,39;40;41;42;43,Complete;Complete;Complete;Complete;Complete,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,c1a227aa-71a0-4ee3-bc6d-7ef995901a24,,split_by_expression,2040;3220
+45,send_message,44,man,@fields.gender_personalisation,has_any_word,man,,"Please select another number if you want to learn more about how you can develop a loving and peaceful relationship with your partner:
+
+1. Treating each other as equals
+2. Become a confident father and a supportive partner
+3. Share family responsibilities
+4. Resolve conflict peacefully
+5. Listen and talk to each other
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,0d4e80cb-1756-4462-94b3-bd2c05a4a7af,,execute_actions,1790;3420
+46,send_message,44,woman,@fields.gender_personalisation,has_any_word,woman,,"Please select another number if you want to learn more about how you can develop a loving and peaceful relationship with your partner:
+
+1. Treating each other as equals
+2. Become a confident mother and a supportive partner
+3. Share family responsibilities
+4. Resolve conflict peacefully
+5. Listen and talk to each other
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,51b8d5da-36f5-4afc-9509-7c2dea3b2e38,,execute_actions,2040;3420
+47,send_message,44,,,,,,"Please select another number if you want to learn more about how you can develop a loving and peaceful relationship with your partner:
+
+1. Treating each other as equals
+2. Become a confident parent and a supportive partner
+3. Share family responsibilities
+4. Resolve conflict peacefully
+5. Listen and talk to each other
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,e3ea8200-eee1-4cc6-9929-1810b8499b05,,execute_actions,2290;3420
+48,save_value,45;46;47,,,,,ipv list of tips,"@(fields.ipv_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,2a276b87-0524-44f7-89be-f14132ac823d,,execute_actions,2310;4500
+49,go_to,48,,,,,,21,,,,,,,,,,,,,,,,,,
+50,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a342e071-ae39-4e70-b521-336fbb69c548,,execute_actions,2630;1720
+51,go_to,50,,,,,,17,,,,,,,,,,,,,,,,,,

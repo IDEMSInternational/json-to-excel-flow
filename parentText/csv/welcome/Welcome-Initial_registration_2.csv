@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,n states,4,,,,,,,,,,,,,,,3b79dceb-d411-41df-a8c7-a2a7dbd2bf72,,execute_actions,400;20
+2,send_message,1,,,,,,What state or territory are you from?,,,,,,,,,,,,,,,3b79dceb-d411-41df-a8c7-a2a7dbd2bf72,,execute_actions,400;20
+3,wait_for_response,2,,,,,state,,,,,,,,,,,,,,,,a5997f12-0a3e-4f24-8537-a1cbcdbd0acb,,wait_for_response,360;300
+4,split_by_value,3,,,has_number,Has Number,,"@(and(results.state <= fields.n_states, results.state>=1)) ",,,,,,,,,,,,,,,22dcbf4f-3572-498f-a156-b1e308c0f3d8,,split_by_expression,360;460
+5,save_value,4,true,"@(and(results.state <= fields.n_states, results.state>=1)) ",has_only_phrase,True,state of origin,@results.state,,,,,,,,,,,,,,,7d57463c-17dc-4937-96d0-5ea5ae54bed7,,execute_actions,240;620
+6,send_message,3;4,,,,,,"Sorry, I don't understand what you mean. Please reply with a number between 1 and @fields.n_states.",,,,,,,,,,,,,,,615ee6b8-521b-4813-9b94-b03bb655296a,,execute_actions,740;280
+7,go_to,6,,,,,,3,,,,,,,,,,,,,,,,,,

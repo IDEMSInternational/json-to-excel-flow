@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,What kind of activity do you want?,Active,Calm,Fun,,,,,,,,,,,,c9098de0-2c63-436b-8ff1-67716aeeaed5,,execute_actions,740;20
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,790d4260-12bd-4c35-a488-c4a6ccd639fd,,wait_for_response,740;240
+3,save_value,2,active,,has_any_word,Active,last interaction,@(now()),,,,,,,,,,,,,,,f5c4f14f-7796-445d-ba5f-83a074e68f29,,execute_actions,320;440
+4,save_value,2,calm,,has_any_word,Calm,last interaction,@(now()),,,,,,,,,,,,,,,2df39275-c5b2-4323-a7ac-cefe28d811ba,,execute_actions,620;440
+5,save_value,2,fun,,has_any_word,Random,last interaction,@(now()),,,,,,,,,,,,,,,4e54dc13-99c3-4aca-bae0-dac62e73c4be,,execute_actions,1060;380
+6,split_random,5,,,,,,,,,,,,,,,,,,,,,6d694f4c-457b-4dc3-931d-4a237adba05a,,split_by_random,1100;480
+7,start_new_flow,3;6,;1,,,,,PLH - Handler - Activity - Adults - Active,,,,,,,,,,,,,,bb4b8426-2070-4114-9360-f2ee4127fab7,38385e33-8f12-4cd7-8783-bc3627aed15f,,split_by_subflow,300;640
+8,start_new_flow,4;6,;2,,,,,PLH - Handler - Activity - Adults - Calm,,,,,,,,,,,,,,396b8ab3-9bfe-4402-ae05-9c0bcd300dec,9ded6ed1-65c2-480b-9f68-301dbd27cfa7,,split_by_subflow,700;660
+9,send_message,2,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a066d5e5-76df-44e7-a639-5e3c29589d6d,,execute_actions,1040;260
+10,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,e2b82b7f-b8e0-4467-b3d3-23f6dbcce193,,execute_actions,1020;140
+11,go_to,10,,,,,,1,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,163 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,survey behave count,"@(if( fields.survey_behave_count  < fields.max_skip_survey, if(fields.survey_behave_count = 0, 0, fields.survey_behave_count +1),0))",,,,,,,,,,,,,,,e0ad4b4c-f668-4d03-8095-34383a32e6a3,,execute_actions,1040;
+2,split_by_value,1,,,,,,@fields.know_survey_behave_child,,,,,,,,,,,,,,,a221d3f4-2d4a-4ecf-b33e-60db1c1edbbd,,split_by_contact_field,1020;220
+3,split_by_value,2,yes,@fields.know_survey_behave_child,has_any_word,Yes,,@fields.survey_behave_age,,,,,,,,,,,,,,,175c86cb-8198-4aa8-b17f-252408a36ed1,,split_by_contact_field,1240;4400
+4,send_message,3,"0,1",@fields.survey_behave_age,has_number_between,0 - 1,,"All children behave badly sometimes. Here are a list of typical behaviours that can be challenging for parents:
+
+1. Crying a lot
+2. Problems sleeping
+3. Acting clingy
+4. Whining for things
+5. Bad tempered or moody
+6. Problems eating
+7. Stubborn or fussy
+8. Naughty behaviour
+9. Temper tantrums
+
+Please type the number that describes the most challenging behaviour for you to manage with @fields.survey_behave_name. You can also type ""N"" if you do not want to answer. ",,,,,,,,,,,,,,,4fbf98f6-ae50-487c-9b70-99c105678148,,execute_actions,1000;4640
+5,send_message,3,11,@fields.survey_behave_age,has_number_gte,>= 11,,"All children behave badly sometimes. Here are a list of typical behaviours that can be challenging for parents:
+
+1. Refuse to obey instructions
+2. Gets angry a lot
+3. Rudeness, disrespectful behaviour
+4. Irritable, frequent mood changes
+5. Does not follow rules
+6. Stubbornness
+7. Breaking things
+8. Getting into fights
+9. Teasing or bothering others
+
+Please type the number that describes the most challenging behaviour for you to manage with @fields.survey_behave_name. You can also type ""N"" if you do not want to answer. ",,,,,,,,,,,,,,,81ee3c91-0f0d-4aac-ba34-d70cec1d62af,,execute_actions,3870;4580
+6,send_message,3;3,"2,10;",@fields.survey_behave_age;,has_number_between;,2 - 10;,,"All children behave badly sometimes. Here are a list of typical behaviours that can be challenging for parents:
+
+1. Refuse to obey instructions
+2. Temper tantrums
+3. Disrespectful behaviour
+4. Whining for things
+5. Hyperactivity, can't sit still
+6. Hitting others
+7. Breaking things
+8. Getting into fights
+9. Teasing or bothering others
+
+Please type the number that describes the most challenging behaviour for you to manage with @fields.survey_behave_name. You can also type ""N"" if you do not want to answer. ",,,,,,,,,,,,,,,fa9d5a16-7a2d-4c3c-a8d0-75ae8a0a111b,,execute_actions,2360;4740
+7,split_by_group,2,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,2043f0ff-88c3-417b-8911-131b76458f26,,split_by_expression,2235;240
+8,send_message,7,ABTest_test-first-person_alternative,,,,,Can I also ask you a few quick questions about your children's behaviour?,Yes,No,,,,,,,,,,,,,bb752b5f-010c-498c-85a7-996da15413bd,,execute_actions,2360;440
+9,send_message,7;7,ABTest_test-first-person_Default;,,,,,Can we also ask you a few quick questions about your children's behaviour?,Yes,No,,,,,,,,,,,,,5ad409c7-4865-4dde-8015-1e5e3855e239,,execute_actions,2110;440
+10,wait_for_response,8;9,,,,,consent_survey,,,,,,,,,,,,,,,,694e40dd-7d7d-467f-997f-f9d2a3fe44f8,,wait_for_response,1100;520
+11,save_value,10,YES Y ,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,ebd5dc35-047d-4948-a13d-0538d4818fe9,,execute_actions,350;540
+12,save_value,11,,,,,surveybehave datestamps,"@(fields.surveybehave_datestamps & ""yes,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,ebd5dc35-047d-4948-a13d-0538d4818fe9,,execute_actions,350;540
+13,save_value,10,NO N,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,865f62ba-347f-4d7c-bb8f-54c63eb11ef3,,execute_actions,2690;800
+14,save_value,13,,,,,surveybehave datestamps,"@(fields.surveybehave_datestamps & ""no,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,865f62ba-347f-4d7c-bb8f-54c63eb11ef3,,execute_actions,2690;800
+15,split_by_value,14,,,,,,@fields.survey_behave_count,,,,,,,,,,,,,,,8538b207-88ce-49f2-b155-5b71142f7601,,split_by_contact_field,2690;960
+16,split_by_value,15,@fields.max_skip_survey,@fields.survey_behave_count,has_number_lte,ask again,,@fields.user_name,,,,,,,,,,,,,,,9304f0b4-da89-45f0-95f0-dd8c74bb64b9,,split_by_expression,1675;1060
+17,split_by_group,16,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,c30f1bd8-6d06-410b-8c0e-a0e0fb9d21c3,,split_by_expression,1425;1260
+18,send_message,17,ABTest_test-first-person_alternative,,,,,It is okay if this is not a good time. I will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,7f6bcb32-1552-43a8-b373-fd1b3132b805,,execute_actions,1550;1860
+19,send_message,17;17,ABTest_test-first-person_Default;,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,c962bcfe-e5f7-4222-956d-b4c97f1d4ceb,,execute_actions,1300;1860
+20,split_by_group,16,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,c6fdfd43-fbf6-4d99-acb7-e01ae30ba3cb,,split_by_expression,1925;1460
+21,send_message,20,ABTest_test-first-person_alternative,,,,,It is okay if this is not a good time. I will try again tomorrow. Chat later!,,,,,,,,,,,,,,,4be7339f-9c91-46bb-922c-d536fa3bc778,,execute_actions,2050;1860
+22,send_message,20;20,ABTest_test-first-person_Default;,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later!,,,,,,,,,,,,,,,6a9612a2-dc86-42ee-bedc-66e0fedafc5f,,execute_actions,1800;1860
+23,split_by_value,15,,,,,,@fields.user_name,,,,,,,,,,,,,,,db60f728-039a-4acb-b29e-9ba33b84e4a2,,split_by_expression,2895;1660
+24,send_message,23,,@fields.user_name,has_text,user_name,,It is okay if this is not a good time. Chat later @fields.user_name!,,,,,,,,,,,,,,,1277a92d-ced5-4951-aee7-70dfc364f915,,execute_actions,2770;1860
+25,send_message,23,,,,,,It is okay if this is not a good time. Chat later!,,,,,,,,,,,,,,,c6b522c5-37b6-456f-a141-ed0270d18688,,execute_actions,3020;1860
+26,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,961ca9f2-e0d1-4b37-8408-d15a56a2f6fe,,execute_actions,3890;700
+27,send_message,26,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,7a518d18-c7a2-4de7-9941-c2cab664255b,,execute_actions,3970;540
+28,go_to,27,,,,,,7,,,,,,,,,,,,,,,,,,
+29,wait_for_response,4;5;6,,,,,chosen_bh,,,,,,,,,,,,,,,,6515c0f3-cc8c-4e85-9e91-553cdae943b1,,wait_for_response,1180;5420
+30,save_value,29,"1,9",,has_number_between,1 - 9,survey behave most challenging,@results.chosen_bh,,,,,,,,,,,,,,,f73dd5b7-03a5-4f91-b9bd-4a0e940f9e34,,execute_actions,350;5500
+31,send_message,30,,,,,,How challenging is this problem on a scale of 0 to 7 (0 = not a problem and 7 = terrible)?,,,,,,,,,,,,,,,3064d5ea-cd11-4b22-8c92-fa30886cf53b,,execute_actions,570;5640
+32,send_message,29,,,,,,"Sorry, I don't understand what you mean. Please type a number between 1 and 9.  You can also type ""N"" if you do not want to answer. ",,,,,,,,,,,,,,,2040eddd-c710-4ebe-852b-60cc86087330,,execute_actions,3970;5440
+33,go_to,32,,,,,,29,,,,,,,,,,,,,,,,,,
+34,send_message,12,,,,,,Are you a parent/caregiver of a child living with disabilities?,Yes,No,,,,,,,,,,,,,fca6c1ed-07fa-4c53-9a53-82bba05ee39f,,execute_actions,390;820
+35,wait_for_response,34,,,,,parent,,,,,,,,,,,,,,,,a265c851-495a-4142-a963-c1a84898cf47,,wait_for_response,390;1900
+36,save_value,35,yes y,,has_any_word,Yes,has disability,yes,,,,,,,,,,,,,,,4ac97ff1-dad7-4961-ba13-95e701171c77,,execute_actions,;2500
+37,save_value,36,,,,,get disability content,yes,,,,,,,,,,,,,,,4ac97ff1-dad7-4961-ba13-95e701171c77,,execute_actions,;2500
+38,save_value,37,,,,,family type,disability,,,,,,,,,,,,,,,4ac97ff1-dad7-4961-ba13-95e701171c77,,execute_actions,;2500
+39,save_value,38,,,,,house of support path,"@(fields.path & ""house_of_support/house_type/"" & fields.house_type & ""/age_group/"" & fields.age_group_for_tips & ""/family_type/"" & fields.family_type &""/"")",,,,,,,,,,,,,,,4ac97ff1-dad7-4961-ba13-95e701171c77,,execute_actions,;2500
+40,save_value,39,,,,,total skills,@(fields.total_skills+1),,,,,,,,,,,,,,,4ac97ff1-dad7-4961-ba13-95e701171c77,,execute_actions,;2500
+41,split_by_value,35;40,no n;,,has_any_word;,No;,,@fields.child_nickname,,,,,,,,,,,,,,,3af22fe9-5bf0-4d59-a29c-1e33cbe805aa,,split_by_contact_field,1180;2000
+42,save_value,41,,@fields.child_nickname,has_text,Has Text,survey behave name,@fields.child_nickname,,,,,,,,,,,,,,,167cabcd-9c71-4ada-8706-a0eaa1187519,,execute_actions,1160;2360
+43,send_message,35,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,989587fb-b0f4-4234-af23-f5ffd4fff57d,,execute_actions,550;2260
+44,go_to,43,,,,,,34,,,,,,,,,,,,,,,,,,
+45,wait_for_response,31,,,,,current_rate,,,,,,,,,,,,,,,,a858de9d-a0ae-4392-bd8e-f27f27f8b1e8,,wait_for_response,550;5820
+46,save_value,45,"0,7",,has_number_between,0 - 7,surveybehave rate,"@(fields.surveybehave_rate & results.current_rate &""|"")",,,,,,,,,,,,,,,d86df472-8264-4ee6-83f2-546f07faf286,,execute_actions,370;6020
+47,save_value,46,,,,,surveybehave rate datetime,"@(fields.surveybehave_rate_datetime & results.current_rate & "","" & fields.survey_number  & "","" & now() & ""|"")",,,,,,,,,,,,,,,d86df472-8264-4ee6-83f2-546f07faf286,,execute_actions,370;6020
+48,save_value,47,,,,,know survey behave challenge,yes,,,,,,,,,,,,,,,f15d309e-df5f-4536-bbc1-e72433022d0f,,execute_actions,370;6200
+49,save_value,48,,,,,survey behave count,0,,,,,,,,,,,,,,,f15d309e-df5f-4536-bbc1-e72433022d0f,,execute_actions,370;6200
+50,save_value,49,,,,,surveybehave completion,"@(fields.surveybehave_completion & fields.survey_number & "","" & now() &""|"")",,,,,,,,,,,,,,,f15d309e-df5f-4536-bbc1-e72433022d0f,,execute_actions,370;6200
+51,split_by_value,50,,,,,,@results.rate,,,,,,,,,,,,,,,9c662cdc-0cf9-4799-987e-9937fb2fd323,,split_by_run_result,960;6700
+52,split_by_value,51,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,214bc9cb-48cd-4f0b-ac2b-5361edabbdeb,,split_by_expression,755;7240
+53,send_message,52,,@fields.child_nickname,has_text,child_nickname,,You are doing much better than most people. Keep investing in One-on-One Time with @fields.child_nickname!,,,,,,,,,,,,,,,aca976a8-7145-4cbe-8017-f9ae22b28287,,execute_actions,630;7440
+54,send_message,52,,,,,,You are doing much better than most people. Keep investing in One-on-One Time with your child!,,,,,,,,,,,,,,,245d250f-2be3-4a14-b8df-ac30c8af4812,,execute_actions,880;7440
+55,send_message,45,,,,,,"Sorry, I don't understand what you mean. Please type a number between 0 and 7.",,,,,,,,,,,,,,,3e99c30b-6033-40a6-9db5-904f0553eea3,,execute_actions,2090;5800
+56,go_to,55,,,,,,45,,,,,,,,,,,,,,,,,,
+57,split_by_value,29;53;54,N no;;,,has_any_word;;,no;;,,@fields.fromparentingbehave,,,,,,,,,,,,,,,f2a5cd3b-c1c2-4016-8edb-8265e4052a0d,,split_by_contact_field,1240;7660
+58,save_value,57,,,,,n surveys completed,"@(if(fields.n_surveys_completed < fields.total_n_surveys-1, fields.n_surveys_completed +1, ""final""))",,,,,,,,,,,,,,,6842277a-fbd2-4891-8b8f-d164eb392f4e,,execute_actions,3850;7880
+59,split_by_value,58,,,,,,@fields.user_name,,,,,,,,,,,,,,,585dacec-c90c-4ecb-9870-fcb71fc8e6ae,,split_by_expression,3455;8040
+60,split_by_group,59,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,709b7549-4768-4542-b8ea-6c2ed93b5d91,,split_by_expression,3205;8240
+61,send_message,60,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions. I really appreciate it. 
+
+Remember that I am here to help. Type ""Help"" if you ever want more parenting tips or other assistance. Thanks again @fields.user_name!",,,,,,,,,,,"@(fields.certificate_path & ""certificate_research_"" & fields.n_surveys_completed & "".jpg",,,,6f1b0513-e805-4483-bdaf-874a8d450515,,execute_actions,3330;8640
+62,send_message,60;60,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions. We really appreciate it. 
+
+Remember that we are here to help. Type ""Help"" if you ever want more parenting tips or other assistance. Thanks again @fields.user_name!",,,,,,,,,,,"@(fields.certificate_path & ""certificate_research_"" & fields.n_surveys_completed & "".jpg",,,,4f528863-b52a-4144-a9bd-0c5902538cd8,,execute_actions,3080;8640
+63,split_by_group,59,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,0754bfd5-0286-43f7-98cc-e4fc18ca4080,,split_by_expression,3705;8440
+64,send_message,63,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions. I really appreciate it. 
+
+Remember that I am here to help. Type ""Help"" if you ever want more parenting tips or other assistance. Thanks again!",,,,,,,,,,,"@(fields.certificate_path & ""certificate_research_"" & fields.n_surveys_completed & "".jpg",,,,98a1e9d7-ba3e-4606-8ad1-00d20d001289,,execute_actions,3830;8640
+65,send_message,63;63,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions. We really appreciate it. 
+
+Remember that we are here to help. Type ""Help"" if you ever want more parenting tips or other assistance. Thanks again!",,,,,,,,,,,"@(fields.certificate_path & ""certificate_research_"" & fields.n_surveys_completed & "".jpg",,,,6181641c-1ebe-4d74-963a-0bbac96ff83b,,execute_actions,3580;8640
+66,send_message,42,,,,,,Is @fields.survey_behave_name a boy or girl?,Boy,Girl,Prefer not to say,,,,,,,,,,,,055e7078-9caa-4abf-8513-b9383f6ba936,,execute_actions,2690;2720
+67,wait_for_response,66,,,,,sex,,,,,,,,,,,,,,,,a9702777-7a2b-49b2-8523-5c6c37d5b824,,wait_for_response,2420;2900
+68,save_value,67,boy,,has_any_word,Boy,survey behave sex,male,,,,,,,,,,,,,,,6e669ae8-4a88-4b58-8d50-77ad347ad095,,execute_actions,40;3000
+69,save_value,67,girl,,has_any_word,Girl,survey behave sex,female,,,,,,,,,,,,,,,f67e35a1-0be6-4849-a904-d3cff66c040f,,execute_actions,450;2880
+70,save_value,67,not prefer say,,has_any_word,not,survey behave sex,no,,,,,,,,,,,,,,,f65e4bb2-4fd0-485e-a0a9-8b2202764eb1,,execute_actions,590;3000
+71,send_message,67,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,6b52f6a9-6abc-478f-8437-65ec5b8876cc,,execute_actions,3990;2740
+72,go_to,71,,,,,,66,,,,,,,,,,,,,,,,,,
+73,split_by_group,41,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,ceebbc57-b8a5-4e38-8023-b78119057a97,,split_by_expression,2565;2020
+74,send_message,73,ABTest_test-first-person_alternative,,,,,"All children misbehave sometimes. So that I can give you the right information, please tell me the name or nickname of the child who you are having the most difficulties with.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/misbehaving_children.jpg,,,,68ca81d8-6f4d-40ac-8a62-299d37d32c59,,execute_actions,2690;2220
+75,send_message,73;73,ABTest_test-first-person_Default;,,,,,"All children misbehave sometimes. So that we can give you the right information, please tell us the name or nickname of the child who you are having the most difficulties with.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/misbehaving_children.jpg,,,,92b95a1e-c4ae-47ac-8cc1-53ec5b2b167a,,execute_actions,2440;2220
+76,wait_for_response,74;75,,,,,name,,,,,,,,,,,,,,,,2a786180-2b28-49fa-97c6-97813b2e91f1,,wait_for_response,2420;2480
+77,save_value,76,,,has_text,Has Text,survey behave name,@results.name,,,,,,,,,,,,,,,e6b2e8f9-11fe-45fc-bbd5-8e11a3c07b48,,execute_actions,2420;2620
+78,go_to,77,,,,,,66,,,,,,,,,,,,,,,,,,
+79,send_message,76,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a743805e-008a-4d50-9db7-933477005b6a,,execute_actions,3930;2320
+80,go_to,79,,,,,,73,,,,,,,,,,,,,,,,,,
+81,split_by_group,51,5,@results.rate,has_number_gte,>= 5,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,dcc874cd-62b3-4112-a2be-721b89f1564a,,split_by_expression,225;7000
+82,send_message,81,ABTest_test-first-person_alternative,,,,,I understand that this can be really difficult for you and your child. Would you like some advice on how to manage this behaviour?,Yes,No,,,,,,,,,,,,,82dfdf0e-7632-492e-a279-7c7e27e2b578,,execute_actions,350;7200
+83,send_message,81;81,ABTest_test-first-person_Default;,,,,,We understand that this can be really difficult for you and your child. Would you like some advice on how to manage this behaviour?,Yes,No,,,,,,,,,,,,,87c373c7-b60e-49c5-9805-ea1bb38d2ec1,,execute_actions,100;7200
+84,wait_for_response,82;83,,,,,manage_advice,,,,,,,,,,,,,,,,f09efb72-1435-4960-81e1-3588fffd1543,,wait_for_response,410;7800
+85,start_new_flow,84,yes y,,has_any_word,Yes,,PLH - Survey - Behave - Tips for difficult behaviours,,,,,,,,,,,,,,9ef0d8d2-e496-4649-a7d5-b52aa0aeff52,bc897368-0ff4-4ecf-bd65-16c9f0b211a6,,split_by_subflow,370;8820
+86,go_to,85,Complete;Expired,,,,,57,,,,,,,,,,,,,,,,,,
+87,go_to,85,Complete;Expired,,,,,57,,,,,,,,,,,,,,,,,,
+88,go_to,84,no n,,has_any_word,No,,57,,,,,,,,,,,,,,,,,,
+89,send_message,84,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a34006ff-4933-41bf-9f84-cc2f0b5d7048,,execute_actions,590;7680
+90,go_to,89,,,,,,81,,,,,,,,,,,,,,,,,,
+91,send_message,68;69;70,,,,,,How old is @fields.survey_behave_name in years? Please reply with a number between 0 and 17.,,,,,,,,,,,,,,,30903994-f1c2-40ab-a1b3-a76051d56c90,,execute_actions,410;3120
+92,wait_for_response,91,,,,,age,,,,,,,,,,,,,,,,e2c6c058-041c-4150-bb02-fddbc9ccd533,,wait_for_response,410;3280
+93,save_value,92,"0,17",,has_number_between,0 - 17,survey behave age,@results.age,,,,,,,,,,,,,,,cfa70ce3-5486-41b5-bc88-5b5f24317ddd,,execute_actions,80;3420
+94,split_by_value,93,,,,,,@fields.survey_behave_age,,,,,,,,,,,,,,,7506232b-7f88-4376-acfb-078262e4f0a3,,split_by_contact_field,470;3520
+95,send_message,92,18,,has_number_gte,>=18,,This looks too old. ,,,,,,,,,,,,,,,bf172631-e6a8-4cdf-ae63-797578ffeb68,,execute_actions,940;3240
+96,go_to,95,,,,,,91,,,,,,,,,,,,,,,,,,
+97,send_message,92,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,501451bb-e092-4565-86e0-9e3627926a2c,,execute_actions,980;3100
+98,go_to,97,,,,,,91,,,,,,,,,,,,,,,,,,
+99,send_message,94,2,@fields.survey_behave_age,has_number_lt,< 2,,How many months old is @fields.survey_behave_name? Please enter a number between 0 and 23.,,,,,,,,,,,,,,,9b630445-352b-4011-baaf-5b52ace39224,,execute_actions,1020;3380
+100,wait_for_response,99,,,,,months,,,,,,,,,,,,,,,,8ad5cf0c-1bc6-4087-be1e-b4fbd29c9b34,,wait_for_response,2050;3440
+101,save_value,100,"0,23",,has_number_between,0 - 23,survey behave age in months,@results.months,,,,,,,,,,,,,,,52096147-befb-4813-bee1-72674fbe9b7f,,execute_actions,1240;3600
+102,send_message,100,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,72c61891-87ca-4a24-b655-7f0c001953ff,,execute_actions,3040;3360
+103,go_to,102,,,,,,99,,,,,,,,,,,,,,,,,,
+104,send_message,101;94,,,,,,"What is your relationship to @fields.survey_behave_name?
+
+You can also type ""N"" if you do not want to answer. ",Parent,Grandparent,Aunt/Uncle,Foster Parent,Other,,,,,,,,,,ae049453-8471-4ced-a7dc-7db0ea1af608,,execute_actions,60;3620
+105,wait_for_response,104,,,,,relationship,,,,,,,,,,,,,,,,a816966e-7454-455a-a448-922252b173ba,,wait_for_response,450;3860
+106,save_value,105,parent,,has_only_phrase,parent,survey behave relationship,parent,,,,,,,,,,,,,,,b10971ef-bc5a-48fc-9d7c-757e3716e1b3,,execute_actions,;4000
+107,save_value,105,grandparent,,has_any_word,grand,survey behave relationship,grandparent,,,,,,,,,,,,,,,5896c418-38f6-4698-afa3-8677679f27a2,,execute_actions,370;4120
+108,save_value,105,aunt uncle aunt/uncle,,has_any_word,uncle,survey behave relationship,uncle,,,,,,,,,,,,,,,5937dc39-aea6-4cc1-ae04-c380ca770072,,execute_actions,510;4000
+109,save_value,105,foster,,has_any_word,foster,survey behave relationship,foster,,,,,,,,,,,,,,,fb777cdc-4aa6-43a7-8afc-5ee74950f46e,,execute_actions,880;4100
+110,save_value,105,other,,has_any_word,other relat,survey behave relationship,other,,,,,,,,,,,,,,,b380faf9-bc5b-4d5d-98c8-495e5c44ea2c,,execute_actions,1040;4000
+111,save_value,105,no n,,has_any_word,n,survey behave relationship,no,,,,,,,,,,,,,,,58bbd50a-950a-4f2d-b613-87bc7f2851fd,,execute_actions,1120;4100
+112,save_value,106;107;108;109;110;111,,,,,know survey behave child,yes,,,,,,,,,,,,,,,5138bb6c-0c5d-4163-a969-1e0d20d95d98,,execute_actions,410;4240
+113,save_value,112,,,,,survey behave child info,"@(fields.survey_behave_name &""|""& fields.survey_behave_age &""|""& fields.survey_behave_sex &""|"" & fields.survey_behave_relationship)",,,,,,,,,,,,,,,5138bb6c-0c5d-4163-a969-1e0d20d95d98,,execute_actions,410;4240
+114,go_to,113,,,,,,3,,,,,,,,,,,,,,,,,,
+115,send_message,105,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,dce16509-0de0-408c-8f9f-1611d21645c5,,execute_actions,1200;3740
+116,go_to,115,,,,,,104,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,29 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,5cd69296-e584-43ad-bfe1-31b52dcf4353,,split_by_expression,360;
+2,send_message,1,man,@fields.gender_personalisation,has_any_word,man,,"2. Become a confident father and a supportive partner
+  
+When mothers and fathers are both engaged with the parenting of their children, everyone benefits, including the children! Show your partner that you appreciate it when they spend quality time with your children.",,,,,,,,,,,,,,,1babacc1-9a73-4374-abe4-25f5a8e7f72f,,execute_actions,110;200
+3,send_message,1,woman,@fields.gender_personalisation,has_any_word,woman,,"2. Become a confident mother and a supportive partner
+  
+When mothers and fathers are both engaged with the parenting of their children, everyone benefits, including the children! Show your partner that you appreciate it when they spend quality time with your children.",,,,,,,,,,,,,,,34866c95-65c9-4c08-8a69-e1a976122d63,,execute_actions,360;200
+4,send_message,1,,,,,,"2. Become a confident parent and a supportive partner
+  
+When mothers and fathers are both engaged with the parenting of their children, everyone benefits, including the children! Show your partner that you appreciate it when they spend quality time with your children.",,,,,,,,,,,,,,,9dac7191-71b2-49ec-93d2-f6572fcc0918,,execute_actions,610;200
+5,send_message,2;3;4,,,,,,Would you like to see a comic about becoming a confident parent and a supportive partner?,Yes,No,,,,,,,,,,,,,cf5ab454-6255-46f8-bf34-7c697dbe5e02,,execute_actions,610;520
+6,wait_for_response,5,,,,,Result 1,,,,,,,,,,,,,,,,f440b843-2af7-4f62-aa82-ed69f82a597d,,wait_for_response,950;660
+7,send_message,6,yes y,,has_any_word,Yes,,"Parent 1: “Good job, Jessie! You are reading very well!”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_1.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+8,send_message,7,,,,,,"Parent 2: “The weather today is so nice. It is a shame I have not had time to go outside for a walk.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_2.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+9,send_message,8,,,,,,"Parent 1: “If you would like to get some fresh air and exercise, my dear, I can continue helping the children with their homework while you go for your afternoon walk.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_3.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+10,send_message,9,,,,,,"Parent 2: “That would be wonderful, my love! Thank you for being so supportive.”
+
+Parent 1: “Of course! It is fun to help the children with their reading practice! They are doing so well.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_4.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+11,send_message,6,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,f3e6cd4c-d005-415a-8a28-4159a5207e22,,execute_actions,1030;820
+12,go_to,11,,,,,,5,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"If you ever feel like talking privately to a trained professional, you can call:",,,,,,,,,,,,,,,e6578ed4-9747-45b8-a85d-37909f9291c4,,execute_actions,560;40
+2,send_message,1,,,,,,##REFERRALS##,,,,,,,,,,,,,,,a31f6772-27a7-482a-8d6a-0f18f6aadd4b,,execute_actions,580;200
+3,send_message,2,,,,,,You should be proud of yourself for exploring ways to get help for you and your family.,,,,,,,,,,,,,,,c6e55ee5-abf9-4485-9256-8ebc94b7e4ba,,execute_actions,580;300
+4,send_message,3,,,,,,"Type ""SOS"" at any time if you would like the details of any other emergency service or hotline. Remember everything you say will be completely private!",,,,,,,,,,,,,,,fe7fcebe-9a4d-457c-8ba2-1541550aa969,,execute_actions,600;480

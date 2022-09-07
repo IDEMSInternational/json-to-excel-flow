@@ -1,0 +1,71 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Setting household rules,,,,,,,,,,,,,,,205f8870-6ecf-4d3f-a066-f1a19b146727,,execute_actions,160;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,63170fb3-f685-4c67-8a32-e45b927a43ab,,split_by_subflow,120;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,df00fb0f-2aa1-48ee-8d73-fcb50c38cd5b,,split_by_contact_field,120;360
+4,send_message,3,,,,,,Household rules can help keep our children safe from potential dangers both inside the house and in the community. They also help children to know what kind of behaviour is expected from them. ,,,,,,,,,,,,,,,9e860a03-8419-4e39-8469-13fa10fc94a6,,execute_actions,580;520
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,dfeed5cf-e558-4e85-b130-14b93c9f50f0,,split_by_contact_field,160;1360
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Here's is a video on how you can involve your children in establishing household rules.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Household_Rules.m4v,,1e0ba8dc-b7fa-45e7-827b-ac83ddb99015,,execute_actions,;1640
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message on how you can involve your children in establishing household rules.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Household_Rules.mp3,,,8fc3946f-3c30-4998-b43d-f5181e3c0c08,,execute_actions,200;1460
+8,wait_for_response,6;7,,,,,Result 3,,,,,,,,,,,,,,,,0fe6a9d0-7023-4443-bac3-f75be0cca164,120,wait_for_response,180;1800
+9,send_message,5;8;8,;;No Response,,,,,"Here are some simple tips on how you can make household rules with your children and teens: 
+
+• Involve your child in establishing household rules.
+• Make your household rules clear and specific.
+• Make sure your child understands the reasons why you are establishing a household rule.
+• Make your household rules fair and realistic (just like instructions).
+• Praise and simple incentives can help support your child in following a household rule.
+• Add only 1 household rule at a time.",,,,,,,,,,,,,,,16f86f4f-24f6-4566-ba36-64c9322e7fbe,,execute_actions,180;1940
+10,send_message,9,,,,,,Children and teens are spending a lot more time online. Here is a comic on how you can create safe and healthy online habits like scheduling time online and offline.,,,,,,,,,,,,,,,e0ca3af8-aa71-4576-b661-a0b366aa15d4,,execute_actions,180;3840
+11,send_message,10,,,,,,"Parent: “Jack, you have been spending a lot of time on your tablet. Why do you think I am concerned about that?” 
+
+Child: “Um…because I am not doing my schoolwork?” 
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/making_a_tech_agreement_with_your_teen_comic_1.png,,,,e0ca3af8-aa71-4576-b661-a0b366aa15d4,,execute_actions,180;3840
+12,send_message,11,,,,,,"Parent: “Yes, that is one reason. It is important that you make the time for your schoolwork. I also like seeing you being more active. Maybe we can make a household rule about gadget use. What do you think would be a fair limit each day?” 
+
+Child: “Um…two hours a day?”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/making_a_tech_agreement_with_your_teen_comic_2.png,,,,e0ca3af8-aa71-4576-b661-a0b366aa15d4,,execute_actions,180;3840
+13,send_message,12,,,,,,"Parent: “Hmmm…I think that might be too much time. You have so much else to do every day.” 
+
+Child: “How about one hour for fun and one hour for learning?
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/making_a_tech_agreement_with_your_teen_comic_3.png,,,,e0ca3af8-aa71-4576-b661-a0b366aa15d4,,execute_actions,180;3840
+14,send_message,13,,,,,,"Parent: “That sounds reasonable. I would also like you to do your schoolwork before using any gadgets. So from now on, the household rule is that you do your schoolwork before using gadgets and that you can have 1 hour for free time and 1 hour for educational activities. Okay?” 
+
+Child: “Okay.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/making_a_tech_agreement_with_your_teen_comic_4.png,,,,e0ca3af8-aa71-4576-b661-a0b366aa15d4,,execute_actions,180;3840
+15,start_new_flow,14,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,a758f8be-e57e-4f2e-b997-8cc45ad451b1,,split_by_subflow,480;3680
+16,split_by_group,15;15,Complete;Expired,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,33106a71-d83f-4e89-9af3-d3568ce51a64,,split_by_expression,1985;2160
+17,split_by_group,16,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,696801d7-3706-4c9a-82ed-9cce31eb1ce7,,split_by_expression,2485;2560
+18,split_by_value,17,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,b8740bd4-ed99-4297-b7b2-913a6c022ca2,,split_by_expression,2735;3360
+19,send_message,18,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,9bb0c26b-226c-4bf0-8e93-b2716991b5a4,,execute_actions,2610;3560
+20,send_message,18,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,e42a6ed8-38ee-4b1d-ad64-f30e3814608d,,execute_actions,2860;3560
+21,split_by_value,17;17,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,0e7e0080-04d1-43d4-9244-bfe78418fc91,,split_by_expression,2235;3160
+22,send_message,21,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,9812fc0b-19d4-42d4-9045-426cb44c5464,,execute_actions,2110;3560
+23,send_message,21,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,0995d0d9-0c55-4e1d-bf1f-ccd6830cc5f9,,execute_actions,2360;3560
+24,split_by_group,16;16,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,1078e36b-2d63-4660-bd26-4fa5d8654ace,,split_by_expression,1485;2360
+25,split_by_value,24,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,255e6399-22b8-4d88-8a70-69d371f61959,,split_by_expression,1735;2960
+26,send_message,25,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,f350f927-2077-4c59-90af-9f3e4477a4f7,,execute_actions,1610;3560
+27,send_message,25,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,c3680dc0-3641-449e-8113-18bdece27f0d,,execute_actions,1860;3560
+28,split_by_value,24;24,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,904fab0c-b157-45e3-81d9-c131278bc119,,split_by_expression,1235;2760
+29,send_message,28,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,faab2cf2-8f0f-4632-a4a8-44c41b2a808c,,execute_actions,1110;3560
+30,send_message,28,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try to create one household rule with your child. Remember when you involve your child in making household rules, they are more likely to follow them. It's a recipe for success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,f4826782-1522-4b91-a5f5-97ef95093d07,,execute_actions,1360;3560
+31,save_value,19;20;22;23;26;27;29;30,,,,,current type assessed,tip,,,,,,,,,,,,,,,23ec424e-0c3f-46a0-93f9-cc8602b9c651,,execute_actions,2880;3960
+32,save_value,31,,,,,current activity,rules,,,,,,,,,,,,,,,23ec424e-0c3f-46a0-93f9-cc8602b9c651,,execute_actions,2880;3960
+33,start_new_flow,32,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,3cd79da6-0326-4726-b110-0de63aa0c5f2,,split_by_subflow,2880;4160
+34,split_by_value,33;33,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,ae7a4fcd-3267-4e87-9ec9-adfdad10f8a7,,split_by_expression,3025;4340
+35,send_message,34,,@fields.user_name,has_text,user_name,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,90556418-1d50-47c7-a0c8-b955b25631ac,,execute_actions,2900;4540
+36,send_message,34,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later!",,,,,,,,,,,,,,,e8f02367-e2a2-4ceb-8634-c00b90fb7643,,execute_actions,3150;4540
+37,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/Positive_instructions.jpg,,,,54c23b47-512b-4910-a910-6cad081635e8,,execute_actions,380;740
+38,wait_for_response,37,,,,,know_more,,,,,,,,,,,,,,,,8afcd63d-a288-442f-ad17-77648db3affe,,wait_for_response,400;900
+39,save_value,38,YES Y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,b02565c1-fcce-494a-a476-6bd2be3a159b,,execute_actions,280;1240
+40,go_to,39,,,,,,5,,,,,,,,,,,,,,,,,,
+41,split_by_value,38,NO N,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,75c03b0d-6f16-45f5-bd55-88a1d8f41605,,split_by_expression,885;1020
+42,send_message,41,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,12092881-78eb-4d73-908b-3a1af76f79ab,,execute_actions,760;1220
+43,send_message,41,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,5882b31f-bdac-400d-b2f0-f73336eaecb7,,execute_actions,1010;1220
+44,save_value,42;43,,,,,last interaction,@(now()),,,,,,,,,,,,,,,d4f1b09a-88f1-4d01-9d7d-cda3be02757c,,execute_actions,1030;1500
+45,send_message,38,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1829bf4f-f04a-4cf1-b2cf-322f1545a3aa,,execute_actions,1010;820
+46,save_value,45,,,,,last interaction,@(now()),,,,,,,,,,,,,,,327c93ba-22db-4268-8cce-864c7eb58015,,execute_actions,3150;720
+47,go_to,46,,,,,,37,,,,,,,,,,,,,,,,,,

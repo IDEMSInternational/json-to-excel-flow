@@ -1,0 +1,23 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Making a happy and peaceful home,,,,,,,,,,,,,,,7cb68174-2600-4a91-b2e5-ae360ca36c0d,,execute_actions,920;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,ea93c42d-d16e-4537-8b27-d4276b4efd32,,split_by_subflow,920;120
+3,send_message,2;2,Complete;Expired,,,,,"When we are able to have peaceful and loving relationships, our children feel more secure and loved. Today's tip is about how we can support positive family relationships at home.",,,,,,,,,,,,,,,98889344-02ca-41a1-88b9-fc5e48d66f81,,execute_actions,740;240
+4,split_by_value,3,,,,,,@fields.toolkit,,,,,,,,,,,,,,,6a870962-c75b-4afb-b35e-3ee6017216d3,,split_by_contact_field,840;660
+5,split_by_group,4,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,0aca209d-76fd-47db-ac04-06b9b90404df,,split_by_expression,435;440
+6,send_message,5,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,5ba2290a-b575-4c04-bb0d-031249e86b9e,,execute_actions,560;640
+7,send_message,5;5,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,3eaff3b6-bbbd-4804-9cf6-c201c3e21238,,execute_actions,310;640
+8,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,27973cef-c677-4bda-84dd-6bf83617a024,,execute_actions,880;760
+9,wait_for_response,6;7;8,,,,,know_more,,,,,,,,,,,,,,,,33725c45-8a96-4fda-a646-a4c1d1f042b3,,wait_for_response,660;880
+10,save_value,9,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,a74848c8-1c7e-4152-a5eb-dc7aa0bf0614,,execute_actions,1320;760
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a74848c8-1c7e-4152-a5eb-dc7aa0bf0614,,execute_actions,1320;760
+12,start_new_flow,11,,,,,,PLH - Content - Positive - Family,,,,,,,,,,,,,,dc87cd8d-5d4b-44f6-91d9-5cfa7b1ed631,97775d51-c9b6-4f44-bbf7-5304683767c8,,split_by_subflow,1320;960
+13,save_value,12,Expired,,,,has expired,tip,,,,,,,,,,,,,,,c98a0590-9896-41ad-abb4-5b38382bc709,,execute_actions,1620;1300
+14,send_message,13,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,f55cd655-9ffe-4a57-84fb-075e24e84291,,execute_actions,1640;1400
+15,save_value,12;14,Complete;,,,,from theme,no,,,,,,,,,,,,,,,9331e91c-fb8b-4267-a341-6681a5e55ba1,,execute_actions,1360;1380
+16,split_by_value,9,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,36a0c057-a6c4-45e2-91dc-75980aeda52e,,split_by_expression,125;1040
+17,send_message,16,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,06660414-85c1-4ea2-ac61-e6bc4f2204a2,,execute_actions,;1240
+18,send_message,16,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,7dac9298-73b2-4d65-8cd3-92d4c5d455af,,execute_actions,250;1240
+19,save_value,17;18,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f3f2c12b-3c4a-468b-8430-9e817d742832,,execute_actions,250;1420
+20,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,85bcb946-a5b7-476f-aaae-25a35e2adde8,,execute_actions,840;1280
+21,send_message,20,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b9be26c8-9a38-42bb-a42d-00738dfa4cc2,,execute_actions,880;1380
+22,go_to,21,,,,,,4,,,,,,,,,,,,,,,,,,

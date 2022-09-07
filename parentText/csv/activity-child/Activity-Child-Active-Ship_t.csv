@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Ship to Shore 
+•	A fun active game where children learn different parts of a boat. Everyone must go to the place or activity that you call out.
+•	“Bow” means run to the front of the boat (room).
+•	“Stern” means run to the back of the boat.
+•	“Starboard” means run to the right side and “Port” means run to the left side.
+•	“Climb the rigging”: pretend to climb.
+•	“Clean the deck”: pretend to clean the floor.
+•	“Lifeboat, [number] people!”: hold hands in a circle with that many people and do knee bends.
+•	Everyone not in a lifeboat must swim!",,,,,,,,,,,,,,,b87b8bc7-dc19-480a-9cc0-67f2e24b8cc4,,execute_actions,;

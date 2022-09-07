@@ -1,0 +1,31 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"4. Resolve conflict peacefully
+  
+All adults have disagreements sometimes. But solving issues through fighting is not effective. Instead, if you start feeling angry, walk away for a bit or take a deep breath before responding in a calmer way.",,,,,,,,,,,,,,,fd124355-26eb-4f5d-9414-daf05ac69676,,execute_actions,460;
+2,send_message,1,,,,,,Would you like to see a comic about resolving conflict peacefully?,Yes,No,,,,,,,,,,,,,dfb72b37-79a9-4631-97f6-f592fbac6e08,,execute_actions,840;280
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,169348bf-f369-42f6-9c02-792e66f7bf4f,,wait_for_response,820;500
+4,send_message,3,yes y,,has_any_word,Yes,,"Parent 1: “Dinner is ready!”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/resolve_conflict_peacefully_comic_1.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+5,send_message,4,,,,,,"Child: “Look, it is raining so much outside!”
+
+Parent 1: “I am glad you brought in the laundry earlier, my dear. Otherwise, it would have been soaked by now!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/resolve_conflict_peacefully_comic_2.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+6,send_message,5,,,,,,"Parent 2: “I thought you said you would bring in the laundry today?”
+
+Parent 1: “No, I was busy cooking dinner! You told me you would take care of it! How could you forget? Now all the laundry is wet!”
+
+Parent 2: “I’m really sorry. It was a mistake!”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/resolve_conflict_peacefully_comic_3.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+7,send_message,6,,,,,,"Parent 1 (thinking): I can’t believe he forgot! But everyone can make mistakes. Take a deep breath…
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/resolve_conflict_peacefully_comic_4.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+8,send_message,7,,,,,,"Parent 1: “I’m sorry if I sounded upset. I just got stressed because I have had a long day.”
+
+Parent 2: “I am sorry that I forgot the laundry. I know you have had a long day. I will make sure to take care of it after dinner.”
+
+(5)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/resolve_conflict_peacefully_comic_5.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+9,send_message,3,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,43be1437-f8aa-49ce-b995-40a68d33de47,,execute_actions,900;620
+10,go_to,9,,,,,,2,,,,,,,,,,,,,,,,,,

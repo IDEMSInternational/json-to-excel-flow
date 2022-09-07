@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"The Sun is Coming! 
+•	Lie your baby on their back after washing them or changing their diaper.
+•	Tell them the sun is coming! Wiggle your fingers like sun rays above their head and make your face a big smiling sun.
+•	Tell them the wind is coming! Blow softly over their body.
+•	Tell them the rain is coming! Use your fingers to gently pat over their whole body like light raindrops.
+•	Tell them the clouds are coming! Wrap the towel or cloth around them like a blanket and cuddle them. 
+•	Play with different weathers. Which one does your baby like best?
+•	Add sound effects or make it into a little song. Use the tune of another song you know! ",,,,,,,,,,,,,,,ca58b40b-c642-4603-8c2b-67e58d3ae801,,execute_actions,;

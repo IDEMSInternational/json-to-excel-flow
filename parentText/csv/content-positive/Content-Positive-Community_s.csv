@@ -1,0 +1,94 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Community safety,,,,,,,,,,,,,,,07f62f80-4d83-49e4-af63-69dd6af839ab,,execute_actions,760;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,89b40a4f-c997-4f4f-a385-edb87417b3cd,,split_by_subflow,760;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,c72dae61-d13d-4c44-8452-cf35686ede58,,split_by_contact_field,430;380
+4,send_message,3,,,,,,Parents all over the world say they worry about keeping their children safe in the community and online.,,,,,,,,,,,,,,,726f7d29-77fa-43cd-8011-8d0a3a0269ac,,execute_actions,1590;160
+5,start_new_flow,3,yes,@fields.from_theme,has_any_word,Yes,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,4fbfa9b3-9ee4-4dab-a0da-8ebdb3701c6d,,split_by_subflow,860;1040
+6,send_message,4,,,,,,Would you like some tips on some simple ways to do this?,Yes,No,,,,,,,,,,,,,672156e2-2448-448f-91af-58aeaafc55b3,,execute_actions,1610;320
+7,wait_for_response,6,,,,,know_more,,,,,,,,,,,,,,,,0d00a83b-7f0f-4cac-a628-41df143f6a81,900,wait_for_response,840;500
+8,go_to,7,yes y,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+9,send_message,7,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,7774c7e7-d862-4dbc-966b-c50ef08d3339,,execute_actions,1690;500
+10,go_to,9,,,,,,6,,,,,,,,,,,,,,,,,,
+11,send_message,7;7,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to learn more about how to keep your child safe in the community.",,,,,,,,,,,,,,,aaad60d2-72c5-44cf-820c-6d8d7952266e,,execute_actions,1750;800
+12,send_message,5;5,Complete;Expired,,,,,"Thanks! One helpful way is to create a map with your child or teen that identifies the safe and unsafe places in the community. Here are 4 simple steps:
+
+1. Draw a map of the important places in the community
+2. Identify which places are safe and unsafe
+3. Learn about where you can get support
+4. Online map
+
+Type ""1"" to ""4"" to learn more about how you can do this activity with your children. Type ""N"" to stop this tip.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_1.png,,,,20050785-af3f-4aca-9d08-43268c42d274,,execute_actions,860;1220
+13,wait_for_response,12,,,,,list_of_tips,,,,,,,,,,,,,,,,0d511a3f-4e1d-40a0-9a0a-e2f28be99f6d,,wait_for_response,740;1680
+14,split_by_group,13,no n ,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,eb41992f-293c-4798-9f72-deda3d25dde0,,split_by_expression,2645;2900
+15,split_by_group,14,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,29458cf2-7a72-4f87-a4e5-64819ff14a5a,,split_by_expression,3145;3300
+16,split_by_value,15,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,961140f1-8feb-4512-a1a2-8acdf4b49093,,split_by_expression,3395;4100
+17,send_message,16,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added a layer to your House of Support! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,13aab8f2-6c48-4803-b955-6ad976ed8839,,execute_actions,3270;4300
+18,send_message,16,,,,,,Well done! You have added a layer to your House of Support! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,b753030c-a55c-4a94-b716-cf438e3ee9b5,,execute_actions,3520;4300
+19,split_by_value,15;15,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,ef7698a0-3919-466c-9775-e685e9c466fe,,split_by_expression,2895;3900
+20,send_message,19,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,a82e27c2-0702-4e74-9913-6207f7594381,,execute_actions,2770;4300
+21,send_message,19,,,,,,Well done! You have added another skill to your Parenting Toolkit! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,e1a09108-1303-4580-96ed-76320b5a4d4c,,execute_actions,3020;4300
+22,split_by_group,14;14,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,8aa62115-2cb3-4586-876b-6116656489fa,,split_by_expression,2145;3100
+23,split_by_value,22,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,55d64f01-2775-4248-a92f-0145890db6a6,,split_by_expression,2395;3700
+24,send_message,23,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added a layer to your House of Support! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,4fb44cba-ab24-4634-a342-f9e214d6e2d2,,execute_actions,2270;4300
+25,send_message,23,,,,,,Well done! You have added a layer to your House of Support! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,debd16c7-3cbc-4f18-85e3-7e253f100742,,execute_actions,2520;4300
+26,split_by_value,22;22,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,35a820c5-0abf-4c81-a7b4-22b542ccaca5,,split_by_expression,1895;3500
+27,send_message,26,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,a7fbe538-d562-46b7-b2fd-2e6736066cfe,,execute_actions,1770;4300
+28,send_message,26,,,,,,Well done! You have added another skill to your Parenting Toolkit! Spend some time creating a map with your child or teen that identifies the safe and unsafe places in your community. It will build trust and help keep them safe in the future.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,bb81edb0-0a5f-4b96-bf53-8d2dbb29988a,,execute_actions,2020;4300
+29,save_value,17;18;20;21;24;25;27;28,,,,,current type assessed,tip,,,,,,,,,,,,,,,949c85e2-9e56-4f7d-ba6f-4dfe686062bc,,execute_actions,3560;4640
+30,save_value,29,,,,,current activity,community_safety,,,,,,,,,,,,,,,949c85e2-9e56-4f7d-ba6f-4dfe686062bc,,execute_actions,3560;4640
+31,start_new_flow,30,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,f18650cb-fab6-445a-8688-d3c874e63cc2,,split_by_subflow,3580;4820
+32,send_message,31,Complete,,,,,Chat later!,,,,,,,,,,,,,,,7bd05b2b-d763-431c-aedb-ed3864cba4d3,,execute_actions,1750;5020
+33,split_by_value,13,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,2c166174-ac09-44d0-a6bd-2f29c2a29603,,split_by_expression,125;1800
+34,send_message,33,,@fields.child_nickname,has_text,child_nickname,,"Step 1: What are important places in our community?
+
+• Get a piece of paper (or old newspaper or a cardboard box) and a pen.
+• Draw a map of @fields.child_nickname’s community, with pictures of all the main places like streets, your house, school, shops, places your teen visits...
+",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_2.png,,,,862a5714-a46f-44a5-b38e-029df10367b2,,execute_actions,;2000
+35,send_message,33,,,,,,"Step 1: What are important places in our community?
+
+• Get a piece of paper (or old newspaper or a cardboard box) and a pen.
+• Draw a map of your child or teen’s community, with pictures of all the main places like streets, your house, school, shops, places your teen visits...
+",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_2.png,,,,07fa9c66-1918-42ab-886d-1c219376ddd6,,execute_actions,250;2000
+36,split_by_value,13,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,23e8d6ae-f9f6-4a84-aafa-1f4f68315eee,,split_by_expression,595;2040
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"Step 2:  Which places are safe and unsafe? 
+
+• Discuss which areas on your map are safe for teenagers – CIRCLE these.
+• Discuss which areas on your map are unsafe for teenagers – CROSS those off. 
+• What makes a place safe or unsafe? 
+• Are there plans you could make together to keep @fields.child_nickname safer?",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_3.png,,,,520236c6-7fb1-457f-b22d-c83b1f6b0797,,execute_actions,470;2440
+38,send_message,36,,,,,,"Step 2:  Which places are safe and unsafe? 
+
+• Discuss which areas on your map are safe for teenagers – CIRCLE these.
+• Discuss which areas on your map are unsafe for teenagers – CROSS those off. 
+• What makes a place safe or unsafe? 
+• Are there plans you could make together to keep your child or teen safer?",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_3.png,,,,4de41fee-3bcc-4750-ac14-0895632e2ecd,,execute_actions,720;2440
+39,split_by_value,13,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,871535ce-bcc9-4526-90e9-364f5593032b,,split_by_expression,1105;2240
+40,send_message,39,,@fields.child_nickname,has_text,child_nickname,,"Step 3: Where can you get support?
+
+• Sometimes, we can find ourselves in trouble.
+• Discuss together where you and @fields.child_nickname can get support or help when you face a crisis – MARK those areas with a little object like a stone or piece of paper. 
+• Some helpful places may include home, school, police station, clinic.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_4.png,,,,66e1861b-6ef0-4906-97e2-3e7251db07dd,,execute_actions,980;2440
+41,send_message,39,,,,,,"Step 3: Where can you get support?
+
+• Sometimes, we can find ourselves in trouble.
+• Discuss together where you and your child or teen can get support or help when you face a crisis – MARK those areas with a little object like a stone or piece of paper. 
+• Some helpful places may include home, school, police station, clinic.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_4.png,,,,5025e904-c5ba-412c-bffe-66c3f4214652,,execute_actions,1230;2440
+42,send_message,13,4,,has_any_word,4,,"Step 4: Online map
+
+• Draw pictures of the apps and websites they use
+• Praise your child for how good they are at using the web!
+• Talk about which ones might be unsafe. Why?
+• Are there plans you could make together to make using the internet safer for your child and their friends?
+• It can really help for parents to learn about this in advance.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/safety_planning_5.png,,,,ee2b9295-da52-459f-b11f-3d06f44a0f73,,execute_actions,1530;2000
+43,send_message,34;35;37;38;40;41;42,,,,,,"Please select another number if you want to learn more about how to create a map with your child or teen that identifies the safe and unsafe places in the community:
+
+1. Draw a map of the important places in the community
+2. Identify which places are safe and unsafe
+3. Learn about where you can get support
+4. Online map
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,c01afa23-6c34-439b-839c-47ecb20df1cc,,execute_actions,740;4300
+44,save_value,43,,,,,community safety list of tips,"@(fields.community_safety_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,074c53cb-282f-4e3b-bc7f-a6168e9178b2,,execute_actions,720;4760
+45,go_to,44,,,,,,13,,,,,,,,,,,,,,,,,,
+46,send_message,13,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,f073b69e-dc23-4e2d-84ad-2c4967a38671,,execute_actions,1410;1300
+47,go_to,46,,,,,,12,,,,,,,,,,,,,,,,,,

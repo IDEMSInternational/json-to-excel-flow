@@ -1,0 +1,22 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"3. Share family responsibilities
+  
+Sharing family responsibilities with your partner can make life less stressful! Can you think of ways you can share the workload? Doing tasks together can also make them more fun!",,,,,,,,,,,,,,,576dd889-249f-4720-ac30-8a91b884e2cc,,execute_actions,480;
+2,send_message,1,,,,,,Would you like to see a comic about sharing family responsibilities?,Yes,No,,,,,,,,,,,,,7b6e6f3c-489b-42ac-96f4-8d38053b8a35,,execute_actions,780;220
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,9cef2f8b-c8a4-42bd-aba4-ec6e5529c16d,,wait_for_response,760;400
+4,send_message,3,yes y,,has_any_word,Yes,,"Child: “Wow, there are so many clothes in here!”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/share_family_responsibilities_comic_1.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+5,send_message,4,,,,,,"Parent 1: “You’re right, Kyle, there is quite a lot to do.”
+
+Parent 1: “If we do it together it will take less time!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/share_family_responsibilities_comic_2.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+6,send_message,5,,,,,,"Parent 1: “Doing tasks together is also fun”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/share_family_responsibilities_comic_3.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+7,send_message,6,,,,,,"Parent 2: “Thank you, my love. Sharing the workload makes it less stressful.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/share_family_responsibilities_comic_4.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+8,send_message,3,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,ff063da9-3e0a-4e61-9b7b-1cb303b9abb4,,execute_actions,880;560
+9,go_to,8,,,,,,2,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.know_age_group_for_tips,,,,,,,,,,,,,,,ddef3efb-9cc6-48e3-ac80-a43f252dc5a5,,split_by_contact_field,640;
+2,start_new_flow,1,,,,,,PLH - Welcome - Initial registration - Age group for tips,,,,,,,,,,,,,,9b51bb16-8aff-4319-99cf-8de73457913d,89d3403f-42f9-4d58-9a6a-54a39241afd6,,split_by_subflow,900;80
+3,split_by_value,1;2;2,yes;Complete;Expired,@fields.know_age_group_for_tips;;,has_any_word;;,yes,,@fields.next_tip_main,,,,,,,,,,,,,,,a03e467c-14fc-4ac9-8653-26b2841d12f2,,split_by_contact_field,480;280
+4,save_value,3,@fields.total_tip_days,@fields.next_tip_main,has_number_gte,>= tip days,main checkin counter,"@(if(fields.main_checkin_counter<4, fields.main_checkin_counter+1,0))",,,,,,,,,,,,,,,309de5ae-2358-454a-be22-a45d0da1f98f,,execute_actions,120;440
+5,start_new_flow,3,,,,,,PLH - Handler - Content - Main - Time,,,,,,,,,,,,,,2e6c865a-e8cb-430d-94c8-4437a2fe4093,1c8a160b-a36b-4ac8-b024-6c967d0fddc2,,split_by_subflow,880;300
+6,save_flow_result,5,Complete,,,,main content,@child.results.main_content,,,,,,,,,,,,,,,454c244c-b4ff-4f25-a796-674acc18d93f,,execute_actions,940;500

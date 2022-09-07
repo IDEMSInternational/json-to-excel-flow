@@ -1,0 +1,40 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,One-on-one time,,,,,,,,,,,,,,,cbc242b0-84aa-439f-8c92-c49c9b389475,,execute_actions,1000;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,5b08ea40-b0d1-431f-8592-b3e147dd2618,,split_by_subflow,1000;120
+3,send_message,2;2,Complete;Expired,,,,,Today's tip is about spending One-on-One Time with Our Children.,,,,,,,,,,,,,,,dd3cfd3a-c954-4d0b-9798-140145419581,,execute_actions,940;260
+4,send_message,3,,,,,,Here is a comic on spending one-on-time with your teen.,,,,,,,,,,,,,,,b7d8f15b-61b3-42f7-9b0c-67cf50344588,,execute_actions,940;460
+5,send_message,4,,,,,,"Child: “I’m bored! There is nothing to do.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/one_on_one_time_comic_1.png,,,,b7d8f15b-61b3-42f7-9b0c-67cf50344588,,execute_actions,940;460
+6,send_message,5,,,,,,"Parent: “Let’s do something together! How about we make some drawings and put them on the gate with messages for people to see?”
+
+Children: “Okay!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/one_on_one_time_comic_2.png,,,,b7d8f15b-61b3-42f7-9b0c-67cf50344588,,execute_actions,940;460
+7,send_message,6,,,,,,"Parent: “You make the pictures and I’ll write the messages”
+
+Child: “Sure!”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/one_on_one_time_comic_3.png,,,,b7d8f15b-61b3-42f7-9b0c-67cf50344588,,execute_actions,940;460
+8,send_message,7,,,,,,"Parent: ""Remember to wash hands! We love our neighbours!” 
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/one_on_one_time_comic_4.png,,,,b7d8f15b-61b3-42f7-9b0c-67cf50344588,,execute_actions,940;460
+9,split_by_value,8,,,,,,@fields.toolkit,,,,,,,,,,,,,,,74e8ddb3-4fe5-4ba2-b1fa-36e412d60701,,split_by_contact_field,290;820
+10,split_by_group,9,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,ae588da9-0aef-4ce7-8c34-9b7b8b7aa7c8,,split_by_expression,125;1040
+11,send_message,10,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!).Would you like to review it again?,Yes,No,,,,,,,,,,,,,d8b594c9-83ce-4f15-b792-b8023119649c,,execute_actions,250;1240
+12,send_message,10;10,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,152e8d23-1a67-445c-b6a9-064e4a3228b4,,execute_actions,;1240
+13,send_message,9,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,73648d33-7db9-4cf1-baa7-a328ef5dc183,,execute_actions,860;1520
+14,wait_for_response,11;12;13,,,,,know_more,,,,,,,,,,,,,,,,9058a366-4469-491a-ad02-5265d181077f,,wait_for_response,860;1700
+15,save_value,14,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,88f7844a-2074-445e-a7fd-bff532f363e2,,execute_actions,1260;1300
+16,save_value,15,,,,,last interaction,@(now()),,,,,,,,,,,,,,,88f7844a-2074-445e-a7fd-bff532f363e2,,execute_actions,1260;1300
+17,start_new_flow,16,,,,,,PLH - Content - Time - One on one time teen,,,,,,,,,,,,,,f2a08ac3-1ff4-44a4-91b5-fe503139517b,99b1538a-a763-435f-8f60-ad1258e52430,,split_by_subflow,1280;1460
+18,save_value,17,Expired,,,,has expired,tip,,,,,,,,,,,,,,,f862a6fd-39f3-4f67-86aa-7d499e0b6823,,execute_actions,1520;1560
+19,send_message,18,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,539f4686-57d9-428a-9bc7-077659fc693e,,execute_actions,1540;1680
+20,save_value,17;19,Complete;,,,,from theme,no,,,,,,,,,,,,,,,f5feb294-4277-44b7-b58a-1f39ebd88fcd,,execute_actions,1280;1660
+21,split_by_value,14,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,e9ed4a63-9e61-407f-97fc-025a97e99274,,split_by_expression,455;1840
+22,send_message,21,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,0596c388-e00d-4a5d-8c33-a5e73d55bdbc,,execute_actions,330;2040
+23,send_message,21,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,16f1f85d-073b-4917-9111-a1c7c297bec2,,execute_actions,580;2040
+24,save_value,22;23,,,,,last interaction,@(now()),,,,,,,,,,,,,,,32789caa-d7fb-4446-9500-5371288cbf9d,,execute_actions,580;2320
+25,send_message,14,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,645cfab4-8fb7-4630-b1a9-b72367922cad,,execute_actions,900;2060
+26,save_value,25,,,,,last interaction,@(now()),,,,,,,,,,,,,,,77e5caf6-4229-4594-83cb-c7c17b748e07,,execute_actions,900;2200
+27,go_to,26,,,,,,9,,,,,,,,,,,,,,,,,,

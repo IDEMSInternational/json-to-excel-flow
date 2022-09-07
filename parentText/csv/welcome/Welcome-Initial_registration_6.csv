@@ -1,0 +1,21 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,cde60dd0-b3ed-4294-b023-ec9513bdb678,,split_by_expression,480;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"So I can give you the right information, please choose a child age group that best meets your needs.  You can choose the age for the child you are concerned about the most. 
+
+You can always change this later by typing ""Help"" and selecting ""Technical support"".",Baby (0 to 23 months),Young child (2 to 9 years),Teenager (10 to 17 years),,,,,,,,,,,,10d3a632-0fa1-4712-851e-92e27e78fda4,,execute_actions,605;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"So we can give you the right information, please choose a child age group that best meets your needs. You can choose the age for the child you are concerned about the most. 
+
+You can always change this later by typing ""Help"" and selecting ""Technical support"".",Baby (0 to 23 months),Young child (2 to 9 years),Teenager (10 to 17 years),,,,,,,,,,,,26a22140-d81d-4152-b97d-6f7f638d470b,,execute_actions,355;200
+4,wait_for_response,2;3,,,,,Result 3,,,,,,,,,,,,,,,,2352db6c-a124-46b2-97db-c74add60d710,,wait_for_response,335;560
+5,save_value,4,baby,,has_any_word,Baby,age group for tips,baby,,,,,,,,,,,,,,,ea365b21-d4ad-456f-9ef8-14cdb8b7a78c,,execute_actions,215;740
+6,save_value,5,,,,,total skills,17,,,,,,,,,,,,,,,00ee0358-3d11-48af-a9aa-12217d61aa8e,,execute_actions,215;840
+7,save_value,4,young child,,has_any_word,Young,age group for tips,child,,,,,,,,,,,,,,,b03900f9-6c69-4f4a-91c0-c2aee94bde7a,,execute_actions,685;760
+8,save_value,7,,,,,total skills,22,,,,,,,,,,,,,,,04cbf2ea-d9cd-467e-b1aa-eb2f2abf55d0,,execute_actions,685;860
+9,save_value,4,teenager,,has_any_word,Teenager,age group for tips,teen,,,,,,,,,,,,,,,b393dcb0-9c50-4769-9982-422aba8dcbe2,,execute_actions,905;760
+10,save_value,9,,,,,total skills,21,,,,,,,,,,,,,,,1585e50e-2bbe-45b5-bd0c-3e7ba0ec56f2,,execute_actions,905;860
+11,save_value,10;6;8,,,,,house of support path,"@(fields.path & ""house_of_support/house_type/"" & fields.house_type & ""/age_group/"" & fields.age_group_for_tips & ""/family_type/"" & fields.family_type &""/"")",,,,,,,,,,,,,,,3195a622-6140-4fa0-ba84-95019c316102,,execute_actions,315;1020
+12,save_value,11,,,,,know age group for tips,yes,,,,,,,,,,,,,,,3195a622-6140-4fa0-ba84-95019c316102,,execute_actions,315;1020
+13,split_by_value,12,,,,,,@fields.get_disability_content,,,,,,,,,,,,,,,a263c59b-cec4-4f46-a098-c26b22916b5e,,split_by_contact_field,315;1220
+14,save_value,13,yes,@fields.get_disability_content,has_any_word,Yes,total skills,@(fields.total_skills + 1),,,,,,,,,,,,,,,815f13a0-3300-47bd-9d88-2cf4451faff8,,execute_actions,255;1360
+15,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,573f1f29-4c81-4ab0-a169-3ce643773f06,,execute_actions,1085;500
+16,go_to,15,,,,,,1,,,,,,,,,,,,,,,,,,

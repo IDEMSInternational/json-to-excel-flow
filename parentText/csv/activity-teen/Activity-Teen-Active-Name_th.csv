@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Name that tune
+•	First person gets to choose or sing a song.
+•	Everyone else must guess the name of the tune (to make it harder, they can guess the singer).
+•	The first one to guess it right becomes the next leader who will choose or sing the next song. ",,,,,,,,,,,,,,,80f49a85-f2e6-4acc-9d07-5bee8f96b3c5,,execute_actions,;

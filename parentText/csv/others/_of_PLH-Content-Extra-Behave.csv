@@ -1,0 +1,130 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,There are no bad children...only difficult behaviours! All children misbehave but these tips can help.,,,,,,,,,,,,,,,7a727f77-24df-48a1-968b-910eacdd8f99,,execute_actions,660;
+2,split_by_value,1,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,90d8bec0-3eb6-443e-837e-3673bbe13f26,,split_by_expression,540;160
+3,split_by_value,2,yes,@parent.results.fromwelcome,has_any_word,Yes,,@fields.age_group_for_tips,,,,,,,,,,,,,,,d2a167de-2ae0-4b52-91a5-75518136df63,,split_by_contact_field,460;360
+4,save_value,3,baby,@fields.age_group_for_tips,has_any_word,Baby,chosen difficult age,baby,,,,,,,,,,,,,,,719186c6-6c66-4ca0-a6e2-d01fd3988c91,,execute_actions,40;440
+5,save_value,3,teen,@fields.age_group_for_tips,has_any_word,Teen,chosen difficult age,teen,,,,,,,,,,,,,,,7781c8ee-e7ab-4d58-ae43-2faaaf6b0e9a,,execute_actions,980;560
+6,save_value,3,,,,,chosen difficult age,young child,,,,,,,,,,,,,,,4985068d-4000-48b7-a8ec-77576de793b4,,execute_actions,680;580
+7,send_message,2,,,,,,Which child do you want tips for?,Baby,Young child,Teen,,,,,,,,,,,,0f79d79f-f025-42c8-9f31-82a5b6f419a9,,execute_actions,1020;200
+8,wait_for_response,7,,,,,Result 13,,,,,,,,,,,,,,,,ce60a796-6755-4fc1-bf4a-48996fb56122,,wait_for_response,1140;340
+9,go_to,8,baby,,has_any_word,Baby,,4,,,,,,,,,,,,,,,,,,
+10,go_to,8,young child,,has_any_word,Young,,6,,,,,,,,,,,,,,,,,,
+11,go_to,8,teen teenager,,has_any_word,Teen,,5,,,,,,,,,,,,,,,,,,
+12,send_message,8,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,015b4698-1660-4f9c-9ca7-2d2bbf461e6f,,execute_actions,1300;220
+13,go_to,12,,,,,,7,,,,,,,,,,,,,,,,,,
+14,send_message,4,,,,,,"Please select the age of your child:
+A. Under 1 month
+B. 1-2 months
+C. 3-5 months
+D. 6-9 months
+E. 10 -14 months
+F. 15-18 months
+G. 19-23 months",,,,,,,,,,,,,,,e8466ed2-d3f9-4760-bdc5-cb0a6b339d42,,execute_actions,20;620
+15,wait_for_response,14,,,,,AGE BABY,,,,,,,,,,,,,,,,88c5b599-e904-4b4d-a404-aa2cfc418981,,wait_for_response,160;920
+16,send_message,15,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,66329979-31d0-4174-9cec-c0eb5afeaf4d,,execute_actions,300;620
+17,go_to,16,,,,,,14,,,,,,,,,,,,,,,,,,
+18,send_message,5,,,,,,Which behaviour is most like the one you want support for?,Refuses to obey,Gets angry often,"Rudeness, disrespectful behaviour",Irritable or frequent mood changes,Does not follow rules,Stubbornness,Breaking things,Fighting with others,Teasing or bothering others,Does not apply,,,,,f1b57a27-70e1-4b65-b641-6f7a6478b4ae,,execute_actions,1060;780
+19,wait_for_response,18,,,,,bahav_teen,,,,,,,,,,,,,,,,27fb5d09-c86c-44e2-ba63-adaa472739e7,,wait_for_response,1120;1100
+20,send_message,19,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,6e404bc6-2f2e-4f4c-9adc-6279ac993212,,execute_actions,1480;1100
+21,go_to,20,,,,,,18,,,,,,,,,,,,,,,,,,
+22,send_message,6,,,,,,Which behaviour is most like the one you want support for?,Refuses to obey,Temper tantrums,Disrespectful behaviour,Whining,"Hyperactivity, can’t sit still",Hitting others,Breaking things,Fighting with others,Teasing or bothering others,Does not apply,,,,,5ddeaf31-69dd-4291-9e81-d2d3cc85357a,,execute_actions,720;740
+23,wait_for_response,22,,,,,behav_child,,,,,,,,,,,,,,,,2f63974f-8a13-4def-80be-76baf210eef8,,wait_for_response,720;1100
+24,send_message,23,"Hyperactivity,still",,has_any_word,activities,,"It can be exhausting when your children have too much energy or can't focus on one thing. Sometimes, your children need opportunities to be very active and run around to help them be calm afterwards. ",,,,,,,,,,,,,,,f703f0c2-9457-4694-9ecb-d97a33bc87ed,,execute_actions,300;3200
+25,send_message,23,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,ddd2cd44-4a82-401c-aa2e-167f6d9134fa,,execute_actions,840;1500
+26,go_to,25,,,,,,22,,,,,,,,,,,,,,,,,,
+27,send_message,15;15,A UNDER;B 1 2,,has_any_word;has_any_word,A <1;B 1-2,,Which behaviour is most like the one you want support for?,Crying a lot,Problems sleeping,Clingy,Does not apply,,,,,,,,,,,d35e18ff-cfe8-459e-9810-e17808dd15c0,,execute_actions,40;1420
+28,wait_for_response,27,,,,,behav_baby,,,,,,,,,,,,,,,,96b96654-c9c3-4974-a3f1-b5b7d06f0421,,wait_for_response,40;3880
+29,send_message,28,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,5c4309dc-219d-4920-a441-2c4b515a5c1c,,execute_actions,120;4060
+30,go_to,29,,,,,,27,,,,,,,,,,,,,,,,,,
+31,send_message,15;15,C 3 4 5;D 6 7 8 9,,has_any_word;has_any_word,C 3-5;D 6-9,,Which behaviour is most like the one you want support for?,Crying a lot,Problems sleeping,Clingy,Whining,Bad tempered or moody,Problems eating,Stubborn or fussy,Does not apply,,,,,,,8504366a-325c-4fed-9f89-2d790e0a3e3f,,execute_actions,280;1400
+32,wait_for_response,31,,,,,behav_baby,,,,,,,,,,,,,,,,81f3793b-137d-4091-9ea1-1224060f9d80,,wait_for_response,460;4000
+33,send_message,32,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,2f8bec29-791a-4573-a879-07fb679756a7,,execute_actions,1020;4140
+34,go_to,33,,,,,,31,,,,,,,,,,,,,,,,,,
+35,send_message,15;15;15,E 10 11 12 13 14;F 15 16 17 18;G 19 20 21 22 23,,has_any_word;has_any_word;has_any_word,E 10-14;F 15-18;G 19-23,,Which behaviour is most like the one you want support for?,Crying a lot,Problems sleeping,Clingy,Whining,Bad tempered or moody,Problems eating,Stubborn or fussy,Naughty behaviour,Temper tantrums,Does not apply,,,,,758da909-8717-45f7-b8ec-ecddff7bb051,,execute_actions,520;1400
+36,wait_for_response,35,,,,,behav_baby,,,,,,,,,,,,,,,,3397e2c9-a313-4d9b-91bd-e65a864417d3,,wait_for_response,760;3860
+37,send_message,28;32;36,sleeping;sleeping;sleeping,,has_any_word;has_any_word;has_any_word,Sleeping;Sleeping;sleep,,"Unfortunately, your baby will go through phases for the next 2 years of sleeping poorly. Try wearing your baby close to you, feeding them and carrying them in a sling. And hang in there, remember it’s a phase. You and your baby will get through it together!",,,,,,,,,,,,,,,f00154ab-c2d0-47a2-966e-1761d3598356,,execute_actions,80;4280
+38,send_message,28;32;36,clingy;clingy;clingy,,has_any_word;has_any_word;has_any_word,Clingy;Clingy;clingy,,Your baby will cry as soon as a caregiver’s attention is diverted and are cranky as well as clingy. Prioritise being there for them and give them physical contact when needed.,,,,,,,,,,,,,,,0600591c-57c3-46d4-bd3a-68a7db69de14,,execute_actions,300;4280
+39,send_message,32;36,Whining;whining,,has_any_word;has_any_word,Whining;whining,,"Your baby or toddler may sometimes want something that they cannot have. If they start whining, first check to see if there is something wrong (are they actually hungry or tired)? If they continue, try to redirect their attention to something else. You should also try to ignore their behaviour while attending to them for comfort and support",,,,,,,,,,,,,,,e22551fe-959d-4a7f-9d51-3e67fe822659,,execute_actions,700;4140
+40,send_message,32;36,bad tempered moody;bad tempered moody,,has_any_word;has_any_word,Bad;bad temp,,Check to see why your baby is in a bad mood. Are they tired or hungry? Or maybe they are not feeling well? Or maybe they need some more loving attention. Be a reassuring presence for your baby when they are having a difficult day.,,,,,,,,,,,,,,,07e178f1-7275-45d4-b8b1-c0852fd628ec,,execute_actions,900;4460
+41,send_message,32;36,eating;eating,,has_any_word;has_any_word,Eating;eat,,"Remember that you’re in charge of what they eat, but not how much. Newborns have stomach the size of a grape! They need to eat often (sometimes in the middle of the night. 
+It’s important to build trust around eating, especially as your baby starts on solid food. Let them know you are listening to their wishes in the eating department. They’ll be ravenous again soon!",,,,,,,,,,,,,,,89f09b06-0f40-4c9f-8a3d-6f0df5614210,,execute_actions,1120;4280
+42,send_message,32;36,stubborn fussy;stubborn fussy,,has_any_word;has_any_word,Stubborn;stubb,,Babies are much more likely to want to do things if you make the activity fun and playful. Patience is also a must. Take a deep breath if you notice yourself getting frustrated by your baby.,,,,,,,,,,,,,,,5669dfd1-dd6b-40aa-82b6-d6540aae3f0c,,execute_actions,1180;4800
+43,send_message,36,naughty,,has_any_word,naughty,,"Pay close attention to your baby in case they try something dangerous! Just because they are able to play on their own now, doesn’t mean you can look away for long. Redirect mischievous behaviours into practice waving, imitation games, singing and moving games and pretending to talk on the phone!",,,,,,,,,,,,,,,cde10c71-81bf-4af6-b39f-dd5341e9d028,,execute_actions,100;4580
+44,send_message,36,temper tantrums,,has_any_word,temper,,Try to stay calm and support your toddler as they move through the tantrum. Your priority is to ensure that they don’t hurt themselves. Don’t add to your child’s anger by shouting and showing angry emotions. This won’t help.,,,,,,,,,,,,,,,13c83748-c938-4d43-acf7-a5527510263e,,execute_actions,400;4780
+45,send_message,36,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a1704854-a728-4f3f-8852-6a12f76d5f6b,,execute_actions,1300;4020
+46,go_to,45,,,,,,35,,,,,,,,,,,,,,,,,,
+47,start_new_flow,19;23,"Refuses,obey,angry,Rudeness,disrespectful,rules,Stubbornness,Breaking,Fighting,Teasing,bothering;Hitting,Breaking,Fighting,Teasing,bothering ",,has_any_word;has_any_word,consequences;consequences,,PLH - Content - Positive - Behave - Consequences,,,,,,,,,,,,,,e5fb19b6-addd-45cc-bad2-dd0861472e13,b7874842-937a-4897-90f8-3850a0202907,,split_by_subflow,980;2900
+48,start_new_flow,19,"Irritable,mood",,has_any_word,emotions,,PLH - Content - Positive - Behave - Emotion,,,,,,,,,,,,,,530536dd-3ac9-475c-b80b-b0b0659535cd,96dc1188-2719-44e4-8160-974452e76792,,split_by_subflow,1200;2900
+49,send_message,19,apply,,has_any_word,na,,"Here are 8 simple tips to help you with your teen: 
+1. Keep it positive
+2. Invest in time
+3. Create routines
+4. Be open to your children
+5. Use reasonable consequences
+6. Solve problems with your teen
+7. Keeping your teen safe online
+8. Resolving crises when they happen
+Type ""1"" to ""8"" if you want to learn more about a specific strategy.",,,,,,,,,,,,,,,228f36f7-2698-4524-ac91-387e19d7a4de,,execute_actions,1220;1640
+50,wait_for_response,49,,,,,tip teen,,,,,,,,,,,,,,,,bc5d8c3a-cddb-489b-9b48-0354f7b1e1de,,wait_for_response,980;2100
+51,go_to,50,4,,has_any_word,4,,48,,,,,,,,,,,,,,,,,,
+52,go_to,50,5,,has_any_word,5,,47,,,,,,,,,,,,,,,,,,
+53,start_new_flow,50,8,,has_any_word,8,,PLH - Content - Positive - Behave - Crisis,,,,,,,,,,,,,,8b191a0a-6f36-4b8b-8211-d0883ce2d564,a3488d15-e93d-4847-9031-20f6a4081881,,split_by_subflow,780;3140
+54,send_message,50,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,63febe01-8785-48ee-b786-007616a677b2,,execute_actions,1220;2240
+55,go_to,54,,,,,,49,,,,,,,,,,,,,,,,,,
+56,start_new_flow,23,"obey,Temper,tantrums,Disrespectful,Whining ",,has_any_word,ignore,,PLH - Content - Positive - Behave - Ignore,,,,,,,,,,,,,,bf2d6233-394a-4416-b3a4-0beb60fc56b5,2508a60d-985a-402f-9093-0c1d0dd74f8b,,split_by_subflow,740;3000
+57,send_message,24,,,,,,Would you like suggestions for active and calm things to do with your child?,Yes,No,,,,,,,,,,,,,e83ad756-042a-45b9-b137-d44a7550dcb5,,execute_actions,300;3420
+58,wait_for_response,57,,,,,Result 7,,,,,,,,,,,,,,,,70890aa2-8d93-4b9c-98c0-701e4349e88e,900,wait_for_response,300;3600
+59,start_new_flow,58,y yes,,has_any_word,Y,,PLH - Handler - Activity - Young children,,,,,,,,,,,,,,19381502-5dfd-498f-b6b3-6a3d15bcad4b,3bfe0571-f7f8-44e6-ac8f-53a6317f2d2b,,split_by_subflow,280;3740
+60,send_message,58,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,12dbfbf7-42ff-4804-b1e7-b29b98a57102,,execute_actions,600;3460
+61,go_to,60,,,,,,57,,,,,,,,,,,,,,,,,,
+62,send_message,58;58,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,08e8c2e3-8442-45a7-b4ab-d4b77b3d3741,,execute_actions,640;3640
+63,send_message,23,apply,,has_any_word,na,,"Here are 9 simple tips to help you with your children: 
+1. Keep it positive
+2. Invest in time
+3. Create routines
+4. Be open to your children
+5. Redirect them to positive behaviours
+6. Ignore attention seeking and demanding behaviours
+7. Use reasonable consequences
+8. Solving problems with your child
+9. Keeping your child safe online
+Type ""1"" to ""9"" if you want to learn more about a specific strategy.",,,,,,,,,,,,,,,39d61242-9dc6-4ef7-8a21-6b829f2c55b6,,execute_actions,600;2340
+64,wait_for_response,63,,,,,tip child,,,,,,,,,,,,,,,,e7b11d3d-abcc-42e4-9af0-ebe09ce17dfc,,wait_for_response,540;2820
+65,start_new_flow,50;64,1;1,,has_any_word;has_any_word,1;1,,PLH - Content - Positive - Behave - Praise,,,,,,,,,,,,,,3894dff4-93f0-42a8-92a3-6220bff18bc8,ba75beee-4f8d-4544-969d-cf99005c43cb,,split_by_subflow,260;2840
+66,go_to,64,4,,has_any_word,4,,48,,,,,,,,,,,,,,,,,,
+67,go_to,64,6,,has_any_word,6,,56,,,,,,,,,,,,,,,,,,
+68,go_to,64,7,,has_any_word,7,,47,,,,,,,,,,,,,,,,,,
+69,start_new_flow,50;64,6;8,,has_any_word;has_any_word,6;8,,PLH - Content - Positive - Behave - ProblemSolving,,,,,,,,,,,,,,f09d56a4-f6ec-4824-8eda-92a4c527a0c2,74e99d7d-3a1c-4276-a662-3ef684de9bac,,split_by_subflow,540;3160
+70,start_new_flow,50;64,7;9,,has_any_word;has_any_word,7;9,,PLH - Content - Positive - Online children,,,,,,,,,,,,,,8ee91956-d382-4b11-8d87-e7caacc5d57e,f62d76a1-f35a-4e24-b5d7-455f8b4a3053,,split_by_subflow,1100;3080
+71,send_message,64,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,e8fed14a-79b5-4cab-827b-a442025ed005,,execute_actions,900;2320
+72,go_to,71,,,,,,63,,,,,,,,,,,,,,,,,,
+73,start_new_flow,28;32;36,crying;crying;crying,,has_any_word;has_any_word;has_any_word,Crying;Crying;crying,,PLH - Content - Positive - Behave - Crying,,,,,,,,,,,,,,42a695f9-813a-4cb3-927a-d642b1ddb916,c68c376f-862b-46c8-bd9c-7b69d98ce1e3,,split_by_subflow,40;3620
+74,send_message,28;32;36,apply;apply;apply,,has_any_word;has_any_word;has_any_word,Apply;Apply;apply,,"Here are 5 simple tips to help you with your babies: 
+1. Play with your baby
+2. Create routines
+3. Share books with your baby
+4. Cope with crying
+5. Redirect them to positive behaviours
+Type ""1"" to ""5"" if you want to learn more about a specific strategy.",,,,,,,,,,,,,,,39b4a1fb-8d3d-42a0-9278-dae525f6b96d,,execute_actions,220;2340
+75,wait_for_response,74,,,,,tip baby,,,,,,,,,,,,,,,,75b9f931-ebe9-494c-9ca1-26f3a09841df,,wait_for_response,220;2680
+76,start_new_flow,50;64;75,2;2;1,,has_any_word;has_any_word;has_any_word,2;2;1,,PLH - Content - Time - One on one time baby,,,,,,,,,,,,,,fa62e24a-204a-4092-aa68-7f568cc1cf95,15f12f7f-5607-4604-a7e4-6071b06d6c54,,split_by_subflow,;3000
+77,start_new_flow,50;64;75,3;3;2,,has_any_word;has_any_word;has_any_word,3;3;2,,PLH - Content - Positive - Behave - Routines,,,,,,,,,,,,,,3a875a61-978c-4873-a2c1-e085f036266a,5d1f4068-0d5c-470d-afb7-bbb96c3d4190,,split_by_subflow,460;3020
+78,start_new_flow,75,3,,has_any_word,3,,PLH - Content - Positive - Book sharing,,,,,,,,,,,,,,431dcaef-2ff5-42e6-b61f-3fc37791f57f,fde4aaab-3eba-40cf-8cad-bedc89ed3fb4,,split_by_subflow,840;3320
+79,go_to,75,4,,has_any_word,4,,73,,,,,,,,,,,,,,,,,,
+80,start_new_flow,64;75,5;5,,has_any_word;has_any_word,5;5,,PLH - Content - Positive - Behave - Redirect,,,,,,,,,,,,,,f896a544-cb05-43a6-9657-9993a0568e71,a5d01ee2-5e06-483d-a534-0aeea9d9cd2a,,split_by_subflow,40;3180
+81,send_message,75,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,4a1e791c-1cc6-456c-94ee-ddc005fdb069,,execute_actions,20;2820
+82,go_to,81,,,,,,74,,,,,,,,,,,,,,,,,,
+83,send_message,43,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,66edceeb-da51-45fe-86cc-41205ed82eb5,,execute_actions,100;4880
+84,wait_for_response,83,,,,,Result 10,,,,,,,,,,,,,,,,1bbf8404-8d6d-4679-95cd-300a75e18537,900,wait_for_response,100;5040
+85,save_value,84,Y yes,,has_any_word,Y,from theme,yes,,,,,,,,,,,,,,,ed9b3e18-8858-4107-a1c6-8e59470531ad,,execute_actions,120;5500
+86,start_new_flow,85,,,,,,PLH - Content - Positive - Behave - Redirect,,,,,,,,,,,,,,f896a544-cb05-43a6-9657-9993a0568e71,dc10360f-504f-4f43-b652-5be31439fabc,,split_by_subflow,120;5600
+87,save_value,86;86,Complete;Expired,,,,from theme,no,,,,,,,,,,,,,,,dc5d85a4-4138-4805-890b-b83cd0606c8e,,execute_actions,120;5740
+88,send_message,84,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,c9601d1c-a785-4e87-a17a-87f439faa9ef,,execute_actions,220;5360
+89,go_to,88,,,,,,83,,,,,,,,,,,,,,,,,,
+90,send_message,44,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,9c514889-06bb-48e1-a037-7d49d1e37bae,,execute_actions,400;5900
+91,wait_for_response,90,,,,,Result 11,,,,,,,,,,,,,,,,914a05c7-af12-4ea1-a0e0-44a7b0b3a281,900,wait_for_response,420;5220
+92,save_value,91,y yes,,has_any_word,Y,from theme,yes,,,,,,,,,,,,,,,8c1eeff9-dca6-4cfc-9d6e-9aa9ae053705,,execute_actions,400;5520
+93,start_new_flow,92,,,,,,PLH - Content - Positive - Behave - Ignore,,,,,,,,,,,,,,bf2d6233-394a-4416-b3a4-0beb60fc56b5,a4f99639-0007-4945-aa07-8d7d15de6cdf,,split_by_subflow,420;5640
+94,save_value,93;93,Complete;Expired,,,,from theme,no,,,,,,,,,,,,,,,69c3a0cb-4e66-4faa-955c-acf1ae769dfe,,execute_actions,400;5800
+95,send_message,91,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,e7eda190-96d2-409f-9b98-cc485b022e15,,execute_actions,520;5380
+96,go_to,95,,,,,,90,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.completed_welcome,,,,,,,,,,,,,,,f9ffa4d0-3c7a-44f8-a2b7-3c428a7c4d3e,,split_by_contact_field,660;
+2,split_by_value,1,,,,,,@fields.has_expired,,,,,,,,,,,,,,,edcac0ac-1564-44e1-9baf-250908a2206a,,split_by_contact_field,540;120
+3,start_new_flow,2,,,,,,PLH - Welcome - Entry,,,,,,,,,,,,,,b0718d9e-f048-473e-bb25-6a861d0d0b81,63d96896-f32f-42c6-a297-a956e41bc729,,split_by_subflow,900;200
+4,split_by_group,3,Complete,,,,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,47ca48d0-3aee-40eb-a95f-586f0f905520,,split_by_groups,780;380
+5,start_new_flow,2;4,welcome_registration;in program,@fields.has_expired;,has_any_word;,Welcome_registration;,,PLH - Welcome - Initial registration,,,,,,,,,,,,,,eda4370a-f05b-4419-a800-037e456b2c66,6030ed1c-603b-4048-bd8e-e355dc36d72f,,split_by_subflow,440;540
+6,start_new_flow,2;5,welcome_tips;Complete,@fields.has_expired;,has_any_word;,Welcome_tips,,PLH - Welcome - Tips,,,,,,,,,,,,,,8a0b971b-37f8-4822-85e4-0cae054835dd,b28e18f2-6258-4eab-bb37-71f2976e90ab,,split_by_subflow,580;800
+7,save_value,6,Complete,,,,completed welcome,yes,,,,,,,,,,,,,,,4d80f167-a112-46d0-ab7f-3ef9f9b7e8bf,,execute_actions,360;960
+8,save_value,6,Expired,,,,has expired,welcome_tips,,,,,,,,,,,,,,,351885c8-5f72-4f63-ae54-e97f419463e1,,execute_actions,800;920
+9,save_value,5,Expired,,,,has expired,welcome_registration,,,,,,,,,,,,,,,360c3f31-5477-46a3-87df-919f023674c7,,execute_actions,940;620
+10,save_value,3,Expired,,,,has expired,welcome_entry,,,,,,,,,,,,,,,0ca100da-cbb6-45ac-bd16-c41c93d5a49c,,execute_actions,1200;420
+11,send_message,10;8;9,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,9e2a1637-dc14-4ee6-b6ed-21050ab7bab2,,execute_actions,1100;740

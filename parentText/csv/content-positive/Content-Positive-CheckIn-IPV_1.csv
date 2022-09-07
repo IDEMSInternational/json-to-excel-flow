@@ -1,0 +1,37 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,c28030d0-29f1-4865-a149-117e33a0fd0e,,split_by_expression,1005;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Have you tried involving your partner when making decisions recently?,Yes,No,,,,,,,,,,,,,748bea68-0be3-4037-b339-6c1512fdf3d8,,execute_actions,880;200
+3,send_message,1,,,,,,Hi! Have you tried involving your partner when making decisions recently?,Yes,No,,,,,,,,,,,,,ae8bf6da-eed6-4eba-993e-1b2c5037fdfb,,execute_actions,1130;200
+4,wait_for_response,2;3,,,,,checkin_managed,,,,,,,,,,,,,,,,bf066e7f-ad95-4dc7-86b4-bdc0b5088882,,wait_for_response,1130;360
+5,split_by_value,4,yes y,,has_any_word,Yes,,@fields.user_name,,,,,,,,,,,,,,,9eca8aca-5c5e-41d7-a7eb-1d26fbe82f58,,split_by_expression,555;500
+6,send_message,5,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! Communicating and working together with your partner makes a difference!,,,,,,,,,,,,,,,43e9bdfc-9200-4330-a06e-b89b5a10ac08,,execute_actions,430;700
+7,send_message,5,,,,,,Well done! Communicating and working together with your partner makes a difference!,,,,,,,,,,,,,,,224364f7-cd28-4960-84fe-41b7e5a376af,,execute_actions,680;700
+8,save_value,6;7,,,,,last interaction,@(now()),,,,,,,,,,,,,,,c4e8fb50-6e48-4c33-8576-0d83ede1b3dc,,execute_actions,410;840
+9,save_value,4,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,2436588c-0dc8-48a3-8e04-6f6d1511999f,,execute_actions,1230;760
+10,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a771e121-21e6-4623-8c80-14b2e544831d,,execute_actions,1450;260
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a70af18a-628b-4fca-a76c-bbfc511e30f1,,execute_actions,1450;400
+12,go_to,11,,,,,,1,,,,,,,,,,,,,,,,,,
+13,send_message,8,,,,,,How was your experience?,Great,Neutral,Bad,,,,,,,,,,,,7c87ce15-9ca8-4e28-b6f9-cac571050514,,execute_actions,410;1160
+14,wait_for_response,13,,,,,checkin_how,,,,,,,,,,,,,,,,47d0ec2b-4bd8-4015-9ff9-0f35fe3fe371,,wait_for_response,410;1320
+15,send_message,14,great,,has_any_word,Great,,That is fantastic!,,,,,,,,,,,,,,,c2594253-4c50-47d0-85c7-9bdf66c9a648,,execute_actions,330;1500
+16,send_message,14,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,2318d536-3b58-499f-97eb-2b8a1d7e61ff,,execute_actions,860;1460
+17,go_to,16,,,,,,13,,,,,,,,,,,,,,,,,,
+18,split_by_group,14;9,neutral bad;,,has_any_word;,Neutral bad;,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,8ef9f51d-eff5-4285-b492-c7f2239a5abe,,split_by_expression,1655;860
+19,send_message,18,ABTest_test-first-person_alternative,,,,,I am sorry to hear this. What did you find difficult when trying to involve your partner in making a decision?,I didn’t have time to involve my partner,I didn’t know how to involve my partner,I felt uncomfortable asking for my partner's opinion,I forgot to involve my partner,My partner reacted negatively to me when I tried,,,,,,,,,,72ba408c-91ca-44e1-a97d-d2a185228cac,,execute_actions,1780;1060
+20,send_message,18;18,ABTest_test-first-person_Default;,,,,,We are sorry to hear this. What did you find difficult when trying to involve your partner in making a decision?,I didn’t have time to involve my partner,I didn’t know how to involve my partner,I felt uncomfortable asking for my partner's opinion,I forgot to involve my partner,My partner reacted negatively to me when I tried,,,,,,,,,,55c8aa05-3489-4919-b2b6-d1a74f6d1b05,,execute_actions,1530;1060
+21,wait_for_response,19;20,,,,,checkin_problem,,,,,,,,,,,,,,,,c8cb4dbd-41be-4984-a953-ea426feca35f,,wait_for_response,1510;1340
+22,send_message,21,I didn’t have time to involve my partner,,has_only_phrase,1,,"It can be difficult to find the time to ask our partners for their opinions when we are making decisions. Can you think of a time during the day when both you and your partner might be less busy, such as early in the morning or later in the evening?",,,,,,,,,,,,,,,ccd65d06-e179-461e-ab22-7ffedb098f2c,,execute_actions,1370;1740
+23,send_message,21,I didn’t know how to involve my partner,,has_only_phrase,2,,It can sometimes be hard to know how to involve your partner when making a decision. Sometimes all you need to do is to ask them what they think. This shows them you care and want them to be involved!,,,,,,,,,,,,,,,fab2e0e3-f778-4b54-931f-fb726bc8edb4,,execute_actions,2100;2080
+24,send_message,21,I felt uncomfortable asking for my partner's opinion,,has_only_phrase,3,,"It can take time to get used to making decisions together. Give yourself time to adjust. Remember that by communicating with your partner and involving them in decision-making, they will start to feel more comfortable doing so too.",,,,,,,,,,,,,,,6948cc95-93cf-4c1c-9709-50def4dc82e1,,execute_actions,1270;2160
+25,send_message,21,I forgot to involve my partner,,has_only_phrase,4,,"It can be hard to remember to involve our partners in decision making. If you forget, it’s important to try again! Asking them for their opinion shows them that you care and want them to be involved.",,,,,,,,,,,,,,,80b594aa-fb49-416d-afe9-11cec75adf34,,execute_actions,1780;2120
+26,send_message,21,My partner reacted negatively to me when I tried,,has_only_phrase,5,,"Sorry to hear that your partner reacted negatively. Be proud of yourself for trying and be gentle with yourself. Remember you can always get extra support by typing ""Help"".",,,,,,,,,,,,,,,d8a7ef47-2e4a-4325-aff1-d303c54c5127,,execute_actions,2040;1780
+27,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,913b7fe3-52bd-4d36-8d3b-ae95c2e76595,,execute_actions,2080;1320
+28,go_to,27,,,,,,18,,,,,,,,,,,,,,,,,,
+29,send_message,15;22;23;24;25;26,,,,,,Would you like to review the content on this?,Yes,No,,,,,,,,,,,,,ebc4401a-7b32-4ad3-b4a5-c70d05012ac1,,execute_actions,310;1600
+30,wait_for_response,29,,,,,Result 5,,,,,,,,,,,,,,,,e7c97c4d-aeb8-4791-8491-ed645536ba5a,,wait_for_response,40;1760
+31,start_new_flow,30,yes y,,has_any_word,Yes,,PLH - Content - Positive - IPV - Tip 1,,,,,,,,,,,,,,8feee754-528f-460f-9472-5f4b62eab9f3,5b86cbad-8f7b-4ebc-9ab1-fd9ea56eada3,,split_by_subflow,;2000
+32,split_by_value,30,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,ec39efaf-0fff-4aa5-a259-fb792299042f,,split_by_expression,185;2180
+33,send_message,32,,@fields.user_name,has_text,user_name,,"That is okay! Remember you can access this content at anytime by typing ""Help"". Chat to you later @fields.user_name!",,,,,,,,,,,,,,,1219f578-7dd8-4917-9e74-1e9e776d63d7,,execute_actions,60;2380
+34,send_message,32,,,,,,"That is okay! Remember you can access this content at anytime by typing ""Help"". Chat to you later!",,,,,,,,,,,,,,,ff60aeca-6b63-4151-84fa-f8a514bf170b,,execute_actions,310;2380
+35,send_message,30,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,dc47eb80-06f4-4d1b-849c-9941743fdf4e,,execute_actions,780;1860
+36,go_to,35,,,,,,29,,,,,,,,,,,,,,,,,,

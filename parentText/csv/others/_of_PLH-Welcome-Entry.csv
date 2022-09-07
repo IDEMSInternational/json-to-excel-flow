@@ -1,0 +1,43 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,start_new_flow,start,,,,,,PLH - Internal - Set up default contact fields,,,,,,,,,,,,,,1f87fe57-93ae-4b26-befe-9831ea86b4f2,173289a6-ce96-45b9-8e7c-e997edc8119b,,split_by_subflow,520;180
+2,start_new_flow,1;1,Complete;Expired,,,,,PLH - Welcome - Entry - Set language,,,,,,,,,,,,,,ecbafaae-4583-4d82-9361-16445750059f,b50b07f9-47db-400f-ba01-4489746a5b8b,,split_by_subflow,520;460
+3,start_new_flow,2,Complete,,,,,PLH - Internal - Define attachments paths,,,,,,,,,,,,,,89d00fef-a0a2-48f9-8a6c-27348218fa29,3aa586a3-6ace-4023-bd4a-9cf9468b9078,,split_by_subflow,500;640
+4,send_message,3;3,Complete;Expired,,,,,"Did you know that over 197 million parents around the world have used our resources developed by Parenting for Lifelong Health, WHO, and UNICEF?",,,,,,,,,,,,,,,e993e782-1136-43f2-bfe9-4f95addd5636,,execute_actions,520;960
+5,send_message,4,,,,,,This programme is for parents and caregivers like you (aged 18 or older).,,,,,,,,,,,,,,,6d2681db-6f9e-4bc4-83c2-3ead45402229,,execute_actions,520;1160
+6,save_value,2,Expired,,,,has expired,welcome_entry,,,,,,,,,,,,,,,fffdc467-beab-46f7-adc3-1d20bf1afc61,,execute_actions,900;460
+7,send_message,6,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,2179b9a5-3fea-4c22-a025-61ab16c17ca6,,execute_actions,900;600
+8,send_message,5,,,,,,"Your participation and any information you provide will be used anonymously by researchers to learn about how to better support families like yours. 
+
+Click here for more information:
+https://covid19parenting.com/assets/consents/eng.pdf",,,,,,,,,,,,,,,2f09b614-edcf-48de-9994-090bd3afc6cc,,execute_actions,540;1340
+9,send_message,8,,,,,,"Type ""Yes"" if you agree with this. Type ""Exit"" if you do not want to participate. ",,,,,,,,,,,,,,,82440de2-1200-4b83-9947-902000ba2475,,execute_actions,560;1720
+10,wait_for_response,9,,,,,Result 17,,,,,,,,,,,,,,,,50c39ee7-e6d4-4c3a-9263-3cbd7cb9452c,,wait_for_response,580;1900
+11,send_message,10,yes y,,has_any_word,Yes,,"That is wonderful, thank you so much! ",,,,,,,,,,,,,,,6b3fc17a-4c75-4003-8e08-7ca9b71ea81f,,execute_actions,100;1800
+12,send_message,10,,,,,,"I am sorry I did not understand. Please type ""Yes"" if you agree with this. Type ""Exit"" if you do not want to participate.",,,,,,,,,,,,,,,5c3a6444-aed5-48d0-a1ae-99625ea30036,,execute_actions,940;1780
+13,go_to,12,,,,,,10,,,,,,,,,,,,,,,,,,
+14,send_message,11,,,,,,Can you please confirm that you are 18 years old or older?,"Yes, I am over 18","No, I am under 18",,,,,,,,,,,,,57974b86-2bd5-418b-8b55-95c16cf6c62d,,execute_actions,140;1920
+15,wait_for_response,14,,,,,Result 4,,,,,,,,,,,,,,,,4fbaa839-ad1b-4139-8579-29ca4f178cfd,,wait_for_response,120;2120
+16,send_message,15,yes y over,,has_any_word,Yes,,Thank you so much for confirming this. You are now ready to begin your ParentText journey!,,,,,,,,,,,,,,,72ddd563-6fee-4a3c-9c57-aff04bcf1f05,,execute_actions,;2720
+17,add_to_group,16,,,,,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,0f244b70-60aa-4d85-b9d6-d98c3b2409d9,,execute_actions,80;2960
+18,add_to_group,17,,,,,,consent,,,,,,,,,,,,,,4fba34b6-fba5-4334-9f96-81f3fee6bf60,0f244b70-60aa-4d85-b9d6-d98c3b2409d9,,execute_actions,80;2960
+19,start_new_flow,18,,,,,,PLH - Internal - Empty,,,,,,,,,,,,,,4b369cbf-188c-4a1a-8599-ce726d4bd831,6494a4f7-4749-470d-a1a9-2c3a65a5c752,,split_by_subflow,120;3220
+20,send_message,15,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a0c1562b-4e12-4f7f-892e-958f446ba026,,execute_actions,420;2080
+21,go_to,20,,,,,,14,,,,,,,,,,,,,,,,,,
+22,send_message,10,exit,,has_any_word,Exit,,"Are you sure you do not want to get these messages? If you do not want to receive any more messages, please type ""STOP MESSAGES."" If you made a mistake, please type ""back"" and choose another option.",,,,,,,,,,,,,,,cbfb4963-ce07-4c61-9bc1-1f48c26d5de7,,execute_actions,620;2200
+23,wait_for_response,22,,,,,Result 3,,,,,,,,,,,,,,,,6479d8e1-7979-4f21-93d3-ada313ae0cd6,,wait_for_response,620;2600
+24,save_value,23,stop messages,,has_only_phrase,no consent,did not consent,yes,,,,,,,,,,,,,,,2c582c46-5a9f-4856-9617-73ec9516c9d1,,execute_actions,720;2800
+25,start_new_flow,24,,,,,,PLH - Welcome - Entry - No consent - Interview,,,,,,,,,,,,,,bf1cf6b2-97bf-4f5e-abd9-35c2747f9391,44fbecb6-38e4-454c-8888-86b086602b07,,split_by_subflow,740;2940
+26,send_message,25;25,Complete;Expired,,,,,"If you ever return to participate in the programme, type ""START_MESSAGES"". 
+
+We hope to see you again soon, and we wish you a happy and peaceful day! ",,,,,,,,,,,,,,,27b4f027-b26c-48ba-b650-3e64917acc9a,,execute_actions,760;3100
+27,go_to,23,back,,has_any_word,Back,,8,,,,,,,,,,,,,,,,,,
+28,send_message,23,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,f8c0f86b-8933-467d-98d5-c8bbc3326e0d,,execute_actions,1020;2240
+29,go_to,28,,,,,,22,,,,,,,,,,,,,,,,,,
+30,send_message,15,no n under,,has_any_word,No,,"Sorry, ParentText is only for people over the age of 18. Do you confirm that you are under the age of 18?",Yes,No,,,,,,,,,,,,,2fe3b37c-a352-4e53-aa34-6f2500ffb609,,execute_actions,160;2280
+31,wait_for_response,30,,,,,Result 5,,,,,,,,,,,,,,,,ef1392a7-9bd0-4285-96bc-3d0e1aa9d573,,wait_for_response,200;2460
+32,add_to_group,31,yes y,,has_any_word,Yes,,below age,,,,,,,,,,,,,,bd334342-df0f-4b66-b7f2-8701d5f70545,0a3b4a74-c879-427f-bbbe-0434f52365ca,,execute_actions,360;2620
+33,send_message,32,,,,,,"If you want to experience ParentText, you can always share it with your parents or caregivers.",,,,,,,,,,,,,,,8e7a8b81-244d-4dc8-a440-3eed30ba5336,,execute_actions,340;2700
+34,start_new_flow,33,,,,,,PLH - Supportive - Share - Link,,,,,,,,,,,,,,a8233166-1c54-4c76-a8fa-9e6fe9be489e,400bcaf9-0505-457b-9df6-57eb9163abe5,,split_by_subflow,380;2900
+35,go_to,31,no n,,has_any_word,No,,14,,,,,,,,,,,,,,,,,,
+36,send_message,31,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a86072a1-6d13-4b9c-a56b-4284a0d79dd0,,execute_actions,480;2460
+37,go_to,36,,,,,,30,,,,,,,,,,,,,,,,,,

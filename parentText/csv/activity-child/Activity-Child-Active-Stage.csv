@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Stage Directions
+•	This is the same as Ship to Shore but with Stage Directions. This can be done in an elevated and safe area. The director gives the instructions.
+ “Stage Right” means you go to the right.
+ “Stage Left” means you go to the left.
+ “Downstage” means you go down. 
+ “Upstage” means you go up.
+ “Centre Stage” means you go to the centre of the stage.” 
+•	You can have fun actions like “Dramatic Death, Take a Bow, Open the Curtain, Clean the Floor,” etc. 
+•	Instead of “Lifeboat” you make “Cast of Actors.” Those not in the cast become the director!",,,,,,,,,,,,,,,663f0bc2-8328-4d20-8048-0992a6ef6361,,execute_actions,;

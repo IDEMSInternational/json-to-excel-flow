@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Hello! Did you know that 3 is a magical number? Breathe in to the count of three and breathe out to the count of three. How do you feel now? Do you feel any different?,,,,,,,,,,,,,,,8548f0ab-ccb4-4080-bb78-a5bb3d6209bc,,execute_actions,600;
+2,split_by_value,1,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,d6f323e6-2dc6-498e-ba6b-526f0ee101c2,,split_by_contact_field,520;240
+3,send_message,2,high,@fields.type_of_media,has_any_word,High,,Here's a video to guide through this activity!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Magical_Number.m4v,,ff625137-4cc5-4ffc-9446-46617e9c823b,,execute_actions,220;580
+4,send_message,2,medium,@fields.type_of_media,has_any_word,medium,,Here's an audio message to guide you through this activity!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Magical_Number.mp3,,,2fb9dae2-9399-4b28-9391-54c97703f13b,,execute_actions,500;540
+5,wait_for_response,3;4,,,,,Result 1,,,,,,,,,,,,,,,,df4134e1-6593-47cd-b3db-694be18d7077,120,wait_for_response,320;780
+6,send_message,2;5;5,;;No Response,,,,,"What are your three favourite foods? Can you name three things you can see right now? 
+Can you hear three sounds you can hear right now? 
+What are the three things you are grateful for right now?
+Breathe in to the count of three and breathe out to the count of three. How do you feel now? Do you feel any different? 
+Three is a magical number! ",,,,,,,,,,,,,,,c038b3ac-98f6-48f0-a17e-0d95e3131610,,execute_actions,780;560
+7,send_message,6,,,,,,"We hope that was helpful! Remember you can always type ""Help"" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",,,,,,,,,,,,,,,4eced17e-1832-4799-857e-e74fe0845d5f,,execute_actions,360;1080

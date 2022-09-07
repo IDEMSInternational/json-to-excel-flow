@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,8858d9b5-f88c-4a7f-8489-64c308f903ec,,split_by_expression,525;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Would you like to learn more about how you could support children with disabilities?,Give me more information,I am not interested,,,,,,,,,,,,,43afe7bd-29ac-456e-b5ee-78f83f784603,,execute_actions,400;200
+3,send_message,1,,,,,,Hi! Would you like to learn more about how you could support children with disabilities?,Give me more information,I am not interested,,,,,,,,,,,,,2b896d91-435e-493c-8bbc-d1c2ebe6756d,,execute_actions,650;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,6cee8a07-d57c-417f-867b-71fdceec3cf1,,wait_for_response,650;440
+5,save_value,4,more information,,has_any_word,More,last interaction,@(now()),,,,,,,,,,,,,,,83a8c6e5-3dfa-42c8-8a09-281f3bff65bd,,execute_actions,;460
+6,start_new_flow,5,,,,,,PLH - Content - Extra - Disability,,,,,,,,,,,,,,1750e0a7-af13-48a4-8c02-67d8eb2c4e83,918ee0b0-993d-415e-8d57-65f8c3fb8560,,split_by_subflow,;560
+7,split_by_value,4,not no interested,,has_any_word,Not,,@fields.user_name,,,,,,,,,,,,,,,7744199c-9a8d-459c-992b-8e25b614c96b,,split_by_expression,795;640
+8,send_message,7,,@fields.user_name,has_text,user_name,,"That's okay! You can always get more information by typing ""Help"". Chat later @fields.user_name!",,,,,,,,,,,,,,,97348425-cf3d-4861-9c6e-eb326777520f,,execute_actions,670;840
+9,send_message,7,,,,,,"That's okay! You can always get more information by typing ""Help"". Chat later!",,,,,,,,,,,,,,,e6cf4068-d1ed-41d5-9f0d-4556935e412a,,execute_actions,920;840
+10,save_value,8;9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,94d4bc10-ece8-40df-8fee-536305861ff6,,execute_actions,650;980
+11,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,666ef09f-61ce-4f2f-9624-b8135616b1d4,,execute_actions,1280;520
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,5f49c86c-d7f7-442f-b249-cd96ce9ddd7c,,execute_actions,1260;840
+13,go_to,12,,,,,,1,,,,,,,,,,,,,,,,,,

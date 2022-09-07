@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Dance Party
+•	Put on your favourite music or sing your favourite song and dance around the room with your toddler. If you have a baby hold them while you dance. 
+•	Dance in different ways or with different parts of your body.
+•	For example, “Dance like a monkey”, “Dance like a chicken” or “Let’s dance with our knees and hips.”
+•	Think up different instructions. Be seriously playful! 
+•	When the music stops, everyone does a funny freeze.
+•	Notice what rhythms or movements they like!",,,,,,,,,,,,,,,9e9b3975-7067-498c-a8c5-9986c770c73d,,execute_actions,;

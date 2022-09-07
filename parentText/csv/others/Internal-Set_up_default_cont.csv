@@ -1,0 +1,126 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,deployment,Global,,,,,,,,,,,,,,,e64c371e-edf2-4144-bf4a-b1d3b23b2b19,,execute_actions,160;
+2,save_value,1,,,,,type of media,high,,,,,,,,,,,,,,,53349b3c-f029-4545-b8c2-d5a39665b488,,execute_actions,160;220
+3,save_value,2,,,,,marital status,,,,,,,,,,,,,,,,eb6022ca-cdd0-4623-bd9c-191d0b826354,,execute_actions,160;380
+4,save_value,3,,,,,child nickname,,,,,,,,,,,,,,,,eb6022ca-cdd0-4623-bd9c-191d0b826354,,execute_actions,160;380
+5,save_value,4,,,,,age group for tips,child,,,,,,,,,,,,,,,eb6022ca-cdd0-4623-bd9c-191d0b826354,,execute_actions,160;380
+6,save_value,5,,,,,enrollment,,,,,,,,,,,,,,,,eb6022ca-cdd0-4623-bd9c-191d0b826354,,execute_actions,160;380
+7,save_value,6,,,,,know age group for tips,no,,,,,,,,,,,,,,,eb6022ca-cdd0-4623-bd9c-191d0b826354,,execute_actions,160;380
+8,save_value,7,,,,,know difficult child,no,,,,,,,,,,,,,,,d815203d-8a0a-4abb-8b57-2491cb65db4b,,execute_actions,160;740
+9,save_value,8,,,,,chatbot name male,blobbyM,,,,,,,,,,,,,,,23e159fc-9660-4140-9135-aec848f1c58a,,execute_actions,1780;360
+10,save_value,9,,,,,chatbot name female,blobbyF,,,,,,,,,,,,,,,15e722bf-4778-45c6-bfe9-b9e7ad7d9a59,,execute_actions,1780;480
+11,save_value,10,,,,,chatbot name,@fields.chatbot_name_female,,,,,,,,,,,,,,,1da4e79e-13ca-4bde-b589-af1dc52395e9,,execute_actions,1780;580
+12,save_value,11,,,,,starting date,@(now()),,,,,,,,,,,,,,,a881b288-e6c3-4054-92d4-38523c072b8e,,execute_actions,2140;640
+13,save_value,12,,,,,current week in program,0,,,,,,,,,,,,,,,a881b288-e6c3-4054-92d4-38523c072b8e,,execute_actions,2140;640
+14,save_value,13,,,,,current day in program,1,,,,,,,,,,,,,,,a881b288-e6c3-4054-92d4-38523c072b8e,,execute_actions,2140;640
+15,save_value,14,,,,,programme expected end,"@(datetime_add(fields.starting_date,38,""D""))",,,,,,,,,,,,,,,a881b288-e6c3-4054-92d4-38523c072b8e,,execute_actions,2140;640
+16,save_value,15,,,,,next tip morning,1,,,,,,,,,,,,,,,a3c83356-d68f-40c3-89c2-031c2f607d5e,,execute_actions,40;940
+17,save_value,16,,,,,next tip main,1,,,,,,,,,,,,,,,a3c83356-d68f-40c3-89c2-031c2f607d5e,,execute_actions,40;940
+18,save_value,17,,,,,next tip evening,1,,,,,,,,,,,,,,,a3c83356-d68f-40c3-89c2-031c2f607d5e,,execute_actions,40;940
+19,save_value,18,,,,,total tip days,23,,,,,,,,,,,,,,,a3c83356-d68f-40c3-89c2-031c2f607d5e,,execute_actions,40;940
+20,save_value,19,,,,,program version,2,,,,,,,,,,,,,,,a67fb5cc-0b01-4ef2-99f1-262ba571785c,,execute_actions,40;1260
+21,save_value,20,,,,,morning time of day,9,,,,,,,,,,,,,,,1472d249-a1a0-45fe-93f7-dd7f0fadd305,,execute_actions,1700;980
+22,save_value,21,,,,,main time of day,14,,,,,,,,,,,,,,,1472d249-a1a0-45fe-93f7-dd7f0fadd305,,execute_actions,1700;980
+23,save_value,22,,,,,evening time of day,20,,,,,,,,,,,,,,,1472d249-a1a0-45fe-93f7-dd7f0fadd305,,execute_actions,1700;980
+24,save_value,23,,,,,morning excluded days,na,,,,,,,,,,,,,,,37ba683c-43bb-4a59-bc44-730d02c567f9,,execute_actions,1960;980
+25,save_value,24,,,,,main excluded days,na,,,,,,,,,,,,,,,37ba683c-43bb-4a59-bc44-730d02c567f9,,execute_actions,1960;980
+26,save_value,25,,,,,evening excluded days,na,,,,,,,,,,,,,,,37ba683c-43bb-4a59-bc44-730d02c567f9,,execute_actions,1960;980
+27,save_value,26,,,,,morning days to add,1,,,,,,,,,,,,,,,e8609758-3e52-4d71-9f22-f6f18fc1f1e8,,execute_actions,2200;980
+28,save_value,27,,,,,main days to add,1,,,,,,,,,,,,,,,e8609758-3e52-4d71-9f22-f6f18fc1f1e8,,execute_actions,2200;980
+29,save_value,28,,,,,evening days to add,1,,,,,,,,,,,,,,,e8609758-3e52-4d71-9f22-f6f18fc1f1e8,,execute_actions,2200;980
+30,save_value,29,,,,,morning counter,1,,,,,,,,,,,,,,,e268c89f-8ba2-4345-9612-16f34313927d,,execute_actions,2220;1300
+31,save_value,30,,,,,main counter,1,,,,,,,,,,,,,,,e268c89f-8ba2-4345-9612-16f34313927d,,execute_actions,2220;1300
+32,save_value,31,,,,,evening counter,1,,,,,,,,,,,,,,,e268c89f-8ba2-4345-9612-16f34313927d,,execute_actions,2220;1300
+33,start_new_flow,32,,,,,,PLH - Internal - Define next campaign event,,,,,,,,,,,,,,0abc79bd-ff51-46c5-8842-bea52f6cd05e,c3e07744-e75b-4e15-9e69-a6b3080b46d5,,split_by_subflow,1940;1360
+34,save_value,33,Complete,,,,frequency,1,,,,,,,,,,,,,,,23a6be53-76fa-4cbb-9685-9ba0d1eb747f,,execute_actions,1680;1340
+35,save_value,34,,,,,morning frequency counter,0,,,,,,,,,,,,,,,23a6be53-76fa-4cbb-9685-9ba0d1eb747f,,execute_actions,1680;1340
+36,save_value,35,,,,,main frequency counter,0,,,,,,,,,,,,,,,23a6be53-76fa-4cbb-9685-9ba0d1eb747f,,execute_actions,1680;1340
+37,save_value,36,,,,,evening frequency counter,0,,,,,,,,,,,,,,,23a6be53-76fa-4cbb-9685-9ba0d1eb747f,,execute_actions,1680;1340
+38,save_value,37,,,,,morning supportive counter,0,,,,,,,,,,,,,,,64697dad-2930-4f1a-8d58-55662b9636ea,,execute_actions,80;1740
+39,save_value,38,,,,,main supportive counter,-5,,,,,,,,,,,,,,,64697dad-2930-4f1a-8d58-55662b9636ea,,execute_actions,80;1740
+40,save_value,39,,,,,evening supportive counter,0,,,,,,,,,,,,,,,64697dad-2930-4f1a-8d58-55662b9636ea,,execute_actions,80;1740
+41,save_value,40,,,,,main checkin counter,0,,,,,,,,,,,,,,,64697dad-2930-4f1a-8d58-55662b9636ea,,execute_actions,80;1740
+42,save_value,41,,,,,calm praise supportive counter,0,,,,,,,,,,,,,,,64697dad-2930-4f1a-8d58-55662b9636ea,,execute_actions,80;1740
+43,save_value,42,,,,,ipv checkin counter,-1,,,,,,,,,,,,,,,64697dad-2930-4f1a-8d58-55662b9636ea,,execute_actions,80;1740
+44,save_value,43,,,,,share supportive counter,0,,,,,,,,,,,,,,,64697dad-2930-4f1a-8d58-55662b9636ea,,execute_actions,80;1740
+45,save_value,44,,,,,periodic congrats days to add,7,,,,,,,,,,,,,,,2ccc5865-7c9f-49ae-9628-facb9c59aa99,,execute_actions,60;2260
+46,save_value,45,,,,,periodic survey days to add,7,,,,,,,,,,,,,,,2ccc5865-7c9f-49ae-9628-facb9c59aa99,,execute_actions,60;2260
+47,save_value,46,,,,,next congrats day,@(fields.periodic_congrats_days_to_add +2),,,,,,,,,,,,,,,2ccc5865-7c9f-49ae-9628-facb9c59aa99,,execute_actions,60;2260
+48,save_value,47,,,,,max skip survey,3,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+49,save_value,48,,,,,survey parenting count,-1,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+50,save_value,49,,,,,survey behave count,-1,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+51,save_value,50,,,,,survey parentingbehave count,-1,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+52,save_value,51,,,,,survey covid count,-1,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+53,save_value,52,,,,,survey ipv count,-1,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+54,save_value,53,,,,,surveymoney counter,0,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+55,save_value,54,,,,,surveysexualabusecounter,0,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+56,save_value,55,,,,,last entered survey,@(now()),,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+57,save_value,56,,,,,survey number,1,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+58,save_value,57,,,,,n surveys completed,0,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+59,save_value,58,,,,,total n surveys,4,,,,,,,,,,,,,,,735191f2-fd98-409f-8209-ddb4d253cf2d,,execute_actions,1880;1720
+60,save_value,59,,,,,surveybehave difficult behaviuour,[,,,,,,,,,,,,,,,43e1e560-2d5c-4527-be6f-9c15634ed2ee,,execute_actions,2340;1980
+61,save_value,60,,,,,surveybehave rate,,,,,,,,,,,,,,,,43e1e560-2d5c-4527-be6f-9c15634ed2ee,,execute_actions,2340;1980
+62,save_value,61,,,,,surveybehave challenge,[,,,,,,,,,,,,,,,43e1e560-2d5c-4527-be6f-9c15634ed2ee,,execute_actions,2340;1980
+63,save_value,62,,,,,surveytime,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+64,save_value,63,,,,,surveypraise,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+65,save_value,64,,,,,surveydiscipline,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+66,save_value,65,,,,,surveyshout,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+67,save_value,66,,,,,surveystress,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+68,save_value,67,,,,,surveytips,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+69,save_value,68,,,,,survey covid experience,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+70,save_value,69,,,,,surveysexualabuse,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+71,save_value,70,,,,,surveymoneyweek,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+72,save_value,71,,,,,surveypositive,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+73,save_value,72,,,,,surveymoneymonth,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+74,save_value,73,,,,,surveysexualabusetalk,,,,,,,,,,,,,,,,6f332f20-e67a-4adf-b44f-c920dc7738a3,,execute_actions,2380;2280
+75,save_value,74,,,,,surveytime fb better,0,,,,,,,,,,,,,,,d20297a9-e2e4-49d9-8e3d-41307c478421,,execute_actions,2080;2560
+76,save_value,75,,,,,surveypraise fb better,0,,,,,,,,,,,,,,,d20297a9-e2e4-49d9-8e3d-41307c478421,,execute_actions,2080;2560
+77,save_value,76,,,,,surveystress fb better,-1,,,,,,,,,,,,,,,d20297a9-e2e4-49d9-8e3d-41307c478421,,execute_actions,2080;2560
+78,save_value,77,,,,,surveyshout fb better,-1,,,,,,,,,,,,,,,d20297a9-e2e4-49d9-8e3d-41307c478421,,execute_actions,2080;2560
+79,save_value,78,,,,,surveydiscipline fb better,-1,,,,,,,,,,,,,,,d20297a9-e2e4-49d9-8e3d-41307c478421,,execute_actions,2080;2560
+80,save_value,79,,,,,surveypositive fb better,-1,,,,,,,,,,,,,,,d20297a9-e2e4-49d9-8e3d-41307c478421,,execute_actions,2080;2560
+81,save_value,80,,,,,surveysexual fb better,-1,,,,,,,,,,,,,,,d20297a9-e2e4-49d9-8e3d-41307c478421,,execute_actions,2080;2560
+82,save_value,81,,,,,surveytime fb worse,-1,,,,,,,,,,,,,,,61acb6a8-6e2d-4fc4-af1c-f50664634457,,execute_actions,1800;2560
+83,save_value,82,,,,,surveypraise fb worse,-1,,,,,,,,,,,,,,,61acb6a8-6e2d-4fc4-af1c-f50664634457,,execute_actions,1800;2560
+84,save_value,83,,,,,surveystress fb worse,-1,,,,,,,,,,,,,,,61acb6a8-6e2d-4fc4-af1c-f50664634457,,execute_actions,1800;2560
+85,save_value,84,,,,,surveyshout fb worse,-1,,,,,,,,,,,,,,,61acb6a8-6e2d-4fc4-af1c-f50664634457,,execute_actions,1800;2560
+86,save_value,85,,,,,surveydiscipline fb worse,-1,,,,,,,,,,,,,,,61acb6a8-6e2d-4fc4-af1c-f50664634457,,execute_actions,1800;2560
+87,save_value,86,,,,,surveypositive fb worse,-1,,,,,,,,,,,,,,,61acb6a8-6e2d-4fc4-af1c-f50664634457,,execute_actions,1800;2560
+88,save_value,87,,,,,surveysexual fb worse,-1,,,,,,,,,,,,,,,61acb6a8-6e2d-4fc4-af1c-f50664634457,,execute_actions,1800;2560
+89,save_value,88,,,,,feedback storage,,,,,,,,,,,,,,,,04865280-e28e-4d0e-add7-50147be7974f,,execute_actions,;3120
+90,save_value,89,,,,,week toolkit,,,,,,,,,,,,,,,,4648de57-f6e5-42b0-be1e-69e4978622e3,,execute_actions,;3240
+91,save_value,90,,,,,toolkit history,,,,,,,,,,,,,,,,4648de57-f6e5-42b0-be1e-69e4978622e3,,execute_actions,;3240
+92,save_value,91,,,,,toolkit,,,,,,,,,,,,,,,,4648de57-f6e5-42b0-be1e-69e4978622e3,,execute_actions,;3240
+93,save_value,92,,,,,week toolkit incompletes,,,,,,,,,,,,,,,,51262ebc-c372-43e9-bfe9-4c7e39887a48,,execute_actions,1760;3140
+94,save_value,93,,,,,incomplete toolkit history,,,,,,,,,,,,,,,,51262ebc-c372-43e9-bfe9-4c7e39887a48,,execute_actions,1760;3140
+95,save_value,94,,,,,incomplete toolkit,,,,,,,,,,,,,,,,51262ebc-c372-43e9-bfe9-4c7e39887a48,,execute_actions,1760;3140
+96,save_value,95,,,,,has expired,,,,,,,,,,,,,,,,13ac3991-bbb9-411f-86b5-f64076a566a0,,execute_actions,2100;3280
+97,save_value,96,,,,,n skills,0,,,,,,,,,,,,,,,98c4215a-c802-498a-a153-8d33c69a41d7,,execute_actions,2380;3160
+98,save_value,97,,,,,family type,normal,,,,,,,,,,,,,,,98c4215a-c802-498a-a153-8d33c69a41d7,,execute_actions,2380;3160
+99,save_value,98,,,,,house type,european,,,,,,,,,,,,,,,98c4215a-c802-498a-a153-8d33c69a41d7,,execute_actions,2380;3160
+100,save_value,99,,,,,get ipv content,,,,,,,,,,,,,,,,5ad2dbaf-cbd6-4a3e-9908-4f9b60419ebf,,execute_actions,2380;3440
+101,split_by_group,100,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,62712e62-3f55-470f-88d3-2b5d2c64cdf5,,split_by_groups,360;4100
+102,split_random,101,,,,,,,,,,,,,,,,,,,,,beff1ea3-5b2c-479c-b4ee-5b5a3cbc170c,,split_by_random,420;4200
+103,add_to_group,102,ABTest_test-gamification_Default,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,0fc9ae1f-01e8-4404-a88a-67e337935e40,,execute_actions,320;4320
+104,add_to_group,102,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_alternative,,,,,,,,,,,,,,3b439162-c558-4502-8e26-514ead50c8dd,141709c0-3959-409f-b07b-8ae85f436236,,execute_actions,1640;4320
+105,split_by_group,101;101;103;104,ABTest_test-gamification_Default;ABTest_test-gamification_alternative;;,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,f9807c21-4856-4952-b70e-c28d61984c46,,split_by_groups,470;4520
+106,split_random,105,,,,,,,,,,,,,,,,,,,,,e04a96dc-742f-41b8-83c7-0c67c25fa4b3,,split_by_random,530;4620
+107,add_to_group,106,ABTest_test-first-person_Default,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,013fe3b7-c029-48c3-b143-ec1308e092bd,,execute_actions,430;4740
+108,add_to_group,106,ABTest_test-first-person_alternative,,,,,ABTest_test-first-person_alternative,,,,,,,,,,,,,,475298d4-4d9e-480b-86fe-80353e83e3bc,2e84ac2c-631b-43f4-a296-b33f5bc97dd2,,execute_actions,1530;4740
+109,split_by_group,105;105;107;108,ABTest_test-first-person_Default;ABTest_test-first-person_alternative;;,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,ea99d018-e671-478d-a1ac-186aa330e686,6a33a39b-073d-4977-8b48-5ae9f15ce5ac,,split_by_groups,580;4940
+110,split_random,109,,,,,,,,,,,,,,,,,,,,,6ab5b8e8-9eda-4259-9c4a-0397ed66ac0d,,split_by_random,640;5040
+111,add_to_group,110,ABTest_test-personalisation_Default,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,ea99d018-e671-478d-a1ac-186aa330e686,8241dd0d-4011-4db1-9429-35e4e92888b5,,execute_actions,540;5160
+112,add_to_group,110,ABTest_test-personalisation_alternative,,,,,ABTest_test-personalisation_alternative,,,,,,,,,,,,,,011a575e-3315-45b7-a511-6221b8462e77,d82ef71a-ad6e-465c-a524-72822dc8d495,,execute_actions,1420;5160
+113,split_by_group,109;109;111;112,ABTest_test-personalisation_Default;ABTest_test-personalisation_alternative;;,,,,,ABTest_test-gender-personalisation_Default,,,,,,,,,,,,,,dd8f19e2-f05c-4a3e-91f4-0aab17f0ef85,3a95cc87-7912-4ed8-bc70-4e57a290a98a,,split_by_groups,690;5360
+114,split_random,113,,,,,,,,,,,,,,,,,,,,,92193428-8044-439e-8d72-1cb704f67135,,split_by_random,750;5460
+115,add_to_group,114,ABTest_test-gender-personalisation_Default,,,,,ABTest_test-gender-personalisation_Default,,,,,,,,,,,,,,dd8f19e2-f05c-4a3e-91f4-0aab17f0ef85,b8c0e5e9-cbee-4744-b98d-11cf090b0914,,execute_actions,650;5580
+116,add_to_group,114,ABTest_test-gender-personalisation_alternative,,,,,ABTest_test-gender-personalisation_alternative,,,,,,,,,,,,,,3a99ee30-eca5-453a-b2a6-c2f9ea826e81,acc7299d-2394-4c6a-96e8-8e8aee6c355d,,execute_actions,1310;5580
+117,split_by_group,113;113;115;116,ABTest_test-gender-personalisation_Default;ABTest_test-gender-personalisation_alternative;;,,,,,ABTest_test-exit_Default,,,,,,,,,,,,,,d3570b75-6313-49b7-ab91-de37aff18c4a,9d084448-3149-4246-942f-ba9d0057e642,,split_by_groups,800;5780
+118,split_random,117,,,,,,,,,,,,,,,,,,,,,1d6912a1-8161-4e04-ae51-d2b729132600,,split_by_random,860;5880
+119,add_to_group,118,ABTest_test-exit_Default,,,,,ABTest_test-exit_Default,,,,,,,,,,,,,,d3570b75-6313-49b7-ab91-de37aff18c4a,249f4c70-57a0-4ece-bb53-9964dbc6f964,,execute_actions,760;6000
+120,add_to_group,118,ABTest_test-exit_alternative,,,,,ABTest_test-exit_alternative,,,,,,,,,,,,,,d6989eed-0e82-40f1-a4bf-67fd2b302158,e5d10589-6d56-43fc-b44d-5eaeae57a014,,execute_actions,1200;6000
+121,split_by_group,117;117;119;120,ABTest_test-exit_Default;ABTest_test-exit_alternative;;,,,,,ABTest_test-hook_Default,,,,,,,,,,,,,,888b3948-c77b-4f98-a96b-429595d9fa51,d156e70d-6f0f-4316-bd28-369db7c1e0b7,,split_by_groups,910;6200
+122,split_random,121,,,,,,,,,,,,,,,,,,,,,80f3855b-8466-48e7-b4e7-2a850e0d2e63,,split_by_random,970;6300
+123,add_to_group,122,ABTest_test-hook_Default,,,,,ABTest_test-hook_Default,,,,,,,,,,,,,,888b3948-c77b-4f98-a96b-429595d9fa51,b0ffbb6e-c8ad-4360-b774-d7f3ed7df6a1,,execute_actions,870;6420
+124,add_to_group,122,ABTest_test-hook_alternative,,,,,ABTest_test-hook_alternative,,,,,,,,,,,,,,ba006260-8364-4737-be50-54fe87ebc8df,9442ee20-1e2b-48dd-a80a-38453a8cc348,,execute_actions,1090;6420
+125,save_value,121;121;123;124,ABTest_test-hook_Default;ABTest_test-hook_alternative;;,,,,node for ab tests,test,,,,,,,,,,,,,,,04700581-b7c0-4ea4-a55d-201972ee2e13,,execute_actions,980;6620

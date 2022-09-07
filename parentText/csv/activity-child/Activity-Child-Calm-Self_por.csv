@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Self-portrait
+•	Here’s how your children can draw a picture of themselves!
+•	Find a big piece of paper or cardboard. It needs to be the same length or slightly longer than the height of your child
+•	Ask your child to lie down on the paper. Carefully draw the outline of your child.
+•	Now let your child fill in the outline: face, hair, clothes, shoes, or anything they want!
+•	Ask your child to draw things that they like and do not like outside of the outline
+•	Have a conversation with your child about these things. You may learn something about your child!
+•	You can put their outline up in their room or anywhere in the house – it will make your children feel appreciated!",,,,,,,,,,,,,,,80bb18c8-0615-45ff-a8f4-66486ff58bc8,,execute_actions,;

@@ -1,0 +1,30 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,time of day,morning,,,,,,,,,,,,,,,ae2dd8f3-3037-40aa-839f-e4a867b9bc70,,execute_actions,540;
+2,split_by_value,1,,,,,,@fields.next_tip_morning,,,,,,,,,,,,,,,161ed62d-7686-4407-a138-0ea81312900a,,split_by_contact_field,460;120
+3,start_new_flow,2,2,@fields.next_tip_morning,has_any_word,2,,PLH - Introductory - First message,,,,,,,,,,,,,,33d019f2-bf14-4d77-b120-09673bdcc2bb,b3a8432a-d151-47cd-93f0-43836a40dc2c,,split_by_subflow,80;160
+4,start_new_flow,2,4,@fields.next_tip_morning,has_any_word,4,,PLH - Supportive - Share,,,,,,,,,,,,,,8fc0dab6-c0f8-4d6c-bd8d-51944d9505fc,7717c38c-fc70-4b0c-8f58-23545e74313f,,split_by_subflow,20;480
+5,start_new_flow,2,6,@fields.next_tip_morning,has_any_word,6,,PLH - Content - Relax - Quick Pause,,,,,,,,,,,,,,d6a5e8a5-c174-43d5-aa10-ebb2482012a0,4e6b7b38-2d22-4ca5-952a-723e912ad2cd,,split_by_subflow,80;320
+6,start_new_flow,2,7,@fields.next_tip_morning,has_any_word,7,,PLH - Content - Relax - CheckIn - Connect,,,,,,,,,,,,,,cea340b6-26d5-4a76-b4db-f402d97c44c2,3e02ee5d-dcee-4982-a47d-87d11681dae5,,split_by_subflow,340;260
+7,split_by_value,2,8,@fields.next_tip_morning,has_any_word,8,,@fields.age_group_for_tips,,,,,,,,,,,,,,,07a66679-7168-4aa3-bc2f-0bd4214f11ab,,split_by_contact_field,260;460
+8,start_new_flow,7,,,,,,PLH - Content - Positive - CheckIn - Instructions,,,,,,,,,,,,,,2f0ac8d2-8509-4c5a-86ac-05642c0f371f,86fc4492-00a9-4650-9b76-2eefb3e5fe7d,,split_by_subflow,240;560
+9,start_new_flow,2,10,@fields.next_tip_morning,has_any_word,10,,PLH - Content - Positive - CheckIn - Routines,,,,,,,,,,,,,,487e80f2-1639-44ee-9823-bec23f5deb79,adbaf872-c6aa-4716-beba-bcad9dff98e2,,split_by_subflow,580;260
+10,split_by_value,2,11,@fields.next_tip_morning,has_any_word,11,,@fields.age_group_for_tips,,,,,,,,,,,,,,,5738fe3b-05ef-4f36-bcbe-2869ad9438f0,,split_by_contact_field,560;400
+11,start_new_flow,10,,,,,,PLH - Content - Extra - CheckIn - COVID,,,,,,,,,,,,,,0b46cc73-63ec-48b2-b681-689b05d2fb0c,1e7252f8-af8b-4a35-ab82-ed4f79bbb6aa,,split_by_subflow,680;560
+12,split_by_value,2,13,@fields.next_tip_morning,has_any_word,13,,@fields.age_group_for_tips,,,,,,,,,,,,,,,2431970e-1d6c-437c-8bd6-39c8ec3e9f8f,,split_by_contact_field,800;400
+13,start_new_flow,12,,,,,,PLH - Content - Positive - CheckIn - Rules,,,,,,,,,,,,,,d20e33e2-d29c-4b7d-95ff-e56d0535579c,794f0925-8e72-4194-afe4-e740bccb1ec7,,split_by_subflow,900;560
+14,split_by_value,2,15,@fields.next_tip_morning,has_any_word,15,,@fields.age_group_for_tips,,,,,,,,,,,,,,,c5f2ee34-0692-465f-b1de-ea6d632ca760,,split_by_contact_field,1220;440
+15,start_new_flow,14,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - CheckIn - Online adults,,,,,,,,,,,,,,6791c709-7314-4baa-ae3b-dfeccfe71fb4,cc881913-8212-4ed9-9542-f5a07342569d,,split_by_subflow,1120;560
+16,start_new_flow,14,,,,,,PLH - Content - Positive - CheckIn - Online children,,,,,,,,,,,,,,06e38136-5cfa-4d43-80e5-ad5a36f420b1,f9fc85ed-efd7-41d4-93eb-2d3590eb0525,,split_by_subflow,1340;560
+17,split_by_value,2,17,@fields.next_tip_morning,has_any_word,17,,@fields.age_group_for_tips,,,,,,,,,,,,,,,1b498377-ad4a-4ffb-bba9-0c5c3540c75f,,split_by_contact_field,80;880
+18,start_new_flow,17,,,,,,PLH - Content - Positive - CheckIn - Redirect,,,,,,,,,,,,,,da62b3a9-b60b-405d-80ff-0f2f7d1b64fd,57264754-29fc-4d07-b03a-320c24d58244,,split_by_subflow,80;980
+19,split_by_value,2,18,@fields.next_tip_morning,has_any_word,18,,@fields.age_group_for_tips,,,,,,,,,,,,,,,358abbdb-7512-459c-b524-cf5c3d2b18e1,,split_by_contact_field,460;880
+20,start_new_flow,19,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - CheckIn - Crying,,,,,,,,,,,,,,ac114a82-a440-4266-bb5a-67f2c32183f6,06eaefaa-fbe6-4fb4-a4ec-6c5a6fbdb920,,split_by_subflow,320;1000
+21,start_new_flow,19,,,,,,PLH - Content - Positive - CheckIn - Community safety,,,,,,,,,,,,,,80e9a7b4-54c7-4b9e-adf6-0b55478f4eec,fc682d1f-5efd-410c-b9b3-cf4ac84bcaa3,,split_by_subflow,580;1000
+22,split_by_value,2,21,@fields.next_tip_morning,has_any_word,21,,@fields.age_group_for_tips,,,,,,,,,,,,,,,7cc24ffa-fa40-4eef-9e38-12d99ad5a678,,split_by_contact_field,860;900
+23,start_new_flow,10;12;17;22;7,baby;baby;teen;baby;baby,@fields.age_group_for_tips;@fields.age_group_for_tips;@fields.age_group_for_tips;@fields.age_group_for_tips;@fields.age_group_for_tips,has_any_word;has_any_word;has_any_word;has_any_word;has_any_word,Baby;Baby;Teen;Baby;Baby,,PLH - Supportive - Praise,,,,,,,,,,,,,,ca8f0488-a308-4475-8eae-f6a9ee04b828,2efbb128-929a-4bbf-94a4-2e041f6f141d,,split_by_subflow,460;580
+24,save_value,23;4,Expired;Expired,,,,has expired,tip,,,,,,,,,,,,,,,a7a35a82-1b24-4110-8736-aef5e2b9eb8a,,execute_actions,180;1440
+25,send_message,24,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,784ba791-aa7d-4d74-b052-90ab2b0bb7d8,,execute_actions,200;1540
+26,start_new_flow,22,,,,,,PLH - Content - Positive - CheckIn - Emotion,,,,,,,,,,,,,,2c3681c4-281b-4c89-a216-f1c4c47e7a4c,ddd23806-eb8c-4dab-a082-c2a83072060a,,split_by_subflow,880;1000
+27,save_value,11;13;15;16;18;20;21;26;5;6;8;9,Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired;Expired,,,,has expired,tip,,,,,,,,,,,,,,,d091cd80-720b-4564-b98c-a9fe76352b3b,,execute_actions,480;1460
+28,send_message,27,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,0f609ef8-c468-4601-a2a3-058855ad04c6,,execute_actions,480;1560
+29,save_flow_result,2,,,,,morning content,no,,,,,,,,,,,,,,,7954ac7a-e6f4-41d6-bc0c-d14f604c467d,,execute_actions,1180;200

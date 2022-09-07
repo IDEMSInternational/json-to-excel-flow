@@ -1,0 +1,79 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Understanding safe/unsafe touch,,,,,,,,,,,,,,,563cf64b-54ca-41db-933b-40b90d2ef722,,execute_actions,1240;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,bd03235f-65c7-4bab-a9e3-6ce6340ac158,,split_by_subflow,1240;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,dfbe1970-f4d0-4e2c-a9d6-8d219b41a3b3,,split_by_contact_field,1220;380
+4,send_message,3,,,,,,"The idea of talking to children about abuse can be scary. We don't know what to say. But there are some simple things that can help them understand when it is not OK to be touched, and that they can tell you if something ever happens. ",,,,,,,,,,,,,,,90448b56-f3ab-4095-b47d-370c67152160,,execute_actions,690;360
+5,send_message,4,,,,,,When you are walking or doing something together it can be easier to chat. ,,,,,,,,,,,,,,,2eb8035f-eb7b-4288-b501-a4aef6f72e50,,execute_actions,180;420
+6,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,b7b486c2-9150-467e-82d3-6d9aba974adb,,split_by_contact_field,1120;1320
+7,split_by_value,6,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,bcf2b430-c5d4-4524-829d-40bdcc63d8dd,,split_by_expression,935;1480
+8,send_message,7,,@fields.child_nickname,has_text,child_nickname,,Here's a video on how you can help protect @fields.child_nickname.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Good_Bad_Touch.m4v,,3f31b82c-2045-416a-9af8-743e44046933,,execute_actions,810;1680
+9,send_message,7,,,,,,Here's a video on how you can help protect your child.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Good_Bad_Touch.m4v,,4d664ef4-05a9-49c0-9d4b-2ee89fb0ca95,,execute_actions,1060;1680
+10,split_by_value,6,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,89518d7c-46cd-4ed4-8e9f-3592df4dc2e7,,split_by_expression,1465;1740
+11,send_message,10,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message on how you can help protect @fields.child_nickname.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Good_Bad_Touch.mp3,,,77ef2d47-b6aa-48c7-942d-02f301226f29,,execute_actions,1340;1940
+12,send_message,10,,,,,,Here's an audio message on how you can help protect your child.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Good_Bad_Touch.mp3,,,e269ae86-8aeb-4e97-b8a9-1ae7ff5305de,,execute_actions,1590;1940
+13,wait_for_response,11;12;8;9,,,,,Result 4,,,,,,,,,,,,,,,,aba91b88-498b-4e85-9d53-293c5b8cbb44,120,wait_for_response,1060;2040
+14,start_new_flow,13;13;6,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,8cf1ebb6-909e-427c-8bcc-210a819d441a,,split_by_subflow,1100;2220
+15,send_message,5,,,,,,Do you want to learn more about how to protect your child from abuse?,Yes,No,,,,,,,,,,,,,9992f69e-e775-4ae0-a5db-0b168427174e,,execute_actions,650;720
+16,wait_for_response,15,,,,,Result 1,,,,,,,,,,,,,,,,212c5990-a2a9-4b92-bc2b-2fc5504fc3fa,,wait_for_response,710;1100
+17,save_value,16,yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,1dea1022-ba65-4e8b-b27d-e5c9cfa6bbf5,,execute_actions,650;1240
+18,go_to,17,,,,,,6,,,,,,,,,,,,,,,,,,
+19,split_by_value,16,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,4df38554-7dca-4747-985d-f2f9a4fc4895,,split_by_expression,2085;880
+20,send_message,19,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,40f3ac09-95b9-4be2-9554-dd11b7fa5088,,execute_actions,1960;1080
+21,send_message,19,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,14cda2b5-8d15-4367-ad69-c2d5e9f3e7a2,,execute_actions,2210;1080
+22,save_value,20;21,,,,,last interaction,@(now()),,,,,,,,,,,,,,,969642ba-0bba-4462-a9c2-08ea8cdab0e9,,execute_actions,2250;1260
+23,send_message,16,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,86c9628f-ddd4-4fd3-a394-289260840456,,execute_actions,1630;620
+24,save_value,23,,,,,last interaction,@(now()),,,,,,,,,,,,,,,2440a5e2-837e-4bea-bb86-0cca5658fd8c,,execute_actions,1670;740
+25,go_to,24,,,,,,15,,,,,,,,,,,,,,,,,,
+26,send_message,14;14,Complete;Expired,,,,,"Here are 3 things that you should make sure your child knows to protect them from abuse:
+
+1. Learn about private parts
+2. Your body belongs to you
+3. Bad secrets should be told
+
+Type ""1"" to ""3"" to learn more about these tips. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,64d323af-b8ae-48fb-8ebf-bb1f5324d27d,,execute_actions,280;2160
+27,wait_for_response,26,,,,,list_of_tips,,,,,,,,,,,,,,,,3e4b2de9-1fb6-4d76-b6b7-6ed615ae0010,,wait_for_response,120;2500
+28,send_message,27,1,,has_number_eq,1,,"1. Learn about private parts
+
+The parts of their body that go under people's underwear or a swimsuit are private parts. It is not OK for other people to touch or to ask to look at them, or ask them to look at or touch theirs.",,,,,,,,,,,,,,,7240199d-2ee6-4cbc-93a4-90a77258afb7,,execute_actions,20;3140
+29,send_message,27,2,,has_number_eq,2,,"2. Your body belongs to you
+
+If someone tries to touch your children's private parts they must say NO and tell a grown up that they trust. ",,,,,,,,,,,,,,,72a3bcef-3f2f-4c61-8b15-4e4adacd20d4,,execute_actions,240;3140
+30,send_message,27,3,,has_number_eq,3,,"3. Bad secrets should be told. 
+
+Your children should tell you if there is a secret that makes them feel worried. You will not be angry. Only nice secrets - like a surprise birthday party - should be kept secret. ",,,,,,,,,,,,,,,c555e032-e779-417d-b70d-6b52976436d8,,execute_actions,1140;3080
+31,send_message,28;29;30,,,,,,"Please select another number if you want to learn more about how to protect your child from abuse:
+
+1. Learn about private parts
+2. Your body belongs to you
+3. Bad secrets should be told
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,e2172573-c65d-402f-8f8f-84173d5c0cbc,,execute_actions,240;4820
+32,save_value,31,,,,,touch list of tips,"@(fields.touch_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,3772dbcc-e3ce-4a41-9511-b35f97ce1a6e,,execute_actions,120;5120
+33,save_value,32,,,,,last interaction,@(now()),,,,,,,,,,,,,,,1e3c16bf-62eb-46ab-8e47-cebbd94848b4,,execute_actions,120;5240
+34,go_to,33,,,,,,27,,,,,,,,,,,,,,,,,,
+35,split_by_group,27,n no,,has_any_word,N,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,9620a27f-4866-4184-b16e-f87015654e96,,split_by_expression,1815;2720
+36,send_message,35,ABTest_test-first-person_alternative,,,,,"I understand that this can be really difficult. Please type ""Help"" if you want any extra support or guidance.",,,,,,,,,,,,,,,95c35bad-5538-4084-b22f-e858ea6d875e,,execute_actions,1940;2920
+37,send_message,35;35,ABTest_test-first-person_Default;,,,,,"We understand that this can be really difficult. Please type ""Help"" if you want any extra support or guidance.",,,,,,,,,,,,,,,ab1fd690-e201-44ae-a1e3-507593df5b8b,,execute_actions,1690;2920
+38,split_by_group,36;37,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,54ef43d1-ecda-46cc-9ec3-fa9f9007b02b,,split_by_expression,3165;3240
+39,split_by_group,38,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,e8786943-f9a8-455c-8901-d8d472ba5da1,,split_by_expression,3665;3640
+40,split_by_value,39,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,72a1d4c7-04e7-4aff-b4d7-89bc24de21ec,,split_by_expression,3915;4440
+41,send_message,40,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another  layer to your House of Support! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,d3ee09d0-e812-4cb3-a411-010193ce12a2,,execute_actions,3790;4640
+42,send_message,40,,,,,,"Well done! You have added another  layer to your House of Support! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,173fc122-9173-4c5c-a74b-9ff8198d7f1b,,execute_actions,4040;4640
+43,split_by_value,39;39,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,c796abdd-726e-4281-a352-a7bfdb6a7ce9,,split_by_expression,3415;4240
+44,send_message,43,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,b48e6f3e-7c75-4a8f-af97-96dc0d654cf8,,execute_actions,3290;4640
+45,send_message,43,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,82d79539-99c8-4a1f-938a-7506c58a6fcd,,execute_actions,3540;4640
+46,split_by_group,38;38,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,c55b362f-95b1-431f-9a67-c486577c8593,,split_by_expression,2665;3440
+47,split_by_value,46,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,39ec3c31-2a27-4dea-b2b3-da57731d1fb2,,split_by_expression,2915;4040
+48,send_message,47,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another  layer to your House of Support! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,1674bbea-5958-4739-96c4-5f2973cc5720,,execute_actions,2790;4640
+49,send_message,47,,,,,,"Well done! You have added another  layer to your House of Support! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,6967e32f-55b8-4093-9be5-433b70f13db8,,execute_actions,3040;4640
+50,split_by_value,46;46,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,9884d9b3-c883-4f7f-a747-c19e58fd28cc,,split_by_expression,2415;3840
+51,send_message,50,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,23f81d5f-cb2a-432c-b791-1e29a0e8e461,,execute_actions,2290;4640
+52,send_message,50,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try talking to your child about safe and unsafe touch. Find a safe place to do this and take your time. You can do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,837e2d78-a76e-425e-bac3-586c9feed0ee,,execute_actions,2540;4640
+53,save_value,41;42;44;45;48;49;51;52,,,,,current type assessed,tip,,,,,,,,,,,,,,,72076341-cc06-4b28-9b9d-7fe9abd1a171,,execute_actions,1650;4900
+54,save_value,53,,,,,current activity,safe_touch,,,,,,,,,,,,,,,72076341-cc06-4b28-9b9d-7fe9abd1a171,,execute_actions,1650;4900
+55,start_new_flow,54,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,ad61b731-f782-45d2-8ecc-d73c540ed3b1,,split_by_subflow,1650;5080
+56,split_by_value,55;55,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,1e210eb8-eb16-4b35-a0af-e5b6a7b84eb8,,split_by_expression,445;5340
+57,send_message,56,,@fields.user_name,has_text,user_name,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later @fields.user_name!",,,,,,,,,,,,,,,1d28c860-8a9d-498a-a2a3-1536b1ef2c7d,,execute_actions,320;5540
+58,send_message,56,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later!",,,,,,,,,,,,,,,934d0e9c-13be-4346-822a-53631ef710a6,,execute_actions,570;5540
+59,send_message,27,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b0894794-397f-4dc9-999c-22b4f6c7658c,,execute_actions,;2380
+60,go_to,59,,,,,,26,,,,,,,,,,,,,,,,,,

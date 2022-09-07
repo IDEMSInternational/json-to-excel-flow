@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Taking care of yourself
+
+Here is a short activity that can help when you are feeling like needing some more support to get through the day.",,,,,,,,,,,,,,,6b527073-e490-478f-b7db-5c24c3ef80d6,,execute_actions,;
+2,send_message,1,,,,,,Recognise what is happening for you in this moment. What are you thinking? Are your thoughts positive or negative. How do you feel? Do you feel pleasant or unpleasant? How does your body feel? Do you feel tense or relaxed? ,,,,,,,,,,,,,,,e8a142e7-6ac1-4ba9-9cef-594ac4f635e2,,execute_actions,400;280
+3,send_message,2,,,,,,Connect to your heart in a kind and gentle way. You may want to place one hand on your heart or chest.,,,,,,,,,,,,,,,ea533160-db49-4d3b-8e52-6f36a2c805ab,,execute_actions,180;520
+4,send_message,3,,,,,,"You can then say the following words silently to yourself:
+May I be peaceful.
+May I be safe.
+May I be healthy.
+May I be happy.
+May there be love in my family.
+May I feel loved.",,,,,,,,,,,,,,,1521daba-368b-4412-9d5b-300e33fe0ab4,,execute_actions,280;740
+5,send_message,4,,,,,,Take a moment to reflect on your experience. Remember that you can do this activity at any time whenever you feel like you need extra support.,,,,,,,,,,,,,,,aea07356-19fd-4539-a92d-ece6bbc2c4a5,,execute_actions,260;1040

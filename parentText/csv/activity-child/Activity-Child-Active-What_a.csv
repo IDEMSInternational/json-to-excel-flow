@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"What Are You Doing? 
+•	This game is best when more than 2 people play
+•	One person pretends to be doing something – for example, combing hair or making dinner  
+•	Another person asks, “What are you doing?”
+•	The first person needs to say something that has nothing to do with combing hair, for example, “Tying my shoes.”  
+•	The second person then starts pretending to tie their shoes until a new person asks, “What are you doing?” 
+•	The answer must always be something different than what you are actually doing!",,,,,,,,,,,,,,,cdb75de1-082a-489f-b529-895a38dc7937,,execute_actions,;

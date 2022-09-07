@@ -1,0 +1,96 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Establishing daily routines,,,,,,,,,,,,,,,7dbe3838-b3bd-45d9-8335-82d88747377e,,execute_actions,20;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,bf60228b-4980-4f81-aa9c-044ae5a466f3,,split_by_subflow,20;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,3114d033-0b29-473a-801d-347c7793a5bf,,split_by_contact_field,;320
+4,send_message,3,,,,,,"Create routines! Your children will feel more secure and safe when they know what is expected of them and how each day will go. Make a plan with them with time for play, meals, chores, school, and sleep.",,,,,,,,,,,,,,,4fd6b92d-5b05-41ee-bcdc-f35bb51bbbb3,,execute_actions,260;420
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,18b492ea-06e0-4a9f-b974-36620bf57cad,,split_by_contact_field,240;1060
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you create daily routines with your children.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/Structure_Up.m4v,,4ec7971b-b6b6-4dee-a304-aeb4dc219978,,execute_actions,;1260
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message to help you create daily routines with your children.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/Structure_Up.mp3,,,331d8bbb-a181-4ed7-bc59-c9a5b735c680,,execute_actions,240;1260
+8,wait_for_response,6;7,,,,,Result 4,,,,,,,,,,,,,,,,58538004-f2ac-4ad9-8487-fdfd5fbb332e,120,wait_for_response,100;1480
+9,send_message,5;8;8,;;No Response,,,,,"Daily routines, such as time for schoolwork, play, meals, and sleep, can help our children feel safe and secure. They also give our children a sense of security.",,,,,,,,,,,,,,,96765ff8-6fa6-4237-9696-6924598111b8,,execute_actions,2450;1540
+10,start_new_flow,9,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,d344b2c7-5b91-4f86-903d-38d63507e529,,split_by_subflow,2510;1720
+11,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,630957b8-baef-4ee2-9118-525264e8f7d7,,execute_actions,260;660
+12,wait_for_response,11,,,,,Result,,,,,,,,,,,,,,,,bce5f212-1e09-4794-add6-c640f01c8f09,3600,wait_for_response,2250;820
+13,go_to,12,y yes,,has_any_word,Y,,5,,,,,,,,,,,,,,,,,,
+14,send_message,12,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,459db7ad-6531-4a83-9c5e-7b309f8febf5,,execute_actions,2510;580
+15,go_to,14,,,,,,11,,,,,,,,,,,,,,,,,,
+16,send_message,12;12,n no;No Response,,has_any_word;,N;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,e9bbd795-cd70-4e00-a065-4081e0b893bb,,execute_actions,2550;940
+17,send_message,10;10,Complete;Expired,,,,,"Here are 4 simple tips that you can use when establishing routines with your children: 
+
+1. Give one instruction at a time
+2. Use transition warnings to help move from one activity to the next one
+3. Create regular eating and sleeping times
+4. Involve your child in creating daily routines
+
+To learn more about one of these tips, type ""1"" to 4"". You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,4d2fde4d-7586-48ab-95b3-d5b06b5f0ae1,,execute_actions,140;1740
+18,wait_for_response,17,,,,,list_of_tips,,,,,,,,,,,,,,,,0a3b643d-9e55-425b-8612-0da9b2069fc5,,wait_for_response,2150;2040
+19,send_message,18,1,,has_number_eq,1,,1. Help your younger children learn routines by taking them through the activity step by step. Give one instruction at a time. Praise them each time they follow!,,,,,,,,,,,,,,,a8bb8788-a192-484a-9a9f-d7db0f01b220,,execute_actions,60;2220
+20,send_message,18,2,,has_number_eq,2,,"2. Transition warnings can also be very helpful. They give your child some time to prepare for the next activity: ""In 5 minutes it will be time to pack up the toys before bedtime…""",,,,,,,,,,,,,,,abc03a02-8d19-4b22-b0b1-27e571b98494,,execute_actions,200;2640
+21,send_message,18,3,,has_number_eq,3,,"3. Regular eating and sleeping times are especially important for babies. Not enough sleep can make your child cranky, irritable, and short tempered.",,,,,,,,,,,,,,,88eb198f-3da9-482e-a1db-e3544dafc198,,execute_actions,2270;2700
+22,send_message,21,,,,,,"Here are some tips for how to help your child prepare for bedtime:
+
+• Try to have regular bedtimes each day as much as possible.
+• Try to make it quiet and the lights in the room dim. 
+• Spend some time with your child. You can sing a lullaby or tell a calm story.
+• Give your child a hug and kiss goodnight before leaving the room. ",,,,,,,,,,,,,,,af3a1758-b40e-472c-8919-523195f000d8,,execute_actions,2290;2880
+23,split_by_value,18,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,b4fb48f4-eb98-460d-a3f1-c773abf8ab14,,split_by_expression,2715;2380
+24,send_message,23,,@fields.child_nickname,has_text,child_nickname,,4. Involve @fields.child_nickname in creating daily plans. Set goals and rewards together. Let them plan when they do schoolwork and when they can relax!,,,,,,,,,,,,,,,682fd3df-0c7f-4c05-ba43-5390f50fdf51,,execute_actions,2590;2580
+25,send_message,23,,,,,,4. Involve your child in creating daily plans. Set goals and rewards together. Let them plan when they do schoolwork and when they can relax!,,,,,,,,,,,,,,,e3ad5c65-a8a4-4eaa-98b8-8d1cf263a29f,,execute_actions,2840;2580
+26,send_message,19;20;22;24;25,,,,,,"Please select another number if you want to learn more about creating daily routines: 
+
+1. Give one instruction at a time
+2. Use transition warnings to help move from one activity to the next one
+3. Create regular eating and sleeping times
+4, Involve your teen in creating daily routines
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,a7e48961-4bdc-4b84-9302-e9b46b267a57,,execute_actions,220;3260
+27,save_value,26,,,,,routines list of tips,"@(fields.routines_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,93e0b23b-c48d-409d-b797-7613f81d74f5,,execute_actions,220;3800
+28,save_value,27,,,,,last interaction,@(now()),,,,,,,,,,,,,,,0a218c98-f3a5-4bfa-979e-27e28669b2ae,,execute_actions,220;3980
+29,go_to,28,,,,,,18,,,,,,,,,,,,,,,,,,
+30,send_message,18,no n,,has_any_word,No,,"Here are some suggestions for routines that you could establish with your children:
+Bedtime
+Schoolwork and Online Classes
+Chores
+Mealtime
+Play/free time
+T.V. or gadget time
+Storytime
+One-on-One Time
+You can add more, too! Here is a comic on creating a daily routine with your child. ",,,,,,,,,,,,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+31,send_message,30,,,,,,"Parent: “Now let’s look at the multiplication tables…”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/creating_a_daily_routine_comic_1.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+32,send_message,31,,,,,,"Parent: “Thank you for helping me make lunch, Junior” 
+
+Child: “My favourite!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/creating_a_daily_routine_comic_2.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+33,send_message,32,,,,,,"Child: “My favourite!”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/creating_a_daily_routine_comic_3.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+34,send_message,33,,,,,,"Parent “And they all lived happily ever after…Goodnight, my love.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/creating_a_daily_routine_comic_4.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+35,send_message,34,,,,,,"Parent: ""Thank you for being so supportive with the kids today.” 
+
+(5)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/creating_a_daily_routine_comic_5.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+36,split_by_group,35,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,4aae5aba-4dbf-4910-8238-4131fce79c82,,split_by_expression,1255;5380
+37,split_by_group,36,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,f713d369-3b5e-4c64-aacc-1040d4051381,,split_by_expression,1755;5780
+38,split_by_value,37,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,3fb208a0-daf1-4499-9131-566eb6ce2e4a,,split_by_expression,2005;6580
+39,send_message,38,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,faf908f1-10f9-4082-9513-78de25aea403,,execute_actions,1880;6780
+40,send_message,38,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,ae58f0d2-c315-472b-aa9c-f0ad52fc3036,,execute_actions,2130;6780
+41,split_by_value,37;37,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,973c0cfa-0fa6-4d94-b7bd-16ce0778e359,,split_by_expression,1505;6380
+42,send_message,41,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,9ad359c8-27c3-4d33-917b-091c5d6acc79,,execute_actions,1380;6780
+43,send_message,41,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,941eb1f8-a1e0-44da-989f-492da437bb2d,,execute_actions,1630;6780
+44,split_by_group,36;36,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,2cf7f9db-3152-4cdb-b415-b6771f8b5b39,,split_by_expression,755;5580
+45,split_by_value,44,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,875d5b4c-cedc-4e55-9468-9246e0808c34,,split_by_expression,1005;6180
+46,send_message,45,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,b284f424-8398-40ba-9ff4-7f75ded50b71,,execute_actions,880;6780
+47,send_message,45,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,309ae011-6d6b-4147-9d9b-cc3e2974c2b0,,execute_actions,1130;6780
+48,split_by_value,44;44,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,385c05f5-d644-43b5-983a-e3aa5f9b4fb0,,split_by_expression,505;5980
+49,send_message,48,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,c48b2e3d-0a1c-4edb-97a7-21c39e7180a3,,execute_actions,380;6780
+50,send_message,48,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try creating at least 1 regular daily routine like having a meal together or sharing a story before bedtime. It will help your child feel secure and loved!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,214f23f7-fe65-46bd-b5b8-8d9d282231f7,,execute_actions,630;6780
+51,save_value,39;40;42;43;46;47;49;50,,,,,current type assessed,tip,,,,,,,,,,,,,,,aafb23de-c5f8-4434-9d32-6d1082ab739e,,execute_actions,360;7080
+52,save_value,51,,,,,current activity,routines,,,,,,,,,,,,,,,aafb23de-c5f8-4434-9d32-6d1082ab739e,,execute_actions,360;7080
+53,start_new_flow,52,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,de5a3409-5af2-40a0-a6bb-cf1bb467e8b8,,split_by_subflow,360;7280
+54,send_message,18,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b2813aa2-a961-4eab-bb16-b5e0648a07d0,,execute_actions,2470;2180
+55,go_to,54,,,,,,17,,,,,,,,,,,,,,,,,,

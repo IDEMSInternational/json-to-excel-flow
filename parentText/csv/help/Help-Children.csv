@@ -1,0 +1,29 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,from theme,no,,,,,,,,,,,,,,,fab674f9-25e5-4f5a-b00a-0c7e6b9807fe,,execute_actions,960;
+2,split_by_group,1,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,f644c1cf-ce65-45e4-92f1-d7c305b63575,,split_by_expression,565;120
+3,send_message,2,ABTest_test-first-person_alternative,,,,,How can I help you with your children?,Activities to do with my child,Managing challenging behaviour,Supporting my child emotionally,Keeping my child safe,Helping with schoolwork,Talking about COVID-19,How to respond to a crisis,Supporting children with disabilities,Information about child development,Go back to the help menu,,,,,e7ce7b65-c3a7-4efd-9aaf-f7991b8fbade,,execute_actions,690;320
+4,send_message,2;2,ABTest_test-first-person_Default;,,,,,How can we help you with your children?,Activities to do with my child,Managing challenging behaviour,Supporting my child emotionally,Keeping my child safe,Helping with schoolwork,Talking about COVID-19,How to respond to a crisis,Supporting children with disabilities,Information about child development,Go back to the help menu,,,,,11b83403-99b1-47bc-93e7-e86909fc6bbb,,execute_actions,440;320
+5,wait_for_response,3;4,,,,,response_child,,,,,,,,,,,,,,,,720a9d2b-cc0c-432b-b47f-ba8b924a2516,,wait_for_response,140;680
+6,start_new_flow,5,activities,,has_any_word,activities,,PLH - Handler - Activity,,,,,,,,,,,,,,a962e2fd-b75f-4a46-b930-41658dc89f0a,214ff8ac-4c88-4673-99e5-ebb656a4004c,,split_by_subflow,;1660
+7,start_new_flow,5,behaviour,,has_any_word,behaviour,,PLH - Content - Extra - Behave,,,,,,,,,,,,,,008c4728-e962-4263-a7f4-40d54b639c92,ee925956-10e5-4933-b5f7-93fcf3aa05c2,,split_by_subflow,120;1320
+8,start_new_flow,5,emotionally,,has_any_word,emotional,,PLH - Content - Positive - Behave - Emotion,,,,,,,,,,,,,,530536dd-3ac9-475c-b80b-b0b0659535cd,dfb3c861-c5cc-4172-ba95-7695191800a2,,split_by_subflow,260;1180
+9,start_new_flow,5,covid covid19 covid-19,,has_any_word,Covid-19,,PLH - Content - Extra - COVID,,,,,,,,,,,,,,8c6fb5bf-5f90-4a33-8fdb-ecd3ffd4b906,8d2e58fa-b17a-4cbe-a74c-25b6f319cc08,,split_by_subflow,1020;900
+10,start_new_flow,5,crisis,,has_any_word,Crisis,,PLH - Content - Positive - Behave - Crisis,,,,,,,,,,,,,,8b191a0a-6f36-4b8b-8211-d0883ce2d564,579b845d-ea46-49f3-83e0-6b5a6e5f3416,,split_by_subflow,1520;780
+11,start_new_flow,5,disabilities,,has_any_word,Disabilities,,PLH - Content - Extra - Disability,,,,,,,,,,,,,,1750e0a7-af13-48a4-8c02-67d8eb2c4e83,ffa4453a-0fad-4f0b-8144-fe9e8820f52e,,split_by_subflow,1120;1180
+12,start_new_flow,5,development,,has_any_word,Development,,PLH - Content - Extra - Development,,,,,,,,,,,,,,cc9b8048-d44d-4bd5-aeb9-d2b32ec5fb1f,64b25e2d-e438-4eaf-b8fb-c0b8f1f54012,,split_by_subflow,1300;900
+13,start_new_flow,5,back,,has_any_word,Back,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,e732adef-6a90-4378-815b-b821b154b324,,split_by_subflow,1480;1380
+14,start_new_flow,5,schoolwork,,has_any_word,school,,PLH - Content - Positive - Education,,,,,,,,,,,,,,d281a3b5-b601-492a-9a2c-da0a67303ec3,7a7753e1-7de5-4357-b307-798ffd2ceee9,,split_by_subflow,1600;1020
+15,send_message,5,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,8adba9f0-2072-44df-ab1d-d5957df4b3db,,execute_actions,1220;500
+16,go_to,15,,,,,,2,,,,,,,,,,,,,,,,,,
+17,split_by_group,5,safe,,has_any_word,safe,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,f1f2569c-c7bf-40d1-bc93-f04185c34470,,split_by_expression,835;1440
+18,send_message,17,ABTest_test-first-person_alternative,,,,,How can I help you keep your children safe?,Online safety,Sexual abuse prevention,Responding to crisis,Go back to the previous options,,,,,,,,,,,08435e33-db3f-4062-b193-514e44e22024,,execute_actions,960;1640
+19,send_message,17;17,ABTest_test-first-person_Default;,,,,,How can we help you keep your children safe?,Online safety,Sexual abuse prevention,Responding to crisis,Go back to the previous options,,,,,,,,,,,e4589da2-a9a2-4728-ae24-bd79fc382d3b,,execute_actions,710;1640
+20,wait_for_response,18;19,,,,,response_safe,,,,,,,,,,,,,,,,b0de8763-260e-42ea-a550-6b2fad0c7e69,,wait_for_response,960;1900
+21,split_by_value,20,online,,has_any_word,Online,,"@(or(fields.parent_teenager = ""true"",fields.parent_young_child = ""true""))",,,,,,,,,,,,,,,ffff1cef-ca04-4399-83db-b8aaec78dffb,,split_by_expression,280;2020
+22,start_new_flow,21,false,"@(or(fields.parent_teenager = ""true"",fields.parent_young_child = ""true""))",has_any_word,False,,PLH - Content - Positive - Online adults,,,,,,,,,,,,,,f6139e3a-1a19-4cf3-aac9-ec710afac3c6,a699c281-8c7b-4d34-b419-ae9575322bff,,split_by_subflow,120;2120
+23,start_new_flow,21,,,,,,PLH - Content - Positive - Online children,,,,,,,,,,,,,,8ee91956-d382-4b11-8d87-e7caacc5d57e,e1b457c9-ac7d-4b25-bb2b-4a0ceab8997b,,split_by_subflow,320;2260
+24,start_new_flow,20,sexual abuse,,has_any_word,Sexual,,PLH - Content - Positive - Safe or unsafe touch,,,,,,,,,,,,,,8c08b215-0afe-44fc-9b39-46adc04d087f,cd177362-3489-4403-94bf-8f1b535ff7fc,,split_by_subflow,960;2420
+25,start_new_flow,20,crisis,,has_any_word,Crisis,,PLH - Content - Positive - Behave - Crisis,,,,,,,,,,,,,,8b191a0a-6f36-4b8b-8211-d0883ce2d564,ec84355b-1ae8-4f8d-a028-d4910c914e4a,,split_by_subflow,1220;2260
+26,go_to,20,back,,has_any_word,Back,,2,,,,,,,,,,,,,,,,,,
+27,send_message,20,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1db079d5-eaf5-464d-956b-aa973def989d,,execute_actions,1380;2040
+28,go_to,27,,,,,,17,,,,,,,,,,,,,,,,,,

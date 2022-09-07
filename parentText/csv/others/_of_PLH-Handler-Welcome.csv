@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.completed_welcome,,,,,,,,,,,,,,,e5884559-e9e4-4281-ad88-348e45ed95a4,,split_by_contact_field,660;
+2,split_by_value,1,,,,,,@fields.has_expired,,,,,,,,,,,,,,,fc15e181-16b3-4e6b-b2d6-0d292d85e6ba,,split_by_contact_field,540;120
+3,start_new_flow,2,,,,,,Copy of PLH - Welcome - Entry,,,,,,,,,,,,,,7c992990-4ffb-46ce-b36a-27ebb4dd43dc,aceb3078-16c1-4a59-9d6c-980ab7476da1,,split_by_subflow,900;200
+4,split_by_group,3,Complete,,,,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,8ef3e7aa-ea6b-4719-a6a9-907a8f1d3988,,split_by_groups,780;380
+5,start_new_flow,2;4,welcome_registration;in program,@fields.has_expired;,has_any_word;,Welcome_registration;,,Copy of PLH - Welcome - Initial registration,,,,,,,,,,,,,,36d1bef7-da41-4c25-8d36-ec468fa81bd7,236693c1-0cf2-431e-9722-f687c92d52eb,,split_by_subflow,440;540
+6,start_new_flow,2;5,welcome_tips;Complete,@fields.has_expired;,has_any_word;,Welcome_tips,,Copy of PLH - Welcome - Tips,,,,,,,,,,,,,,13f60fa5-40a6-4f54-a498-3b1ef5de58a4,bc3f913e-99e7-4e7b-be70-6bbbfde24dc4,,split_by_subflow,580;800
+7,save_value,6,Complete,,,,completed welcome,yes,,,,,,,,,,,,,,,5d95364c-42f1-4742-9950-c7b262faf798,,execute_actions,360;960
+8,save_value,6,Expired,,,,has expired,welcome_tips,,,,,,,,,,,,,,,724355fb-da92-4d95-adcd-3127908ac943,,execute_actions,800;920
+9,save_value,5,Expired,,,,has expired,welcome_registration,,,,,,,,,,,,,,,f503ba2a-5ffc-4c2d-9158-15d2ef04320d,,execute_actions,940;620
+10,save_value,3,Expired,,,,has expired,welcome_entry,,,,,,,,,,,,,,,3e5d1b63-10f5-433a-a82d-78cf58e9ac25,,execute_actions,1200;420
+11,send_message,10;8;9,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,77a4f0bd-8be7-4266-bf11-7ac83b97dff2,,execute_actions,1100;740

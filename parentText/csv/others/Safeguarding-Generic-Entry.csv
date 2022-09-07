@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Are you currently facing an emergency?,Yes,No,,,,,,,,,,,,,062e0001-53b6-445e-8d3c-5216188c52d5,,execute_actions,520;80
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,fedcfa13-e97a-4204-9198-04ab977cc190,,wait_for_response,520;260
+3,start_new_flow,2,yes,,has_any_word,Yes,,PLH - Safeguarding - Generic - Referrals,,,,,,,,,,,,,,3ceaa5d3-226f-4d05-96c1-b0cbc3b9f10b,9079dfe5-a9f9-48db-bc47-51954998b51c,,split_by_subflow,300;440
+4,send_message,2,no,,has_any_word,No,,"Type ""SOS"" at any time if you would like the details of any other emergency service or hotline. Remember everything you say will be completely private!",,,,,,,,,,,,,,,79068b6c-7736-459c-ac88-b4d96479da44,,execute_actions,780;400
+5,send_message,2,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,97e9747f-e201-41d1-b09e-a1cbf2487bea,,execute_actions,880;160
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

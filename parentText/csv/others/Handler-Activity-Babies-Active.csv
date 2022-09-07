@@ -1,0 +1,17 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_random,start,,,,,,,,,,,,,,,,,,,,,040ca742-8359-42e6-a951-7c1914c471d4,,split_by_random,620;20
+2,split_random,1,1,,,,,,,,,,,,,,,,,,,,77c7d147-44ce-4d32-848c-73909db2af09,,split_by_random,260;180
+3,start_new_flow,2,1,,,,,PLH - Activity - Baby - Active - Mirror game,,,,,,,,,,,,,,b55e43ba-c6ca-4b79-94b6-4d4d1c24098b,2e7e6689-10ba-4328-ac02-60db226e99ef,,split_by_subflow,;600
+4,start_new_flow,2,2,,,,,PLH - Activity - Baby - Active - Peek a boo,,,,,,,,,,,,,,2fa113f6-6fdb-4367-8f4e-9fcfde6a4c6b,f87922d8-961e-4f03-af8a-e8fbb885c4f9,,split_by_subflow,220;520
+5,start_new_flow,2,3,,,,,PLH - Activity - Baby - Active - Funny faces,,,,,,,,,,,,,,11126914-8429-470d-b824-0fc70d562632,26fce944-061c-4403-bfd0-d69ccbaa76ae,,split_by_subflow,460;540
+6,start_new_flow,2,4,,,,,PLH - Activity - Baby - Active - The sun is coming,,,,,,,,,,,,,,2a280bd2-1dc3-4ad8-bba3-d24af52fccba,eabd5aed-31cc-4af1-ae5e-cd3cf144fb10,,split_by_subflow,120;840
+7,start_new_flow,2,5,,,,,PLH - Activity - Baby - Active - Shakers,,,,,,,,,,,,,,2490b8c4-39e0-4aba-b2f8-7933d0c354e7,ea62887a-7b7e-4c02-9397-3b28acdf6d75,,split_by_subflow,400;840
+8,split_random,1,2,,,,,,,,,,,,,,,,,,,,0142bfe6-daf9-49c0-be08-5593b0398977,,split_by_random,860;200
+9,start_new_flow,8,2,,,,,PLH - Activity - Baby - Active - Down in a ditch,,,,,,,,,,,,,,dc860012-e180-4825-9da7-e9c26d922476,7e81b7c6-8deb-4add-a553-0ad4f1963644,,split_by_subflow,740;640
+10,start_new_flow,8,3,,,,,PLH - Activity - Baby - Active - Dance party,,,,,,,,,,,,,,dff6e922-2861-44a8-aeea-b10a16ebf529,b2464a77-a44c-4e87-985d-0f993aad0d95,,split_by_subflow,960;660
+11,start_new_flow,8,4,,,,,PLH - Activity - Baby - Active - See it Be it,,,,,,,,,,,,,,0f38b734-2c82-4fa0-8d30-7838558637a2,35737e25-6e82-479f-85e6-1923f821ea35,,split_by_subflow,1280;680
+12,start_new_flow,8,5,,,,,PLH - Activity - Baby - Active - Cooking together,,,,,,,,,,,,,,c6fe558b-f41b-47b7-97b8-c0060844f838,7a508ee3-3d09-4fa8-8ce3-5be57fd3db0e,,split_by_subflow,1120;840
+13,split_by_value,8,6,,,,,@fields.type_of_media,,,,,,,,,,,,,,,89210cfc-e48f-4f98-8441-bd2f00763c77,,split_by_contact_field,1740;340
+14,send_message,13,high,@fields.type_of_media,has_any_word,High,,Here is a song made just for parents like you.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/animated/resourceType/video/eng/LetsSlowDown.mp4,,d7165c07-3112-4ddb-946a-44ce1f7f52aa,,execute_actions,1640;520
+15,start_new_flow,13;8,low;1,@fields.type_of_media;,has_any_word;,Low;,,PLH - Activity - Baby - Active - Musical Toes,,,,,,,,,,,,,,8d339008-332b-4857-b8d8-94fe44e23599,44aabb64-a147-4e47-afc7-aa28ee02e896,,split_by_subflow,1300;420
+16,send_message,13,,,,,,Here is a song made just for parents like you.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/animated/resourceType/audio/eng/LetsSlowDown.mp3,,,2400a0a9-8829-4f31-a88f-14408d53e23c,,execute_actions,1880;520

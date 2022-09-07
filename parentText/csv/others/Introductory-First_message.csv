@@ -1,0 +1,4 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,bc9c7456-f67a-45a2-8b39-7e0324293b0d,,split_by_expression,640;80
+2,send_message,1,ABTest_test-first-person_alternative,,,,,Good morning! I am so happy to be sharing these parenting tips with you. ,,,,,,,,,,,,,,,e97acc44-c220-4175-aa88-5bec5225ede8,,execute_actions,765;280
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,Good morning! We are so happy to be sharing these parenting tips with you. ,,,,,,,,,,,,,,,09b5ce45-2ca8-440c-b575-4bfbf738e3d9,,execute_actions,515;280

@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Give Yourself A Hug
+•	Bella mama, bella mama hey. 
+•	Hey there! How are you feeling today? Do you feel great?!
+•	Maybe not. Maybe you shouted again at your children today? Maybe you got angry and said something you don't feel proud of? It’s ok. It’s super stressful right now. 
+•	Take a deep breath and think of one thing you did today that you do feel proud of. It doesn't have to be big. And wrap your arms around your body and give yourself a hug. And now think of one thing you did today that you don't feel proud of. What can you do differently tomorrow? And wrap your arms around your body and give yourself a hug. 
+•	Bella mama, bella mama, bella mama, bella mama, bella mama, bella mama hey”.",,,,,,,,,,,,,,,e7fe92fd-037d-45ee-94fc-519722c1204c,,execute_actions,;

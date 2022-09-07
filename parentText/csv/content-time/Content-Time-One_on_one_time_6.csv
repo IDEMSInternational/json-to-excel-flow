@@ -1,0 +1,159 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,One-on-one time,,,,,,,,,,,,,,,16c22f1b-7c2f-4c02-a601-c8474916fbee,,execute_actions,680;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,96c14014-3209-4e51-bd73-012e0c1b2039,,split_by_subflow,370;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,d68f3241-b6bd-4f7f-adc8-817d0f6b3224,,split_by_contact_field,350;280
+4,send_message,3,,,,,,"Invest in One-on-One Time! The more time you spend with your children, the more likely they will listen to you and behave well at other times. It really works!",,,,,,,,,,,,,,,5d6e36ed-f604-423a-90d4-c505d2988a1c,,execute_actions,1090;340
+5,split_by_value,4,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,997b15e3-a80c-4cf2-9a14-a6aaf0373624,,split_by_expression,1010;580
+6,split_by_value,3;5,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,0f34b4bc-dd99-4975-9ae8-b1640486ee45,,split_by_contact_field,5300;1060
+7,split_by_value,6,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,9efd140a-050e-45a8-a806-a98c79346b74,,split_by_expression,1315;1160
+8,send_message,7,,@fields.child_nickname,has_text,child_nickname,,Here's a video about spending one-on-one time with @fields.child_nickname!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/One_On_One_Time_Teens.m4v,,5fde774d-f5d6-4ac2-b0d4-0f71a423e4db,,execute_actions,1190;1360
+9,send_message,7,,,,,,Here's a video about spending one-on-one time with your teen!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/video/eng/One_On_One_Time_Teens.m4v,,1c7f2795-19af-436a-a09d-3e6c17c28b9a,,execute_actions,1440;1360
+10,split_by_value,6,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,323c5f15-d1d1-4f69-9269-6735b79467e0,,split_by_expression,2285;1400
+11,send_message,10,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message about spending one-on-one time with @fields.child_nickname!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/One_On_One_Time_Teens.mp3,,,83cff0a1-96cc-4c63-9424-0db3b1b046dd,,execute_actions,2160;1600
+12,send_message,10,,,,,,Here's an audio message about spending one-on-one time with your teen!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/voiceover/resourceType/audio/eng/One_On_One_Time_Teens.mp3,,,7f7e88b8-a193-4219-8ebc-dcc950399989,,execute_actions,2910;1600
+13,wait_for_response,11;12;8;9,,,,,Result 6,,,,,,,,,,,,,,,,5a597178-d033-4bcf-97e4-0b80ef1b28be,120,wait_for_response,1460;1860
+14,split_by_value,13;13;6,;No Response;,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,158d580a-114d-46a5-9b81-5a9db72cb725,,split_by_expression,2660;2380
+15,send_message,14,man,@fields.gender_personalisation,has_any_word,man,,"Fathers can have difficult relationships with their teenagers, it can be hard to find pleasure from spending time with them. Instead, we spend a lot of time disciplining them or complaining about how they are behaving.",,,,,,,,,,,,,,,7a960029-0af7-4b82-b854-38bea7b9a82f,,execute_actions,2410;2580
+16,send_message,14,woman,@fields.gender_personalisation,has_any_word,woman,,"Mothers can have difficult relationships with their teenagers, it can be hard to find pleasure from spending time with them. Instead, we spend a lot of time disciplining them or complaining about how they are behaving.",,,,,,,,,,,,,,,9dffe502-a654-4f27-973a-002da78989e7,,execute_actions,2660;2580
+17,send_message,14,,,,,,"When we have difficult relationships with our teenagers, it can be hard to find pleasure from spending time with them. Instead, we spend a lot of time disciplining them or complaining about how they are behaving.",,,,,,,,,,,,,,,d3920f47-c49d-4c46-9ecf-9031a9f9bdc6,,execute_actions,2910;2580
+18,send_message,15;16;17,,,,,,"One-on-One Time with your teen helps build a positive and trusting relationship. When you really notice them and listen to what they are saying and what they like, you make them feel valued and appreciated.",,,,,,,,,,,,,,,1ea164c8-131a-4202-960f-74755da1d54c,,execute_actions,2970;3060
+19,send_message,5,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,fa41c205-9e34-4daf-9a28-b20bed8fb525,,execute_actions,2140;260
+20,wait_for_response,19,,,,,Result 10,,,,,,,,,,,,,,,,d5118ebb-e7bc-4e09-9d82-560915754668,3600,wait_for_response,1790;540
+21,go_to,20,Y yes,,has_any_word,Y,,6,,,,,,,,,,,,,,,,,,
+22,send_message,20,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,e50ef239-b8a3-4d0c-b022-4dd29e7bd2e9,,execute_actions,5900;480
+23,go_to,22,,,,,,19,,,,,,,,,,,,,,,,,,
+24,send_message,20;20,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,5503dd60-e345-4ee1-9c98-86c34718232f,,execute_actions,5300;700
+25,send_message,18,,,,,,Would you like to learn more?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/playing_with_teen.jpg,,,,89ecd275-6fef-423a-864f-b95c2c0be4ae,,execute_actions,6500;3380
+26,wait_for_response,25,,,,,Result 13,,,,,,,,,,,,,,,,3637f02e-950a-4a7e-aa04-1e1b1736fc65,,wait_for_response,700;3600
+27,start_new_flow,26,yes y,,has_any_word,Yes,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,b39c4825-e42c-49e9-b066-90869db258e9,,split_by_subflow,1110;4240
+28,split_by_value,26,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,e4d03648-5582-47e6-b95d-ceae529d9d64,,split_by_expression,3385;3800
+29,send_message,28,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" whenever you want to learn more about how to spend One-on-One Time with your teen. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,dec4b46b-3fff-4e6c-84b1-e5cb91d5e42e,,execute_actions,3260;4000
+30,send_message,28,,,,,,"That's okay! You can always type ""Help"" whenever you want to learn more about how to spend One-on-One Time with your teen. Chat to you later!",,,,,,,,,,,,,,,19c262a1-977c-4495-8b87-0a0c0354ceb0,,execute_actions,5260;4000
+31,save_value,29;30,,,,,last interaction,@(now()),,,,,,,,,,,,,,,d224b0f0-f87a-4c7b-8da5-67ac0e7ad55b,,execute_actions,6600;4080
+32,send_message,26,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,f9d23256-4d32-4276-b3de-a93d2ec58146,,execute_actions,2930;3600
+33,go_to,32,,,,,,25,,,,,,,,,,,,,,,,,,
+34,send_message,27;27,Complete;Expired,,,,,"Here are 6 tips on how to make One-on-One Time a positive experience for you and your teen:
+
+1. Do it every day
+2. Let your teen choose the activity
+3. Follow your teen's lead
+4. Give your teen your full attention
+5. Show your teen you are really listening
+6. Have fun!
+
+To learn more about one of these tips, type ""1"" to ""6"". You can also type ""N"" to move on.",,,,,,,,,,,,,,,09591146-bcc8-4a20-b2db-b2528a650c00,,execute_actions,2120;4320
+35,wait_for_response,34,,,,,list_of_tips,,,,,,,,,,,,,,,,22a34a22-4396-49b8-9a60-278dfa4662ba,,wait_for_response,1050;4720
+36,split_by_value,35,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,850809f2-84f2-44e0-a7ae-4491ce8b596e,,split_by_expression,125;5360
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"1. Do it every day
+Set aside a specific time to spend One-on-One Time with @fields.child_nickname each day. Choose a time when you and @fields.child_nickname will not be interrupted and when @fields.child_nickname does not have something else that they want to do, like watching TV or playing with phones.",,,,,,,,,,,,,,,2f926eed-a745-454c-8198-66090438bfe5,,execute_actions,;5560
+38,send_message,36,,,,,,"1. Do it every day
+Set aside a specific time to spend One-on-One Time with your teen each day. Choose a time when you and your teen will not be interrupted and when your teen does not have something else that they want to do, like watching TV or playing with phones.",,,,,,,,,,,,,,,65696b5a-a33f-4481-bdd8-6160f05faa60,,execute_actions,250;5560
+39,split_by_value,35,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,085bcbda-a548-4a9d-b52b-767847cff0ca,,split_by_expression,6105;4760
+40,send_message,39,,@fields.child_nickname,has_text,child_nickname,,"2. Let your teen choose the activity
+Tell @fields.child_nickname that you would like to spend some time with them and that they can choose what to do or talk about. @fields.child_nickname might think this is weird at first but will come to enjoy having this dedicated time with you!",,,,,,,,,,,,,,,5910347e-1415-455c-ba5a-4af78624fbb0,,execute_actions,5980;4960
+41,send_message,39,,,,,,"2. Let your teen choose the activity
+Tell your teen that you would like to spend some time with them and that they can choose what to do or talk about. Your teen might think this is weird at first but will come to enjoy having this dedicated time with you!",,,,,,,,,,,,,,,79a42e91-28f5-4a2c-9b56-9ca5b0d828be,,execute_actions,6480;4960
+42,split_by_value,40;41,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,8b5dd907-ec89-4ba1-baa6-f8163ae846b9,,split_by_expression,6355;5640
+43,send_message,42,,@fields.child_nickname,has_text,child_nickname,,"Try to do something different than watching TV or playing with a tablet/phone. However, you may need to at first join @fields.child_nickname and watch their favourite TV programme with them. They may feel comfortable doing other activities with time.",,,,,,,,,,,,,,,defff8e6-5304-4143-bf2d-718eb2aabb06,,execute_actions,6230;5840
+44,send_message,42,,,,,,"Try to do something different than watching TV or playing with a tablet/phone. However, you may need to at first join your teen and watch their favourite TV programme with them. They may feel comfortable doing other activities with time.",,,,,,,,,,,,,,,52ee4bb4-f94a-41d0-b5f8-eab05c4f66f3,,execute_actions,6480;5840
+45,split_by_value,35,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,ccda2bd4-be0e-4984-9eea-d7036643708b,,split_by_expression,1935;5140
+46,send_message,45,,@fields.child_nickname,has_text,child_nickname,,"3. Follow your teen's lead
+Try to follow @fields.child_nickname's lead during One-on-One Time. Accept their suggestions. Remember this is @fields.child_nickname's activity. Your job is to show an interest and say something nice.",,,,,,,,,,,,,,,b821d156-d814-4818-be55-57ad91bc6cd5,,execute_actions,1810;5340
+47,send_message,45,,,,,,"3. Follow your teen's lead
+Try to follow your teen's lead during One-on-One Time. Accept their suggestions. Remember this is your teen's activity. Your job is to show an interest and say something nice.",,,,,,,,,,,,,,,2d279393-5b37-4993-9ff1-eea464a6df54,,execute_actions,2060;5340
+48,split_by_value,35,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,3c82c003-e530-41a7-8b4d-25da1ddd7304,,split_by_expression,5525;6620
+49,send_message,48,,@fields.child_nickname,has_text,child_nickname,,"4. Give your teen all of your attention. 
+Switch off the television and put away phones. Make sure you can give all of your attention to @fields.child_nickname.",,,,,,,,,,,,,,,7591668d-cc26-4c03-a380-dc6479efb5d5,,execute_actions,5400;6820
+50,send_message,48,,,,,,"4. Give your teen all of your attention. 
+Switch off the television and put away phones. Make sure you can give all of your attention to your teen.",,,,,,,,,,,,,,,9370e25f-bb57-4ff8-8aca-c568a2446d25,,execute_actions,5900;6820
+51,split_by_value,49;50,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,d27f1ee7-7dd7-4520-9be8-521e13365467,,split_by_expression,5775;7020
+52,send_message,51,,@fields.child_nickname,has_text,child_nickname,,Look at @fields.child_nickname. Nodding or “I see” shows @fields.child_nickname you are really paying attention. Accept what they are saying without judging them.,,,,,,,,,,,,,,,e27753d7-6c8f-4510-8118-13dd9af38e0d,,execute_actions,5650;7220
+53,send_message,51,,,,,,Look at your teen. Nodding or “I see” shows your teen you are really paying attention. Accept what they are saying without judging them.,,,,,,,,,,,,,,,50399581-42ae-40f6-b8de-29792e79c3dc,,execute_actions,5900;7220
+54,split_by_value,35,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,2180312e-3b5d-4ef7-a4dd-903efe5f1cdb,,split_by_expression,885;5900
+55,send_message,54,,@fields.child_nickname,has_text,child_nickname,,"5. Show your teen you are really listening
+
+You can even try rephrasing back what @fields.child_nickname says when they speak to you. For example, when @fields.child_nickname says, “This math problem is really hard,” you can say, “Yeah, I see that you are finding it difficult.” It shows you are really listening to them and will make them feel supported.",,,,,,,,,,,,,,,d28e46ba-9a04-447e-af8a-78a51e723331,,execute_actions,760;6100
+56,send_message,54,,,,,,"5. Show your teen you are really listening
+
+You can even try rephrasing back what your teen says when they speak to you. For example, when your teen says, “This math problem is really hard,” you can say, “Yeah, I see that you are finding it difficult.” It shows you are really listening to them and will make them feel supported.",,,,,,,,,,,,,,,f66daf88-5184-484a-94fb-553236de2eb8,,execute_actions,1010;6100
+57,split_by_value,35,6,,has_number_eq,6,,@fields.child_nickname,,,,,,,,,,,,,,,d6283e11-80b9-4ab6-931b-948c41c37bf3,,split_by_expression,1625;7560
+58,send_message,57,,@fields.child_nickname,has_text,child_nickname,,"6. Have fun!
+One-on-One Time with your teen can be fun for you, too! You might even find that you feel less stressed after spending time with @fields.child_nickname.",,,,,,,,,,,,,,,a1d3b9ad-2c9b-473a-ab1a-fd79ac3488d6,,execute_actions,1500;7760
+59,send_message,57,,,,,,"6. Have fun!
+One-on-One Time with your teen can be fun for you, too! You might even find that you feel less stressed after spending time with your teen.",,,,,,,,,,,,,,,437bd9b6-2433-46bc-8c6a-957fce35cc78,,execute_actions,1750;7760
+60,send_message,37;38;43;44;46;47;52;53;55;56;58;59,,,,,,"Please select another number if you want to learn more about how to spend One-on-One Time with your teen:
+
+1. Do it every day
+2. Let your teen choose the activity
+3. Follow your teen's lead
+4. Give your teen your full attention
+5. Show your teen you are really listening
+6. Have fun!
+
+You can also type ""N"" to move on.",,,,,,,,,,,,,,,99a10c75-4376-4c94-a3ff-b5a400f8cc34,,execute_actions,270;6940
+61,save_value,60,,,,,one time teen list of tips,"@(fields.one_time_teen_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,8868819b-f19e-4a09-8b4e-33c3886aa260,,execute_actions,250;7760
+62,go_to,61,,,,,,35,,,,,,,,,,,,,,,,,,
+63,split_by_value,35,n no,,has_any_word,N,,@fields.child_nickname,,,,,,,,,,,,,,,5dbf4ac9-37d6-467e-bb4c-79675fc0dcf4,,split_by_expression,3115;7980
+64,send_message,63,,@fields.child_nickname,has_text,child_nickname,,Here is a comic that shows how you can give @fields.child_nickname love and support when they share difficult emotions with you.,,,,,,,,,,,,,,,ffdccb49-7286-44b1-b299-05adc8504ba3,,execute_actions,2990;8180
+65,send_message,64,,,,,,"Parent: “How are you doing, Andy?”
+
+Teen (looking sad): “I wish I could hang out with my friends.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_1.png,,,,ffdccb49-7286-44b1-b299-05adc8504ba3,,execute_actions,2990;8180
+66,send_message,65,,,,,,"Parent (thinking): ""Hmmm…that can wait…""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,ffdccb49-7286-44b1-b299-05adc8504ba3,,execute_actions,2990;8180
+67,send_message,66,,,,,,"Parent (looks back to teen): “I understand it is hard to be separate from your friends. Especially since I am sure they are missing you, too. Let’s think of some ways that you could reach out to them.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_3.png,,,,ffdccb49-7286-44b1-b299-05adc8504ba3,,execute_actions,2990;8180
+68,send_message,67,,,,,,"Teen: ""Maybe I can make a TikTok video to share with them. But I am not sure how…can you help me?”
+
+Parent: “I would be happy to help and would like to know more about TikTok, too!”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_4.png,,,,ffdccb49-7286-44b1-b299-05adc8504ba3,,execute_actions,2990;8180
+69,send_message,63,,,,,,Here is a comic that shows how you can give your teen love and support when they share difficult emotions with you.,,,,,,,,,,,,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+70,send_message,69,,,,,,"Parent: “How are you doing, Andy?”
+
+Teen (looking sad): “I wish I could hang out with my friends.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_1.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+71,send_message,70,,,,,,"Parent (thinking): ""Hmmm…that can wait…""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+72,send_message,71,,,,,,"Parent (looks back to teen): “I understand it is hard to be separate from your friends. Especially since I am sure they are missing you, too. Let’s think of some ways that you could reach out to them.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_3.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+73,send_message,72,,,,,,"Teen: ""Maybe I can make a TikTok video to share with them. But I am not sure how…can you help me?”
+
+Parent: “I would be happy to help and would like to know more about TikTok, too!”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/comic/giving_your_teen_attention_comic_4.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+74,split_by_group,68;73,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,446aae54-34d8-4db5-88b0-bc8da4e9518d,,split_by_expression,4385;9200
+75,split_by_group,74,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,4dd900aa-870a-4bf1-87d5-885de90ba98e,,split_by_expression,4885;9600
+76,split_by_value,75,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,68bf79f0-7a32-4e5e-8d0a-6909012f9763,,split_by_expression,5135;10400
+77,send_message,76,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,6a9a8767-be15-4841-9785-7ffff0ea55b9,,execute_actions,5010;10600
+78,send_message,76,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,aa392374-f6c6-43dd-b0b5-634a68093363,,execute_actions,5260;10600
+79,split_by_value,75;75,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,ed9fd28d-8908-4c1a-8877-ce1b121dd175,,split_by_expression,4635;10200
+80,send_message,79,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,781b4650-d98b-41fe-b483-88d37e5af6a1,,execute_actions,4510;10600
+81,send_message,79,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,"@(fields.house_of_support_path & ""house_"" & fields.n_skills & "".jpg",,,,c014b6ff-1821-49f3-a682-07cc0b717946,,execute_actions,4760;10600
+82,split_by_group,74;74,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,2f20c6e6-ec2b-443e-9768-65642f643034,d9fa0013-ca83-4d44-9e5c-7acbdc662fcd,,split_by_expression,3885;9400
+83,split_by_value,82,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,f4bcf0eb-c2e8-42c3-80ce-cde1fb612bc8,,split_by_expression,4135;10000
+84,send_message,83,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,2a800f37-8527-4e72-9329-e48541952955,,execute_actions,4010;10600
+85,send_message,83,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,45c22098-f6a0-491e-bdf0-c6deead5d52a,,execute_actions,4260;10600
+86,split_by_value,82;82,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,f243b88d-3deb-4159-9e61-77278b56bccb,,split_by_expression,3635;9800
+87,send_message,86,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,95a55496-335c-44f7-addc-3229e751a8b3,,execute_actions,3510;10600
+88,send_message,86,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your teen. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/congratulation.jpg,,,,415e6dd0-7a64-491c-a27b-0a1bbb3ad65a,,execute_actions,3760;10600
+89,send_message,35,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,269b2811-1ed8-4f5e-9e27-af804eba11b8,,execute_actions,740;4440
+90,go_to,89,,,,,,34,,,,,,,,,,,,,,,,,,
+91,send_message,77;78;80;81;84;85;87;88,,,,,,Would you like some suggestions for activities to do with your teen?,Yes,No,,,,,,,,,,,,,66fe1719-fda2-4169-a626-0dfa5edb989b,,execute_actions,5960;10880
+92,wait_for_response,91,,,,,Result 9,,,,,,,,,,,,,,,,4ae2be8a-8987-4b86-9afc-d09f2ccfa102,3600,wait_for_response,5940;11040
+93,start_new_flow,92,yes y,,has_any_word,Yes,,PLH - Handler - Activity - Teenagers,,,,,,,,,,,,,,56b9a9eb-e4aa-40e4-a227-d53624fca99e,14166925-cd1a-40f7-aaa7-9c4373b0337f,,split_by_subflow,1050;10880
+94,send_message,92,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,456fa320-a546-4e92-927f-4e0e83a15a2e,,execute_actions,5940;11340
+95,go_to,94,,,,,,91,,,,,,,,,,,,,,,,,,
+96,send_message,92;92,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" at anytime if you need an activity.",,,,,,,,,,,,,,,e2caafff-6cc4-4c63-8998-b9137dfcd5bc,,execute_actions,2080;11080
+97,save_value,93;96,Complete;,,,,current activity,one_on_one_time_teen,,,,,,,,,,,,,,,f8d3db66-fe8f-413c-bcdb-6af336ae17a3,,execute_actions,720;11240
+98,save_value,97,,,,,current type assessed,tip,,,,,,,,,,,,,,,f8d3db66-fe8f-413c-bcdb-6af336ae17a3,,execute_actions,720;11240
+99,start_new_flow,98,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,138500af-8b75-4d62-bd79-1279f308cf72,,split_by_subflow,700;11400
+100,split_by_value,99;99,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,d47f9b34-a52f-4047-a73a-ad507bc847fe,,split_by_expression,555;11620
+101,send_message,100,,@fields.user_name,has_text,user_name,,Chat later @fields.user_name!,,,,,,,,,,,,,,,3864ba5e-83c3-433b-a968-4236f27bcd09,,execute_actions,430;11820
+102,send_message,100,,,,,,Chat later!,,,,,,,,,,,,,,,39136936-124a-4839-980f-ce482fc240c2,,execute_actions,680;11820

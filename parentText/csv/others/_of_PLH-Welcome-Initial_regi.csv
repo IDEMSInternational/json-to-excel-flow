@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,start_new_flow,start,,,,,,PLH - Welcome - Initial registration - Media,,,,,,,,,,,,,,8d5d3818-7718-4a82-a12e-07778c6d61bd,af48771d-ecc1-4613-a012-e46db11051db,,split_by_subflow,505;
+2,start_new_flow,1,Complete,,,,,PLH - Welcome - Initial registration - Gender,,,,,,,,,,,,,,ac47332f-6ecf-468a-b44c-50402b03d970,2e13dd0b-e02e-4a30-b101-4b4633a937ac,,split_by_subflow,465;180
+3,split_by_group,2,Complete,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,34748c8b-842c-472a-a8ee-b86c7b76914f,4a96c009-4810-4fd1-acbd-a8130e4a230d,,split_by_expression,300;340
+4,send_message,3,ABTest_test-first-person_alternative,,,,,"Thank you! Anytime you need support, just type ""Help"" and I will do my best to help you. ",,,,,,,,,,,,,,,c6d31561-a516-4cfd-a000-9837c1d81057,,execute_actions,425;540
+5,send_message,3;3,ABTest_test-first-person_Default;,,,,,"Thank you! Anytime you need support, just type ""Help"" and we will do our best to help you. ",,,,,,,,,,,,,,,0f6734db-bf1f-4f22-8d5c-92cba2c4a06c,,execute_actions,175;540
+6,start_new_flow,4;5,,,,,,PLH - Welcome - Initial registration - Nickname,,,,,,,,,,,,,,f320923d-275c-45ba-9f38-83dac7cf501d,81d2dab8-efb5-471c-b792-8c53303c1697,,split_by_subflow,485;960
+7,start_new_flow,6,Complete,,,,,PLH - Welcome - Initial registration - Age group for tips,,,,,,,,,,,,,,9b51bb16-8aff-4319-99cf-8de73457913d,564420f0-5d86-4cee-9d55-3e1eb21d98b7,,split_by_subflow,485;1100
+8,start_new_flow,7,Complete,,,,,PLH - Welcome - Initial registration - Child nickname,,,,,,,,,,,,,,c3a82457-5766-4278-bced-1e1a0dfc66fe,03ff748d-d855-4499-8f12-96c0a9334fac,,split_by_subflow,485;1240
+9,save_value,1;2;6;7;8,Expired;Expired;Expired;Expired;Expired,,,,has expired,welcome_registration,,,,,,,,,,,,,,,f7fc14e7-6e14-4ef0-8f97-886f83405fd8,,execute_actions,1245;540
+10,send_message,9,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,1d18e007-08cd-4c5e-b104-34c83d1e9ea0,,execute_actions,1285;660

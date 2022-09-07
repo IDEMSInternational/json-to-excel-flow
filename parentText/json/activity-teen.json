@@ -1,0 +1,423 @@
+{
+  "PLH - Activity - Teen - Active - Make housework fun": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Make Housework Fun\n•\tHousehold chores aren’t fun… or are they? You can make them into a game, like this. \n•\tThere’s a fire on the mountain! Run, run, run!\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tTouch something red. \n•\tThere’s a fire on the mountain! Run, run, run!\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tJump up and down ten times.\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tPut the shoes in the shoe rack. ",
+      "_nodeId": "22d76246-0e09-405c-9240-5eb219ce1171",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Co chef": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Co-chef\n•\tAsk your teen what kind of meal they would like to eat.\n•\tPrepare it together! The first time, you may need to guide them. \n•\tOnce your teen knows how to prepare the meal, let them take the lead and follow their instructions.\n•\t Let each child and teen in the house have a turn at being the head chef.\n•\tYou can even help them make a budget for ingredients!",
+      "_nodeId": "5eaba5e3-4da4-4542-8dbd-c19ee5a7e692",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        240,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Crazy chicken": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Crazy Chicken\n•\tShake your left hands in the air 8 times while counting to 8. \n•\tDo it as fast and loud as you can.\n•\tRepeat with your other hand. Then do it for each foot. \n•\tDo it 7 times, then 6 times and continue until you get to 1.\n•\tEveryone calls out “Crazy chicken” when you’re finished and does their best crazy chicken dance!",
+      "_nodeId": "36c0c171-5304-4183-904d-16715e564910",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Dance Choreography": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dance choreography\n•\tCreate a dance choreography to your teen's favorite songs.\n•\tFirst person does a dance move and everyone else copies. \n•\tEveryone takes turns being the leader.\n•\tPerform it for the household!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/family_dancing_and_playing_instruments.jpg",
+      "_nodeId": "aca1963e-7797-4721-ba67-7b5a2c9c05e6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Get Active": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Get active!\n•\tCome up with three types of exercise together. For example, walking, jogging, soccer or dancing\n•\tPick one together and try it out. \n•\tIf you both like it, decide how often you are going to do it. Once or twice a week? Every morning?\n•\tTogether think of ways to make it even more fun. Can you jog to a certain point? Take turns in being the coach? Motivate each other with a small free reward? ",
+      "_nodeId": "5d6c41af-09d6-4d79-9980-f24b9ae2d3a3",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Name that tune": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Name that tune\n•\tFirst person gets to choose or sing a song.\n•\tEveryone else must guess the name of the tune (to make it harder, they can guess the singer).\n•\tThe first one to guess it right becomes the next leader who will choose or sing the next song. ",
+      "_nodeId": "80f49a85-f2e6-4acc-9d07-5bee8f96b3c5",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Pass the snap": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Pass the Snap  \n•\tThis game is best with at least 3 people.\n•\tStart in a circle and pass one snap around the circle (or clap if you cannot snap).\n•\tYou snap once to throw the snap.\n•\tYou can bounce the snap, throw it in the air, and catch it a few times before passing it. \n•\tThe direction (up, down, straight, curved, rolling the ground) and force (hard, soft, medium) that you throw the snap should affect how the person catches it.  \n•\tLook at the person you are throwing the snap to.  \n•\tThe person who will catch it has to snap once to catch it.\n•\tWhen everyone gets good at this, you can start moving around the room, still passing around the snap.  \n•\tCan you throw under the leg?  Behind the back?  Through your head?  Intercept a pass? Have fun with the snap!  ",
+      "_nodeId": "69fed6f0-4ede-4a19-b0cf-a58711bb5ce7",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - What are you doing": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "What Are You Doing? \n•\tThis game is best when more than 2 people play.\n•\tOne person pretends to be doing something – for example, combing hair. \n•\tA second person asks, “What are you doing?”\n•\tThe first person needs to say something that has nothing to do with combing hair, for example, “Tying my shoes.”  \n•\tThe second person then starts pretending to tie their shoes until a new person asks, “What are you doing?” \n•\tThe second person’s answer must always be something different from what they are actually doing!\nThe next person should act out the second person’s answer and when someone asks what they are doing, their answer must be different from what they are actually doing!",
+      "_nodeId": "506ac152-9082-4f20-ad9a-be15a37438db",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - What is new": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "What’s new?\n•\tThink of a new skill you could learn together with your teen. For example, keeping a ball in the air or your foot, juggling, learning a new language, or playing an instrument?\n•\tTake turns in trying the new skill out.\n•\tMake sure to praise each other, and try to learn and play together!",
+      "_nodeId": "32576a2f-c29c-4fc3-8666-9944713dae50",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - 2 Truths 1 Lie": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "2 Truths, 1 Lie\n•\tThink of three statements about yourself. Two must be true and one must be a lie.\n•\tIt might help to think of wishes, dreams, experiences at school, likes or dislikes. For example, I hate bananas, my favourite subject is science, and I really wish I could sing. \n•\tSay them to your teenager. Ask them to guess which one is a lie. \n•\tDid they guess correctly? Was it a surprise?\n•\tNow ask them to do the same. Did you learn something new about each other?",
+      "_nodeId": "9a68621a-ee40-4b8b-9d75-4faaef3e69b8",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - At the end of the day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "At the End of the Day\n•\tAt the end of each day, take a minute to think about the day.  \n•\tTalk to your teen about one positive or fun thing they did.\n•\tPraise yourself for one thing you did well today.\n•\tThink of one thing that you are grateful for.  \n•\tYou are a star!",
+      "_nodeId": "fcdf840d-a6cf-4970-b33c-dba115bcfa64",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Dream travel": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dream Travel\n•\tYou can’t travel but you can dream! Ask your teen these questions.\n•\tWhere do you want to travel? How long will you be away? What will you pack? What will you do? What will you see?\n•\tLook at a map together if you have one.\n•\tChoose a country that they’ve never heard of and look it up together online.",
+      "_nodeId": "1feb242b-3fcb-41e0-879e-5810cee05181",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - How was your day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "How was your day?\n•\tAsk each other, “What made you happy today?”\n•\tAsk each other, “What was difficult today?”\n•\tAsk each other, “How can we help you?”\n•\tTry to do this together every day, when you are eating together or before bed",
+      "_nodeId": "14e57be0-01a7-4610-bc1d-c5e7afa61680",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Just a friendly chat": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Just a friendly chat\n•\tHave a conversation with your teen about something they like.\n•\tIt can be about anything they choose to talk about: sports, friends, music, celebrities…\n•\tTry to listen to your teen and give them space to talk.\n•\tWhat new thing did you learn about your teen from your chat?",
+      "_nodeId": "589faea1-651e-4a9b-a681-a7a50a42e9bf",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Make up a story": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Make up a story!\n•\tStart the story with “Once upon a time there was a…”\n•\tLet your teen make up the next sentence.\n•\tThen you make up a sentence.\n•\tTake turns until you have a wonderful new story.\n•\tMake sure to end the story on a positive note.\n•\tAsk your teen what was their favourite part of the story!",
+      "_nodeId": "a7590b10-a9b3-4570-a622-d17bd8939bba",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Mirror": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Mirror\n•\tThis game can be played in pairs or even as a group.\n•\tStand facing each other or in a circle.  \n•\tOne person leads first while everyone else must copy, trying to move exactly at the same time as the leader.\n•\tMake sure the leader moves slowly enough for everyone to follow! Explore moving different body parts and in different levels.\n•\tAfter a while, switch who is leading. Give everyone a chance to lead.\n•\tTry it with no leaders!",
+      "_nodeId": "06bede64-d364-466f-b891-975dedfb7ddb",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Superpowers": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Superpowers\n•\tThink of a superpower. For example, going anywhere instantly, travelling in time, reading minds. \n•\tAsk your teen “If you had the superpower to […] how would you use it?”\n•\tEncourage them to give themselves a superhero name and act like a superhero. \n•\tNow let them choose a super power for you.\n•\tMake sure you act it out too!",
+      "_nodeId": "14f60b89-834f-43c1-9af0-e30943ff10d0",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - The Interrupter": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "The Interrupter\n•\tChoose a storyteller to start making up a story.\n•\tStory listeners can interrupt with a word at any time.\n•\tThe storyteller needs to fit that word in their story.\n•\tTry with a different storyteller! ",
+      "_nodeId": "502f2519-5607-488e-8092-05439ad4ee7d",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Three options": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Three options\n•\tThink of three different situations. For example, driving a car, sailing a boat, or flying a plane.\n•\tSay them to your teen and ask, “Which would you prefer?”\n•\tAsk them why?\n•\tNow think of three more situations or ask your teen to do it for you. ",
+      "_nodeId": "f2e6c23e-24ec-4cc4-9c69-1745d7002e4a",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - When COVID19 ends": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Memory game – “When COVID-19 ends…”\n•\tFirst person says, “When COVID-19 ends, I am going to… (e.g., go to the park)”\n•\tSecond person adds to first person’s plan, “When COVID-19 ends, I am going to the park and… (e.g., visit my best friend)”\n•\tEach person adds to the previous list of plans, trying to think of all of the fun things to do when COVID-19 ends.",
+      "_nodeId": "b6fc4730-1587-4df8-a8f1-a268d1374bb6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Yes No or Maybe": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Yes, No or Maybe\n•\tAsk each other questions. They can be any questions about things you like or what you did today.\n•\tThe only rule is that you can’t answer Yes, No or Maybe\n•\tHow long can you last? How creative can you get with your answers?\n•\tSwap over and play again! ",
+      "_nodeId": "8b121f56-f509-40b6-8ab4-2b80b7e4a69f",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ]
+}

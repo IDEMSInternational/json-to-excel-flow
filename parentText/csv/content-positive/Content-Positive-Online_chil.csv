@@ -1,0 +1,23 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Keeping your child safe online,,,,,,,,,,,,,,,746ae61a-f0e5-411c-af67-cead5a52a5b7,,execute_actions,750;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,00e56982-1d75-4bdf-8abe-f038bc0644ac,,split_by_subflow,810;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,67881269-2f06-49e6-98a6-9b40ebc9b0b4,,split_by_expression,1115;400
+4,send_message,3,,@fields.user_name,has_text,user_name,,Hello @fields.user_name! Our children and teens are now spending a lot more time online. Being connected helps them stay positive…but it also presents risks and dangers.,,,,,,,,,,,,,,,18697174-23c9-4a1a-91c2-f228bbce936a,,execute_actions,990;600
+5,send_message,3,,,,,,Hello! Our children and teens are now spending a lot more time online. Being connected helps them stay positive…but it also presents risks and dangers.,,,,,,,,,,,,,,,72445629-1316-4c73-9b69-07710cc5df23,,execute_actions,1240;600
+6,split_by_value,4;5,,,,,,@fields.toolkit,,,,,,,,,,,,,,,e71300ed-d935-4d40-a75a-a92c1baac142,,split_by_contact_field,200;320
+7,send_message,6,@results.skill,@fields.toolkit,has_phrase,already completed,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/child_sitting_with_tablet.jpg,,,,4fde1a43-66ab-4652-956d-20be63d3b6ee,,execute_actions,200;620
+8,send_message,6,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Global/resourceGroup/image/universal/child_sitting_with_tablet.jpg,,,,37db2006-bbc3-474b-9261-a537853522ac,,execute_actions,690;640
+9,wait_for_response,7;8,,,,,know_more,,,,,,,,,,,,,,,,8bba37d2-f366-4642-81dd-e3608da71d40,,wait_for_response,260;880
+10,save_value,9,yes y ,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,524d30c6-9337-4ef6-be7b-a6ba108da81e,,execute_actions,;1160
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,524d30c6-9337-4ef6-be7b-a6ba108da81e,,execute_actions,;1160
+12,start_new_flow,11,,,,,,PLH - Content - Positive - Online children,,,,,,,,,,,,,,8ee91956-d382-4b11-8d87-e7caacc5d57e,43333652-59a2-4215-af86-c2cb122a9197,,split_by_subflow,20;1520
+13,save_value,12,Expired,,,,has expired,tip,,,,,,,,,,,,,,,48f5f9ad-96ed-4723-9d3c-9abce2619346,,execute_actions,260;1620
+14,send_message,13,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,7d964d92-3332-42ad-975b-e05c8a295bc6,,execute_actions,260;1740
+15,save_value,12;14,Complete;,,,,from theme,no,,,,,,,,,,,,,,,0e21de99-1028-4d15-bc45-afcf1709f0ae,,execute_actions,20;1760
+16,split_by_value,9,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,4c206cb7-08df-4a9d-8d8d-e77f7d9cf97f,,split_by_expression,505;1240
+17,send_message,16,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,dc561a50-2d4b-4ef3-af4d-1e94c54de93e,,execute_actions,380;1440
+18,send_message,16,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,ebe0a1a7-b980-410b-8fa4-d8aeaca9a345,,execute_actions,630;1440
+19,save_value,17;18,,,,,last interaction,@(now()),,,,,,,,,,,,,,,c5285091-7fa3-4146-9547-cec9474f87df,,execute_actions,830;1600
+20,send_message,9,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,d295cfb9-2cdf-4cbc-9c0a-1c0ac1b3f77f,,execute_actions,790;1000
+21,save_value,20,,,,,last interaction,@(now()),,,,,,,,,,,,,,,90a2ca06-ebfb-445f-8485-7dcc58c130fc,,execute_actions,810;1120
+22,go_to,21,,,,,,6,,,,,,,,,,,,,,,,,,

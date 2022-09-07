@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Crazy Chicken
+•	Shake your left hands in the air 8 times while counting to 8. 
+•	Do it as fast and loud as you can.
+•	Repeat with your other hand. Then do it for each foot. 
+•	Do it 7 times, then 6 times and continue until you get to 1.
+•	Everyone calls out “Crazy chicken” when you’re finished and does their best crazy chicken dance!",,,,,,,,,,,,,,,36c0c171-5304-4183-904d-16715e564910,,execute_actions,;
