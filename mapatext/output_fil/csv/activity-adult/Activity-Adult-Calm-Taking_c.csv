@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Pag-aalaga sa Sarili
+
+Heto ang isang gawain na makakatulong sa iyo kapag nararamdaman mong kailangan mo ng suporta para malagpasan ang araw.",,,,,,,,,,,,,,,6b527073-e490-478f-b7db-5c24c3ef80d6,,execute_actions,;
+2,send_message,1,,,,,,Pansinin ang nararamdaman sa oras na ito. Ano ang iyong iniisip? Positibo o negatibo ba ang mga ito. Ano ang iyong nararamdaman? Kaaya-aya o hindi ba ang mga ito? Ano ang nararamdaman mo sa iyong katawan? May tensyon ba o relax ka lang?,,,,,,,,,,,,,,,e8a142e7-6ac1-4ba9-9cef-594ac4f635e2,,execute_actions,400;280
+3,send_message,2,,,,,,Kumonekta sa iyong puso sa mabait at banayad na paraan. Puwede mong ilapat ang isang kamay mo sa iyong puso or dibdib.,,,,,,,,,,,,,,,ea533160-db49-4d3b-8e52-6f36a2c805ab,,execute_actions,180;520
+4,send_message,3,,,,,,"Pagkatapos ay maaring sabihin ng tahimik ang mga sumusunod na salita sa iyong sarili:
+Nawa'y maging payapa ako.
+Nawa'y maging ligtas ako.
+Nawa'y maging malusog ako.
+Nawa'y maging masaya ako.
+Nawa'y mgkaroon ng pagmamahalan sa aking pamilya.
+Nawa'y makaramdam ako ng pagmamahal.",,,,,,,,,,,,,,,1521daba-368b-4412-9d5b-300e33fe0ab4,,execute_actions,280;740
+5,send_message,4,,,,,,Tumigil sandali at pagnilayan ang iyong karanasan. Alalahanin na puwede mong gawin ang gawaing ito sa tuwing mararamdaman mo na kailangan mo ng iba pang suporta.,,,,,,,,,,,,,,,aea07356-19fd-4539-a92d-ece6bbc2c4a5,,execute_actions,260;1040

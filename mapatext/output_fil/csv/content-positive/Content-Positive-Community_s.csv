@@ -1,0 +1,92 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Community safety,,,,,,,,,,,,,,,07f62f80-4d83-49e4-af63-69dd6af839ab,,execute_actions,760;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,89b40a4f-c997-4f4f-a385-edb87417b3cd,,split_by_subflow,760;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,c72dae61-d13d-4c44-8452-cf35686ede58,,split_by_contact_field,430;380
+4,send_message,3,,,,,,Maraming mga magulang sa buong mundo ang nagsasabi na nag-aalala sila kung paano nila mapapanatiling ligtas ang kanilang mga anak sa komunidad at sa paggamit ng internet.,,,,,,,,,,,,,,,726f7d29-77fa-43cd-8011-8d0a3a0269ac,,execute_actions,1590;160
+5,start_new_flow,3,yes,@fields.from_theme,has_any_word,Yes,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,4fbfa9b3-9ee4-4dab-a0da-8ebdb3701c6d,,split_by_subflow,860;1040
+6,send_message,4,,,,,,Gusto mo bang makakuha ng ilang tips upang magawa ito?,Oo,Hindi,,,,,,,,,,,,,672156e2-2448-448f-91af-58aeaafc55b3,,execute_actions,1610;320
+7,wait_for_response,6,,,,,know_more,,,,,,,,,,,,,,,,0d00a83b-7f0f-4cac-a628-41df143f6a81,,wait_for_response,840;500
+8,go_to,7,Oo y o,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+9,send_message,7,Hindi n h,,has_any_word,No,,Okay lang ‘yan! I-type lang ang “Tulong” para makakuha ng dagdag kaalaman kung paano mapapanatiling ligtas ang iyong anak sa komunidad.,,,,,,,,,,,,,,,aaad60d2-72c5-44cf-820c-6d8d7952266e,,execute_actions,1750;800
+10,send_message,7,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,7774c7e7-d862-4dbc-966b-c50ef08d3339,,execute_actions,1690;500
+11,go_to,10,,,,,,6,,,,,,,,,,,,,,,,,,
+12,send_message,5;5,Complete;Expired,,,,,"Salamat! Ang isang paraan na makakatulong ay ang paggawa ng isang mapa, sa tulong ng iyong anak, na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Narito ang 4 na simpleng hakbang:
+
+1. Gumawa ng mapang nagpapakita ng mga importanteng lugar sa komunidad
+2. Tukuyin kung alin dito ang mga ligtas at delikadong lugar
+3. Alamin kung saan kayo makakakuha ng suporta
+4. Online map
+
+Itype ang “1” hanggang “4” para makakuha ng dagdag kaalaman kung paano mo ito magagawa kasama ang inyong anak. I-type ang “H” para itigil ang tip na ito.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_1.png,,,,20050785-af3f-4aca-9d08-43268c42d274,,execute_actions,860;1220
+13,wait_for_response,12,,,,,list_of_tips,,,,,,,,,,,,,,,,0d511a3f-4e1d-40a0-9a0a-e2f28be99f6d,,wait_for_response,740;1680
+14,split_by_group,13,Hindi n h,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,158cb086-2f2b-4672-9732-f0e96ce7d635,,split_by_expression,2645;2900
+15,split_by_group,14,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,552eaeb4-9c91-405b-861d-985e0bdbb645,,split_by_expression,3145;3300
+16,split_by_value,15,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,41fc1c80-362a-4d6b-9616-f32f04781827,,split_by_expression,3395;4100
+17,send_message,16,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Kasama ang inyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,ec877a4b-6255-421f-8e34-874ac153c06a,,execute_actions,3270;4300
+18,send_message,16,,,,,,"Mahusay! Nagdagdag ka ng isa pang antas sa inyong Masayang Tahanan! Kasama ang iyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,c029bc86-9267-4287-961e-83817c550f8b,,execute_actions,3520;4300
+19,split_by_value,15;15,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,6d7665e5-f7c8-492f-bde3-90e475436364,,split_by_expression,2895;3900
+20,send_message,19,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Kasama ang inyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,f87eaf30-a090-440a-8c95-291f28315384,,execute_actions,2770;4300
+21,send_message,19,,,,,,"Mahusay! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Kasama ang inyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,ddbd1781-072a-4731-9060-3c99a1f63759,,execute_actions,3020;4300
+22,split_by_group,14;14,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,90c6fc0a-c035-4650-b49a-48fa69f84a21,,split_by_expression,2145;3100
+23,split_by_value,22,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,653db2bc-8678-47a7-9cac-8a9a158eaa3f,,split_by_expression,2395;3700
+24,send_message,23,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Kasama ang inyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,d393d333-dbb7-4ce2-a984-4623e346f8f9,,execute_actions,2270;4300
+25,send_message,23,,,,,,"Mahusay! Nagdagdag ka ng isa pang antas sa inyong Masayang Tahanan! Kasama ang iyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,dde542d6-3689-497f-8cfe-2a541a6c8877,,execute_actions,2520;4300
+26,split_by_value,22;22,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,7c44099e-5e86-4061-b87d-cf019be2ffdb,,split_by_expression,1895;3500
+27,send_message,26,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Kasama ang inyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,b1949a84-dc45-4256-ae07-b923072ae683,,execute_actions,1770;4300
+28,send_message,26,,,,,,"Mahusay! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Kasama ang inyong anak, pagtulungang gumawa ng isang mapa na nagpapakita ng ligtas at delikadong lugar sa inyong komunidad. Makatutulong ito na patatagin ang tiwala sa isa’t isa at sa pagpapanatiling ligtas ng inyong anak sa hinaharap.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,bb81edb0-0a5f-4b96-bf53-8d2dbb29988a,,execute_actions,2020;4300
+29,save_value,17;18;20;21;24;25;27;28,,,,,current type assessed,tip,,,,,,,,,,,,,,,949c85e2-9e56-4f7d-ba6f-4dfe686062bc,,execute_actions,3560;4640
+30,save_value,29,,,,,current activity,community_safety,,,,,,,,,,,,,,,949c85e2-9e56-4f7d-ba6f-4dfe686062bc,,execute_actions,3560;4640
+31,start_new_flow,30,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,f18650cb-fab6-445a-8688-d3c874e63cc2,,split_by_subflow,3580;4820
+32,send_message,31,Complete,,,,,Usap tayo mamaya!,,,,,,,,,,,,,,,7bd05b2b-d763-431c-aedb-ed3864cba4d3,,execute_actions,1750;5020
+33,split_by_value,13,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,e0ab47d5-189d-4052-aad0-c3d2eeffb8d6,,split_by_expression,125;1800
+34,send_message,33,,@fields.child_nickname,has_text,child_nickname,,"Step 1: Ano ang mga importanteng lugar sa ating komunidad?
+
+• Kumuha ng isang papel (o lumang newspaper o isang kahon) at panulat.
+• Gumuhit ng isang mapa ng komunidad ni @fields.child_nickname na nagpapakita ng mga importanteng lugar katulad ng mga kalye, inyong bahay, school, mga tindahan, at iba pang mga lugar na madalas pasyalan ng inyong teenager...",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_2.png,,,,fc5ac129-e41d-4f14-94d4-3443c2abadc2,,execute_actions,;2000
+35,send_message,33,,,,,,"Step 1: Ano ang mga importanteng lugar sa ating komunidad?
+
+• Kumuha ng isang papel (o lumang newspaper o isang kahon) at panulat.
+• Gumuhit ng isang mapa ng komunidad ng inyong anak na nagpapakita ng mga importanteng lugar katulad ng mga kalye, inyong bahay, school, mga tindahan, at iba pang mga lugar na madalas pasyalan ng inyong teenager...",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_2.png,,,,07fa9c66-1918-42ab-886d-1c219376ddd6,,execute_actions,250;2000
+36,split_by_value,13,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,9c1079d8-2c7b-47e0-989a-6fd7f75eeb63,,split_by_expression,595;2040
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"Pangalawang Hakbang  Alin sa mga lugar ang ligtas at hindi ligtas? 
+
+• Pag-usapan ninyo kung alin sa mga lugar sa mapa ang ligtas para sa mga teenager – BILUGAN ang mga ito.
+• Pag-usapan ninyo kung alin sa mga lugar sa mapa ang hindi ligtas para sa mga teenager – Lagyan ng EKIS ito. 
+• Ano ang mga bagay na nagpapakita na ang isang lugar ay ligtas o hindi? 
+• Mayroon bang mga plano na maaari ninyong gawin upang mapanatiling ligtas si @fields.child_nickname?",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_3.png,,,,d5ef7bd1-3956-4e73-b65a-8ace1b74c892,,execute_actions,470;2440
+38,send_message,36,,,,,,"Pangalawang Hakbang  Alin sa mga lugar ang ligtas at hindi ligtas? 
+
+• Pag-usapan ninyo kung alin sa mga lugar sa mapa ang ligtas para sa mga teenager – BILUGAN ang mga ito.
+• Pag-usapan ninyo kung alin sa mga lugar sa mapa ang hindi ligtas para sa mga teenager – Lagyan ng EKIS ito. 
+• Ano ang mga bagay na nagpapakita na ang isang lugar ay ligtas o hindi? 
+• Mayroon bang mga plano na maaari ninyong gawin nang magkasama upang mapanatiling ligtas ang iyong anak?",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_3.png,,,,4de41fee-3bcc-4750-ac14-0895632e2ecd,,execute_actions,720;2440
+39,split_by_value,13,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,60d983af-0b25-4e06-9b7e-5b17f915d3af,,split_by_expression,1105;2240
+40,send_message,39,,@fields.child_nickname,has_text,child_nickname,,"Step 3: Saan ka makakakuha ng suporta?
+
+• Minsan, maaari tayong madamay sa gulo.
+• Pag-usapan ninyo ni @fields.child_nickname kung saan kayo makakakuha ng suporta o tulong kapag nakaranas kayo ng krisis – MARKAHAN ang mga lugar na ito gamit ang isang maliit na bagay tulad ng bato o kapirasong papel. 
+• Kabilang sa mga lugar na makakatulong ay ang bahay, paaralan, istasyon ng pulis, o ang klinika.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_4.png,,,,22d1fa0a-347c-488d-bef6-ad894651fea1,,execute_actions,980;2440
+41,send_message,39,,,,,,"Step 3: Saan ka makakakuha ng suporta?
+
+• Minsan, maaari tayong madamay sa gulo.
+• Pag-usapan ninyo ng inyong anak kung saan puwedeng makakakuha ng suporta o tulong kapag nakaranas kayo ng krisis – MARKAHAN ang mga lugar na ito gamit ang isang maliit na bagay tulad ng bato o kapirasong papel. 
+• Kabilang sa mga lugar na makakatulong ay ang bahay, paaralan, istasyon ng pulis, o ang klinika.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_4.png,,,,5025e904-c5ba-412c-bffe-66c3f4214652,,execute_actions,1230;2440
+42,send_message,13,4,,has_any_word,4,,"Step 4: Online map
+
+• Iguhit ang mga litrato ng mga app o website na ginagamit nila
+• Purihin sila sa kanilang kakayahang gamitin ang internet!
+• Pag-usapan ninyo kung alin sa mga ginagamit nila ang may potensiyal na panganib. Bakit?
+• Mayroon bang mga plano na maaari ninyong gawin nang magkasama upang maging mas ligtas ang paggamit ng internet para sa inyong anak at pati ng kaniyang mga kaibigan?
+• Makatutulong na maagang matutunan ito ng mga magulang.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/safety_planning_5.png,,,,ee2b9295-da52-459f-b11f-3d06f44a0f73,,execute_actions,1530;2000
+43,send_message,34;35;37;38;40;41;42,,,,,,"Pumili ng ibang numero kung gusto mo pang makakuha ng dagdag kaalaman sa paggawa ng mapa kasama ang iyong anak na nagpapakita ng mga ligtas at delikadong lugar sa inyong komunidad:
+
+1. Gumawa ng mapang nagpapakita ng mga importanteng lugar sa komunidad
+2. Tukuyin kung alin dito ang mga ligtas at delikadong lugar
+3. Alamin kung saan kayo makakakuha ng suporta
+4. Online map
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,c01afa23-6c34-439b-839c-47ecb20df1cc,,execute_actions,740;4300
+44,save_value,43,,,,,community safety list of tips,"@(fields.community_safety_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,074c53cb-282f-4e3b-bc7f-a6168e9178b2,,execute_actions,720;4760
+45,go_to,44,,,,,,13,,,,,,,,,,,,,,,,,,
+46,send_message,13,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,f073b69e-dc23-4e2d-84ad-2c4967a38671,,execute_actions,1410;1300
+47,go_to,46,,,,,,12,,,,,,,,,,,,,,,,,,

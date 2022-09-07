@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Paano mo gustong makatanggap ng mga mensahe? Maaari mo itong palitan sa pamamagitan ng pag-type ng ""Help"" at pagpili sa ""Technical Support"".",Core (mga text at larawan),"Boosted (mga text, larawan, at audio)","Star (mga text, larawan, audio, at bidyo)",,,,,,,,,,,,00640ac3-1f5c-4f44-8124-721ff4f8cb0c,,execute_actions,500;120
+2,wait_for_response,1,,,,,Result 4,,,,,,,,,,,,,,,,fb967b5a-72c1-476c-9c69-d851bb262a31,,wait_for_response,520;360
+3,save_value,2,bituin,,has_any_word,High,type of media,high,,,,,,,,,,,,,,,364841ed-404a-4ac5-afe3-3edd63bc8533,,execute_actions,320;520
+4,save_value,2,boosted,,has_any_word,Medium,type of media,medium,,,,,,,,,,,,,,,57bb5738-7726-49ff-8390-a1d1bc0dcecc,,execute_actions,540;520
+5,save_value,2,core,,has_any_word,Low,type of media,low,,,,,,,,,,,,,,,9eac8021-0c9e-43c2-9371-bad2d5ef7ae2,,execute_actions,780;540
+6,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,4b1c4fe6-9216-40fb-884f-0b42e884ad2f,,execute_actions,800;260
+7,go_to,6,,,,,,1,,,,,,,,,,,,,,,,,,

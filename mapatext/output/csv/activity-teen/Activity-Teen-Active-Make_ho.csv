@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Make Housework Fun
+•	Household chores aren’t fun… or are they? You can make them into a game, like this. 
+•        There’s a fire on the mountain! Run, run, run!
+•        There’s a fire on the mountain! Run, run, run!
+•        Pick up the red shirt, it’s fun, fun, fun! 
+•        There’s a fire on the mountain! Run, run, run!
+•        There’s a fire on the mountain! Run, run, run!
+•        Put the red shirt into the hamper, it’s fun, fun, fun!
+•        There’s a fire on the mountain! Run, run, run!
+•        There’s a fire on the mountain! Run, run, run!
+•        Put the shoes in the shoe rack, it's fun, fun, fun! ",,,,,,,,,,,,,,,22d76246-0e09-405c-9240-5eb219ce1171,,execute_actions,;

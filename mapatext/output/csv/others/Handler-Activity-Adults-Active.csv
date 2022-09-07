@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_random,start,,,,,,,,,,,,,,,,,,,,,851fdcfd-0815-4647-9ca4-8cec0716c2af,,split_by_random,600;100
+2,start_new_flow,1,1,,,,,PLH - Activity - Adult - Active - 2 truths 1 lie,,,,,,,,,,,,,,c1f82945-de54-47c7-afca-a8f8e6b5096c,206d5116-2ebb-414b-a1e3-ded2bc7e8343,,split_by_subflow,180;380
+3,start_new_flow,1,2,,,,,PLH - Activity - Adult - Active - Family work out,,,,,,,,,,,,,,be814055-3eba-49cf-b61d-d1fc89ea2554,fff59e76-13ba-434e-bfd1-63ca65938850,,split_by_subflow,520;420
+4,start_new_flow,1,4,,,,,PLH - Activity - Adult - Active - Relax,,,,,,,,,,,,,,588ab263-c041-4234-bf87-07964247e593,1eb06b3d-e387-48d1-9c77-2ca8d973d86e,,split_by_subflow,960;220
+5,split_by_value,1,5,,,,,@fields.type_of_media,,,,,,,,,,,,,,,8dca1d4b-a4f2-4807-8970-8c76bda45cab,,split_by_contact_field,1380;220
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Here is a song made just for parents like you.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/video/eng/LetsSlowDown.m4v,,dc17f0c5-cd4b-4311-a1b4-0924b5a354ac,,execute_actions,1200;380
+7,start_new_flow,1;5,3;low,;@fields.type_of_media,;has_any_word,;Low,,PLH - Activity - Adult - Active - Crazy chicken,,,,,,,,,,,,,,ee2a25fe-0f5b-4a42-9c7b-f5b81c2d11d0,f8fd6509-4700-4dc4-ae4a-bcfb5024c7d1,,split_by_subflow,860;380
+8,send_message,5,,,,,,Here is a song made just for parents like you.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/audio/eng/LetsSlowDown.mp3,,,8d0fc2ee-e0c3-426e-9d24-d7156032e028,,execute_actions,1460;380

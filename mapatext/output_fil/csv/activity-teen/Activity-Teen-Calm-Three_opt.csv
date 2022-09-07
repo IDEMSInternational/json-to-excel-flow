@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Tatlong pagpipilian
+•	Mag-isip ng tatlong magkakaibang sitwasyon. Halimbawa, pagmamaneho ng sasakyan, paglalayag ng bangka, o pagpapalipad ng eroplano.
+•	Sabihin ang mga ito sa iyong teenager at tanungin, ""Alin ang mas gusto mo?""
+•	Tanungin siya kung bakit?
+•	Ngayon mag-isip ng tatlo pang mga sitwasyon o hilingin sa iyong teenager na gawin ito para sa iyo. ",,,,,,,,,,,,,,,f2e6c23e-24ec-4cc4-9c69-1745d7002e4a,,execute_actions,;

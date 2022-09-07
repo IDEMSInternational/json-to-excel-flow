@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Nais naming malaman kung paano pa namin mapapabuti ang aming programa. Maaari ba kayong makipag-chat sa amin kung bakit pinili ninyong hindi na makatanggap ng mga mensaheng ito? Makakatanggap ka ng libreng data voucher kung ikaw ay matawagan para sa isang interview!,Oo,Hindi,,,,,,,,,,,,,c19a3551-3722-4a95-911e-53cf5048d66a,,execute_actions,600;60
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,328ed6db-3933-4b58-91b4-c03a709b1d8e,,wait_for_response,580;320
+3,send_message,2,Oo y o,,has_any_word,Yes,,"Thank you so much! Here is a link to sign up! 
+https://tinyurl.com/4s8kre42",,,,,,,,,,,,,,,8da21722-3a65-4174-adfd-35184ea37e67,,execute_actions,340;460
+4,send_message,2,Hindi n h,,has_any_word,No,,Ok lang!,,,,,,,,,,,,,,,4c2a0ebf-f2d2-4206-b044-4493b4b66774,,execute_actions,640;480
+5,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,03ef2c85-ce18-44a0-a83d-2a7b3b805067,,execute_actions,1020;340
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,21 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.enrollment,,,,,,,,,,,,,,,8f9f336c-1bb8-4d2e-8a6c-665c0c602634,,split_by_contact_field,580;80
+2,start_new_flow,1,,,,,,PH - PLH - Supportive - Share - Enrollment,,,,,,,,,,,,,,d10be657-23e0-41c3-aad5-d116b332786c,7c0647a7-f94f-45c0-9c0b-a6727ca43d64,,split_by_subflow,1000;180
+3,save_value,1;2,;Complete,@fields.enrollment;,has_text;,Has Text,share supportive counter,"@(if(fields.share_supportive_counter = 0, 1, 0))",,,,,,,,,,,,,,,71e426bf-a322-4617-8204-47fd43d39375,,execute_actions,220;140
+4,save_value,2,Expired,,,,has expired,supp_share,,,,,,,,,,,,,,,04e391d4-74ad-4404-b81c-c1599b678183,,execute_actions,1080;380
+5,send_message,4,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,46592d7e-66e3-4a64-beff-5d609ec7cfef,,execute_actions,1100;560
+6,split_by_value,3,,,,,,@fields.share_supportive_counter,,,,,,,,,,,,,,,a8b4dc08-deaf-49ff-98dd-40362244462c,,split_by_contact_field,220;240
+7,send_message,6,0,@fields.share_supportive_counter,has_any_word,family,,"You don’t have to do this alone! Please feel free to share your MaPaText journey with other adults in your household and elsewhere. They might want to sign up to receive the messages too! 
+
+Would you like to receive a link to this programme, so you can share it with adults in your household?",Yes,No,,,,,,,,,,,,,423eb765-1e11-48ae-9283-f55f53ba5cfc,,execute_actions,120;360
+8,send_message,6,,,,,,"It can be much more fun doing something with another person than doing it by yourself.  
+
+Would you like to receive a link to this programme that you can share with a friend?",Yes,No,,,,,,,,,,,,,8196918e-760e-4aee-a11c-c97c9186997e,,execute_actions,400;380
+9,wait_for_response,7;8,,,,,Result 2,,,,,,,,,,,,,,,,9ffc00c0-7d70-421b-aa59-e0629318431e,,wait_for_response,140;720
+10,send_message,9,yes y,,has_any_word,Yes,,That is great!,,,,,,,,,,,,,,,b613b5b9-d37b-4e67-a4bb-23473931f5dc,,execute_actions,20;840
+11,start_new_flow,10,,,,,,PLH - Supportive - Share - Link,,,,,,,,,,,,,,a8233166-1c54-4c76-a8fa-9e6fe9be489e,75dbacf7-506f-43fc-bc38-6ec1343dfe33,,split_by_subflow,60;940
+12,send_message,9,no n,,has_any_word,No,,"That is okay! If would like to access the link at a later time, please type ""Help"".",,,,,,,,,,,,,,,7daf24ad-1c00-4279-8007-3740baf8f0b7,,execute_actions,280;880
+13,save_value,11;11;12,Complete;Expired;,,,,last interaction,@(now()),,,,,,,,,,,,,,,28019a7c-7b81-4192-a3ad-268ce9a7ef8a,,execute_actions,200;1080
+14,send_message,9,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,76b40bef-3ee1-43ad-9d07-e6db51d1a802,,execute_actions,660;680
+15,save_value,14,,,,,last interaction,@(now()),,,,,,,,,,,,,,,76b40bef-3ee1-43ad-9d07-e6db51d1a802,,execute_actions,660;680
+16,go_to,15,,,,,,6,,,,,,,,,,,,,,,,,,

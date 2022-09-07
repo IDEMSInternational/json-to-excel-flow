@@ -1,0 +1,28 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Responding to crises,,,,,,,,,,,,,,,605c3a80-86e5-4c69-834a-6208fc1af74a,,execute_actions,840;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,4edf139f-c573-4240-b343-0a5b270412d9,,split_by_subflow,860;120
+3,send_message,2;2,Complete;Expired,,,,,Today's Tip is about how we can support our teens when they experience really difficult situations. ,,,,,,,,,,,,,,,eb8e72d0-4b64-4610-97a3-412d6ccdd7b3,,execute_actions,1160;160
+4,send_message,3,,,,,,"When our children share difficult experiences with us, we may initially get angry because we are afraid for them. But that is when we need to stay calm, listen, and be open.",,,,,,,,,,,,,,,6ef3ba00-a9a6-4f54-a76e-db9f9e50aeba,,execute_actions,1200;320
+5,split_by_value,4,,,,,,@fields.toolkit,,,,,,,,,,,,,,,8fb2f406-7f01-4078-9139-3aa5807d74ba,,split_by_contact_field,880;560
+6,split_by_group,5,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,f15178e0-9d33-4605-88c0-781844216f04,,split_by_expression,125;360
+7,send_message,6,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,2d51da67-297b-4252-b296-df74221a5d5a,,execute_actions,250;560
+8,send_message,6;6,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,1883b97c-03eb-421c-a5a3-da80adaf9868,,execute_actions,;560
+9,wait_for_response,7;8,,,,,know_more,,,,,,,,,,,,,,,,6b3e5b13-8cab-4bdf-bebc-073bb73c8153,,wait_for_response,840;1020
+10,save_value,9,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,2922c7a0-f99c-4c67-aa8c-6a1a281868f1,,execute_actions,700;1360
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,2922c7a0-f99c-4c67-aa8c-6a1a281868f1,,execute_actions,700;1360
+12,start_new_flow,11,,,,,,PLH - Content - Positive - Behave - Crisis,,,,,,,,,,,,,,8b191a0a-6f36-4b8b-8211-d0883ce2d564,617e966a-016c-40e3-be17-befe85e58e33,,split_by_subflow,680;1640
+13,save_value,12,Complete,,,,from theme,no,,,,,,,,,,,,,,,eedaf8fc-059c-45e1-95a4-a9b2d05bb6ee,,execute_actions,680;1540
+14,split_by_value,13,,,,,,@fields.user_name,,,,,,,,,,,,,,,15b5a4f6-6541-41e6-bf6d-bef03a6baca8,,split_by_expression,555;1800
+15,send_message,14,,@fields.user_name,has_text,user_name,,"Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later @fields.user_name!",,,,,,,,,,,,,,,09c39452-302c-4987-b003-178d97224a36,,execute_actions,430;2000
+16,send_message,14,,,,,,"Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Technical Support."" Chat to you later!",,,,,,,,,,,,,,,0c4277e8-3af0-4492-b6a2-3c8177f94ac7,,execute_actions,680;2000
+17,save_value,12,Expired,,,,from theme,no,,,,,,,,,,,,,,,ac21a8cc-d41a-4585-9da6-1072ddcf65a7,,execute_actions,940;1460
+18,save_value,17,,,,,has expired,tip,,,,,,,,,,,,,,,ac21a8cc-d41a-4585-9da6-1072ddcf65a7,,execute_actions,940;1460
+19,send_message,18,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,9b7d70d8-4714-4b1b-b68d-016c3ee1a6a8,,execute_actions,940;1640
+20,split_by_value,9,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,3f308420-a03c-4059-bbf7-7de6a647cf71,,split_by_expression,1605;1060
+21,send_message,20,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,ccdf0cbd-73f8-4854-a006-eead404c915d,,execute_actions,1480;1260
+22,send_message,20,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,6ce3186d-d3ca-4a20-afc9-250a00cd19da,,execute_actions,1730;1260
+23,save_value,21;22,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f53d9837-9891-4909-bd36-6d6ed3c0dbc6,,execute_actions,1300;1420
+24,send_message,9,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,47c1512f-419c-4853-8e56-8cbd521a8b3e,,execute_actions,1420;820
+25,save_value,24,,,,,last interaction,@(now()),,,,,,,,,,,,,,,ce1ae5f0-a059-452e-9727-22518940f6e6,,execute_actions,1440;940
+26,send_message,25;5,,,,,,Do you want some tips that can help you respond in a more supportive way?,Yes,No,,,,,,,,,,,,,3990cab2-2cf2-47e9-9032-074ff25d3522,,execute_actions,1040;840
+27,go_to,26,,,,,,9,,,,,,,,,,,,,,,,,,

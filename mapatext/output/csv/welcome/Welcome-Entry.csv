@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,start_new_flow,start,,,,,,PLH - Internal - Set up default contact fields,,,,,,,,,,,,,,1f87fe57-93ae-4b26-befe-9831ea86b4f2,173289a6-ce96-45b9-8e7c-e997edc8119b,,split_by_subflow,520;180
+2,start_new_flow,1;1,Complete;Expired,,,,,PH - PLH - Welcome - Entry - Set language,,,,,,,,,,,,,,7d3034a2-fa82-410a-aa19-b92b1a27b94c,b50b07f9-47db-400f-ba01-4489746a5b8b,,split_by_subflow,520;460
+3,start_new_flow,2,Complete,,,,,PLH - Internal - Define attachments paths,,,,,,,,,,,,,,89d00fef-a0a2-48f9-8a6c-27348218fa29,3aa586a3-6ace-4023-bd4a-9cf9468b9078,,split_by_subflow,500;640
+4,start_new_flow,3;3,Complete;Expired,,,,,PLH - Welcome - Entry - Consent,,,,,,,,,,,,,,4dcf3906-8c15-4177-b011-c0a88f9d04c2,113152c0-a77c-4af0-b93a-9d09c1b0453b,,split_by_subflow,460;820
+5,save_value,2;4,Expired;Expired,,,,has expired,welcome_entry,,,,,,,,,,,,,,,fffdc467-beab-46f7-adc3-1d20bf1afc61,,execute_actions,900;460
+6,send_message,5,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,2179b9a5-3fea-4c22-a025-61ab16c17ca6,,execute_actions,900;600

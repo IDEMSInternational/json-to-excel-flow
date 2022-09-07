@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Pagguhit
+•	Ang mga bata ay mahilig gumuhit! Nakakatulong itong mapalago ang pagiging malikhain.
+•	Kumuha ng mga panulat o kaya krayola at isang pirasong papel o kaya'y karton.
+•	Hayaan ang iyong anak na malayang gumuhit ng kahit na anong gusto nila.
+•	Habang ang iyong anak ay gumuguhit, gumamit ng mga salita upang ilarawan ang ginagawa nila: ""Nakikita kitang gumuguhit ng isang tao"" o kaya ""Nakikita kitang gumagawa ng linya gamit ang pulang krayola.""
+•	Pwede ka ring matuwa habang gumuguhit sa tabi niya.
+•	Ilagay ang mga guhit nila sa pader, pridyeder, o kaya pang palamuti sa labas ng bahay- mararamdaman ng iyong mga anak na sila ay pinahahalagahan!",,,,,,,,,,,,,,,403486f0-9115-4dc4-bde7-44401c511850,,execute_actions,;

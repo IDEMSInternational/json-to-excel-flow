@@ -1,0 +1,13 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"If you ever feel like talking privately to a trained professional, you can call:",,,,,,,,,,,,,,,3a6af2ae-f3ef-417f-959a-a4125da87865,,execute_actions,600;20
+2,send_message,1,,,,,,"National Center for Mental Health (NCMH) Crisis Hotlines :0917 899 8727 and (02) 7989 8727
+
+Mental Health First Responders (MHFR) Emergency Hotlines: (02) 1553, (02) 7-989-9727, 0917 899 8727 Email: telehealth@mhfirstresponse.org
+
+Philippine Mental Health Association (PMHA). Helpline:  0917 565 2036
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629",,,,,,,,,,,,,,,f9b97c2a-295a-471c-8820-769e449f0e9c,,execute_actions,620;160
+3,send_message,2,,,,,,You should be proud of yourself for exploring ways to get help for you and your family.,,,,,,,,,,,,,,,88b5efc2-9d57-4ad2-8814-4ecbfa9dbee8,,execute_actions,640;260
+4,send_message,3,,,,,,"Type ""SOS"" at any time if you would like the details of any other emergency service or hotline. Remember everything you say will be completely private!",,,,,,,,,,,,,,,8f7f8c46-ae40-4409-8717-9010ce000892,,execute_actions,640;420

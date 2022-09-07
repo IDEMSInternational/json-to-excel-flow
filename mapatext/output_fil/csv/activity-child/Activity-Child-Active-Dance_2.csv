@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Sayawan
+•	Patugtugin o awitin ang paborito mong kanta at sumayaw sa kuwarto.
+•	Sumayaw ng iba't-ibang paraan o gamit ang iba't-ibang bahagi ng iyong katawan.
+•	Halimbawa, ""Sumayaw na parang unggoy"", ""Sumayaw na parang manok"" o ""Sumayaw gamit lamang ang mga tuhod at balakang"". 
+•	Mag-isip ng iba-ibang direksyon. Maging masaya at mapaglaro! 
+•	Kapag tumigil ang tugtog, ang lahat ay gagawa ng nakakatawang pagtigil.
+•	Bigyan ang iyong anak ng pagkakataon na siya mismo ang magpapatigil sa musika! ",,,,,,,,,,,,,,,15f69239-e365-4bab-96d8-db362016519d,,execute_actions,;

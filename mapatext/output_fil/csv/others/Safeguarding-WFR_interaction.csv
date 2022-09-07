@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,start_new_flow,start,,,,,,PLH - Safeguarding - Redirect to topic,,,,,,,,,,,,,,8071d32a-67b5-4130-bc21-ce449ff1cbf1,5315ed9f-ce77-4e0d-8baa-ea16b8319c2e,,split_by_subflow,560;220
+2,send_message,1;1,Complete;Expired,,,,,Gusto mo bang balikan ang mga nakaraang mensahe?,Oo,Hindi,,,,,,,,,,,,,dc17c50c-853c-4770-abe0-f8f0776a98cf,,execute_actions,540;420
+3,wait_for_response,2,,,,,Result 2,,,,,,,,,,,,,,,,48718521-565e-45d8-86ca-b6174ba97105,,wait_for_response,520;600
+4,save_flow_result,3,oo o yes y,,has_any_word,Yes,sg_back,yes,,,,,,,,,,,,,,,b52d5a2a-a2e0-4863-a9f1-ffd88f496dcf,,execute_actions,180;820
+5,send_message,3,hindi,,has_any_word,No,,Ok lang 'yan. Tandaan na pwede mong i-type ang “Help” kung kailangan mo ng karagdagang tulong. Usap tayo mamaya!,,,,,,,,,,,,,,,73a12d32-4cce-46fd-a1ca-f9b1ea742534,,execute_actions,440;840
+6,send_message,3,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,c4a97a6c-32c8-42e1-80d7-298926a4e92d,,execute_actions,960;500
+7,go_to,6,,,,,,2,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,9ea00fe1-9264-4ce0-b371-e51bf922ace4,,split_by_expression,680;
+2,split_by_group,1,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,e2e2d5d0-15e5-44f7-9a58-30d7cd327abe,,split_by_expression,430;200
+3,send_message,2,ABTest_test-first-person_alternative,,,,,Hi @fields.user_name! I hope you are finding these messages useful. Please type “MoreTips” when you want to receive your next message.,,,,,,,,,,,,,,,bc8cefb5-a59f-45de-bf43-5d52b0c3ef4a,,execute_actions,555;600
+4,send_message,2;2,ABTest_test-first-person_Default;,,,,,Hi @fields.user_name! We hope you are finding these messages useful. Please type “MoreTips” when you want to receive your next message.,,,,,,,,,,,,,,,e150dd6f-86cb-47b3-849c-71e4240e09e4,,execute_actions,305;600
+5,split_by_group,1,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,7b15f6ff-4ee8-4d41-ac8b-58f1c85b37b4,,split_by_expression,930;400
+6,send_message,5,ABTest_test-first-person_alternative,,,,,Hi! I hope you are finding these messages useful. Please type “MoreTips” when you want to receive your next message.,,,,,,,,,,,,,,,e8d35bd7-d6fe-4867-8b67-16073d1ff9e4,,execute_actions,1055;600
+7,send_message,5;5,ABTest_test-first-person_Default;,,,,,Hi! We hope you are finding these messages useful. Please type “MoreTips” when you want to receive your next message.,,,,,,,,,,,,,,,5083ab89-4549-43aa-b0ce-4132501b152b,,execute_actions,805;600
+8,save_value,3;4;6;7,,,,,hook message,"@(fields.hook_message & ""default"")",,,,,,,,,,,,,,,c03c132f-9f20-4665-bf4e-289a24bd289e,,execute_actions,265;840

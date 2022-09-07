@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Pangarap na Paglalakbay
+•	Hindi ka makakalakbay pero pwede kang mangarap! Tanungin ang mga tanong na ito sa iyong teenager.
+•	Saan mo nais maglakbay? Hanggang kailan ka maglalakbay? Ano ang iimpake mo? Ano ang gagawin mo? Ano ang mga titingnan mo?
+•	Tumingin sa isang mapa nang magkasama kung mayroon ka nito.
+•	Pumili ng isang bansa na hindi pa niya narinig at tingnan ito nang magkasama sa Internet.",,,,,,,,,,,,,,,1feb242b-3fcb-41e0-879e-5810cee05181,,execute_actions,;

@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Would you like to change the language you are currently receiving messages in?,Yes,No,,,,,,,,,,,,,fd895c1a-fa28-4d24-9e7f-c01f644e41d9,,execute_actions,560;80
+2,wait_for_response,1,,,,,Result 2,,,,,,,,,,,,,,,,529efc17-9ea7-4f57-8881-4b71d2e9fc77,,wait_for_response,420;260
+3,send_message,2,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,dcc077b3-1434-4e4c-904c-3e6d5b9a52e1,,execute_actions,800;380
+4,go_to,3,,,,,,1,,,,,,,,,,,,,,,,,,
+5,send_message,2,yes y,,has_any_word,Yes,,Which language would you like?,English,,,,,,,,,,,,,,b9111c4d-988e-492c-9ebb-d405e951f18d,,execute_actions,280;400
+6,wait_for_response,5,,,,,language,,,,,,,,,,,,,,,,28100c94-0f86-44b1-82ba-dd5f04376590,,wait_for_response,360;680
+7,set_language,6,english,,has_any_word,English,,eng,,,,,,,,,,,,,,,5ffaac0d-1deb-4122-b8a2-c4046aeb69d6,,execute_actions,340;880
+8,start_new_flow,7,,,,,,PLH - Internal - Define attachments paths,,,,,,,,,,,,,,89d00fef-a0a2-48f9-8a6c-27348218fa29,69b39fbe-86b1-4d7a-9d1e-abc19d08aa9f,,split_by_subflow,340;1000
+9,send_message,6,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,0f6a46cb-a110-46c3-8f54-a3bae26cf1e3,,execute_actions,1040;720
+10,go_to,9,,,,,,5,,,,,,,,,,,,,,,,,,

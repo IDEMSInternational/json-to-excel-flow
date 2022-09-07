@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,c2b5883d-d39e-48d1-862b-1313d6a956a0,,split_by_expression,560;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Kumusta ang pakiramdam mo?,Mahusay,Okay lang,Hindi mabuti,,,,,,,,,,,,36566cca-5e86-4e4d-9bfe-ad3a0b1722ee,,execute_actions,435;200
+3,send_message,1,,,,,,Magandang araw! Kumusta ang pakiramdam mo?,Mahusay,Okay lang,Hindi mabuti,,,,,,,,,,,,4c7cb93d-4113-439d-8634-c78e8f7f6102,,execute_actions,685;200
+4,wait_for_response,2;3,,,,,checkin_how,,,,,,,,,,,,,,,,b831577f-4ef3-42d7-bf88-e50d8ca411d9,,wait_for_response,685;340
+5,send_message,4,mahusay,,has_any_word,Great,,Natututuwa akong marinig na nasa mabuti kang kalagayan. Napakagandang pakiramdam!,,,,,,,,,,,,,,,70acf714-b70f-46f0-a394-846c100cdd64,,execute_actions,55;500
+6,send_message,4,ok okay,,has_any_word,Ok,,Minsan nasa taas tayo. Minsan nasa ibaba. At minsan wala ni isa dito...at okay lang yan!,,,,,,,,,,,,,,,187427c2-dde0-4352-abec-da28e041df39,,execute_actions,375;500
+7,send_message,4,hindi mabuti,,has_any_word,Bad,,Pasensya ka na kung hindi maganda ang araw mo. Normal lamang na nahihirapan ka ngayon. Tandaan na hindi ka nag-iisa.,,,,,,,,,,,,,,,e0f4dd41-db27-4d67-afe9-227a770f0ebc,,execute_actions,905;480
+8,send_message,5;6;7,,,,,,"Kapag iningatan mo ang sarili mo, iniingatan mo ang mga anak mo. Lahat tayo dapat konektado. Subukang makipagusap sa mga kaibigan, pamilya o iba pang mga support network araw-araw. Kapag hindi mo ito madalas na nagagawa, gawin ito agad ngayon!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/two_parents_talking_together.jpg,,,,33c7e33f-a524-4901-8c37-0db78c044bc2,,execute_actions,335;760
+9,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,8fd44b20-2c2b-4ed8-8004-9ab114b3f5ae,,execute_actions,1225;340
+10,go_to,9,,,,,,1,,,,,,,,,,,,,,,,,,

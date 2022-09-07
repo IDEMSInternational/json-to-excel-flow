@@ -1,0 +1,33 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,d11749f8-fc57-40d6-9294-b5087bedf534,,split_by_expression,985;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Nasubukan mo na ba kamakailan na lutasin ang mga hindi pagkakasunduan sa kalmadong paraan kahit na nakaramdam ka ng pagkabigo?,Oo,Hindi,,,,,,,,,,,,,e11bb361-d998-4ed3-a41d-d1037433237b,,execute_actions,860;200
+3,send_message,1,,,,,,Magandang araw! Nasubukan mo na ba kamakailan na lutasin ang mga hindi pagkakasunduan sa kalmadong paraan kahit na nakaramdam ka ng pagkabigo?,Oo,Hindi,,,,,,,,,,,,,e1b2045a-e972-4041-8e84-3901a2a9453c,,execute_actions,1110;200
+4,wait_for_response,2;3,,,,,checkin_managed,,,,,,,,,,,,,,,,646ddb86-3903-427e-8287-cd8a8471b1e6,,wait_for_response,820;400
+5,save_value,4,Oo y o,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,e14e5d82-33a1-4221-a68b-5c959839ed14,,execute_actions,20;460
+6,save_value,4,Hindi n h,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,a7652672-5847-461a-8bde-9a454f6ba226,,execute_actions,1590;580
+7,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,dcae34b2-8a73-46c5-aafa-e6c018b0b395,,execute_actions,1550;260
+8,save_value,7,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8911d7dc-0f57-4951-bbe3-71c70a92f3c1,,execute_actions,1550;400
+9,go_to,8,,,,,,1,,,,,,,,,,,,,,,,,,
+10,split_by_value,5,,,,,,@fields.user_name,,,,,,,,,,,,,,,4f1c5557-6b41-4c98-a258-8c374dd69a52,,split_by_expression,205;600
+11,send_message,10,,@fields.user_name,has_text,user_name,,Mahusay @fields.user_name! Ang paglutas ng mga hindi pagkakasunduan ay hindi palaging madali. Kumusta ang iyong naging karanasan?,Mahusay,Sakto lang,Hindi mabuti,,,,,,,,,,,,4465119a-e2c6-42ea-a23f-62200ce17d97,,execute_actions,80;800
+12,send_message,10,,,,,,Mahusay! Ang paglutas ng mga hindi pagkakasunduan ay hindi palaging madali. Kumusta ang iyong naging karanasan?,Mahusay,Sakto lang,Hindi mabuti,,,,,,,,,,,,20074d01-0e92-4b53-9816-ffaa4003f094,,execute_actions,330;800
+13,wait_for_response,11;12,,,,,checkin_how,,,,,,,,,,,,,,,,9bdf7fb1-fdac-45b8-9442-1cc4406eb321,,wait_for_response,330;1000
+14,send_message,13,mahusay,,has_any_word,Great,,Magaling!,,,,,,,,,,,,,,,da5c9397-05c9-4862-b5c0-2d2cc70d3c6b,,execute_actions,;1200
+15,send_message,13,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,000bb701-ca33-4b41-a429-0648fa120b05,,execute_actions,820;920
+16,go_to,15,,,,,,10,,,,,,,,,,,,,,,,,,
+17,send_message,13;13;6,sakto lang;hindi mabuti;,,has_any_word;has_any_word;,Neutral;Bad;,,Nalulungkot akong marinig ito. Saan ka nahirapan sa paglutas ng mga hindi pagkakasunduan sa pagitan ninyo ng iyong kinakasama?,Hindi ako naging kalmado noong kami’y nagtalo,Nagalit ako at sinigawan ko ang kinakasama ko,Nagalit ang kinakasama ko at sinigawan niya ako,Nakalimutan kong tumigil sandali nung nakakaramdam ako ng galit,,,,,,,,,,,f4bb0e7c-fd98-411b-8ecc-8f638da69073,,execute_actions,1610;940
+18,wait_for_response,17,,,,,checkin_problem,,,,,,,,,,,,,,,,c562a8db-7f3d-415a-8aa2-4c6b2af5862b,,wait_for_response,1730;1320
+19,send_message,18,hindi ako nanatiling kalmado nung nagkaroon kami ng pagtatalo,,has_only_phrase,1,,Maaaring maging mahirap na manatiling kalmado kapag nagkakaroon tayo ng hindi pagkakasundo sa iba. Subukang mag-isip ng isang bagay na pwede mong gawin para makatulong sa iyo gaya ng paghinga nang malalim.,,,,,,,,,,,,,,,3a5179e7-28d7-4a85-a230-6f04a85060a7,,execute_actions,1450;1300
+20,send_message,18,nagalit ako at nasigawan ang aking partner,,has_only_phrase,2,,"Sa pamamagitan ng pagtigil nang sandali bago tumugon, matutulungan tayong maging kalmado at makasagot nang mas maayos. Kapag nararamdaman mong nagagalit ka na, subukan mong tumigil nang sandali. Kaya mo ‘yan!",,,,,,,,,,,,,,,468a58c3-3a4d-45aa-a48b-93c35f1b7121,,execute_actions,1670;1480
+21,send_message,18,nagalit ang kinakasama ko at sinigawan niya ako,,has_only_phrase,3,,"Minsan negatibo ang sagot ng ibang tao sa atin kapag nagkakaroon tayo ng hindi pagkakasundo. Sa mga sitwasyong ito, mas mabuti minsan na lumayo muna nang sandali hanggang kumalma na ang mga taong sangkot.",,,,,,,,,,,,,,,e9b6c06f-dd81-44f3-b9dd-3a0571c0f377,,execute_actions,1890;1480
+22,send_message,18,nakalimutan kong tumigil nang sandali nung nag-uumpisa na akong magalit,,has_only_phrase,4,,"Maaari madaling makalimutan ito, pero huwag kang susuko! Sa susunod na magsimula kang makaramdam ng galit, subukang huminga nang malalim bago tumugon. Pwede mo ring subukang lumayo sandali kung nagsisimula ka nang mainis.",,,,,,,,,,,,,,,c40e54ac-facc-4ced-9fb1-fe340dc86792,,execute_actions,2170;1300
+23,send_message,18,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,87098eb8-5618-4b53-8603-37208be426c0,,execute_actions,1610;1180
+24,go_to,23,,,,,,17,,,,,,,,,,,,,,,,,,
+25,send_message,14;19;20;21;22,,,,,,Gusto mo bang suriin ang nilalaman kaugnay dito?,Oo,Hindi,,,,,,,,,,,,,794e3237-4854-4016-b4c1-aefc92f4c2d2,,execute_actions,;1340
+26,wait_for_response,25,,,,,Result 5,,,,,,,,,,,,,,,,8eb8236c-79db-4ee6-9b24-ea313da09d64,,wait_for_response,350;1480
+27,start_new_flow,26,Oo y o,,has_any_word,Yes,,PLH - Content - Positive - IPV - Tip 4,,,,,,,,,,,,,,56ab11c9-a317-41ef-89e0-4b6e192eee60,6ebd6466-6ad6-43ea-838f-f3163cc4926b,,split_by_subflow,;2000
+28,split_by_value,26,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,3af08dc3-d892-4146-a9e4-fab725d0b8ee,,split_by_expression,655;1660
+29,send_message,28,,@fields.user_name,has_text,user_name,,"Okay lang ‘yan! Tandaang pwede mong makuha ang impormasyong ito anumang oras sa pamamagitan ng pag-type ng ""Help"". Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,70e9f8d2-ab11-410c-bb96-c9ae81ab26fd,,execute_actions,530;1860
+30,send_message,28,,,,,,"Okay lang ‘yan! Tandaang pwede mong makuha ang impormasyong ito anumang oras sa pamamagitan ng pag-type ng ""Help"". Usap tayo mamaya!",,,,,,,,,,,,,,,fdf64765-5e10-4828-8196-360b9b8f457c,,execute_actions,780;1860
+31,send_message,26,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,cd6233e7-9fdc-44c1-ad8c-1253afa965d5,,execute_actions,820;1360
+32,go_to,31,,,,,,25,,,,,,,,,,,,,,,,,,

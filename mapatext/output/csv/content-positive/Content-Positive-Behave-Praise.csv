@@ -1,0 +1,90 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Praising your children,,,,,,,,,,,,,,,0a239522-ad11-4d92-8b81-2b25e21b2e58,,execute_actions,1110;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,379730fb-4fa6-4ed9-ac6c-bf2c8a28ea36,,split_by_subflow,1110;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,206760dc-b69d-4ab8-b9a7-e6398a8772ba,,split_by_contact_field,1070;300
+4,send_message,3,,,,,,Keep it positive! Make sure your children get lots of praise when they are behaving well. This will make them want to behave that way more often.,,,,,,,,,,,,,,,cd6254c4-3469-44d9-86c2-e164ff342ec2,,execute_actions,1970;380
+5,send_message,4,,,,,,"We all appreciate it when the good things we do are recognised by others, especially when it is someone who is close to us. ",,,,,,,,,,,,,,,72593a45-1479-4e93-8b6d-aa1bcdaae3f5,,execute_actions,2980;400
+6,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,12945813-9fa4-4702-9844-07a2eb28cce6,,split_by_contact_field,450;900
+7,split_by_value,6,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,1d464e18-6bb7-4e3f-85bc-35811d061de4,,split_by_expression,125;1280
+8,send_message,7,,@fields.child_nickname,has_text,child_nickname,,Here's a video on how you can bring more attention to positive behaviour by praising @fields.child_nickname!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Praise.m4v,,1880103d-2054-4a08-a98d-9495612cfa19,,execute_actions,;1480
+9,send_message,7,,,,,,Here's a video on how you can bring more attention to positive behaviour by praising your child!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Praise.m4v,,37686d75-8dab-4dc1-b61b-593d34861c11,,execute_actions,250;1480
+10,split_by_value,6,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,95d087dc-368f-4866-9767-6c232f37b22e,,split_by_expression,905;1060
+11,send_message,10,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message on how you can bring more attention to positive behaviour by praising @fields.child_nickname!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Praise.mp3,,,f2cefa93-986a-4fd0-8c2c-732edc4df61f,,execute_actions,780;1260
+12,send_message,10,,,,,,Here's an audio message on how you can bring more attention to positive behaviour by praising your child!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Praise.mp3,,,e0ea4f5c-2af1-49c3-841a-db7fba7acd07,,execute_actions,1030;1260
+13,wait_for_response,11;12;8;9,,,,,Result 4,,,,,,,,,,,,,,,,a6784e77-1555-4e87-963b-0fcf687e5423,120,wait_for_response,1730;1640
+14,start_new_flow,13;13;6,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,8015478c-5c3a-4d6e-aa63-b56fbe1e5dea,,split_by_subflow,450;1760
+15,send_message,5,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,85836d64-3ff5-48b4-8df9-e8c44d8e6220,,execute_actions,1990;580
+16,wait_for_response,15,,,,,Result 6,,,,,,,,,,,,,,,,d3cf5225-dd72-4757-b22e-a478ecff2628,3600,wait_for_response,1910;720
+17,go_to,16,y yes,,has_any_word,Y,,6,,,,,,,,,,,,,,,,,,
+18,send_message,16,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1f897d35-ad16-4d9e-bd38-c374d75e282c,,execute_actions,2980;700
+19,go_to,18,,,,,,15,,,,,,,,,,,,,,,,,,
+20,send_message,16;16,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,bc4c584b-02f9-47d4-a543-e3e4b6f6e7f5,,execute_actions,2170;960
+21,send_message,14;14,Complete;Expired,,,,,"Praise works for our children, too. When you bring more attention to positive behaviour, they are likely to do it more often. They also will feel good about themselves! 
+
+Here are 3 simple steps to get it right:
+
+1. Be positive
+2. Be specific
+3. Be enthusiastic
+
+To learn more about one of these steps, type ""1"" to ""3"". You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,a64d9099-5ab8-4a2c-ac2f-71e21c32d7fe,,execute_actions,470;1900
+22,wait_for_response,21,,,,,list_of_tips,,,,,,,,,,,,,,,,9efe82d0-872e-4935-bb13-348aacf68959,,wait_for_response,1790;2160
+23,split_by_value,22,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,a366d319-1cca-4aa8-9180-d977622af553,,split_by_expression,615;2340
+24,send_message,23,,@fields.child_nickname,has_text,child_nickname,,"Step 1. Be positive
+
+Praise @fields.child_nickname for something they have done well. They may not show it, but you’ll see them doing that good thing again. It will also reassure them that you notice and care.",,,,,,,,,,,,,,,989ba0f5-ba13-41d2-80a3-e60c4627a1df,,execute_actions,490;2540
+25,send_message,23,,,,,,"Step 1. Be positive
+
+Praise your child or teenager for something they have done well. They may not show it, but you’ll see them doing that good thing again. It will also reassure them that you notice and care.",,,,,,,,,,,,,,,310a9477-a66a-4c65-b261-989f0a7c91a8,,execute_actions,740;2540
+26,split_by_value,22,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,96d896da-0633-4e64-87a3-e73b370db466,,split_by_expression,1355;2580
+27,send_message,26,,@fields.child_nickname,has_text,child_nickname,,"Step 2. Be specific
+
+Praise the behaviour. Use words to describe the behaviour that you are praising. Say, 'Well done for finishing all your chores, @fields.child_nickname,' instead of 'Good job.'",,,,,,,,,,,,,,,1b07911d-168a-4163-a9fe-8a3d7046dd6b,,execute_actions,1230;2780
+28,send_message,26,,,,,,"Step 2. Be specific
+
+Praise the behaviour. Use words to describe the behaviour that you are praising. Say, 'Well done for finishing all your chores, Sam,' instead of 'Good job.'",,,,,,,,,,,,,,,3e64a51d-0f72-4e95-8191-22b082a03e90,,execute_actions,1730;2780
+29,send_message,22,3,,has_number_eq,3,,"Step 3. Be enthusiastic
+
+Really mean it when you say it! The more real you are the better it will feel.",,,,,,,,,,,,,,,e33ee968-6fb0-4ace-b341-f015aae3cb32,,execute_actions,1990;2840
+30,send_message,24;25;27;28;29,,,,,,"Please select another number if you want to learn more about praise:
+
+1. Be positive
+2. Be specific
+3. Be enthusiastic
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,38b78877-1df9-4c86-9efb-b468c5b6706f,,execute_actions,1130;3040
+31,save_value,30,,,,,praise list of tips,"@(fields.praise_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,b479e990-ce0b-499f-8178-122b70fd6474,,execute_actions,1090;4020
+32,go_to,31,,,,,,22,,,,,,,,,,,,,,,,,,
+33,split_by_value,22,N,,has_any_word,N,,@fields.age_group_for_tips,,,,,,,,,,,,,,,b9e5905a-2bac-4d28-beb8-6a4bfcf59d6f,,split_by_contact_field,2190;3020
+34,send_message,33,teen,@fields.age_group_for_tips,has_any_word,Teen,,Here is a comic on praising your teen.,,,,,,,,,,,,,,,da974c39-2463-4ce9-b990-fc056e2042b0,,execute_actions,2050;3180
+35,send_message,34,,,,,,"Parent: “Thank you for being quiet while I talked to my boss. I appreciate it! Here, you can use my phone to WhatsApp your friends”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_teens_comic_1.png,,,,81605813-0e9f-4bd9-bf0a-91eae24f75fa,,execute_actions,1910;3320
+36,send_message,35,,,,,,"Teen: “Thanks! I really want to see how they are doing.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_teens_comic_2.png,,,,81605813-0e9f-4bd9-bf0a-91eae24f75fa,,execute_actions,1910;3320
+37,send_message,33,,,,,,Here is a comic on praising your child.,,,,,,,,,,,,,,,66526425-2ef3-4adc-9033-de649af7a76a,,execute_actions,3420;3160
+38,send_message,37,,,,,,"Silence 
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_kids_comic_1.png,,,,34e64a5b-d67c-46f3-adbf-66b195518f18,,execute_actions,3420;3320
+39,send_message,38,,,,,,"Parent: “Thank you for playing quietly while I was doing work. In 5 minutes I will be able to join you.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_kids_comic_2.png,,,,34e64a5b-d67c-46f3-adbf-66b195518f18,,execute_actions,3420;3320
+40,send_message,39,,,,,,"Parent: “I really appreciate you playing quietly together while I worked. Now I can play with you for a bit. What would you like to do?”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_kids_comic_3.png,,,,34e64a5b-d67c-46f3-adbf-66b195518f18,,execute_actions,3420;3320
+41,split_by_group,36;40,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,8a0247a7-ed4a-4e41-bb34-508e89d7e03c,,split_by_expression,2605;3380
+42,split_by_group,41,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,6f48619a-1c44-49c5-9d37-fe873d05b05a,,split_by_expression,2855;3780
+43,send_message,42,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try to find 3 things that you can praise your children for every day. You can also praise other adults in your household, too. Notice how they respond!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,91859408-8cc3-4466-919b-919b1901e92e,,execute_actions,2980;3980
+44,send_message,42;42,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try to find 3 things that you can praise your children for every day. You can also praise other adults in your household, too. Notice how they respond!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,79be9231-e778-4b84-a3b9-71920edaec02,,execute_actions,2730;3980
+45,split_by_group,41;41,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,66caf554-fccf-4f90-8bbe-e55042b01a15,,split_by_expression,2355;3580
+46,send_message,45,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try to find 3 things that you can praise your children for every day. You can also praise other adults in your household, too. Notice how they respond!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,4fe9c1ee-4dd9-4475-a3c2-0f1bd6525867,,execute_actions,2480;3980
+47,send_message,45;45,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try to find 3 things that you can praise your children for every day. You can also praise other adults in your household, too. Notice how they respond!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,b1221262-4376-4538-a21b-9297f71931af,,execute_actions,2230;3980
+48,save_value,43;44;46;47,,,,,current type assessed,tip,,,,,,,,,,,,,,,04471ef5-63c9-4688-a42b-1fd09cc7e1a9,,execute_actions,3040;4220
+49,save_value,48,,,,,current activity,praise,,,,,,,,,,,,,,,04471ef5-63c9-4688-a42b-1fd09cc7e1a9,,execute_actions,3040;4220
+50,start_new_flow,49,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,55b88120-d558-4073-8593-d78ab5bcd7a1,,split_by_subflow,1750;4760
+51,split_by_value,50;50,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,1c4b17c1-5095-4728-845e-94b864db5f84,,split_by_expression,1605;5000
+52,send_message,51,,@fields.user_name,has_text,user_name,," Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,3cd651c8-6447-429d-b8d4-cb5eacb4e70f,,execute_actions,1480;5200
+53,send_message,51,,,,,," Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later!",,,,,,,,,,,,,,,a01383bf-aab9-4153-8f38-dcc88fdcbfb6,,execute_actions,1730;5200
+54,send_message,22,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,318da02e-ceb7-419c-a22d-932d433208b9,,execute_actions,2070;2220
+55,go_to,54,,,,,,21,,,,,,,,,,,,,,,,,,

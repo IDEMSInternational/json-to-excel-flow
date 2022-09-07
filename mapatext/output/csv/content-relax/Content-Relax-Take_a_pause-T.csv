@@ -1,0 +1,41 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Taking a Pause,,,,,,,,,,,,,,,01ed46a9-4450-4c17-a102-4be9d7f55303,,execute_actions,730;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,8770a6ca-1cab-403e-b86e-0dc3b83255a8,,split_by_subflow,770;80
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,c3ae8707-9089-4be2-b182-6442c83a4f13,,split_by_expression,1555;300
+4,split_by_value,3,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,11cfabb2-c4b5-4456-b402-0ba96095e28f,,split_by_expression,1180;500
+5,send_message,4,man,@fields.gender_personalisation,has_any_word,man,,"Hello @fields.user_name! This is a stressful time, especially for fathers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.
+
+Today's tip is about how to keep calm and manage stress in our busy lives. ",,,,,,,,,,,,,,,dff41d47-1a50-41c1-8b78-ceea87762416,,execute_actions,930;900
+6,send_message,4,woman,@fields.gender_personalisation,has_any_word,woman,,"Hello @fields.user_name! This is a stressful time, especially for mothers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.
+
+Today's tip is about how to keep calm and manage stress in our busy lives. ",,,,,,,,,,,,,,,537a508f-c8fa-4098-9fb8-438a58b968ab,,execute_actions,1180;900
+7,send_message,4,,,,,,"Hello @fields.user_name! This is a stressful time, especially for parents. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.
+
+Today's tip is about how to keep calm and manage stress in our busy lives. ",,,,,,,,,,,,,,,065acab2-ecfe-4e24-985f-0f2acf512fa8,,execute_actions,1430;900
+8,split_by_value,3,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,7c11c843-416c-42e6-b097-b49e9f435c76,,split_by_expression,1930;700
+9,send_message,8,man,@fields.gender_personalisation,has_any_word,man,,"Hello! This is a stressful time, especially for fathers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.
+
+Today's tip is about how to keep calm and manage stress in our busy lives. ",,,,,,,,,,,,,,,8fc285fd-266c-437f-abe4-c8fd59764c40,,execute_actions,1680;900
+10,send_message,8,woman,@fields.gender_personalisation,has_any_word,woman,,"Hello! This is a stressful time, especially for mothers. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.
+
+Today's tip is about how to keep calm and manage stress in our busy lives. ",,,,,,,,,,,,,,,e5c5269f-870d-4859-a45c-0cb066d6927c,,execute_actions,1930;900
+11,send_message,8,,,,,,"Hello! This is a stressful time, especially for parents. When we are stressed or angry, we do not make the best decisions. Taking the time to care for ourselves will help us care for our children.
+
+Today's tip is about how to keep calm and manage stress in our busy lives. ",,,,,,,,,,,,,,,3bff6beb-6b33-4dc0-9ffc-0daf9273ef1c,,execute_actions,2180;900
+12,split_by_value,10;11;5;6;7;9,,,,,,@fields.toolkit,,,,,,,,,,,,,,,f75ea8f5-28b1-4171-bd2a-47bb07d76edd,,split_by_contact_field,590;1200
+13,send_message,12,@results.skill,@fields.toolkit,has_phrase,already completed,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg,,,,008f3020-2158-4957-b64b-597a7fbf0c65,,execute_actions,270;1280
+14,send_message,12,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg,,,,34d467e0-8f7e-486b-a643-ffc9c70ce297,,execute_actions,790;1300
+15,wait_for_response,13;14,,,,,know_more,,,,,,,,,,,,,,,,9fa9e4c7-72d4-4a00-bbf0-ff350ef22908,,wait_for_response,290;1620
+16,save_value,15,yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,aa0aaf1a-2762-4c7c-9f9d-5e61f1c29bfd,,execute_actions,;1760
+17,save_value,16,,,,,from theme,yes,,,,,,,,,,,,,,,76caaf0c-5fa8-4ba1-a714-0a1d29911ac7,,execute_actions,750;1480
+18,start_new_flow,17,,,,,,PLH - Content - Relax - Take a pause,,,,,,,,,,,,,,cb2e0d0a-0c54-4d40-8fba-09b1456779fa,f7ee366b-7e4e-449b-bee9-c8caac2e7ce5,,split_by_subflow,770;1780
+19,save_value,18,Expired,,,,has expired,tip,,,,,,,,,,,,,,,eb71f925-b332-4659-af3e-2683513718a3,,execute_actions,2400;1060
+20,send_message,19,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,5e74f434-d4bd-4fb5-8231-f8c20d2f71c2,,execute_actions,2600;1160
+21,save_value,18;20,Complete;,,,,from theme,no,,,,,,,,,,,,,,,b49e41e1-aad5-43a6-9b60-ce7ceda5f43e,,execute_actions,2400;1340
+22,split_by_value,15,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,730efe54-f660-4412-89a2-ac653c70d06b,,split_by_expression,145;2180
+23,send_message,22,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need an activity to help you relax or reduce stress. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,b4d3baa9-a0e8-412d-a69f-ae6641cb8681,,execute_actions,20;2380
+24,send_message,22,,,,,,"That's okay! You can always type ""Help"" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",,,,,,,,,,,,,,,f9bb3b6f-bc31-498b-b82c-3f385818b0ab,,execute_actions,270;2380
+25,save_value,23;24,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8743c4f9-3a03-4359-863b-1c0519e6a2ef,,execute_actions,;1960
+26,save_value,15,,,,,last interaction,@(now()),,,,,,,,,,,,,,,eea78350-2911-4ede-99a2-10f781816fb0,,execute_actions,410;1860
+27,send_message,26,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,53be4691-361a-40d5-8afb-259578f315fe,,execute_actions,450;1480
+28,go_to,27,,,,,,12,,,,,,,,,,,,,,,,,,

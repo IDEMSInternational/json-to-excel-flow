@@ -1,0 +1,29 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,53da5fbd-86c0-4189-b17d-57a6877935dc,,split_by_expression,360;
+2,send_message,1,man,@fields.gender_personalisation,has_any_word,man,,"2. Maging amang may kumpiyansa sa sarili at nagbibigay ng suporta sa kanyang kinakasama
+
+Kapag parehong aktibong magulang ang nanay at tatay, lahat ay nakikinabang, kabilang na ang mga anak! Ipakita mo sa iyong kinakasama na pinahahalagahan mo tuwing siya ay nagbibigay ng oras para sa inyong mga anak.",,,,,,,,,,,,,,,5b117290-035d-4097-9c64-adb4e3235284,,execute_actions,110;200
+3,send_message,1,woman,@fields.gender_personalisation,has_any_word,woman,,"2. Maging inang may kumpiyansa sa sarili at nagbibigay ng suporta sa kanayang kinakasama
+
+Kapag parehong aktibong magulang ang nanay at tatay, lahat ay nakikinabang, kabilang na ang mga anak! Ipakita mo sa iyong kinakasama na pinahahalagahan mo tuwing siya ay nagbibigay ng oras para sa inyong mga anak.",,,,,,,,,,,,,,,3553af4f-11a9-4ad8-a7f5-6d528853e71d,,execute_actions,360;200
+4,send_message,1,,,,,,"2. Maging magulang na may kumpiyansa sa sarili at nagbibigay ng suporta sa kanyang kinakasama
+
+Kapag parehong aktibong magulang ang nanay at tatay, lahat ay nakikinabang, kabilang na ang mga anak! Ipakita mo sa iyong kinakasama na pinahahalagahan mo tuwing siya ay nagbibigay ng oras para sa inyong mga anak.",,,,,,,,,,,,,,,9dac7191-71b2-49ec-93d2-f6572fcc0918,,execute_actions,610;200
+5,send_message,2;3;4,,,,,,Gusto mo bang makakita ng komiks tungkol sa pagiging magulang na may kumpiyansa at nagbibigay ng suporta sa kanyang kinakasama?,Oo,Hindi,,,,,,,,,,,,,cf5ab454-6255-46f8-bf34-7c697dbe5e02,,execute_actions,610;520
+6,wait_for_response,5,,,,,Result 1,,,,,,,,,,,,,,,,f440b843-2af7-4f62-aa82-ed69f82a597d,,wait_for_response,950;660
+7,send_message,6,Oo y o,,has_any_word,Yes,,"Parent 1: “Mahusay, Jessie! Ang galing mo magbasa!”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_1.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+8,send_message,7,,,,,,"Parent 2: “Ang ganda ng panahon ngayon. Sayang wala akong oras na makapaglakad sa labas.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_2.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+9,send_message,8,,,,,,"Parent 1: “Kung gusto mong lumabas para makalanghap ng sariwang hangin at para na rin makapag-exercise ka, mahal, puwede kong tulungan ang mga bata na tapusin ang kanilang homework habang naglalakad-lakad ka.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_3.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+10,send_message,9,,,,,,"Parent 2: “Gusto ko iyan, mahal! Salamat sa pagsuporta.”
+
+Parent 1: “Syempre naman! Masaya rin tulungan ang mga bata sa pagbabasa! Napakagaling na nila.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/become_a_confident_partner_and_supportive_parent_comic_4.png,,,,389efd11-427e-4931-8c64-2c3e14bf76a9,,execute_actions,610;700
+11,send_message,6,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,f3e6cd4c-d005-415a-8a28-4159a5207e22,,execute_actions,1030;820
+12,go_to,11,,,,,,5,,,,,,,,,,,,,,,,,,

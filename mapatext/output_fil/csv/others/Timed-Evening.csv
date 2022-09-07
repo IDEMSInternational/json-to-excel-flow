@@ -1,0 +1,30 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,evening frequency counter,"@(mod(fields.evening_frequency_counter+1, fields.frequency))",,,,,,,,,,,,,,,e4d973fe-4f7e-46a9-a21f-3c982a7b70e0,,execute_actions,520;
+2,save_flow_result,1,,,,,time of day,evening,,,,,,,,,,,,,,,4400a384-ccfa-4338-8927-6e3efe183f11,,execute_actions,520;120
+3,split_by_value,2,,,,,,@fields.evening_frequency_counter,,,,,,,,,,,,,,,2b7dfb02-73ad-4c5b-8f96-15618ffaabbe,,split_by_contact_field,540;220
+4,split_by_value,3,0,@fields.evening_frequency_counter,has_number_eq,content,,@fields.next_tip_evening,,,,,,,,,,,,,,,2a09c61c-71a9-4f9c-9460-00bb39a36c8d,,split_by_contact_field,120;300
+5,save_value,4,,,,,next tip evening,"@(min(fields.next_tip_evening+1, fields.total_tip_days))",,,,,,,,,,,,,,,3633d245-dd62-4b42-854e-bfb56ca7263c,,execute_actions,120;460
+6,start_new_flow,5,,,,,,PLH - Handler - Content - Evening,,,,,,,,,,,,,,4629e28c-5336-4ebb-86b4-e60a99da0f13,1004271c-6c6f-4ac6-9c14-6cf6075ba4fd,,split_by_subflow,140;600
+7,split_by_value,6,Complete,,,,,@child.results.evening_content,,,,,,,,,,,,,,,8cde7935-6ab1-41a0-99ad-e2f1ced68045,,split_by_expression,120;760
+8,split_by_value,3,,,,,,@fields.get_ipv_content,,,,,,,,,,,,,,,49e5ca05-08d1-4514-93f1-3c075b5ceaaa,,split_by_contact_field,1000;320
+9,save_value,8,yes,@fields.get_ipv_content,has_any_word,Yes,calm praise supportive counter,"@(if(fields.calm_praise_supportive_counter<3, fields.calm_praise_supportive_counter+1,0))",,,,,,,,,,,,,,,a5235fd3-3aa5-4db4-b500-28302af3c176,,execute_actions,1280;360
+10,split_by_value,9,,,,,,@fields.ipv_checkin_counter,,,,,,,,,,,,,,,a3524d19-484a-4a3a-9073-ef0f25a3020f,,split_by_contact_field,1300;460
+11,save_value,10,0,@fields.ipv_checkin_counter,has_number_gte,ipv time,ipv checkin counter,@(fields.ipv_checkin_counter +1),,,,,,,,,,,,,,,7a4c7c7e-ce33-4dfe-a149-e9d753e8a397,,execute_actions,1380;580
+12,split_by_value,11,,,,,,@fields.ipv_checkin_counter,,,,,,,,,,,,,,,c66043e9-fc4e-4a17-a608-2c601124821d,,split_by_contact_field,1280;680
+13,start_new_flow,12,2,@fields.ipv_checkin_counter,has_any_word,check in 2,,PLH - Content - Positive - CheckIn - IPV 2,,,,,,,,,,,,,,2e30ccdf-8251-4943-a1c9-476a2e6dbb61,fc096abe-a0ac-431c-b063-fa16c2ae2c76,,split_by_subflow,1200;840
+14,save_value,13,Expired,,,,has expired,ipv2,,,,,,,,,,,,,,,a181a5dd-efb1-44c9-a9d6-7c9ad5df5e10,,execute_actions,1240;1000
+15,start_new_flow,12,4,@fields.ipv_checkin_counter,has_any_word,check in 3,,PLH - Content - Positive - CheckIn - IPV 3,,,,,,,,,,,,,,1f60ca16-5d8e-4aa2-9c58-61b4441e1d1c,052e3125-bd77-4020-85b4-632dd4eeb782,,split_by_subflow,1420;800
+16,save_value,15,Expired,,,,has expired,ipv3,,,,,,,,,,,,,,,86a5657b-c46a-4fa7-884c-0e0fc8f02a68,,execute_actions,1480;960
+17,start_new_flow,12,6,@fields.ipv_checkin_counter,has_any_word,check in 4,,PLH - Content - Positive - CheckIn - IPV 4,,,,,,,,,,,,,,95b3d752-3c99-40f3-83b6-6e6c551bc395,f405e8e5-ec2e-4488-b1b3-9f8d0d5a4ca5,,split_by_subflow,1640;780
+18,save_value,17,Expired,,,,has expired,ipv4,,,,,,,,,,,,,,,5ebef743-fa69-4698-87b0-f2c164aa15f1,,execute_actions,1700;940
+19,start_new_flow,12,8,@fields.ipv_checkin_counter,has_any_word,check in 5,,PLH - Content - Positive - CheckIn - IPV 5,,,,,,,,,,,,,,b7a0b0d5-0e3c-4ab4-b703-8248efcad4ad,5d7313d8-21c4-46fc-bb9d-f65c9bb74123,,split_by_subflow,1860;780
+20,save_value,19,Expired,,,,has expired,ipv5,,,,,,,,,,,,,,,a33a7de2-77f8-4b62-80fd-8f300ec6f4ef,,execute_actions,1940;940
+21,save_value,4;7;8,@fields.next_tip_main;no;,@fields.next_tip_evening;@child.results.evening_content;,has_number_gt;has_any_word;,>Fields;No content;,calm praise supportive counter,"@(if(fields.calm_praise_supportive_counter<3, fields.calm_praise_supportive_counter+1,0))",,,,,,,,,,,,,,,a7603770-87f3-4200-9714-9cf120d3e9d9,,execute_actions,620;440
+22,split_by_value,10;12;21,,,,,,@fields.calm_praise_supportive_counter,,,,,,,,,,,,,,,1f9bcf54-2cd2-49ce-a580-6872ea1a646c,,split_by_contact_field,560;560
+23,start_new_flow,22,0,@fields.calm_praise_supportive_counter,has_number_eq,praise,,PLH - Supportive - Praise,,,,,,,,,,,,,,ca8f0488-a308-4475-8eae-f6a9ee04b828,615877e7-21c7-4820-bba4-646e31cf3cd7,,split_by_subflow,560;700
+24,save_value,23,Expired,,,,has expired,praise,,,,,,,,,,,,,,,fbe79bcd-32fc-4195-8d2f-4189a42cc9af,,execute_actions,500;880
+25,start_new_flow,22,2,@fields.calm_praise_supportive_counter,has_any_word,calm,,PLH - Supportive - Calm,,,,,,,,,,,,,,8adf0beb-24df-4563-a57a-95ed147fe629,b8458984-440d-4279-a555-5f279a4cfc23,,split_by_subflow,820;700
+26,save_value,25,Expired,,,,has expired,calm,,,,,,,,,,,,,,,4b043f0d-aee2-49df-9872-c090af0f3d22,,execute_actions,760;860
+27,start_new_flow,22,,,,,,PLH - Supportive - Activities,,,,,,,,,,,,,,6ce87097-f45a-4fd7-b6c0-b339c9c3625b,8a01258f-b3f4-455a-b0a6-926f4d9f86e8,,split_by_subflow,1040;700
+28,save_value,27,Expired,,,,has expired,supp_act,,,,,,,,,,,,,,,e30865d4-6e3e-49e9-8652-fa128dacc961,,execute_actions,980;880
+29,send_message,14;16;18;20;24;26;28,,,,,,"Mukhang abala ka ngayon.  Maaari mong i-type ang ""GoBack"" para matanggap muli ang mga pinakabagong mensahe.",,,,,,,,,,,,,,,c524febc-804f-4d3a-8f25-04aa05111141,,execute_actions,700;1060

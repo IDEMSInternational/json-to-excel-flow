@@ -1,0 +1,13 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,5dc4a847-c97f-41ba-bcb5-4d1352923927,,split_by_expression,425;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Every child has challenging behaviour sometimes. Would you like some tips on how to address these behaviours?,Yes,No,,,,,,,,,,,,,d0e4f05b-7c59-4584-8d09-30c51ad35a42,,execute_actions,300;200
+3,send_message,1,,,,,,Hi! Every child has challenging behaviour sometimes. Would you like some tips on how to address these behaviours?,Yes,No,,,,,,,,,,,,,742166a9-0368-490e-831a-d7aeeac3cc78,,execute_actions,550;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,d52ac8d4-66c3-4909-8e48-8da4a3d8d51e,,wait_for_response,240;400
+5,save_value,4,yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,c61002ec-2a24-481b-9331-517ee836a619,,execute_actions,;500
+6,start_new_flow,5,,,,,,PLH - Content - Extra - Behave,,,,,,,,,,,,,,6ec3c018-d7e9-4649-91f6-80d95d5ca5ed,3855b6cb-6240-400c-8348-95f81f175588,,split_by_subflow,;600
+7,save_value,4,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,96960d36-d54b-4b2d-a4b7-16c8d7da5d99,,execute_actions,650;620
+8,send_message,7,,,,,,"That is okay! You can always access parenting tips by typing ""Help"".",,,,,,,,,,,,,,,656359f9-9a5d-405a-bc22-613cd139c1d2,,execute_actions,890;540
+9,send_message,8,,,,,,"Remember that One-on-One time, praise for being good, and consistent routines will also help reduce difficult behaviours.",,,,,,,,,,,,,,,352021b9-3e95-4a50-99f5-40ea2f88aa78,,execute_actions,890;700
+10,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,57ab9005-2cb6-472a-9b5c-dc3fbceff1b9,,execute_actions,790;340
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,57ab9005-2cb6-472a-9b5c-dc3fbceff1b9,,execute_actions,790;340
+12,go_to,11,,,,,,1,,,,,,,,,,,,,,,,,,

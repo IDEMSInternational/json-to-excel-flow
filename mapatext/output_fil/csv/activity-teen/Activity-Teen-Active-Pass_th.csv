@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Ipasa ang Snap  
+•	Ang larong ito ay maganda kung may 3 o hit pang tao.
+•	Umupo ng nakapabilog at magsimulang ipasa ang isang snap sa bilog (o pumalakpak kung hindi ka marunong mag-snap).
+•	Mag-snap ng isang bese at ibato sa iba ang iyong snap.
+•	Maaari mong ipatalbog ang saklot o snap, ihagis ito sa hangin, at saluhin ito nang ilang beses bago mo ito ipasa. 
+•	Ang direksyon (pataas, pababa, tuwid, baliko, gumugulong sa lupa) at lakas (malakas, mahina, katamtaman) ng iyong ibinatong snap ay dapat makaapekto sa kung paano ito tatanggapin ng iba.  
+•	Tingnan ang taong babatuhhan mo ng snap.  
+•	Ang taong sasalo nito ay kailangang mag-snap ng isang beses para saluhin ito.
+•	Kapag naging magaling na ang lahat dito, maaari kang magsimulang umikot sa loob ng silid, habang pinapasa pa rin ang saklot o snap.  
+•	Kaya mo bang bumato sa ilalim ng iyong ng binti? Patalikod? Sa taas iyong ulo? Maharang ang isang pumasa? Mag-enjoy sa pag-snap!  ",,,,,,,,,,,,,,,69fed6f0-4ede-4a19-b0cf-a58711bb5ce7,,execute_actions,;

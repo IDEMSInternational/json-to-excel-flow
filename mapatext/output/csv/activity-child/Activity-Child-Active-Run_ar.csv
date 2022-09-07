@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Run Around and Do This 
+•	Everyone runs around the room or garden.  Make sure the space is large enough and safe.
+•	At any time, someone can stop somewhere and say, “When you get over here, you do this!”  
+•	What you do can be anything: push-ups, singing a song, crying, jumping… 
+•	The more you play, the more there are things to do in more and more places.  
+•	Each person can decide where to go and when.  
+•	It’s fun to interact with other people who are doing the same thing as you!",,,,,,,,,,,,,,,1511186e-6b84-40d8-9cee-897b6c4fff30,,execute_actions,;

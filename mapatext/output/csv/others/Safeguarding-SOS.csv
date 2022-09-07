@@ -1,0 +1,48 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,It looks like you are facing an emergency. Can you please tell us what kind of assistance you require?,Police,Medical services,Fire department,Mental health services,Violence prevention hotline,Suicide prevention hotline,Family counselling services,Education support for your child,COVID-19 Support,,,,,,258e1c62-8455-46f7-a050-4b8afb140aa7,,execute_actions,600;
+2,wait_for_response,1,,,,,sos_choice,,,,,,,,,,,,,,,,2ee96677-fda1-4d6a-ba19-4ddfb8477189,,wait_for_response,380;360
+3,send_message,2,police,,has_any_word,Police,,Philippines National Police Hotline: 117,,,,,,,,,,,,,,,46cdbb33-c6f8-4487-b9c0-151b94a47222,,execute_actions,120;500
+4,send_message,2,Medical,,has_any_word,Medical,,"National Emergency Hotline: 911
+
+Philippine Red Cross Helpline: 143 or (02) 8527-8385 to 95",,,,,,,,,,,,,,,1ecc3bba-9c24-4494-b3ea-4f6e0866e7d3,,execute_actions,360;500
+5,send_message,2,fire,,has_any_word,Fire,,Bureau of Fire Protection. Helplines: (02) 8426-0219 or (02) 8426-0246,,,,,,,,,,,,,,,58070bba-264f-4439-8fca-d22c81acbafa,,execute_actions,580;520
+6,send_message,2,mental,,has_any_word,Mental,,"National Center for Mental Health (NCMH) Crisis Hotlines :0917 899 8727 and (02) 7989 8727
+
+Mental Health First Responders (MHFR) Emergency Hotlines: (02) 1553, (02) 7-989-9727, 0917 899 8727 Email: telehealth@mhfirstresponse.org
+
+Philippine Mental Health Association (PMHA). Helpline:  0917 565 2036
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629",,,,,,,,,,,,,,,be53deb0-ec1b-43f8-b164-de576f449b6f,,execute_actions,820;620
+7,send_message,2,violence,,has_any_word,Violence,,"National Center for Mental Health (NCMH) Crisis Hotlines :0917 899 8727 and (02) 7989 8727
+
+Mental Health First Responders (MHFR) Emergency Hotlines: (02) 1553, (02) 7-989-9727, 0917 899 8727 Email: telehealth@mhfirstresponse.org
+
+Philippine Mental Health Association (PMHA). Helpline:  0917 565 2036
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629",,,,,,,,,,,,,,,4e68670a-5a0f-4225-9ff6-06ee4cab7f95,,execute_actions,1020;520
+8,send_message,2,suicide,,has_any_word,Suicide,,"National Center for Mental Health (NCMH) Crisis Hotlines :0917 899 8727 and (02) 7989 8727
+
+Mental Health First Responders (MHFR) Emergency Hotlines: (02) 1553, (02) 7-989-9727, 0917 899 8727 Email: telehealth@mhfirstresponse.org
+
+Philippine Mental Health Association (PMHA). Helpline:  0917 565 2036
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629
+
+Psychological Association of the Philippines. Helplines: 0915 422 5189 and 0947 571 7629",,,,,,,,,,,,,,,5d2b2aee-e93c-4bee-ac61-541f818fec23,,execute_actions,240;680
+9,send_message,2,Family counselling services,,has_only_phrase,Family,,"UGAT Foundation.  Hepline: 09063217436
+Website: https://www.facebook.com/ugatfoundationinc/
+
+Center for Family Ministries
+(02) 8426-4289 to -92 or 0927-8639346
+Website: https://www.cefam.ph/",,,,,,,,,,,,,,,76a9a746-c4d5-45bc-b2c8-130cdd38f493,,execute_actions,500;700
+10,send_message,2,education,,has_any_word,Education,,"https://www.familylives.org.uk/advice/primary/learning-school/supporting-your-child-at-school
+
+https://www.unicef.org/philippines/pag-aalaga-sa-mga-bata-sa-panahon-ng-covid-19",,,,,,,,,,,,,,,ff7329f5-b7d7-4c9b-ad3c-64fed00b5b3c,,execute_actions,740;740
+11,start_new_flow,2,covid,,has_any_word,Covid,,PLH - Help - COVID referrals,,,,,,,,,,,,,,ac1aaef5-6160-4025-b521-c6f5fc554741,14f55b91-59ef-4c8a-a504-71ef7df8ecd6,,split_by_subflow,960;760
+12,send_message,10;11;3;4;5;6;7;8;9,;Complete;;;;;;;,,,,,"Type ""SOS"" at any time if you would like the details of any other emergency service or hotline. Remember everything you say will be completely private!",,,,,,,,,,,,,,,a3c500e7-9ca1-429c-9622-39b1c946c848,,execute_actions,700;940
+13,send_message,2,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,ab999427-1d70-474f-83c8-60e22af22005,,execute_actions,1040;240
+14,go_to,13,,,,,,1,,,,,,,,,,,,,,,,,,

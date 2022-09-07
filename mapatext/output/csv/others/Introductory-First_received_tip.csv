@@ -1,0 +1,4 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,442d341e-45b1-4f54-8fc3-c2628f9ee9b9,,split_by_expression,500;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,Hello! How are you doing? I am so happy that you have signed up to receive these messages. It shows you care. ,,,,,,,,,,,,,,,16664842-60cd-4f0f-a99e-e78263e9e892,,execute_actions,625;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,Hello! How are you doing? We are so happy that you have signed up to receive these messages. It shows you care. ,,,,,,,,,,,,,,,f3933647-d7ad-4c24-9463-722645764b28,,execute_actions,375;200

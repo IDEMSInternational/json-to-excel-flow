@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Ang Araw ay Paparating Na! 
+•	Pahigain ang iyong anak pagkatapos siyang paliguan o pagkatapos palitan ang kanyang lampin.
+•	Sabihin mo sa kanya na ang araw ay paparating na! Pagalawin ang iyong mga daliri na katulad ng sinag ng araw sa taas ng kanyang ulo at gawin ang mukha mo na parang isang malaking nakangiting araw.
+•	Sabihin mo na ang hangin ay paparating na! Hipan mo ng dahan-dahan ang kanyang katawan.
+•	Sabihin mo sa kanya na ang ulan ay paparating na! Gamitin mo ang iyong mga daliri para hipuin ng dahan-dahan ang kanyang buong katawan katulad ng ambon o mahinang patak ng ulan.
+•	Sabihin mo sa kanya na, ang mga ulap ay paparating na! Ibalot ang tuwalya o damit sa kanya at yakapin siya. 
+•	Makipaglaro gamit ang iba't ibang panahon. Alin sa mga ito ang pinakagusto ng iyong sanggol?
+•	Dagdagan ng iba't ibang tunog o gawin itong isang kanta. Gamitin ang himig ng iba pang kantang alam mo! ",,,,,,,,,,,,,,,ca58b40b-c642-4603-8c2b-67e58d3ae801,,execute_actions,;

@@ -1,0 +1,17 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Magandang araw! Salamat sa pag-sign-up para makatanggap ng mga MaPaText tips. Pakisabi sa amin kung aling wika ang gusto mo:
+
+1. Pilipino
+2. Ingles",,,,,,,,,,,"@(""https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/"" & fields.deployment & ""/resourceGroup/image/universal/you_deserve_a_star.jpg",,,,8f1dc364-f8d9-4811-85f2-8f832f322214,,execute_actions,520;80
+2,send_message,1,,,,,,"Hi! Thank you for signing up to receive MaPaText tips. Which language would you like to receive the messages in?
+
+Pakipili po ng numero para sa mga sumusunod na pagpipilian:
+1. Filipino
+2. English",,,,,,,,,,,,,,,d84f915b-3e9c-448a-9141-7db0d6040bf1,,execute_actions,500;360
+3,wait_for_response,2,,,,,language,,,,,,,,,,,,,,,,6986482c-944b-44ab-bb70-ee7f6b8a716d,,wait_for_response,520;660
+4,set_language,3,1 pilipino filipino fil,,has_any_word,fil,,fil,,,,,,,,,,,,,,,3a69c155-d8ee-4ddb-b371-8a8773e3750a,,execute_actions,280;800
+5,set_language,3,2 english ingles eng,,has_any_word,eng,,eng,,,,,,,,,,,,,,,092aa5b1-2cb0-4d60-a301-285eadfeaa42,,execute_actions,580;840
+6,send_message,3,,,,,,"Paumanhin, Hindi ko naiintindahan ang ibig mong sabihin.
+
+Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,55cf260e-f8ca-4ecf-ac23-1bcd737fc0b9,,execute_actions,960;440
+7,go_to,6,,,,,,1,,,,,,,,,,,,,,,,,,

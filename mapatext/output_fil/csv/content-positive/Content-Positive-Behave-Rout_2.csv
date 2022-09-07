@@ -1,0 +1,96 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Establishing daily routines,,,,,,,,,,,,,,,7dbe3838-b3bd-45d9-8335-82d88747377e,,execute_actions,20;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,bf60228b-4980-4f81-aa9c-044ae5a466f3,,split_by_subflow,20;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,3114d033-0b29-473a-801d-347c7793a5bf,,split_by_contact_field,;320
+4,send_message,3,,,,,,"Lumikha ng mga pang-araw-araw na gawain! Mas mararamdaman ng iyong anak na siya ay ligtas kapag alam nila kung ano ang inaasahan sa kanila at kung paano magtatapos ang bawat araw. Gumawa ng isang plano kasama sila na may oras para sa paglalaro, pagkain, gawaing-bahay, paaralan, at pagtulog.",,,,,,,,,,,,,,,4fd6b92d-5b05-41ee-bcdc-f35bb51bbbb3,,execute_actions,260;420
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,18b492ea-06e0-4a9f-b974-36620bf57cad,,split_by_contact_field,240;1060
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Narito ang isang video upang matulungan kang lumikha ng pang-araw-araw na gawain kasama ang inyong mga anak.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Structure_Up.m4v,,4ec7971b-b6b6-4dee-a304-aeb4dc219978,,execute_actions,;1260
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Narito ang isang audio message upang matulungan kang lumikha ng pang-araw-araw na gawain kasama ang inyong mga anak.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Structure_Up.mp3,,,331d8bbb-a181-4ed7-bc59-c9a5b735c680,,execute_actions,240;1260
+8,wait_for_response,6;7,,,,,Result 4,,,,,,,,,,,,,,,,58538004-f2ac-4ad9-8487-fdfd5fbb332e,120,wait_for_response,100;1480
+9,send_message,5;8;8,;;No Response,,,,,"Ang mga pang-araw-araw na gawain, tulad ng oras para sa gawain sa paaralan, paglalaro, pagkain, at pagtulog, ay maaaring makatulong sa ating mga anak na maramdamang sila ay ligtas. Binibigyan din nito ang ating mga anak ng pakiramdam na sila ay ligtas.",,,,,,,,,,,,,,,96765ff8-6fa6-4237-9696-6924598111b8,,execute_actions,2450;1540
+10,start_new_flow,9,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,d344b2c7-5b91-4f86-903d-38d63507e529,,split_by_subflow,140;1680
+11,send_message,4,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,630957b8-baef-4ee2-9118-525264e8f7d7,,execute_actions,260;660
+12,wait_for_response,11,,,,,Result,,,,,,,,,,,,,,,,bce5f212-1e09-4794-add6-c640f01c8f09,3600,wait_for_response,2250;820
+13,go_to,12,y Oo o,,has_any_word,Y,,5,,,,,,,,,,,,,,,,,,
+14,send_message,12,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,459db7ad-6531-4a83-9c5e-7b309f8febf5,,execute_actions,2510;580
+15,go_to,14,,,,,,11,,,,,,,,,,,,,,,,,,
+16,send_message,12;12,n hindi h;No Response,,has_any_word;,N;,,"Okay lang 'yan! Puwede mong laging i-type ang ""Help"" kung gusto mong makatanggap ng mas maraming tip tungkol sa kung paano pangasiwaan ang pag-uugali ng iyong anak.",,,,,,,,,,,,,,,e9bbd795-cd70-4e00-a065-4081e0b893bb,,execute_actions,2550;940
+17,send_message,10;10,Complete;Expired,,,,,"Narito ang 4 na simpleng mga tip na maaari mong gamitin kapag nagsisimula ng mga pang-araw-araw na gawain kasama ang inyong mga anak: 
+
+1. Magbigay ng isang direksyon nang paisa-isa
+2. Gumamit ng mga hudyat na makakatulong sa paglipat mula sa isang aktibidad patungo sa susunod
+3. Lumikha ng regular na oras ng pagkain at pagtulog
+4. Isama ang inyong anak sa paglikha ng pang-araw-araw na schedule ng gawain
+
+I-type ang ""1"" hanggang ""4"" upang mas matutunan ang mga tips na ito. Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,4d2fde4d-7586-48ab-95b3-d5b06b5f0ae1,,execute_actions,140;1820
+18,wait_for_response,17,,,,,list_of_tips,,,,,,,,,,,,,,,,0a3b643d-9e55-425b-8612-0da9b2069fc5,,wait_for_response,2350;2000
+19,send_message,18,1,,has_number_eq,1,,1. Tulungan ang iyong mga maliliit na anak na matuto ng mga pang-araw-araw na gawain sa pamamagitan ng pagpapakita sa kanila ng bawat hakbang ng aktibidad. Magbigay ng tagubilin ng paisa-isa. Purihin sila sa tuwing sumusunod nila!,,,,,,,,,,,,,,,a8bb8788-a192-484a-9a9f-d7db0f01b220,,execute_actions,60;2240
+20,send_message,18,2,,has_number_eq,2,,"2. Maaari ring makatulong ng sobra ang mga hudyat. Binibigyan nila ang iyong anak ng ilang oras upang makapaghanda para sa susunod na gawain: ""Sa loob ng 5 minuto ay oras na upang magligpit ng mga laruan bago matulog…""",,,,,,,,,,,,,,,abc03a02-8d19-4b22-b0b1-27e571b98494,,execute_actions,200;2640
+21,send_message,18,3,,has_number_eq,3,,"3. Ang regular na oras ng pagkain at pagtulog ay lalong mahalaga para sa mga sanggol. Ang hindi sapat na pagtulog ay maaaring magdulot sa inyong anak ng sumpong, pagkabugnutin, o pagkayamot.",,,,,,,,,,,,,,,88eb198f-3da9-482e-a1db-e3544dafc198,,execute_actions,2270;2700
+22,send_message,21,,,,,,"Narito ang ilang mga tip para sa kung paano matulungan ang inyong anak na maghanda para sa oras ng pagtulog:
+
+• Subukang magkaroon ng regular na oras ng pagtulog bawat araw hangga't maaari.
+• Sikaping gawing tahimik at medyo madilim ang mga ilaw sa silid. 
+• Bigyan ng oras ang iyong anak sa internet. • Gumugol ng ilang oras sa inyong anak. Maaari kang kumanta ng isang hele o magkwento ng isang kalmadong kwento.
+• Yakapin ang inyong anak at halikan para mag-goodnight bago lumabas ng silid. ",,,,,,,,,,,,,,,af3a1758-b40e-472c-8919-523195f000d8,,execute_actions,2290;2880
+23,split_by_value,18,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,5479cbbb-a6db-4369-b18e-78572f7637a4,,split_by_expression,2715;2380
+24,send_message,23,,@fields.child_nickname,has_text,child_nickname,,4. Isama si @fields.child_nickname sa paggawa ng pang araw-araw na plano. Magkasamang itakda ang mga layunin at katumbas na premyo. Hayaan silang magplano kung kailan gagawin ang mga takdang aralin at kung kailan sila magpapahinga!,,,,,,,,,,,,,,,a4122982-0606-4ff0-8a62-bebc9c9a6548,,execute_actions,2590;2580
+25,send_message,23,,,,,,4. Isama ang inyong anak sa paggawa ng pang araw-araw na plano. Magkasamang itakda ang mga layunin at katumbas na premyo. Hayaan silang magplano kung kailan gagawin ang mga takdang aralin at kung kailan sila magpapahinga!,,,,,,,,,,,,,,,e3ad5c65-a8a4-4eaa-98b8-8d1cf263a29f,,execute_actions,2840;2580
+26,send_message,19;20;22;24;25,,,,,,"Mangyaring pumili ng isa pang numero kung nais mong matuto ng higit pa tungkol sa paglikha ng pang-araw-araw na gawain: 
+
+1. Magbigay ng isang direksyon nang paisa-isa
+2. Gumamit ng mga hudyat na makakatulong sa paglipat mula sa isang aktibidad patungo sa susunod
+3. Lumikha ng regular na oras ng pagkain at pagtulog
+4. Isama ang inyong anak sa paglikha ng pang-araw-araw na schedule ng gawain
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,a7e48961-4bdc-4b84-9302-e9b46b267a57,,execute_actions,220;3260
+27,save_value,26,,,,,routines list of tips,"@(fields.routines_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,93e0b23b-c48d-409d-b797-7613f81d74f5,,execute_actions,220;3800
+28,save_value,27,,,,,last interaction,@(now()),,,,,,,,,,,,,,,0a218c98-f3a5-4bfa-979e-27e28669b2ae,,execute_actions,220;3980
+29,go_to,28,,,,,,18,,,,,,,,,,,,,,,,,,
+30,send_message,18,Hindi n h,,has_any_word,No,,"Narito ang ilang mga suggestion para sa mga pang-araw-araw na gawaing maaari mong simulan kasama ang inyong mga anak:
+Oras ng pagtulog
+Gawain sa paaralan at mga klase online
+Gawaing-bahay
+Oras ng pagkain
+Oras ng paglalaro/libreng oras
+Oras ng paggamit ng T.V. o gadget
+Oras ng kwentuhan
+One-on-One Time
+Maaari ka rin magdagdag! Narito ang isang komiks tungkol sa paggawa ng pang-araw-araw na gawain kasama ang inyong anak. ",,,,,,,,,,,,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+31,send_message,30,,,,,,"Magulang: “Ngayon, tingnan natin ang mga multiplication table...”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/creating_a_daily_routine_comic_1.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+32,send_message,31,,,,,,"Magulang: “Salamat dahil tinulungan mo akong maghanda ng tanghalian, Junior” 
+
+Anak: “Paborito ko ito!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/creating_a_daily_routine_comic_2.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+33,send_message,32,,,,,,"Anak: “Paborito ko ito!”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/creating_a_daily_routine_comic_3.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+34,send_message,33,,,,,,"Magulang “At lahat sila ay namuhay nang masaya magpakailanman... Good night, mahal ko.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/creating_a_daily_routine_comic_4.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+35,send_message,34,,,,,,"Magulang: “Salamat sa pagtulong sa mga bata ngayon.” 
+
+(5)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/creating_a_daily_routine_comic_5.png,,,,e6b03166-fc48-4ef5-849a-7f92aedfb43c,,execute_actions,2130;4260
+36,split_by_group,35,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,6811729b-6933-4236-a296-e264212e1aae,,split_by_expression,1255;5380
+37,split_by_group,36,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,e3b14270-e84f-4b00-9094-ce39be85379a,,split_by_expression,1755;5780
+38,split_by_value,37,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,c6630964-27ad-46f1-bb80-e71fd1028709,,split_by_expression,2005;6580
+39,send_message,38,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa inyong Masayang Tahanan. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,d7941e99-1de1-4d1d-9a1b-14a12354d1bb,,execute_actions,1880;6780
+40,send_message,38,,,,,,"Mahusay! Nakadagdag ka ng isa pang antas sa inyong Masayang Tahanan. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,eac86734-299d-4bc8-a364-08fe0032c815,,execute_actions,2130;6780
+41,split_by_value,37;37,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,a863b29e-56ee-4f0c-9f7b-04aeacaa37fb,,split_by_expression,1505;6380
+42,send_message,41,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,bd68d48f-8e6a-4ab1-88a6-75741f57cf98,,execute_actions,1380;6780
+43,send_message,41,,,,,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,5402ebc5-d0f5-43d6-aafa-b3f50c2fc39d,,execute_actions,1630;6780
+44,split_by_group,36;36,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,a2ac170c-c983-4b93-91cc-08ea5a26ca4a,,split_by_expression,755;5580
+45,split_by_value,44,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,3dc0355c-dc2e-4b30-b7bb-6c636d38fb93,,split_by_expression,1005;6180
+46,send_message,45,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa inyong Masayang Tahanan. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,a08783cd-a7a2-40a9-82ab-d86f83e6e57f,,execute_actions,880;6780
+47,send_message,45,,,,,,"Mahusay! Nakadagdag ka ng isa pang antas sa inyong Masayang Tahanan. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,af41dce9-626e-4145-9f81-f1ed490c7d68,,execute_actions,1130;6780
+48,split_by_value,44;44,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,6f03c672-2c0c-42d1-92ef-f5af2353950a,,split_by_expression,505;5980
+49,send_message,48,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,b36ca790-254d-4080-b628-3c123f6dcd3e,,execute_actions,380;6780
+50,send_message,48,,,,,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukang gumawa ng kahit isang pang-araw-araw na gawain tulad ng pagkain nang sabay-sabay o pagkuwento bago matulog. Makatutulong ito para madama ng inyong anak na siya ay ligtas at minamahal!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,214f23f7-fe65-46bd-b5b8-8d9d282231f7,,execute_actions,630;6780
+51,save_value,39;40;42;43;46;47;49;50,,,,,current type assessed,tip,,,,,,,,,,,,,,,aafb23de-c5f8-4434-9d32-6d1082ab739e,,execute_actions,360;7080
+52,save_value,51,,,,,current activity,routines,,,,,,,,,,,,,,,aafb23de-c5f8-4434-9d32-6d1082ab739e,,execute_actions,360;7080
+53,start_new_flow,52,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,de5a3409-5af2-40a0-a6bb-cf1bb467e8b8,,split_by_subflow,360;7280
+54,send_message,18,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,b2813aa2-a961-4eab-bb16-b5e0648a07d0,,execute_actions,2470;2180
+55,go_to,54,,,,,,17,,,,,,,,,,,,,,,,,,

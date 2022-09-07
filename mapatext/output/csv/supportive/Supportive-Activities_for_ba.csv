@@ -1,0 +1,19 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,2873eaa7-d2bd-4689-a89e-daa5b0ef04f6,,split_by_expression,875;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Would you like some suggestions for fun activities to help develop your baby's brain?,Give me more information,I am not interested,,,,,,,,,,,,,dd75536c-39a9-44f4-9990-450e6f8e7678,,execute_actions,750;200
+3,send_message,1,,,,,,Hi! Would you like some suggestions for fun activities to help develop your baby's brain?,Give me more information,I am not interested,,,,,,,,,,,,,5bc4087b-f501-49fe-bc97-70d285777300,,execute_actions,1000;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,ff271a13-f5ce-401d-a747-3c6d32c4c375,,wait_for_response,1000;440
+5,save_value,4,more information,,has_any_word,More,last interaction,@(now()),,,,,,,,,,,,,,,5b197b52-6d51-44a8-8df2-c140fbd87845,,execute_actions,80;440
+6,split_random,5,,,,,,,,,,,,,,,,,,,,,03e67630-7b44-40a7-acb4-037ce730e0a6,,split_by_random,80;580
+7,start_new_flow,6;6;6;6,1;2;3;4,,,,,PLH - Handler - Activity - Babies - Active,,,,,,,,,,,,,,87c515ca-25a8-48f7-a4e7-addf0ce53a08,7f0a9214-15e6-482b-9cea-a8c3f63f7fdc,,split_by_subflow,;900
+8,start_new_flow,6,5,,,,,PLH - Handler - Activity - Babies - Calm,,,,,,,,,,,,,,1bc29927-fdb8-487d-b254-bd711c0c7348,ca77288f-272c-4a99-ac52-91f8556982b2,,split_by_subflow,260;920
+9,split_by_value,7;8,Complete;Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,20c87ac1-5df0-4460-a300-fda9fd9f884a,,split_by_expression,405;1180
+10,send_message,9,,@fields.user_name,has_text,user_name,,"Remember that you can always get suggestions for activities to develop your baby's brain by typing ""Play"". Chat later @fields.user_name!",,,,,,,,,,,,,,,b788b061-bcf4-496f-b6e0-9f2db22aa2e9,,execute_actions,280;1380
+11,send_message,9,,,,,,"Remember that you can always get suggestions for activities to develop your baby's brain by typing ""Play"". Chat later!",,,,,,,,,,,,,,,22940fa1-bc37-4dfb-8bab-011a46d2fd92,,execute_actions,530;1380
+12,split_by_value,4,not no interested,,has_any_word,Not,,@fields.user_name,,,,,,,,,,,,,,,3e91f3df-c47b-4a76-b711-483fc0bd202a,,split_by_expression,1145;640
+13,send_message,12,,@fields.user_name,has_text,user_name,,"That's okay! You can always get suggestions for activities to develop your baby's brain by typing ""Play"". Chat later @fields.user_name!",,,,,,,,,,,,,,,5cf2e223-51f4-4077-8192-83731e55f6aa,,execute_actions,1020;840
+14,send_message,12,,,,,,"That's okay! You can always get suggestions for activities to develop your baby's brain by typing ""Play"". Chat later!",,,,,,,,,,,,,,,857658eb-b056-4b4f-843e-a33c95446b19,,execute_actions,1270;840
+15,save_value,13;14,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f1f62606-f982-4925-a1ee-2f466b694e51,,execute_actions,1000;1000
+16,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b51a276b-f045-4eea-aa90-5b8155bea343,,execute_actions,1630;520
+17,save_value,16,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8f659dc4-5e94-4d86-83f6-da4976dbb518,,execute_actions,1630;840
+18,go_to,17,,,,,,1,,,,,,,,,,,,,,,,,,

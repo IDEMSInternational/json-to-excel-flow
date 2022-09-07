@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Gayahin Mo Ang Nakikita Mo
+•	Tumingin sa paligid at pangalanan ang isang bagay na nakikita mo. Halimbawa, isang puno o isang baso.
+•	Sabihin sa iyong anak, ""Nakakakita ako ng isang puno, tara at gayahin natin!""
+•	Magbilang mula lima at gawin ang hugis puno gamit ang iyong mga katawan. Maging malaki at nakakatawa sa abot ng iyong makakaya.
+•	Ngayon hayaan na ang anak mo naman. Ano ang nakikita niya?
+•	Kung maaari, lumabas ng bahay at pumunta sa may maraming puno o sa dagat. Kung hindi maaari, laruin ito sa loob. 
+•	Kapag nagawa na nang ilang ulit, magdagdag ng galaw at tunog!",,,,,,,,,,,,,,,e502c546-da5f-4f37-b808-2745d146e141,,execute_actions,;

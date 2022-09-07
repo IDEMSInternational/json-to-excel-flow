@@ -1,0 +1,27 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Praising your children,,,,,,,,,,,,,,,158ab565-2129-40a8-85c0-8d0d5d251908,,execute_actions,700;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,08bb43f3-f36c-43b0-b76b-2ffc639f28f0,,split_by_subflow,700;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,0abef9c2-fcde-495a-816e-47cb5f630ac3,,split_by_expression,905;260
+4,send_message,3,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Nais ko lamang pasalamatan ka sa paggawa ng pangakong ito upang mapabuti ang buhay ng inyong mga anak. Ipinapakita nitong nagmamalasakit ka talaga!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,4798c1c2-ae7a-48a6-8dd1-51999dd4449b,,execute_actions,780;460
+5,send_message,3,,,,,,Magandang araw! Nais ko lamang pasalamatan ka sa paggawa ng pangakong ito upang mapabuti ang buhay ng inyong mga anak. Ipinapakita nitong nagmamalasakit ka talaga!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,e1e1ca81-ddd8-472a-bd56-a1cd681ef7f4,,execute_actions,1030;460
+6,send_message,4;5,,,,,,"Ang Parenting Tip ngayon ay tungkol sa Papuri. Anong naramdaman mo sa mensahe sa taas? Pinahahalagahan natin kapag ang mga mabubuting bagay na ginagawa natin ay kinikilala ng iba, lalo na kung ito ay isang taong malapit sa atin.",,,,,,,,,,,,,,,787f5516-52d1-4e10-8f88-76740213ac2a,,execute_actions,1290;240
+7,send_message,6,,,,,,Purihin ang iyong mga anak kapag sila ay nagpapakita ng magandang pag-uugali! Maaaring hindi nila ipakita pero makikita mong gagawin nilang muli ang magandang bagay na iyon...,,,,,,,,,,,,,,,f7f41596-fb58-4d6c-911b-10247f3d5cf9,,execute_actions,1570;240
+8,split_by_value,7,,,,,,@fields.toolkit,,,,,,,,,,,,,,,47f6db7b-b775-420d-a792-029eeb2fbc29,,split_by_contact_field,1110;740
+9,split_by_group,8,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,072a4760-4e42-4726-8943-e72321a2971e,,split_by_expression,435;800
+10,send_message,9,ABTest_test-first-person_alternative,,,,,Alam kong nakuha mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,,,,,91d4b2e0-2df3-4e2b-94e4-9331c6ce1e10,,execute_actions,560;1000
+11,send_message,9;9,ABTest_test-first-person_Default;,,,,,Alam naming natanggap mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,,,,,708661dd-3b5e-42fe-b37c-810d8a8b4fcf,,execute_actions,310;1000
+12,send_message,8,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,971994d4-4a79-4d52-aa55-d95e148069cc,,execute_actions,1390;1000
+13,wait_for_response,10;11;12,,,,,know_more,,,,,,,,,,,,,,,,02d0b883-ad7a-4579-bf63-866923d76299,,wait_for_response,560;1200
+14,save_value,13,Oo y o,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,21afe7e2-401f-4203-baf4-e9856bd1f83e,,execute_actions,1090;1660
+15,save_value,14,,,,,from theme,yes,,,,,,,,,,,,,,,21afe7e2-401f-4203-baf4-e9856bd1f83e,,execute_actions,1090;1660
+16,start_new_flow,15,,,,,,PLH - Content - Positive - Behave - Praise,,,,,,,,,,,,,,3894dff4-93f0-42a8-92a3-6220bff18bc8,270f9aa8-a10f-4eee-9454-e8e5cb9e01f4,,split_by_subflow,1250;1840
+17,save_value,16,Expired,,,,has expired,tip,,,,,,,,,,,,,,,3eea4911-7068-4b26-adab-c0f06a876bc0,,execute_actions,1510;1940
+18,send_message,17,,,,,,"Mukhang abala ka ngayon. Pwede mong i-type ang ""GoBack"" para ulitin ang parenting tip na ito o ""Help"" para sa iba pang suporta.",,,,,,,,,,,,,,,55ebb062-5a76-419d-b912-7f1a389033d9,,execute_actions,1510;2060
+19,save_value,16;18,Complete;,,,,from theme,no,,,,,,,,,,,,,,,22a707bd-ac82-49a0-bf3d-f3e62c83b56e,,execute_actions,1250;1980
+20,split_by_value,13,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,53ed1c76-4f21-4780-9366-60dfbb383e55,,split_by_expression,125;1460
+21,send_message,20,,@fields.user_name,has_text,user_name,,"Okay lang ‘yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa iyong mga anak. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,13fff7a7-ef95-4541-965f-b5b35e3706ea,,execute_actions,;1660
+22,send_message,20,,,,,,"Okay lang ‘yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa iyong mga anak. Usap tayo mamaya!",,,,,,,,,,,,,,,4b58068f-abe9-4914-949e-e7ed2324145d,,execute_actions,250;1660
+23,save_value,21;22,,,,,last interaction,@(now()),,,,,,,,,,,,,,,0d475d13-e3bc-4f20-b14a-ac5811691bc3,,execute_actions,270;1840
+24,send_message,13,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,e5d6cb82-0e3d-4eb1-b514-72a3f32d75af,,execute_actions,1130;1160
+25,save_value,24,,,,,last interaction,@(now()),,,,,,,,,,,,,,,b3978c41-e1e4-481f-9814-a94bf0bb308e,,execute_actions,1130;1280
+26,go_to,25,,,,,,8,,,,,,,,,,,,,,,,,,

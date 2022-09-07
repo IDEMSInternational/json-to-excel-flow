@@ -1,0 +1,24 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"5. Makinig at makipag-usap sa isa’t isa
+
+Ang pakikinig at pakikipag-usap sa mga taong nakapaligid sa atin ay daan tungo sa mas mapayapang tahanan. Ang pakikipag-usap sa iyong kinakasama tungkol sa mga isyu bago pa man ito maging problema ay makakatulong upang iwasan ang paglala ng mga pagtatalo.",,,,,,,,,,,,,,,e22185db-d2da-4f78-83a4-3f3641e8f811,,execute_actions,480;40
+2,send_message,1,,,,,,Gusto mo bang makakita ng komiks tungkol sa pakikinig at pakikipag-usap sa isa’t isa?,Oo,Hindi,,,,,,,,,,,,,508a901d-4b8c-4d78-a820-453a0ee7dee8,,execute_actions,800;320
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,fd18af50-5673-44be-8ac2-57c7d6423ecf,,wait_for_response,800;500
+4,send_message,3,Oo y o,,has_any_word,Yes,,"Parent 1: “Okay ka lang ba, mahal? Mukhang pagod ka.”
+
+Parent 2: “Hindi ako nakatulog nang maayos kagabi, kaya medyo pagod ang pakiramdam ko.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_1.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+5,send_message,4,,,,,,"Parent 1: “Ikinalulungkot kong marinig yan, Amir. May magagawa ba ako para makatulong?”
+
+Parent 2: “Subukan ko na lang magpahinga nang mas maaga ngayong gabi.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_2.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+6,send_message,5,,,,,,"Parent 1: “Ako na ang bahala sa mga bata pagkatapos ng hapunan, para makapagpahinga ka nang mas maaga.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_3.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+7,send_message,6,,,,,,"Parent 2: “Gusto ko iyan. Maraming salamat, mahal.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_4.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+8,send_message,3,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,3db2e120-9fbf-4f1c-9776-754adc4fc63e,,execute_actions,1000;640
+9,go_to,8,,,,,,2,,,,,,,,,,,,,,,,,,

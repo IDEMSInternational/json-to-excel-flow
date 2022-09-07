@@ -1,0 +1,100 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,IPV,,,,,,,,,,,,,,,fad6a846-5068-4977-819a-68c093791714,,execute_actions,1090;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,959eced7-b362-4286-8875-ae3ef63170a5,,split_by_subflow,1090;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,65e67b12-ae7a-4bad-95e6-24015764f5eb,,split_by_contact_field,1010;380
+4,send_message,3,,,,,,Ang pagkakaroon ng mapagmahal na relasyon sa ating kinakasama ay maaaring magkaroon ng isang malaking epekto sa ating nararamdaman. Nakakatulong din ito para maramdaman ng ating mga anak na sila’y minamahal at ligtas.,,,,,,,,,,,,,,,6dc58f6e-84cf-4f82-9eec-a1d97ba190bb,,execute_actions,2430;160
+5,split_by_value,4,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,fd732336-4676-42d1-a252-095c689ac739,,split_by_expression,2410;380
+6,split_by_value,3;5,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,e2e68682-41ac-4804-b0e0-d62b8df7efb8,,split_by_contact_field,120;560
+7,send_message,6,high,@fields.type_of_media,has_any_word,High,,Narito ang isang video kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/IPV.m4v,,a691965f-2e20-4278-9b70-d18dbd7a92ea,,execute_actions,;660
+8,send_message,6,medium,@fields.type_of_media,has_any_word,Medium,,Narito ang isang audio message kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/IPV.mp3,,,072dbb54-10e8-433d-afe2-41ddfce4710a,,execute_actions,1030;680
+9,wait_for_response,7;8,,,,,Result 4,,,,,,,,,,,,,,,,28a2ad92-9cc6-4719-be20-9f000373646f,120,wait_for_response,;920
+10,start_new_flow,6;9;9,;;No Response,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,241cdb13-8b3e-477a-85de-f945f64080da,,split_by_subflow,1190;1040
+11,send_message,5,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,bf97539c-7bff-4d66-a2ee-097cda8fa249,,execute_actions,2690;360
+12,wait_for_response,11,,,,,know_more,,,,,,,,,,,,,,,,9c4d6c3c-8376-4d6c-af55-ef270829aa4a,,wait_for_response,2610;500
+13,go_to,12,Oo y o,,has_any_word,Yes,,6,,,,,,,,,,,,,,,,,,
+14,send_message,12,Hindi n h,,has_any_word,No,,"Okay lang ‘yan! Maaari mong i-type ang ""Help"" anumang oras kung kailangan mo ng suporta sa relasyon mo sa iyong kinakasama o ibang mga adult. Usap tayo mamaya!",,,,,,,,,,,,,,,72aba1ce-6d1c-4204-bf50-c046f2b27c22,,execute_actions,2830;800
+15,send_message,12,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,0d26528a-3df0-4106-836a-faa804b9d8f5,,execute_actions,2770;640
+16,go_to,15,,,,,,11,,,,,,,,,,,,,,,,,,
+17,split_by_value,10;10,Complete;Expired,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,0ac0b7a9-ceee-4ed2-be1c-db5630663bb3,,split_by_expression,1460;1260
+18,send_message,17,man,@fields.gender_personalisation,has_any_word,man,,"Narito ang limang simpleng tips kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama:
+
+1. Tratuhin ang isa't isa na magkapantay
+2. Maging amang may kumpiyansa sa sarili at nagbibigay ng suporta sa kanyang kinakasama
+3. Paghatian ang mga responsibilidad sa pamilya
+4. Lutasin ang mga hindi pagkakasunduan sa payapang paraan
+5. Makinig at makipag-usap sa isa’t isa
+
+I-type ang ""1"" hanggang ""5"" para mas matuto pa tungkol sa mga payong ito. I-type ang “H” para itigil ang tip na ito.",,,,,,,,,,,,,,,f1ff3e1c-29a5-40f3-8c0f-12efac7903a5,,execute_actions,1210;1460
+19,send_message,17,woman,@fields.gender_personalisation,has_any_word,woman,,"Narito ang limang simpleng tips kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama:
+
+1. Tratuhin ang isa't isa na magkapantay
+2. Maging inang may kumpiyansa sa sarili at nagbibigay ng suporta sa kanayang kinakasama
+3. Paghatian ang mga responsibilidad sa pamilya
+4. Lutasin ang mga hindi pagkakasunduan sa payapang paraan
+5. Makinig at makipag-usap sa isa’t isa
+
+I-type ang ""1"" hanggang ""5"" para mas matuto pa tungkol sa mga payong ito. I-type ang “H” para itigil ang tip na ito.",,,,,,,,,,,,,,,6d57b32d-ad15-4f57-b118-e7e7d4e3652e,,execute_actions,1460;1460
+20,send_message,17,,,,,,"Narito ang limang simpleng tips kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama:
+
+1. Tratuhin ang isa't isa na magkapantay
+2. Maging magulang na may kumpiyansa sa sarili at nagbibigay ng suporta sa kanyang kinakasama
+3. Paghatian ang mga responsibilidad sa pamilya
+4. Lutasin ang mga hindi pagkakasunduan sa payapang paraan
+5. Makinig at makipag-usap sa isa’t isa
+
+I-type ang ""1"" hanggang ""5"" para mas matuto pa tungkol sa mga payong ito. I-type ang “H” para itigil ang tip na ito.",,,,,,,,,,,,,,,d028bc23-9862-4dfb-accc-6fb63a8fcc06,,execute_actions,1710;1460
+21,wait_for_response,18;19;20,,,,,list_of_tips,,,,,,,,,,,,,,,,b747f4de-a00f-4902-8d1a-269bb1d812d9,,wait_for_response,2290;1920
+22,split_by_group,21,Hindi n h,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,228868f9-11fd-4ff3-baf4-bcb445aa5092,,split_by_expression,3445;3480
+23,split_by_group,22,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,08dfa44a-07a5-4947-859d-cf1f03d0248b,,split_by_expression,3695;3880
+24,send_message,23,ABTest_test-gamification_alternative,,,,,"Magaling at nakapagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Sa mga susunod na araw, subukang gamitin ang mga tips na ito sa relasyon ninyo ng iyong kinakasama. Ang pagkakaroon ng relasyon sa iyong kinakasama na puno ng pagmamahal ay may malaking epekto sa iyong nararamdaman. Maaari ring makatulong ito sa pagpaparamdam sa iyong mga anak na sila ay minamahal at ligtas!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,ae509ce2-4cc4-4529-946d-1cb810f4e015,,execute_actions,3820;4080
+25,send_message,23;23,ABTest_test-gamification_Default;,,,,,"Magaling! Nagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukang gamitin ang mga tips na ito sa relasyon ninyo ng iyong kinakasama. Ang pagkakaroon ng relasyon sa iyong kinakasama na puno ng pagmamahal ay may malaking epekto sa iyong nararamdaman. Maaari ring makatulong ito sa pagpaparamdam sa iyong mga anak na sila ay minamahal at ligtas!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,b8d61fe2-e9c4-46d0-aeb3-1c8f25b480a3,,execute_actions,3570;4080
+26,split_by_group,22;22,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,c326f6a2-b253-440a-a51c-5f0c83e520b7,,split_by_expression,3195;3680
+27,send_message,26,ABTest_test-gamification_alternative,,,,,"Magaling at nakapagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Sa mga susunod na araw, subukang gamitin ang mga tips na ito sa relasyon ninyo ng iyong kinakasama. Ang pagkakaroon ng relasyon sa iyong kinakasama na puno ng pagmamahal ay may malaking epekto sa iyong nararamdaman. Maaari ring makatulong ito sa pagpaparamdam sa iyong mga anak na sila ay minamahal at ligtas!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,8db0f90a-6c12-4070-bd17-db56e4cf3733,,execute_actions,3320;4080
+28,send_message,26;26,ABTest_test-gamification_Default;,,,,,"Magaling! Nagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukang gamitin ang mga tips na ito sa relasyon ninyo ng iyong kinakasama. Ang pagkakaroon ng relasyon sa iyong kinakasama na puno ng pagmamahal ay may malaking epekto sa iyong nararamdaman. Maaari ring makatulong ito sa pagpaparamdam sa iyong mga anak na sila ay minamahal at ligtas!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,08f3eebf-2a2c-4b93-b77f-6fb913508fad,,execute_actions,3070;4080
+29,save_value,24;25;27;28,,,,,current type assessed,tip,,,,,,,,,,,,,,,c320f3f3-184b-4eb2-b3df-81bd0e53644a,,execute_actions,3010;4680
+30,save_value,29,,,,,current activity,ipv,,,,,,,,,,,,,,,c320f3f3-184b-4eb2-b3df-81bd0e53644a,,execute_actions,3010;4680
+31,start_new_flow,30,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,c0b7028e-e043-4a09-b9bc-f832224857aa,,split_by_subflow,2330;4880
+32,split_by_value,31,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,4f926041-69d9-40a9-9ee2-ebac666c4307,,split_by_expression,615;5420
+33,split_by_group,32,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,1e85742d-05c8-4d2f-b2d2-9b1a639ca8d1,,split_by_expression,365;5620
+34,send_message,33,ABTest_test-first-person_alternative,,,,,Naiintindihan naming mahirap ang mga panahong ito. Paki-type ang “help” kung gusto mo ng karagdagang suporta o impormasyon. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,7bf988fe-3386-4ea6-8410-3420518d4181,,execute_actions,490;6020
+35,send_message,33;33,ABTest_test-first-person_Default;,,,,,Naiintindihan naming mahirap ang mga panahong ito. Paki-type ang “help” kung gusto mo ng karagdagang suporta o impormasyon. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,c56659b7-42e0-4d0b-b398-f031a529ef69,,execute_actions,240;6020
+36,split_by_group,32,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,b81d22bd-f9d0-4fc1-aef9-71672f76492e,,split_by_expression,865;5820
+37,send_message,36,ABTest_test-first-person_alternative,,,,,Naiintindihan naming mahirap ang mga panahong ito. Paki-type ang “help” kung gusto mo ng karagdagang suporta o impormasyon. Usap tayo mamaya!,,,,,,,,,,,,,,,764dd217-513f-430d-a3bf-6331e268e770,,execute_actions,990;6020
+38,send_message,36;36,ABTest_test-first-person_Default;,,,,,Naiintindihan naming mahirap ang mga panahong ito. Paki-type ang “help” kung gusto mo ng karagdagang suporta o impormasyon. Usap tayo mamaya!,,,,,,,,,,,,,,,586c24e3-3eee-45f9-82e8-7955fe6bfc70,,execute_actions,740;6020
+39,start_new_flow,21,1,,has_number_eq,1,,PLH - Content - Positive - IPV - Tip 1,,,,,,,,,,,,,,8feee754-528f-460f-9472-5f4b62eab9f3,7fc6f9e8-5f83-4915-95dd-02fb4445997e,,split_by_subflow,160;2060
+40,start_new_flow,21,2,,has_number_eq,2,,PLH - Content - Positive - IPV - Tip 2,,,,,,,,,,,,,,8631289b-d920-4190-b729-75f09fba6aca,aa4521e8-450b-4a0d-919f-5b2cdfcb508b,,split_by_subflow,1170;2080
+41,start_new_flow,21,3,,has_number_eq,3,,PLH - Content - Positive - IPV - Tip 3,,,,,,,,,,,,,,81058468-c9eb-4ffa-adbb-a3853e95b1ba,f5b18672-42cf-4af3-a5f1-29925daea3be,,split_by_subflow,1030;2780
+42,start_new_flow,21,4,,has_number_eq,4,,PLH - Content - Positive - IPV - Tip 4,,,,,,,,,,,,,,56ab11c9-a317-41ef-89e0-4b6e192eee60,0537ee33-283f-4a6a-aa29-fd9680e74888,,split_by_subflow,2330;2780
+43,start_new_flow,21,5,,has_number_eq,5,,PLH - Content - Positive - IPV - Tip 5,,,,,,,,,,,,,,088f4eca-1c0c-4ef2-bc4d-42b0ae3cd25b,7899f5f5-1436-4b9e-a258-8aa19e8061e9,,split_by_subflow,2570;2800
+44,split_by_value,39;40;41;42;43,Complete;Complete;Complete;Complete;Complete,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,f862a84b-bf2e-442a-a0b3-cd1469863860,,split_by_expression,2040;3220
+45,send_message,44,man,@fields.gender_personalisation,has_any_word,man,,"Pumili ng isa pang numero kung gusto mo pang mas matuto tungkol sa kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama:
+
+1. Tratuhin ang isa't isa na magkapantay
+2. Maging amang may kumpiyansa sa sarili at nagbibigay ng suporta sa kanyang kinakasama
+3. Paghatian ang mga responsibilidad sa pamilya
+4. Lutasin ang mga hindi pagkakasunduan sa payapang paraan
+5. Makinig at makipag-usap sa isa’t isa
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,1390b886-f4e3-478e-ab66-4d9a03df6526,,execute_actions,1790;3420
+46,send_message,44,woman,@fields.gender_personalisation,has_any_word,woman,,"Pumili ng isa pang numero kung gusto mo pang mas matuto tungkol sa kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama:
+
+1. Tratuhin ang isa't isa na magkapantay
+2. Maging inang may kumpiyansa sa sarili at nagbibigay ng suporta sa kanayang kinakasama
+3. Paghatian ang mga responsibilidad sa pamilya
+4. Lutasin ang mga hindi pagkakasunduan sa payapang paraan
+5. Makinig at makipag-usap sa isa’t isa
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,3ed69248-d1f0-4316-bf37-7bf95f51f4d5,,execute_actions,2040;3420
+47,send_message,44,,,,,,"Pumili ng isa pang numero kung gusto mo pang mas matuto tungkol sa kung paano kayo makakabuo ng isang mapagmahal at mapayapang relasyon ng iyong kinakasama:
+
+1. Tratuhin ang isa't isa na magkapantay
+2. Maging magulang na may kumpiyansa sa sarili at nagbibigay ng suporta sa kanyang kinakasama
+3. Paghatian ang mga responsibilidad sa pamilya
+4. Lutasin ang mga hindi pagkakasunduan sa payapang paraan
+5. Makinig at makipag-usap sa isa’t isa
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,e3ea8200-eee1-4cc6-9929-1810b8499b05,,execute_actions,2290;3420
+48,save_value,45;46;47,,,,,ipv list of tips,"@(fields.ipv_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,2a276b87-0524-44f7-89be-f14132ac823d,,execute_actions,2310;4500
+49,go_to,48,,,,,,21,,,,,,,,,,,,,,,,,,
+50,send_message,21,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,a342e071-ae39-4e70-b521-336fbb69c548,,execute_actions,2630;1720
+51,go_to,50,,,,,,17,,,,,,,,,,,,,,,,,,

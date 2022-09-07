@@ -1,0 +1,22 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,main frequency counter,"@(mod(fields.main_frequency_counter+1, fields.frequency))",,,,,,,,,,,,,,,e83fc514-0dcd-4c9e-bee6-e95789eb4f20,,execute_actions,420;
+2,split_by_value,1,,,,,,@fields.main_frequency_counter,,,,,,,,,,,,,,,82513fbd-5912-4aec-9b51-fa6e225d3e8d,,split_by_contact_field,400;100
+3,save_value,2,0,@fields.main_frequency_counter,has_number_eq,content,next tip main,"@(min(fields.next_tip_main+1,fields.total_tip_days+1))",,,,,,,,,,,,,,,c3b5f7a5-d54f-4f68-8eaf-506e8403bcb7,,execute_actions,180;300
+4,start_new_flow,3,,,,,,PLH - Handler - Content - Main,,,,,,,,,,,,,,95024eb9-1135-42cc-b129-3fb34b6c296b,bcb22fb3-93f6-43cd-be4b-cc2b64dc07f4,,split_by_subflow,180;460
+5,split_by_value,4,Complete,,,,,@child.results.main_content,,,,,,,,,,,,,,,a6029935-6dfd-49d9-8ad2-bb169ab71dd9,,split_by_expression,40;620
+6,save_value,2;5,;no,;@child.results.main_content,;has_any_word,;No content,main supportive counter,"@(if(fields.main_supportive_counter<4, fields.main_supportive_counter+1,0))",,,,,,,,,,,,,,,88fc8529-748e-4173-b351-7a417e8b8f99,,execute_actions,780;340
+7,split_by_value,6,,,,,,@fields.main_supportive_counter,,,,,,,,,,,,,,,b7dbfeac-128f-4f29-a4b2-99d293e80caf,,split_by_contact_field,620;440
+8,start_new_flow,7;7,-3;1,@fields.main_supportive_counter;@fields.main_supportive_counter,has_number_eq;has_any_word,share;share,,PLH - Supportive - Share,,,,,,,,,,,,,,8fc0dab6-c0f8-4d6c-bd8d-51944d9505fc,248346f7-9dd4-48c4-a80a-aca1404c886b,,split_by_subflow,420;540
+9,save_value,8,Expired,,,,has expired,supp_share,,,,,,,,,,,,,,,22d6ae7c-af3c-4a94-833c-20e8d5f9212b,,execute_actions,580;720
+10,split_by_value,7,-1,@fields.main_supportive_counter,has_number_eq,disabilities,,@fields.get_disability_content,,,,,,,,,,,,,,,adbd5ef6-846f-42cb-b8c3-e855679e2902,,split_by_contact_field,200;760
+11,start_new_flow,10,yes,@fields.get_disability_content,has_any_word,Yes,,PLH - Supportive - Disabilities,,,,,,,,,,,,,,94516d4e-02ea-4b8b-9374-9925c917c3df,b8e46cdf-1700-49a8-a38d-1eace72c01ec,,split_by_subflow,180;860
+12,save_value,11,Expired,,,,has disability,supp_disab,,,,,,,,,,,,,,,ef3ccbe7-e607-412a-a1e8-6bb24b3f530a,,execute_actions,220;1060
+13,start_new_flow,10;7,;2,;@fields.main_supportive_counter,;has_any_word,;activities,,PLH - Supportive - Activities,,,,,,,,,,,,,,6ce87097-f45a-4fd7-b6c0-b339c9c3625b,85ebb817-5c7f-4387-ada9-d7c8b785d838,,split_by_subflow,520;840
+14,save_value,13,Expired,,,,has expired,supp_act,,,,,,,,,,,,,,,e05fae9f-7f72-4a75-b106-88cf87115cad,,execute_actions,560;1020
+15,start_new_flow,7,3,@fields.main_supportive_counter,has_any_word,children,,PLH - Supportive - Children reminder,,,,,,,,,,,,,,df95dfd8-6607-411a-a9d8-23b2d44095b4,451e8300-aeaf-4007-a5c0-cb744f6a1d4d,,split_by_subflow,960;600
+16,save_value,15,Expired,,,,has expired,supp_children,,,,,,,,,,,,,,,b9421c87-aae8-488c-8c81-a4b5d34cc02d,,execute_actions,1000;780
+17,start_new_flow,7,4,@fields.main_supportive_counter,has_any_word,behave,,PLH - Supportive - Behave reminder,,,,,,,,,,,,,,8489d8d5-3dc8-463b-9e17-60d5a930e390,f3ff3444-2d34-48d5-a2b2-bb110cb09a4f,,split_by_subflow,800;880
+18,save_value,17,Expired,,,,has expired,supp_behave,,,,,,,,,,,,,,,4bc0d366-befd-43e4-8848-82cb29a43b02,,execute_actions,800;1060
+19,start_new_flow,7;7;7,-2;0;,@fields.main_supportive_counter;@fields.main_supportive_counter;,has_any_word;has_number_eq;,help;help;,,PLH - Supportive - Help reminder,,,,,,,,,,,,,,8d48227f-e7a0-4aa6-a29e-d9370ca061e0,dfc1a45b-5102-46bf-9129-53e285842d95,,split_by_subflow,1180;600
+20,save_value,19,Expired,,,,has expired,supp_help,,,,,,,,,,,,,,,15e2771c-c8bd-420c-ae29-df7d5e0f2738,,execute_actions,1180;880
+21,send_message,12;14;16;18;20;9,,,,,,"Mukhang abala ka ngayon.  Maaari mong i-type ang ""GoBack"" para matanggap muli ang mga pinakabagong mensahe.",,,,,,,,,,,,,,,50e46576-e1fa-4bbe-aa1a-9945a50378e0,,execute_actions,1180;980

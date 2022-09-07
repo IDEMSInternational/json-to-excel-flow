@@ -1,0 +1,31 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Establishing daily routines,,,,,,,,,,,,,,,7e3e840c-c80a-49d0-a981-9808eb695609,,execute_actions,1000;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,ccc73827-5fd3-4c5b-a399-0090f89d6791,,split_by_subflow,1020;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,f44c35ee-888d-4c73-912f-f316e1cf7d13,,split_by_expression,1245;280
+4,send_message,3,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Ang Parenting Tip ngayon ay tungkol sa kung paano tayo makakalikha ng pang-araw-araw na gawain upang mapanatiling ligtas at panatag ang ating mga anak.,,,,,,,,,,,,,,,43d6ff08-2dbb-4dc3-ad9f-6e32d80c4863,,execute_actions,1120;480
+5,send_message,3,,,,,,Magandang araw! Ang Parenting Tip ngayon ay tungkol sa kung paano tayo makakalikha ng pang-araw-araw na gawain upang mapanatiling ligtas at panatag ang ating mga anak.,,,,,,,,,,,,,,,2dfed661-70f2-4044-a453-676c6a2fbe8f,,execute_actions,1370;480
+6,send_message,4;5,,,,,,"Nagambala ng COVID-19 ang ating pang-araw-araw na gawain sa trabaho, sa bahay at sa paaralan. Mahirap ito para sa mga bata, teenager, at para sa iyo. Makakatulong ang paggawa ng mga bagong pang-araw-araw na gawain.",,,,,,,,,,,,,,,a393ff70-3b0e-4d89-8f93-dcf9d2231c44,,execute_actions,1100;840
+7,split_by_value,6,,,,,,@fields.toolkit,,,,,,,,,,,,,,,77a86e4f-1817-4cb8-a638-3046d0d738d8,,split_by_contact_field,600;240
+8,split_by_group,7,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,fa5caaef-aadf-4c07-b98d-2a9461b65707,,split_by_expression,125;580
+9,send_message,8,ABTest_test-first-person_alternative,,,,,Alam kong nakuha mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,,,,,b55974db-88fa-4f96-bf31-b99aa295e3b0,,execute_actions,250;780
+10,send_message,8;8,ABTest_test-first-person_Default;,,,,,Alam naming natanggap mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,,,,,8bb294fc-abb4-4f51-bb00-cbbdeff98716,,execute_actions,;780
+11,send_message,7,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,b716a572-daa4-499b-b795-d2f62ab5dd78,,execute_actions,740;820
+12,wait_for_response,10;11;9,,,,,know_more,,,,,,,,,,,,,,,,efdfb961-2a78-4f6e-bbd2-2992b1dcb0b2,,wait_for_response,960;1240
+13,save_value,12,Oo y o,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,ee9f0bab-7dee-4bf5-9aac-8fdedca8170b,,execute_actions,720;980
+14,save_value,13,,,,,chosen difficult age,@fields.age_group_for_tips,,,,,,,,,,,,,,,ee9f0bab-7dee-4bf5-9aac-8fdedca8170b,,execute_actions,720;980
+15,save_value,14,,,,,last interaction,@(now()),,,,,,,,,,,,,,,ee9f0bab-7dee-4bf5-9aac-8fdedca8170b,,execute_actions,720;980
+16,start_new_flow,15,,,,,,PLH - Content - Positive - Behave - Routines,,,,,,,,,,,,,,3a875a61-978c-4873-a2c1-e085f036266a,86decef1-685f-4be2-b4fe-e842e070f31c,,split_by_subflow,720;1420
+17,save_value,16,Complete,,,,from theme,no,,,,,,,,,,,,,,,8eca3437-d624-45c9-bcfc-32ed76e8820f,,execute_actions,580;1560
+18,split_by_value,17,,,,,,@fields.user_name,,,,,,,,,,,,,,,2b58ecff-351a-479e-9519-beaf2b0ecca8,,split_by_expression,455;1640
+19,send_message,18,,@fields.user_name,has_text,user_name,,"Tandaan na pwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Pwede mo ring baguhin ang uri ng mensaheng matatanggap mo para sa mas matanda o mas batang anak. Piliin lamang ang “Technical Support.” Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,edff39f7-966a-4e83-8b81-1375fa7e9f4d,,execute_actions,330;1840
+20,send_message,18,,,,,,"Tandaan na pwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Pwede mo ring baguhin ang uri ng mensaheng matatanggap mo para sa mas matanda o mas batang anak. Piliin lamang ang “Technical Support.” Usap tayo mamaya!",,,,,,,,,,,,,,,b317e36d-1b2f-4644-8de3-9cdd018fbe16,,execute_actions,580;1840
+21,save_value,16,Expired,,,,from theme,no,,,,,,,,,,,,,,,abbe07f1-646d-45c0-b574-4b6ee2f94684,,execute_actions,940;1500
+22,save_value,21,,,,,has expired,tip,,,,,,,,,,,,,,,abbe07f1-646d-45c0-b574-4b6ee2f94684,,execute_actions,940;1500
+23,send_message,22,,,,,,"Mukhang abala ka ngayon. Pwede mong i-type ang ""GoBack"" para ulitin ang parenting tip na ito o ""Help"" para sa iba pang suporta.",,,,,,,,,,,,,,,29aceecb-ceae-4eb8-887e-5588fcbb323e,,execute_actions,960;1880
+24,split_by_value,12,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,cb753b4f-bdc6-4504-a9bd-7720339fc1b8,,split_by_expression,1615;1040
+25,send_message,24,,@fields.user_name,has_text,user_name,,"Okay lang yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa inyong mga anak. Tandaan na maaari mo ring baguhin ang uri ng mensahe na iyong natatanggap para sa mas matanda o mas batang anak. Piliin lamang ang “Technical Support”. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,dfa0a6d3-9a7d-49a7-8956-aed20087bc63,,execute_actions,1490;1240
+26,send_message,24,,,,,,"Okay lang yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa iyong mga anak. Tandaan na maaari mo ring baguhin ang uri ng mensahe na iyong natatanggap para sa mas matanda o mas batang anak. Piliin lamang ang “Technical Support”. Usap tayo mamaya!",,,,,,,,,,,,,,,e2923141-32e9-42bb-a43a-f30a04eb9d21,,execute_actions,1740;1240
+27,save_value,25;26,,,,,last interaction,@(now()),,,,,,,,,,,,,,,e1ecd5c3-3e60-416d-8318-159c76304449,,execute_actions,1760;1500
+28,send_message,12,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,0cb60016-392e-4c1c-91b8-488a3ec8127d,,execute_actions,1960;820
+29,save_value,28,,,,,last interaction,@(now()),,,,,,,,,,,,,,,e2857d8b-5586-43db-93a0-e5d8c9df4a3c,,execute_actions,1960;940
+30,go_to,29,,,,,,7,,,,,,,,,,,,,,,,,,

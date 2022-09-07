@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,44ebeee1-5212-43e3-9fc2-05a4a5ddc536,,split_by_expression,545;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Gusto mo bang mas matuto pa kung paano lutasin ang mga hindi pagkakasunduan sa pamilya?,Bigyan ako ng karagdagang impormasyon,Hindi ako interesado,,,,,,,,,,,,,d655b80e-087a-4e94-9d89-7d593654bae2,,execute_actions,420;200
+3,send_message,1,,,,,,Magandang araw! Gusto mo bang mas matuto pa kung paano lutasin ang mga hindi pagkakasunduan sa pamilya?,Bigyan ako ng karagdagang impormasyon,Hindi ako interesado,,,,,,,,,,,,,0e7a6887-59df-4a57-bee2-25cf137164e5,,execute_actions,670;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,19ba5d3b-4006-40b7-8e97-3fd1f758d772,,wait_for_response,670;440
+5,save_value,4,karagdagang impormasyon,,has_any_word,More,last interaction,@(now()),,,,,,,,,,,,,,,7f1e4fe5-568b-41c9-bd93-d4e0d4cc3154,,execute_actions,;440
+6,start_new_flow,5,,,,,,PLH - Content - Positive - Family,,,,,,,,,,,,,,dc87cd8d-5d4b-44f6-91d9-5cfa7b1ed631,a03bec2e-e670-40b2-8864-430fb2bb4f11,,split_by_subflow,20;540
+7,split_by_value,4,hindi hindi interesado,,has_any_word,Not,,@fields.user_name,,,,,,,,,,,,,,,063de257-a1d2-4db3-b328-211bd5506f8f,,split_by_expression,815;640
+8,send_message,7,,@fields.user_name,has_text,user_name,,Okay lang ‘yan! Itype lang ang “Help” para makakuha ng karagdagang impormasyon. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,3e46b5fc-5a26-43a8-808d-a196aa0e2839,,execute_actions,690;840
+9,send_message,7,,,,,,Okay lang ‘yan! Itype lang ang “Help” para makakuha ng karagdagang impormasyon. Usap tayo mamaya!,,,,,,,,,,,,,,,efb1d712-42c7-488c-b84b-c6431d75ea40,,execute_actions,940;840
+10,save_value,8;9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,497dc8ff-1836-4be4-809f-55b5cdf89615,,execute_actions,670;1000
+11,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,190f809e-9c95-4a1f-ac96-b4377917fd7f,,execute_actions,1300;520
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,985ff3d8-74fa-45d5-a293-394789840401,,execute_actions,1300;840
+13,go_to,12,,,,,,1,,,,,,,,,,,,,,,,,,

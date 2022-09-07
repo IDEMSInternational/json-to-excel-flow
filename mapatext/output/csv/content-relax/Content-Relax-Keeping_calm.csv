@@ -1,0 +1,13 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Keeping Calm,,,,,,,,,,,,,,,4ad1309a-05ac-47b3-874d-acfb15bcf429,,execute_actions,500;
+2,start_new_flow,1,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,7f0ca304-b111-48f7-9789-93a634ef3e6b,,split_by_subflow,520;80
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.type_of_media,,,,,,,,,,,,,,,ffc53f87-beae-467b-b770-2b22fce3849b,,split_by_contact_field,520;220
+4,send_message,3,high,@fields.type_of_media,has_any_word,High,,Here is a video to help you take a pause.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/video/eng/take_a_pause.mp4,,c5f3109d-1255-488a-974b-7021197d27e1,,execute_actions,260;320
+5,send_message,3,medium,@fields.type_of_media,has_any_word,Medium,,Here is an audio message to help you take a pause.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/audio/eng/take_a_pause.mp3,,,f73ed0f5-c36d-4ccf-90f9-1bedae14db45,,execute_actions,500;340
+6,wait_for_response,4;5,,,,,Result 2,,,,,,,,,,,,,,,,4e5dc760-f334-4ffc-b3b3-64fa47812757,60,wait_for_response,480;500
+7,send_message,3;3;6;6,low;;;No Response,@fields.type_of_media;;;,has_any_word;;;,Low;;;,,"1. Close your eyes. 
+2. Take a deep breath in and let it go.
+3. Notice how you feel.
+4. Listen to your breath as it goes in and out. 
+5. When you are ready open your eyes again. 
+6. You are in control!",,,,,,,,,,,,,,,7ef2cc2d-034e-4be1-b491-862ccf244d2f,,execute_actions,800;320

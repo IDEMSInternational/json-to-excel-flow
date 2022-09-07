@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"2 katotohanan, 1 kasinungalingan
+•	Mag-isip ka ng tatlong pahayag tungkol sa iyong sarili. Ang dalawa ay dapat totoo, at ang isa nama'y dapat kasinungalingan.
+•	Makatutulong siguro kung iisipin mo ang mga hiling, mga pangarap, mga gusto o hindi gusto. Halimbawa, ayaw ko ng saging, gusto ko ng ice cream, at hinihiling ko talaga na sana marunong akong kumanta. 
+•	Sabihin mo ang mga ito sa iyong kinakasama o mga kaibigan. Pahulaan sa kanila kung ano ang hindi totoo. 
+•	Tama ba ang hula nila? Ito ba ay nakakagulat?
+•	Ngayon, sabihin sa kanya na gawin din ito. May natutunan ba kayong bago tungkol sa isa't-isa? ",,,,,,,,,,,,,,,8da6a93d-621e-49e5-9584-fccef58bf881,,execute_actions,;

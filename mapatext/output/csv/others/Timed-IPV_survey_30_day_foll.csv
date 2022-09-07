@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Hi! We have an update for you. Please reply *START* to proceed. Thank you.,,,,,,,,,,,,,,,f6779e8e-7bbf-4624-9a97-4d0b2d9ff4f0,,execute_actions,260;120
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,4c732c85-913c-444c-83b3-d14214acceb6,,wait_for_response,580;260
+3,send_message,2,,,,,,"We would love to hear how you are doing! Can we ask you a few quick questions about your relationship with your partner? Everything you say will be completely private. If you do not want to answer any questions, it is completely okay.",,,,,,,,,,,,,,,64c0c1ef-ee14-4afc-a3bb-021522661213,,execute_actions,260;340
+4,send_message,3,,,,,,"To answer these questions, click this link to take you to an external site for extra privacy:
+https://tinyurl.com/53rt45dz",,,,,,,,,,,,,,,0a22465f-bdc0-4de8-a371-5fbe3410f41a,,execute_actions,260;560

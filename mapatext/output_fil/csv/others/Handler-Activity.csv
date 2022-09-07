@@ -1,0 +1,36 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Para kanino mo gusto ng aktibidad?,Sanggol (0-23 buwan),Batang anak (2-9 taon),Teenager (10-17 taon),Matanda (18+ taon),,,,,,,,,,,cd9426c3-7bd4-4567-9d0d-fbc1e4a04b1a,,execute_actions,415;
+2,wait_for_response,1,,,,,Result 3,,,,,,,,,,,,,,,,22b6391a-eae1-47af-8d4d-37d7cb81829c,,wait_for_response,335;260
+3,start_new_flow,2,sanggol,,has_any_word,Baby,,PLH - Handler - Activity - Babies,,,,,,,,,,,,,,8f2db494-657a-4229-b360-d6e82dbe4af6,ee2edfe7-c718-4a21-a587-7ef12e928681,,split_by_subflow,135;600
+4,start_new_flow,2,batang anak,,has_any_word,Young,,PLH - Handler - Activity - Young children,,,,,,,,,,,,,,19381502-5dfd-498f-b6b3-6a3d15bcad4b,4edf81ae-3fca-417d-b96e-50b087243dc9,,split_by_subflow,415;620
+5,start_new_flow,2,teenager,,has_any_word,Teenager,,PLH - Handler - Activity - Teenagers,,,,,,,,,,,,,,56b9a9eb-e4aa-40e4-a227-d53624fca99e,9a6c1a1f-62c3-4971-9739-131d1c126d6b,,split_by_subflow,905;640
+6,start_new_flow,2,matanda,,has_any_word,Adult,,PLH - Handler - Activity - Adults,,,,,,,,,,,,,,523c1886-d0b6-4c0a-9206-78ef88fb634b,0b906472-58d8-44eb-b02f-fddd9f798182,,split_by_subflow,1185;620
+7,send_message,2,,,,,,Paumanhin hindi ko naintindihan ang ibig mong sabihin.,,,,,,,,,,,,,,,cab65a9f-9096-47ba-9d79-3af37045a33b,,execute_actions,1365;220
+8,go_to,7,,,,,,1,,,,,,,,,,,,,,,,,,
+9,send_message,3;4;5;6,Complete;Complete;Complete;Complete,,,,,Gusto mo bang mamili ng isa pang aktibidad?,Oo,Hindi,,,,,,,,,,,,,622baa4e-bf68-42dd-8a8a-9e2b008f8327,,execute_actions,515;900
+10,wait_for_response,9,,,,,Result 5,,,,,,,,,,,,,,,,5d17abce-441a-409b-9a6c-98f4cafc069c,,wait_for_response,515;1100
+11,save_value,10,Oo y o,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,6cbb5e0e-eecc-4bc3-b5be-20a7e56b35e0,,execute_actions,195;1180
+12,start_new_flow,11,,,,,,PLH - Handler - Activity,,,,,,,,,,,,,,a962e2fd-b75f-4a46-b930-41658dc89f0a,98beb7e3-7d47-4393-80db-2dd559c0633d,,split_by_subflow,195;1280
+13,split_by_value,10,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,ff8ecd02-7a4b-4ea6-a8e3-bc21e27dd95e,,split_by_expression,660;1320
+14,send_message,13,,@fields.user_name,has_text,user_name,,"Okay lang yan! Narito ang isang magandang mapagkukunan ng maraming aktibidad na pwede mong gawin kasama ang iyong mga anak mula sa LEGO!
+
+https://playlist.legofoundation.com/all-activities/
+
+Narito ang ilan pang aktibidad!
+
+https://eccdcouncil.gov.ph/family-activities.html
+
+Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,b540d321-8bef-4f6c-9809-a94a484b1be2,,execute_actions,535;1520
+15,send_message,13,,,,,,"Okay lang yan! Narito ang isang magandang mapagkukunan ng maraming aktibidad na pwede mong gawin kasama ang iyong mga anak mula sa LEGO!
+
+https://playlist.legofoundation.com/all-activities/
+
+Narito ang ilan pang aktibidad!
+
+https://eccdcouncil.gov.ph/family-activities.html
+
+Usap tayo mamaya!",,,,,,,,,,,,,,,a37996e3-10d7-4642-a101-385246909f88,,execute_actions,785;1520
+16,save_value,14;15,,,,,last interaction,@(now()),,,,,,,,,,,,,,,cbebbee8-c4f7-4da0-91de-9e17eea69153,,execute_actions,785;1800
+17,send_message,10,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,7ae9f562-2faf-41ca-b4af-0a7ed1b51c87,,execute_actions,1065;1100
+18,save_value,17,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f3296a59-e7c4-40b5-bb25-48bb868fc0cf,,execute_actions,1085;1220
+19,go_to,18,,,,,,9,,,,,,,,,,,,,,,,,,

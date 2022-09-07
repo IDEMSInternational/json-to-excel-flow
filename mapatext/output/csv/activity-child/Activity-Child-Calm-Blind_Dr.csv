@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Blind Kapre
+•        This game is great if you have at least 4 people.
+•        Tell the story about a ferocious Kapre who lived near a village. He would sneak into the village at night and steal people’s treasures – anything they loved.  Anybody who tried to take their treasure back would be eaten alive. This continued for many years until the Kapre became old, fat, and blind from sitting on his treasure and gazing at the glare of the gold coins. Then the townspeople could try and sneak into his lair and steal back their relatives’ treasure. 
+•        One person plays the Kapre. The Kapre sits blindfolded or with eyes closed surrounded by a pile of treasure. 
+•        Everyone has one piece of treasure that they must steal back. 
+•        If the Kapre hears you and points at you, you must go back to the starting place. 
+•        Only one person can try to get the treasure at a time.",,,,,,,,,,,,,,,39fb15eb-caf2-4709-9bc4-a7a83f2b27d4,,execute_actions,;40

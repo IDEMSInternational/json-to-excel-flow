@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Hulaan ang tonong iyon
+•	Ang unang manlalaro ang siyang mamimili o kakanta ng kanta.
+•	Ang lahat ay kailangang hulaan ang pangalan ng tono (para mas maging mahirap pa ito, pwede nilang hulaan kung sino ang kumanta).
+•	Ang unang tao na makahula ng tama ang syang susunod na magiging lider na pipili o kaya ay kakanta ng susunod na kanta.",,,,,,,,,,,,,,,4c163703-e3a1-4984-8c01-2c6fe0f310da,,execute_actions,;

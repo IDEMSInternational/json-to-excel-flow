@@ -1,0 +1,60 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,0e27d138-02e8-4239-a052-51b4fbaf36c3,,split_by_expression,1335;
+2,split_by_value,1,,@fields.user_name,has_text,user_name,,@fields.child_nickname,,,,,,,,,,,,,,,d1a6f745-7fc6-4768-b4ad-7e919cc0de20,,split_by_expression,1085;200
+3,send_message,2,,@fields.child_nickname,has_text,child_nickname,,Hi @fields.user_name! Were you able to give @fields.child_nickname instructions?,Yes,No,,,,,,,,,,,,,bb11222d-d3d3-47aa-a54a-c843e6fa97e4,,execute_actions,960;600
+4,send_message,2,,,,,,Hi @fields.user_name! Were you able to give your child or teen  instructions?,Yes,No,,,,,,,,,,,,,b45c7c2c-2906-4dd5-ae03-013033d83efa,,execute_actions,1210;600
+5,split_by_value,1,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,3e0ed947-cd35-4f44-aed8-ddd6b15a5bc8,,split_by_expression,1585;400
+6,send_message,5,,@fields.child_nickname,has_text,child_nickname,,Hi! Were you able to give @fields.child_nickname instructions?,Yes,No,,,,,,,,,,,,,a6168755-9b98-4485-a240-e8db4aa0b196,,execute_actions,1460;600
+7,send_message,5,,,,,,Hi! Were you able to give your child or teen  instructions?,Yes,No,,,,,,,,,,,,,13b1ff06-2034-465b-a89a-36f061d4c475,,execute_actions,1710;600
+8,wait_for_response,3;4;6;7,,,,,checkin_managed,,,,,,,,,,,,,,,,4b408fe8-d865-420c-9ba4-f7f99428924e,,wait_for_response,1710;780
+9,save_value,8,yes y,,has_any_word,yes,last interaction,@(now()),,,,,,,,,,,,,,,6eebe5de-20d7-4a58-9117-7b4675a42318,,execute_actions,410;940
+10,save_value,8,no n,,has_any_word,no,last interaction,@(now()),,,,,,,,,,,,,,,77a526f5-7ec7-491e-ba9d-85ef0c939f24,,execute_actions,1730;940
+11,send_message,8,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,64e876a0-6d17-4049-ac2b-b273ccde3f53,,execute_actions,3420;680
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,4cbb3ec3-25ae-427e-a6bd-af2339f4607f,,execute_actions,3420;820
+13,go_to,12,,,,,,1,,,,,,,,,,,,,,,,,,
+14,split_by_value,9,,,,,,@fields.user_name,,,,,,,,,,,,,,,3fd21018-033b-4a22-98a9-ebacc1164515,,split_by_expression,285;1040
+15,send_message,14,,@fields.user_name,has_text,user_name,,"Well done for trying @fields.user_name, how did it go?",Great,Neutral,Bad,,,,,,,,,,,,945f21aa-c294-4a2b-80dc-cb735ce604b2,,execute_actions,160;1240
+16,send_message,14,,,,,,"Well done for trying, how did it go?",Great,Neutral,Bad,,,,,,,,,,,,a8847876-3785-413a-a8b4-38859a584f0c,,execute_actions,410;1240
+17,wait_for_response,15;16,,,,,checkin_how,,,,,,,,,,,,,,,,539b451c-6f8b-4520-a883-2a54c73b0518,,wait_for_response,140;1520
+18,send_message,17,great,,has_any_word,Great,,"Great to hear it went well, you are a star!",,,,,,,,,,,,,,,149ae080-5458-4e3f-8b19-16f3c67df265,,execute_actions,40;1660
+19,send_message,10;17;17,;neutral;bad,,;has_any_word;has_any_word,;Neutral;Bad,,Sorry to hear it was difficult for you. Well done for trying!,,,,,,,,,,,,,,,5260aa12-911b-4ab7-afee-2c846e892890,,execute_actions,2120;1240
+20,send_message,17,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,4c5ff3d7-2e79-4519-a753-fb1ec03fa6a3,,execute_actions,840;1400
+21,go_to,20,,,,,,14,,,,,,,,,,,,,,,,,,
+22,send_message,18,,,,,,Would you like to review the content?,Yes,No,,,,,,,,,,,,,f56496ff-6ccf-4e58-b773-6f7cbffb4242,,execute_actions,40;2020
+23,wait_for_response,22,,,,,Result 5,,,,,,,,,,,,,,,,d6205508-de45-4179-868c-b2352b1b47ce,,wait_for_response,40;2400
+24,save_value,23,yes y,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,0bc70225-e459-4d77-ae9d-0d89a3b8e5c7,,execute_actions,;3500
+25,start_new_flow,24,,,,,,PLH - Content - Positive - Positive instructions,,,,,,,,,,,,,,b1e03180-c408-4311-8ebe-fbbaf623d635,f6f340cf-571c-4218-a513-95dcd7f8387b,,split_by_subflow,;3600
+26,split_by_value,23,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,016eca0c-3708-4047-9fde-00dec5efdc5c,,split_by_expression,635;3220
+27,send_message,26,,@fields.user_name,has_text,user_name,,"That is okay @fields.user_name! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later! ",,,,,,,,,,,,,,,e4f50a00-f40a-4099-9ac0-49efb17362b1,,execute_actions,510;3420
+28,send_message,26,,,,,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later! ",,,,,,,,,,,,,,,b51276c3-ac8e-449b-b9cb-81b5c25dc4e8,,execute_actions,760;3420
+29,send_message,23,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,57c7a1c9-f80d-43bb-bf9b-8d79b95cb5c9,,execute_actions,780;2340
+30,go_to,29,,,,,,22,,,,,,,,,,,,,,,,,,
+31,send_message,19,,,,,,What was your main challenge?,My child or teen did not want to follow the instruction,I gave a negative instead of a positive instruction,I gave too many instructions at once,My child or teen could not do what I asked them,I forgot to praise my child or teen for following my instruction,,,,,,,,,,e81e0165-2dbd-4db4-9d2a-1b97315a72af,,execute_actions,2120;1360
+32,wait_for_response,31,,,,,checkin_problem,,,,,,,,,,,,,,,,c051490b-9166-4660-8022-9d04401d93ac,,wait_for_response,2120;1600
+33,split_by_group,32,My child or teen did not want to follow the instruction,,has_only_phrase,My child or teen did not want to fol,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,3a74a6d9-26e4-4cb0-a239-313ed19d9d93,,split_by_expression,1975;2120
+34,send_message,33,ABTest_test-first-person_alternative,,,,,"I know, our children need time to learn to follow instructions. Be patient, try again, and remember to praise them every time they follow an instruction!",,,,,,,,,,,,,,,673a2cb9-f81c-4e6c-9176-b1ba5a14fdd8,,execute_actions,2100;2320
+35,go_to,34,,,,,,22,,,,,,,,,,,,,,,,,,
+36,send_message,33;33,ABTest_test-first-person_Default;,,,,,"We know, our children need time to learn to follow instructions. Be patient, try again, and remember to praise them every time they follow an instruction!",,,,,,,,,,,,,,,a7e1a4b0-252b-4da2-92f8-949eab6defc1,,execute_actions,1850;2320
+37,go_to,36,,,,,,22,,,,,,,,,,,,,,,,,,
+38,split_by_value,32,I gave a negative instead of a positive instruction,,has_only_phrase,I gave a negative instead of a posit,,@fields.child_nickname,,,,,,,,,,,,,,,4c008646-8356-470b-8378-f1b93f199961,,split_by_expression,2675;2520
+39,split_by_group,38,,@fields.child_nickname,has_text,child_nickname,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,89cd1157-40b5-489a-b78a-93b09442828f,,split_by_expression,2425;2720
+40,send_message,39,ABTest_test-first-person_alternative,,,,,"I know, it takes some time to get used to giving positive instructions – it’s really worth trying again! Think about behaviour you would love to see @fields.child_nickname do more, and think of positive ways to give that instruction!",,,,,,,,,,,,,,,9e7b8d67-0aa0-4a26-bc09-2ab896f89dfb,,execute_actions,2550;3120
+41,go_to,40,,,,,,22,,,,,,,,,,,,,,,,,,
+42,send_message,39;39,ABTest_test-first-person_Default;,,,,,"We know, it takes some time to get used to giving positive instructions – it’s really worth trying again! Think about behaviour you would love to see @fields.child_nickname do more, and think of positive ways to give that instruction!",,,,,,,,,,,,,,,f54ca777-b30f-4c0b-b2f8-abf6c776eac7,,execute_actions,2300;3120
+43,go_to,42,,,,,,22,,,,,,,,,,,,,,,,,,
+44,split_by_group,38,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,bbd3b3c6-ac1a-476d-a957-911c6308c66c,,split_by_expression,2925;2920
+45,send_message,44,ABTest_test-first-person_alternative,,,,,"I know, it takes some time to get used to giving positive instructions – it’s really worth trying again! Think about behaviour you would love to see your teen do more, and think of positive ways to give that instruction!",,,,,,,,,,,,,,,60a5b967-49d2-4f44-97b1-0ab9c5e2ad26,,execute_actions,3050;3120
+46,go_to,45,,,,,,22,,,,,,,,,,,,,,,,,,
+47,send_message,44;44,ABTest_test-first-person_Default;,,,,,"We know, it takes some time to get used to giving positive instructions – it’s really worth trying again! Think about behaviour you would love to see your teen do more, and think of positive ways to give that instruction!",,,,,,,,,,,,,,,aa2c48ff-c69f-497c-adaa-fe7a85572c1e,,execute_actions,2800;3120
+48,go_to,47,,,,,,22,,,,,,,,,,,,,,,,,,
+49,split_by_group,32,I gave too many instructions at once,,has_only_phrase,I gave too many instructions at once,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,43b2b7fe-8570-4976-a0fd-32dbb8f2fd1e,,split_by_expression,3235;1760
+50,send_message,49,ABTest_test-first-person_alternative,,,,,"I know, it is hard to remember to give one instruction at a time. When we do it, our child is more likely to listen – so we can praise them even more!",,,,,,,,,,,,,,,752472be-5b91-4086-9e76-f1ab4ff9ab52,,execute_actions,3360;1960
+51,go_to,50,,,,,,22,,,,,,,,,,,,,,,,,,
+52,send_message,49;49,ABTest_test-first-person_Default;,,,,,"We know, it is hard to remember to give one instruction at a time. When we do it, our child is more likely to listen – so we can praise them even more!",,,,,,,,,,,,,,,abd41411-ae95-437f-b176-70e26bec11ce,,execute_actions,3110;1960
+53,go_to,52,,,,,,22,,,,,,,,,,,,,,,,,,
+54,send_message,32,My child or teen could not do what I asked them,,has_only_phrase,My child or teen could not do what I,,It is hard to remember to give realistic instructions. Try to make sure that your child or teen can physically do what you want them to do. Be specific!,,,,,,,,,,,,,,,3e543325-b9ae-48fb-8105-0810523dbdd4,,execute_actions,3480;3580
+55,go_to,54,,,,,,22,,,,,,,,,,,,,,,,,,
+56,send_message,32,I forgot to praise my child or teen for following my instruction,,has_only_phrase,I forgot to praise my child or teen ,,"Sometimes we just expect our children to do what we want them. But when we praise them for it, they feel encouraged to listen again next time!",,,,,,,,,,,,,,,bac0f942-9618-48cc-8885-3ee261c1357e,,execute_actions,3620;2060
+57,go_to,56,,,,,,22,,,,,,,,,,,,,,,,,,
+58,send_message,32,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,c0608e3c-aad9-4e04-b9b7-73db261c8c48,,execute_actions,3480;1460
+59,go_to,58,,,,,,31,,,,,,,,,,,,,,,,,,

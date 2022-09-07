@@ -1,0 +1,38 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.parent_baby,,,,,,,,,,,,,,,a5f38840-f246-4398-84d8-cc0a78fe0ee9,,split_by_contact_field,420;
+2,split_by_value,1,true,@fields.parent_baby,has_any_word,True,,@fields.parent_young_child,,,,,,,,,,,,,,,c7c5ece6-5206-4380-ae7f-3ff855a35a5d,,split_by_contact_field,240;120
+3,split_by_value,2,true,@fields.parent_young_child,has_any_word,True,,@fields.parent_teenager,,,,,,,,,,,,,,,c10b561d-8641-40a2-be69-e1e6e9f3e5d0,,split_by_contact_field,60;280
+4,split_by_value,2,false,@fields.parent_young_child,has_any_word,False,,@fields.parent_teenager,,,,,,,,,,,,,,,e74e2af5-e134-41b7-9e78-96a1ca3a7907,,split_by_contact_field,340;280
+5,split_by_value,1,false,@fields.parent_baby,has_any_word,False,,@fields.parent_young_child,,,,,,,,,,,,,,,f58f515b-7869-4f52-9401-4c795fdebf68,,split_by_contact_field,700;180
+6,split_by_value,5,true,@fields.parent_young_child,has_any_word,True,,@fields.parent_teenager,,,,,,,,,,,,,,,ede17c75-acbe-4171-bc58-cc6b3dabc71f,,split_by_contact_field,820;380
+7,split_by_value,5,false,@fields.parent_young_child,has_any_word,False,,@fields.parent_teenager,,,,,,,,,,,,,,,ba7d2524-ca6c-4183-8d13-d37e9e5208f4,,split_by_contact_field,1060;300
+8,send_message,3;7,true;false,@fields.parent_teenager;@fields.parent_teenager,has_any_word;has_any_word,True;False,,Para kanino mo gusto ng aktibidad?,Sanggol,Musmos na bata,teenager,matanda,,,,,,,,,,,75f5cc09-16b5-469b-997e-b1568bf47a6a,,execute_actions,40;860
+9,wait_for_response,8,,,,,age_group,,,,,,,,,,,,,,,,4a9b2bc3-2e10-44ea-b893-42a54287ed26,,wait_for_response,60;1260
+10,send_message,9,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,c191c857-ebb0-4af0-b815-abcc143e68c9,,execute_actions,80;1400
+11,go_to,10,,,,,,8,,,,,,,,,,,,,,,,,,
+12,send_message,3,false,@fields.parent_teenager,has_any_word,False,,Para kanino mo gusto ng aktibidad?,Sanggol,Musmos na bata,matanda,Iba pa,,,,,,,,,,,fd1e64e8-5ec1-4bed-953b-e6879b5a0b43,,execute_actions,300;940
+13,wait_for_response,12,,,,,age_group,,,,,,,,,,,,,,,,225e3d36-60f2-47c5-aad2-31133e431820,,wait_for_response,280;1120
+14,send_message,13,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,48db7388-54da-4285-915b-d8192390738a,,execute_actions,420;1260
+15,go_to,14,,,,,,12,,,,,,,,,,,,,,,,,,
+16,send_message,4,true,@fields.parent_teenager,has_any_word,True,,Para kanino mo gusto ng aktibidad?,Sanggol,Teenager,matanda,Iba pa,,,,,,,,,,,7b5c148f-8b9e-4d94-9777-0b6811a9e59c,,execute_actions,100;420
+17,wait_for_response,16,,,,,age_group,,,,,,,,,,,,,,,,f47aa2f8-3821-4aa5-87b6-f0c70b975dd5,,wait_for_response,100;680
+18,send_message,17,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,f91efb92-3131-424a-9504-7318da3b9487,,execute_actions,280;560
+19,go_to,18,,,,,,16,,,,,,,,,,,,,,,,,,
+20,send_message,4,false,@fields.parent_teenager,has_any_word,False,,Para kanino mo gusto ng aktibidad?,Sanggol,matanda,Iba pa,,,,,,,,,,,,74d37f8c-fefe-4b2d-af22-f0e217aebfe4,,execute_actions,520;480
+21,wait_for_response,20,,,,,age_group,,,,,,,,,,,,,,,,4b05c179-d53f-40f4-902c-04f7a9bee87b,,wait_for_response,600;660
+22,send_message,21,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,be929a6c-5dca-46d8-b4d5-58bdf94c82cd,,execute_actions,600;940
+23,go_to,22,,,,,,20,,,,,,,,,,,,,,,,,,
+24,send_message,6,true,@fields.parent_teenager,has_any_word,True,,Para kanino mo gusto ng aktibidad?,Musmos na bata,teenager,matanda,Iba pa,,,,,,,,,,,baf1cda0-b5fe-4759-90cb-366ee95c2dad,,execute_actions,680;1160
+25,wait_for_response,24,,,,,age_group,,,,,,,,,,,,,,,,b710798f-2b76-43cd-86d0-d76051f2b297,,wait_for_response,560;1380
+26,send_message,25,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,141e7739-7366-4ce0-8d2c-61ad895556d2,,execute_actions,840;1520
+27,go_to,26,,,,,,24,,,,,,,,,,,,,,,,,,
+28,send_message,6,false,@fields.parent_teenager,has_any_word,False,,Para kanino mo gusto ng aktibidad?,Musmos na bata,matanda,Iba pa,,,,,,,,,,,,6f87dee2-796b-49cd-96a8-7b1da0590b2e,,execute_actions,860;800
+29,wait_for_response,28,,,,,age_group,,,,,,,,,,,,,,,,8ea010f5-ad95-4c56-acfa-e8da3fa20a9f,,wait_for_response,900;960
+30,send_message,29,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,af5e1c5c-9815-4a47-877c-cafe8ec00b51,,execute_actions,1040;1100
+31,go_to,30,,,,,,28,,,,,,,,,,,,,,,,,,
+32,send_message,7,true,@fields.parent_teenager,has_any_word,True,,Para kanino mo gusto ng aktibidad?,teenager,matanda,Iba pa,,,,,,,,,,,,bc269b9a-cea4-4d77-a39d-e24f1fa045cb,,execute_actions,1100;480
+33,wait_for_response,32,,,,,age_group,,,,,,,,,,,,,,,,de91e609-9eff-4f64-97f2-0e38753e8f9c,,wait_for_response,1140;660
+34,save_flow_result,13;13;13;13;17;17;17;17;21;21;21;25;25;25;25;29;29;29;33;33;33;9;9;9;9,sanggol;anak bata ;matanda;iba pa;sanggol;teenager teen;matanda;iba pa;sanggol;matanda;iba pa;batang anak;teenager teen;matanda;iba pa;anak bata ;matanda;iba pa;teenager teen;matanda;iba pa;sanggol;batang anak;teenager teen;matanda,,has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word,Baby;Child;Adult;Other_group;Baby;Teen;Adult;Other_group;Baby;Adult;Other_group;child;Teen;Adult;Other_group;Child;Adult;Other_group;Teen;Adult;Other_group;Baby;child;Teen;Adult,age_group,@results.age_group.category,,,,,,,,,,,,,,,fee7c837-a887-4733-8255-92026edecb81,,execute_actions,580;1640
+35,save_value,34,,,,,last interaction,@(now()),,,,,,,,,,,,,,,6e487ad8-b450-46cf-85cc-89b553406dc2,,execute_actions,580;1840
+36,send_message,33,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,54840555-07e7-4b15-a85b-a9aa0f69f4f7,,execute_actions,1240;860
+37,go_to,36,,,,,,32,,,,,,,,,,,,,,,,,,

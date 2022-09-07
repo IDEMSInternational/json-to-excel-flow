@@ -1,0 +1,242 @@
+{
+  "PLH - Activity - Baby - Active - Cooking together": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Cooking together\n•\tChildren love to do what you do!\n•\tLet your baby play with pots and spoons while you are making dinner.",
+      "_nodeId": "e3d9d334-6ab7-4729-a7b2-fa391880edc1",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Dance party": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dance Party\n•\tPut on your favourite music or sing your favourite song and dance around the room with your toddler. If you have a baby hold them while you dance. \n•\tDance in different ways or with different parts of your body.\n•\tFor example, “Dance like a monkey”, “Dance like a chicken” or “Let’s dance with our knees and hips.”\n•\tThink up different instructions. Be seriously playful! \n•\tWhen the music stops, everyone does a funny freeze.\n•\tNotice what rhythms or movements they like!",
+      "_nodeId": "9e9b3975-7067-498c-a8c5-9986c770c73d",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Down in a ditch": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Down in a ditch!\n•\tSit on a chair and put your toddler on your lap facing you. Hold them firmly under the arms.\n•\tGently bounce your legs and say in a soft voice “Baby horse, baby horse, baby horse, baby horse”\n•\tBounce your legs a bit more and say a bit louder “Little horse, little horse, little horse, little horse”\n•\tBounce your legs more and say louder “Big horse, big horse, big horse, big horse”\n•\tWhen you call out “Down in a ditch!” open your knees and let your child drop down between them. Make sure you hold them so they don’t fall far! ",
+      "_nodeId": "610ee186-1e81-440f-8825-be1bd1dd3cd4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Funny faces": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Funny Faces\n•\tLook at your baby in the eyes and make different funny faces. \n•\tMake a big face. Make a small face. Make a happy face. Make a surprised face. \n•\tWhich ones make your baby smile or laugh? Do them again, even bigger this time!\n•\tPlay with different feelings and add sounds. \n•\tCopy their facial expressions too. Exaggerate them to make them funny.\n•\tAlways end on a positive expression!",
+      "_nodeId": "26e400be-fe4e-46d6-91a6-b769c7ab170f",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Mirror game": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Mirror Game\n• Get to your baby's level so they can see you and hear you. \n• Copy their facial expressions and sounds. \n• It is simple and helps create a strong bond between you and your baby!",
+      "_nodeId": "0756ce69-3e9c-42cc-9d7f-33553eab487e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Musical Toes": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Musical Toes\n•\tPut your baby on their back.\n•\tWiggle their toe and say, “This little toe goes [funny sound].”\n•\tMake a funny sound for each toe.\n•\tPlay with different sounds. For example, animal sounds, popping sounds, squeaky sounds, fart sounds. \n•\tRepeat this for all ten toes. \n•\tTry to make the last toe the biggest and funniest sound!",
+      "_nodeId": "7832bb7a-0f85-4b6c-9f1e-76b15809dafe",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Peek a boo": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Peek-a-Boo! \n• Cover your face with your hands. \n• Quickly show your face and say \"Peek-a-Boo!\" or \"Hello!\"\n \nBabies love it!",
+      "_nodeId": "3b42b025-a31a-4203-9784-1a5ab9c52b0e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        380,
+        60
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Shakers": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Shakers\n•\tFind an empty, clean plastic bottle or pot with a lid that closes tight.\n•\tFill it with sand, stones, beans or any small objects that make an interesting sound. \r\n•\tMove your body as you shake it in front of your baby.\n•\tIf it is safe, give it to your baby to shake!\n•\tGet creative! Can you find something colourful or try it with water? \n•\tWhat sounds does your baby like?",
+      "_nodeId": "780bc84c-7ab0-4240-8b78-207aa4953f9b",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - The sun is coming": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "The Sun is Coming! \n•\tLie your baby on their back after washing them or changing their diaper.\n•\tTell them the sun is coming! Wiggle your fingers like sun rays above their head and make your face a big smiling sun.\n•\tTell them the wind is coming! Blow softly over their body.\n•\tTell them the rain is coming! Use your fingers to gently pat over their whole body like light raindrops.\n•\tTell them the clouds are coming! Wrap the towel or cloth around them like a blanket and cuddle them. \n•\tPlay with different weathers. Which one does your baby like best?\n•\tAdd sound effects or make it into a little song. Use the tune of another song you know! ",
+      "_nodeId": "ca58b40b-c642-4603-8c2b-67e58d3ae801",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Calm - At the end of the day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "At the End of the Day\n•\tAt the end of each day, take a minute to think about the day.  \n•\tTalk to your child about one positive or fun thing they did.\n•\tPraise yourself for one thing you did well today.\n•\tThink of one thing that you are grateful for.  \n•\tYou are a star!",
+      "_nodeId": "b99e2acb-065a-4ab4-ae8d-37ff4166411c",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Calm - Lullaby": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Lullaby\n•\tWhen your baby or toddler cries, sing a soft song to calm you both down.\n•\tSing a soothing song you know or make up your own with a simple melody and some soothing words.\n•\tRepeat it over and over in a rhythmical way.  For example, “My little one, oh little one.”\r\n•\tSing the same song regularly so your child gets used to it!",
+      "_nodeId": "938faa47-82e4-48f2-9efa-391766ea3b2a",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - See it Be it": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "See It Be It\n•\tLook around you and name something that you can see. For example, a tree or a cup.\n•\tSay to your child “I see a tree, let’s be it”.\n•\tCountdown from 5 and make the shape of a tree with your bodies. Be as big and silly as possible.\n•\tNow let your child have a turn. What can they see?\n•\tIf you can, go outside and be in nature. If you can’t, play it inside. \n•\tWhen you’ve done it a few times, add moves and sounds!",
+      "_nodeId": "3ecae3e2-cc94-4103-8693-dda692ad062e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ]
+}

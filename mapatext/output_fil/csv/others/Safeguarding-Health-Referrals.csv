@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Narito ang mga detalye upang maki-ugnayan sa mga lokal na awtoridad na nagbibigay ng serbisyong pang-medikal:,,,,,,,,,,,,,,,6405388e-3ea0-461c-adb3-974c24dd569c,,execute_actions,520;40
+2,send_message,1,,,,,,"Philippine Red Cross Helpline: 143 or (02) 8527-8385 to 95
+
+Department of Health (DOH) Substance Abuse Helpline: 1550
+
+Department of Health Treatment and Rehabilitation Center (Bicutan, Taguig). Helpline: (02) 8401 94",,,,,,,,,,,,,,,35b52473-ae79-4cd3-b950-885f0f849a56,,execute_actions,520;160
+3,send_message,2,,,,,,Dapat mong ipagmalaki ang inyong sarili sa paghahanap mo ng mga paraan upang makakuha ng tulong para sa inyong sarili at sa inyong pamilya.,,,,,,,,,,,,,,,a7c0fecf-2ffe-4325-969e-044874845f56,,execute_actions,520;260
+4,send_message,3,,,,,,"I-type ang ""SOS"" anumang oras kung gusto mong makuha ang mga detalye ng ibang emergency service o hotline. Tandaan na ang lahat ng sasabihin mo ay mananatiling pribado!",,,,,,,,,,,,,,,ab212c73-c458-4aab-b052-2d3e0804e7c1,,execute_actions,520;400

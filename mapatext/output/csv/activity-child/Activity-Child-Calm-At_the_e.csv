@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"At the End of the Day
+•	At the end of each day, take a minute to think about the day.  
+•	Talk to your child about one positive or fun thing they did.
+•	Praise yourself for one thing you did well today.
+•	Think of one thing that you are grateful for.  
+•	You are a star!",,,,,,,,,,,,,,,2c4444cc-c093-4331-8a76-557ff126b97e,,execute_actions,20;60

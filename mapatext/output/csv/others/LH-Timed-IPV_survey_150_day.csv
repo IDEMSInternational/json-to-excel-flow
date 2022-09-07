@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"TEMPLATE:
+Hi! We would love to hear how you are doing! Please reply OK to continue.",,,,,,,,,,,,,,,b5c6e2dc-f838-4c3c-b1b3-8faf5dcc33ae,,execute_actions,260;120
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,8441d7ab-0b1d-42d6-8d9a-eda4b2e36575,,wait_for_response,580;260
+3,send_message,2,,,,,,"Can we ask you a few quick questions about your relationship with your partner? Everything you say will be completely private. If you do not want to answer any questions, it is completely okay.",,,,,,,,,,,,,,,5c06203f-29a8-4bb8-a682-25d133affddd,,execute_actions,260;340
+4,send_message,3,,,,,,"To answer these questions, click this link to take you to an external site for extra privacy:
+[URL]",,,,,,,,,,,,,,,7a735aa3-89b7-4950-ac4b-e88db5e4aa6f,,execute_actions,260;560

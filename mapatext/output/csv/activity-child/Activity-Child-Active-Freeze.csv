@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Freeze dance
+•	Play music or someone sings a song, and everyone dances.
+•	When the music stops, everyone must freeze.
+•	Last person still dancing becomes the judge for the next round.
+•	A variation to Freeze Dance is Animal Dance: It’s the same as Freeze Dance but when the music stops, one member of the family calls out the name of an animal, and everyone has to become that animal.",,,,,,,,,,,,,,,365585b0-a367-4a36-95ca-893ff22f2c66,,execute_actions,;

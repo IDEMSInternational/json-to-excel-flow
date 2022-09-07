@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Musical Toes
+•	Ihiga mo ang iyong sanggol.
+•	Galawin ang kanyang hinlalaki sa paa at sabihin, ""Ang maliit na daliring ito ay [nakakaaliw na tunog].""
+•	Gumawa ng nakakatawang tunog sa bawat daliri.
+•	Paglaruan ang iba't ibang mga tunog. Halimbawa, tunog ng mga hayop, pumuputok na tunog, matitinis na tunog, pag-utot na tunog. 
+•	Ulitin ito sa lahat ng sampung daliri sa paa. 
+•	Subukang gawin ang pinakamalakas at nakakatawang tunog sa huling daliri!",,,,,,,,,,,,,,,7832bb7a-0f85-4b6c-9f1e-76b15809dafe,,execute_actions,;

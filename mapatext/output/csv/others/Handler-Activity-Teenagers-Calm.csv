@@ -1,0 +1,16 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_random,start,,,,,,,,,,,,,,,,,,,,,254293b8-5be7-46b6-978a-b6ac385505c0,,split_by_random,660;100
+2,split_random,1,1,,,,,,,,,,,,,,,,,,,,108b720e-c296-4c31-8816-5fc4b0f04c02,,split_by_random,120;220
+3,start_new_flow,2,1,,,,,PLH - Activity - Teen - Calm - 2 Truths 1 Lie,,,,,,,,,,,,,,489b1e68-fad1-4dc0-8a92-ed52ebc25179,e80307ad-f9b0-4460-ac60-4091a3ee96a0,,split_by_subflow,;660
+4,start_new_flow,2,2,,,,,PLH - Activity - Teen - Calm - Three options,,,,,,,,,,,,,,e2ff1ff9-793c-41ad-a20e-54c63d37896a,3e530169-e9c4-42bf-a03a-bbb0c81cd331,,split_by_subflow,220;660
+5,start_new_flow,2,3,,,,,PLH - Activity - Teen - Calm - Yes No or Maybe,,,,,,,,,,,,,,e9236f47-0b2f-462a-9bca-df9b908d73bb,9e303859-9249-4f16-a54c-c3ab6cb35145,,split_by_subflow,440;660
+6,start_new_flow,2,4,,,,,PLH - Activity - Teen - Calm - The Interrupter,,,,,,,,,,,,,,985891bc-3928-4f7f-8457-9c27c85ba2a8,fc2186e3-ed0c-41ba-9ad9-a17f6757c9da,,split_by_subflow,560;460
+7,start_new_flow,2,5,,,,,PLH - Activity - Teen - Calm - Superpowers,,,,,,,,,,,,,,dac058b3-6c2d-4493-bedb-fae20969f803,e134c8df-a7c0-480a-b07c-9179f9b10565,,split_by_subflow,320;400
+8,start_new_flow,2,6,,,,,PLH - Activity - Teen - Calm - How was your day,,,,,,,,,,,,,,a7954ec8-e1dd-45c7-8100-e9f8608c1dfd,953bd0ff-c013-4bb0-9096-e07414245b4e,,split_by_subflow,100;500
+9,split_random,1,2,,,,,,,,,,,,,,,,,,,,a3b0a1ae-6a8a-4e09-b16b-5574ac151c01,,split_by_random,820;240
+10,start_new_flow,9,1,,,,,PLH - Activity - Teen - Calm - Dream travel,,,,,,,,,,,,,,ca21447d-3441-4011-be44-31e3beb6275c,e44d6cef-470e-4350-9a27-b7ead24f8215,,split_by_subflow,1340;660
+11,start_new_flow,9,2,,,,,PLH - Activity - Teen - Calm - Mirror,,,,,,,,,,,,,,87d1de4e-1617-458f-b14e-b761742b249d,58d9178d-10fc-4f4c-a5c2-2fcd250705c8,,split_by_subflow,1260;340
+12,start_new_flow,9,3,,,,,PLH - Activity - Teen - Calm - Make up a story,,,,,,,,,,,,,,f4167d1a-512c-4291-927a-647a9254d297,f6e74011-a9bc-4680-aab5-9ecbd4cffe7b,,split_by_subflow,1100;620
+13,start_new_flow,9,4,,,,,PLH - Activity - Teen - Calm - When COVID19 ends,,,,,,,,,,,,,,c2306840-2ae7-4f41-be0b-c91f27ac5e40,4705613e-2b28-4258-9075-d710f6f04b50,,split_by_subflow,900;480
+14,start_new_flow,9,5,,,,,PLH - Activity - Teen - Calm - Just a friendly chat,,,,,,,,,,,,,,6b222587-4a00-4621-ae78-fbd8b9eedbf4,3a6ff3c2-bdb2-4a7a-8953-b2ca6525013e,,split_by_subflow,920;800
+15,start_new_flow,9,6,,,,,PLH - Activity - Teen - Calm - At the end of the day,,,,,,,,,,,,,,43a9e8b5-3799-4afc-9073-7ffd4e22a9d0,90809836-0368-4b09-9d20-16fa290217e4,,split_by_subflow,1180;800

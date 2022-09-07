@@ -1,0 +1,21 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,da53fcf7-1f4f-49d5-8c4f-0760fc4c07b2,,split_by_expression,755;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"Ito ay mga tip para sa IYO. Para mas makatulong ang ating pag-uusap, maaari mo bang sabihin sa akin kung ikaw ay isang BABAE o LALAKI?
+
+Kung ayaw mo itong sagutin, i-type mo lang ang “H”.",Babae,Lalaki,,,,,,,,,,,,,1b687810-2eff-4e1c-aea7-05fc5b840e02,,execute_actions,880;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"Ito ay mga tip para sa IYO. Para mas makatulong ang ating pag-uusap, maaari mo bang sabihin sa amin kung ikaw ay isang BABAE o LALAKI?
+
+Kung ayaw mo itong sagutin, i-type mo lang ang “H”.",Babae,Lalaki,,,,,,,,,,,,,e442c9e5-4214-4755-a98d-a6a903edf520,,execute_actions,630;200
+4,wait_for_response,2;3,,,,,gender,,,,,,,,,,,,,,,,3e88a00f-ccb8-4807-9f25-74f7f0781c7d,,wait_for_response,530;460
+5,save_value,4,babae,,has_any_word,Woman,gender,woman,,,,,,,,,,,,,,,f4e2608c-42a7-4ea5-b859-317d9e5c2875,,execute_actions,20;660
+6,save_value,5,,,,,deployment,@fields.default_deployment,,,,,,,,,,,,,,,592aec11-4255-4063-8e8f-8cb1802167ee,,execute_actions,;780
+7,save_value,4,lalaki,,has_any_word,Man,gender,man,,,,,,,,,,,,,,,fb56528d-4e96-48e2-8452-77ea00afd7f3,,execute_actions,510;680
+8,save_value,7,,,,,chatbot name,@fields.chatbot_name_male,,,,,,,,,,,,,,,85cf02c0-a441-47e0-9d5a-840882accd21,,execute_actions,510;780
+9,save_value,8,,,,,deployment,"@(fields.default_deployment & ""Man"")",,,,,,,,,,,,,,,02eb6b20-127a-4c6f-8aaf-35021df782a0,,execute_actions,530;880
+10,start_new_flow,6;9,,,,,,PLH - Internal - Define attachments paths,,,,,,,,,,,,,,89d00fef-a0a2-48f9-8a6c-27348218fa29,8af1c27f-a913-4f71-8ddd-273943713560,,split_by_subflow,120;1000
+11,split_by_group,10;10,Complete;Expired,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,d44ae170-6a10-4f54-829b-2dd5bf2c406b,565391a7-68fb-4423-b6d8-c1f805041505,,split_by_expression,265;1180
+12,save_value,11,ABTest_test-personalisation_alternative,,,,gender personalisation,,,,,,,,,,,,,,,,2b052545-281a-41e2-bcad-2207f49e10b4,,execute_actions,390;1380
+13,save_value,11;11,ABTest_test-personalisation_Default;,,,,gender personalisation,@fields.gender,,,,,,,,,,,,,,,c26068e0-56f6-491e-8679-119de8b90eea,,execute_actions,140;1380
+14,save_value,4,h,,has_any_word,N,gender,no,,,,,,,,,,,,,,,7e9fe1ba-a4e0-480a-a317-b080988e1988,,execute_actions,1020;680
+15,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,1d6c5b18-dabb-4338-8ad8-21dcdc9ffe4b,,execute_actions,1260;420
+16,go_to,15,,,,,,1,,,,,,,,,,,,,,,,,,

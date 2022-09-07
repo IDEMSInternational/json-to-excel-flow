@@ -1,0 +1,24 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Family budgeting,,,,,,,,,,,,,,,f4b17a39-a668-4822-9b3c-2674bd00f941,,execute_actions,660;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,6c5e3dac-a5d4-4266-a766-426044bbcd7b,,split_by_subflow,660;100
+3,send_message,2;2,Complete;Expired,,,,,"Milyun-milyong pamilya ang nahihirapang mapagtagumpayan ang mga hamon. Kapag mahirap ang pera, nakakabalisa, nakakabahala, at nakakalungkot. Mahalaga ang pag-iintindi at pag-uusap natin hinggil sa pera kasama ang ating mga anak. Makatutulong sila sa paggastos at pag-iipon ng pera sa paraang mapakikinabangan ng pamilya.",,,,,,,,,,,,,,,67732b16-f7e3-4f96-94e9-859834dba6b1,,execute_actions,640;280
+4,split_by_value,3,,,,,,@fields.toolkit,,,,,,,,,,,,,,,c8924d5e-f444-4a97-8f81-e2131bf7cc38,,split_by_contact_field,640;560
+5,split_by_group,4,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,eff3507c-eca8-420f-a00f-b5b396b7fc72,,split_by_expression,125;660
+6,send_message,5,ABTest_test-first-person_alternative,,,,,Alam kong nakuha mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/adults_budgeting.jpg,,,,d7f8d2d5-f348-44ef-a08d-d54c273b5c17,,execute_actions,250;860
+7,send_message,5;5,ABTest_test-first-person_Default;,,,,,Alam naming natanggap mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/adults_budgeting.jpg,,,,32a49cfa-2d9e-41d0-9e18-7234b21233d0,,execute_actions,;860
+8,send_message,4,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/adults_budgeting.jpg,,,,aa191df4-324b-4058-b59b-4fa77890583e,,execute_actions,760;860
+9,wait_for_response,6;7;8,,,,,know_more,,,,,,,,,,,,,,,,d2bb35b6-671f-4338-a6f3-892d8a1d94e0,,wait_for_response,620;1060
+10,save_value,9,Oo y o,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,d868e19d-9183-4245-9e1e-a7bfaecec0e0,,execute_actions,1440;360
+11,save_value,10,,,,,chosen difficult age,@fields.age_group_for_tips,,,,,,,,,,,,,,,d868e19d-9183-4245-9e1e-a7bfaecec0e0,,execute_actions,1440;360
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,d868e19d-9183-4245-9e1e-a7bfaecec0e0,,execute_actions,1440;360
+13,start_new_flow,12,,,,,,PLH - Content - Positive - Budget adults,,,,,,,,,,,,,,30d3d9bf-4ce1-4034-94bb-8c10cb89e6d1,dbf042a5-032c-4412-9672-f640d0cb187b,,split_by_subflow,1440;580
+14,save_value,13,Expired,,,,has expired,tip,,,,,,,,,,,,,,,858f03a6-f9cb-4470-a761-b277eb770a97,,execute_actions,1560;940
+15,send_message,14,,,,,,"Mukhang abala ka ngayon. Pwede mong i-type ang ""GoBack"" para ulitin ang parenting tip na ito o ""Help"" para sa iba pang suporta.",,,,,,,,,,,,,,,31163309-b69a-440e-86be-63bf4a0f22ca,,execute_actions,1580;1060
+16,save_value,13;15,Complete;,,,,from theme,no,,,,,,,,,,,,,,,f37fc92f-f437-4b58-8586-e1a2df34bc4c,,execute_actions,1320;920
+17,split_by_value,9,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,259dccf2-94fe-4b3e-b23a-616df3f5ba99,,split_by_expression,455;1240
+18,send_message,17,,@fields.user_name,has_text,user_name,,"Okay lang ‘yan! Pwedeng i-type ang ""Help"" anumang oras kung gusto mong makatanggap ng tip sa ibang panahon. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,ed91b19a-c510-4c73-9147-e1c77a4f7da0,,execute_actions,330;1440
+19,send_message,17,,,,,,"Okay lang ‘yan! Pwedeng i-type ang ""Help"" anumang oras kung gusto mong makatanggap ng tip sa ibang panahon. Usap tayo mamaya!",,,,,,,,,,,,,,,bc5b59a6-b239-4da8-ae03-32400a6f2bba,,execute_actions,580;1440
+20,save_value,18;19,,,,,last interaction,@(now()),,,,,,,,,,,,,,,82277672-e35c-4736-bd01-b8419ed43c51,,execute_actions,580;1600
+21,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,15d63ebf-7d2e-4a67-b8a1-bf83d59abec3,,execute_actions,820;1440
+22,send_message,21,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,be0cd5ec-549a-4729-a99f-4fa047f08307,,execute_actions,860;1520
+23,go_to,22,,,,,,4,,,,,,,,,,,,,,,,,,

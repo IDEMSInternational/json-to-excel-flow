@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Memory game – “When COVID-19 ends…”
+•	First person says, “When COVID-19 ends, I am going to… (e.g., go to the park)”
+•	Second person adds to the first person’s plan, “When COVID-19 ends, I am going to the park and… (e.g., visit my best friend)”
+•	Each person adds to the previous list of plans, trying to think of all of the fun things to do when COVID-19 ends.",,,,,,,,,,,,,,,ef5a9819-dac2-4b9f-b275-7740d95bacf3,,execute_actions,;

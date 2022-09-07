@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Maglabas ng Lakas
+•	Baba da bi da ba da baaa! Pause Power! 
+•	Ano ang Pause Power na naririnig kong sinasabi mo? Ito ang kakayahang baguhin ang masungit at galit na tao na maging kalmado at maaliwalas na tao. 
+•	Kapag ako ay nakakaramdam ng pagkabigo, nilalapat ko nang maigi ang aking mga paa sa lupa at humihinga ng tatlong beses nang dahan-dahan. Minsan iniisip kong ako'y umaamoy ng bulaklak at umiihip ng isang kandila. 
+•	Ta da! Pause Power! Kumpleto na ang aking pagbabago mula sa pagiging sumpungin hanggang sa pagiging kalmado!",,,,,,,,,,,,,,,360c54a9-80f6-40d0-81e4-df4a45048b85,,execute_actions,220;80

@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Crazy Chicken
+• I-shake ang iyong kamay sa hangin nang 8 beses habang nagbibilang hanggang 8.
+• Gawin ito nang mabilis at maingay sa abot ng iyong makakaya.
+• Ulitin ito gamit ang kabilang kamay, tapos gawin ito gamit ang bawat paa. 
+• Gawin ito ng 7 beses, tapos 6 beses hanggang sa umabot ng 1.
+• Kapag tapos na, isigaw mo sa pinakamalakas na kaya mo ang ""Crazy Chicken""
+• Na-i-release mo ba lahat ng stress mo? Kung hindi, gawin mo ulit nang mas mabilis at mas malakas!  ",,,,,,,,,,,,,,,a5a25ea4-9472-42b0-9d9f-a86b3d6970f1,,execute_actions,;

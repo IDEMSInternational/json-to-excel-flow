@@ -1,0 +1,27 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,bea8252a-8106-43ca-a539-ad1f17e22982,,split_by_expression,895;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,Pakisabi sa akin ang tungkol sa kabuuang haba ng programa ng ParentText (kabuuang dami ng araw na nakatanggap ka ng mga mensahe). Ang MaPaText ay naging...,Masyadong maikli,Tama lang,Masyadong mahaba,,,,,,,,,,,,5e57017d-6edc-4cf4-86c7-09f97548b97b,,execute_actions,1520;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,Pakisabi sa amin ang tungkol sa kabuuang haba ng programa ng MaPaText (kabuuang dami ng araw na nakatanggap ka ng mga mensahe). Ang MaPaText ay naging...,Masyadong maikli,Tama lang,Masyadong mahaba,,,,,,,,,,,,83014230-3d48-4cd2-996d-db85a802e6dc,,execute_actions,770;200
+4,wait_for_response,2;3,,,,,length,,,,,,,,,,,,,,,,9396eb0c-f510-4ea7-9147-08892d1529b6,,wait_for_response,1520;440
+5,save_value,4;4;4,maikli;tama;mahaba,,has_any_word;has_any_word;has_any_word,Short;Right;Long,acceptabiity length,@results.length.category,,,,,,,,,,,,,,,2b09bb9f-5a07-4360-adda-d370346b0148,,execute_actions,450;560
+6,send_message,5,,,,,,Salamat sa iyong tugon!,,,,,,,,,,,,,,,c5c24aed-9968-4b95-bb0a-c7af621b5bd8,,execute_actions,410;900
+7,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,984c818d-5dc8-4ae9-bd80-e0736371de35,,execute_actions,1880;360
+8,go_to,7,,,,,,1,,,,,,,,,,,,,,,,,,
+9,split_by_group,6,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,2533cadb-5081-4f9e-922c-4f541b912ab5,,split_by_expression,1145;700
+10,send_message,9,ABTest_test-first-person_alternative,,,,,Pakisabi sa akin ang tungkol sa dami ng mga mensahe na natanggap mo bawat araw.  Ang mga ito ay naging...,Masyadong kaunti,Tama lang,Masyadong marami,,,,,,,,,,,,aafc4eb5-d7de-4c80-ae03-67f04470ccf7,,execute_actions,1520;900
+11,send_message,9;9,ABTest_test-first-person_Default;,,,,,Pakisabi sa amin ang tungkol sa dami ng mga mensahe na natanggap mo bawat araw. Ang mga ito ay naging...,Masyadong kaunti,Tama lang,Masyadong marami,,,,,,,,,,,,9364d52e-c6ff-491a-b56b-ccfd0d562b8c,,execute_actions,1020;900
+12,wait_for_response,10;11,,,,,n_messages,,,,,,,,,,,,,,,,6735f334-e094-42be-93b0-df5862e6af57,,wait_for_response,1520;1140
+13,save_value,12;12;12,kaunti;tama;marami,,has_any_word;has_any_word;has_any_word,too few;right number;too many,acceptability n mess,@results.n_messages.category,,,,,,,,,,,,,,,dcc58422-4440-4c31-8b60-214af08b8396,,execute_actions,1580;1340
+14,send_message,13,,,,,,Salamat sa iyong tugon!,,,,,,,,,,,,,,,c7aa25c9-eca9-4ce4-a4b1-ea0ebc058b65,,execute_actions,350;1400
+15,split_by_group,14,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,cee9fd96-81b3-47c9-a70e-ea2403054a9c,,split_by_expression,1395;1480
+16,send_message,15,ABTest_test-first-person_alternative,,,,,Karagdagang katanungan: Mayroon pa ba akong magagawa upang mapabuti ang MaPaText chatbot para sa ibang mga pamilya? Isulat niyo lamang ang lahat ng nais ninyong rekomendasyon!,,,,,,,,,,,,,,,2b06476d-2daa-4e5e-b1f8-f3a3b7719cb7,,execute_actions,1520;1680
+17,send_message,15;15,ABTest_test-first-person_Default;,,,,,Karagdagang katanungan: Mayroon pa ba kaming magagawa upang mapabuti ang MaPaText chatbot para sa ibang mga pamilya? Isulat niyo lamang ang lahat ng nais ninyong rekomendasyon!,,,,,,,,,,,,,,,ad392ead-c0ee-4759-80d8-03c8311c0a8a,,execute_actions,1270;1680
+18,send_message,12,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,a74c8a93-e4e8-488e-8462-f14a1f7cc7c5,,execute_actions,1860;1020
+19,go_to,18,,,,,,9,,,,,,,,,,,,,,,,,,
+20,wait_for_response,16;17,,,,,open_ended,,,,,,,,,,,,,,,,276319cc-6727-41b5-930b-a5d70d591471,,wait_for_response,730;1880
+21,split_by_group,20,h,,has_only_phrase,N,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,d33a6374-a6d2-42d8-93fe-5ef89ecbb3e1,,split_by_expression,125;2040
+22,send_message,21,ABTest_test-first-person_alternative,,,,,Mahusay! Pinahahalagahan ko nang lubos ang inyong mga sagot!,,,,,,,,,,,,,,,ce64a584-6164-4678-9ca8-cef42c680b95,,execute_actions,250;2240
+23,send_message,21;21,ABTest_test-first-person_Default;,,,,,Mahusay! Pinahahalagahan namin nang lubos ang inyong mga sagot!,,,,,,,,,,,,,,,b0ba30e2-56bf-434f-822d-463b6d7f1d21,,execute_actions,;2240
+24,save_value,20,,,,,acceptability open ended,"@(fields.acceptability_open_ended & results.open_ended & ""|"")",,,,,,,,,,,,,,,9065afec-87d4-4bdb-b204-0bd7f982ab6d,,execute_actions,630;2240
+25,send_message,24,,,,,,Maraming salamat sa inyong mga komento! Maaari ka pang magbigay ng karagdagang komento o i-type ang “H” para matapos.,,,,,,,,,,,,,,,983be007-0c55-422f-a4df-503f28e36138,,execute_actions,750;2360
+26,go_to,25,,,,,,20,,,,,,,,,,,,,,,,,,

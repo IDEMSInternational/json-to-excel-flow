@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Drawing
+•	Children love to draw! It helps build creativity.
+•	Get some pens or crayons and a piece of paper or cardboard.
+•	Let your children freely draw whatever they want.
+•	While your child is drawing, use words to describe what they are doing: “I see you are drawing a person” or “I see you are making lines with the red crayon.”
+•	You can also have fun drawing next to them.
+•	Put their drawings up on the wall, refrigerator, or outside to decorate the house – it will make your children feel appreciated!",,,,,,,,,,,,,,,403486f0-9115-4dc4-bde7-44401c511850,,execute_actions,;

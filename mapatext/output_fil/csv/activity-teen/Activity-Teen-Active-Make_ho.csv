@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Gawing nakakaaliw ang mga gawain sa bahay
+•	Ang mga gawain sa bahay ay hindi nakakaaliw... o hindi nga ba? Pwede mo itong gawing isang laro, kagaya nito. 
+• Mayroong apoy sa bundok! Takbo, takbo, takbo! 
+• Mayroong apoy sa bundok! Takbo, takbo, takbo! 
+• Pulutin ang pulang damit, ito ay nakakaaliw, nakakaaliw, nakakaaliw! 
+• Mayroong apoy sa bundok! Takbo, takbo, takbo! 
+• Mayroong apoy sa bundok! Takbo, takbo, takbo! 
+• Ilagay ang pulang damit sa hamper, ito ay nakakaaliw, nakakaaliw, nakakaaliw!
+• Mayroong apoy sa bundok! Takbo, takbo, takbo! 
+• Mayroong apoy sa bundok! Takbo, takbo, takbo! 
+• Ilagay ang mga sapatos sa shoe rack, ito ay nakakaaliw, nakakaaliw, nakakaaliw! ",,,,,,,,,,,,,,,22d76246-0e09-405c-9240-5eb219ce1171,,execute_actions,;

@@ -1,0 +1,185 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,9d611fc3-76ae-4ea0-be00-d907a471ec16,,split_by_expression,1935;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Kumusta ang pakiramdam mo?,Mahusay,Okay lang,Hindi mabuti,,,,,,,,,,,,937a6c7f-7a96-44f0-b781-3e3658d818cd,,execute_actions,1810;200
+3,send_message,1,,,,,,Magandang araw! Kumusta ang pakiramdam mo?,Mahusay,Okay lang,Hindi mabuti,,,,,,,,,,,,48135e82-5c3d-4741-8d72-9b495da83ba7,,execute_actions,2060;200
+4,wait_for_response,2;3,,,,,calm_interaction,,,,,,,,,,,,,,,,8f9ec36a-a54a-4ac2-8ba0-b7fe47a83b25,,wait_for_response,1520;340
+5,split_random,4,mahusay,,has_any_word,Great,,,,,,,,,,,,,,,,,24725871-4cfd-453a-a3c4-98bacb85d505,,split_by_random,600;460
+6,split_random,5,1,,,,,,,,,,,,,,,,,,,,e2df705a-ccea-4b77-87a0-b1d353ab6715,,split_by_random,540;600
+7,send_message,6,1,,,,,Natututuwa akong marinig na nasa mabuti kang kalagayan. Napakagandang pakiramdam!,,,,,,,,,,,,,,,a8fac695-184d-4830-b980-2e5218bf60cf,,execute_actions,560;1120
+8,split_by_group,6,2,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,07857378-5398-4384-bf86-1092a6d3e55a,,split_by_expression,905;720
+9,send_message,8,ABTest_test-first-person_alternative,,,,,Wow! Mahusay iyan! Natutuwa akong marinig na maganda ang inyong pakiramdam.  ,,,,,,,,,,,,,,,20f68100-2094-45ba-a2c1-53ea9c86132f,,execute_actions,1280;1120
+10,send_message,8;8,ABTest_test-first-person_Default;,,,,,Wow! Mahusay iyan! Natutuwa kaming marinig na maganda ang iyong pakiramdam. ,,,,,,,,,,,,,,,a5ed359a-fe79-4b3a-8aa8-a76925b3d29f,,execute_actions,780;1120
+11,split_by_group,6,3,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,3219d19b-26d0-4a83-b3b0-32ec06d9288d,,split_by_expression,415;1740
+12,send_message,11,ABTest_test-first-person_alternative,,,,,Napakagandang pakiramdam! Sana ay patuloy mo itong maramdaman sa buong araw.,,,,,,,,,,,,,,,6b2a9ad2-8ace-4417-b1b6-47c471c0fff3,,execute_actions,540;1940
+13,send_message,11;11,ABTest_test-first-person_Default;,,,,,Napakagandang pakiramdam! Sana ay patuloy mo itong maramdaman sa buong araw.,,,,,,,,,,,,,,,ab8c805f-0a17-49e3-a077-38f3ae98eaa5,,execute_actions,290;1940
+14,send_message,6,4,,,,,"Magandang balita iyan. Kapag maganda ang inyong pakiramdam, nagiging maganda rin ang pakiramdam ng kapamilyang kasama mo!",,,,,,,,,,,,,,,97306abc-e6ec-4d9e-b0a2-9bfff5dcc9f8,,execute_actions,1300;1720
+15,split_by_group,6,5,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,27b1cd36-70c1-4a8d-9f0f-b8ca0300bf41,,split_by_expression,145;2540
+16,send_message,15,ABTest_test-first-person_alternative,,,,,Sobrang ikinatutuwa kong marinig na mabuti ang inyong pakiramdam! Ibahagi ang inyong positibong enerhiya at sigla sa ibang tao!,,,,,,,,,,,,,,,62c42d83-1b96-48a9-a6fe-fa21d3b7cc4c,,execute_actions,270;2740
+17,send_message,15;15,ABTest_test-first-person_Default;,,,,,Sobrang ikinatutuwa naming marinig na mabuti ang inyong pakiramdam! Ibahagi ang iyong positibong enerhiya at sigla sa ibang tao!,,,,,,,,,,,,,,,9e3f0448-19a2-43b5-bcf9-d4a99f157d40,,execute_actions,20;2740
+18,split_by_group,6,6,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,68daf456-bd4c-4f19-bffe-d5dc67daa6ad,,split_by_expression,1155;2320
+19,send_message,18,ABTest_test-first-person_alternative,,,,,Napakagandang balita! Sana ay patuloy na maging maganda ang inyong pakiramdam buong araw.,,,,,,,,,,,,,,,ea32d0df-508d-4dea-8feb-e600d197e290,,execute_actions,1280;2520
+20,send_message,18;18,ABTest_test-first-person_Default;,,,,,Napakagandang balita! Sana ay patuloy na maging maganda ang iyong pakiramdam buong araw.,,,,,,,,,,,,,,,cad6b93e-f161-45bd-b756-a95438804d03,,execute_actions,1030;2520
+21,split_random,5,2,,,,,,,,,,,,,,,,,,,,33f26861-4803-405f-bfb3-0a6d550bc425,,split_by_random,2060;600
+22,send_message,21,1,,,,,Mahusay! Huminga ka lang muna para pahalagahan ang sandaling ito.,,,,,,,,,,,,,,,fe9f2d33-3d9f-4bd0-899a-68ddcd7f9c70,,execute_actions,2060;1120
+23,send_message,21,2,,,,,"Mahusay! Kapag maganda ang iyong pakiramdam, mas madaling maging positibo buong araw.",,,,,,,,,,,,,,,051bcf7e-f85c-4b2d-abb5-e7f08ba94bdb,,execute_actions,2800;1120
+24,split_by_group,21,3,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,08faf891-6ca9-4e0e-b983-ded5adee9a3e,,split_by_expression,1665;1300
+25,send_message,24,ABTest_test-first-person_alternative,,,,,Yehey! Nagagalak akong marinig na ikaw ay nasa mabuting sitwasyon.,,,,,,,,,,,,,,,5b5163e1-3091-4941-b18c-aa419c74d8af,,execute_actions,1790;1500
+26,send_message,24;24,ABTest_test-first-person_Default;,,,,,Yehey! Nagagalak kaming marinig na ikaw ay nasa mabuting sitwasyon.,,,,,,,,,,,,,,,dd371c36-f1a1-4813-8053-1554664204cf,,execute_actions,1540;1500
+27,split_by_group,21,4,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,4dcb000e-8b01-4e3d-86b4-e4ca33ea73f0,,split_by_expression,2655;1520
+28,send_message,27,ABTest_test-first-person_alternative,,,,,Mahusay! Lubos akong natutuwa na marinig ito.,,,,,,,,,,,,,,,c940e365-d368-4a86-a152-53efd06cb411,,execute_actions,2780;1720
+29,send_message,27;27,ABTest_test-first-person_Default;,,,,,Mahusay! Lubos kaming natutuwa na marinig ito.,,,,,,,,,,,,,,,1987d300-a781-4dba-826f-3710bcb95729,,execute_actions,2530;1720
+30,split_by_group,21,5,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,c7e98e98-65a8-44c3-b32e-042596b2075e,,split_by_expression,2265;2100
+31,send_message,30,ABTest_test-first-person_alternative,,,,,Natutuwa akong marinig ito! Sigurado akong natutuwa rin ang inyong pamilya na makita kang ganito.,,,,,,,,,,,,,,,87ceaf88-e335-4b97-9f18-c2442bf15b0d,,execute_actions,2390;2300
+32,send_message,30;30,ABTest_test-first-person_Default;,,,,,Natutuwa kaming marinig ito! Sigurado kaming natutuwa rin ang inyong pamilya na makita kang ganito.,,,,,,,,,,,,,,,617103e5-92b4-4c9d-8439-061be2167240,,execute_actions,2140;2300
+33,split_random,4,okay ok,,has_any_word,Okay,,,,,,,,,,,,,,,,,dec33c3c-fe11-48f1-b9c1-ab876bbc8f78,,split_by_random,3260;480
+34,split_random,33,1,,,,,,,,,,,,,,,,,,,,07a8634f-9cbb-433f-bb3d-46fbf5832684,,split_by_random,3120;600
+35,send_message,34,1,,,,,Minsan nasa taas tayo. Minsan nasa ibaba. At minsan wala ni isa dito...at okay lang yan!,,,,,,,,,,,,,,,571db9e5-12cf-43c7-bc41-acb26908ecec,,execute_actions,3100;1140
+36,send_message,34,2,,,,,Normal na katamtaman lang ang inyong pakiramdam. Hindi kailangang maging napakaganda ang pakiramdam mo araw-araw. ,,,,,,,,,,,,,,,91a4a477-8acc-41ba-875c-2a9bd937c8bc,,execute_actions,3320;1140
+37,send_message,34,3,,,,,"Salamat sa pagbabahagi! Lahat ng emosyon, positibo man o negatibo, ay tanggap dito.  ",,,,,,,,,,,,,,,2e17ea56-8e26-4ec6-912c-60e31dc0e741,,execute_actions,3540;1160
+38,send_message,34,4,,,,,"Kasama sa pananatili ng kalusugan ay ang pagkilala at pagtanggap ng ating mga emosyon: yung mga mabuti, mga hindi mabuti, at yung mga nasa gitna ng dalawa. ",,,,,,,,,,,,,,,f848e22c-86ef-469b-b1c7-d4063b2588f1,,execute_actions,3120;1980
+39,send_message,34,5,,,,,"Lahat tayo ay nakakaranas ng mga araw na katamtaman lang ang ating pakiramdam, at okay lang iyon! ",,,,,,,,,,,,,,,c1b16beb-25b4-4b74-bd7d-555acf04a96e,,execute_actions,3340;1940
+40,send_message,34,6,,,,,Hindi mo kailangang puwersahin ang inyong sarili na laging maging masaya at napakaganda ang pakiramdam. Lahat ng ating mga emosyon ay katanggap-tanggap at malusog!,,,,,,,,,,,,,,,5d282b66-8b57-4b10-ab41-d73c879a71c5,,execute_actions,3580;1940
+41,split_random,33,2,,,,,,,,,,,,,,,,,,,,b89d8a60-684a-432c-a2e7-3e67e14c9cf4,,split_by_random,3900;600
+42,send_message,41,1,,,,,Ang buhay ay puno ng tagumpay at kabiguan. Importanteng alamin at tanggapin ang ano mang nararamdaman. Tandaan lagi na maging mabait sa inyong sarili.,,,,,,,,,,,,,,,c76c2c0d-c0c1-457a-93a7-11b41552dad9,,execute_actions,3840;1140
+43,send_message,41,2,,,,,"Sadyang nakakaramdam tayo ng iba’t ibang emosyon, at mainam na sanayin ang sarili na kilalanin ang mga ito. Mahusay! Nandito kami para suportahan kayo. ",,,,,,,,,,,,,,,2ebf52f0-e9c5-44de-b467-9ef868b27405,,execute_actions,4120;1160
+44,send_message,41,3,,,,,Normal lang na maging katamtaman ang ating pakiramdam. Subukan mong tanungin ang mga kapamilya mo kung ano ang nararamdaman nila ngayong araw. Makakatulong ito na mas maunawaan ng lahat ang bawa’t isa. ,,,,,,,,,,,,,,,a69b3361-e096-4eed-ae3a-09d4c9aee356,,execute_actions,3860;1960
+45,send_message,41,4,,,,,"May mga araw na sumasabay lang tayo sa daloy ng buhay, at ayos lang iyon.",,,,,,,,,,,,,,,192e402b-5e08-4fc8-8826-af954f9b6622,,execute_actions,4120;2000
+46,send_message,41,5,,,,,"Ang pagkilala at pagtanggap ng inyong mga emosyon ay makakatulong upang pagtibayin ang inyong relasyon sa sarili, sa kapamilya, at sa inyong komunidad. Mahusay!",,,,,,,,,,,,,,,cd1a3eff-c46e-43e1-bfcd-f778850388c3,,execute_actions,3980;2800
+47,split_random,4,hindi mabuti,,has_any_word,Bad,,,,,,,,,,,,,,,,,1bf73b4f-81be-4617-ba47-6807ed4219ce,,split_by_random,5170;460
+48,split_random,47,1,,,,,,,,,,,,,,,,,,,,95720030-6957-4d07-beb9-188bd6866ef2,,split_by_random,4600;600
+49,send_message,48,1,,,,,Nalulungkot akong malaman na hindi naging maganda ang araw mo. Normal lamang na nahihirapan ka ngayon. Tandaan na hindi ka nag-iisa. Narito ang isang gawain na maaaring makatulong...,,,,,,,,,,,,,,,1a2a7f40-8978-4309-8741-0f4e8136859e,,execute_actions,4460;1120
+50,split_by_group,48,2,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,ae163537-6718-493e-8e34-5206c40c4965,,split_by_expression,4805;920
+51,send_message,50,ABTest_test-first-person_alternative,,,,,Nalulungkot akong marinig na hindi maayos ang pakiramdam mo ngayon. Tandaang harapin ang buhay nang paisa-isang araw. Panibagong araw na naman bukas. ,,,,,,,,,,,,,,,afee581f-4f95-4f72-a8fd-dc90835ed2d7,,execute_actions,4930;1120
+52,send_message,50;50,ABTest_test-first-person_Default;,,,,,Nalulungkot kaming marinig na hindi maayos ang pakiramdam mo ngayon. Tandaang harapin ang buhay nang paisa-isang araw. Panibagong araw na naman bukas. ,,,,,,,,,,,,,,,bc09d832-a4e5-4f93-9585-95ca230fd28c,,execute_actions,4680;1120
+53,send_message,48,3,,,,,"Lahat ay nakakaranas ng mga araw na puno ng hamon, pero hindi mo ito kailangang pagdaanan nang nag-iisa. Subukan mong humingi ng suporta mula sa inyong kapamilya at kaibigan. ",,,,,,,,,,,,,,,2e768859-0b3c-4357-99c9-b2718d9e6e8b,,execute_actions,5150;1120
+54,send_message,48,4,,,,,"Normal lang naman na paminsan-minsan ay hindi masaya o maganda ang ating nararamdaman. Maraming magulang sa buong mundo ang nakaranas na ng mga emosyon na tulad ng nararamdaman mo ngayon, at ayos lang iyan! Mahusay ang ginagawa mo!",,,,,,,,,,,,,,,d19b231b-6363-40e4-9ade-433168bcd783,,execute_actions,4480;2020
+55,send_message,48,5,,,,,"Tulad ng ibang tao, pwede kang magkaroon ng mga araw kung saan hindi maayos ang iyong pakiramdam. Maging banayad at matiyaga sa iyong sarili. Isang panibagong araw muli bukas! ",,,,,,,,,,,,,,,7373fd7b-e005-4b5e-ba8a-fb3cba40d114,,execute_actions,4970;2020
+56,send_message,48,6,,,,,"Ang pagkakaroon ng hindi magandang araw ay hindi sumasalamin sa inyong pagkatao o kakayahan bilang magulang. Kahit magpakita ka lang, naipapahiwatig mo na ang inyong pagmamalasakit.",,,,,,,,,,,,,,,f9d5b85e-2e37-4758-b3dd-e90721aa8433,,execute_actions,5190;2020
+57,split_random,47,2,,,,,,,,,,,,,,,,,,,,59d92c82-50dc-4dd6-90de-620d0aabd464,,split_by_random,5510;600
+58,send_message,57,1,,,,,"Salamat sa pagbabahagi ng inyong nararamdaman ngayong araw na ito. Kung gusto mo, subukan mo itong gawaing nakaka-relax na makakatulong para ikaw ay kumalma at maging konektado sa inyong emosyon.",,,,,,,,,,,,,,,25621e42-7839-4284-a17b-fff60b137846,,execute_actions,5470;1260
+59,send_message,57,2,,,,,"Salamat sa pagbabahagi ng iyong nararamdaman. Meron bang magagawa ang ibang tao para makatulong na gumaan ang inyong pakiramdam? Kung ganun, subukan mong silang kontakin. Ang pagkakaroon ng mga taong sumusuporta sa inyo ay napakahalaga.",,,,,,,,,,,,,,,24d84edd-501b-4481-a510-5729746710c7,,execute_actions,5710;1260
+60,send_message,57,3,,,,,"Lahat tayo napagdaanan na ang mga araw na puno ng paghihirap, pero tandaan na importanteng maranasan ang lahat ng klase ng emosyon. Subukan mong gumawa ng bagay na magpapagaan ng iyong pakiramdam, tulad ng paglalakad o pakikipag-usap sa isang taong mahalaga sa iyo.",,,,,,,,,,,,,,,1b57239a-9843-4cb2-8a2d-abc112217b15,,execute_actions,5930;1280
+61,send_message,57,4,,,,,Lahat tayo ay nakakaranas ng mga araw na puno ng hamon na talagang ikinasasama ng ating loob. Tandaan na maging banayad sa inyong sarili at sa ibang tao sa mga panahong ito. Ang inyong nararamadam ay hindi representasyon ng inyong mga kakayahan!,,,,,,,,,,,,,,,fae8022a-15cf-4af4-9093-53e71421ef79,,execute_actions,5490;2520
+62,send_message,57,5,,,,,"Lahat tayo ay nakakaranas ng mga hindi magandang araw, at alam nating mahirap pangasiwaan ang ating mga emosyon kapag ganito. Ang matutunan kung paano pangasiwaan ang iyong nararamdaman sa positibong paraan ay makakatulong. Kung mayroon kang iilang minuto, gamitin mo ito para alagaan ang iyong sarili at mag-pokus sa iyong paghinga. Gamitin mo ang oras na ito para pagnilayan ang iyong nararamdaman at subukang ibaling ang mga emosyong ito sa isang bagay na positibo. ",,,,,,,,,,,,,,,a5166a79-50b0-44eb-9871-c8e52e7c01b2,,execute_actions,5810;2760
+63,save_value,10;12;13;14;16;17;19;20;22;23;25;26;28;29;31;32;35;36;37;38;39;40;42;43;44;45;46;49;51;52;53;54;55;56;58;59;60;61;62;7;9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,947ab56c-8820-45d2-94c6-9c64e92aa3b8,,execute_actions,4340;3280
+64,save_flow_result,63,,,,,skill,Keeping Calm,,,,,,,,,,,,,,,947ab56c-8820-45d2-94c6-9c64e92aa3b8,,execute_actions,4340;3280
+65,start_new_flow,64,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,877a1fc0-9486-4711-a6e4-31f998f7332e,,split_by_subflow,3360;6080
+66,split_by_value,65;65,Complete;Expired,,,,,@(parent.results.time_of_day),,,,,,,,,,,,,,,1fa341e1-e2d3-4aaf-9cf4-6a092d7354f5,,split_by_expression,3340;6220
+67,split_random,66,morning,@(parent.results.time_of_day),has_any_word,Morning,,,,,,,,,,,,,,,,,cc6d48e0-8581-4499-8bfa-85290cd6d3a6,,split_by_random,3000;6160
+68,split_random,67,1,,,,,,,,,,,,,,,,,,,,8c60155d-165a-4352-be56-5b9589887d2f,,split_by_random,2410;6160
+69,send_message,68,1,,,,,Mayroon ka bang 30 segundo lamang? Sabay tayong tumigil nang sandali. Baka makatulong ito. ,,,,,,,,,,,,,,,9c6af25c-a6b2-446e-8a19-f2eff91dfbfe,,execute_actions,740;6320
+70,split_by_value,69,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,04f8f3e1-2670-4537-872f-76429fc205f5,,split_by_contact_field,740;6480
+71,send_message,70,low,@fields.type_of_media,has_any_word,Low,,"Umupo, ipikit ang inyong mga mata, at pakinggan ang iyong paghinga habang ito ay papasok at papalabas. Pansinin ang iyong nararamdaman. Kapag handa ka na, buksan muli ang inyong mga mata.",,,,,,,,,,,,,,,facc8f95-fabc-4002-86b3-02b1a23341fd,,execute_actions,740;6580
+72,send_message,70,,,,,,Pakinggan ang inyong hininga.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Listen_to_your breath.mp3,,,a30fc3cf-9eb7-4033-b2e6-4634e92c59f8,,execute_actions,760;6780
+73,send_message,71;72,,,,,,Subukan ito kapag nakakaramdam ka ng stress at kailangan munang magpahinga para muling kumonekta.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,bfcfcee2-0916-4f8b-8833-e5c5c8bad13c,,execute_actions,760;6920
+74,send_message,68,2,,,,,"Nararamdaman mo ba minsan na masyado kang madaming dinidibdib?
+Makipag-usap sa ibang tao. 
+Makipag-usap sa isang taong pinagkakatiwalaan. Makipag-usap sa kaibigan. Makipag-usap sa pamilya. Makipag-usap sa halaman.
+Alisin ang mga bagay na nakapagpapabagabag at nagpapabigat sa iyong dibdib. Kahit saglit lang. 
+Anong nararamdaman mo ngayon?
+Ang kasiyahan na binabahagi ay dumodoble. Ang problemang binabahagi ay nangangalahati.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/adults_talking_on_stools.jpg,,,,71dd5844-90d6-4c88-86c8-fb429ebac6e4,,execute_actions,1520;6340
+75,split_by_value,74,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,86265003-1512-413f-bb6e-d30b8c1c2ae0,,split_by_contact_field,1520;6740
+76,send_message,75,,,,,,Kapag sobra na ang mga nadarama.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/When_feelings_are_too_much.mp3,,,356d0c0a-e64c-42e7-8c2e-af1b4e250663,,execute_actions,1790;6860
+77,send_message,68,3,,,,,Nararamdaman mo ba na tila gusto mong sumigaw dahil sa iyong mga anak? Bigyan ang inyong sarili ng pagkakataong huminto ng 10 segundo.,,,,,,,,,,,,,,,1337125d-3021-4e2a-a082-b65a4224b026,,execute_actions,2780;6280
+78,split_by_value,77,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,586de32d-5da9-4d95-bfa3-10776439a5ed,,split_by_contact_field,2510;6460
+79,send_message,78,low,@fields.type_of_media,has_any_word,Low,,"Huminga nang dahan-dahan nang 5 beses. Pagkatapos, subukang sumagot sa kalmadong paraan.",,,,,,,,,,,,,,,e851d775-00df-479a-9cd5-7a90926614f0,,execute_actions,2510;6600
+80,send_message,78,,,,,,Limang malalim na hininga.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/5_deep_breaths.mp3,,,ff2c4556-7e03-4abe-8138-1392027c5156,,execute_actions,2780;6760
+81,send_message,79;80,,,,,,Milyun-milyong mga magulang ang nagsasabi na nakakatulong ito - SOBRA.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,3c4908ec-fbdb-44f3-a819-6a78ececee5a,,execute_actions,2510;6900
+82,send_message,68,4,,,,,Narito ang isang nakatutuwang bagay na makakatulong sa pagtanggal ng stress:,,,,,,,,,,,,,,,9f51ad89-9cf8-487b-8db2-daf4f8b4f993,,execute_actions,3180;6340
+83,split_by_value,82,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,b4d1110d-050d-46a2-af3a-bb8868dfb4eb,,split_by_contact_field,3140;6480
+84,send_message,83,low,@fields.type_of_media,has_any_word,Low,,"Pumili ng isang kanta na sumasalamin ng pangangailangan mo sa sandaling ito. Kailangan mo ba ng malumanay na kanta para maginhawahan ang pagod mong kaluluwa o masayang kanta para mabawasan ang stress sa buhay?
+
+Humanap ng pwesto at umindak sa tugtog ng kanta. Tandaang huminga habang gumagalaw. Ipagsabay ang iyong hininga at paggagalaw.
+
+Kahit ang ilang minuto ng paggalaw ay maaaring maging sapat na para pakawalan ang stress at mai-angat ang kalooban.",,,,,,,,,,,,,,,d84e51f1-a03f-457f-80ae-f6b681b4b5de,,execute_actions,3040;6600
+85,send_message,83,,,,,,Pumili ng kanta na sumasalamin ng inyong pangangailangan.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/A_song_that_reflects_what_you_need.mp3,,,0e35a134-25c9-43a8-aeee-a79644284a33,,execute_actions,3260;6600
+86,split_random,66,,,,,,,,,,,,,,,,,,,,,bf4908ce-2ce6-49d4-b9db-dc303fcf0147,,split_by_random,1500;4880
+87,split_random,86,1,,,,,,,,,,,,,,,,,,,,f9ddf4ec-619a-4655-a601-fe6dcd62d676,,split_by_random,1400;5000
+88,send_message,87,1,,,,,Narito ang isang maikling aktibidad ng pagpapahinga para tapusin ang araw:,,,,,,,,,,,,,,,6e80d7b8-e069-485c-9025-b41816861c04,,execute_actions,580;5060
+89,split_by_value,88,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,8408d103-d6db-4d20-a2d9-6330f7c8f1a0,,split_by_contact_field,560;5240
+90,send_message,89,low,@fields.type_of_media,has_any_word,Low,,Ipikit ang inyong mga mata at isipin ang lumipas na araw. Magbigay ng isang bagay na gusto mong ipagpasalamat. Magbigay ng isang bagay na nagawa mo nang maayos. Magbigay ng isang bagay na mahal mo. Karapat-dapat kang makatulog nang mahimbing ngayong gabi!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,ef2d28cd-f595-48eb-9558-f582090991c9,,execute_actions,540;5380
+91,send_message,89,,,,,,Pagtatapos ng araw.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/End_of_the_day.mp3,,,6e48f163-403a-4daf-b4bd-954a997260e6,,execute_actions,270;5620
+92,send_message,91,,,,,,Karapat-dapat kang makatulog nang mahimbing ngayong gabi!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,00c6df21-9d79-418d-8356-84466e5f9dd7,,execute_actions,;5760
+93,send_message,87,2,,,,,"Sa pagtatapos ng araw, maglaan ng ilang minuto para pag-isipan ang nangyari sa araw na ito.  
+Mag-isip ng isang positibo o masayang bagay na ginawa mo.
+Purihin mo ang sarili mo para sa isang bagay na ginawa mo nang mabuti ngayong araw.
+Mag-isip ng isang bagay na maaari mong baguhin bukas. 
+Mag-isip ng isang bagay na pinagpapasalamat mo.  ",,,,,,,,,,,,,,,4f26f623-0a9b-407c-adf5-fa1dc24becfd,,execute_actions,1320;5120
+94,split_by_value,93,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,2f8491c4-7575-4111-ba01-1b2d47da100e,,split_by_contact_field,1300;5500
+95,send_message,94,,,,,,Maglaan ng isang minuto para pag-isipan ang araw.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Take_a_minute_to_think_about_the_day.mp3,,,c2ac4ec5-31c1-4bb7-b7f7-60491c8d7134,,execute_actions,1340;5740
+96,send_message,94;95,low;,@fields.type_of_media;,has_any_word;,Low;,,Isa kang bituin!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,5e6fe97e-c650-424d-8c17-3a382624e8da,,execute_actions,1300;5900
+97,send_message,87,3,,,,,Nararamdaman mo ba minsan na nagkakamali ka sa lahat? Narito ang isang maikling aktibidad na pwedeng makatulong!,,,,,,,,,,,,,,,7a9b59f2-318d-4136-bdc5-3762cc57a414,,execute_actions,2060;5120
+98,split_by_value,97,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,eaf2bef5-a5e5-4a09-935c-7ee3ccd2cccc,,split_by_contact_field,1790;5280
+99,send_message,98,low,@fields.type_of_media,has_any_word,Low,,"Mag-isip ng isang bagay na ginawa mo ngayong araw na maaaring hindi mo nagustuhan. Ano ang puwede mong baguhin bukas?
+At ibalot ang inyong mga braso sa inyong katawan at yakapin ang inyong sarili.
+Maglaan ng oras upang pag-isipan ang araw na ito. Mag-isip ng isang bagay na ginawa mo ngayong araw na ito na ipinagmamalaki mo.
+Ibalot ang iyong mga braso sa inyong katawan at yakapin ang inyong sarili.
+  
+  
+Okay lang ‘yan Ginagawa mo ang lahat ng iyong makakaya, kaya maging mabait ka sa iyong sarili.  Magpahinga na ngayon at subukan muli bukas!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,97585ea2-0046-49b1-b611-121dfd508d14,,execute_actions,1790;5380
+100,send_message,98,,,,,,Maging mabait sa inyong sarili.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Be_kind_to_yourself.mp3,,,d82e4612-eaca-478b-b62f-dd9d1ed0e706,,execute_actions,2080;5740
+101,send_message,100,,,,,,"Okay lang ‘yan Ginagawa mo ang lahat ng iyong makakaya, kaya maging mabait ka sa iyong sarili.  Magpahinga na ngayon at subukan muli bukas!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,1fe95536-5099-4486-9443-51d1fb9d9df8,,execute_actions,2080;5860
+102,send_message,87,4,,,,,"Maglaan ng ilang sandali para itigil ang inyong ginagawa at huminga lang.  
+
+Ano ang isang bagay na maaari mong pasalamatan ngayon?
+Ano ang isang bagay na nagpapasaya sa'yo?
+Ano ang isang bagay na mahal mo?
+
+Hindi naman kailangang malaki. Minsan ang maliliit na bagay sa buhay ang pinakamahalaga!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,1c10b73c-5b8f-4736-95bc-65065eb84392,,execute_actions,2800;5080
+103,split_by_value,102,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,7ed76c17-2672-4840-930a-999d7427020e,,split_by_contact_field,2800;5460
+104,send_message,103,,,,,,Kumonekta sa inyong paghinga.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Connect_with_your_breath.mp3,,,192eda2d-db9b-47e4-be10-8fecc7253d71,,execute_actions,2820;5560
+105,send_message,87,5,,,,,"Gamitin natin ang mahika ng tatlo o magic power of three upang mapanatili ang presensya at pagiging kalmado.  Sa pagtatapos ng nakakapagod na araw, ang pag-iisip ng tatlong bagay na dapat pasalamatan ay makakatulong sa atin upang makahanap ng lakas ng loob na subukang muli bukas.  ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,e4c5a953-e345-4dd1-8e9d-8a993e9703af,,execute_actions,3080;4980
+106,split_by_value,105,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,a623d5d3-3696-4d36-8068-9efa5d4e5238,,split_by_contact_field,3040;5220
+107,send_message,106,,,,,,Ang mahika ng tatlo.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/The_magic_power_of_three.mp3,,,d11af3ca-17d4-4279-aa5a-e1d83a1f840f,,execute_actions,3080;5360
+108,split_random,67;86,2;2,,,,,,,,,,,,,,,,,,,,5a2b44a4-ebfd-4eb2-9db5-46024c3958db,,split_by_random,1440;3520
+109,send_message,108,1,,,,,Narito ang isang maikling aktibidad ng pagpapahinga para sa iyo:,,,,,,,,,,,,,,,8cdbb17f-7ca9-4876-aef8-4a9056edd052,,execute_actions,600;3640
+110,split_by_value,109,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,67e58fb0-71db-47b0-a352-c355b983efeb,,split_by_contact_field,600;3800
+111,send_message,110,low,@fields.type_of_media,has_any_word,Low,,"Umupo at ipikit ang iyong mga mata.
+Ilang tunog ang inyong naririnig? Pakinggan ang mga tunog sa loob at sa labas ng kuwarto. Bilangin ang mga ito sa inyong mga daliri.
+Pagkatapos ng sampung segundo, Ilang daliri ang nakataas? Ano-anong mga tunog ang narinig mo?
+Subukan muli sa isa pang sampung segundo. Nakarinig ka ba ng mga bagong tunog? Nakarinig ka ba ng mga bagong tunog sa loob ng inyong katawan? Pansinin ang inyong nararamdaman ngayon.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,a0552929-5ca5-42cc-b284-909e7a1e10ef,,execute_actions,540;3920
+112,send_message,110,,,,,,Pakinggan ang mga tunog.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Listen_to_the_sounds.mp3,,,bb20db48-d0b8-4e29-b396-932172aabf6d,,execute_actions,540;4300
+113,send_message,112,,,,,, Pansinin ang inyong nararamdaman ngayon.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,2ea61750-e2bb-4896-87a5-fc0d0867a4d3,,execute_actions,540;4420
+114,send_message,108,2,,,,,Ang aktibidad na ito ay gumagamit ng mahika ng tatlong paghinga para manatiling konektado at mahinahon.,,,,,,,,,,,,,,,f4b2c279-5439-4575-bfca-f04cc9c01589,,execute_actions,1340;3660
+115,split_by_value,114,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,be484251-6411-4218-baba-a4bd8d679258,,split_by_contact_field,1340;3820
+116,send_message,115,low,@fields.type_of_media,has_any_word,Low,,"Huminga paloob sa bilang ng tatlo. 1, 2, 3.
+Huminga palabas sa bilang ng tatlo. 1, 2, 3.
+Huminga paloob sa bilang ng tatlo. 1, 2, 3.
+Huminga palabas sa bilang ng tatlo. 1, 2, 3.
+Huminga paloob sa bilang ng tatlo. 1, 2, 3.
+Huminga palabas sa bilang ng tatlo. 1, 2, 3.",,,,,,,,,,,,,,,9003dc5b-f4bd-4013-b1e8-ea073f6e0a9e,,execute_actions,1300;4080
+117,send_message,115,,,,,,Huminga paloob sa bilang ng tatlo.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Breathe_in_to_the_count_of_three.mp3,,,d3c2e508-5c12-409d-b022-09d872f9f6ab,,execute_actions,1400;3940
+118,send_message,116;117,,,,,,Anong nararamdaman mo ngayon? Nag-iba ba ang inyong nararamdaman? Ang paghinga nang malalim ay nakakatulong pakalmahin ang ating buong katawan at pag-iisip. ,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,19cfc80e-0a21-4c5d-8966-6de4aaabc8d0,,execute_actions,1340;4420
+119,send_message,108,3,,,,,Narito ang isang aktibidad na makapagpapahinga sa inyong katawan:,,,,,,,,,,,,,,,52ce9e76-a199-4256-9827-75a0be7ec3ea,,execute_actions,2080;3660
+120,split_by_value,119,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,4eabab91-b922-48ac-9029-0574d34ace5e,,split_by_contact_field,2080;3820
+121,send_message,120,low,@fields.type_of_media,has_any_word,Low,,"Umupo nang kumportable at ipikit ang inyong mga mata kung kaya mo.
+Isipin na mayroong gintong singsing na dadaan at susuri sa inyong katawan mula paa hanggang ulo. 
+Bigyan ito ng pansin habang umaakyat at bumababa sa iyong katawan. Mayroon bang mga parte na tensyonado? Manhid? Masakit? 
+Pagtuunang pansin sandali ang mga parteng ito. Huminga patungo sa parteng ito, at subukang pakawalan ang anumang paninigas o pananakit sa paghinga palabas. 
+Gawin ito sa ilan pang paghinga. 
+Buksan ang inyong mga mata. Anong pakiramdam ng katawan mo ngayon?
+
+Subukan ito sa susunod na maranasanan mong nakahiga sa kama ngunit hindi makatulog!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,c0f79869-ce70-45e0-b584-5a84d54f5c68,,execute_actions,2100;4080
+122,send_message,120,,,,,,Pagpapahinga ng katawan.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Body_relaxation.mp3,,,d85dd951-9bd5-4dec-bace-7eb318d76b60,,execute_actions,2430;4600
+123,send_message,122,,,,,,Subukan ito sa susunod na maranasanan mong nakahiga sa kama ngunit hindi makatulog!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,45efa8ea-b746-4373-a259-e797fd6d2982,,execute_actions,2430;4720
+124,send_message,108,4,,,,,Nakaramdam ka na ba ng matinding damdamin na tila gusto mong takbuhan ito? Narito ang isang maikling aktibidad na maaaring makatulong!,,,,,,,,,,,,,,,41f0e4e5-6c62-4c59-8e43-356592a68806,,execute_actions,2860;3640
+125,split_by_value,124,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,4778c4f0-1750-4532-a19e-fa653770d999,,split_by_contact_field,2820;3860
+126,send_message,125,low,@fields.type_of_media,has_any_word,Low,,"Sa halip na layuan ang iyong nararamdaman, lapitan natin ito sandali.
+Okay lang ‘yan Ipikit ang iyong mga mata kung ikaw ay komportable. Huminga nang malalim.
+
+Maging mapag-usisa. Saan mo ito nararamdaman sa iyong katawan? Mainit ba ito o malamig? Matigas o malambot? Mahigpit o maluwag?
+Tanungin ang iyong sarili ng ilang mga katanungan. Anong sinasabi nito sa akin? Anong kailangan nito? Paano ako magiging mabait sa aking sarili sa sandaling ito?
+
+Kung nagsisimulang lumipad ang isip mo, normal lang ito. Ibalik mo lang sa pakiramdam. Patuloy na huminga at makiramdam.
+Bigyan ng katiyakan ang inyong sarili. Okay lang makaramdam. Nakakagaling ang pakikiramdam!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,14961139-adc1-4bd3-a9fe-6c6f473e70df,,execute_actions,2840;3980
+127,send_message,125,,,,,,Pagharap sa mabibigat na nadarama.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Dealing_with_difficult_feelings.mp3,,,4d8f114a-79d8-419a-8fc2-350add914058,,execute_actions,2900;4520
+128,send_message,127,,,,,,Okay lang makaramdam. Nakakagaling ang pakikiramdam!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,834a3102-d82b-4623-b095-ecae38e9d60a,,execute_actions,2900;4660
+129,send_message,108,5,,,,,Narito ang isang mabilis na aktibidad ng pagpapahinga...,,,,,,,,,,,,,,,6a0f4059-1a11-40fb-b9af-f5adb69c3ce7,,execute_actions,3160;3660
+130,split_by_value,129,,,,,,@fields.type_of_media,,,,,,,,,,,,,,,58c5d7da-8dd1-4a76-88a0-06090a0e0d08,,split_by_contact_field,3140;3860
+131,send_message,130,low,@fields.type_of_media,has_any_word,Low,,"Pansinin ang inyong koneksyon sa lupang inyong tinutungtungan.
+Anong mga bahagi ng inyong katawan ang tumatama sa lupa? Anong mga bahagi ang hindi? 
+Pansinin kung saan mainit at kung saan malamig.
+Pakiramdaman ang lupa sa ilalim na sumusuporta sa'yo. Hayaan ang inyong katawang lumubog sa suporta ng lupa. ",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/calm_adult.jpg,,,,628f28ef-5751-4b91-98d0-5fe7eb9787ab,,execute_actions,3100;3980
+132,send_message,130,,,,,,Koneksyon sa lupa.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/relaxation/fil/Connection_with_the_ground.mp3,,,921d73cf-e25a-4efa-ba58-5d285438b899,,execute_actions,3300;4300
+133,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,6ac24403-244e-4f33-b426-163f869eb7a6,,execute_actions,2860;300
+134,go_to,133,,,,,,1,,,,,,,,,,,,,,,,,,

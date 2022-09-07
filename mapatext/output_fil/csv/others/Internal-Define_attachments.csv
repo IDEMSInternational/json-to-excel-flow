@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,path,"@(""https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/"" & fields.deployment & ""/resourceGroup/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+2,save_value,1,,,,,image path,"@(fields.path & ""image/universal/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+3,save_value,2,,,,,comic path,"@(fields.path & ""comic/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+4,save_value,3,,,,,voiceover video path,"@(fields.path & ""voiceover/resourceType/video/"" & contact.language & ""/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+5,save_value,4,,,,,voiceover audio path,"@(fields.path & ""voiceover/resourceType/audio/"" & contact.language & ""/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+6,save_value,5,,,,,relaxation path,"@(fields.path & ""relaxation/"" & contact.language & ""/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+7,save_value,6,,,,,animated video path,"@(fields.path & ""animated/resourceType/video/"" & contact.language & ""/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+8,save_value,7,,,,,animated audio path,"@(fields.path & ""animated/resourceType/audio/"" & contact.language & ""/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+9,save_value,8,,,,,certificate path,"@(fields.path & ""certificate/"" & contact.language & ""/"")",,,,,,,,,,,,,,,c65ab088-f05d-4b7a-9528-a1960561368a,,execute_actions,500;40
+10,save_value,9,,,,,house of support path,"@(fields.path & ""house_of_support/house_type/"" & fields.house_type & ""/age_group/"" & fields.age_group_for_tips & ""/family_type/"" & fields.family_type &""/"")",,,,,,,,,,,,,,,0222827d-f84f-4518-8e2d-81bf1d0757ea,,execute_actions,500;660

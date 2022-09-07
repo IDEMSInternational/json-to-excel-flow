@@ -1,0 +1,105 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.from_theme,,,,,,,,,,,,,,,99056b74-8b79-437d-93d3-63274dd76733,,split_by_contact_field,260;
+2,split_by_group,1,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,c8d00ca6-4250-4c67-a23f-473b6a0a8b11,,split_by_expression,1005;160
+3,send_message,2,ABTest_test-first-person_alternative,,,,,Maraming pamilya ang pinagdadaanan ang pighati dulot ng COVID-19. Narito kami para suportahan ka at ang inyong pamilya sa mahirap na panahong ito.,,,,,,,,,,,,,,,66ec2bca-f368-4fd1-9b08-b4c3fbe1bb2e,,execute_actions,1130;360
+4,send_message,2;2,ABTest_test-first-person_Default;,,,,,Maraming pamilya ang pinagdadaanan ang pighati dulot ng COVID-19. Narito kami para suportahan ka at ang inyong pamilya sa mahirap na panahong ito.,,,,,,,,,,,,,,,211f5cc2-5a65-403c-ac28-9c5d0929912d,,execute_actions,880;360
+5,send_message,1,yes,@fields.from_theme,has_any_word,Yes,,"Narito ang 10 tips kung paano makayanan ang pagluluksa bilang isang magulang/tagapag-alaga:
+
+1. Ang pag-aalaga sa iyong sarili ay nakakatulong sa inyong anak
+2. Maging tapat at sabihin sa inyong mga anak
+3. Ang mga bata ay nagluluksa sa iba’t-ibang paraan 
+4. Maging mabait sa iyong sarili
+5. Mga praktikal na bagay na maaari mong kailanganin
+6. Maghanap ng grupo o tao na makakausap
+7. Pagluluksa sa inyong sariling paraan
+8. Ang pagrerelax ay nakakatulong sa pagkaya
+9. Pagbibigay ng pagkakataon para magpaalam
+10. One-on-one time kasama ang inyong anak
+
+I-type ang ""1"" hanggang ""10"" para mas matuto pa tungkol sa mga tips na ito. I-type ang “H” para itigil ang tip na ito.",,,,,,,,,,,,,,,2e77e34c-31e2-4387-a9e2-fd76609e63dd,,execute_actions,400;1420
+6,send_message,3;4,,,,,,Gusto mo ba ng ilang tips kung paano makayanan ang pagluluksa dulot ng COVID-19?,Oo,Hindi,,,,,,,,,,,,,e30abf86-7dc9-4e01-b8b0-e860266afd30,,execute_actions,1150;540
+7,wait_for_response,6,,,,,know_more,,,,,,,,,,,,,,,,a36e7873-48a7-4a69-9fdc-ed0c0c9002c3,900,wait_for_response,380;700
+8,go_to,7,Oo y o,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+9,send_message,7,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,97c0fe41-2ec4-42b6-a0c4-f2e086a4e69b,,execute_actions,1230;700
+10,go_to,9,,,,,,6,,,,,,,,,,,,,,,,,,
+11,send_message,7;7,Hindi n h;No Response,,has_any_word;,No;,,"Okay lang ‘yan! Maaari mong laging i-type ang ""Help"" kung nais mong matuto nang higit pa tungkol sa paano makayanan ang pagkawala ng mahal sa buhay dulot ng COVID-19.",,,,,,,,,,,,,,,058cc6ae-5758-482c-969a-108f98498594,,execute_actions,1290;1000
+12,send_message,11,,,,,,"Kung may iba ka pang tanong tungkol sa COVID-19, maaari mong laging i-check ang inyong lokal na COVID-19 hotline:
+Local Covid-19 Hotline - Department of Health (DOH): 02-894-COVID (02-894-26843) and 1555 (for mobile subscribers)
+
+General Covid-19 Support - Department of Health (DOH) website:https://doh.gov.ph//",,,,,,,,,,,,,,,503895fa-4c7a-4110-956b-a5012ff5813b,,execute_actions,1310;1160
+13,wait_for_response,5,,,,,list_of_tips,,,,,,,,,,,,,,,,9e055372-a90e-4e37-8adf-66c5dca307a3,,wait_for_response,280;2060
+14,split_by_value,13,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,8af1f812-1de2-4ab4-b859-7c693f9ed14a,,split_by_expression,1675;2520
+15,send_message,14,,@fields.user_name,has_text,user_name,,Mahusay @fields.user_name! Dapat mong ipagmalaki ang iyong sarili sa paghahanap mo ng mga paraan upang makakuha ng tulong para sa iyong sarili at sa iyong pamilya.,,,,,,,,,,,,,,,764c135a-f93d-4648-8d52-5ff43740828e,,execute_actions,1550;2720
+16,send_message,14,,,,,,Mahusay! Dapat mong ipagmalaki ang iyong sarili sa paghahanap mo ng mga paraan upang makakuha ng tulong para sa inyong sarili at sa iyong pamilya.,,,,,,,,,,,,,,,b7aad81d-1a5c-479d-99c3-83862afa926b,,execute_actions,1800;2720
+17,send_message,15;16,,,,,,"Kung may iba ka pang tanong tungkol sa COVID-19, maaari mong laging i-check ang inyong lokal na COVID-19 hotline:
+Local Covid-19 Hotline - Department of Health (DOH): 02-894-COVID (02-894-26843) and 1555 (for mobile subscribers)
+
+General Covid-19 Support - Department of Health (DOH) website:https://doh.gov.ph//",,,,,,,,,,,,,,,f41e2553-1495-4f9b-a431-cb5e659ca14e,,execute_actions,1800;2880
+18,save_value,17,,,,,current type assessed,tip,,,,,,,,,,,,,,,5cf476b8-2ac5-4930-99fb-4091b9c96c36,,execute_actions,1820;3080
+19,save_value,18,,,,,current activity,covid_bereavement,,,,,,,,,,,,,,,5cf476b8-2ac5-4930-99fb-4091b9c96c36,,execute_actions,1820;3080
+20,start_new_flow,19,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,cd3bc521-f1d9-4bb0-af12-7de7140cc406,,split_by_subflow,2110;3260
+21,split_by_value,20,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,43be8f01-7eff-42a4-aa54-011062d4b3f0,,split_by_expression,1985;3400
+22,send_message,21,,@fields.user_name,has_text,user_name,,Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,c24a31a2-742a-49b0-8b57-7d8a6efbcbcf,,execute_actions,1860;3600
+23,send_message,21,,,,,,Usap tayo mamaya!,,,,,,,,,,,,,,,f4703f25-3625-4939-9178-cd899fa0e629,,execute_actions,2110;3600
+24,send_message,13,1,,has_number_eq,1,,"1. Ang pag-aalaga sa iyong sarili ay nakakatulong sa inyong anak
+
+Bagaman maituturing na ang pinakaimportanteng bagay ay ang siguraduhing mabuti ang kalagayan ng iyong mga anak, kapag inaalagaan mo ang inyong sarili, tinutulungan mo rin ang inyong anak.",,,,,,,,,,,,,,,9d83f049-8e42-4d49-a5a2-d3baa9f6e8cc,,execute_actions,;2220
+25,send_message,24,,,,,,"Narito ang tatlong hakabang para maalagaan mo ang inyong sarili araw-araw: 
+1. Magkaroon ng sapat na tulog at pagkain araw-araw. 
+2. Tumigil nang sandali at magpahinga
+3. Maghanap ng isa o dalawang matanda na susuporta, makikinig, at makikipag-usap sa iyo. ",,,,,,,,,,,,,,,ea333576-e702-4c98-a7ea-28e9b5ff3848,,execute_actions,20;2500
+26,send_message,13,2,,has_number_eq,2,,"2. Maging tapat at sabihin sa inyong mga anak
+
+Dapat mong sabihin sa inyong mga anak na namatay ang isang tao – kadalasan hindi napagtatanto ng mga bata na may pumanaw. Kapag sinabi mo sa kanila, gumamit ng mga salitang maiintindihan nila.",,,,,,,,,,,,,,,54385c4e-e6fd-445d-8fb2-a6e72a3a01b9,,execute_actions,260;2200
+27,send_message,26,,,,,,"Kung hindi nila naiintindihan ang kamatayan, tulungan sila sa pamamagitan ng pagpapaliwanag na ang kanilang mahal sa buhay ay hindi na babalik pa. Subukang huwag tawagin itong “pagtulog” o “umalis na”. Maaaring ulit-ulitin mo sa inyong mga anak ang pagkamatay na ito bago nila ganap na maintindihan ang nangyari.",,,,,,,,,,,,,,,aba71590-45a4-4176-91d8-e435cce0436d,,execute_actions,240;2480
+28,send_message,27,,,,,,"Ang mga bata ay maaaring tumugon sa iba’t ibang paraan (tulad ng pag-iyak, pagsigaw, hindi paniniwala, pagiging napakatahimik), at lahat ng reaksyong ito ay okay lang. Hayaan ang inyong anak na magtanong at pag-usapan ang tungkol dito. Ang pinaka-importante ay paalalahanin na ikaw ay nariyan para sa kanila.",,,,,,,,,,,,,,,ef27862f-46ac-490e-b830-7f428fea557e,,execute_actions,260;2920
+29,send_message,13,3,,has_number_eq,3,,"3. Ang mga bata ay nagluluksa sa iba’t-ibang paraan 
+
+Maaaring makaramdam tayo ng pighati nang ilang linggo, buwan, o taon. Huwag mong pilitin ang inyong sarili na gumaan ang pakiramdam agad-agad. 
+Ang mga bata, tulad ng mga matatanda, ay nakakaranas ng pighati sa iba’t-ibang paraan. Ang mga bata ay maaaring maging malungkot, magalit, hindi maintindihan o hindi paniwalaan ito, maging manhid, sumama ang pakiramdam o makaranas ng kirot, mga bangungot, o mga problema sa eskuwelahan. Ang mga bata ay maaaring mukhang masaya, ngunit malungkot pa rin. Ang mga bata ay maaaring magpakabait nang panandalian kung sila ay mas bata.",,,,,,,,,,,,,,,fb017ab3-d3a1-46a2-abb8-0a666f274a02,,execute_actions,520;2200
+30,send_message,29,,,,,,"Ang mga reaksyon na ito ay maaaring hindi maging malinaw sa iyo, ngunit lahat ng ito ay normal. Ang mga bata ay maaaring isipin na kasalanan nila ito – na sila’y nakahawa o kaya’y naging pasaway. Linawin sa kanila na wala silang ginawang masama.",,,,,,,,,,,,,,,fcaaf53a-98b8-4da4-833f-ab8186106914,,execute_actions,540;2840
+31,send_message,30,,,,,,"Kung may support group na maaaring makabilang ang iyong anak, ito ay makakatulong. Kung ang inyong anak ay nagpapahiwatig na gusto niyang saktan o patayin ang kanyang sarili, humingi ng tulong sa lalong madaling panahon.",,,,,,,,,,,,,,,db7e22b9-b214-4647-bd76-0c32e454ceac,,execute_actions,540;3060
+32,send_message,13,4,,has_number_eq,4,,"4. Maging mabait sa iyong sarili
+
+Alalahanin na maging mabait sa iyong sarili, ikaw ay nagluluksa rin sa pagkawala ng mahal sa buhay. Okay lang na sumama ang pakiramdam at okay lang umiyak. Subukang maglaan ng konting oras sa bawat araw para sa inyong sarili at gumawa ng listahan ng mga bagay na nakakapagpagaan ng iyong damdamin at gawin ang mga ito. Ang mga maliliit na gawaing ito ay makakatulong at makakasiguro na ikaw ay nagiging mabuti sa inyong sarili.",,,,,,,,,,,,,,,f23c9241-beef-4c7c-9cfe-f1345772952d,,execute_actions,760;2220
+33,send_message,13,5,,has_number_eq,5,,"5. Mga praktikal na bagay na maaari mong kailanganin
+
+Hingan ng tulong ang isang taong iyong pinagkakatiwalaan. Maaaring kailanganin mo rin ang mga papeles para sa mana, mga anak, o paghingi ng tulong at serbisyo. Siguraduhing maalam ka sa inyong mga karapatan, kadalasan ay may mga manloloko na maaaring magnakaw ng pera o mana sa isang nagluluksang tao.",,,,,,,,,,,,,,,789930ae-1d0c-485c-824f-4e7e2cddba66,,execute_actions,1290;2220
+34,send_message,13,6,,has_number_eq,6,,"6. Maghanap ng grupo o tao na makakausap
+
+Ang pakikipag-usap sa isang taong susuporta at makikinig sa iyo ay makakatulong. Makakatulong din na sumali sa isang grupo na nawalan din ng mahal sa buhay. Tandaang walang taong perpekto. Okay lang pag-usapan ang mga masasaya at malulungkot na alaala. ",,,,,,,,,,,,,,,51ff13f7-a161-4689-a0d3-b5d891bd0d3a,,execute_actions,40;3180
+35,send_message,13,7,,has_number_eq,7,,"7. Pagluluksa sa inyong sariling paraan
+
+Lahat tayo ay nagluluksa sa ating sariling paraan, mula sa pagsigaw, pag-iyak, pagkaramdam ng galit o lungkot. Maaaring iba rin ang maramdaman natin araw-araw. Minsan maayos ang ating pakiramdam, pagkatapos sasama uli ang ating pakiramdam. Kahit ano pa ang inyong nararamdaman, ito ay may kabuluhan at okay lang iyon. ",,,,,,,,,,,,,,,5f385dc1-6271-469b-ab23-062b6345d665,,execute_actions,280;3180
+36,send_message,35,,,,,,"Maaaring makatulong ang pagsali sa kahit anong tradisyon ng pagluluksa o iba pang kultultural na ritwal, o pag-isipan ang mga pinagsamahan niyo ng taong namatay.",,,,,,,,,,,,,,,72037c6f-4f7a-4e95-9319-26f1dad26d4d,,execute_actions,280;3660
+37,send_message,13,8,,has_number_eq,8,,"8. Ang pagrerelax ay nakakatulong sa pagkaya
+
+Subukang gumawa ng isang simpleng bagay para magrelax sa bawat araw kasama ang iyong anak o teenager, at pati na rin para sa iyo. Ang paggamit nito ay maaaring makatulong din tuwing ikaw ay yamot o galit.",,,,,,,,,,,,,,,78f75e93-793a-4fa8-ae78-db540bc02318,,execute_actions,540;3280
+38,send_message,37,,,,,,"Umupo nang komportable, at ipikit ang iyong mga mata
+Pakinggan ang iyong paghinga habang papasok at palabas ito sa loob ng isang minuto
+Kapag handa ka na, buksan muli ang iyong mga mata.",,,,,,,,,,,,,,,2144be93-05b5-4764-9b46-550b00603d2d,,execute_actions,540;3720
+39,send_message,13,9,,has_number_eq,9,,"9. Pagbibigay ng pagkakataon para magpaalam
+
+Mahirap ang pagpapaalam at dapat mong gawin kung ano sa tingin mo ang nararapat para sa iyo at inyong anak. Ang mga pamilya, mga anak, at mga magulang ay hindi perpekto. Kung may namatay, okay lang pag-usapan ang mga mabubuti at masasamang bagay na inyong naaalala. Maaaring makatulong ang pagsulat ng isang lihim o pagguhit ng taong namatay.",,,,,,,,,,,,,,,6a716dc1-6f9b-4570-97c7-5b95ee7108ec,,execute_actions,840;2760
+40,send_message,39,,,,,,"May ilang tao na nagdadaos ng seremonya o nagsasalu-salo upang ipagdiwang ang buhay ng taong ito at nagpapaalam. Ang iba ay gumagawa ng kahon ng alaala, para paglagyan ng mga bagay na nagpapaalala sa kanila sa taong iyon. Makakatulong din na pag-usapan lang ang taong ito kung sila ay naiisip mo.",,,,,,,,,,,,,,,bef20d36-07cc-4fc5-a4f6-208ba55e528a,,execute_actions,800;3160
+41,send_message,13,10,,has_number_eq,10,,"10. One-on-one time kasama ang inyong anak
+
+Ang paglaan ng ilang minuto sa bawat araw para pagtuunan ng pansin ang inyong anak ay makakatulong na maramdaman nilang sila ay ligtas at bigyan sila ng pagkakataon na maglaro o pag-usapan ang mga bagay na nakakapagpabalisa sa kanila. ",,,,,,,,,,,,,,,ecc8ef0b-19ca-424c-9217-d1ba643fe510,,execute_actions,840;3720
+42,send_message,25;28;31;32;33;34;36;38;40;41,,,,,,"Mangyaring pumili ng isa pang numero kung gusto mong mas matuto kung paano makayanan ang pagluluksa bilang isang magulang/tagapag-alaga:
+
+1. Ang pag-aalaga sa iyong sarili ay nakakatulong sa inyong anak
+2. Maging tapat at sabihin sa inyong mga anak
+3. Ang mga bata ay nagluluksa sa iba’t-ibang paraan 
+4. Maging mabait sa iyong sarili
+5. Mga praktikal na bagay na maaari mong kailanganin
+6. Maghanap ng grupo o tao na makakausap
+7. Pagluluksa sa inyong sariling paraan
+8. Ang pagrerelax ay nakakatulong sa pagkaya
+9. Pagbibigay ng pagkakataon para magpaalam
+10. One-on-one time kasama ang inyong anak
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,15df7c69-57d9-4af2-8890-e3509a2b6631,,execute_actions,520;4100
+43,save_value,42,,,,,covid bereavement list of tips,"@(fields.covid_bereavement_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,fdb7d5fa-5c46-43d2-9891-d1736194fbbf,,execute_actions,480;4680
+44,go_to,43,,,,,,13,,,,,,,,,,,,,,,,,,
+45,send_message,13,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,cc9aface-e389-4092-b563-89be84f9fd52,,execute_actions,1270;1420
+46,go_to,45,,,,,,5,,,,,,,,,,,,,,,,,,

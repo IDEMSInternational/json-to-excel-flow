@@ -1,0 +1,123 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,last interaction,@(now()),,,,,,,,,,,,,,,7e3d23a0-6ef6-4237-9937-fe29d9cb2d86,,execute_actions,520;
+2,save_value,1,,,,,from theme,no,,,,,,,,,,,,,,,7e3d23a0-6ef6-4237-9937-fe29d9cb2d86,,execute_actions,520;
+3,send_message,2,,,,,,"Which parenting topics would you like to revisit?
+
+Type ""back"" if you want to go back to the Help menu.",Skills in toolkit,Incomplete skills,,,,,,,,,,,,,30e62fc0-b37f-4111-b01f-8476ebdd87e5,,execute_actions,540;160
+4,wait_for_response,3,,,,,Result 1,,,,,,,,,,,,,,,,57548cba-e2aa-474e-b1a6-918d164eb9e8,,wait_for_response,500;380
+5,split_by_value,4,toolkit,,has_any_word,toolkit,,@fields.toolkit,,,,,,,,,,,,,,,a0999860-8dab-4080-9495-f8d8c75d79b5,,split_by_contact_field,440;520
+6,send_message,5,[,@fields.toolkit,has_only_phrase,no skills,,You don't have any completed skill in your parenting toolkit yet.,,,,,,,,,,,,,,,2db7769b-ee7d-4b05-99dd-adf644cdf0da,,execute_actions,460;640
+7,send_message,5,,,,,,You have the following completed skills in your Parenting Toolkit:,,,,,,,,,,,,,,,0ff7032f-4417-4ee6-822d-7fbcc15f6371,,execute_actions,80;300
+8,save_flow_result,7,,,,,type_of_toolkit,full_toolkit,,,,,,,,,,,,,,,0ff7032f-4417-4ee6-822d-7fbcc15f6371,,execute_actions,80;300
+9,start_new_flow,8,,,,,,PLH - Internal - Print parenting toolkits,,,,,,,,,,,,,,43f2c34f-3646-414c-8cf9-cc3edfadea0b,e3d89b06-753e-49de-a80b-2795481abdae,,split_by_subflow,140;540
+10,send_message,9,Complete,,,,,"Type the number corresponding to the skill to receive messages about this topic again. 
+
+Type ""back"" if you want to go back to the previous options.",,,,,,,,,,,,,,,2059f01b-3b3a-4ad1-b27d-ef8b4deec7a6,,execute_actions,140;700
+11,save_flow_result,10,,,,,n skills,"@(count(split(child.results.list_of_skills,"","")))",,,,,,,,,,,,,,,2059f01b-3b3a-4ad1-b27d-ef8b4deec7a6,,execute_actions,140;700
+12,split_by_value,4,incomplete,,has_any_word,incomplete,,@fields.incomplete_toolkit,,,,,,,,,,,,,,,90ba9dc8-2e93-440c-b37f-0e01812022d5,,split_by_contact_field,1590;360
+13,send_message,12,[,@fields.incomplete_toolkit,has_only_phrase,no skills,,You don't have any incomplete skill.,,,,,,,,,,,,,,,2fadf4fc-b3d9-4d64-abff-683a910bebac,,execute_actions,1530;620
+14,send_message,12,,,,,,You have made progress on the following skills:,,,,,,,,,,,,,,,a6570f9f-ea5f-4c9d-8f82-51171e8b0cdb,,execute_actions,1870;380
+15,save_flow_result,14,,,,,type_of_toolkit,full_incomplete,,,,,,,,,,,,,,,a6570f9f-ea5f-4c9d-8f82-51171e8b0cdb,,execute_actions,1870;380
+16,start_new_flow,15,,,,,,PLH - Internal - Print parenting toolkits,,,,,,,,,,,,,,43f2c34f-3646-414c-8cf9-cc3edfadea0b,6f32cc32-e938-4e48-a337-028db0ddc8b5,,split_by_subflow,1910;600
+17,send_message,16,Complete,,,,,"Type the number corresponding to the skill to complete it for your Parenting Toolkit. 
+
+Type ""back"" if you want to go back to the previous options.",,,,,,,,,,,,,,,5a98cf3e-3fd9-4680-b1ff-60d211dfa55b,,execute_actions,1930;1180
+18,save_flow_result,17,,,,,n skills,"@(count(split(child.results.list_of_skills,"","")))",,,,,,,,,,,,,,,5a98cf3e-3fd9-4680-b1ff-60d211dfa55b,,execute_actions,1930;1180
+19,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1f96050c-4212-4502-934d-34829c192f86,,execute_actions,1630;220
+20,go_to,19,,,,,,3,,,,,,,,,,,,,,,,,,
+21,send_message,13;6,,,,,,Would you like to go back to the Help menu?,Yes,No,,,,,,,,,,,,,dcf31ecf-374f-4bb7-a830-52568eee9d96,,execute_actions,1390;3220
+22,wait_for_response,21,,,,,Result 5,,,,,,,,,,,,,,,,572f85fa-583f-448b-a24f-ada18233cb9b,,wait_for_response,580;3360
+23,start_new_flow,22,yes y back,,has_any_word,Yes,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,a9eb79a3-f7ae-436f-8c21-b25e5c7b3b50,,split_by_subflow,340;3500
+24,split_by_value,22,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,cf13ab92-71cf-4e42-af05-cacab64fdc57,,split_by_expression,995;3540
+25,split_by_group,24,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,3c1911f3-a237-454f-8935-b36491db8008,,split_by_expression,745;3740
+26,send_message,25,ABTest_test-first-person_alternative,,,,,I hope that was helpful. Chat later @fields.user_name!,,,,,,,,,,,,,,,037a28a7-da0f-45d5-883c-0ed33fef5c75,,execute_actions,870;4140
+27,send_message,25;25,ABTest_test-first-person_Default;,,,,,We hope that was helpful. Chat later @fields.user_name!,,,,,,,,,,,,,,,66dad979-8f4e-4f37-a6bc-7b3f5da43624,,execute_actions,620;4140
+28,split_by_group,24,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,1274d38d-8d11-4133-b55c-81edc9fa41f6,,split_by_expression,1245;3940
+29,send_message,28,ABTest_test-first-person_alternative,,,,,I hope that was helpful. Chat later!,,,,,,,,,,,,,,,7075fb14-d9d3-4feb-91bd-1f01271e3278,,execute_actions,1370;4140
+30,send_message,28;28,ABTest_test-first-person_Default;,,,,,We hope that was helpful. Chat later!,,,,,,,,,,,,,,,0505de67-a552-47cf-aeb2-878fd8cea579,,execute_actions,1120;4140
+31,send_message,22,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,c681f114-1a1d-4fab-956d-84670bd2e121,,execute_actions,1690;3300
+32,go_to,31,,,,,,21,,,,,,,,,,,,,,,,,,
+33,wait_for_response,11,,,,,selected skill,,,,,,,,,,,,,,,,dcc93388-fcf7-403c-8845-c18c5a6ee850,,wait_for_response,120;1020
+34,split_by_value,33,1,,has_number_gte,>= 1,,@results.selected_skill,,,,,,,,,,,,,,,e44081d5-87d4-46c7-849d-a2ad9f40f047,,split_by_run_result,40;1160
+35,go_to,33,back,,has_any_word,Back,,3,,,,,,,,,,,,,,,,,,
+36,send_message,33;34,,,,,,"Sorry, I don't understand what you mean. Please reply with a number between 1 and @results.n_skills for receiving messages about that topic again. 
+
+Type ""back"" if you want to go back to the previous options.",,,,,,,,,,,,,,,320bc960-5610-495b-a367-e770178cf6ca,,execute_actions,460;940
+37,go_to,36,,,,,,33,,,,,,,,,,,,,,,,,,
+38,wait_for_response,18,,,,,selected skill,,,,,,,,,,,,,,,,8a37daa8-5dd1-4cb5-9387-6a7895753aa0,,wait_for_response,1450;1020
+39,split_by_value,38,1,,has_number_gte,>= 1,,@results.selected_skill,,,,,,,,,,,,,,,8d811827-99e6-4c10-bb82-e677905dd8eb,,split_by_run_result,1470;1160
+40,save_flow_result,34;39,@results.n_skills;@results.n_skills,@results.selected_skill;@results.selected_skill,has_number_lte;has_number_lte,<= Results;<= Results,index of skill,"@(split(child.results.list_of_skills,"","")[results.selected_skill -1])",,,,,,,,,,,,,,,31171983-bcf2-47ab-88dd-4e36789a3525,,execute_actions,560;1320
+41,split_by_value,40,,,,,,@results.index_of_skill,,,,,,,,,,,,,,,7b3afe21-1e98-4c1b-b15b-6cd21f50a49f,,split_by_run_result,180;1520
+42,split_by_value,41,1,@results.index_of_skill,has_number_eq,1,,@fields.age_group_for_tips,,,,,,,,,,,,,,,e319ebd7-7284-4cb9-ba60-92b8a8d3817a,,split_by_contact_field,40;1620
+43,start_new_flow,42,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Time - One on one time baby,,,,,,,,,,,,,,fa62e24a-204a-4092-aa68-7f568cc1cf95,5086334c-2084-4fe3-a6c9-bd7017f8f64a,,split_by_subflow,;1780
+44,go_to,43,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+45,start_new_flow,42,teen,@fields.age_group_for_tips,has_any_word,Teen,,PLH - Content - Time - One on one time teen,,,,,,,,,,,,,,f2a08ac3-1ff4-44a4-91b5-fe503139517b,7963ccdf-e61c-407a-90c1-909020f6f532,,split_by_subflow,100;1960
+46,go_to,45,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+47,start_new_flow,42,,,,,,PLH - Content - Time - One on one time child,,,,,,,,,,,,,,882e7d69-3d84-4c55-90a6-e7be1204dc66,2f6c9bd0-4f8c-474b-b3e2-9e758f329c54,,split_by_subflow,240;1820
+48,go_to,47,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+49,start_new_flow,41,2,@results.index_of_skill,has_number_eq,2,,PLH - Content - Relax - Take a pause,,,,,,,,,,,,,,cb2e0d0a-0c54-4d40-8fba-09b1456779fa,758e4db5-876e-46fc-b5c3-4d9f13cdc044,,split_by_subflow,560;2080
+50,go_to,49,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+51,start_new_flow,41,3,@results.index_of_skill,has_number_eq,3,,PLH - Content - Relax - Anger management,,,,,,,,,,,,,,39f83807-d432-4b59-80d8-6061c761f59c,5fe1c8d4-1aca-40f5-a8c2-5c98cbc982cf,,split_by_subflow,480;1920
+52,go_to,51,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+53,start_new_flow,41,4,@results.index_of_skill,has_number_eq,4,,PLH - Content - Positive - Positive instructions,,,,,,,,,,,,,,b1e03180-c408-4311-8ebe-fbbaf623d635,996266a5-7b04-43f2-be07-f4f97531d53c,,split_by_subflow,60;2120
+54,go_to,53,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+55,start_new_flow,41,5,@results.index_of_skill,has_number_eq,5,,PLH - Content - Positive - Behave - Praise,,,,,,,,,,,,,,3894dff4-93f0-42a8-92a3-6220bff18bc8,f6320a99-b6e4-4ad2-b88c-30bbf950e566,,split_by_subflow,60;2280
+56,go_to,55,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+57,start_new_flow,41,6,@results.index_of_skill,has_number_eq,6,,PLH - Content - Positive - Behave - Routines,,,,,,,,,,,,,,3a875a61-978c-4873-a2c1-e085f036266a,2a05d9b8-0bf3-4259-bb2c-03678758842e,,split_by_subflow,60;2440
+58,go_to,57,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+59,start_new_flow,41,7,@results.index_of_skill,has_number_eq,7,,PLH - Content - Positive - Rules,,,,,,,,,,,,,,60b7961b-13a8-4670-a966-748ec8f06766,b65a7a28-4d19-4dab-a8c7-938e39527a60,,split_by_subflow,340;1660
+60,go_to,59,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+61,start_new_flow,41,8,@results.index_of_skill,has_number_eq,8,,PLH - Content - Positive - Behave - Redirect,,,,,,,,,,,,,,f896a544-cb05-43a6-9657-9993a0568e71,7fedddb4-29ba-40fd-8da2-7bfb7c8bcc6e,,split_by_subflow,340;2240
+62,go_to,61,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+63,start_new_flow,41,9,@results.index_of_skill,has_number_eq,9,,PLH - Content - Positive - Behave - Consequences,,,,,,,,,,,,,,e5fb19b6-addd-45cc-bad2-dd0861472e13,d52d71a9-1655-43a0-ba01-6f42af575a54,,split_by_subflow,340;2080
+64,go_to,63,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+65,start_new_flow,41,10,@results.index_of_skill,has_number_eq,10,,PLH - Content - Positive - Book sharing,,,,,,,,,,,,,,431dcaef-2ff5-42e6-b61f-3fc37791f57f,2f129010-1dd8-4041-93ea-3be2cf541f8b,,split_by_subflow,360;2400
+66,go_to,65,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+67,start_new_flow,41,11,@results.index_of_skill,has_number_eq,11,,PLH - Content - Positive - Behave - Ignore,,,,,,,,,,,,,,bf2d6233-394a-4416-b3a4-0beb60fc56b5,b33c03eb-7b8f-40c8-928c-fc86b1af714b,,split_by_subflow,380;2560
+68,go_to,67,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+69,start_new_flow,41,12,@results.index_of_skill,has_number_eq,12,,PLH - Content - Positive - Behave - ProblemSolving,,,,,,,,,,,,,,f09d56a4-f6ec-4824-8eda-92a4c527a0c2,e322eae4-4585-4feb-8f52-530f3841ce11,,split_by_subflow,400;2700
+70,go_to,69,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+71,split_by_value,41,13,@results.index_of_skill,has_number_eq,13,,@fields.age_group_for_tips,,,,,,,,,,,,,,,1fa274e0-656e-4cc0-b103-565313110917,,split_by_contact_field,1550;1640
+72,start_new_flow,71,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - Online adults,,,,,,,,,,,,,,f6139e3a-1a19-4cf3-aac9-ec710afac3c6,a497edbb-da0b-403e-af75-d83e477ae441,,split_by_subflow,1610;1780
+73,go_to,72,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+74,start_new_flow,71,,,,,,PLH - Content - Positive - Online children,,,,,,,,,,,,,,8ee91956-d382-4b11-8d87-e7caacc5d57e,ad0a0a37-5d5c-4138-adda-03fef722aad4,,split_by_subflow,1850;1800
+75,go_to,74,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+76,start_new_flow,41,14,@results.index_of_skill,has_number_eq,14,,PLH - Content - Positive - Behave - Crying,,,,,,,,,,,,,,42a695f9-813a-4cb3-927a-d642b1ddb916,6f6e1df7-7fa0-4d5a-9826-68067d9c03e0,,split_by_subflow,600;1760
+77,go_to,76,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+78,start_new_flow,41,15,@results.index_of_skill,has_number_eq,15,,PLH - Content - Positive - Behave - Emotion,,,,,,,,,,,,,,530536dd-3ac9-475c-b80b-b0b0659535cd,a504399d-a05b-4c23-9851-ee7c08bb1f18,,split_by_subflow,580;2240
+79,go_to,78,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+80,start_new_flow,41,16,@results.index_of_skill,has_number_eq,16,,PLH - Content - Positive - Behave - Crisis,,,,,,,,,,,,,,8b191a0a-6f36-4b8b-8211-d0883ce2d564,abfe951c-a726-4a5e-a980-aeb7721a0912,,split_by_subflow,1370;2400
+81,go_to,80,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+82,start_new_flow,41,17,@results.index_of_skill,has_number_eq,17,,PLH - Content - Positive - Safe or unsafe touch,,,,,,,,,,,,,,8c08b215-0afe-44fc-9b39-46adc04d087f,5789331a-84e3-441a-8c20-fab97e0c770d,,split_by_subflow,1370;2560
+83,go_to,82,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+84,split_by_value,41,18,@results.index_of_skill,has_number_eq,18,,@fields.get_ipv_content,,,,,,,,,,,,,,,f449588d-fe54-4ba7-a44b-6f8773d715b9,,split_by_contact_field,1950;1960
+85,start_new_flow,84,yes,@fields.get_ipv_content,has_any_word,Yes,,PLH - Content - Positive - IPV,,,,,,,,,,,,,,902cc573-5ec6-43f3-8ebd-57a042bf1cf2,903f1e56-3d4a-4540-9856-c0042459e386,,split_by_subflow,1810;2120
+86,go_to,85,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+87,start_new_flow,84,,,,,,PLH - Content - Positive - Family,,,,,,,,,,,,,,dc87cd8d-5d4b-44f6-91d9-5cfa7b1ed631,a49dd6f6-7e86-45d1-acf9-8a94fe62ae4a,,split_by_subflow,2050;2060
+88,go_to,87,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+89,split_by_value,41,19,@results.index_of_skill,has_number_eq,19,,@fields.age_group_for_tips,,,,,,,,,,,,,,,abc7f754-5c91-439c-a73d-8c0996940968,,split_by_contact_field,2110;2520
+90,start_new_flow,89,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - Budget adults,,,,,,,,,,,,,,30d3d9bf-4ce1-4034-94bb-8c10cb89e6d1,94f3c389-a20c-4253-aff8-2d4b9ad7a2b3,,split_by_subflow,1890;2660
+91,go_to,90,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+92,start_new_flow,89,,,,,,PLH - Content - Positive - Budget with children,,,,,,,,,,,,,,7b46af18-d9da-428f-bb8b-2f5e04add8e8,df3ba4ee-01b0-4a77-b82f-e69f8b73b518,,split_by_subflow,2170;2680
+93,go_to,92,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+94,start_new_flow,41,20,@results.index_of_skill,has_number_eq,20,,PLH - Content - Extra - COVID,,,,,,,,,,,,,,8c6fb5bf-5f90-4a33-8fdb-ecd3ffd4b906,0fc5fe6d-1f21-4256-865f-da77e0932571,,split_by_subflow,140;2720
+95,go_to,94,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+96,start_new_flow,41,21,@results.index_of_skill,has_number_eq,21,,PLH - Content - Extra - Disability,,,,,,,,,,,,,,1750e0a7-af13-48a4-8c02-67d8eb2c4e83,3673ad53-90c2-4994-b33b-19edc3b4bdd6,,split_by_subflow,1510;2780
+97,go_to,96,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+98,start_new_flow,41,22,@results.index_of_skill,has_number_eq,22,,PLH - Content - Extra - Development,,,,,,,,,,,,,,cc9b8048-d44d-4bd5-aeb9-d2b32ec5fb1f,9e631c1a-28b1-4ce9-8767-9b34c18e7987,,split_by_subflow,1690;2460
+99,go_to,98,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+100,start_new_flow,41,23,@results.index_of_skill,has_number_eq,23,,PLH - Content - Positive - Education,,,,,,,,,,,,,,d281a3b5-b601-492a-9a2c-da0a67303ec3,e47b07da-71bc-49b7-a2a7-5e4e1661c26c,,split_by_subflow,1670;1960
+101,go_to,100,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+102,start_new_flow,41,24,@results.index_of_skill,has_number_eq,24,,PLH - Content - Relax - Exercise,,,,,,,,,,,,,,d1e88e1c-34f1-4b60-af2c-a99adc885d7c,a907b58b-c9a2-4e50-9635-96321f2f5121,,split_by_subflow,1770;2280
+103,go_to,102,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+104,start_new_flow,41,25,@results.index_of_skill,has_number_eq,25,,PLH - Content - Positive - Introduction,,,,,,,,,,,,,,afaf6a89-ab4b-410e-935b-0c0138957a52,30387880-9545-404c-8ec5-b3dbf086ff84,,split_by_subflow,2010;1660
+105,go_to,104,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+106,start_new_flow,41,26,@results.index_of_skill,has_number_eq,26,,PLH - Content - Relax - Keeping calm,,,,,,,,,,,,,,9fc6545e-cc02-4cb1-a2cd-5b26ca443aeb,20cf0b54-d0e1-480b-8d33-fd0dadede6d4,,split_by_subflow,2230;1660
+107,go_to,106,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+108,start_new_flow,41,27,@results.index_of_skill,has_number_eq,27,,PLH - Content - Positive - Community safety,,,,,,,,,,,,,,0e983cc8-388d-4d56-b540-5c491edbc7a6,207ea244-487e-4b42-90bd-c1750fbad79a,,split_by_subflow,2210;1860
+109,go_to,108,Complete,,,,,21,,,,,,,,,,,,,,,,,,
+110,start_new_flow,38;4,back;back,,has_any_word;has_any_word,Back;Back,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,da1d7c4f-cec4-4d79-9d3b-8653ba4b62cf,,split_by_subflow,460;800
+111,send_message,38;39,,,,,,"Sorry, I don't understand what you mean. Please reply with a number between 1 and @results.n_skills for completing the corresponding skill.
+ 
+Type ""back"" if you want to go back to the previous options.",,,,,,,,,,,,,,,dc254790-4adf-4e8e-85ee-ee77dd2196db,,execute_actions,1690;1260
+112,go_to,111,,,,,,38,,,,,,,,,,,,,,,,,,

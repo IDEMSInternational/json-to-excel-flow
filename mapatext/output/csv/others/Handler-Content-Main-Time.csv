@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.next_tip_main,,,,,,,,,,,,,,,d5978af2-5318-42ee-98b3-82d5d210e016,,split_by_contact_field,500;20
+2,start_new_flow,1,2,@fields.next_tip_main,has_number_eq,2,,PLH - Introductory - First received tip,,,,,,,,,,,,,,0e835a7e-786f-42ed-ae8f-4ad1544bf1b0,8fb59c93-d9e7-40fa-b5bb-83d39967cc4c,,split_by_subflow,140;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.age_group_for_tips,,,,,,,,,,,,,,,a302196a-29d8-4848-871c-e0d559bed727,,split_by_contact_field,120;240
+4,start_new_flow,3,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Time - One on one time baby - Timed intro,,,,,,,,,,,,,,72e7ba16-9008-4331-a950-d92dddfff257,b95dce72-ebc1-4720-b3da-c4a6b675dd29,,split_by_subflow,;640
+5,start_new_flow,3,teen,@fields.age_group_for_tips,has_any_word,Teen,,PLH - Content - Time - One on one time teen - Timed intro,,,,,,,,,,,,,,7efb080a-9a66-4d62-862e-f363448d2105,ea588c67-d7d7-4bb0-bb94-fa8f4f933f14,,split_by_subflow,200;360
+6,start_new_flow,3,,,,,,PLH - Content - Time - One on one time child - Timed intro,,,,,,,,,,,,,,851b17cc-4353-484b-9d1f-4dcf720df8ed,123bea19-9233-4635-a2f6-a777ebf6838a,,split_by_subflow,140;500
+7,save_value,4;5;6,Expired;Expired;Expired,,,,has expired,tip,,,,,,,,,,,,,,,3195227f-4aca-4bd6-8697-75ca7cb6043f,,execute_actions,380;640
+8,send_message,7,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,ffb767b1-851c-4205-a726-8bf600eb2b80,,execute_actions,300;800
+9,start_new_flow,1,,,,,,PLH - Handler - Content - Main - Relax,,,,,,,,,,,,,,3fcfc1fb-a7f3-4405-adbf-870a4fae60f6,4ca5f7c9-f397-4156-af94-47a3450f6a98,,split_by_subflow,1040;320
+10,save_flow_result,9,Complete,,,,main content,@child.results.main_content,,,,,,,,,,,,,,,cfa9a4be-c050-4c2d-bbc5-44e6bb6c64d2,,execute_actions,1000;580

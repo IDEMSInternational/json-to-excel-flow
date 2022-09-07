@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Noong Ako ay Bata Pa
+•	Gustong gusto ng mga bata na makinig ng mga kuwento tungkol sa iyong buhay!
+•	Isipin mo ang panahong ikaw ay bata pa, noong may MAHALAGANG nangyari sa iyo
+•	Maaari itong pakikipagsapalaran, masayang alaala, o kaya mga pagsubok na iyong naranasan
+•	Ibahagi ito sa iyong mga anak at pansinin kung paano sila nakikinig!",,,,,,,,,,,,,,,d0bcb4a9-7204-4763-aed4-6db4e6cdd5b5,,execute_actions,;

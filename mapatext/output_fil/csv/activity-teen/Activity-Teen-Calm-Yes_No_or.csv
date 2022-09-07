@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Oo, Hindi, o Puwede
+•	Tanungin ang bawat isa. Ang mga tanong ay maaring tungkol sa mga bagay na gusto mo o kung ano ang iyong ginawa ngayon.
+•	Ang tanging patakaran ay hindi mo puwedeng isagot ang Oo, Hindi, o Puwede
+•	Hanggang kailan ka makakatagal? Gaano ka ka-malikhain sa iyong mga sagot?
+•	Magsalitan at maglaro muli! ",,,,,,,,,,,,,,,8b121f56-f509-40b6-8ab4-2b80b7e4a69f,,execute_actions,;

@@ -1,0 +1,38 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.parent_baby,,,,,,,,,,,,,,,39ed82ce-7344-4fb3-ad8f-ff431da92750,,split_by_contact_field,500;40
+2,split_by_value,1,true,@fields.parent_baby,has_any_word,True,,@fields.parent_young_child,,,,,,,,,,,,,,,70c566ea-bf7e-40d1-9359-22c40d7ccbb3,,split_by_contact_field,240;120
+3,split_by_value,2,true,@fields.parent_young_child,has_any_word,True,,@fields.parent_teenager,,,,,,,,,,,,,,,1e7a2a50-1794-45e5-86fe-aed7e09ea4dc,,split_by_contact_field,60;280
+4,split_by_value,2,false,@fields.parent_young_child,has_any_word,False,,@fields.parent_teenager,,,,,,,,,,,,,,,0dc275f6-316f-4a97-ad7c-0cad6533dd80,,split_by_contact_field,340;280
+5,split_by_value,1,false,@fields.parent_baby,has_any_word,False,,@fields.parent_young_child,,,,,,,,,,,,,,,5ee722bb-d621-4d8a-a185-f2ce59877ed0,,split_by_contact_field,700;180
+6,split_by_value,5,true,@fields.parent_young_child,has_any_word,True,,@fields.parent_teenager,,,,,,,,,,,,,,,939ce0b6-3bfa-4389-a2dd-ec2b7ffdab50,,split_by_contact_field,820;380
+7,split_by_value,5,false,@fields.parent_young_child,has_any_word,False,,@fields.parent_teenager,,,,,,,,,,,,,,,eeb842ad-c645-4388-b546-d6e611451db5,,split_by_contact_field,1060;300
+8,send_message,3;7,true;false,@fields.parent_teenager;@fields.parent_teenager,has_any_word;has_any_word,True;False,,Which child do you want tips for?,Baby,Young child,Teen,,,,,,,,,,,,46c048a4-3a75-48b2-9aa6-1934a16d2527,,execute_actions,40;860
+9,wait_for_response,8,,,,,age_group,,,,,,,,,,,,,,,,7d0cd4c7-b2a9-4cb8-addf-38e1c411cd58,,wait_for_response,40;1040
+10,send_message,9,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,3b21f268-25de-4163-b24c-22e3bc6d5094,,execute_actions,340;1240
+11,go_to,10,,,,,,8,,,,,,,,,,,,,,,,,,
+12,send_message,3,false,@fields.parent_teenager,has_any_word,False,,Which child do you want tips for?,Baby,Young child,Other,,,,,,,,,,,,71b61f1d-975f-42c7-bf31-9a3fd298bf19,,execute_actions,300;940
+13,wait_for_response,12,,,,,age_group,,,,,,,,,,,,,,,,d95d469a-1e63-4662-bcf0-786ec2720adf,,wait_for_response,360;1100
+14,send_message,13,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a29fc059-9e0b-4582-a373-812049427dbd,,execute_actions,540;1360
+15,go_to,14,,,,,,12,,,,,,,,,,,,,,,,,,
+16,send_message,4,true,@fields.parent_teenager,has_any_word,True,,Which child do you want tips for?,Baby,Teen,Other,,,,,,,,,,,,389de2c4-3ec5-4c81-ad41-776d43f16d6b,,execute_actions,140;420
+17,wait_for_response,16,,,,,age_group,,,,,,,,,,,,,,,,e2b76f06-2ca7-4aba-8fe0-720af3f6bf69,,wait_for_response,60;600
+18,send_message,17,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,d3821b71-9e17-421f-8b56-3cf12311e27a,,execute_actions,380;800
+19,go_to,18,,,,,,16,,,,,,,,,,,,,,,,,,
+20,send_message,4,false,@fields.parent_teenager,has_any_word,False,,Which child do you want tips for?,Baby,Other,,,,,,,,,,,,,1f699da7-dfe5-46cf-bac3-ccf55496709e,,execute_actions,520;380
+21,wait_for_response,20,,,,,age_group,,,,,,,,,,,,,,,,2e6b9ed5-001e-4cc4-9273-0643700c080b,,wait_for_response,540;660
+22,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a08c5baf-9a47-43cf-9cd7-6439689da7ab,,execute_actions,740;540
+23,go_to,22,,,,,,20,,,,,,,,,,,,,,,,,,
+24,send_message,6,true,@fields.parent_teenager,has_any_word,True,,Which child do you want tips for?,Young child,Teen,Other,,,,,,,,,,,,cb87e11c-28e5-4bb1-bbea-6b70b5ab7db2,,execute_actions,620;820
+25,wait_for_response,24,,,,,age_group,,,,,,,,,,,,,,,,4317cee2-5f8c-4f42-bbad-28de11d779e8,,wait_for_response,820;980
+26,send_message,25,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,fc84399a-4b2f-417d-837f-14e99cfa4339,,execute_actions,920;1140
+27,go_to,26,,,,,,24,,,,,,,,,,,,,,,,,,
+28,send_message,6,false,@fields.parent_teenager,has_any_word,False,,Which child do you want tips for?,Young child,Other,,,,,,,,,,,,,0c49bd31-7aa4-4aa4-8b4b-e68223dc1ce0,,execute_actions,1200;700
+29,wait_for_response,28,,,,,age_group,,,,,,,,,,,,,,,,5fbed9b6-1a51-4418-804f-4cbffc3377f2,,wait_for_response,1160;880
+30,send_message,29,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,40476e3d-13c5-4642-9179-75c705fbcb91,,execute_actions,1220;1060
+31,go_to,30,,,,,,28,,,,,,,,,,,,,,,,,,
+32,send_message,7,true,@fields.parent_teenager,has_any_word,True,,Which child do you want tips for?,Teen,Other,,,,,,,,,,,,,fb97e9ba-21a8-4c5b-9ea3-71c0f4d2668f,,execute_actions,1120;440
+33,wait_for_response,32,,,,,age_group,,,,,,,,,,,,,,,,a602a85d-41e5-4de2-ad01-b5441d0dc319,,wait_for_response,940;660
+34,save_flow_result,13;13;13;17;17;17;21;21;25;25;25;29;29;33;33;9;9;9,baby;young child;other;baby;teen teenager;other;baby;other;young child;teen teenager;other;young child;other;teen teenager;other;baby;young child ;teen teenager,,has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word,Baby;Child;Other_group;Baby;Teen;Other_group;Baby;Other_group;Child;Teen;Other_group;Child;Other_group;Teen;Other_group;Baby;child;Teen,age_group,@results.age_group.category,,,,,,,,,,,,,,,fff4ad24-9fde-4df6-8007-3d7638bbd58a,,execute_actions,620;1720
+35,save_value,34,,,,,last interaction,@(now()),,,,,,,,,,,,,,,5905a6d0-0398-4c3c-9855-052c7114c75d,,execute_actions,620;1860
+36,send_message,33,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a3e2834d-11d6-452b-b40e-a94f74725579,,execute_actions,940;800
+37,go_to,36,,,,,,32,,,,,,,,,,,,,,,,,,

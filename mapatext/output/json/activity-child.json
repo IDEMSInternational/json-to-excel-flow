@@ -1,0 +1,543 @@
+{
+  "PLH - Activity - Child - Active - Name that tune": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Name that tune\n•\tFirst person gets to choose or sing a song.\n•\tEveryone else must guess the name of the tune (to make it harder they can guess the singer).\n•\tThe first one to guess it right becomes the next leader who will choose or sing the next song.",
+      "_nodeId": "4c163703-e3a1-4984-8c01-2c6fe0f310da",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Worms go home": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Worms Go Home\n•\tLie on your tummies and pretend your index fingers are a wiggly worm. \n•\tWith your other hand make a worm house by making a circle with your fingers and thumb and place it on the floor. \n•\tCall out an instruction for your finger to touch, like “Worms on noses” or “Worms on ears”\n•\tWhen you call out “Worms go home”, your wiggly worm has to find a worm house as quickly as possible. \n•\tThe last worm to find a home calls out the instructions next. \n•\tKeep playing until you feel rejuvenated from lying down. ",
+      "_nodeId": "4da59b3b-5ea0-4343-ae75-931771fff35f",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Crazy chicken": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Crazy Chicken\n•\tShake your left hands in the air 8 times while counting to 8 \n•\tDo it as fast and loud as you can\n•\tRepeat with your other hand. Repeat with each foot.\n•\tDo it 7 times, then 6 times and continue until you get to 1.\n•\tEveryone calls out “Crazy chicken” and does their best crazy chicken dance!",
+      "_nodeId": "9d2afa2a-503a-4844-a0e1-bc5f48d680cd",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Dance choreography": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dance choreography\n•\tCreate a dance choreography to your children’s favorite songs.\n•\tFirst person does a dance move and everyone else copies. \n•\tEveryone takes turns being the leader.\n•\tPerform it for the household!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_dancing_and_playing_instruments.jpg",
+      "_nodeId": "b8a4b331-406c-4555-be9d-a547b8cddc92",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Dance party": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dance Party\n•\tPlay or sing your favourite music and dance around the room.\n•\tDance in different ways or with different parts of your body.\n•\tFor example, “Dance like a monkey”, “Dance like a chicken” or “Dance with just our knees and hips.”\r\n•\tThink up different instructions. Be seriously playful! \n•\tWhen the music stops, everyone does a funny freeze. \n•\tGive your child a chance to be the one to stop the music! ",
+      "_nodeId": "15f69239-e365-4bab-96d8-db362016519d",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Freeze dance": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Freeze dance\n•\tPlay music or someone sings a song, and everyone dances.\n•\tWhen the music stops, everyone must freeze.\n•\tLast person still dancing becomes the judge for the next round.\n•\tA variation to Freeze Dance is Animal Dance: It’s the same as Freeze Dance but when the music stops, one member of the family calls out the name of an animal, and everyone has to become that animal.",
+      "_nodeId": "365585b0-a367-4a36-95ca-893ff22f2c66",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Make housework fun": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Make Housework Fun\n•\tHousehold chores aren’t fun… or are they? You can make them into a game, like this. \n•\tThere’s a fire on the mountain! Run, run, run!\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tTouch something red. \n•\tThere’s a fire on the mountain! Run, run, run!\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tJump up and down ten times.\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tThere’s a fire on the mountain! Run, run, run!\n•\tPut the shoes in the shoe rack, it's fun, fun, fun!",
+      "_nodeId": "165f85de-3cfb-4064-bf5e-26dbceed4102",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Mirror": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Mirror\n•\tThis game can be played in pairs or even as a group.\n•\tStand facing each other or in a circle.  \n•\tOne person leads first while everyone else must copy, trying to move exactly at the same time as the leader.\n•\tMake sure the leader moves slowly enough for everyone to follow! Explore moving different body parts and in different levels.\n•\tAfter a while, switch who is leading. Give everyone a chance to lead.\n•\tTry it with no leaders!",
+      "_nodeId": "36b49d4e-58cd-4884-af40-4505b2961c14",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Rain on the mountain": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Rain on the Mountain\n•\tCall out, “There’s rain on the mountain”.\n•\tEveryone else replies “Run, run, run” while running around the space. \n•\tCall out different instructions. For example, touch something red or hop like a frog.\n•\tKeep playing and change the instructions each time. \n•\tYou can use this as a fun way to learn colours or even tidy up! ",
+      "_nodeId": "97e275ac-075f-4569-a87a-f5b790a492ee",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        140,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Run around and do this": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Run Around and Do This \n•\tEveryone runs around the room or garden.  Make sure the space is large enough and safe.\n•\tAt any time, someone can stop somewhere and say, “When you get over here, you do this!”  \n•\tWhat you do can be anything: push-ups, singing a song, crying, jumping… \n•\tThe more you play, the more there are things to do in more and more places.  \n•\tEach person can decide where to go and when.  \n•\tIt’s fun to interact with other people who are doing the same thing as you!",
+      "_nodeId": "1511186e-6b84-40d8-9cee-897b6c4fff30",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - See it be it": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "See It Be It\n•\tLook around you and name something that you can see. For example, a tree or a cup.\n•\tSay to your child “I see a tree, let’s be it!”\n•\tCountdown from 5 and make the shape of a tree with your bodies. Be as big and silly as possible.\n•\tNow let your child have a turn. What can they see?\n•\tIf you can, go outside and be in nature. If you can’t, play it inside. \n•\tWhen you’ve done it a few times, add moves and sounds!",
+      "_nodeId": "e502c546-da5f-4f37-b808-2745d146e141",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Ship to shore": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Ship to Shore \n•\tA fun active game where children learn different parts of a boat. Everyone must go to the place or activity that you call out.\n•\t“Bow” means run to the front of the boat (room).\n•\t“Stern” means run to the back of the boat.\n•\t“Starboard” means run to the right side and “Port” means run to the left side.\n•\t“Climb the rigging”: pretend to climb.\n•\t“Clean the deck”: pretend to clean the floor.\n•\t“Lifeboat, [number] people!”: hold hands in a circle with that many people and do knee bends.\n•\tEveryone not in a lifeboat must swim!",
+      "_nodeId": "b87b8bc7-dc19-480a-9cc0-67f2e24b8cc4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Stage Directions": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Stage Directions\n•\tThis is the same as Ship to Shore but with Stage Directions. This can be done in an elevated and safe area. The director gives the instructions.\n “Stage Right” means you go to the right.\n “Stage Left” means you go to the left.\n “Downstage” means you go down. \n “Upstage” means you go up.\n “Centre Stage” means you go to the centre of the stage.” \n•\tYou can have fun actions like “Dramatic Death, Take a Bow, Open the Curtain, Clean the Floor,” etc. \n•\tInstead of “Lifeboat” you make “Cast of Actors.” Those not in the cast become the director!",
+      "_nodeId": "663f0bc2-8328-4d20-8048-0992a6ef6361",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Superpowers": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Superpowers\n•\tThink of a superpower. For example, going anywhere instantly, travelling in time, reading minds. \n•\tAsk your child “If you had the superpower to […] how would you use it?\n•\tEncourage them to give themselves a superhero name and act it out. \n•\tNow let them choose a super power for you!\n•\tMake sure you act it out too! ",
+      "_nodeId": "a6c4f514-47c0-4773-948c-808f8eb1e511",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Transform the object": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Transform the object\n•\tEveryday household items like brooms, mops, or scarfs can become fun props for games\n•\tPlace an object in the center of the room and whenever someone has an idea, they jump in and show the rest what the object can be\n•\tFor example, a broom might be ridden as a horse or a microphone or a guitar!",
+      "_nodeId": "75e04fb2-f256-433a-b813-c4278ccfbf97",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - What are you doing": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "What Are You Doing? \n•        This game is best when more than 2 people play.\n•        One person pretends to be doing something – for example, combing hair. \n•        A second person asks, “What are you doing?”\n•        The first person needs to say something that has nothing to do with combing hair, for example, “Tying my shoes.”  \n•        The second person then starts pretending to tie their shoes until a new person asks, “What are you doing?” \n•        The second person’s answer must always be something different from what they are actually doing!\nThe next person should act out the second person’s answer and when someone asks what they are doing, their answer must be different from what they are actually doing!",
+      "_nodeId": "cdb75de1-082a-489f-b529-895a38dc7937",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - At the end of the day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "At the End of the Day\n•\tAt the end of each day, take a minute to think about the day.  \n•\tTalk to your child about one positive or fun thing they did.\n•\tPraise yourself for one thing you did well today.\n•\tThink of one thing that you are grateful for.  \n•\tYou are a star!",
+      "_nodeId": "2c4444cc-c093-4331-8a76-557ff126b97e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        60
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Blind Dragon": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Blind Kapre\n•        This game is great if you have at least 4 people.\n•        Tell the story about a ferocious Kapre who lived near a village. He would sneak into the village at night and steal people’s treasures – anything they loved.  Anybody who tried to take their treasure back would be eaten alive. This continued for many years until the Kapre became old, fat, and blind from sitting on his treasure and gazing at the glare of the gold coins. Then the townspeople could try and sneak into his lair and steal back their relatives’ treasure. \n•        One person plays the Kapre. The Kapre sits blindfolded or with eyes closed surrounded by a pile of treasure. \n•        Everyone has one piece of treasure that they must steal back. \n•        If the Kapre hears you and points at you, you must go back to the starting place. \n•        Only one person can try to get the treasure at a time.",
+      "_nodeId": "39fb15eb-caf2-4709-9bc4-a7a83f2b27d4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        40
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Dancing with Angels": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dancing with Angels\n•\tThis activity helps children learn how to lead. It also builds trust between you and your child.\n•\tPlay a piece of music that is gentle and relaxed to encourage smooth and calming movement.\n•\tOne person goes first and closes their eyes while the other person is the guardian angel or protector.\n•\tThe guardian angel must protect the person with their eyes closed from harm while gently dancing together.\n•\tWhen the music ends, the dancer can open their eyes before switching roles.",
+      "_nodeId": "c8cc230d-4ae0-4006-ad80-2da3fb9afaf2",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Drawing": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Drawing\n•\tChildren love to draw! It helps build creativity.\n•\tGet some pens or crayons and a piece of paper or cardboard.\n•\tLet your children freely draw whatever they want.\n•\tWhile your child is drawing, use words to describe what they are doing: “I see you are drawing a person” or “I see you are making lines with the red crayon.”\n•\tYou can also have fun drawing next to them.\n•\tPut their drawings up on the wall, refrigerator, or outside to decorate the house – it will make your children feel appreciated!",
+      "_nodeId": "403486f0-9115-4dc4-bde7-44401c511850",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Listening to sounds": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Listening to Sounds\n•\tSit down and close your eyes\n•\tHow many sounds can you hear? Listen to the sounds inside and outside the room. Count them on your fingers\n•\tAfter ten seconds, how many fingers do you have up? What sounds did you hear?\n•\tTry again for another ten seconds. \n•\tCan you hear any new sounds? Can you hear any sounds inside your own body?\n•\tNotice how you feel and ask your child how they are feeling.",
+      "_nodeId": "1f24c5c6-15a3-44b5-b4db-d5031cfa5387",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Memory game": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Memory game – “When COVID-19 ends…”\n•\tFirst person says, “When COVID-19 ends, I am going to… (e.g., go to the park)”\n•\tSecond person adds to the first person’s plan, “When COVID-19 ends, I am going to the park and… (e.g., visit my best friend)”\n•\tEach person adds to the previous list of plans, trying to think of all of the fun things to do when COVID-19 ends.",
+      "_nodeId": "ef5a9819-dac2-4b9f-b275-7740d95bacf3",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Self portrait": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Self-portrait\n•\tHere’s how your children can draw a picture of themselves!\n•\tFind a big piece of paper or cardboard. It needs to be the same length or slightly longer than the height of your child\n•\tAsk your child to lie down on the paper. Carefully draw the outline of your child.\n•\tNow let your child fill in the outline: face, hair, clothes, shoes, or anything they want!\n•\tAsk your child to draw things that they like and do not like outside of the outline\n•\tHave a conversation with your child about these things. You may learn something about your child!\n•\tYou can put their outline up in their room or anywhere in the house – it will make your children feel appreciated!",
+      "_nodeId": "80bb18c8-0615-45ff-a8f4-66486ff58bc8",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Story time": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Story time\n•\tStart the story with “Once upon a time there was a…”\n•\tLet your child make up the next sentence\n•\tThen you make up a sentence\n•\tTake turns until you have a wonderful new story\n•\tMake sure to end the story on a positive note.\n•\tAsk your child what was their favourite part of the story!",
+      "_nodeId": "7a01f775-c7a1-41b1-8418-45e3718b28b4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - The Interrupter": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "The Interrupter\n•\tChoose a storyteller to start making up a story.\n•\tStory listeners can interrupt with a word at any time.\n•\tThe storyteller needs to fit that word in their story.\n•\tTry with a different storyteller! ",
+      "_nodeId": "13619057-c494-44e1-aa59-5c2108f5dfdf",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Three options": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Three options\n•\tThink of three different situations. For example, driving a car, sailing a boat or flying a plane\n•\tSay them to your child and ask, “Which would you prefer?”\n•\tAsk them why?\n•\tNow think of three more situations or ask your child to do it for you ",
+      "_nodeId": "e55df72f-a518-4272-8450-b2da2ef59848",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - When I was younger": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "When I Was Younger\n•\tChildren love to hear stories about your own life!\n•\tThink of a time when you were younger when something BIG happened to you\n•\tIt can be an adventure, happy memory, or challenge that you experienced\n•\tShare it with your child and notice how they listen!",
+      "_nodeId": "d0bcb4a9-7204-4763-aed4-6db4e6cdd5b5",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.current_day_in_program,,,,,,,,,,,,,,,7d6c772a-5a9b-467a-84b5-666f962e9906,,split_by_contact_field,600;20
+2,save_value,1,@fields.next_congrats_day,@fields.current_day_in_program,has_number_gte,congr time,next congrats day,@(fields.current_day_in_program + fields.periodic_congrats_days_to_add),,,,,,,,,,,,,,,5c5944be-6b36-474a-862f-270343ed1193,,execute_actions,420;180
+3,save_value,2,,,,,current week in program,@(fields.current_week_in_program+1),,,,,,,,,,,,,,,c41a472b-c70e-42ad-b2d2-f424af82fff8,,execute_actions,420;300
+4,split_by_value,3,,,,,,"@(mod(fields.current_week_in_program,2))",,,,,,,,,,,,,,,5b3ee013-8db7-46be-a519-fe02b81158d4,,split_by_expression,420;440
+5,save_value,4,,,,,survey parentingbehave count,1,,,,,,,,,,,,,,,75eecbb3-7ade-4f61-9b2c-cc2324ab8fd9,,execute_actions,520;580
+6,save_value,5,,,,,survey number,@(fields.survey_number +1),,,,,,,,,,,,,,,75eecbb3-7ade-4f61-9b2c-cc2324ab8fd9,,execute_actions,520;580
+7,save_value,6,,,,,completed parenting questions,,,,,,,,,,,,,,,,75eecbb3-7ade-4f61-9b2c-cc2324ab8fd9,,execute_actions,520;580
+8,start_new_flow,4;7,0;,"@(mod(fields.current_week_in_program,2));",has_any_word;,even week;,,PLH - Supportive - Weekly congratulations,,,,,,,,,,,,,,a345014a-5e36-403f-be0d-15045dc460e4,dc50fb02-5f0b-4fb2-bfea-9d84df29df2f,,split_by_subflow,200;600

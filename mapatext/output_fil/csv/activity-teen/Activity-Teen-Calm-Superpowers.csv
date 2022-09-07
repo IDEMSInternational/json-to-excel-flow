@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Superpowers
+•	Mag-isip ng kapangyarihan. Halimbawa, pagpunta kahit saan sa isang iglap, paglalakbay sa kahit anong dekada, pagbabasa ng isip. 
+•	Tanungin ang iyong teenager na ""Kung mayroon kang superpower na [...] paano mo ito gagamitin?""
+•	Hikayatin mo siya na pangalanan ang kanyang sarili ng pangalang superhero at kailangang i-arte niya ito. 
+•	Ngayon hayaan mo siyang pumili ng super power para sa iyo.
+•	Siguraduhing ia-arte mo din ito! ",,,,,,,,,,,,,,,14f60b89-834f-43c1-9af0-e30943ff10d0,,execute_actions,;

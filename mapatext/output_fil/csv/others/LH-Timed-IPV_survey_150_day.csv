@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"TEMPLATE:
+Magandang araw! Nais naming kumustahin kayo! Paki-reply ng OK para magpatuloy.",,,,,,,,,,,,,,,b5c6e2dc-f838-4c3c-b1b3-8faf5dcc33ae,,execute_actions,260;120
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,8441d7ab-0b1d-42d6-8d9a-eda4b2e36575,,wait_for_response,580;260
+3,send_message,2,,,,,,"Maaari ba namin kayong tanungin tungkol sa inyong relasyon sa inyong kinakasama? Lahat ng sasabihin ninyo ay mananatiling pribado. Kung ayaw ninyong sagutin ang anumang katanungan, okay lang ito.",,,,,,,,,,,,,,,5c06203f-29a8-4bb8-a682-25d133affddd,,execute_actions,260;340
+4,send_message,3,,,,,,"To answer these questions, click this link to take you to an external site for extra privacy:
+[URL]",,,,,,,,,,,,,,,7a735aa3-89b7-4950-ac4b-e88db5e4aa6f,,execute_actions,260;560

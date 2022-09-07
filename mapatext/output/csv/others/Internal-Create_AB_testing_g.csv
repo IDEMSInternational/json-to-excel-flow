@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,add_to_group,start,,,,,,ABTest_test-gamification_alternative,,,,,,,,,,,,,,a741fb3b-f7da-472d-9e4f-b0d05266f871,5336ede7-8497-45ef-8c16-18da9abe1f4c,,execute_actions,220;
+2,add_to_group,1,,,,,,ABTest_test-first-person_alternative,,,,,,,,,,,,,,f238005c-4941-4930-8a5b-59d2c4b32a8f,8c7a42a2-e4de-454f-9ba2-64c7bfd10a1e,,execute_actions,220;200
+3,add_to_group,2,,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,d44ae170-6a10-4f54-829b-2dd5bf2c406b,40d54047-833a-4e8b-ae02-9d1d01d53efd,,execute_actions,220;400
+4,split_by_group,3,,,,,,ABTest_test-exit_Default,,,,,,,,,,,,,,222aa77e-ceda-4318-bc0d-02d4648c212d,1e30db56-1349-4219-a08c-61df3c8ea3bf,,split_by_groups,40;600
+5,split_random,4,,,,,,,,,,,,,,,,,,,,,af2fb70d-7e51-4413-9d23-0a99e04ba515,,split_by_random,100;700
+6,add_to_group,5,ABTest_test-exit_Default,,,,,ABTest_test-exit_Default,,,,,,,,,,,,,,222aa77e-ceda-4318-bc0d-02d4648c212d,fc71f1f2-f9ab-44f4-a2e0-aa621e85da02,,execute_actions,;820
+7,add_to_group,5,ABTest_test-exit_alternative,,,,,ABTest_test-exit_alternative,,,,,,,,,,,,,,2d415341-cb67-4847-b7fa-3a01a4b3f003,e40e985e-41e7-46fa-9955-0ab3ac504488,,execute_actions,220;820
+8,add_to_group,4;4;6;7,ABTest_test-exit_Default;ABTest_test-exit_alternative;;,,,,,ABTest_test-hook_alternative,,,,,,,,,,,,,,f30f52e1-8407-4e90-ad14-779dc4037603,0e0a4c0c-e5e4-4c4c-9eed-d9fd14ad331a,,execute_actions,110;1020
+9,add_to_group,8,,,,,,ABTest_test-n-messages-per-day_alternative,,,,,,,,,,,,,,04894782-c76a-4d58-8bf6-38e6da95f27e,5106b4d5-98f2-4bb9-b4ba-d2f2399fb25b,,execute_actions,110;1220
+10,save_value,9,,,,,node for ab tests,test,,,,,,,,,,,,,,,e9776601-08f3-4d7e-b793-4ee2f27bf2c3,,execute_actions,110;1420

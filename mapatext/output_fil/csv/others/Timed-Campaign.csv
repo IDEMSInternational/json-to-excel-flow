@@ -1,0 +1,15 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,current flow,@fields.next_flow,,,,,,,,,,,,,,,8a8317de-f126-4a07-a6a8-9056dbb9e18c,,execute_actions,540;60
+2,save_value,1,,,,,current day in program,"@(datetime_diff(fields.starting_date,now(),""D"")+1)",,,,,,,,,,,,,,,8a8317de-f126-4a07-a6a8-9056dbb9e18c,,execute_actions,540;60
+3,start_new_flow,2,,,,,,PLH - Internal - Define next campaign event,,,,,,,,,,,,,,0abc79bd-ff51-46c5-8842-bea52f6cd05e,e6e35f0a-6f3a-4f68-a78c-402a88768ef4,,split_by_subflow,540;320
+4,save_value,3,Complete,,,,last interaction,@contact.last_seen_on,,,,,,,,,,,,,,,0fef95c5-4159-40c2-93e3-033674b4300f,,execute_actions,780;420
+5,split_by_value,4,,,,,,"@(datetime_diff( now(),datetime_add(fields.last_interaction,1,""D""),""s""))",,,,,,,,,,,,,,,1fa1ca8b-23ee-4abe-a953-57bb40fc93e8,,split_by_expression,780;520
+6,save_value,5,1800,"@(datetime_diff( now(),datetime_add(fields.last_interaction,1,""D""),""s""))",has_number_gte,future - 30 min,has expired,,,,,,,,,,,,,,,,8033fde5-0f12-4ac5-b7a8-d617786fae3c,,execute_actions,480;600
+7,save_value,6,,,,,next flow expired,@fields.next_flow,,,,,,,,,,,,,,,8033fde5-0f12-4ac5-b7a8-d617786fae3c,,execute_actions,480;600
+8,start_new_flow,7,,,,,,PLH - Timed - Periodic - Congratulations,,,,,,,,,,,,,,6b6a47e1-5712-4cff-bd69-6ba9386e6d43,028dedb2-84b1-406e-8c7f-6f0621a1d73a,,split_by_subflow,480;760
+9,split_by_value,8,Complete,,,,,@results.current_flow,,,,,,,,,,,,,,,62320c1e-f66d-4a41-a440-ef855b04561f,,split_by_run_result,620;900
+10,start_new_flow,9,morning,@results.current_flow,has_any_word,Morning,,PLH - Timed - Morning,,,,,,,,,,,,,,cc120615-a999-4ddb-80e3-362363ce6b54,900c8d5a-a155-4c01-a74b-b04b4ac2dd28,,split_by_subflow,180;920
+11,start_new_flow,9,main,@results.current_flow,has_any_word,Main,,PLH - Timed - Main,,,,,,,,,,,,,,0957247a-7b1f-4406-b79e-e556f5c3b2e7,9bc9b36b-c0f8-47df-b652-a9a211c60a21,,split_by_subflow,600;1000
+12,start_new_flow,9,evening,@results.current_flow,has_any_word,Evening,,PLH - Timed - Evening,,,,,,,,,,,,,,d68f92cb-c9c1-4145-a0bf-4a4c1a9d73f7,f75851f3-fe5c-4988-9588-408c800facdc,,split_by_subflow,980;940
+13,split_by_value,10;11;12,Complete;Complete;Complete,,,,,@fields.has_expired,,,,,,,,,,,,,,,4ed9b0fa-745a-4b6d-acdd-a04b15faae17,,split_by_contact_field,280;1240
+14,start_new_flow,13,,@fields.has_expired,has_text,Has Text,,PLH - Handler - Survey,,,,,,,,,,,,,,4e3bd613-602b-468a-bb0e-c3facd2b87ac,2205f0db-75d6-4ca2-a26c-791fb5f6e2cd,,split_by_subflow,340;1420

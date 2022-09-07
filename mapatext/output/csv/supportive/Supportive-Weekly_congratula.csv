@@ -1,0 +1,45 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.current_week_in_program,,,,,,,,,,,,,,,31fbdcf5-9ea7-461c-abda-33b28aaa0b80,,split_by_contact_field,1170;
+2,split_by_value,1,1,@fields.current_week_in_program,has_number_lte,first week,,@fields.user_name,,,,,,,,,,,,,,,a13c833a-b2ab-4cdc-b0ee-4d3fab0c1c43,,split_by_expression,615;120
+3,send_message,2,,@fields.user_name,has_text,user_name,,Congratulations @fields.user_name! You have made it through your first week. How time flies! ,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,ef0f6444-8306-4012-b227-0a5499797d98,,execute_actions,490;520
+4,send_message,2,,,,,,Congratulations! You have made it through your first week. How time flies! ,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,92f83ee7-b76f-48e5-b6ea-9888ab91ea99,,execute_actions,740;520
+5,split_by_value,1,,,,,,@fields.user_name,,,,,,,,,,,,,,,5a1de447-3c42-4951-b034-911a48757945,,split_by_expression,1805;320
+6,send_message,5,,@fields.user_name,has_text,user_name,,Congratulations @fields.user_name! You have made it through another week!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,c8a00e71-7d2a-4d4d-a269-c53e43861de2,,execute_actions,1680;520
+7,send_message,5,,,,,,Congratulations! You have made it through another week!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,12a230cb-961d-4fce-a94a-a82a4339e791,,execute_actions,1930;520
+8,save_flow_result,3;4;6;7,,,,,n skills week,"@(count(split(fields.week_toolkit,"","")))",,,,,,,,,,,,,,,1b9c8d36-b60b-4438-8e63-a6e40536924d,,execute_actions,450;800
+9,save_flow_result,8,,,,,n incompletes week,"@(count(split(fields.week_toolkit_incompletes,"","")))",,,,,,,,,,,,,,,1b9c8d36-b60b-4438-8e63-a6e40536924d,,execute_actions,450;800
+10,split_by_value,9,,,,,,@results.n_skills_week,,,,,,,,,,,,,,,8a44d05d-ffda-4b52-b40b-371e65df4ea7,,split_by_run_result,740;1080
+11,split_by_group,10,1,@results.n_skills_week,has_number_eq,1,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,4b44dd37-ca7c-494e-b8ae-462b17c78f65,,split_by_expression,145;1420
+12,send_message,11,ABTest_test-gamification_alternative,,,,,You have added one layer to your House of Support this week:,,,,,,,,,,,,,,,da03c34e-2c86-40c4-a9cb-fa4bd4cc792e,,execute_actions,270;1620
+13,send_message,11;11,ABTest_test-gamification_Default;,,,,,You have added one skill to your Parenting Toolkit this week:,,,,,,,,,,,,,,,0ce85f23-b3e5-4a5f-869f-821bd9c560b1,,execute_actions,20;1620
+14,split_by_group,10,2,@results.n_skills_week,has_number_gte,>= 2,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,e895df5a-104c-4d6d-a5ef-ca85d1bf98d4,,split_by_expression,1355;1180
+15,send_message,14,ABTest_test-gamification_alternative,,,,,You have added @results.n_skills_week layers to your House of Support this week:,,,,,,,,,,,,,,,54995ab3-1a8c-40e9-887b-030162baa3fe,,execute_actions,1480;1380
+16,send_message,14;14,ABTest_test-gamification_Default;,,,,,You have added @results.n_skills_week skills to your Parenting Toolkit this week:,,,,,,,,,,,,,,,78ec607a-3923-44fb-8034-1efc83068d69,,execute_actions,1230;1380
+17,save_flow_result,12;13;15;16,,,,,type_of_toolkit,week_toolkit,,,,,,,,,,,,,,,05511930-a016-4dac-a1fc-60ecce86ec6e,,execute_actions,270;1760
+18,start_new_flow,17,,,,,,PLH - Internal - Print parenting toolkits,,,,,,,,,,,,,,43f2c34f-3646-414c-8cf9-cc3edfadea0b,5b185b0e-df0c-4be3-b558-9b61bb3c1514,,split_by_subflow,;1880
+19,save_value,18;18,Complete;Expired,,,,toolkit history,@(fields.toolkit_history & fields.week_toolkit),,,,,,,,,,,,,,,25cc40e7-ef00-46cf-8d64-cfec0956528f,,execute_actions,1150;1920
+20,save_value,19,,,,,week toolkit,,,,,,,,,,,,,,,,cd6ae717-f823-4cc8-a7c0-1eb270c40663,,execute_actions,1150;2020
+21,split_by_value,10;20,,,,,,@results.n_incompletes_week,,,,,,,,,,,,,,,b56bf66e-d0f1-4976-95c1-211a777bd3a4,,split_by_run_result,1990;1940
+22,send_message,21,0,@results.n_incompletes_week,has_number_gt,>0,,You also have made progress on @results.n_incompletes_week skills.,,,,,,,,,,,,,,,af979284-87ce-4b3e-a732-033b3895afd5,,execute_actions,290;2160
+23,send_message,22,,,,,,"Type ""Toolkit"" if you want to go back and revisit any of these tips.",,,,,,,,,,,,,,,9fedf41a-a33f-4782-8b1e-5df591332d94,,execute_actions,780;2480
+24,save_value,21;23,,,,,incomplete toolkit history,@(fields.incomplete_toolkit_history & fields.week_toolkit_incompletes),,,,,,,,,,,,,,,a80e7d63-f9ce-4765-8e08-bed34e559be3,,execute_actions,1560;2460
+25,save_value,24,,,,,week toolkit incompletes,,,,,,,,,,,,,,,,ee867197-a7b2-4f8d-a0fe-6d4d63a70d93,,execute_actions,1560;2560
+26,send_message,25,,,,,,How helpful have these messages been in improving your relationship with your child?,Not helpful,A little helpful,Helpful,Very helpful,Extremely helpful,Prefer not to answer,,,,,,,,,a40512ce-e340-46ae-9c8c-d1429da4f425,,execute_actions,290;3040
+27,wait_for_response,26,,,,,feedback ,,,,,,,,,,,,,,,,564efe4b-9c4a-4301-881e-d069fea95357,,wait_for_response,760;3320
+28,save_value,27;27;27;27;27;27,not helpful;a little helpful;helpful;very helpful;extremely helpful;prefer not to answer,,has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase,Not;Little;Helpful;Very;Extremely;Prefer,feedback on programme,"@(fields.feedback_on_programme & results.feedback.category  & "","" & fields.current_week_in_program & "",""& now() & ""|"" )",,,,,,,,,,,,,,,dc12777e-7304-42a2-8ca1-058973f3d7d4,,execute_actions,410;3520
+29,save_value,28,,,,,last interaction,@(now()),,,,,,,,,,,,,,,dc12777e-7304-42a2-8ca1-058973f3d7d4,,execute_actions,410;3520
+30,send_message,27,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,5a7a03d6-226c-46e4-9c56-f035c602c58c,,execute_actions,2050;3140
+31,go_to,30,,,,,,26,,,,,,,,,,,,,,,,,,
+32,send_message,29,,,,,,Which parenting tip has been the most useful to you?,Activities,Stress reduction,Child behaviour,Other,None of the parenting tips have been helpful,,,,,,,,,,49061117-0ce0-4dc6-9561-e9a0acbc17c2,,execute_actions,780;3680
+33,wait_for_response,32,,,,,best tip,,,,,,,,,,,,,,,,c1565a28-d22f-461b-a55f-1a7530074557,,wait_for_response,760;3880
+34,save_value,33;33;33;33;33,activities;stress;behaviour;none;other,,has_any_word;has_any_word;has_any_word;has_any_word;has_any_word,Activities;Stress;Behaviour;None;Other tips,most useful tip,"@(fields.most_useful_tip & results.best_tip.category  & "","" & fields.current_week_in_program & "",""& now() & ""|"" )",,,,,,,,,,,,,,,a83c63eb-c3ea-498b-9b1e-c7fd438f2848,,execute_actions,860;4080
+35,save_value,34,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a83c63eb-c3ea-498b-9b1e-c7fd438f2848,,execute_actions,860;4080
+36,split_by_group,35,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,45f3c136-80a3-4970-aa37-4d48442c8901,,split_by_expression,1005;4260
+37,send_message,36,ABTest_test-first-person_alternative,,,,,"If you have already noticed some changes in your life or relationship with your children, that's great! 
+
+If you have not noticed any changes, please keep it up. Sometimes these things take time to change. I know you can do it!",,,,,,,,,,,,,,,38a412f1-be44-49ea-9262-519526fb2ed1,,execute_actions,1130;4460
+38,send_message,36;36,ABTest_test-first-person_Default;,,,,,"If you have already noticed some changes in your life or relationship with your children, that's great! 
+
+If you have not noticed any changes, please keep it up. Sometimes these things take time to change. We know you can do it!",,,,,,,,,,,,,,,f872e169-42c0-40bd-84e1-1a4bb54a9efe,,execute_actions,880;4460
+39,send_message,33,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,63588b78-4845-4c2a-8923-1b378d944e3e,,execute_actions,1970;3660
+40,go_to,39,,,,,,32,,,,,,,,,,,,,,,,,,

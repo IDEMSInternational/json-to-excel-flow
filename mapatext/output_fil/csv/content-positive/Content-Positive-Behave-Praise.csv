@@ -1,0 +1,90 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Praising your children,,,,,,,,,,,,,,,0a239522-ad11-4d92-8b81-2b25e21b2e58,,execute_actions,1110;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,379730fb-4fa6-4ed9-ac6c-bf2c8a28ea36,,split_by_subflow,1110;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,206760dc-b69d-4ab8-b9a7-e6398a8772ba,,split_by_contact_field,1070;300
+4,send_message,3,,,,,,Manatiling positibo! Siguraduhin na ang inyong mga anak ay nakakakuha ng maraming papuri kapag kumikilos sila ng maayos. Mas gaganahan silang mas madalas gumawa ng mga ganoong kilos.,,,,,,,,,,,,,,,cd6254c4-3469-44d9-86c2-e164ff342ec2,,execute_actions,1970;380
+5,send_message,4,,,,,,"Pinahahalagahan natin kapag ang mga mabubuting bagay na ginagawa natin ay kinikilala ng iba, lalo na kung ito ay isang taong malapit sa atin. ",,,,,,,,,,,,,,,72593a45-1479-4e93-8b6d-aa1bcdaae3f5,,execute_actions,2980;400
+6,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,12945813-9fa4-4702-9844-07a2eb28cce6,,split_by_contact_field,450;900
+7,split_by_value,6,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,1d464e18-6bb7-4e3f-85bc-35811d061de4,,split_by_expression,125;1280
+8,send_message,7,,@fields.child_nickname,has_text,child_nickname,,Narito ang isang video kung paano ka mas makapagbibigay ng atensyon sa positibong kilos sa pamamagitan ng pagpuri kay @fields.child_nickname!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Praise.m4v,,1880103d-2054-4a08-a98d-9495612cfa19,,execute_actions,;1480
+9,send_message,7,,,,,,Narito ang isang video kung paano ka makapagbibigay ng higit na atensyon sa positibong kilos sa pamamagitan ng pagpuri sa iyong anak!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Praise.m4v,,37686d75-8dab-4dc1-b61b-593d34861c11,,execute_actions,250;1480
+10,split_by_value,6,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,95d087dc-368f-4866-9767-6c232f37b22e,,split_by_expression,905;1060
+11,send_message,10,,@fields.child_nickname,has_text,child_nickname,,Narito ang isang audio message kung paano ka mas makapagbibigay ng atensyon sa positibong pag-uugali sa pamamagitan ng pagpuri kay @fields.child_nickname!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Praise.mp3,,,f2cefa93-986a-4fd0-8c2c-732edc4df61f,,execute_actions,780;1260
+12,send_message,10,,,,,,Narito ang isang audio message kung paano ka makapagbibigay ng higit na atensyon sa positibong kilos sa pamamagitan ng pagpuri sa inyong anak!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Praise.mp3,,,e0ea4f5c-2af1-49c3-841a-db7fba7acd07,,execute_actions,1030;1260
+13,wait_for_response,11;12;8;9,,,,,Result 4,,,,,,,,,,,,,,,,a6784e77-1555-4e87-963b-0fcf687e5423,120,wait_for_response,1730;1640
+14,start_new_flow,13;13;6,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,8015478c-5c3a-4d6e-aa63-b56fbe1e5dea,,split_by_subflow,450;1760
+15,send_message,5,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,85836d64-3ff5-48b4-8df9-e8c44d8e6220,,execute_actions,1990;580
+16,wait_for_response,15,,,,,Result 6,,,,,,,,,,,,,,,,d3cf5225-dd72-4757-b22e-a478ecff2628,3600,wait_for_response,1910;720
+17,go_to,16,y Oo o,,has_any_word,Y,,6,,,,,,,,,,,,,,,,,,
+18,send_message,16,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,1f897d35-ad16-4d9e-bd38-c374d75e282c,,execute_actions,2980;700
+19,go_to,18,,,,,,15,,,,,,,,,,,,,,,,,,
+20,send_message,16;16,Hindi n h;No Response,,has_any_word;,No;,,"Okay lang 'yan! Puwede mong laging i-type ang ""Help"" kung gusto mong makatanggap ng mas maraming tip tungkol sa kung paano pangasiwaan ang pag-uugali ng iyong anak.",,,,,,,,,,,,,,,bc4c584b-02f9-47d4-a543-e3e4b6f6e7f5,,execute_actions,2170;960
+21,send_message,14;14,Complete;Expired,,,,,"Gumagana rin ang papuri para sa ating mga anak. Kung mas magbibigay ka ng atensyon sa positibong pag-uugali, gagawin nila ito nang mas madalas. Magiging masarap din ang pakiramdam nila sa kanilang sarili! 
+
+Narito ang 3 simpleng hakbang upang maiayos ito:
+
+1. Maging positibo
+2. Maging tiyak
+3. Maging masigla
+
+Para mas matuto sa mga ito, i-type ang ""1"" hangang ""3"". Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,a64d9099-5ab8-4a2c-ac2f-71e21c32d7fe,,execute_actions,470;1900
+22,wait_for_response,21,,,,,list_of_tips,,,,,,,,,,,,,,,,9efe82d0-872e-4935-bb13-348aacf68959,,wait_for_response,1790;2160
+23,split_by_value,22,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,a366d319-1cca-4aa8-9180-d977622af553,,split_by_expression,615;2340
+24,send_message,23,,@fields.child_nickname,has_text,child_nickname,,"Step 1. Maging positibo
+
+Purihin si @fields.child_nickname para sa isang bagay na nagawa niya ng mahusay. Maaaring hindi niya ipakita, pero makikita mong gagawin nila ang magandang bagay na iyon ulit. Magiging panatag sila na napapansin at pinahahalagahan mo sila.",,,,,,,,,,,,,,,989ba0f5-ba13-41d2-80a3-e60c4627a1df,,execute_actions,490;2540
+25,send_message,23,,,,,,"Step 1. Maging positibo
+
+Purihin ang iyong anak o teenager para sa isang bagay na nagawa nila nang mahusay. Maaaring hindi nila ipakita, pero makikita mong gagawin nila ang magandang bagay na iyon ulit. Magiging panatag sila na napapansin at pinahahalagahan mo sila.",,,,,,,,,,,,,,,310a9477-a66a-4c65-b261-989f0a7c91a8,,execute_actions,740;2540
+26,split_by_value,22,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,96d896da-0633-4e64-87a3-e73b370db466,,split_by_expression,1355;2580
+27,send_message,26,,@fields.child_nickname,has_text,child_nickname,,"Step 2. Maging klaro at eksakto
+
+Purihin ang kilos. Gumamit ng mga salitang maglalarawan ng kilos na pinupuri mo. Sabihing, ‘Magaling dahil natapos mo lahat ng gawain, @fields.child_nickname,’ sa halip na ‘Magaling.’",,,,,,,,,,,,,,,1b07911d-168a-4163-a9fe-8a3d7046dd6b,,execute_actions,1230;2780
+28,send_message,26,,,,,,"Step 2. Maging klaro at eksakto
+
+Purihin ang kilos. Gumamit ng mga salitang maglalarawan ng kilos na pinupuri mo. Sabihing, ‘Magaling dahil natapos mo ang lahat ng gawaing bahay, Sam’ sa halip na ‘Magaling.’",,,,,,,,,,,,,,,3e64a51d-0f72-4e95-8191-22b082a03e90,,execute_actions,1730;2780
+29,send_message,22,3,,has_number_eq,3,,"Step 3. Maging masigla
+
+Magpakatotoo kapag sinabi mo ito! Mas masarap sa pakiramdam kapag ikaw ay nagpapakatotoo.",,,,,,,,,,,,,,,e33ee968-6fb0-4ace-b341-f015aae3cb32,,execute_actions,1990;2840
+30,send_message,24;25;27;28;29,,,,,,"Mangyaring pumili ng isa pang numero kung nais mong matuto ng higit pa tungkol sa pagpupuri:
+
+1. Maging positibo
+2. Maging tiyak
+3. Maging masigla
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,38b78877-1df9-4c86-9efb-b468c5b6706f,,execute_actions,1130;3040
+31,save_value,30,,,,,praise list of tips,"@(fields.praise_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,b479e990-ce0b-499f-8178-122b70fd6474,,execute_actions,1090;4020
+32,go_to,31,,,,,,22,,,,,,,,,,,,,,,,,,
+33,split_by_value,22,h,,has_any_word,N,,@fields.age_group_for_tips,,,,,,,,,,,,,,,b9e5905a-2bac-4d28-beb8-6a4bfcf59d6f,,split_by_contact_field,2190;3020
+34,send_message,33,teen,@fields.age_group_for_tips,has_any_word,Teen,,Narito ang isang komiks tungkol sa pagpuri sa inyong teenager.,,,,,,,,,,,,,,,da974c39-2463-4ce9-b990-fc056e2042b0,,execute_actions,2050;3180
+35,send_message,34,,,,,,"Magulang: “Salamat sa pagtahimik habang kausap ko ang boss ko. Pinahahalagahan ko ito! Heto, pwede mong gamitin ang cellphone ko para i-message ang mga kaibigan mo”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_teens_comic_1.png,,,,81605813-0e9f-4bd9-bf0a-91eae24f75fa,,execute_actions,1910;3320
+36,send_message,35,,,,,,"Teenager: “Salamat! Gusto ko talagang kumustahin sila.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_teens_comic_2.png,,,,81605813-0e9f-4bd9-bf0a-91eae24f75fa,,execute_actions,1910;3320
+37,send_message,33,,,,,,Narito ang isang komiks tungkol sa pagpuri sa iyong anak.,,,,,,,,,,,,,,,66526425-2ef3-4adc-9033-de649af7a76a,,execute_actions,3420;3160
+38,send_message,37,,,,,,"Katahimikan 
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_kids_comic_1.png,,,,34e64a5b-d67c-46f3-adbf-66b195518f18,,execute_actions,3420;3320
+39,send_message,38,,,,,,"Magulang: “Salamat sa paglalaro ng tahimik habang nagtatrabaho ako. Pagkatapos ng 5 minuto masasamahan na kita.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_kids_comic_2.png,,,,34e64a5b-d67c-46f3-adbf-66b195518f18,,execute_actions,3420;3320
+40,send_message,39,,,,,,"Magulang: “Pinahahalagahan kong tahimik kang naglalaro habang nagtatrabaho ako. Ngayon pwede akong makipaglaro sa iyo sandali. Ano ang gusto mong gawin?”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/praise_kids_comic_3.png,,,,34e64a5b-d67c-46f3-adbf-66b195518f18,,execute_actions,3420;3320
+41,split_by_group,36;40,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,8a0247a7-ed4a-4e41-bb34-508e89d7e03c,,split_by_expression,2605;3380
+42,split_by_group,41,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,6f48619a-1c44-49c5-9d37-fe873d05b05a,,split_by_expression,2855;3780
+43,send_message,42,ABTest_test-gamification_alternative,,,,,"Mahusay! Nagdagdag ka ng isa pang antas sa inyong Masayang Tahanan! Sa mga susunod na araw, subukan mong humanap ng 3 bagay na mapupuri mo sa iyong anak araw-araw. Pwede mo ring purihin ang mga nakatatanda sa inyong pamilya. Pansinin mo kung paano sila tumugon!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,91859408-8cc3-4466-919b-919b1901e92e,,execute_actions,2980;3980
+44,send_message,42;42,ABTest_test-gamification_Default;,,,,,"Mahusay! Nagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukan mong humanap ng 3 bagay na mapupuri mo sa iyong anak araw-araw. Pwede mo ring purihin ang mga nakatatanda sa inyong pamilya. Pansinin mo kung paano sila tumugon!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,79be9231-e778-4b84-a3b9-71920edaec02,,execute_actions,2730;3980
+45,split_by_group,41;41,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,66caf554-fccf-4f90-8bbe-e55042b01a15,,split_by_expression,2355;3580
+46,send_message,45,ABTest_test-gamification_alternative,,,,,"Mahusay! Nagdagdag ka ng isa pang antas sa inyong Masayang Tahanan! Sa mga susunod na araw, subukan mong humanap ng 3 bagay na mapupuri mo sa iyong anak araw-araw. Pwede mo ring purihin ang mga nakatatanda sa inyong pamilya. Pansinin mo kung paano sila tumugon!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,4fe9c1ee-4dd9-4475-a3c2-0f1bd6525867,,execute_actions,2480;3980
+47,send_message,45;45,ABTest_test-gamification_Default;,,,,,"Mahusay! Nagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukan mong humanap ng 3 bagay na mapupuri mo sa iyong anak araw-araw. Pwede mo ring purihin ang mga nakatatanda sa inyong pamilya. Pansinin mo kung paano sila tumugon!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,b1221262-4376-4538-a21b-9297f71931af,,execute_actions,2230;3980
+48,save_value,43;44;46;47,,,,,current type assessed,tip,,,,,,,,,,,,,,,04471ef5-63c9-4688-a42b-1fd09cc7e1a9,,execute_actions,3040;4220
+49,save_value,48,,,,,current activity,praise,,,,,,,,,,,,,,,04471ef5-63c9-4688-a42b-1fd09cc7e1a9,,execute_actions,3040;4220
+50,start_new_flow,49,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,55b88120-d558-4073-8593-d78ab5bcd7a1,,split_by_subflow,1750;4760
+51,split_by_value,50;50,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,1c4b17c1-5095-4728-845e-94b864db5f84,,split_by_expression,1605;5000
+52,send_message,51,,@fields.user_name,has_text,user_name,,"Tandaan na pwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,3cd651c8-6447-429d-b8d4-cb5eacb4e70f,,execute_actions,1480;5200
+53,send_message,51,,,,,,"Tandaan na puwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Usap tayo mamaya!",,,,,,,,,,,,,,,a01383bf-aab9-4153-8f38-dcc88fdcbfb6,,execute_actions,1730;5200
+54,send_message,22,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,318da02e-ceb7-419c-a22d-932d433208b9,,execute_actions,2070;2220
+55,go_to,54,,,,,,21,,,,,,,,,,,,,,,,,,

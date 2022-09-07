@@ -1,0 +1,65 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Responding to crises,,,,,,,,,,,,,,,39897b4b-8587-4bf7-843b-1490c33e6f6f,,execute_actions,100;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,79370b70-f68c-4e1b-8edb-db66878c2718,,split_by_subflow,100;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,10ab63be-52b6-4e31-b78e-2587a67e18ba,,split_by_contact_field,100;280
+4,send_message,3,,,,,,"When our children share something that is especially troubling, we need to remember to stay calm, listen, and be open.",,,,,,,,,,,,,,,fa19c7ff-a7e3-445f-bab6-5e46e4d9e9ad,,execute_actions,600;180
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,f9da804e-7729-4c8d-9202-f463bf31558b,,split_by_contact_field,200;460
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Here's a video on how you can support your teen when they are experiencing difficult situations.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Crisis_Support.m4v,,d141509f-2a63-4746-a990-d67b88cad7f9,,execute_actions,;560
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message on how you can support your teen when they are experiencing difficult situations.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Crisis_Support.mp3,,,91517d5a-de7f-4b91-bb3b-20981e903efd,,execute_actions,240;580
+8,wait_for_response,6;7,,,,,Result 3,,,,,,,,,,,,,,,,0b4001d0-ecc5-410a-a628-c5a09eb94e84,120,wait_for_response,80;820
+9,send_message,5;8;8,;;No Response,,,,,"Here are some things you can do when your teen shares something difficult with you:
+• Take a deep breath before you respond. 
+• Listen to what your child is saying. Notice how they are feeling.
+• Notice how you feel. Ask yourself, ""What does my child need right now?"" 
+• Reassure your child that you are there for them. 
+• You can deal with the consequences later but right now your child needs you.
+• Discuss possible solutions or next steps to take action. 
+• Remind your child again that you love them and thank them for sharing with you. ",,,,,,,,,,,,,,,ff921a5d-f975-440b-900b-d5bc09c094b8,,execute_actions,380;900
+10,send_message,9,,,,,,Here is a comic that shows how you can support your child during a crisis.,,,,,,,,,,,,,,,b4983e85-4122-48a4-b463-bce37197ca16,,execute_actions,340;1400
+11,send_message,10,,,,,,"Parent: “What’s wrong, my dear? Come and sit by me and tell me what happened.” 
+
+Child: “It’s that person…they touched me…”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/disclosure_of_difficult_things_comic_1.png,,,,b4983e85-4122-48a4-b463-bce37197ca16,,execute_actions,340;1400
+12,send_message,11,,,,,,"Parent: “Take your time... I am listening.” 
+
+Child: “… they held me down…told me I would be in trouble if I told anybody…”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/disclosure_of_difficult_things_comic_2.png,,,,b4983e85-4122-48a4-b463-bce37197ca16,,execute_actions,340;1400
+13,send_message,12,,,,,,"Parent: “I believe you. You are not in trouble. It is not your fault. This is a big thing and we will find a way to get the help you need. I wonder where we can go for help…?”
+
+Child: “The clinic? But could you come with me?”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/disclosure_of_difficult_things_comic_3.png,,,,b4983e85-4122-48a4-b463-bce37197ca16,,execute_actions,340;1400
+14,send_message,13,,,,,,"Parent: “Yes, they will know what to do. Of course, I will come with you. Remember, this is not your fault. I love you and we will get through this.” 
+
+Child: “Thanks so much.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/disclosure_of_difficult_things_comic_4.png,,,,b4983e85-4122-48a4-b463-bce37197ca16,,execute_actions,340;1400
+15,send_message,14,,,,,,"We understand that this can be really difficult. Please type ""Help"" if you want any extra support or guidance.",,,,,,,,,,,,,,,4f31a4ea-7961-41bc-85ef-e3a21441b6c9,,execute_actions,760;1140
+16,start_new_flow,15,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,446b30b0-e52e-4034-a5c2-eada10ee8600,,split_by_subflow,2570;1300
+17,split_by_group,16;16,Complete;Expired,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,93827a7a-5dc5-450d-b287-b54674e27ad1,,split_by_expression,1695;1680
+18,split_by_group,17,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,905128ce-1a16-439d-92e3-3af7f72d740c,,split_by_expression,2195;2080
+19,split_by_value,18,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,07fd78d0-f528-46cd-a746-ce57b9a4ac1e,,split_by_expression,2445;2880
+20,send_message,19,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added another layer to your House of Support! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,a13ce32f-6ae2-449b-bb5c-03c935974c13,,execute_actions,2320;3080
+21,send_message,19,,,,,,Well done! You have added another layer to your House of Support! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,9c6c1ea7-5554-47d5-a9af-e9781987c0c1,,execute_actions,2570;3080
+22,split_by_value,18;18,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,ee993672-c18e-4a1b-9e8c-635748d06f2c,,split_by_expression,1945;2680
+23,send_message,22,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,73995a66-0f94-423f-85e6-c4898d957c2c,,execute_actions,1820;3080
+24,send_message,22,,,,,,Well done! You have added another skill to your Parenting Toolkit! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,ac1ba9ef-23db-4cca-b8c5-c6779bf6b541,,execute_actions,2070;3080
+25,split_by_group,17;17,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,18640cee-5e5b-4e89-9e2b-8d861c62fe0f,,split_by_expression,1195;1880
+26,split_by_value,25,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,fc7c1bfa-1d25-4699-8a82-0e54474e3630,,split_by_expression,1445;2480
+27,send_message,26,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added another layer to your House of Support! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,f8fbc1b9-e1b0-40b6-b135-112568fa7462,,execute_actions,1320;3080
+28,send_message,26,,,,,,Well done! You have added another layer to your House of Support! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,0d02239b-c621-45c1-84ce-eab19fadd8d8,,execute_actions,1570;3080
+29,split_by_value,25;25,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,cb289b6c-f9df-42f4-840a-c3111a952c38,,split_by_expression,945;2280
+30,send_message,29,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,adc5b93a-f545-4f45-97eb-6157bc07bbe3,,execute_actions,820;3080
+31,send_message,29,,,,,,Well done! You have added another skill to your Parenting Toolkit! Try following these steps whenever your child shares something difficult. Supporting your child through a crisis will also teach them how to support others in difficult times. Good for you!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,3533e951-3b6b-4f04-a445-a56421b08bae,,execute_actions,1070;3080
+32,save_value,20;21;23;24;27;28;30;31,,,,,current type assessed,tip,,,,,,,,,,,,,,,8522a5bb-a634-446e-a392-2f7234916953,,execute_actions,2590;3440
+33,save_value,32,,,,,current activity,crisis,,,,,,,,,,,,,,,8522a5bb-a634-446e-a392-2f7234916953,,execute_actions,2590;3440
+34,start_new_flow,33,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,9284d376-d4ea-40df-a2bd-10bf7abb1093,,split_by_subflow,800;3680
+35,send_message,34;34,Complete;Expired,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. ",,,,,,,,,,,,,,,174224ff-a63c-4d0c-aa60-81814ad38eee,,execute_actions,760;3940
+36,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,c8689a87-085c-4e53-b945-b7cb27615bb8,,execute_actions,620;380
+37,wait_for_response,36,,,,,Result 1,,,,,,,,,,,,,,,,0093cd76-8b38-489f-a059-e03f9ff13780,3600,wait_for_response,740;540
+38,go_to,37,yes y,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+39,send_message,37,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,b9ecf6e9-6af9-440f-99ec-2da557956b8a,,execute_actions,2710;280
+40,go_to,39,,,,,,36,,,,,,,,,,,,,,,,,,
+41,send_message,37;37,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,c43d4d69-08e3-425a-97ba-fbf228e71ab7,,execute_actions,640;700

@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Narito ang mga detalye upang makipag-ugnayan sa mga lokal na awtoridad na nagbibigay ng emergency services:,,,,,,,,,,,,,,,dad2d29d-4f73-4f0f-a0dc-a7120a0b1af2,,execute_actions,600;
+2,send_message,1,,,,,,"National Emergency Hotline: 911
+
+Philippine Red Cross Helpline: 143 or (02) 8527-8385 to 95",,,,,,,,,,,,,,,2b202dce-41fa-411c-b9b2-088e9c79d694,,execute_actions,620;140
+3,send_message,2,,,,,,Dapat mong ipagmalaki ang inyong sarili sa paghahanap mo ng mga paraan upang makakuha ng tulong para sa inyong sarili at sa inyong pamilya.,,,,,,,,,,,,,,,f4ecb8d4-9477-4733-b437-e1c0b716d724,,execute_actions,600;300
+4,send_message,3,,,,,,"I-type ang ""SOS"" anumang oras kung gusto mong makuha ang mga detalye ng ibang emergency service o hotline. Tandaan na ang lahat ng sasabihin mo ay mananatiling pribado!",,,,,,,,,,,,,,,86d13adb-250a-477b-848f-adc8c7f4bdb5,,execute_actions,620;440

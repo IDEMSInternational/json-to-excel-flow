@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,c2b5883d-d39e-48d1-862b-1313d6a956a0,,split_by_expression,560;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! How are you feeling?,Great,Okay,Bad,,,,,,,,,,,,36566cca-5e86-4e4d-9bfe-ad3a0b1722ee,,execute_actions,435;200
+3,send_message,1,,,,,,Hi! How are you feeling?,Great,Okay,Bad,,,,,,,,,,,,4c7cb93d-4113-439d-8634-c78e8f7f6102,,execute_actions,685;200
+4,wait_for_response,2;3,,,,,checkin_how,,,,,,,,,,,,,,,,b831577f-4ef3-42d7-bf88-e50d8ca411d9,,wait_for_response,685;340
+5,send_message,4,great,,has_any_word,Great,,So good to hear that you are doing well. What a wonderful feeling!,,,,,,,,,,,,,,,70acf714-b70f-46f0-a394-846c100cdd64,,execute_actions,55;500
+6,send_message,4,ok okay,,has_any_word,Ok,,Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!,,,,,,,,,,,,,,,187427c2-dde0-4352-abec-da28e041df39,,execute_actions,375;500
+7,send_message,4,bad,,has_any_word,Bad,,Sorry to hear that you are not having a good day. It is completely normal to be going through a difficult time now. Remember that you are not alone.,,,,,,,,,,,,,,,e0f4dd41-db27-4d67-afe9-227a770f0ebc,,execute_actions,905;480
+8,send_message,5;6;7,,,,,,"When you take care of yourself, you take care of your children. We all need to connect. Try to talk to friends, family, and other support networks every day. If it has been a while since you reached out to someone, do it now!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/two_parents_talking_together.jpg,,,,33c7e33f-a524-4901-8c37-0db78c044bc2,,execute_actions,335;760
+9,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,8fd44b20-2c2b-4ed8-8004-9ab114b3f5ae,,execute_actions,1225;340
+10,go_to,9,,,,,,1,,,,,,,,,,,,,,,,,,

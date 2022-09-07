@@ -1,0 +1,22 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"3. Paghatian ang mga responsibilidad sa pamilya
+
+Ang paghahati niyo ng responsibilidad ng iyong kinakasama ay nakatutulong mabawasan ang stress sa buhay! May naiisip ka bang mga paraan kung paano niyo paghahatian ang mga gawain? Masaya rin kung sabay ninyong pagtutulungan ang mga gawain!",,,,,,,,,,,,,,,576dd889-249f-4720-ac30-8a91b884e2cc,,execute_actions,480;
+2,send_message,1,,,,,,Gusto mo bang makakita ng komiks tungkol sa paghahati ng mga responsibilidad sa pamilya?,Oo,Hindi,,,,,,,,,,,,,7b6e6f3c-489b-42ac-96f4-8d38053b8a35,,execute_actions,780;220
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,9cef2f8b-c8a4-42bd-aba4-ec6e5529c16d,,wait_for_response,760;400
+4,send_message,3,Oo y o,,has_any_word,Yes,,"Anak: “Wow, ang daming damit dito!”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/share_family_responsibilities_comic_1.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+5,send_message,4,,,,,,"Magulang 1: “Tama ka, Kyla, mukhang marami tayong gagawin.”
+
+Magulang 1: “Kung pagtutulungan natin ito, mas mabilis tayong matatapos!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/share_family_responsibilities_comic_2.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+6,send_message,5,,,,,,"Magulang 1: “Masaya rin pagtulungan ang mga gawain”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/share_family_responsibilities_comic_3.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+7,send_message,6,,,,,,"Parent 2: “Salamat, mahal. Nakakabawas sa stress ang pagtutulungan sa mga gawain.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/share_family_responsibilities_comic_4.png,,,,39c42e19-17f5-4db3-8444-3ef23ab480f8,,execute_actions,460;240
+8,send_message,3,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,ff063da9-3e0a-4e61-9b7b-1cb303b9abb4,,execute_actions,880;560
+9,go_to,8,,,,,,2,,,,,,,,,,,,,,,,,,

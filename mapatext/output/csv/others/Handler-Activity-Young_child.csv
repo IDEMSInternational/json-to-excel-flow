@@ -1,0 +1,23 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_random,start,,,,,,,,,,,,,,,,,,,,,62684180-bd3b-49e7-b0d0-a38847bef07e,,split_by_random,620;100
+2,split_random,1,1,,,,,,,,,,,,,,,,,,,,0b19b04b-11fc-4fcb-a17c-c02b36536b79,,split_by_random,20;620
+3,start_new_flow,2,1,,,,,PLH - Activity - Child - Active - Rain on the mountain,,,,,,,,,,,,,,55e92c65-6eb5-4756-a864-13041392d642,402474be-2da5-458b-939c-855865db39be,,split_by_subflow,40;900
+4,start_new_flow,2,2,,,,,PLH - Activity - Child - Active - Dance party,,,,,,,,,,,,,,e7701760-d0e6-48e3-aa9d-0542ffa06d1c,ead8512b-54be-46b7-8ca8-dcf4ad05252e,,split_by_subflow,260;900
+5,start_new_flow,2,3,,,,,PLH - Activity - Child - Active - See it be it,,,,,,,,,,,,,,29100229-fb5a-4b4f-bf48-2ef17e3630a8,9100b830-e5c8-4908-9d4a-5235029a29fc,,split_by_subflow,120;1060
+6,start_new_flow,2,4,,,,,PLH - Activity - Child - Active - Superpowers,,,,,,,,,,,,,,bc1d6236-76a9-477a-86c1-6962926c9aa0,56d2fbf9-5809-4ff7-b24d-0104264e5e09,,split_by_subflow,500;900
+7,start_new_flow,2,5,,,,,PLH - Activity - Child - Active - Worms go home,,,,,,,,,,,,,,2fedf17d-324f-4b31-aaf9-0edcffd7ebd3,0f69c25a-aa05-4de8-b60a-010ec342a6aa,,split_by_subflow,720;900
+8,start_new_flow,2,6,,,,,PLH - Activity - Child - Active - Crazy chicken,,,,,,,,,,,,,,9626d23d-fe77-4825-ad0d-a0aba0036264,f965836d-58f3-49c7-afc8-c27d8226c1a5,,split_by_subflow,360;1040
+9,start_new_flow,2,7,,,,,PLH - Activity - Child - Active - Transform the object,,,,,,,,,,,,,,3ce17baa-22aa-4649-a550-bd5b0c237738,07ef10ed-3e2e-42b8-b3aa-3fbbf40207f1,,split_by_subflow,180;1200
+10,start_new_flow,2,8,,,,,PLH - Activity - Child - Active - Name that tune,,,,,,,,,,,,,,82e28f06-9107-49f3-97be-1792a3a6796a,891aa752-4770-4368-b613-a3da55700d9e,,split_by_subflow,400;1220
+11,split_random,1,2,,,,,,,,,,,,,,,,,,,,f7d2681e-f195-4c91-a2d9-3e7604b2f6bc,,split_by_random,680;640
+12,start_new_flow,11,1,,,,,PLH - Activity - Child - Active - Dance choreography,,,,,,,,,,,,,,295bfe35-6dcc-4c8a-8b44-df21b28a6718,7090d5ee-0d00-423a-92fc-1e6a6ff47c77,,split_by_subflow,960;1420
+13,start_new_flow,11,2,,,,,PLH - Activity - Child - Active - Mirror,,,,,,,,,,,,,,de1d8a85-199b-4015-a43a-f8415ddc3b79,3908c3d5-3f89-42b4-82b8-1dc800a8a363,,split_by_subflow,1140;1220
+14,start_new_flow,11,3,,,,,PLH - Activity - Child - Active - Freeze dance,,,,,,,,,,,,,,bdd41fb1-9ede-4986-8eea-91ef19330627,aebc0f40-1c23-4a29-896f-f2536e67ab72,,split_by_subflow,900;1260
+15,start_new_flow,11,4,,,,,PLH - Activity - Child - Active - Run around and do this,,,,,,,,,,,,,,69b7d06f-c8d4-4ea0-a57d-8442c43de79f,e852d7bf-99a3-4639-b127-50dba9f577d3,,split_by_subflow,660;1280
+16,start_new_flow,11,5,,,,,PLH - Activity - Child - Active - Ship to shore,,,,,,,,,,,,,,5e94d1b6-a096-47b1-9f99-db9cfad256fe,97205074-1b97-4656-9bf9-516c8cddc2d4,,split_by_subflow,700;1580
+17,start_new_flow,11,6,,,,,PLH - Activity - Child - Active - Stage Directions,,,,,,,,,,,,,,58275b37-17bc-4a4a-ba89-d46a4128da0f,098ab757-eda8-4cb5-9bd8-f9e5625e6adb,,split_by_subflow,960;1600
+18,start_new_flow,11,7,,,,,PLH - Activity - Child - Active - Make housework fun,,,,,,,,,,,,,,3c63849f-9ab7-4822-9635-a0dd7c4be18c,aca97bb4-331e-4f87-85c6-ba75e489d319,,split_by_subflow,1280;1420
+19,split_by_value,11,9,,,,,@fields.type_of_media,,,,,,,,,,,,,,,4fe8f420-9e51-4300-9432-f4e4e34af621,,split_by_contact_field,1500;760
+20,send_message,19,high,@fields.type_of_media,has_any_word,High,,Here is a song made just for parents like you.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/video/eng/LetsSlowDown.mp4,,12132a39-291f-4604-8c5e-8bce9b8cd868,,execute_actions,1540;900
+21,start_new_flow,11;19,8;low,;@fields.type_of_media,;has_any_word,;Low,,PLH - Activity - Child - Active - What are you doing,,,,,,,,,,,,,,3ed6d771-8dc0-421c-ac28-d359550232ad,a2106966-2264-44c3-9912-297ccffe7a09,,split_by_subflow,1280;880
+22,send_message,19,,,,,,Here is a song made just for parents like you.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/audio/eng/LetsSlowDown.mp3,,,0595a2e3-3650-4daa-9e78-0ce7a2a91cb8,,execute_actions,1780;900

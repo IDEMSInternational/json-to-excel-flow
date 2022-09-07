@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Stop & Listen
+• Stop for a moment and close your eyes. 
+• How many sounds can you hear? Listen to sounds inside and outside the room. Count them on your fingers. (Pause for 10 seconds)
+• How many fingers do you have up? What sounds did you hear? 
+• Let’s try again. Can you hear any new sounds this time? Can you hear any sounds inside your own body? (Pause for 10 seconds)
+• Open your eyes. What new sounds did you hear?",,,,,,,,,,,,,,,b275c4dc-fd3e-4133-bc81-fdb0f20ff6f6,,execute_actions,;

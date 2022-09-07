@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Larong pang-memorya - ""pag natapos na ang COVID-19...""
+•	May mauunang magsabi, ""Pag natapos na ang COVID-19, pupunta ako sa...(halimbawa: pupunta sa parke)""
+•	Ang pangalawang tao ay dudugtong sa plano ng unang tao, ""Pag natapos na ang COVID-19, pupunta ako sa parke at...(halimbawa: bibisitahin ang aking best friend)""
+•	Bawat tao ay magdagdag sa mga naunang listahan ng mga plano, sinusubukang mag-isip ng mga nakakatuwang bagay na gagawin pag natapos na ang COVID-19.",,,,,,,,,,,,,,,ef5a9819-dac2-4b9f-b275-7740d95bacf3,,execute_actions,;

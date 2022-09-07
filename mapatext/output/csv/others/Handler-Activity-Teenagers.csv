@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,fdc773ef-1ef6-4ce9-bec8-c307f1d2efd2,,split_by_expression,245;
+2,send_message,1,,@fields.child_nickname,has_text,child_nickname,,What kind of activity do you want for @fields.child_nickname?,Active,Calm,Fun,,,,,,,,,,,,7f6e33c3-bb23-4d56-84ce-16c875f92eae,,execute_actions,120;200
+3,send_message,1,,,,,,What kind of activity do you want for your teen?,Active,Calm,Fun,,,,,,,,,,,,71b3fa5f-4ed2-4c63-831d-e64c0520df63,,execute_actions,370;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,7656355b-7f93-4d32-9f60-1cc923e5503d,,wait_for_response,430;400
+5,save_value,4,active,,has_any_word,Active,last interaction,@(now()),,,,,,,,,,,,,,,49e482fa-4136-4c8d-b699-067af76f3f82,,execute_actions,;580
+6,save_value,4,calm,,has_any_word,Calm,last interaction,@(now()),,,,,,,,,,,,,,,06afdf1e-8e31-4bdc-a8f9-f7d61ce4e96e,,execute_actions,510;580
+7,save_value,4,fun,,has_any_word,Random,last interaction,@(now()),,,,,,,,,,,,,,,ede9b7f9-ec0f-486a-b0f3-1e13183bdb10,,execute_actions,850;580
+8,split_random,7,,,,,,,,,,,,,,,,,,,,,33094408-845f-410c-8a3a-6b63027fcf37,,split_by_random,870;680
+9,start_new_flow,5;8,;1,,,,,PLH - Handler - Activity - Teenagers - Active,,,,,,,,,,,,,,d4b44ae4-fdd1-48ef-bb9a-a141d58a923e,17ba3909-c7b2-4ea1-aee5-1d4d67b57516,,split_by_subflow,370;900
+10,start_new_flow,6;8,;2,,,,,PLH - Handler - Activity - Teenagers - Calm,,,,,,,,,,,,,,c49678f3-b049-4919-ab85-ceaaf4d98457,37df9cc8-ae70-437a-a50b-009c03a85726,,split_by_subflow,670;880
+11,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,6d73a419-b5d8-434b-8991-b38b7211c4c9,,execute_actions,990;440
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f8db742b-d83a-455a-bf4d-be8bd8df0a43,,execute_actions,790;340
+13,go_to,12,,,,,,1,,,,,,,,,,,,,,,,,,

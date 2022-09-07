@@ -1,0 +1,41 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,survey parenting count,"@(if( fields.survey_parenting_count  < fields.max_skip_survey, if(fields.survey_parenting_count = 0, 0, fields.survey_parenting_count +1),0))",,,,,,,,,,,,,,,c7b3f7a0-f59a-4e82-a968-43c1811c8f43,,execute_actions,2210;
+2,split_by_group,1,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,33b6679b-3b52-43ff-98d6-577f0879d1b1,,split_by_expression,2085;120
+3,send_message,2,ABTest_test-first-person_alternative,,,,,"Can I ask you a few questions to help these messages work better for you?  If you do not want to answer any questions, it is completely okay. Remember, everything you say will be completely private.",Yes,No,,,,,,,,,,,,,cf2de2b1-f89c-4316-9513-50fb4384fa7a,,execute_actions,2210;320
+4,send_message,2;2,ABTest_test-first-person_Default;,,,,,"Can we ask you a few questions to help these messages work better for you?  If you do not want to answer any questions, it is completely okay. Remember, everything you say will be completely private.",Yes,No,,,,,,,,,,,,,0f03d0e0-45b1-4649-9055-01446f36a478,,execute_actions,1960;320
+5,wait_for_response,3;4,,,,,consent_survey,,,,,,,,,,,,,,,,a67d6f02-d800-453c-8e74-edfb9413d26e,,wait_for_response,1940;640
+6,save_value,5,YES Y ,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,44866ec7-d984-4c6e-a3c9-0080e38f12b9,,execute_actions,1660;780
+7,save_value,6,,,,,surveyparenting datestamps,"@(fields.surveyparenting_datestamps & ""yes,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,44866ec7-d984-4c6e-a3c9-0080e38f12b9,,execute_actions,1660;780
+8,split_by_value,7,,,,,,@fields.user_name,,,,,,,,,,,,,,,77383b08-1315-422b-9d0a-87e52e8b9ce6,,split_by_expression,1265;940
+9,split_by_group,8,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,5cf0e048-5990-4f66-8bcd-29198a264a0b,,split_by_expression,1015;1140
+10,send_message,9,ABTest_test-first-person_alternative,,,,,Thank you @fields.user_name! I really appreciate your input.,,,,,,,,,,,,,,,42a7b494-f849-4648-b9dd-0d2f255edda2,,execute_actions,1140;1540
+11,send_message,9;9,ABTest_test-first-person_Default;,,,,,Thank you @fields.user_name! We really appreciate your input.,,,,,,,,,,,,,,,b1ff00fa-fe9a-4831-b3e9-f8d004e27945,,execute_actions,890;1540
+12,split_by_group,8,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,ff8f2fca-db66-4dd3-acb9-fc2e2411a5fa,,split_by_expression,1515;1340
+13,send_message,12,ABTest_test-first-person_alternative,,,,,Thank you! I really appreciate your input.,,,,,,,,,,,,,,,93a0c3e3-d696-4e92-9438-79cb620bcf75,,execute_actions,1640;1540
+14,send_message,12;12,ABTest_test-first-person_Default;,,,,,Thank you! We really appreciate your input.,,,,,,,,,,,,,,,d8b3837e-a611-430a-a5ba-dc7f4fe0ba07,,execute_actions,1390;1540
+15,start_new_flow,10;11;13;14,,,,,,PLH - Welcome - Initial registration - Age,,,,,,,,,,,,,,f1428e89-c0e2-48a9-b5d5-9fd840efad70,ff60026a-f251-4e39-a08a-e7addf482227,,split_by_subflow,870;1680
+16,start_new_flow,15,Complete,,,,,PLH - Welcome - Initial registration - Region,,,,,,,,,,,,,,aa2b13d1-03d5-4b9c-9105-1839eb70dbf7,2a7d2a9f-1beb-4365-93e4-a7c0c28d7340,,split_by_subflow,810;2280
+17,start_new_flow,16,Complete,,,,,PLH - Survey - Parenting & Behaviour - Questions & Comparison,,,,,,,,,,,,,,64d3d456-e434-47d7-a992-013a32ed93ee,b601a095-2d71-42e7-8929-d79e39d07b90,,split_by_subflow,;2520
+18,split_by_value,17,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,8f9cd519-9754-4cbf-b4fe-e012266e2f52,,split_by_expression,395;2780
+19,split_by_group,18,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,6d797c27-2f70-49ef-8b7d-bf0e73ea5394,,split_by_expression,145;2980
+20,send_message,19,ABTest_test-first-person_alternative,,,,,Thanks so much for answering these questions @fields.user_name! I really appreciate it.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,12e7b94d-6203-48db-bf19-2141d8f1dded,,execute_actions,270;3380
+21,send_message,19;19,ABTest_test-first-person_Default;,,,,,Thanks so much for answering these questions @fields.user_name! We really appreciate it.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,433e5a0e-1dec-437b-8988-9633b3f29930,,execute_actions,20;3380
+22,split_by_group,18,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,6575fd3f-731c-43d1-ae1d-3a23d306f3ad,,split_by_expression,645;3180
+23,send_message,22,ABTest_test-first-person_alternative,,,,,Thanks so much for answering these questions! I really appreciate it.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,43db261e-d561-4c67-8ea8-1b4acffbca86,,execute_actions,770;3380
+24,send_message,22;22,ABTest_test-first-person_Default;,,,,,Thanks so much for answering these questions! We really appreciate it.,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/you_deserve_a_star.jpg,,,,358f8cb7-1b6b-44e2-a0d1-c6cde55fa1e3,,execute_actions,520;3380
+25,save_value,20;21;23;24,,,,,survey parenting count,0,,,,,,,,,,,,,,,a96d6a19-a93b-4852-9d54-34a40f324287,,execute_actions,770;3560
+26,save_value,25,,,,,surveyparenting completion,"@(fields.surveyparenting_completion & fields.survey_number & "","" & now() &""|"")",,,,,,,,,,,,,,,a96d6a19-a93b-4852-9d54-34a40f324287,,execute_actions,770;3560
+27,save_value,15;16;17,Expired;Expired;Expired,,,,has expired,survey_parenting,,,,,,,,,,,,,,,72b2233e-d9ca-4d9a-9159-29f099057496,,execute_actions,2230;2620
+28,send_message,27,,,,,,It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.,,,,,,,,,,,,,,,4d5b025f-6a02-47d2-b481-04b172d918f8,,execute_actions,2210;2740
+29,save_value,5,NO N,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,d2560d8c-1a64-4bde-8499-38df1b56ed8d,,execute_actions,2720;1620
+30,save_value,29,,,,,surveyparenting datestamps,"@(fields.surveyparenting_datestamps & ""no,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,d2560d8c-1a64-4bde-8499-38df1b56ed8d,,execute_actions,2720;1620
+31,split_by_value,30,,,,,,@fields.survey_parenting_count,,,,,,,,,,,,,,,b95d83a7-054d-445c-9b89-047678f6eeb0,,split_by_contact_field,2780;1780
+32,split_by_value,31,@fields.max_skip_survey,@fields.survey_parenting_count,has_number_lte,ask again,,@fields.user_name,,,,,,,,,,,,,,,b4cdc17e-ee72-4a1a-8924-2aced524b1a2,,split_by_expression,2555;1880
+33,send_message,32,,@fields.user_name,has_text,user_name,,It is okay if this is not a good time. We will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,6ea4a223-4c6e-4d92-a785-3a60e34d405e,,execute_actions,2430;2280
+34,send_message,32,,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later!,,,,,,,,,,,,,,,bd4e1c50-e65f-4ce3-a4f8-af437cf48795,,execute_actions,2680;2280
+35,split_by_value,31,,,,,,@fields.user_name,,,,,,,,,,,,,,,2d8b630f-2310-428f-a4f7-ee0719b34331,,split_by_expression,3085;2080
+36,send_message,35,,@fields.user_name,has_text,user_name,,It is okay if this is not a good time. Chat later @fields.user_name!,,,,,,,,,,,,,,,72f5097b-b957-49a9-bf11-ff23eb67ce29,,execute_actions,2960;2280
+37,send_message,35,,,,,,It is okay if this is not a good time. Chat later!,,,,,,,,,,,,,,,006e11aa-80cd-4860-a66f-549e8dc1156c,,execute_actions,3210;2280
+38,save_value,5,,,,,last interaction,@(now()),,,,,,,,,,,,,,,d6fb0477-6386-4402-91d9-2943ee8079e2,,execute_actions,2800;740
+39,send_message,38,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,674bf267-84d5-41be-ae0c-67e1e04b7ebb,,execute_actions,2840;860
+40,go_to,39,,,,,,2,,,,,,,,,,,,,,,,,,

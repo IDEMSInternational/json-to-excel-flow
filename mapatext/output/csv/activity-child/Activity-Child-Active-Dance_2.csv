@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Dance Party
+•	Play or sing your favourite music and dance around the room.
+•	Dance in different ways or with different parts of your body.
+•	For example, “Dance like a monkey”, “Dance like a chicken” or “Dance with just our knees and hips.”
+•	Think up different instructions. Be seriously playful! 
+•	When the music stops, everyone does a funny freeze. 
+•	Give your child a chance to be the one to stop the music! ",,,,,,,,,,,,,,,15f69239-e365-4bab-96d8-db362016519d,,execute_actions,;

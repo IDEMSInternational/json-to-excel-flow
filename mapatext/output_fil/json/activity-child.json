@@ -1,0 +1,543 @@
+{
+  "PLH - Activity - Child - Active - Name that tune": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Hulaan ang tonong iyon\n•\tAng unang manlalaro ang siyang mamimili o kakanta ng kanta.\n•\tAng lahat ay kailangang hulaan ang pangalan ng tono (para mas maging mahirap pa ito, pwede nilang hulaan kung sino ang kumanta).\n•\tAng unang tao na makahula ng tama ang syang susunod na magiging lider na pipili o kaya ay kakanta ng susunod na kanta.",
+      "_nodeId": "4c163703-e3a1-4984-8c01-2c6fe0f310da",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Worms go home": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Uwi Mga Bulate\n•\tHumiga sa iyong tiyan at magpanggap na ang iyong mga hintuturo ay mga malilikot na bulate. \n•\tGamit ang iyong kabilang kamay, gumawa ka ng isang bahay ng bulate sa pamamagitan ng paggawa ng bilog gamit ang iyong mga daliri at hinlalaki, at ilagay ito sa ibabaw ng sahig. \n•\tSumigaw ng isang utos para sa paghawak ng iyong daliri, kagaya ng \"Mga bulate sa ilong\" o \"Mga bulate sa tainga\"\n•\tKapag nakatawag ka na ng \"Uwi mga bulate\", ang iyong malikot na bulate ay kailangang maghanap agad-agad ng bahay ng bulate. \n•\tAng huling uod na makahanap ng tirahan ang magsasabi ng mga susunod na direksyon. \n•\tMaglaro ka lang hanggang maramdaman mo na sumisigla ka na mula sa pagkakahiga. ",
+      "_nodeId": "4da59b3b-5ea0-4343-ae75-931771fff35f",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Crazy chicken": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Crazy Chicken\n•\tAlugin ang iyong kaliwang kamay sa hangin ng walong beses habang bumibilang ng hanggang walo \n•\tGawin ito ng mabilis at malakas sa abot ng iyong makakaya\n•\tUlitin gamit ang iyong kabilang kamay. Ulitin gamit ang bawat paa.\n•\tGawin ito nang 7 na ulit, pagkatapos ay 6 na ulit at magpatuloy hanggang makaabot nang 1.\n•\tAng lahat ay sumigaw ng \"Crazy Chicken\" at gawin ang pinaka magaling nilang pagsasayaw ng Crazy Chicken",
+      "_nodeId": "9d2afa2a-503a-4844-a0e1-bc5f48d680cd",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Dance choreography": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dance choreography\n•\tGumawa ka ng mga galaw o sayaw para sa mga paboritong kanta ng iyong anak.\n•\tMay mauunang gagawa ng galaw at ang iba ay kokopyahin lang Ito. \n•\tAng lahat ay magsasalitan sa pagiging lider.\n•\tGawin ito sa harap ng mga kasama ninyo sa bahay!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_dancing_and_playing_instruments.jpg",
+      "_nodeId": "b8a4b331-406c-4555-be9d-a547b8cddc92",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Dance party": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Sayawan\n•\tPatugtugin o awitin ang paborito mong kanta at sumayaw sa kuwarto.\n•\tSumayaw ng iba't-ibang paraan o gamit ang iba't-ibang bahagi ng iyong katawan.\n•\tHalimbawa, \"Sumayaw na parang unggoy\", \"Sumayaw na parang manok\" o \"Sumayaw gamit lamang ang mga tuhod at balakang\". \r\n•\tMag-isip ng iba-ibang direksyon. Maging masaya at mapaglaro! \n•\tKapag tumigil ang tugtog, ang lahat ay gagawa ng nakakatawang pagtigil.\n•\tBigyan ang iyong anak ng pagkakataon na siya mismo ang magpapatigil sa musika! ",
+      "_nodeId": "15f69239-e365-4bab-96d8-db362016519d",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Freeze dance": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Freeze dance\n•\tMagpatugtog ng musika o isang tao ang aawit ng kanta, at ang iba ay sasayaw.\n•\tKapag ang tugtog ay tumigil, ang lahat ay hindi dapat gagalaw.\n•\tAng huling tao na sumasayaw pa ay magiging judge para sa susunod na round.\n•\tAng isa pang uri ng Freeze Dance ay ang Animal Dance: Pareho lang siya sa Freeze Dance, pero kapag tumugil na ang kanta, isang miyembro ng pamilya ang sisigaw ng pangalan ng isang hayop, at ang lahat ay dapat gayahin ang hayop na iyon.",
+      "_nodeId": "365585b0-a367-4a36-95ca-893ff22f2c66",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Make housework fun": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Gawing nakakaaliw ang mga gawain sa bahay\n•\tAng mga gawain sa bahay ay hindi nakakaaliw... o hindi nga ba? Pwede mo itong gawing isang laro, kagaya nito. \n•\tMayroong apoy sa bundok! Takbo, takbo, takbo!\n•\tMayroong apoy sa bundok! Takbo, takbo, takbo!\n•\tHawakan ang anumang kulay pula. \n•\tMayroong apoy sa bundok! Takbo, takbo, takbo!\n•\tMayroong apoy sa bundok! Takbo, takbo, takbo!\n•\tTumalon nang sampung beses.\n•\tMayroong apoy sa bundok! Takbo, takbo, takbo!\n•\tMayroong apoy sa bundok! Takbo, takbo, takbo!\n•\tIlagay ang mga sapatos sa shoe rack, ito ay nakakaaliw, nakakaaliw, nakakaaliw!",
+      "_nodeId": "165f85de-3cfb-4064-bf5e-26dbceed4102",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Mirror": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Salamin\n•\tAng laro na ito ay puweding laruin nang dalawahan o kahit na pang-grupo.\n•\tTumayo nang nakaharap sa bawat isa o ng nakabilog.  \n•\tMay isang mangunguna muna habang ang iba naman ay kailangan kumopya, susubukang gumalaw kasabay ng lider.\n•\tSiguraduhin na ang lider ay gumagalaw nang mabagal para makasunod ang iba. Subukang igalaw ang iba't-ibang bahagi ng katawan at sa iba't ibang lebel.\n•\tPagkatapos, palitan naman kung sino ang lider. Bigyan ng pagkakataon ang lahat na maging lider.\n•\tSubukan ito ng walang lider!",
+      "_nodeId": "36b49d4e-58cd-4884-af40-4505b2961c14",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Rain on the mountain": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Ulan sa Bundok\n•\tSabihin, \"May ulan sa bundok\".\n•\tAng iba naman ay sasagot ng \"Takbo, takbo, takbo\" habang tumatakbo palibot sa lugar. \n•\tMagsabi ng iba-ibang direksyon. Halimbawa, hawakan ang isang bagay na kulay pula o tumalon na parang palaka.\n•\tMagpatuloy sa paglalaro at laging baguhin ang mga direksyon. \n•\tPwede mo itong gamitin bilang isang nakakaaliw na paraan para matutunan ang mga kulay o kahit ang paglilinis! ",
+      "_nodeId": "97e275ac-075f-4569-a87a-f5b790a492ee",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        140,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Run around and do this": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Tumakbo at Gawin Ito \n•\tAng lahat ay magtatakbuhan sa paligid ng kuwarto o hardin. Siguraduhin na ang espasyo ay sapat ang lawak at ligtas.\n•\tAnumang oras, kahit sino ay pwedeng tumigil sa isang lugar at magsabi ng, \"Kapag nakaabot ka rito, gawin mo ito!\"  \n•\tPwedeng gawin ang kahit ano: Push-ups, pagkanta, pag-iyak, pagtalon… \n•\tHabang mas naglalaro ka, mas dumarami ang pwede pang gawin sa iba pang mga lugar.  \n•\tAng bawat tao ay maaring magdesisyon kung saan pupunta at kailan.  \n•\tNakakaaliw makihalubilo sa mga taong gumagawa ng mga bagay na pareho sa ginagawa mo!",
+      "_nodeId": "1511186e-6b84-40d8-9cee-897b6c4fff30",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - See it be it": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Gayahin Mo Ang Nakikita Mo\n•\tTumingin sa paligid at pangalanan ang isang bagay na nakikita mo. Halimbawa, isang puno o isang baso.\n•\tSabihin sa iyong anak, \"Nakakakita ako ng isang puno, tara at gayahin natin!\"\n•\tMagbilang mula lima at gawin ang hugis puno gamit ang iyong mga katawan. Maging malaki at nakakatawa sa abot ng iyong makakaya.\n•\tNgayon hayaan na ang anak mo naman. Ano ang nakikita niya?\n•\tKung maaari, lumabas ng bahay at pumunta sa may maraming puno o sa dagat. Kung hindi maaari, laruin ito sa loob. \n•\tKapag nagawa na nang ilang ulit, magdagdag ng galaw at tunog!",
+      "_nodeId": "e502c546-da5f-4f37-b808-2745d146e141",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Ship to shore": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Mula Bangka Patungong Pampang \n•\tIsang nakakaaliw na laro kung saan ang mga bata ay natututo ng iba't-ibang parte ng isang bangka. Ang lahat ay kailangan pumunta sa lugar o gawain na sasabihin mo.\n•\tAng ibig sabihin ng \"Bow\" ay tumakbo sa harapan ng bangka (kuwarto).\n•\tAng ibig sabihin ng \"Stern\" ay tumakbo sa likod ng bangka.\n•\t\"Starboard\" ay nangangahulugang tumakbo sa kanang bahagi at ang \"Port\" naman ay tumakbo sa kaliwang bahagi.\n•\t\"Umakyat sa Katig\": Magpanggap na umaakyat.\n•\t\"Maglinis ng Bangka\": Magpanggap na nililinis ang sahig.\n•\t\"Lifeboat, [bilang] mga tao!\": maghawakan ng mga kamay at bumuo ng bilog kasama ang bilang ng mga tao at gawin ang knee bends.\n•\tAng lahat ng wala sa lifeboat ay kailangang lumangoy!",
+      "_nodeId": "b87b8bc7-dc19-480a-9cc0-67f2e24b8cc4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Stage Directions": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Stage Directions\n•\tIto ay pareho rin sa Mula Bangka Patungong Pampang, pero may kasamang Stage Directions. Ito ay pwdeng gawin sa isang mataas at ligtas na lugar. Ang direktor ay ang magbibigay ng mga direksyon.\n \"Stage Right\" ibig sabihin pumunta sa kanan.\n \"Stage Left\" ibig sabihin pumunta sa kaliwa.\n \"Down stage\" ibig sabihin pumunta sa ibaba. \n Ang ibig sabihin ng \"upstage\" ay pumunta ka sa itaas.\n Ang ibig sabihin ng \"Center Stage\" ay pumunta ka sa gitna ng entablado \n•\tPwede kang magkaroon ng nakakaaliw na mga galaw kagaya ng \"Madramang Pagkamatay, Pag-bow sa iyong manonood, Buksan ang Kurtina, Linisin ang Sahig,\" atbp. \n•\tImbes na \"lifeboat\" gawin mo itong \"Cast of Actors.\" Ang lahat ng wala sa cast ay magiging direktor!",
+      "_nodeId": "663f0bc2-8328-4d20-8048-0992a6ef6361",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Superpowers": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Superpowers\n•\tMag-isip ng kapangyarihan. Halimbawa, pagpunta kahit saan sa isang iglap, paglalakbay sa kahit anong dekada, pagbabasa ng isip. \n•\tTanungin mo ang anak mo \"Kung may kapangyarihan ka na [...] Paano mo Ito gagamitin?\n•\tHikayatin mo siya na pangalanan ang kanyang sarili ng pangalang superhero at kailangang i-arte niya ito. \n•\tNgayon hayaan mo siyang pumili ng super power para sa iyo!\n•\tSiguraduhing ia-arte mo din ito! ",
+      "_nodeId": "a6c4f514-47c0-4773-948c-808f8eb1e511",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - Transform the object": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Baguhin ang Bagay\n•\tAng mga pang-araw-araw na gamit sa bahay tulad ng walis, pamunas, o panyo ay maaaring maging nakakaaliw na kagamitan para sa mga palaro\n•\tIlagay ang isang bagay sa gitna ng kwarto. Kapag may ideya ang isa, siya ay tatalon sa gitna at ipapakita niya sa iba kung ano kaya ang bagay na ito\n•\tHakimbawa, ang walis ay pwedeng sakyan kagaya ng kabayo o kaya'y mikropono o isang gitara!",
+      "_nodeId": "75e04fb2-f256-433a-b813-c4278ccfbf97",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Active - What are you doing": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Anong Ginagawa Mo? \n• Ang laro ay mas magandang laruin kapag higit pa sa 2 tao ang naglalaro.\n• Ang bawat isa ay magpapanggap na may ginagawa--halimbawa, nagsusuklay ng buhok \n• Ang pangalawang tao ay magtatanong, \"Ano ang ginagawa mo?\"\n• Ang unang tao ay kailangan magsabi ng isang bagay na walang ugnayan sa pagsuklay ng buhok, halimbawa, \"Pagtatali ng aking mga sapatos.\"  \n• Ang pangalawang tao ngayon ay magpapanggap na nagtatali ng kanyang sapatos hanggang ang bagong magtatanong, \"Ano ang ginagawa mo?\" \n• Ang sagot ng pangalawang tao ay dapat iba sa kung ano talaga ang kanilang ginagawa!\nDapat i-arte o i-akting ng susunod na tao ang sagot ng pangalawang tao at kapag may nagtanong kung ano ang ginagawa nila, ang kanilang sagot ay dapat na naiiba sa talagang ginagawa nila!",
+      "_nodeId": "cdb75de1-082a-489f-b529-895a38dc7937",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - At the end of the day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Sa Katapusan ng Araw\n•\tSa bawat pagtatapos ng araw, maglaan ng isang minuto para isipin ang araw.  \n•\tKausapin ang iyong anak tungkol sa isang positibo o masayang bagay na kanilang ginawa.\n•\tPurihin mo ang sarili mo para sa isang bagay na ginawa mo nang mabuti ngayong araw.\n•\tMag-isip ng isang bagay na pinagpapasalamat mo.  \n•\tIsa kang bituin!",
+      "_nodeId": "2c4444cc-c093-4331-8a76-557ff126b97e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        60
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Blind Dragon": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Kapreng bulag\n• Ang larong ito ay pinakamasaya kapag hindi bababa sa 4 na tao ang maglalaro\n• Magkuwento tungkol sa mabangis na Kapre na nakatira malapit sa nayon. Palihim siyang pumupunta sa nayon tuwing gabi at nagnanakaw ng kayamanan ng mga tao – kahit anong pinapahalagahan nila.  Kung sino man ang susubok na bawiin ang kanilang kayamanan ay kakainin. Nagpatuloy ito nang ilang taon hanggang tumanda, tumaba, at nabulag ang Kapre mula sa pag-upo sa kaniyang kayamanan at walang-sawang pagtitig sa ningning ng mga ginto. Sinubukan ng taong-bayan na palihim na pasukin ang kanyang kuweba at bawiin ang kayamanan ng kanilang mga kamag-anak. \n• May isang gaganap na Kapre. Ang Kapre ay nakaupo nang may piring o nakapikit ang mga mata habang napapaligiran ng napakaraming kayamanan. \n• Bawat isa ay may pirasong kayamanan na kailangan nilang makuha ulit. \n• Kung narinig ka ng kapre at nakaturo sayo, kailangan mong bumalik sa pansimulang puwesto. \n• Isang tao lamang ang maaaring sumubok na kunin ang kayamanan sa isang oras.",
+      "_nodeId": "39fb15eb-caf2-4709-9bc4-a7a83f2b27d4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        40
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Dancing with Angels": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Sumasayaw Kasama ang Mga Anghel\n•\tAng aktibidad na ito ay makakatulong sa mga bata na matutunan kung paano mamuno. Nakakabuo rin ito ng tiwala sa sarili at sa iyong anak.\n•\tTumugtog ng isang bahagi ng tugtugin na marahan at nakaka-relax para magkaroon ng magaan at kalmadong galaw.\n•\tIsang tao ang mauuna at ipipikit niya ang kanyang mga mata habang may ibang tao na magiging guardian angel o tagapagtanggol.\n•\tAng guardian angel ay dapat maprotektahan ang tao mula sa kapahamakan habang nakapikit at dahan-dahan silang sasayaw nang magkasama.\n•\tKapag natapos na ang tugtugin, ang tagasayaw ay maari nang buksan ang kanyang mga mata bago sila magpalit ng papel.",
+      "_nodeId": "c8cc230d-4ae0-4006-ad80-2da3fb9afaf2",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Drawing": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Pagguhit\n•\tAng mga bata ay mahilig gumuhit! Nakakatulong itong mapalago ang pagiging malikhain.\n•\tKumuha ng mga panulat o kaya krayola at isang pirasong papel o kaya'y karton.\n•\tHayaan ang iyong anak na malayang gumuhit ng kahit na anong gusto nila.\n•\tHabang ang iyong anak ay gumuguhit, gumamit ng mga salita upang ilarawan ang ginagawa nila: \"Nakikita kitang gumuguhit ng isang tao\" o kaya \"Nakikita kitang gumagawa ng linya gamit ang pulang krayola.\"\n•\tPwede ka ring matuwa habang gumuguhit sa tabi niya.\n•\tIlagay ang mga guhit nila sa pader, pridyeder, o kaya pang palamuti sa labas ng bahay- mararamdaman ng iyong mga anak na sila ay pinahahalagahan!",
+      "_nodeId": "403486f0-9115-4dc4-bde7-44401c511850",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Listening to sounds": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Pakikinig sa Mga Tunog\n•\tUmupo at ipikit ang iyong mga mata\n•\tIlang tunog ang iyong naririnig? Pakinggan ang mga tunog sa loob at labas ng kuwarto. Bilangin ang mga ito sa iyong mga daliri\n•\tPagkatapos ng sampung segundo, Ilang daliri ang nakataas? Ano-anong mga tunog ang narinig mo?\n•\tSubukan muli sa sampung segundo. \n•\tNakakarinig ka ba ng kahit anong bagong tunog? Nakakarinig ka ba ng kahit anong tunog sa loob ng iyong sariling katawan?\n•\tPansinin kung ano ang nararamdaman mo at tanungin ang iyong anak kung kumusta ang nararamdaman nila.",
+      "_nodeId": "1f24c5c6-15a3-44b5-b4db-d5031cfa5387",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Memory game": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Larong pang-memorya - \"pag natapos na ang COVID-19...\"\n•\tMay mauunang magsabi, \"Pag natapos na ang COVID-19, pupunta ako sa...(halimbawa: pupunta sa parke)\"\n•\tAng pangalawang tao ay dudugtong sa plano ng unang tao, \"Pag natapos na ang COVID-19, pupunta ako sa parke at...(halimbawa: bibisitahin ang aking best friend)\"\n•\tBawat tao ay magdagdag sa mga naunang listahan ng mga plano, sinusubukang mag-isip ng mga nakakatuwang bagay na gagawin pag natapos na ang COVID-19.",
+      "_nodeId": "ef5a9819-dac2-4b9f-b275-7740d95bacf3",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Self portrait": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Larawan ng Sarili\n•\tNarito ang paraan kung paano iguguhit ng iyong mga anak ang kanilang mga sarili!\n•\tMaghanap ng malaking piraso ng papel o cardboard. Kailangang pare-pareho ito ng haba o medyo mas mataas sa iyong anak\n•\tSabihan ang iyong anak na humiga sa papel. Maingat na iguhit ang balangkas o outline ng iyong anak.\n•\tNgayon, hayaan ang iyong anak na sulatan ang balangkas o outline: mukha, buhok, kasuotan, sapatos, o anumang gusto nila!\n•\tSabihan ang iyong anak na iguhit ang mga bagay na gusto at ayaw nila sa labas ng balangkas o oultine\n•\tMagkaroon ng pag-uusap kasama ang iyong anak ptungkol sa mga bagay na ito. Maaaring may matutunan ka tungkol sa iyong anak!\n•\tPwede mong ilagay ang kanilang balangkas o outline sa kuwarto nila o kaya kahit saan sa bahay - mararamdaman ng iyong mga anak na sila ay pinahahalagahan!",
+      "_nodeId": "80bb18c8-0615-45ff-a8f4-66486ff58bc8",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Story time": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Story time\n•\tSimulan ang kuwento ng \"Noong unang panahon may isang...\"\n•\tHayaan ang iyong anak na buuin ang susunod na pangungusap\n•\tPagkatapos, gumawa ka ng isang pangungusap\n•\tMagsalitan hanggang makabuo ng maganda at bagong kuwento\n•\tSiguraduhing tatapusin mo ang kwento sa isang positibong paalala.\n•\tTanungin ang iyong anak kung ano ang paborito niyang parte ng kuwento!",
+      "_nodeId": "7a01f775-c7a1-41b1-8418-45e3718b28b4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - The Interrupter": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Ang Palasabat\n•\tPumili ng taga-kuwento para magsimulang makabuo ng kuwento.\n•\tAng tagapakinig ng kuwento ay maaaring sumabat at magsabi ng salita.\n•\tAng tagapagsalaysay ay kailangang iakma ang salita na iyon sa kanyang kuwento.\n•\tSumubok ng ibang taga-kuwento! ",
+      "_nodeId": "13619057-c494-44e1-aa59-5c2108f5dfdf",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - Three options": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Tatlong pagpipilian\n•\tMag-isip ng tatlong magkakaibang sitwasyon. Halimbawa, pagmamaneho ng sasakyan, paglalayag ng bangka, o pagpapalipad ng eroplano\n•\tSabihin ang mga iyon sa iyong anak at tanungin siya, \"Alin ang ang gusto mo?\"\n•\tTanungin siya kung bakit?\n•\tNgayon, mag-isip ng tatlo pang sitwasyon o kaya tanungin ang iyong anak na gawin ito para sa iyo ",
+      "_nodeId": "e55df72f-a518-4272-8450-b2da2ef59848",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Child - Calm - When I was younger": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Noong Ako ay Bata Pa\n•\tGustong gusto ng mga bata na makinig ng mga kuwento tungkol sa iyong buhay!\n•\tIsipin mo ang panahong ikaw ay bata pa, noong may MAHALAGANG nangyari sa iyo\n•\tMaaari itong pakikipagsapalaran, masayang alaala, o kaya mga pagsubok na iyong naranasan\n•\tIbahagi ito sa iyong mga anak at pansinin kung paano sila nakikinig!",
+      "_nodeId": "d0bcb4a9-7204-4763-aed4-6db4e6cdd5b5",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"5. Listen and talk to each other
+
+Listening and talking to those around us is key to a more peaceful home. Talking to your partner about issues before they become problems can help avoid arguments from building up.",,,,,,,,,,,,,,,e22185db-d2da-4f78-83a4-3f3641e8f811,,execute_actions,480;40
+2,send_message,1,,,,,,Would you like to see a comic about listening and talking to each other?,Yes,No,,,,,,,,,,,,,508a901d-4b8c-4d78-a820-453a0ee7dee8,,execute_actions,800;320
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,fd18af50-5673-44be-8ac2-57c7d6423ecf,,wait_for_response,800;500
+4,send_message,3,yes y,,has_any_word,Yes,,"Parent 1: “Are you okay, my love? You look tired.”
+
+Parent 2: “I didn’t sleep well last night and so I am feeling quite tired.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_1.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+5,send_message,4,,,,,,"Parent 1: “I am sorry to hear that, Amir. Is there anything I can do to help?”
+
+Parent 2: “I might try and get an earlier rest this evening.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_2.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+6,send_message,5,,,,,,"Parent 1: “I can take over the children’s bedtime routine after dinner tonight, so that you can get some extra rest.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_3.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+7,send_message,6,,,,,,"Parent 2: “That would be lovely. Thank you so much, my dear.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/listen_and_talk_to_each_other_comic_4.png,,,,e568694f-c3de-45db-9604-f2381990b8a4,,execute_actions,460;320
+8,send_message,3,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,3db2e120-9fbf-4f1c-9776-754adc4fc63e,,execute_actions,1000;640
+9,go_to,8,,,,,,2,,,,,,,,,,,,,,,,,,

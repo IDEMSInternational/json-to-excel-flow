@@ -1,0 +1,35 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.current_week_in_program,,,,,,,,,,,,,,,e0073e08-a364-46f6-9b54-8fc91ca3d36e,,split_by_contact_field,600;60
+2,send_message,1,1,@fields.current_week_in_program,has_number_lte,first week,,Congratulations! Natapos mo na ang unang linggo. Napakabilis ng panahon! ,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,0bcc83b9-5ce8-4c8c-ac0c-0958b866b4a7,,execute_actions,420;180
+3,send_message,1,,,,,,Congratulations! Natapos mo ang isa pang linggo!,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,21c1da84-bdc7-415f-b709-1e8c56d137ce,,execute_actions,860;180
+4,save_flow_result,2;3,,,,,n skills week,"@(count(split(fields.week_toolkit,"","")))",,,,,,,,,,,,,,,36aac485-2ee8-4924-b614-21f13d942564,,execute_actions,380;460
+5,save_flow_result,4,,,,,n incompletes week,"@(count(split(fields.week_toolkit_incompletes,"","")))",,,,,,,,,,,,,,,36aac485-2ee8-4924-b614-21f13d942564,,execute_actions,380;460
+6,split_by_value,5,,,,,,@results.n_skills_week,,,,,,,,,,,,,,,e2140f78-4652-4c58-a78d-5037b45ada3f,,split_by_run_result,420;740
+7,send_message,6,1,@results.n_skills_week,has_number_eq,1,,May naidagdag kang isang kasanayan sa iyong Parenting Toolkit ngayong linggo:,,,,,,,,,,,,,,,3ca5d845-bff0-455f-956e-be6ad3049c4d,,execute_actions,200;880
+8,send_message,6,2,@results.n_skills_week,has_number_gte,>= 2,,May naidagdag ka ng isang @results.n_skills_week na kasanayan sa iyong Parenting Toolkit ngayong linggo:,,,,,,,,,,,,,,,1993d30d-37fa-49ba-bd9a-9d456d544206,,execute_actions,660;840
+9,save_flow_result,7;8,,,,,type_of_toolkit,week_toolkit,,,,,,,,,,,,,,,eecfb2f1-ed52-42a7-87ef-89bd3412de5f,,execute_actions,200;1020
+10,start_new_flow,9,,,,,,PLH - Internal - Print parenting toolkits,,,,,,,,,,,,,,43f2c34f-3646-414c-8cf9-cc3edfadea0b,94962e15-97e0-48fa-86d7-cadecaabc7b2,,split_by_subflow,180;1140
+11,save_value,10;10,Complete;Expired,,,,toolkit history,@(fields.toolkit_history & fields.week_toolkit),,,,,,,,,,,,,,,4d47e694-67b1-45a3-a8ab-7635889b1299,,execute_actions,580;1180
+12,save_value,11,,,,,week toolkit,,,,,,,,,,,,,,,,9623bb6b-7e2f-49d3-ba96-12577f5dc512,,execute_actions,580;1280
+13,split_by_value,12;6,,,,,,@results.n_incompletes_week,,,,,,,,,,,,,,,27d4a120-12a6-470f-95b2-1fb686077bfb,,split_by_run_result,920;1200
+14,send_message,13,0,@results.n_incompletes_week,has_number_gt,>0,,May naging pag-usad ka rin sa mga kasanayang ito: ,,,,,,,,,,,,,,,b1637e69-f544-435e-9358-3f0f09f8c3d7,,execute_actions,220;1420
+15,save_flow_result,14,,,,,type_of_toolkit,week_incomplete,,,,,,,,,,,,,,,53c5ce09-fb5a-4214-b765-add325569e3f,,execute_actions,220;1560
+16,start_new_flow,15,,,,,,PLH - Internal - Print parenting toolkits,,,,,,,,,,,,,,43f2c34f-3646-414c-8cf9-cc3edfadea0b,cf362209-af66-4848-80fd-56e65392ce98,,split_by_subflow,140;1680
+17,send_message,16;16,Complete;Expired,,,,,"I-type ang ""Toolkit"" kung gusto mong balikan ang alin man sa mga payo na ito.",,,,,,,,,,,,,,,73620d77-30cd-41f7-b620-dc8dac6fe5cc,,execute_actions,460;1740
+18,save_value,13;17,,,,,incomplete toolkit history,@(fields.incomplete_toolkit_history & fields.week_toolkit_incompletes),,,,,,,,,,,,,,,42a2469b-444e-4457-a919-1f47e07854a0,,execute_actions,740;1720
+19,save_value,18,,,,,week toolkit incompletes,,,,,,,,,,,,,,,,999add31-385e-441f-bdc2-509ad29cc5d3,,execute_actions,740;1820
+20,send_message,19,,,,,,Gaano nakatulong ang mga mensaheng ito sa pagpapabuti ng iyong relasyon sa iyong anak?,Hindi nakakatulong,Nakakatulong nang kaunti,Nakakatulong,Lubos na nakakatulong,Lubus-lubos na nakakatulong,Pinipiling hindi sagutin,,,,,,,,,1d12ff59-0eed-4f8d-a0eb-5eae16f0abc0,,execute_actions,220;2300
+21,wait_for_response,20,,,,,feedback ,,,,,,,,,,,,,,,,b3b7bd58-8c92-4ca8-8f11-844ce3e51b1d,,wait_for_response,440;2580
+22,save_value,21;21;21;21;21;21,hindi nakakatulong;nakakatulong nang kaunti;nakakatulong;lubos na nakakatulong;lubus-lubos na nakakatulong;pinipiling hindi sagutin,,has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase;has_only_phrase,Not;Little;Helpful;Very;Extremely;Prefer,feedback on programme,"@(fields.feedback_on_programme & results.feedback.category  & "","" & fields.current_week_in_program & "",""& now() & ""|"" )",,,,,,,,,,,,,,,2622e0bb-527c-40fa-ae83-ced07fbc2823,,execute_actions,340;2780
+23,save_value,22,,,,,last interaction,@(now()),,,,,,,,,,,,,,,2622e0bb-527c-40fa-ae83-ced07fbc2823,,execute_actions,340;2780
+24,send_message,21,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,a1248d98-aa83-439d-9683-c03cafd3cc38,,execute_actions,980;2400
+25,go_to,24,,,,,,20,,,,,,,,,,,,,,,,,,
+26,send_message,23,,,,,,Aling parenting tip ang naging pinaka kapaki-pakinabang para sa'yo?,Mga gawain,Pagkabawas ng stress,Mga pag-uugali ng bata,Iba pa,Wala sa anumang tips ang nakatulong,,,,,,,,,,20860823-6cc2-490d-b19d-593f741ffc11,,execute_actions,460;2940
+27,wait_for_response,26,,,,,best tip,,,,,,,,,,,,,,,,d778f367-232b-4eb4-9309-183bf84e96f8,,wait_for_response,440;3140
+28,save_value,27;27;27;27;27,mga gawain;stress;pag-uugali;wala;iba pa,,has_any_word;has_any_word;has_any_word;has_any_word;has_any_word,Activities;Stress;Behaviour;None;Other tips,most useful tip,"@(fields.most_useful_tip & results.best_tip.category  & "","" & fields.current_week_in_program & "",""& now() & ""|"" )",,,,,,,,,,,,,,,db29bb35-dd12-4bfa-bfe4-ffbd7c3047cb,,execute_actions,540;3340
+29,save_value,28,,,,,last interaction,@(now()),,,,,,,,,,,,,,,db29bb35-dd12-4bfa-bfe4-ffbd7c3047cb,,execute_actions,540;3340
+30,send_message,29,,,,,,"Kung may napansin ka nang mga pagbabago sa iyong buhay o sa relasyon mo sa iyong mga anak, mabuti 'yan! 
+
+Kung wala ka pang napansing pagbabago, magpatuloy lang. Minsan, kailangan ng mahabang panahon para magbago ang mga bagay na ito. Alam naming kaya mo iyan!",,,,,,,,,,,,,,,35a0a5e4-d2c5-42e6-a2b9-d3aa34c93ea7,,execute_actions,560;3520
+31,send_message,27,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,7fedab82-8a1a-4ba7-b53f-908e1b492074,,execute_actions,900;2920
+32,go_to,31,,,,,,26,,,,,,,,,,,,,,,,,,

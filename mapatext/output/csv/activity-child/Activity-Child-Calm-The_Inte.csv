@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"The Interrupter
+•	Choose a storyteller to start making up a story.
+•	Story listeners can interrupt with a word at any time.
+•	The storyteller needs to fit that word in their story.
+•	Try with a different storyteller! ",,,,,,,,,,,,,,,13619057-c494-44e1-aa59-5c2108f5dfdf,,execute_actions,;

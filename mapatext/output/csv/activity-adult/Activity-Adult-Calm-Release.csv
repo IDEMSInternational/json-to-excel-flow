@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Release Some Energy
+•	Baba da bi da ba da baaa! Pause Power! 
+•	What’s Pause Power I hear you say? It’s the ability to transform from a grumpy, angry person into a calm, clear one. 
+•	When I’m feeling frustrated I plant my feet firmly on the ground and I breathe in and out three times as slowly as I can. Sometimes I imagine I’m smelling a flower and blowing out a candle. 
+•	Da ta! Pause Power! My transformation from grumpy to calm is complete!",,,,,,,,,,,,,,,360c54a9-80f6-40d0-81e4-df4a45048b85,,execute_actions,220;80

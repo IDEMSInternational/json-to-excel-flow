@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Larawan ng Sarili
+•	Narito ang paraan kung paano iguguhit ng iyong mga anak ang kanilang mga sarili!
+•	Maghanap ng malaking piraso ng papel o cardboard. Kailangang pare-pareho ito ng haba o medyo mas mataas sa iyong anak
+•	Sabihan ang iyong anak na humiga sa papel. Maingat na iguhit ang balangkas o outline ng iyong anak.
+•	Ngayon, hayaan ang iyong anak na sulatan ang balangkas o outline: mukha, buhok, kasuotan, sapatos, o anumang gusto nila!
+•	Sabihan ang iyong anak na iguhit ang mga bagay na gusto at ayaw nila sa labas ng balangkas o oultine
+•	Magkaroon ng pag-uusap kasama ang iyong anak ptungkol sa mga bagay na ito. Maaaring may matutunan ka tungkol sa iyong anak!
+•	Pwede mong ilagay ang kanilang balangkas o outline sa kuwarto nila o kaya kahit saan sa bahay - mararamdaman ng iyong mga anak na sila ay pinahahalagahan!",,,,,,,,,,,,,,,80bb18c8-0615-45ff-a8f4-66486ff58bc8,,execute_actions,;

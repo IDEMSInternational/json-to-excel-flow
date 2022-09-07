@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Freeze dance
+•	Magpatugtog ng musika o isang tao ang aawit ng kanta, at ang iba ay sasayaw.
+•	Kapag ang tugtog ay tumigil, ang lahat ay hindi dapat gagalaw.
+•	Ang huling tao na sumasayaw pa ay magiging judge para sa susunod na round.
+•	Ang isa pang uri ng Freeze Dance ay ang Animal Dance: Pareho lang siya sa Freeze Dance, pero kapag tumugil na ang kanta, isang miyembro ng pamilya ang sisigaw ng pangalan ng isang hayop, at ang lahat ay dapat gayahin ang hayop na iyon.",,,,,,,,,,,,,,,365585b0-a367-4a36-95ca-893ff22f2c66,,execute_actions,;

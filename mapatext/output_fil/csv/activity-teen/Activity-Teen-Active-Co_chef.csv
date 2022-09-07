@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Kapwa Tagaluto
+•	Tanungin angiyong teenager kung anong uri ng pagkain na gusto nilang kainin.
+•	Paghandaan ito ng sabay! Sa una, maaaring kailangan mo munang gabayan siya. 
+•	Kapag ang iyong teenager ay marunong na maghanda ng pagkain, hayaan mo silang manguna at sumunod sa kanilang mga direksyon.
+•	 Hayaan mo ang bawat bata at teenager sa bahay na maging chef o manguna sa pagluluto.
+•	Maari mo din silang tulungan gawin ang budget para sa mga ingredients!",,,,,,,,,,,,,,,5eaba5e3-4da4-4542-8dbd-c19ee5a7e692,,execute_actions,240;20

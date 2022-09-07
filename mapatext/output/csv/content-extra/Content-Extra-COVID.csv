@@ -1,0 +1,102 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Talking about COVID19,,,,,,,,,,,,,,,b8af8656-1a41-4c6e-8627-7cb93fc37d56,,execute_actions,720;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,574f534a-e8c7-4568-88e1-459ffd2a3ce7,,split_by_subflow,720;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,efbee775-6e24-458d-8ce2-0e636c8ceee5,,split_by_contact_field,680;280
+4,send_message,3;3,yes;,@fields.from_theme;,has_any_word;,Yes;,,"When your children ask you about COVID-19, be willing to talk. They will already have heard something. Silence and secrets do not protect our children. Honesty and openness do. Think about how much they will understand. You know them best.",,,,,,,,,,,,,,,3efe0ca6-3441-432e-b613-3d64d904c724,,execute_actions,1480;160
+5,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,1722b378-fe35-4b37-9e12-ff3a806a8c60,,execute_actions,2260;320
+6,wait_for_response,5,,,,,know_more,,,,,,,,,,,,,,,,b47b3ad6-fe64-4fda-81c0-402d02268cc6,,wait_for_response,1500;480
+7,split_by_value,6,yes y,,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,7003fc7d-3345-43a7-a92f-8a3374223942,,split_by_contact_field,660;560
+8,send_message,7,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you talk about COVID-19 with your children!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Talking_About_Covid19.m4v,,c2cbc321-4230-48f6-9fbe-6c7c36c6ca02,,execute_actions,250;660
+9,send_message,7,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message to help you talk about COVID-19 with your children!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Talking_About_Covid19.mp3,,,ece296a5-5d6f-4080-9992-a1ebcf2981d6,,execute_actions,1010;720
+10,wait_for_response,8;9,,,,,Result 5,,,,,,,,,,,,,,,,a3fbdd91-8369-4276-9b70-1a62213b9e39,120,wait_for_response,680;900
+11,start_new_flow,10;10;7,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,cdf3765a-649c-44ee-9a19-970db996bc3a,,split_by_subflow,1930;720
+12,send_message,6,no n,,has_any_word,No,,"That's okay! You can always type ""Help"" if you want to learn more about how to talk about COVID-19 with your child. Chat to you later!",,,,,,,,,,,,,,,90e69694-d286-4628-95f4-6abe867f9f75,,execute_actions,3310;720
+13,send_message,6,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,44dcb186-ac0b-4970-9b9f-4e65e7b61d63,,execute_actions,2380;520
+14,go_to,13,,,,,,5,,,,,,,,,,,,,,,,,,
+15,send_message,11;11,Complete;Expired,,,,,"Here are 4 simple steps that you can do when talking about COVID-19 with your children:
+
+1. Be open, honest, and supportive
+2. It is okay not to know the answers
+3. Be a hero not a bully
+4. End on a good note
+
+Type ""1"" to ""4"" to learn more about each tip. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,d0e479ce-1d14-44c0-8f28-cf76cde661be,,execute_actions,1910;880
+16,wait_for_response,15,,,,,list_of_tips,,,,,,,,,,,,,,,,a0b6bd5f-f1bf-4109-a8f5-2535fc49ad6e,,wait_for_response,1480;1640
+17,send_message,16,n no,,has_any_word,no,,Here is a comic on how to talk to your child about COVID-19. ,,,,,,,,,,,,,,,a788ad22-a8c3-4a17-813c-2d5a53286f89,,execute_actions,3210;2740
+18,send_message,17,,,,,,"Child: “Am I going to get coronavirus?” 
+
+Parent: “It is very possible that we will all get coronavirus. But younger people do not normally get very sick.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/talking_about_covid19_comic_1.png,,,,a788ad22-a8c3-4a17-813c-2d5a53286f89,,execute_actions,3210;2740
+19,send_message,18,,,,,,"Child: “I am scared…” 
+
+Parent: “It is okay to be afraid. We are all a bit scared about this. But we have each other and can do our best to keep ourselves and other people safe and healthy.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/talking_about_covid19_comic_2.png,,,,a788ad22-a8c3-4a17-813c-2d5a53286f89,,execute_actions,3210;2740
+20,send_message,19,,,,,,"Child: “How can we keep safe?” 
+
+Parent: “We can wash our hands regularly for 20 seconds. We can also keep a good physical distance away from people. We also need to try to avoid touching our faces as much as possible.” 
+
+Child, “Okay…”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/talking_about_covid19_comic_3.png,,,,a788ad22-a8c3-4a17-813c-2d5a53286f89,,execute_actions,3210;2740
+21,send_message,20,,,,,,"Child: “What happens to your body when you get coronavirus?”
+
+ Parent: “To tell you the truth, I don’t know exactly. How about we look on the UNICEF website together?”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/talking_about_covid19_comic_4.png,,,,a788ad22-a8c3-4a17-813c-2d5a53286f89,,execute_actions,3210;2740
+22,split_by_group,21,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,eb4149fd-30aa-4c6b-aff6-3de76bc40d1d,,split_by_expression,2835;3920
+23,split_by_group,22,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,9f1d129a-15e4-4e90-9d2e-657110de2862,,split_by_expression,3085;4320
+24,send_message,23,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try to talk about COVID-19 with your child in a supportive way. It will make them feel loved and safe. You are the hero of this story!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,57493ca3-e7db-4c37-a135-a8f3eddd30b4,,execute_actions,3210;4520
+25,send_message,23;23,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try to talk about COVID-19 with your child in a supportive way. It will make them feel loved and safe. You are the hero of this story!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,c9f8c83e-ca86-4884-af79-cc61682147aa,,execute_actions,2960;4520
+26,split_by_group,22;22,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,e600eba8-5df2-4f7b-b1fc-3891fdc639b8,,split_by_expression,2585;4120
+27,send_message,26,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try to talk about COVID-19 with your child in a supportive way. It will make them feel loved and safe. You are the hero of this story!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,cf906aa7-c78a-45ea-bf25-3dfee4567cd4,,execute_actions,2710;4520
+28,send_message,26;26,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try to talk about COVID-19 with your child in a supportive way. It will make them feel loved and safe. You are the hero of this story!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,676828b9-2244-4d88-ad76-3ae1e6668338,,execute_actions,2460;4520
+29,save_value,24;25;27;28,,,,,current type assessed,tip,,,,,,,,,,,,,,,b4762178-471a-43ff-a167-003cdba2e52d,,execute_actions,1170;3820
+30,save_value,29,,,,,current activity,covid,,,,,,,,,,,,,,,b4762178-471a-43ff-a167-003cdba2e52d,,execute_actions,1170;3820
+31,start_new_flow,30,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,bbaa1247-c4d6-45da-96e8-ceb634226f0f,,split_by_subflow,1440;4620
+32,split_by_group,31;31,Complete;Expired,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,0dbb2d36-63eb-4001-950c-97549f82a2ac,,split_by_expression,1315;4840
+33,send_message,32,ABTest_test-first-person_alternative,,,,,"I understand that these times can be really difficult.  Please type ""Help"" if you want any extra support or guidance. Chat to you later!",,,,,,,,,,,,,,,caa6f7c4-9806-4831-b95c-d42668e464a6,,execute_actions,1440;5040
+34,send_message,32;32,ABTest_test-first-person_Default;,,,,,"We understand that these times can be really difficult. Please type ""Help"" if you want any extra support or guidance. Chat to you later!",,,,,,,,,,,,,,,e8ccf4d4-49b2-4440-b425-0f8dd9fa9615,,execute_actions,1190;5040
+35,split_by_value,16,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,7299e883-8958-423f-9368-622e8554e8aa,,split_by_expression,125;1040
+36,send_message,35,,@fields.child_nickname,has_text,child_nickname,,"Step 1. Be open, honest, and supportive
+Allow @fields.child_nickname to talk freely. Ask them open questions and find out how much they already know. ",,,,,,,,,,,,,,,b104d65a-0c7d-4996-adbb-0c1a55329d9f,,execute_actions,;1240
+37,send_message,35,,,,,,"Step 1. Be open, honest, and supportive
+Allow your child to talk freely. Ask them open questions and find out how much they already know. ",,,,,,,,,,,,,,,dc63d143-b94b-4513-8ebf-6d066ff1b83c,,execute_actions,250;1240
+38,split_by_value,36;37,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,eefda5a7-d3c7-48d1-9c8d-4aa4627959b6,,split_by_expression,395;1440
+39,send_message,38,,@fields.child_nickname,has_text,child_nickname,,"Always answer their questions truthfully. Think about how old @fields.child_nickname is and how much they can understand.
+@fields.child_nickname may be scared or confused. Give them space to share how they are feeling and let them know you are there for them.",,,,,,,,,,,,,,,3305f1f0-b3a5-4049-a529-57383af9fe8a,,execute_actions,270;1640
+40,send_message,38,,,,,,"Always answer their questions truthfully. Think about how old your child is and how much they can understand.
+Your child may be scared or confused. Give them space to share how they are feeling and let them know you are there for them.",,,,,,,,,,,,,,,8c519fd6-893b-45c3-8fc4-22a4da269b31,,execute_actions,520;1640
+41,split_by_value,16,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,ec0f58b0-ddef-44d4-94df-c89ebc2fd71c,,split_by_expression,885;2040
+42,send_message,41,,@fields.child_nickname,has_text,child_nickname,,"Step 2. It is OK not to know the answers.
+
+It is fine to say “We don’t know, but we are working on it; or we don’t know, ‘but we think’.”  Use this as an opportunity to learn something new with @fields.child_nickname. The WHO and UNICEF websites are great first steps to learn.",,,,,,,,,,,,,,,46354184-137c-44ad-a7a0-854deb2cf36e,,execute_actions,760;2240
+43,send_message,41,,,,,,"Step 2. It is OK not to know the answers.
+
+It is fine to say “We don’t know, but we are working on it; or we don’t know, ‘but we think’.”  Use this as an opportunity to learn something new with your child. The WHO and UNICEF websites are great first steps to learn.",,,,,,,,,,,,,,,b1d7b994-364d-4a13-8d4b-ebc41ef5c7e7,,execute_actions,1010;2240
+44,send_message,42;43,,,,,,"WHO: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public
+
+UNICEF: https://www.unicef.org/coronavirus/covid-19 ",,,,,,,,,,,,,,,b5e821b7-3dce-4bfc-8259-d861bf22ddc7,,execute_actions,1010;2760
+45,send_message,16,3,,has_number_eq,3,,"Step 3. Be a hero not a bully
+Explain that COVID-19 has nothing to do with the way someone looks, where they are from, or what language they speak. ",,,,,,,,,,,,,,,173346a0-78de-4098-82ab-25fb5cfb4162,,execute_actions,1480;1980
+46,split_by_value,45,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,7e4edf85-5fac-42c4-8187-3926ba9be64b,,split_by_expression,1645;2400
+47,send_message,46,,@fields.child_nickname,has_text,child_nickname,,Tell @fields.child_nickname that we can be compassionate to people who are sick and those who are caring for them. ,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/kneeling_down_listening.jpg,,,,39d70fa8-637d-4fdc-a20f-b9cf102b37bf,,execute_actions,1520;2600
+48,send_message,46,,,,,,Tell your child that we can be compassionate to people who are sick and those who are caring for them. ,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/kneeling_down_listening.jpg,,,,f7d7b521-a51f-4803-b97d-7fcfd970de46,,execute_actions,1770;2600
+49,split_by_value,16,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,ee31d439-20aa-43d7-849c-cd5818efcaa2,,split_by_expression,2095;1780
+50,send_message,49,,@fields.child_nickname,has_text,child_nickname,,"Step 4. End on a good note
+Check to see if @fields.child_nickname is okay. Remind them that you care and that they can talk to you anytime. Then do something fun together!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/children_playing_broom.jpg,,,,8ad72895-4ceb-4882-8a06-2d09fad1c940,,execute_actions,1970;1980
+51,send_message,49,,,,,,"Step 4. End on a good note
+Check to see if your child is okay. Remind them that you care and that they can talk to you anytime. Then do something fun together!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/children_playing_broom.jpg,,,,c44e8cdb-103e-418e-af7a-6052184879db,,execute_actions,2220;1980
+52,send_message,39;40;44;47;48;50;51,,,,,,"Please select another number if you want to learn more about how to talk about COVID-19 with your children:
+
+1. Be open, honest, and supportive
+2. It is okay not to know the answers
+3. Be a hero not a bully
+4. End on a good note
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,28fe1eae-ff1d-44b1-954e-3fdd2e4e5d05,,execute_actions,720;3020
+53,save_value,52,,,,,covid list of tips,"@(fields.covid_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,197df450-054f-4367-9262-fc25cf34178b,,execute_actions,1010;3440
+54,go_to,53,,,,,,16,,,,,,,,,,,,,,,,,,
+55,send_message,16,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,48819d71-f2f0-4168-a409-1f02200e7f6c,,execute_actions,3230;1240
+56,go_to,55,,,,,,15,,,,,,,,,,,,,,,,,,

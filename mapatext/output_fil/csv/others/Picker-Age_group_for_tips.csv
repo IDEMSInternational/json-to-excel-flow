@@ -1,0 +1,37 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.parent_baby,,,,,,,,,,,,,,,4be4af63-c42f-45a0-b53e-751e50d7713f,,split_by_contact_field,500;40
+2,split_by_value,1,true,@fields.parent_baby,has_any_word,True,,@fields.parent_young_child,,,,,,,,,,,,,,,f6a9b21c-0f8f-42bb-83fa-5b1b483a82db,,split_by_contact_field,240;120
+3,split_by_value,2,true,@fields.parent_young_child,has_any_word,True,,@fields.parent_teenager,,,,,,,,,,,,,,,f0020463-5d7e-4090-b541-3fc1ed0dafc9,,split_by_contact_field,60;280
+4,split_by_value,2,false,@fields.parent_young_child,has_any_word,False,,@fields.parent_teenager,,,,,,,,,,,,,,,3974ce63-75a1-4e2d-9d24-e7fbe11cf660,,split_by_contact_field,340;280
+5,split_by_value,1,false,@fields.parent_baby,has_any_word,False,,@fields.parent_young_child,,,,,,,,,,,,,,,7c9a508f-c979-4b5a-b906-6cdc720a454c,,split_by_contact_field,700;180
+6,split_by_value,5,true,@fields.parent_young_child,has_any_word,True,,@fields.parent_teenager,,,,,,,,,,,,,,,3777ba1f-cfe8-40ce-b3b9-d704084820cd,,split_by_contact_field,820;380
+7,split_by_value,5,false,@fields.parent_young_child,has_any_word,False,,@fields.parent_teenager,,,,,,,,,,,,,,,c617d31c-9958-4dd7-b756-537c09fa6e2e,,split_by_contact_field,1060;300
+8,send_message,3;7,true;false,@fields.parent_teenager;@fields.parent_teenager,has_any_word;has_any_word,True;False,,"Pumili ng isang age group para sa tips sa pagiging magulang. Maaari mong piliin ang anak na pinaka-inaalala mo.
+
+Maaari mong palitan ito sa pamamagitan ng pag-type ng ""Help"" at pagpili sa ""Technical support"".",Sanggol,Musmos na bata,Teenager,,,,,,,,,,,,930a9747-79c6-4074-9228-1a624d9d6bb7,,execute_actions,40;940
+9,wait_for_response,8,,,,,Result 1,,,,,,,,,,,,,,,,f8a3d534-2255-4059-8b28-20db071c1157,,wait_for_response,60;1340
+10,send_message,9,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,44920689-63bd-4697-8d9f-453a95f7c51d,,execute_actions,220;1220
+11,go_to,10,,,,,,8,,,,,,,,,,,,,,,,,,
+12,send_message,3,false,@fields.parent_teenager,has_any_word,False,,"Pumili ng isang age group para sa tips sa pagiging magulang. Maaari mong piliin ang anak na pinaka-inaalala mo.
+
+Maaari mong palitan ito sa pamamagitan ng pag-type ng ""Help"" at pagpili sa ""Technical support""",Sanggol,Musmos na bata,,,,,,,,,,,,,66b90f71-1837-43c0-8f88-5f6691fb35e9,,execute_actions,180;460
+13,wait_for_response,12,,,,,Result 2,,,,,,,,,,,,,,,,fd5fe409-21be-4087-a2bb-f3aa8c345b41,,wait_for_response,240;780
+14,send_message,13,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,bd10a94d-3d8b-4233-b312-99bde028b63a,,execute_actions,300;940
+15,go_to,14,,,,,,12,,,,,,,,,,,,,,,,,,
+16,send_message,4,true,@fields.parent_teenager,has_any_word,True,,"Pumili ng isang age group para sa tips sa pagiging magulang. Maaari mong piliin ang anak na pinaka-inaalala mo.
+
+Maaari mong palitan ito sa pamamagitan ng pag-type ng ""Help"" at pagpili sa ""Technical support"".",Sanggol,Teenager,,,,,,,,,,,,,a262c003-9406-4ecc-acc5-ab5bac443e8a,,execute_actions,520;480
+17,wait_for_response,16,,,,,Result 3,,,,,,,,,,,,,,,,b8b1b03c-7e51-491f-9692-8b1de6f8cdca,,wait_for_response,620;780
+18,save_value,13;17;4;9,sanggol;sanggol;false;sanggol,;;@fields.parent_teenager;,has_any_word;has_any_word;has_any_word;has_any_word,Baby;Baby;False;Baby,age group for tips,baby,,,,,,,,,,,,,,,d22b1e72-bf7c-4404-b13b-39060f764bc4,,execute_actions,280;1700
+19,send_message,17,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,3efa4095-7c68-46ac-9576-55f010cb6d31,,execute_actions,600;980
+20,go_to,19,,,,,,16,,,,,,,,,,,,,,,,,,
+21,send_message,6,true,@fields.parent_teenager,has_any_word,True,,"Pumili ng isang age group para sa tips sa pagiging magulang. Maaari mong piliin ang anak na pinaka-inaalala mo.
+
+Maaari mong palitan ito sa pamamagitan ng pag-type ng ""Help"" at pagpili sa ""Technical support"".",Musmos na bata,Teenager,,,,,,,,,,,,,2f9f1f0d-0336-4d35-98e0-7f521375b562,,execute_actions,1020;640
+22,wait_for_response,21,,,,,Result 4,,,,,,,,,,,,,,,,1fcc30e4-adfb-46e3-b369-dcde4be2bb7a,,wait_for_response,1020;920
+23,save_value,13;22;6;9,batang anak;batang anak;false;batang anak,;;@fields.parent_teenager;,has_any_word;has_any_word;has_any_word;has_any_word,Young;Young;False;Young,age group for tips,child,,,,,,,,,,,,,,,fe806772-e139-4e7b-b5cf-10fa1e1b2be3,,execute_actions,520;1700
+24,save_value,17;22;7;9,teenager teen;teenager teen;true;teenager teen,;;@fields.parent_teenager;,has_any_word;has_any_word;has_any_word;has_any_word,Teen;Teen;True;Teen,age group for tips,teen,,,,,,,,,,,,,,,d36ab21e-f8a1-4547-aa9d-073e89f72efa,,execute_actions,880;1680
+25,save_value,18;23;24,,,,,house of support path,"@(fields.path & ""house_of_support/house_type/"" & fields.house_type & ""/age_group/"" & fields.age_group_for_tips & ""/family_type/"" & fields.family_type &""/"")",,,,,,,,,,,,,,,343a503d-d197-441f-a1a3-4d0e498a4bbe,,execute_actions,400;1880
+26,save_value,25,,,,,know age group for tips,yes,,,,,,,,,,,,,,,343a503d-d197-441f-a1a3-4d0e498a4bbe,,execute_actions,400;1880
+27,send_message,22,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,140faac2-7453-45a6-9d9f-052452cdb62e,,execute_actions,1080;1160
+28,go_to,27,,,,,,21,,,,,,,,,,,,,,,,,,

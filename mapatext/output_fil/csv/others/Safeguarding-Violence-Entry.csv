@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Ikaw ba ay nasa sitwasyong mapanganib o hindi ligtas?,Oo,Hindi,,,,,,,,,,,,,48ac5bdb-9e24-4094-afde-16c65e2de9af,,execute_actions,520;80
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,6b232bcd-dec3-4796-b86b-75b239a1eb2c,,wait_for_response,520;260
+3,start_new_flow,2,oo o yes y,,has_any_word,Yes,,PLH - Safeguarding - Violence - Referrals,,,,,,,,,,,,,,99ac7045-ddfd-4875-9685-44545deb903b,c575ade6-9085-46ca-a3e0-738dd8b8b36e,,split_by_subflow,300;460
+4,send_message,2,hindi,,has_any_word,No,,I-type ang “SOS” kung sakaling nais mong malaman ang mga detalye ng emergency services o iba pang hotline. Tandaan na ang lahat ng sasabihin mo ay mananatiling pribado!,,,,,,,,,,,,,,,bcd6c6d1-1e8a-442e-a9b9-c9bf66daaed5,,execute_actions,780;400
+5,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,32b35590-c325-462f-9b9f-56b8b1473eb4,,execute_actions,880;160
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

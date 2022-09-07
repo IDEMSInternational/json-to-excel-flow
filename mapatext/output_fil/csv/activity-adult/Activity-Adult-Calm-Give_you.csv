@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Bigyan mo ang Sarili ng Isang Yakap
+•	Bella mama, bella mama hey. 
+•	Kumusta ang pakiramdam mo ngayon? Maganda ba ang pakiramdam mo?!
+•	Maaring hindi. Baka sinigawan mo na naman ang iyong mga anak ngayon araw? Baka nagalit ka at nakapagsabi ng mga salitang hindi maganda? Okay lang iyon. Sobrang nakaka-stress ngayon. 
+•	Huminga nang malalim at mag-isip ng isang bagay na ginawa mo ngayong araw na maipagmamalaki mo. Hindi kailangang ito ay malaking bagay. Ipalibot ang mga braso sa iyong katawan at bigyan mo ang sarili ng isang yakap. At ngayon, mag-isip ka ng isang bagay na iyong nagawa ngayong araw na hindi mo maipagmamalaki. Ano ang magagawa mong iba bukas? Ipalibot mo ang iyong mga braso sa iyong katawan at bigyan mo ang sarili ng isang yakap. 
+•	Bella mama, bella mama, bella mama, bella mama, bella mama hey"".",,,,,,,,,,,,,,,e7fe92fd-037d-45ee-94fc-519722c1204c,,execute_actions,;

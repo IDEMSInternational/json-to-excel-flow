@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Story time
+•	Simulan ang kuwento ng ""Noong unang panahon may isang...""
+•	Hayaan ang iyong anak na buuin ang susunod na pangungusap
+•	Pagkatapos, gumawa ka ng isang pangungusap
+•	Magsalitan hanggang makabuo ng maganda at bagong kuwento
+•	Siguraduhing tatapusin mo ang kwento sa isang positibong paalala.
+•	Tanungin ang iyong anak kung ano ang paborito niyang parte ng kuwento!",,,,,,,,,,,,,,,7a01f775-c7a1-41b1-8418-45e3718b28b4,,execute_actions,;

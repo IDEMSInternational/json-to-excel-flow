@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Kumusta ang araw mo?
+•	Tanungin ang bawat isa, ""Ano ang nagpasaya sa iyo ngayon?""
+•	Tanungin ang bawat isa, ""Ano ang mahirap sa ngayon?""
+•	Tanungin ang bawat isa, ""Paano ka namin matutulungan?""
+•	Subukang gawin ito nang magkasama araw-araw, kapag kumakain o bago matulog",,,,,,,,,,,,,,,14e57be0-01a7-4610-bc1d-c5e7afa61680,,execute_actions,20;20

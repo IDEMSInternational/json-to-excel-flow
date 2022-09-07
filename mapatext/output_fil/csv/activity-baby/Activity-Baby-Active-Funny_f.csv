@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Nakakatawang Mukha
+•	Tignan mo ang iyong sanggol sa kanyang mga mata at gumawa kayo ng iba ibang mga nakakatawang mukha. 
+•	Gumawa ng malaking mukha. Gumawa ng maliit na mukha. Gumawa ng masayang mukha. Gumawa ng gulat na mukha. 
+•	Alin sa mga iyon ang nagpangiti o nagpatawa sa iyong sanggol? Gawin ito ulit, mas malaki naman ngayon!
+•	Maglaro nang may iba't ibang damdamin at dagdagan ito ng mga tunog. 
+•	Kopyahin ang kanyang mga ekspresyon. Sobrahan ang paggaya ng mga ekspresyon para maging katawa-tawa.
+•	Palaging magtapos ng may positibong ekspresyon!",,,,,,,,,,,,,,,26e400be-fe4e-46d6-91a6-b769c7ab170f,,execute_actions,;

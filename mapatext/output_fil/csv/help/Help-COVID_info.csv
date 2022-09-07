@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,from theme,no,,,,,,,,,,,,,,,b31d9439-5bd0-476a-b07e-2e258bf29b6e,,execute_actions,140;20
+2,send_message,1,,,,,,Anong impormasyon tungkol sa COVID-19 ang gusto mong matanggap?,Pakikipag-usap sa inyong anak tungkol sa COVID-19,Suporta sa pagpanaw ng mahal sa buhay dahil sa COVID-19,External support,Bumalik sa help menu,,,,,,,,,,,bf091c2b-c339-46b8-b6eb-0f54d4fcdc3b,,execute_actions,160;140
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,35a5c776-79e8-4949-a21c-866368b68908,,wait_for_response,160;380
+4,start_new_flow,3,pakikipag-usap usap,,has_any_word,talk,,PLH - Content - Extra - COVID,,,,,,,,,,,,,,8c6fb5bf-5f90-4a33-8fdb-ecd3ffd4b906,aa975cef-cecb-4880-bbd6-646bf2df9453,,split_by_subflow,20;560
+5,start_new_flow,3,pagluluksa,,has_any_word,bereavement,,PLH - Content - Extra - Covid bereavement,,,,,,,,,,,,,,5c080ee8-3f89-454a-94fb-bd47e1ff3a22,d2bb6026-6c2c-4113-8445-0dab6ae20c37,,split_by_subflow,240;560
+6,start_new_flow,3,panlabas,,has_any_word,Referrals,,PLH - Help - COVID referrals,,,,,,,,,,,,,,ac1aaef5-6160-4025-b521-c6f5fc554741,965e5304-0a36-4ce5-ae18-6dcbb269cdab,,split_by_subflow,480;520
+7,start_new_flow,3,balik,,has_any_word,Back,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,96837933-5795-44b2-b9a2-d2f67b5d1bc8,,split_by_subflow,420;760
+8,send_message,3,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,7a21eb6c-8a46-498d-b275-1d9c12c512c5,,execute_actions,580;320
+9,go_to,8,,,,,,2,,,,,,,,,,,,,,,,,,

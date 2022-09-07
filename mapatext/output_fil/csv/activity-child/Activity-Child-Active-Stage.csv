@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Stage Directions
+•	Ito ay pareho rin sa Mula Bangka Patungong Pampang, pero may kasamang Stage Directions. Ito ay pwdeng gawin sa isang mataas at ligtas na lugar. Ang direktor ay ang magbibigay ng mga direksyon.
+ ""Stage Right"" ibig sabihin pumunta sa kanan.
+ ""Stage Left"" ibig sabihin pumunta sa kaliwa.
+ ""Down stage"" ibig sabihin pumunta sa ibaba. 
+ Ang ibig sabihin ng ""upstage"" ay pumunta ka sa itaas.
+ Ang ibig sabihin ng ""Center Stage"" ay pumunta ka sa gitna ng entablado 
+•	Pwede kang magkaroon ng nakakaaliw na mga galaw kagaya ng ""Madramang Pagkamatay, Pag-bow sa iyong manonood, Buksan ang Kurtina, Linisin ang Sahig,"" atbp. 
+•	Imbes na ""lifeboat"" gawin mo itong ""Cast of Actors."" Ang lahat ng wala sa cast ay magiging direktor!",,,,,,,,,,,,,,,663f0bc2-8328-4d20-8048-0992a6ef6361,,execute_actions,;

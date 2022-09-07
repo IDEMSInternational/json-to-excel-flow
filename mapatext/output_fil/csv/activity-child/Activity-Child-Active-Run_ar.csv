@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Tumakbo at Gawin Ito 
+•	Ang lahat ay magtatakbuhan sa paligid ng kuwarto o hardin. Siguraduhin na ang espasyo ay sapat ang lawak at ligtas.
+•	Anumang oras, kahit sino ay pwedeng tumigil sa isang lugar at magsabi ng, ""Kapag nakaabot ka rito, gawin mo ito!""  
+•	Pwedeng gawin ang kahit ano: Push-ups, pagkanta, pag-iyak, pagtalon… 
+•	Habang mas naglalaro ka, mas dumarami ang pwede pang gawin sa iba pang mga lugar.  
+•	Ang bawat tao ay maaring magdesisyon kung saan pupunta at kailan.  
+•	Nakakaaliw makihalubilo sa mga taong gumagawa ng mga bagay na pareho sa ginagawa mo!",,,,,,,,,,,,,,,1511186e-6b84-40d8-9cee-897b6c4fff30,,execute_actions,;

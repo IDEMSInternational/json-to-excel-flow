@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Mirror
+•	This game can be played in pairs or even as a group.
+•	Stand facing each other or in a circle.  
+•	One person leads first while everyone else must copy, trying to move exactly at the same time as the leader.
+•	Make sure the leader moves slowly enough for everyone to follow! Explore moving different body parts and in different levels.
+•	After a while, switch who is leading. Give everyone a chance to lead.
+•	Try it with no leaders!",,,,,,,,,,,,,,,06bede64-d364-466f-b891-975dedfb7ddb,,execute_actions,;

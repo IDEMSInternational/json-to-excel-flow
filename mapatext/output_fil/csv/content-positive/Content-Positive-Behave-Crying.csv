@@ -1,0 +1,169 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Coping with crying,,,,,,,,,,,,,,,3ff73fdc-75fe-46dd-a43d-38237749d805,,execute_actions,890;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,3b5d0829-4a64-4e4e-9eca-b6a16cbbf2fc,,split_by_subflow,1090;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,6ae0b9a7-b4a6-4be2-98df-ef5d1449e0d4,,split_by_contact_field,560;180
+4,split_by_value,3,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,e3f0149c-f39e-4dc1-939b-ac6bfe9d7771,,split_by_expression,1690;340
+5,send_message,4,man,@fields.gender_personalisation,has_any_word,man,,"Ang tunog ng umiiyak na sanggol ay maaaring nakaka-stress, lalo na para sa isang ama. Natural lamang na gusto mong patigilin ito. Maaari mo ring isipin na hindi ka isang mabuting magulang o ang iyong sanggol ay umiiyak para lamang inisin ka. Ngunit lahat ng sanggol ay umiiyak. Isa ito sa mga pangunahing paraan para masabi sa iyo ng isang sanggol na may kailangan siya.",,,,,,,,,,,,,,,2425b232-f8b6-4a1b-b1f9-850c719e1530,,execute_actions,1440;540
+6,send_message,4,woman,@fields.gender_personalisation,has_any_word,woman,,"Ang tunog ng umiiyak na sanggol ay maaaring nakaka-stress, lalo na para sa isang ina. Natural lamang na gusto mong patigilin ito. Maaari mo ring isipin na hindi ka isang mabuting magulang o ang iyong sanggol ay umiiyak para lamang inisin ka. Ngunit lahat ng sanggol ay umiiyak. Isa ito sa mga pangunahing paraan para masabi sa iyo ng isang sanggol na may kailangan siya.",,,,,,,,,,,,,,,d6cf0229-4eaf-456d-b069-24191cfb8fb9,,execute_actions,1690;540
+7,send_message,4,,,,,,"Ang tunog ng umiiyak na sanggol ay maaaring nakaka-stress, lalo na para sa isang magulang. Natural lamang na gusto mong patigilin ito. Maaari mo ring isipin na hindi ka isang mabuting magulang o ang iyong sanggol ay umiiyak para lamang inisin ka. Ngunit lahat ng sanggol ay umiiyak. Isa ito sa mga pangunahing paraan para masabi sa iyo ng isang sanggol na may kailangan siya.",,,,,,,,,,,,,,,02b91049-4b38-407d-bf0c-36dbbdfd066b,,execute_actions,1940;540
+8,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,6b68ab9f-09a1-43ec-a66a-dffc0e2206a9,,split_by_contact_field,540;1240
+9,split_by_value,8,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,06fca93b-fbfd-428a-8ebd-2eb11dfc5d7b,,split_by_expression,765;1440
+10,send_message,9,,@fields.child_nickname,has_text,child_nickname,,Narito ang isang video na maaaring makatulong sa iyo kapag umiiyak si @fields.child_nickname.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Crying.m4v,,dcb35e4e-1bf8-42c7-85e4-5484fb392fa7,,execute_actions,640;1840
+11,send_message,9,,,,,,Narito ang isang video na maaaring makatulong sa iyo kapag umiiyak ang iyong sanggol.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Crying.m4v,,56dfa2da-1eb8-476c-8c59-ec8571305b16,,execute_actions,890;1840
+12,split_by_value,8,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,5b967772-414c-4cdb-858f-4a34886ff7ad,,split_by_expression,1255;1640
+13,send_message,12,,@fields.child_nickname,has_text,child_nickname,,Narito ang isang audio message para tulungan ka kapag umiiyak si @fields.child_nickname.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Crying.mp3,,,87845400-e583-47c2-b129-f799d994b620,,execute_actions,1130;1840
+14,send_message,12,,,,,,Pakinggan ang mensaheng ito para tulungan ka kapag umiiyak ang iyong sanggol.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Crying.mp3,,,e2ccd104-3219-4016-a197-6dcd40f26622,,execute_actions,1380;1840
+15,wait_for_response,10;11;13;14,,,,,Result 4,,,,,,,,,,,,,,,,0d262fe0-e290-41f5-8d36-a53450df43bb,120,wait_for_response,1940;2020
+16,start_new_flow,15;15;8,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,74643743-dd4e-4f7d-aa0e-60bc3469f244,,split_by_subflow,1380;2240
+17,send_message,5;6;7,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/parent_and_baby.jpg,,,,413dd878-bb8c-4579-8acb-f8a792ca1b59,,execute_actions,2280;720
+18,wait_for_response,17,,,,,Result 1,,,,,,,,,,,,,,,,c7ef0e0d-6c90-4dd0-b0d8-e124235f0f23,3600,wait_for_response,1010;880
+19,go_to,18,y Oo o,,has_any_word,Y,,8,,,,,,,,,,,,,,,,,,
+20,send_message,18,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,560c9da6-80ce-47f0-9cac-da3d1f2de74b,,execute_actions,2300;260
+21,go_to,20,,,,,,17,,,,,,,,,,,,,,,,,,
+22,split_by_value,18;18,Hindi n h;No Response,,has_any_word;,No;,,@fields.user_name,,,,,,,,,,,,,,,e82498ca-a7a1-46db-b2b6-154163247ac3,,split_by_expression,2505;980
+23,send_message,22,,@fields.user_name,has_text,user_name,,"Okay lang ‘yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa iyong mga anak. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,32b60ab1-3cb1-48d7-b78a-fe34520e68c2,,execute_actions,2380;1180
+24,send_message,22,,,,,,"Okay lang ‘yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa iyong mga anak. Usap tayo mamaya!",,,,,,,,,,,,,,,46781342-5a38-4d0c-b666-a3bfb31224c0,,execute_actions,3880;1180
+25,send_message,16;16,Complete;Expired,,,,,"Narito ang ilang tip na maaaring makatulong sa iyo kapag umiiyak ang iyong sanggol:
+
+1. Bakit umiiyak ang mga sanggol
+2. Tugunan ito sa lalong madaling panahon
+3. Suriin para makita kung bakit umiiyak ang iyong sanggol
+4. Pakalmahin ang iyong sanggol
+5. Magpahinga kung kinakailangan mo ito
+6. Maging banayad at mapagpasensya sa iyong sarili
+7. Kung sa tingin mo ay nasugatan o may sakit ang iyong sanggol, tumawag o bumisita sa isang clinic
+
+Para mas matuto pa tungkol sa isa sa mga tips na ito, i-type ang ""1"" hanggang ""7"". Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,61bd9187-1bcd-4ae8-853d-c34174bbaf1f,,execute_actions,1380;2380
+26,wait_for_response,25,,,,,list_of_tips,,,,,,,,,,,,,,,,744e7ec5-61a5-4c5c-9242-aa1167d61cda,,wait_for_response,1030;2820
+27,send_message,26,1,,has_number_eq,1,,"1. Bakit umiiyak ang mga sanggol?
+
+Normal na parte ng paglaki ng sanggol ang pag-iyak. Minsan, mayroong pattern ang pag-iyak ng mga sanggol. Dumadalas ang pag-iyak sa edad na 2-3 linggo at sa pangkalahatan pinakamadalas ang pag-iyak kapag ang iyong sanggol ay nasa 6 hanggang 8 linggo. Kadalasang nababawasan ang pag-iyak ng mga sanggol sa edad na 3 hanggang 4 na buwan. Siyempre, alalahanin na magkakaiba ang bawat sanggol!",,,,,,,,,,,,,,,a0b5cb94-ecc5-43d2-9479-2ea134787ac6,,execute_actions,890;4120
+28,send_message,26,2,,has_number_eq,2,,"2. Tugunan ito sa lalong madaling panahon
+
+Puntahan ang iyong sanggol kapag narinig mo siyang umiiyak. Hindi mo kinukunsinte ang iyong sanggol kapag kinarga mo siya. Ang mga sanggol na madalas kinakarga at niyayakap, tuwing maselan at kontentong mga panahon, ay mas madalang umiyak.",,,,,,,,,,,,,,,8faf1fec-53f6-4212-9cb8-641e97765703,,execute_actions,1030;2960
+29,send_message,26,3,,has_number_eq,3,,"3.  Suriin para makita kung bakit umiiyak ang iyong sanggol
+
+Maraming dahilan kung bakit umiiyak ang mga sanggol. Maaaring ito ay gutom, sakit, maraming nangyayari, hindi maingat na paghawak, nilalamig/naiinitan, gusto ng pakikipag-ugnayan o atensyon, o iritable. Umiiyak ang bata kapag nararamdaman niyang may tensyon sa kuwarto. At minsan, umiiyak sila ng walang anumang dahilan! ",,,,,,,,,,,,,,,e313c40b-ec8a-46bd-96cb-e78ba79230f9,,execute_actions,1380;4200
+30,split_by_value,26,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,1e82bfe0-6828-4290-9182-52c7ea162e68,,split_by_expression,125;4460
+31,send_message,30,,@fields.child_nickname,has_text,child_nickname,,"4. Pakalmahin ang iyong sanggol
+
+Subukang ibalot siya sa kumot, marahang isayaw, o kantahan o magpatugtog ng mahinang musika. Baka kailangan mong pakainin o palitan ng diaper si @fields.child_nickname. Maaaring naiinitan o nilalamig siya. O kaya naman kailangan lang niyang kargahin. Tumigil nang sandali at subukang magpahinga - nararamdaman din ni @fields.child_nickname ang tensyon galing sa iyo!",,,,,,,,,,,,,,,5f842567-272a-4fdb-b632-d7e5b1b57797,,execute_actions,;4660
+32,send_message,30,,,,,,"4. Pakalmahin ang iyong sanggol
+
+Subukang ibalot siya sa kumot, marahang isayaw, o kantahan o magpatugtog ng mahinang musika. Baka kailangan mo pakainin ang iyong sanggol o palitan ang kanyang diaper o lampin. Maaaring naiinitan o nilalamig siya. O kaya naman kailangan lang niyang kargahin. Tumigil Nang Sandali at subukang magpahinga - nararamdaman din ng iyong sanggol ang tensyon galing sa iyo!",,,,,,,,,,,,,,,bffa873b-d75c-4dd8-a02b-f2dec97dd6e3,,execute_actions,250;4660
+33,split_by_value,26,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,a42ac9a5-60bc-4b92-af3a-6ae02c4ccbde,,split_by_expression,395;3040
+34,send_message,33,,@fields.child_nickname,has_text,child_nickname,,"5. Magpahinga!
+
+Kung nagagalit ka dahil hindi tumitigil sa pag-iyak si @fields.child_nickname, OK lang iwan siya nang nakahiga sa isang ligtas na lugar at umalis muna ng sandali. Manatiling malapit kay @fields.child_nickname. Para masubaybayan mo siya. Tignan si @fields.child_nickname kada 5 hanggang 10 minuto. ",,,,,,,,,,,,,,,05904d30-74e3-40bc-bce7-df1870ae408d,,execute_actions,270;3240
+35,send_message,33,,,,,,"5. Magpahinga!
+
+Kung nagagalit ka dahil hindi tumitigil sa pag-iyak ang iyong sanggol, OK lang iwan siya nang nakahiga sa isang ligtas na lugar at umalis muna ng sandali. Manatiling malapit sa iyong sanggol para masubaybayan siya. Balik-balikan ang iyong sanggol kada 5 hanggang 10 minuto. ",,,,,,,,,,,,,,,0817cf23-6dc6-4092-927a-d822dab5da50,,execute_actions,520;3240
+36,send_message,34;35,,,,,,"Humingi ng tulong - sa kamag-anak, sa kaibigan. Minsan, ang simpleng pakikipag-usap sa isang tao ay sapat na, pero kung ikaw ay sobrang nabibigatan, humingi ng tulong sa iba. Ang paghingi ng tulong ay tanda ng kalakasan.",,,,,,,,,,,,,,,082c70ef-8743-4da2-97ee-a41b15de1531,,execute_actions,520;4960
+37,split_by_group,26,6,,has_number_eq,6,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,b1c9a158-1b4f-4ab2-9a1f-f4c81d80b881,,split_by_expression,3255;3340
+38,split_by_value,37,ABTest_test-first-person_alternative,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,ec4dfb04-8b23-403d-8bc7-42ae216c4dfe,,split_by_expression,3630;3740
+39,send_message,38,man,@fields.gender_personalisation,has_any_word,man,,"6. Maging banayad at mapagpasensya sa iyong sarili
+
+Alam kong hindi ito madali. Hindi ka isang masamang ama kung patuloy na umiiyak ang iyong sanggol kahit nagawa mo na ang lahat ng kaya mo para patahanin siya. Ginagawa mo ang iyong makakaya!",,,,,,,,,,,,,,,8285e403-250f-4e43-a623-d4d4dbbbb1f7,,execute_actions,3380;3940
+40,send_message,38,woman,@fields.gender_personalisation,has_any_word,woman,,"6. Maging banayad at mapagpasensya sa iyong sarili
+
+Alam kong hindi ito madali. Hindi ka isang masamang ina kung patuloy na umiiyak ang iyong sanggol kahit nagawa mo na ang lahat ng kaya mo para patahanin siya. Ginagawa mo ang iyong makakaya!",,,,,,,,,,,,,,,6f025965-6da0-4872-b7b3-2e54aa02ef11,,execute_actions,3630;3940
+41,send_message,38,,,,,,"6. Maging banayad at mapagpasensya sa iyong sarili
+
+Alam kong hindi ito madali. Hindi ka isang masamang magulang kung patuloy na umiiyak ang iyong sanggol kahit nagawa mo na ang lahat ng kaya mo para patahanin siya. Ginagawa mo ang iyong makakaya!",,,,,,,,,,,,,,,3adc2424-7ed6-4b9f-b7e0-d171bd3ec443,,execute_actions,3880;3940
+42,split_by_value,37;37,ABTest_test-first-person_Default;,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,c0933d82-ddf1-4741-af07-6c3c0c6f6416,,split_by_expression,2880;3540
+43,send_message,42,man,@fields.gender_personalisation,has_any_word,man,,"6. Maging banayad at mapagpasensya sa iyong sarili
+
+Alam naming hindi ito madali. Hindi ka isang masamang ama kung patuloy na umiiyak ang iyong sanggol kahit nagawa mo na ang lahat ng kaya mo para patahanin siya. Ginagawa mo ang iyong makakaya!",,,,,,,,,,,,,,,bb7180ca-0f27-4cb7-aae2-9b1e6276b168,,execute_actions,2630;3940
+44,send_message,42,woman,@fields.gender_personalisation,has_any_word,woman,,"6. Maging banayad at mapagpasensya sa iyong sarili
+
+Alam naming hindi ito madali. Hindi ka isang masamang ina kung patuloy na umiiyak ang iyong sanggol kahit nagawa mo na ang lahat ng kaya mo para patahanin siya. Ginagawa mo ang iyong makakaya!",,,,,,,,,,,,,,,def52d4e-56fb-4cdd-8a3d-f629e5cffca8,,execute_actions,2880;3940
+45,send_message,42,,,,,,"6. Maging banayad at mapagpasensya sa iyong sarili
+
+Alam naming hindi ito madali. Hindi ka isang masamang magulang kung patuloy na umiiyak ang iyong sanggol kahit nagawa mo na ang lahat ng kaya mo para patahanin siya. Ginagawa mo ang iyong makakaya!",,,,,,,,,,,,,,,f132c919-9008-4951-93fd-de978cb45521,,execute_actions,3130;3940
+46,send_message,26,7,,has_number_eq,7,,"7. Kung sa tingin mo ay nasugatan o may sakit ang iyong sanggol, tumawag o bumisita sa isang clinic
+
+Kung umiiyak nang matagal ang iyong sanggol at hindi tumitigil, maaaring nasugatan o may sakit siya. Kailangan mo agad humingi ng medikal na tulong. ",,,,,,,,,,,,,,,7419a2be-8f7c-4228-b7e8-db9dbba3c41d,,execute_actions,3940;2860
+47,send_message,27;28;29;31;32;36;39;40;41;43;44;45;46,,,,,,"Pumili ng ibang numero kung gusto mong matuto pa kung anong gagawin kung umiiyak ang iyong sanggol:
+
+1. Bakit umiiyak ang mga sanggol
+2. Tugunan ito sa lalong madaling panahon
+3. Suriin para makita kung bakit umiiyak ang iyong sanggol
+4. Pakalmahin ang iyong sanggol
+5. Magpahinga kung kinakailangan mo ito
+6. Maging banayad at mapagpasensya sa iyong sarili
+7. Kung sa tingin mo ay nasugatan o may sakit ang iyong sanggol, tumawag o bumisita sa isang clinic
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,77150c95-5484-4566-9563-81795a6a7d97,,execute_actions,1380;4760
+48,save_value,47,,,,,crying list of tips,"@(fields.crying_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,15992d8f-a427-4cb3-88f3-90f645035922,,execute_actions,1380;5260
+49,save_value,48,,,,,last interaction,@(now()),,,,,,,,,,,,,,,bb248222-1a50-47fd-97dc-d04083b4f5b2,,execute_actions,1380;5360
+50,go_to,49,,,,,,26,,,,,,,,,,,,,,,,,,
+51,send_message,26,Hindi n h,,has_any_word,No,,Narito ang isang komiks tungkol sa dapat gawin kapag kinakabag ang sanggol,,,,,,,,,,,,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+52,send_message,51,,,,,,"Magulang 1: “Kailangang may gawin tayo.”
+
+Magulang 2: “Sige, susubukan kong pakainin siya.”
+
+Sanggol: “aaaaaaaa”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/crying_baby_comic_1.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+53,send_message,52,,,,,,"Sanggol: “aaaaaaaa”
+
+Magulang 1:  “Anong nangyayari sa kanya?”
+
+Magulang 2: “Hindi ko alam. Isang oras na ang nakalipas pero umiiyak pa rin siya. Hindi ko na ito kaya. Nakakabaliw siya, gusto ko siyang alugin!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/crying_baby_comic_2.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+54,send_message,53,,,,,,"Magulang 2: “Nakikita kong nakaka-stress ang gabing ito para sa iyo. Ano kaya kung matulog ka muna habang dadalhin ko muna si Joan sa kabilang kwarto. Susubukan kong balutin muna siya ng kumot.”
+
+Magulang 1: “Salamat. Nagagalit na talaga ako sa sarili ko.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/crying_baby_comic_3.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+55,send_message,54,,,,,,"Magulang 1: “Paano mo siya nagawang mapatulog?”
+
+Magulang 2: “Sa tingin ko ay napagod siya pero kailangan natin siyang dalhin sa clinic bukas ng umaga.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/crying_baby_comic_4.png,,,,610f5564-ef0c-49eb-a831-c583ab2824ec,,execute_actions,4080;4900
+56,split_by_group,55,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,83e6c50e-3e8a-4d1e-ae79-4855433c12fc,,split_by_expression,7235;5980
+57,split_by_group,56,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,233d8a26-0770-462a-91ff-dc4570fdcfae,,split_by_expression,8735;6380
+58,split_by_value,57,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,36b7beed-dda7-4db8-b687-92557035e6c5,,split_by_expression,9485;7180
+59,split_by_value,58,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,69208ab2-891d-41c3-8aec-5cc9f68214fc,,split_by_expression,9110;8580
+60,send_message,59,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,6ab6d43a-b305-4058-8cc6-bde2e2286208,,execute_actions,8860;8980
+61,send_message,59,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,cdfbe4f5-5e48-43fc-a8ac-80da07081668,,execute_actions,9110;8980
+62,send_message,59,,,,,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,e720d9a0-985e-4c3a-aeda-5a0fcf9ebdad,,execute_actions,9360;8980
+63,split_by_value,58,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,9ee2637b-fe27-4b3e-8837-208cc9f56faa,,split_by_expression,9860;8780
+64,send_message,63,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,5f818843-a127-4206-b776-de4a261db915,,execute_actions,9610;8980
+65,send_message,63,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,8a3e4bee-a4ab-48fc-8c9e-81d67d6fa666,,execute_actions,9860;8980
+66,send_message,63,,,,,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,39b8ed79-f0ce-4e79-931c-43718968185f,,execute_actions,10110;8980
+67,split_by_value,57;57,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,f0a3c8d9-08fb-49f6-8f42-c0e289851954,,split_by_expression,7985;6980
+68,split_by_value,67,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,ee99a372-0638-4442-bf2e-ad0fde7aa4f2,,split_by_expression,7610;8180
+69,send_message,68,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,e51e30df-90c2-44eb-a4c9-557c004e5125,,execute_actions,7360;8980
+70,send_message,68,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,5a0ab74a-d675-44bc-b8d0-05c443e9e4d7,,execute_actions,7610;8980
+71,send_message,68,,,,,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,6f6641cd-1cbe-43fa-a9e8-6309fd87fe94,,execute_actions,7860;8980
+72,split_by_value,67,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,7ff966db-14de-429d-b440-0f1cd1b15d8f,,split_by_expression,8360;8380
+73,send_message,72,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,4ed48996-1766-4cc1-a167-4ae7a60ea756,,execute_actions,8110;8980
+74,send_message,72,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,dea0f49e-fade-4d33-acb4-0f8f0199a581,,execute_actions,8360;8980
+75,send_message,72,,,,,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,c00d5a77-f729-4a5a-891f-64059d8c2f30,,execute_actions,8610;8980
+76,split_by_group,56;56,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,8152ed49-b6f5-44dd-a47d-304c2cd7a13b,,split_by_expression,5735;6180
+77,split_by_value,76,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,06b8696d-fc01-4303-bb24-be5ad06d7e65,,split_by_expression,6485;6780
+78,split_by_value,77,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,0d467919-7b29-477c-93ea-c7592b651d3b,,split_by_expression,6110;7780
+79,send_message,78,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,7b14ed48-b08f-40e3-b20a-9a476df3db9f,,execute_actions,5860;8980
+80,send_message,78,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,27fcca66-78d7-4895-8110-3a979da66ecb,,execute_actions,6110;8980
+81,send_message,78,,,,,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,8b4f2161-8c6d-4781-9912-2fe584fb2455,,execute_actions,6360;8980
+82,split_by_value,77,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,e3a270b9-145b-49ae-a1d0-62112e39cdd6,,split_by_expression,6860;7980
+83,send_message,82,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,f444e081-73e1-4e4e-8953-9967383557a3,,execute_actions,6610;8980
+84,send_message,82,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,7fab0cd4-9a77-42b6-9a10-d5f91f6c8790,,execute_actions,6860;8980
+85,send_message,82,,,,,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,44f0422e-233b-4683-ba17-8d9f0588a09a,,execute_actions,7110;8980
+86,split_by_value,76;76,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,19a23a5a-9824-4316-8268-3dd999a2d51e,,split_by_expression,4985;6580
+87,split_by_value,86,,@fields.user_name,has_text,user_name,,@fields.gender_personalisation,,,,,,,,,,,,,,,34349089-012b-4693-be17-e0820fce33df,,split_by_expression,4610;7380
+88,send_message,87,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,3cd0b81b-f3ae-4918-9117-f619621b0fd5,,execute_actions,4360;8980
+89,send_message,87,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,3f190292-9442-4acb-9fa1-b09d6154fae9,,execute_actions,4610;8980
+90,send_message,87,,,,,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,a9bb5b54-dea8-4291-8b9e-544989e26369,,execute_actions,4860;8980
+91,split_by_value,86,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,8b25ba91-1add-4256-a683-a97afcd9160a,,split_by_expression,5360;7580
+92,send_message,91,man,@fields.gender_personalisation,has_any_word,man,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ama. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,0dfc1b3d-6ec1-4317-9001-32f99327dcfb,,execute_actions,5110;8980
+93,send_message,91,woman,@fields.gender_personalisation,has_any_word,woman,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang ina. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,d212925c-e94c-4e2c-82c8-2279d1889986,,execute_actions,5360;8980
+94,send_message,91,,,,,,"Mahusay! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukan mong gamitin ang mga tip na ito kapag umiiyak ang iyong sanggol. Tandaan mong walang masamang magulang. Lahat tayo rito ay natututo!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,5059f508-790c-47e2-94e5-ceeccc71a16c,,execute_actions,5610;8980
+95,save_value,60;61;62;64;65;66;69;70;71;73;74;75;79;80;81;83;84;85;88;89;90;92;93;94,,,,,current type assessed,tip,,,,,,,,,,,,,,,a723c7fb-9852-431e-98a5-c6271b10fb7a,,execute_actions,4080;9640
+96,save_value,95,,,,,current activity,crying,,,,,,,,,,,,,,,a723c7fb-9852-431e-98a5-c6271b10fb7a,,execute_actions,4080;9640
+97,start_new_flow,96,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,01de7166-3f76-4f0b-ac93-9f4cc890781d,,split_by_subflow,4060;9260
+98,send_message,97;97,Complete;Expired,,,,,"Tandaan na puwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Usap tayo mamaya!",,,,,,,,,,,,,,,7a11c7bf-d733-4645-9283-9e59234957de,,execute_actions,4080;9100
+99,send_message,26,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,d2f2aae7-7012-424b-b69a-ed8ca0d9ff5b,,execute_actions,3880;2340
+100,go_to,99,,,,,,25,,,,,,,,,,,,,,,,,,

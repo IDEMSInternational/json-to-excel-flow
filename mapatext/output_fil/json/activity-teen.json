@@ -1,0 +1,423 @@
+{
+  "PLH - Activity - Teen - Active - Make housework fun": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Gawing nakakaaliw ang mga gawain sa bahay\n•\tAng mga gawain sa bahay ay hindi nakakaaliw... o hindi nga ba? Pwede mo itong gawing isang laro, kagaya nito. \n• Mayroong apoy sa bundok! Takbo, takbo, takbo! \n• Mayroong apoy sa bundok! Takbo, takbo, takbo! \n• Pulutin ang pulang damit, ito ay nakakaaliw, nakakaaliw, nakakaaliw! \n• Mayroong apoy sa bundok! Takbo, takbo, takbo! \n• Mayroong apoy sa bundok! Takbo, takbo, takbo! \n• Ilagay ang pulang damit sa hamper, ito ay nakakaaliw, nakakaaliw, nakakaaliw!\n• Mayroong apoy sa bundok! Takbo, takbo, takbo! \n• Mayroong apoy sa bundok! Takbo, takbo, takbo! \n• Ilagay ang mga sapatos sa shoe rack, ito ay nakakaaliw, nakakaaliw, nakakaaliw! ",
+      "_nodeId": "22d76246-0e09-405c-9240-5eb219ce1171",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Co chef": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Kapwa Tagaluto\n•\tTanungin angiyong teenager kung anong uri ng pagkain na gusto nilang kainin.\n•\tPaghandaan ito ng sabay! Sa una, maaaring kailangan mo munang gabayan siya. \n•\tKapag ang iyong teenager ay marunong na maghanda ng pagkain, hayaan mo silang manguna at sumunod sa kanilang mga direksyon.\n•\t Hayaan mo ang bawat bata at teenager sa bahay na maging chef o manguna sa pagluluto.\n•\tMaari mo din silang tulungan gawin ang budget para sa mga ingredients!",
+      "_nodeId": "5eaba5e3-4da4-4542-8dbd-c19ee5a7e692",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        240,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Crazy chicken": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Crazy Chicken\n•\tAlugin ang iyong kaliwang kamay ng walong beses habang bumibilang ng hanggang walo. \n•\tGawin ito nang mabilis at maingay sa abot ng iyong makakaya.\n•\t• Ulitin ito gamit ang kabilang kamay, tapos gawin ito gamit ang bawat paa. \n•\tGawin ito nang 7 na ulit, pagkatapos ay 6 na ulit at magpatuloy hanggang makaabot nang 1.\n•\tAng bawat isa ay magsabi ng \"Crazy Chicken\" kung ikaw ay tapos na at gawin ang pinakamagaling nilang crazy chicken dance!",
+      "_nodeId": "36c0c171-5304-4183-904d-16715e564910",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Dance Choreography": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Dance choreography\n•\tGumawa ng sayaw sa mga paboritong kanta ng iyong teenager.\n•\tMay mauunang gagawa ng galaw at ang iba ay kokopyahin lang Ito. \n•\tAng lahat ay magsasalitan sa pagiging lider.\n•\tGawin ito sa harap ng mga kasama ninyo sa bahay!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_dancing_and_playing_instruments.jpg",
+      "_nodeId": "aca1963e-7797-4721-ba67-7b5a2c9c05e6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Get Active": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Maging aktibo!\n•\tMag-isip ng tatlong klase ng ehersisyo nang magkasama. Halimbawa, paglalakad, jogging, basketball, o pagsasayaw.\n•\tPumili kayo ng isa magkasama at subukan ito. \n•\tKung pareho ninyong gusto ito, magpasya kung gaano mo kadalas gagawin ito. Isa o dalawang beses sa isang linggo? Tuwing umaga?\n•\tSama-samang mag-isip ng mga paraan upang gawin itong mas masaya. Maaari ka bang mag-jogging hanggang sa isang lugar? Magpalitan sa pagiging coach? Hikayatin ang bawat isa sa pamamagitan ng isang libreng gantimpala o reward? ",
+      "_nodeId": "5d6c41af-09d6-4d79-9980-f24b9ae2d3a3",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Name that tune": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Hulaan ang tonong iyon\n•\tAng unang manlalaro ang siyang mamimili o kakanta ng kanta.\n•\tKailangang hulaan ng iba ang pamagat ng tunog (upang mas mahirap, puwede nilang hulaan ang singer).\n•\tAng unang tao na makahula ng tama ang syang susunod na magiging lider na pipili o kaya ay kakanta ng susunod na kanta.",
+      "_nodeId": "80f49a85-f2e6-4acc-9d07-5bee8f96b3c5",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - Pass the snap": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Ipasa ang Snap  \n•\tAng larong ito ay maganda kung may 3 o hit pang tao.\n•\tUmupo ng nakapabilog at magsimulang ipasa ang isang snap sa bilog (o pumalakpak kung hindi ka marunong mag-snap).\n•\tMag-snap ng isang bese at ibato sa iba ang iyong snap.\n•\tMaaari mong ipatalbog ang saklot o snap, ihagis ito sa hangin, at saluhin ito nang ilang beses bago mo ito ipasa. \n•\tAng direksyon (pataas, pababa, tuwid, baliko, gumugulong sa lupa) at lakas (malakas, mahina, katamtaman) ng iyong ibinatong snap ay dapat makaapekto sa kung paano ito tatanggapin ng iba.  \n•\tTingnan ang taong babatuhhan mo ng snap.  \n•\tAng taong sasalo nito ay kailangang mag-snap ng isang beses para saluhin ito.\n•\tKapag naging magaling na ang lahat dito, maaari kang magsimulang umikot sa loob ng silid, habang pinapasa pa rin ang saklot o snap.  \n•\tKaya mo bang bumato sa ilalim ng iyong ng binti? Patalikod? Sa taas iyong ulo? Maharang ang isang pumasa? Mag-enjoy sa pag-snap!  ",
+      "_nodeId": "69fed6f0-4ede-4a19-b0cf-a58711bb5ce7",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - What are you doing": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Anong Ginagawa Mo? \n•\tAng laro ay mas maganda kapag higit sa 2 tao ang naglalaro.\n•\tMay isang magpapanggap na may ginagawa--halimbawa, nagsusuklay ng buhok. \n•\tMay pangalawang tao na magtatanong, \"Ano ang ginagawa mo?\"\n•\tAng naunang tao ay kailangang magsabi ng isang bagay na walang kinalaman sa pagsusuklay ng buhok, halimbawa, \"Tinatali ang sintas ng sapatos ko.\"  \n•\tAng pangalawang tao ngayon ay magpapanggap na nagtatali ng kanyang sapatos hanggang may bagong tao na magtatanong, \"Ano ang ginagawa mo?\" \n•\tAng sagot ng pangalawang tao ay dapat iba sa kung ano talaga ang kanilang ginagawa!\nDapat i-arte o i-akting ng susunod na tao ang sagot ng pangalawang tao at kapag may nagtanong kung ano ang ginagawa nila, ang kanilang sagot ay dapat na naiiba sa talagang ginagawa nila!",
+      "_nodeId": "506ac152-9082-4f20-ad9a-be15a37438db",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Active - What is new": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Anong bago?\n•\tMag-isip ng isang bagong kasanayang maaari mong matutunan kasama ng iyong teenager. Halimbawa, pinapanatili ang isang bola sa hangin o sa iyong paa, juggling, pag-aaral ng isang bagong wika, o pagtugtog ng isang instrumento?\n•\tMagsalitan sa pagsubok ng bagong kasanayan.\n•\tSiguraduhin na purihin ang bawat isa, at subukang matuto at maglaro nang magkasama!",
+      "_nodeId": "32576a2f-c29c-4fc3-8666-9944713dae50",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - 2 Truths 1 Lie": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "2 katotohanan, 1 kasinungalingan\n•\tMag-isip ka ng tatlong pahayag tungkol sa iyong sarili. Ang dalawa ay dapat totoo, at ang isa nama'y dapat kasinungalingan.\n•\tMaaaring makatulong na isipin ang mga nais, pangarap, karanasan sa paaralan, mga gusto o hindi gusto. Halimbawa, ayaw ko ng saging, ang paborito kong paksa ay agham o science at pangarap ko sana ay kumanta. \n•\tSabihin ang mga ito sa iyong teenager. Ipahula sa kanila kung alin ang kasinungalingan. \n•\tTama ba ang hula nila? Ito ba ay nakakagulat?\n•\tNgayon, sabihin sa kanya na gawin din ito. May natutunan ba kayong bago tungkol sa isa't-isa? ",
+      "_nodeId": "9a68621a-ee40-4b8b-9d75-4faaef3e69b8",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - At the end of the day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Sa Katapusan ng Araw\n•\tSa bawat pagtatapos ng araw, maglaan ng isang minuto para isipin ang araw.  \n•\tKausapin ang iyong teenager tungkol sa isang positibo o masayang bagay na ginawa nila.\n•\tPurihin mo ang sarili mo para sa isang bagay na ginawa mo nang mabuti ngayong araw.\n•\tMag-isip ng isang bagay na pinagpapasalamat mo.  \n•\tIsa kang bituin!",
+      "_nodeId": "fcdf840d-a6cf-4970-b33c-dba115bcfa64",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Dream travel": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Pangarap na Paglalakbay\n•\tHindi ka makakalakbay pero pwede kang mangarap! Tanungin ang mga tanong na ito sa iyong teenager.\n•\tSaan mo nais maglakbay? Hanggang kailan ka maglalakbay? Ano ang iimpake mo? Ano ang gagawin mo? Ano ang mga titingnan mo?\n•\tTumingin sa isang mapa nang magkasama kung mayroon ka nito.\n•\tPumili ng isang bansa na hindi pa niya narinig at tingnan ito nang magkasama sa Internet.",
+      "_nodeId": "1feb242b-3fcb-41e0-879e-5810cee05181",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - How was your day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Kumusta ang araw mo?\n•\tTanungin ang bawat isa, \"Ano ang nagpasaya sa iyo ngayon?\"\n•\tTanungin ang bawat isa, \"Ano ang mahirap sa ngayon?\"\n•\tTanungin ang bawat isa, \"Paano ka namin matutulungan?\"\n•\tSubukang gawin ito nang magkasama araw-araw, kapag kumakain o bago matulog",
+      "_nodeId": "14e57be0-01a7-4610-bc1d-c5e7afa61680",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Just a friendly chat": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Isang simpleng kumustahan\n•\tMakipag-usap sa iyong teenager tungkol sa isang bagay na gusto nila.\n•\tMaaari itong maging tungkol sa anumang pipiliin nilang pag-usapan: sports, mga kaibigan, musika, mga sikat na tao…\n•\tSubukang makinig sa iyong teenager at bigyan sila ng pagkakataon na magsalita.\n•\tAnong bagong bagay ang natutunan mo tungkol sa iyong teenager mula sa iyong pakikipag-usap?",
+      "_nodeId": "589faea1-651e-4a9b-a681-a7a50a42e9bf",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Make up a story": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Gumawa ng isang kuwento!\n•\tSimulan ang kuwento ng \"Noong unang panahon may isang...\"\n•\tHayaan mo ang iyong teenager ang gumawa ng susunod na pangungusap.\n•\tPagkatapos, gumawa ka na ng isang pangungusap.\n•\tMagsalitan hanggang makabuo kayo ng maganda at bagong kuwento.\n•\tSiguraduhing tatapusin mo ang kwento sa isang positibong paalala.\n•\tTanungin ang iyong teenager kung ano ang kanilang paboritong bahagi ng kuwento!",
+      "_nodeId": "a7590b10-a9b3-4570-a622-d17bd8939bba",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Mirror": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Salamin\n•\tAng laro na ito ay puweding laruin nang dalawahan o kahit na pang-grupo.\n•\tTumayo nang nakaharap sa bawat isa o ng nakabilog.  \n•\tMay isang mangunguna muna habang ang iba naman ay kailangan kumopya, susubukang gumalaw kasabay ng lider.\n•\tSiguraduhin na ang lider ay gumagalaw nang mabagal para makasunod ang iba. Subukang igalaw ang iba't-ibang bahagi ng katawan at sa iba't ibang lebel.\n•\tPagkatapos, palitan naman kung sino ang lider. Bigyan ng pagkakataon ang lahat na maging lider.\n•\tSubukan ito ng walang lider!",
+      "_nodeId": "06bede64-d364-466f-b891-975dedfb7ddb",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Superpowers": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Superpowers\n•\tMag-isip ng kapangyarihan. Halimbawa, pagpunta kahit saan sa isang iglap, paglalakbay sa kahit anong dekada, pagbabasa ng isip. \n•\tTanungin ang iyong teenager na \"Kung mayroon kang superpower na [...] paano mo ito gagamitin?\"\n•\tHikayatin mo siya na pangalanan ang kanyang sarili ng pangalang superhero at kailangang i-arte niya ito. \n•\tNgayon hayaan mo siyang pumili ng super power para sa iyo.\n•\tSiguraduhing ia-arte mo din ito! ",
+      "_nodeId": "14f60b89-834f-43c1-9af0-e30943ff10d0",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - The Interrupter": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Ang Palasabat\n•\tPumili ng taga-kuwento para magsimulang makabuo ng kuwento.\n•\tAng tagapakinig ng kuwento ay maaaring sumabat at magsabi ng salita.\n•\tAng tagapagsalaysay ay kailangang iakma ang salita na iyon sa kanyang kuwento.\n•\tSumubok ng ibang taga-kuwento! ",
+      "_nodeId": "502f2519-5607-488e-8092-05439ad4ee7d",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Three options": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Tatlong pagpipilian\n•\tMag-isip ng tatlong magkakaibang sitwasyon. Halimbawa, pagmamaneho ng sasakyan, paglalayag ng bangka, o pagpapalipad ng eroplano.\n•\tSabihin ang mga ito sa iyong teenager at tanungin, \"Alin ang mas gusto mo?\"\n•\tTanungin siya kung bakit?\n•\tNgayon mag-isip ng tatlo pang mga sitwasyon o hilingin sa iyong teenager na gawin ito para sa iyo. ",
+      "_nodeId": "f2e6c23e-24ec-4cc4-9c69-1745d7002e4a",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - When COVID19 ends": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Larong pang-memorya - \"pag natapos na ang COVID-19...\"\n•\tMay mauunang magsabi, \"Pag natapos na ang COVID-19, pupunta ako sa...(halimbawa: pupunta sa parke)\"\n•\tAng pangalawang tao ay magdaragdag sa plano ng naunang tao, \"Kapag natapos ang COVID-19, pupunta ako sa park at... (hal., bibisitahin ko ang best friend ko)\"\n•\tBawat tao ay magdagdag sa mga naunang listahan ng mga plano, sinusubukang mag-isip ng mga nakakatuwang bagay na gagawin pag natapos na ang COVID-19.",
+      "_nodeId": "b6fc4730-1587-4df8-a8f1-a268d1374bb6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Teen - Calm - Yes No or Maybe": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Oo, Hindi, o Puwede\n•\tTanungin ang bawat isa. Ang mga tanong ay maaring tungkol sa mga bagay na gusto mo o kung ano ang iyong ginawa ngayon.\n•\tAng tanging patakaran ay hindi mo puwedeng isagot ang Oo, Hindi, o Puwede\n•\tHanggang kailan ka makakatagal? Gaano ka ka-malikhain sa iyong mga sagot?\n•\tMagsalitan at maglaro muli! ",
+      "_nodeId": "8b121f56-f509-40b6-8ab4-2b80b7e4a69f",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ]
+}

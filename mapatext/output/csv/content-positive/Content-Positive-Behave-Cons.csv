@@ -1,0 +1,27 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Using appropriate consequences,,,,,,,,,,,,,,,f7729411-03d7-4563-a351-5db4147586a8,,execute_actions,1020;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,3a5443b8-5ea2-4dd8-8b01-521108b1d87d,,split_by_subflow,1040;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,e50a019b-3c3d-4565-ae20-e98b67510818,,split_by_expression,895;260
+4,send_message,3,,@fields.user_name,has_text,user_name,,Hello @fields.user_name! Today we are going to learn what we can do when our children are already misbehaving or have already misbehaved…,,,,,,,,,,,,,,,43a1ce50-9bc2-4d16-9d81-87c1a4b2cba0,,execute_actions,770;460
+5,send_message,3,,,,,,Hello! Today we are going to learn what we can do when our children are already misbehaving or have already misbehaved…,,,,,,,,,,,,,,,c3692998-2252-4818-ad92-8cc8b8eb1c6d,,execute_actions,1020;460
+6,split_by_value,4;5,,,,,,@fields.toolkit,,,,,,,,,,,,,,,69c785d3-b0db-4e09-92c1-68481b2a10db,,split_by_contact_field,430;500
+7,split_by_group,6,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,49bc07df-89f3-46d1-88fb-4f3b83c4df5c,,split_by_expression,185;600
+8,send_message,7,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,1154def2-d83d-485c-b0b7-30d23d1fb8ef,,execute_actions,310;800
+9,send_message,7;7,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,,,,,44e77f17-4225-4a20-94de-376aaeac92cb,,execute_actions,60;800
+10,send_message,6,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,4eeff79f-904d-435d-a379-be9fa5a3d5eb,,execute_actions,550;820
+11,wait_for_response,10;8;9,,,,,know_more,,,,,,,,,,,,,,,,256c83bb-db98-4f94-99fe-9698ecce2235,,wait_for_response,490;1000
+12,save_value,11,yes y ,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,ba9e2435-0ff9-496d-8ecb-2344eba3ba45,,execute_actions,330;1140
+13,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,ba9e2435-0ff9-496d-8ecb-2344eba3ba45,,execute_actions,330;1140
+14,start_new_flow,13,,,,,,PLH - Content - Positive - Behave - Consequences,,,,,,,,,,,,,,e5fb19b6-addd-45cc-bad2-dd0861472e13,e4ff45b0-16c0-4445-9336-9f707ce64bd6,,split_by_subflow,310;1520
+15,save_value,14,Complete,,,,from theme,no,,,,,,,,,,,,,,,e33696d6-c552-42e6-89c1-7e765ca371ad,,execute_actions,;1680
+16,send_message,15,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support.  You can also change the type of messages you receive for an older or younger child. Just select ""Technical Support"". Chat to you later!",,,,,,,,,,,,,,,3f794fbd-2741-4371-bde4-251b146d4e3d,,execute_actions,20;1780
+17,save_value,14,Expired,,,,has expired,tip,,,,,,,,,,,,,,,243610af-948d-4919-9166-2d98d3c3c3db,,execute_actions,530;1560
+18,save_value,17,,,,,from theme,no,,,,,,,,,,,,,,,243610af-948d-4919-9166-2d98d3c3c3db,,execute_actions,530;1560
+19,send_message,18,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,b8a6e0d8-df57-4656-980a-25a854310ade,,execute_actions,530;1760
+20,split_by_value,11,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,a8e475ff-cab8-4f0f-a267-9641ec09428b,,split_by_expression,1205;1180
+21,send_message,20,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,5a3dbadf-48f3-45a0-8d76-b89e454453ec,,execute_actions,1080;1380
+22,send_message,20,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,2ad0ec53-34ab-40ed-a691-0d3dfdc5dc68,,execute_actions,1330;1380
+23,save_value,21;22,,,,,last interaction,@(now()),,,,,,,,,,,,,,,d4358d2c-557c-4c25-a05c-310243e66152,,execute_actions,1330;1540
+24,send_message,11,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,458de2e4-3669-422c-84f6-04c77f7dd9db,,execute_actions,1350;960
+25,save_value,24,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a415f9e8-1ab4-4506-8420-d3a0a0155025,,execute_actions,1370;1080
+26,go_to,25,,,,,,6,,,,,,,,,,,,,,,,,,

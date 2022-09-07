@@ -1,0 +1,22 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,last entered survey,@fields.last_entered_survey,,,,,,,,,,,,,,,9ead0dc2-4453-4101-919f-d403ab6f740c,,execute_actions,340;
+2,save_value,1,,,,,last entered survey,@(now()),,,,,,,,,,,,,,,72feac54-b9e5-4747-a561-15484e689407,,execute_actions,340;140
+3,split_by_value,2,,,,,,"@(datetime_diff( results.last_entered_survey,now(), ""D""))",,,,,,,,,,,,,,,902bdbb3-0252-4138-84de-aaf2b3dde3fa,,split_by_expression,340;240
+4,start_new_flow,3,1,"@(datetime_diff( results.last_entered_survey,now(), ""D""))",has_number_gte,not entered today,,PLH - Internal - Update survey counters,,,,,,,,,,,,,,643b2d4a-6c71-441d-b5a5-d31faca659a0,ffbf309b-de0b-4c87-ae00-68fb953e6c7b,,split_by_subflow,80;320
+5,split_by_value,4,Complete,,,,,@fields.survey_parenting_count,,,,,,,,,,,,,,,7e2ccd1f-463f-4b07-8184-d82a75a1ab8d,,split_by_contact_field,100;480
+6,start_new_flow,5,0,@fields.survey_parenting_count,has_number_gt,do parenting,,PLH - Survey - Parenting,,,,,,,,,,,,,,8a394172-e4ff-4368-8cc8-1adf8c832afe,db2dbf84-a013-492c-a99c-13acb2891c02,,split_by_subflow,60;640
+7,split_by_value,6,Complete,,,,,@fields.survey_parenting_count,,,,,,,,,,,,,,,fa356089-f57d-428e-81ae-4680d799f9ee,,split_by_contact_field,40;820
+8,save_value,6,Expired,,,,has expired,survey_parenting,,,,,,,,,,,,,,,90dc47ef-0d3a-4c51-acc4-644fc59447b0,,execute_actions,260;1120
+9,split_by_value,5,,,,,,@fields.survey_behave_count,,,,,,,,,,,,,,,a27f52dd-d255-4bd9-891e-8b44bd9668aa,,split_by_contact_field,380;480
+10,start_new_flow,7;9,0;0,@fields.survey_parenting_count;@fields.survey_behave_count,has_number_eq;has_number_gt,0;do behave,,PLH - Survey - Behaviour,,,,,,,,,,,,,,36a6e56b-04a9-4a8b-a27e-092decdadcad,b14c8665-6c0d-40ac-adfe-a43bcb67caa2,,split_by_subflow,360;660
+11,save_value,10,Expired,,,,has expired,survey_behaviour,,,,,,,,,,,,,,,c4680166-b161-4594-8508-0adc2b5878f8,,execute_actions,480;1120
+12,split_by_value,9,,,,,,@fields.survey_ipv_count,,,,,,,,,,,,,,,a8696d11-20c6-49a7-aa26-02795c359424,,split_by_contact_field,660;480
+13,start_new_flow,12,0,@fields.survey_ipv_count,has_number_gt,do ipv,,PLH - Survey - IPV,,,,,,,,,,,,,,45a9a69b-ac6a-4668-8705-32ef7b5d38fc,46ab256b-934a-4105-9bb7-bc7b7662328b,,split_by_subflow,620;660
+14,save_value,13,Expired,,,,has expired,survey_ipv,,,,,,,,,,,,,,,2ae70f0a-6598-41f6-8860-442fdd9a0951,,execute_actions,700;1120
+15,split_by_value,12,,,,,,@fields.survey_covid_count,,,,,,,,,,,,,,,e59f5846-1b5d-402a-a04e-03a26ab12fb3,,split_by_contact_field,900;460
+16,start_new_flow,15,0,@fields.survey_covid_count,has_number_gt,do covid,,PLH - Survey - COVID19 Experience and bereavement,,,,,,,,,,,,,,29f68d68-2ace-4a39-9ffa-bcabb9cd6d0b,651b654a-8457-496c-b004-c813d4fc0e68,,split_by_subflow,900;660
+17,save_value,16,Expired,,,,has expired,survey_covid,,,,,,,,,,,,,,,6e9afc21-e02e-43c0-9447-6a6367c177c3,,execute_actions,920;1120
+18,split_by_value,15,,,,,,@fields.survey_parentingbehave_count,,,,,,,,,,,,,,,4f82b14f-2cdd-47b1-a6b7-b2442c4eb0d7,,split_by_contact_field,1160;460
+19,start_new_flow,18,0,@fields.survey_parentingbehave_count,has_number_gt,do parentingbehave,,PLH - Survey - Parenting & Behaviour,,,,,,,,,,,,,,2afba27e-b8ef-4045-a38e-f81e38c8693a,e5b3ce80-db84-4dff-a5b9-758a7c29463a,,split_by_subflow,1200;620
+20,save_value,19,Expired,,,,has expired,survey_pabe,,,,,,,,,,,,,,,bfa697ff-aec0-4970-b0a2-ee8f63f325e7,,execute_actions,1140;1120
+21,send_message,11;14;17;20;8,,,,,,"Mukhang abala ka ngayon.  Maaari mong i-type ang ""GoBack"" para matanggap muli ang mga pinakabagong mensahe.",,,,,,,,,,,,,,,251fa9ae-4313-4fe0-98b0-fb74d80a506d,,execute_actions,640;1240

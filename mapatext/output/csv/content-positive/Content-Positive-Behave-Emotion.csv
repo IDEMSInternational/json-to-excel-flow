@@ -1,0 +1,167 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Giving emotional support,,,,,,,,,,,,,,,9c861cd2-36a4-4bc4-9a60-dbe91d223550,,execute_actions,740;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,3f69d253-0706-48b9-9421-9dcc15b36629,,split_by_subflow,430;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,f9f284c5-10f8-4b00-9323-e56ddb8cea6f,,split_by_contact_field,410;280
+4,send_message,3,,,,,,Be open to your children. They get stressed too - sometimes from different things from you. Allow them to express how they feel and accept their feelings. Try to listen to them and think about how it must feel for them.,,,,,,,,,,,,,,,62cc96ee-f8af-469c-8384-8f953b716263,,execute_actions,3290;520
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,26e59fd9-096c-40ba-90b7-7024526f3774,,split_by_contact_field,370;4560
+6,split_by_value,5,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,ff82158c-66d1-48f0-a60e-0a01d8cbc873,,split_by_expression,145;4920
+7,send_message,6,,@fields.child_nickname,has_text,child_nickname,,Here's a video that can help you teach @fields.child_nickname how to cope with their emotions.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Emotional_Support.m4v,,5b05753a-2042-4cb2-bcf1-6f3b011da1f8,,execute_actions,20;5120
+8,send_message,6,,,,,,Here's a video that can help you teach your child how to cope with their emotions.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Emotional_Support.m4v,,010861b4-355f-4dcb-b491-34635f24ee18,,execute_actions,270;5120
+9,split_by_value,5,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,3c47e2d3-34f9-4a33-8d84-13159949c3ff,,split_by_expression,945;4700
+10,send_message,9,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message that can help you teach @fields.child_nickname how to cope with their emotions.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Emotional_Support.mp3,,,dbf71468-9d31-408e-a078-b6fc46e8b672,,execute_actions,820;4900
+11,send_message,9,,,,,,Here's an audio message that can help you teach your child how to cope with their emotions.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Emotional_Support.mp3,,,937f9012-5ddb-4f10-83ec-1b7e84973ad3,,execute_actions,1070;4900
+12,wait_for_response,10;11;7;8,,,,,Result 4,,,,,,,,,,,,,,,,f67f3046-c5a9-46fb-b092-3e4e84748ebf,60,wait_for_response,3370;5260
+13,start_new_flow,12;12;5,;No Response;,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,1ae39602-45c0-40ae-8a47-1892d059801a,,split_by_subflow,1150;5680
+14,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,3d4ee707-0323-40bb-afd0-436ec1285b73,,execute_actions,3290;760
+15,wait_for_response,14,,,,,Result 12,,,,,,,,,,,,,,,,c0524bb8-5de7-4051-a9b9-70b3bacacf38,3600,wait_for_response,3290;4500
+16,go_to,15,y yes,,has_any_word,Y,,5,,,,,,,,,,,,,,,,,,
+17,send_message,15,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,2e134324-d297-4e1c-a012-c61e16dfc000,,execute_actions,4270;4480
+18,go_to,17,,,,,,14,,,,,,,,,,,,,,,,,,
+19,send_message,15;15,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,72967bb6-b7e5-407e-8edd-4d1f1e202e6e,,execute_actions,4290;5140
+20,send_message,13;13,Complete;Expired,,,,,"Here are some tips for how we can help our children learn how to cope with their emotions:
+
+1. Be open to your child
+2. Share your own feelings
+3. Help your child learn how to talk about feelings
+4. Talking about difficult emotions
+5. Notice the positive emotions
+6. Show your child that you care
+
+To learn more about one of these, type ""1"" to ""6"". You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,1ffb85bd-9326-478d-ba27-51524b15e821,,execute_actions,1440;5820
+21,wait_for_response,20,,,,,list_of_tips,,,,,,,,,,,,,,,,ccb93138-3afe-48f2-8e34-f7846afcc524,,wait_for_response,1440;6240
+22,send_message,21,1,,has_number_eq,1,,"1. Be open to your child
+
+Your child will look to you for support and reassurance. Listen to your children when they share how they are feeling. Accept how they feel and give them comfort.",,,,,,,,,,,,,,,017fb8bc-3ea2-439d-9f32-3beab5e1483e,,execute_actions,;6440
+23,send_message,21,2,,has_number_eq,2,,"2. Share your own feelings
+
+When you share your own feelings with your children, you help them recognise their own feelings. It can also help your children learn self-discipline and to understand their own feelings.",,,,,,,,,,,,,,,830b6338-05fa-4c38-9080-e08f1a492328,,execute_actions,740;6460
+24,send_message,21,3,,has_number_eq,3,,"3. Help your child learn how to talk about feelings
+
+There are 6 basic emotions: Happy, Sad, Angry, Disgusted, Surprised, and Afraid. Even babies can feel and express these emotions. As children get older, they learn to identify lots of other emotions, like excited, frustrated, proud, lonely, peaceful, guilty, or confused.",,,,,,,,,,,,,,,1a4c1dd3-e27e-419f-bf1f-dc06f739c91b,,execute_actions,1480;6460
+25,send_message,21,4,,has_number_eq,4,,"4. Talking about difficult emotions
+
+It is normal to have difficulty talking about and expressing emotions and feelings. Many of us were told not to cry when we were sad or laugh when we were happy. This may be especially the case for boys and men.",,,,,,,,,,,,,,,16ef8d05-7f2b-4968-94f1-81827652b637,,execute_actions,3700;6460
+26,send_message,25,,,,,,"But we all have the same feelings, and  we can learn how to become aware of our own emotions, to experience them in our body, and to communicate about them.",,,,,,,,,,,,,,,ba4640d8-b046-4c51-81d5-a3d7cfd40b78,,execute_actions,3700;7180
+27,split_by_value,21,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,63d2d75a-391b-40df-91c9-74f556ab38c3,,split_by_expression,4065;6480
+28,send_message,27,,@fields.child_nickname,has_text,child_nickname,,"5. Notice the positive emotions
+
+Talking about feelings can help children manage anger, disappointment, and frustration. It can also help @fields.child_nickname be more aware of positive emotions such as a sense of peace, happiness, or calmness. It can also allow children to appreciate a beautiful moment or feeling of love!",,,,,,,,,,,,,,,38057b04-e03a-4826-8497-5f8331d825bd,,execute_actions,3940;6880
+29,send_message,27,,,,,,"5. Notice the positive emotions
+
+Talking about feelings can help children manage anger, disappointment, and frustration. It can also help your child be more aware of positive emotions such as a sense of peace, happiness, or calmness. It can also allow children to appreciate a beautiful moment or feeling of love!",,,,,,,,,,,,,,,cb986ba0-8111-41ad-be44-cb41310c874e,,execute_actions,4190;6880
+30,split_by_value,21,6,,has_number_eq,6,,@fields.child_nickname,,,,,,,,,,,,,,,94ed5a72-860f-4a59-af79-92821126f8dc,,split_by_expression,4575;6680
+31,send_message,30,,@fields.child_nickname,has_text,child_nickname,,"6. Show your child that you care
+
+Use physical and verbal support to make @fields.child_nickname feel accepted and loved. A hug or saying, ""I understand,"" can mean a lot. Remind @fields.child_nickname that you are there for them and that they can always talk to you. ",,,,,,,,,,,,,,,700d22f7-737f-46cd-acbd-7b529029d64e,,execute_actions,4450;6880
+32,send_message,30,,,,,,"6. Show your child that you care
+
+Use physical and verbal support to make your child feel accepted and loved. A hug or saying, ""I understand,"" can mean a lot. Remind your child that you are there for them and that they can always talk to you. ",,,,,,,,,,,,,,,a1556e7f-2929-4f85-8560-5d972080c9a5,,execute_actions,4700;6880
+33,send_message,22;23;24;26;28;29;31;32,,,,,,"Please select another number if you want to learn more about talking about emotions:
+
+1. Be open to your child
+2. Share your own feelings
+3. Help your child learn how to talk about feelings
+4. Talking about difficult emotions
+5. Notice the positive emotions
+6. Show your child that you care
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,35638828-e8d6-491f-bb98-66004f5aa6ac,,execute_actions,1130;7440
+34,save_value,33,,,,,emotion list of tips,"@(fields.emotion_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,ad7b8a8f-16f5-442e-8f21-29c07c7156d0,,execute_actions,1460;7840
+35,save_value,34,,,,,last interaction,@(now()),,,,,,,,,,,,,,,90d144a5-d062-4222-b170-7ff52bc94d51,,execute_actions,1520;8000
+36,go_to,35,,,,,,21,,,,,,,,,,,,,,,,,,
+37,split_by_value,21,n no,,has_any_word,N,,@fields.age_group_for_tips,,,,,,,,,,,,,,,66dca007-a5c2-4aa9-add5-330ca9840289,,split_by_contact_field,800;8120
+38,split_by_value,37,teen,@fields.age_group_for_tips,has_any_word,Teen,,@fields.child_nickname,,,,,,,,,,,,,,,dae8b11b-bdd8-4a4d-b85a-1c56ef893c4d,,split_by_expression,575;8260
+39,send_message,38,,@fields.child_nickname,has_text,child_nickname,,Here is a comic that shows how you can give @fields.child_nickname love and support when they share difficult emotions with you…,,,,,,,,,,,,,,,6ec328d2-4f2f-4a8f-83cf-7d28c7bb3aac,,execute_actions,450;8660
+40,send_message,39,,,,,,"Parent: “How are you doing, Andy?”
+
+Teen (looking sad): “I wish I could hang out with my friends.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_1.png,,,,6ec328d2-4f2f-4a8f-83cf-7d28c7bb3aac,,execute_actions,450;8660
+41,send_message,40,,,,,,"Parent (thinking): ""Hmmm…that can wait…""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,6ec328d2-4f2f-4a8f-83cf-7d28c7bb3aac,,execute_actions,450;8660
+42,send_message,41,,,,,,"Parent (looks back to teen):“I understand it is hard to be separate from your friends. Especially since I am sure they are missing you, too. Let’s think of some ways that you could reach out to them.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,6ec328d2-4f2f-4a8f-83cf-7d28c7bb3aac,,execute_actions,450;8660
+43,send_message,42,,,,,,"Teen: ""Maybe I can make a TikTok video to share with them. But I am not sure how…can you help me?”
+
+Parent: “I would be happy to help and would like to know more about TikTok, too!”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_4.png,,,,6ec328d2-4f2f-4a8f-83cf-7d28c7bb3aac,,execute_actions,450;8660
+44,send_message,38,,,,,,Here is a comic that shows how you can give your teen love and support when they share difficult emotions with you…,,,,,,,,,,,,,,,7460c764-4c9b-4fcf-a7d9-fb0f9c60dd38,,execute_actions,700;8660
+45,send_message,44,,,,,,"Parent: “How are you doing, Andy?”
+
+Teen (looking sad): “I wish I could hang out with my friends.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_1.png,,,,7460c764-4c9b-4fcf-a7d9-fb0f9c60dd38,,execute_actions,700;8660
+46,send_message,45,,,,,,"Parent (thinking): ""Hmmm…that can wait…""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,7460c764-4c9b-4fcf-a7d9-fb0f9c60dd38,,execute_actions,700;8660
+47,send_message,46,,,,,,"Parent (looks back to teen):“I understand it is hard to be separate from your friends. Especially since I am sure they are missing you, too. Let’s think of some ways that you could reach out to them.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,7460c764-4c9b-4fcf-a7d9-fb0f9c60dd38,,execute_actions,700;8660
+48,send_message,47,,,,,,"Teen: ""Maybe I can make a TikTok video to share with them. But I am not sure how…can you help me?”
+
+Parent: “I would be happy to help and would like to know more about TikTok, too!”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_4.png,,,,7460c764-4c9b-4fcf-a7d9-fb0f9c60dd38,,execute_actions,700;8660
+49,split_by_value,37,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,63fa3b86-c9a3-496b-b7da-3383c89cc6cf,,split_by_expression,1315;8460
+50,send_message,49,,@fields.child_nickname,has_text,child_nickname,,Here is a comic that shows how you can give @fields.child_nickname love and support when they share difficult emotions with you…,,,,,,,,,,,,,,,850ed89c-6626-41ae-aa4e-c1449e89a295,,execute_actions,1190;8660
+51,send_message,50,,,,,,"Child: “Why can’t I go play with my friends today?”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_1.png,,,,850ed89c-6626-41ae-aa4e-c1449e89a295,,execute_actions,1190;8660
+52,send_message,51,,,,,,"Parent: “I can see that you are upset, Sam. It can be difficult when we feel separated from our friends.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_2.png,,,,850ed89c-6626-41ae-aa4e-c1449e89a295,,execute_actions,1190;8660
+53,send_message,52,,,,,,"Parent: “We are not allowed to visit other people right now because of COVID-19.
+
+This will keep them and us safe while making sure our health services are able to support those who are sick.""
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_3.png,,,,850ed89c-6626-41ae-aa4e-c1449e89a295,,execute_actions,1190;8660
+54,send_message,53,,,,,,"Parent: “As soon as we are able, you can play with your friends. In the meantime, we can draw some pictures of your favourite times playing with them.” 
+
+Child: “Okay!”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_4.png,,,,850ed89c-6626-41ae-aa4e-c1449e89a295,,execute_actions,1190;8660
+55,send_message,49,,,,,,Here is a comic that shows how you can give your child love and support when they share difficult emotions with you…,,,,,,,,,,,,,,,13f853de-3c76-44cd-a0d4-a6de105b5ca4,,execute_actions,1440;8660
+56,send_message,55,,,,,,"Child: “Why can’t I go play with my friends today?”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_1.png,,,,13f853de-3c76-44cd-a0d4-a6de105b5ca4,,execute_actions,1440;8660
+57,send_message,56,,,,,,"Parent: “I can see that you are upset, Sam. It can be difficult when we feel separated from our friends.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_2.png,,,,13f853de-3c76-44cd-a0d4-a6de105b5ca4,,execute_actions,1440;8660
+58,send_message,57,,,,,,"Parent: “We are not allowed to visit other people right now because of COVID-19.
+
+This will keep them and us safe while making sure our health services are able to support those who are sick.""
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_3.png,,,,13f853de-3c76-44cd-a0d4-a6de105b5ca4,,execute_actions,1440;8660
+59,send_message,58,,,,,,"Parent: “As soon as we are able, you can play with your friends. In the meantime, we can draw some pictures of your favourite times playing with them.” 
+
+Child: “Okay!”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/acknowledging_difficult_emotions_comic_4.png,,,,13f853de-3c76-44cd-a0d4-a6de105b5ca4,,execute_actions,1440;8660
+60,split_by_group,43;48;54;59,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,795792c7-fbc0-4869-b08a-fc24937b810a,,split_by_expression,2415;9640
+61,split_by_group,60,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,82b8fb6a-5081-43f0-aaff-1681f776f23d,,split_by_expression,2915;10040
+62,split_by_value,61,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,a208a9ce-dcc8-4c70-b781-94ba237c6463,,split_by_expression,3165;10840
+63,send_message,62,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,60a2f716-6d3b-4aab-a2cc-305cbab49bf6,,execute_actions,3040;11040
+64,send_message,62,,,,,,"Well done! You have added another layer to your House of Support! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,a99c2ea4-0923-44e4-a6ae-8509286d6c5a,,execute_actions,3290;11040
+65,split_by_value,61;61,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,41f12d47-eb23-4640-840a-32352100dee8,,split_by_expression,2665;10640
+66,send_message,65,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,88ae1295-bf01-484d-9fb3-cf47e042b2c5,,execute_actions,2540;11040
+67,send_message,65,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,c89f9741-b9ed-42ee-8b6e-e14ef2edf522,,execute_actions,2790;11040
+68,split_by_group,60;60,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,d8fc04c8-01c4-4408-ba54-6728bd9f9e74,,split_by_expression,1915;9840
+69,split_by_value,68,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,4f6b925b-deb5-43a4-9535-8935a772974a,,split_by_expression,2165;10440
+70,send_message,69,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,c72f96fb-4464-4041-b11d-120f4493d86d,,execute_actions,2040;11040
+71,send_message,69,,,,,,"Well done! You have added another layer to your House of Support! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,aab77da6-1520-4c88-b1ab-e32148793047,,execute_actions,2290;11040
+72,split_by_value,68;68,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,102d8972-6fa3-4141-8424-64513bd86d96,,split_by_expression,1665;10240
+73,send_message,72,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,ed5415fa-573b-448a-9ad9-ad07dfc26339,,execute_actions,1540;11040
+74,send_message,72,,,,,,"Well done! You have added another skill to your Parenting Toolkit! Over the next few days, try to notice how your child is feeling and comment on it. You can also share how you feel, too. Remember that all emotions are okay. It's how we respond to them that is important!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,1b8f221b-48bc-40b7-ae12-9f5fcab396fe,,execute_actions,1790;11040
+75,save_value,63;64;66;67;70;71;73;74,,,,,current type assessed,tip,,,,,,,,,,,,,,,18dc55e4-e071-496b-b9a8-bff01018e835,,execute_actions,3290;11340
+76,save_value,75,,,,,current activity,emotions,,,,,,,,,,,,,,,18dc55e4-e071-496b-b9a8-bff01018e835,,execute_actions,3290;11340
+77,start_new_flow,76,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,e625592b-1a78-4539-90ce-6a80a20fba5c,,split_by_subflow,3310;11640
+78,split_by_value,77;77,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,7d5a3f44-d2ee-4397-9cbd-07f3f91d2df0,,split_by_contact_field,3350;11840
+79,send_message,78,yes,@fields.from_theme,has_any_word,Yes,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. ",,,,,,,,,,,,,,,78acbd8c-7182-40c8-ae29-0968a60a5cf1,,execute_actions,1130;12200
+80,split_by_value,78,,,,,,@fields.user_name,,,,,,,,,,,,,,,ccb6f7a2-79de-45ae-a136-b24dc231e70c,,split_by_expression,3515;12000
+81,send_message,80,,@fields.user_name,has_text,user_name,,Chat to you later @fields.user_name!,,,,,,,,,,,,,,,7e9f2107-3827-49b3-89b3-5f12f9261b41,,execute_actions,3390;12200
+82,send_message,80,,,,,,Chat to you later!,,,,,,,,,,,,,,,aa4bb35c-97e0-4b5d-8b8c-7f3c5d6db010,,execute_actions,3640;12200
+83,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,9fc008dc-62e4-4c2a-8ae4-412544742034,,execute_actions,3700;6040
+84,go_to,83,,,,,,20,,,,,,,,,,,,,,,,,,

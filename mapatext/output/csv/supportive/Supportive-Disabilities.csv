@@ -1,0 +1,15 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,e4c0adca-fd77-492c-84bb-927089bfeaef,,split_by_expression,545;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Would you like to learn more about how you could support children with disabilities?,Give me more information,I am not interested,,,,,,,,,,,,,6e857bf1-6847-43f2-8f65-2317b20c62b4,,execute_actions,420;200
+3,send_message,1,,,,,,Hi! Would you like to learn more about how you could support children with disabilities?,Give me more information,I am not interested,,,,,,,,,,,,,2b896d91-435e-493c-8bbc-d1c2ebe6756d,,execute_actions,670;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,6cee8a07-d57c-417f-867b-71fdceec3cf1,,wait_for_response,670;440
+5,save_value,4,more information,,has_any_word,More,last interaction,@(now()),,,,,,,,,,,,,,,83a8c6e5-3dfa-42c8-8a09-281f3bff65bd,,execute_actions,20;460
+6,start_new_flow,5,,,,,,PLH - Internal - Update disability variables,,,,,,,,,,,,,,9eeb7958-d624-4be6-baee-8fbd18909ed9,4bbd9fc2-cb8e-43e5-b1b9-b9f93a5bc64b,,split_by_subflow,;840
+7,start_new_flow,6;6,Complete;Expired,,,,,PLH - Content - Extra - Disability,,,,,,,,,,,,,,1750e0a7-af13-48a4-8c02-67d8eb2c4e83,918ee0b0-993d-415e-8d57-65f8c3fb8560,,split_by_subflow,20;1020
+8,split_by_value,4,not no interested,,has_any_word,Not,,@fields.user_name,,,,,,,,,,,,,,,0b608251-60f2-4daa-a1e8-94c034fcfcc1,,split_by_expression,815;640
+9,send_message,8,,@fields.user_name,has_text,user_name,,"That's okay! You can always get more information by typing ""Help"". Chat later @fields.user_name!",,,,,,,,,,,,,,,269c3ebd-295a-491e-b550-eab278e9312a,,execute_actions,690;840
+10,send_message,8,,,,,,"That's okay! You can always get more information by typing ""Help"". Chat later!",,,,,,,,,,,,,,,e6cf4068-d1ed-41d5-9f0d-4556935e412a,,execute_actions,940;840
+11,save_value,10;9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,94d4bc10-ece8-40df-8fee-536305861ff6,,execute_actions,670;980
+12,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,666ef09f-61ce-4f2f-9624-b8135616b1d4,,execute_actions,1300;520
+13,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,5f49c86c-d7f7-442f-b249-cd96ce9ddd7c,,execute_actions,1280;840
+14,go_to,13,,,,,,1,,,,,,,,,,,,,,,,,,

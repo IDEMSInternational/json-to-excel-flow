@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Sa Katapusan ng Araw
+•	Sa bawat pagtatapos ng araw, maglaan ng isang minuto para isipin ang araw.  
+•	Kausapin ang iyong anak tungkol sa isang positibo o masayang bagay na kanilang ginawa.
+•	Purihin mo ang sarili mo para sa isang bagay na ginawa mo nang mabuti ngayong araw.
+•	Mag-isip ng isang bagay na pinagpapasalamat mo.  
+•	Isa kang bituin!",,,,,,,,,,,,,,,2c4444cc-c093-4331-8a76-557ff126b97e,,execute_actions,20;60

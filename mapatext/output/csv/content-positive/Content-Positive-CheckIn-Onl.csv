@@ -1,0 +1,62 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,10f554e8-9b72-4300-9650-3c947ec70e33,,split_by_expression,1515;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Were you able to follow the steps to stay safe online?,Yes,No,,,,,,,,,,,,,d2b41d59-bef1-4cf4-aa47-7e654a1573cc,,execute_actions,1390;200
+3,send_message,1,,,,,,Hi! Were you able to follow the steps to stay safe online?,Yes,No,,,,,,,,,,,,,1f37de48-5a63-4828-8abe-0bf6dff1b5aa,,execute_actions,1640;200
+4,wait_for_response,2;3,,,,,checkin_managed,,,,,,,,,,,,,,,,42fbc6f5-fcd3-44fd-aa48-f9dceb324086,,wait_for_response,1700;380
+5,save_value,4,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,fa7efe36-88af-46cf-ab87-e6cd55121b6b,,execute_actions,1680;740
+6,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,dbceed23-e006-4f59-a055-db0b9c4c1170,,execute_actions,2000;500
+7,save_value,6,,,,,last interaction,@(now()),,,,,,,,,,,,,,,dbceed23-e006-4f59-a055-db0b9c4c1170,,execute_actions,2000;500
+8,go_to,7,,,,,,1,,,,,,,,,,,,,,,,,,
+9,split_by_value,4,yes y,,has_any_word,Yes,,@fields.user_name,,,,,,,,,,,,,,,0bf7b7be-54b1-4baa-a197-040dda3e1734,,split_by_expression,755;520
+10,save_value,9,,@fields.user_name,has_text,user_name,last interaction,@(now()),,,,,,,,,,,,,,,eac50537-2303-4147-b863-b2e78caf00bc,,execute_actions,630;720
+11,send_message,10,,,,,,Well done for taking the time to do this @fields.user_name.. How did it go?,Great,Neutral,Bad,,,,,,,,,,,,eac50537-2303-4147-b863-b2e78caf00bc,,execute_actions,630;720
+12,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,ce89ed19-a7f3-4d6d-bb67-e6b6c087f6c8,,execute_actions,880;720
+13,send_message,12,,,,,,Well done for taking the time to do this. How did it go?,Great,Neutral,Bad,,,,,,,,,,,,ce89ed19-a7f3-4d6d-bb67-e6b6c087f6c8,,execute_actions,880;720
+14,wait_for_response,11;13,,,,,checkin_how,,,,,,,,,,,,,,,,37c67649-07f9-488e-a9f6-1dd5f27703b0,,wait_for_response,610;980
+15,split_by_group,14,great,,has_any_word,Great,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,7a45c6f8-345c-46e6-be2e-5704bfed7ba1,,split_by_expression,185;1100
+16,send_message,15,ABTest_test-first-person_alternative,,,,,"I am happy to hear it went well! We spend a lot of time online, so it is important to create healthy and responsible online habits. This is important so that we can stay safe and continue enjoying the benefits of the digital world.",,,,,,,,,,,,,,,77877ffd-57fe-4601-9765-a93f1d2d2518,,execute_actions,310;1300
+17,send_message,15;15,ABTest_test-first-person_Default;,,,,,"We are happy to hear it went well! We spend a lot of time online, so it is important to create healthy and responsible online habits. This is important so that we can stay safe and continue enjoying the benefits of the digital world.",,,,,,,,,,,,,,,eede6f27-c34b-418c-897b-66c891d2f888,,execute_actions,60;1300
+18,send_message,14,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,80487c76-556a-45f3-be65-5dfb063b580b,,execute_actions,1640;1020
+19,go_to,18,,,,,,9,,,,,,,,,,,,,,,,,,
+20,split_by_value,14;14;5,neutral;bad;,,has_any_word;has_any_word;,Neutral;Bad;,,@fields.user_name,,,,,,,,,,,,,,,4f522007-0af8-4640-89a8-060ba0c7f9fa,,split_by_expression,2165;1380
+21,send_message,20,,@fields.user_name,has_text,user_name,,That is okay @fields.user_name! What did you find difficult about online safety?,I forgot what the risks and dangers are,I forgot how to set up set up technical fixes,I forgot how to seek help,I don't know how to create healthy and safe online habits,I did not have the time for this activity,,,,,,,,,,ae9c4edf-07c1-4a6c-b9a1-8d67ab7fbd03,,execute_actions,2040;1580
+22,send_message,20,,,,,,That is okay! What did you find difficult about online safety?,I forgot what the risks and dangers are,I forgot how to set up set up technical fixes,I forgot how to seek help,I don't know how to create healthy and safe online habits,I did not have the time for this activity,,,,,,,,,,1a85f4c9-752a-4f07-8abd-384920fdc50b,,execute_actions,2290;1580
+23,wait_for_response,21;22,,,,,checkin_problem,,,,,,,,,,,,,,,,75422694-ad33-4c54-b67d-69c4cde7d62f,,wait_for_response,1700;1880
+24,send_message,23,I forgot what the risks and dangers are,,has_only_phrase,I forgot what the risks and dangers ,,"That is okay! Here is a list of some of the risks and dangers that you may encounter online:
+• Adults targeting people for sexual purposes on social media, gaming, and messaging platforms.
+• Harmful content – like violence, hating women, hating foreigners, encouraging suicide and self-harm, misinformation, pornography
+• Sharing personal information and sexual photos or videos.
+• Cyberbullying from other people and strangers.",,,,,,,,,,,,,,,d675741e-53ad-4723-aa3b-88e2be5802ae,,execute_actions,1660;2080
+25,send_message,23,I forgot how to set up set up technical fixes,,has_only_phrase,I forgot how to set up set up techni,,"Sorry to hear that you are finding this challenging. Here is a review on quick technical fixes: 
+• Turn on SafeSearch on your browser to filter adult content.
+https://www.internetmatters.org/blog/parental-controls/entertainment-search-engines/
+• Set up parental controls.
+https://www.internetmatters.org/parental-controls/
+• Set up strict privacy settings on online apps and games.
+ https://www.internetmatters.org/blog/parental-controls/social-media/
+• Cover webcams when not in use.",,,,,,,,,,,,,,,87aec740-21f5-4afc-80a9-71f852321a59,,execute_actions,1920;2080
+26,send_message,23,I forgot how to seek help,,has_only_phrase,I forgot how to seek help,,"That is okay! Here are some websites where you can report to and seek help from:
+Report to SAFERKIDSPH and BANTAYBATA163 to get support if you or your children experience online violence or other things that are not acceptable.
+
+SAFERKIDSPH: https://www.saferkidsph.org/
+
+BANTAYBATA163: https://corporate.abs-cbn.com/lingkodkapamilya/bantay-bata/about
+
+PNP Aling Pulis
+http://wcpc.pnp.gov.ph/index.php/about-wcpc/contact-information
+
+UP-PGH Child Protection Unit
+https://cpu.upm.edu.ph/node/17",,,,,,,,,,,,,,,19e0acc4-9262-40c2-8a4e-b4d14cc1761c,,execute_actions,2490;2080
+27,send_message,23,I don't know how to create healthy and safe online habits,,has_only_phrase,I don't know how to create healthy a,,"Sorry to hear that you are finding this challenging. Try balancing the time that you spend online and offline. Set an amount of time that you can spend online and try it for a week. If you succeed, try adding a little bit more offline time every week. You can do this!",,,,,,,,,,,,,,,8966755f-f7e1-4598-843c-20daea8738de,,execute_actions,2770;2100
+28,send_message,23,I did not have the time for this activity,,has_only_phrase,I did not have the time for this act,,"It can be hard to find time during your day, with work, chores, and everything else. Can you think of even 30 minutes this week to do this activity? It will make a big difference in keeping you safe online. You can do it!",,,,,,,,,,,,,,,46da94a5-8805-4277-b137-26a3cef570be,,execute_actions,3010;2060
+29,send_message,23,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,0ddb98cb-3ac3-45ae-9a42-c02daef7e0f3,,execute_actions,2810;1760
+30,go_to,29,,,,,,20,,,,,,,,,,,,,,,,,,
+31,send_message,16;17;24;25;26;27;28,,,,,,Would you like to review the content?,Yes,No,,,,,,,,,,,,,ae36ca9d-2537-4bf4-b9c1-928e6b5fb613,,execute_actions,310;1780
+32,wait_for_response,31,,,,,Result 3,,,,,,,,,,,,,,,,b098a087-b611-4213-8a2f-b0e956910e69,,wait_for_response,310;1960
+33,save_value,32,yes y,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,3eaedd9d-869f-46cc-91fa-0409903c5dfb,,execute_actions,;2140
+34,start_new_flow,33,,,,,,PLH - Content - Positive - Online adults,,,,,,,,,,,,,,f6139e3a-1a19-4cf3-aac9-ec710afac3c6,98ab4867-05d1-4618-9963-bf60d876c632,,split_by_subflow,20;2480
+35,split_by_value,32,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,f7676331-c143-4e1c-920f-dfe73d52b35f,,split_by_expression,1045;2280
+36,send_message,35,,@fields.user_name,has_text,user_name,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later @fields.user_name! ",,,,,,,,,,,,,,,b7aec13f-a0e5-4b87-b605-6b28f2ec0952,,execute_actions,920;2480
+37,send_message,35,,,,,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later! ",,,,,,,,,,,,,,,4b2b92a9-47f9-4a43-a856-d9f4f3fb6d75,,execute_actions,1170;2480
+38,send_message,32,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,4e5a5524-07ff-4591-80c4-abacb78a0cf1,,execute_actions,510;2120
+39,go_to,38,,,,,,31,,,,,,,,,,,,,,,,,,

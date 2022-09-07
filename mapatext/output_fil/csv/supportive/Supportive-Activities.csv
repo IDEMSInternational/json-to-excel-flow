@@ -1,0 +1,26 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,f750d865-a214-4845-9440-1e2884a1faff,,split_by_expression,705;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Gusto mo ba ng ilang mungkahi para sa masasaya o pang-edukasyon na aktibidad na pwedeng gawin kasama ang inyong mga anak?,Bigyan ako ng karagdagang impormasyon,Hindi ako interesado,,,,,,,,,,,,,0718770f-a9cd-4dcf-a059-9404af6ad994,,execute_actions,580;200
+3,send_message,1,,,,,,Magandang araw! Gusto mo ba ng ilang mungkahi para sa masasaya o pang-edukasyon na aktibidad na pwedeng gawin kasama ang inyong mga anak?,Bigyan ako ng karagdagang impormasyon,Hindi ako interesado,,,,,,,,,,,,,65a9d4fa-d28f-4e52-9bdc-65f68e269204,,execute_actions,1080;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,6ee6eb38-40d8-4a83-ab73-d7f459262078,,wait_for_response,1080;440
+5,save_value,4,karagdagang impormasyon,,has_any_word,More,last interaction,@(now()),,,,,,,,,,,,,,,221939c0-050c-46a1-90f8-d177a6fece21,,execute_actions,160;440
+6,split_by_value,5,,,,,,@fields.age_group_for_tips,,,,,,,,,,,,,,,d6d5e30b-c4cd-4766-8334-f8bbadc5d8d2,,split_by_contact_field,160;540
+7,split_random,6,baby,@fields.age_group_for_tips,has_any_word,Baby,,,,,,,,,,,,,,,,,c57ebfee-86a3-4c37-9043-73d01a4307db,,split_by_random,20;860
+8,start_new_flow,7;7;7;7,1;2;3;4,,,,,PLH - Handler - Activity - Babies - Active,,,,,,,,,,,,,,87c515ca-25a8-48f7-a4e7-addf0ce53a08,8c3e9073-7abc-4f52-bd8d-ba79e7f6a246,,split_by_subflow,;1040
+9,start_new_flow,7,5,,,,,PLH - Handler - Activity - Babies - Calm,,,,,,,,,,,,,,1bc29927-fdb8-487d-b254-bd711c0c7348,86f6846e-e243-4684-b2d9-7c9c57563aae,,split_by_subflow,220;1040
+10,split_random,6,teen,@fields.age_group_for_tips,has_any_word,Teen,,,,,,,,,,,,,,,,,030b2c65-46eb-4730-8ef6-2d80d710045f,,split_by_random,160;1420
+11,start_new_flow,10,1,,,,,PLH - Handler - Activity - Teenagers - Active,,,,,,,,,,,,,,d4b44ae4-fdd1-48ef-bb9a-a141d58a923e,02fe120b-743f-4080-94a2-bb129a2f7061,,split_by_subflow,40;1520
+12,start_new_flow,10,2,,,,,PLH - Handler - Activity - Teenagers - Calm,,,,,,,,,,,,,,c49678f3-b049-4919-ab85-ceaaf4d98457,6ec02075-1d25-4c41-be48-5bd209379915,,split_by_subflow,260;1520
+13,split_random,6,,,,,,,,,,,,,,,,,,,,,e3e53daa-6270-4389-adef-c2baefaf3ec5,,split_by_random,180;1700
+14,start_new_flow,13,1,,,,,PLH - Handler - Activity - Young children - Active,,,,,,,,,,,,,,11b412bd-a5e4-46cf-bac1-1890e0a82443,dd64892e-25e9-49ac-b052-44c1e8cd0b0e,,split_by_subflow,80;1820
+15,start_new_flow,13,2,,,,,PLH - Handler - Activity - Young children - Calm,,,,,,,,,,,,,,c9b62c05-a1df-4df2-8d48-481c58039069,89bf024b-9225-4b54-93d9-8a226cff70cb,,split_by_subflow,320;1800
+16,split_by_value,11;12;14;15;8;9,Complete;Complete;Complete;Complete;Complete;Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,6d2e742b-4b2b-4719-b6e1-706c01a09a0d,,split_by_expression,1265;1120
+17,send_message,16,,@fields.user_name,has_text,user_name,,"Tandaan, pwede kang makakuha palagi ng mga mungkahi tungkol sa mga aktibidad na maaaring gawin sa pamamagitan ng pag-type ng ""Laro”. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,790bc85f-b7dc-4990-b5bc-d094f5f1af4a,,execute_actions,1140;1320
+18,send_message,16,,,,,,"Tandaan, pwede kang makakuha palagi ng mga mungkahi tungkol sa mga aktibidad na maaaring gawin sa pamamagitan ng pag-type ng ""Laro”. Usap tayo mamaya!",,,,,,,,,,,,,,,9d812c84-22dc-49a8-b7ef-711eef46d4e1,,execute_actions,1390;1320
+19,split_by_value,4,hindi hindi interesado,,has_any_word,Not,,@fields.user_name,,,,,,,,,,,,,,,4a007260-ebe7-4def-80f4-04900a3e2047,,split_by_expression,955;580
+20,send_message,19,,@fields.user_name,has_text,user_name,,Okay lang ‘yan! Maari mong makita ang mga mungkahi para sa mga gawain sa pag-type ng “Laro”. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,9bcb9a63-3949-4db4-acae-b1c5a8f05710,,execute_actions,830;780
+21,send_message,19,,,,,,Okay lang ‘yan! Maari mong makita ang mga mungkahi para sa mga gawain sa pag-type ng “Laro”. Usap tayo mamaya!,,,,,,,,,,,,,,,e74b7f29-897b-4551-bdad-019dbea6fa3d,,execute_actions,1080;780
+22,save_value,20;21,,,,,last interaction,@(now()),,,,,,,,,,,,,,,662a86a0-b112-487b-ab67-17665840b2d8,,execute_actions,1120;920
+23,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,55b67e7a-704d-4546-8419-693ce104e387,,execute_actions,1710;520
+24,save_value,23,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a2d27388-f505-4c28-b708-17ffbdf8de69,,execute_actions,1710;840
+25,go_to,24,,,,,,1,,,,,,,,,,,,,,,,,,

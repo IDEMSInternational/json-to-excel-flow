@@ -1,0 +1,33 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,d11749f8-fc57-40d6-9294-b5087bedf534,,split_by_expression,985;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Hi @fields.user_name! Have you tried resolving conflict in a calm way even when you have felt frustrated recently?,Yes,No,,,,,,,,,,,,,e11bb361-d998-4ed3-a41d-d1037433237b,,execute_actions,860;200
+3,send_message,1,,,,,,Hi! Have you tried resolving conflict in a calm way even when you have felt frustrated recently?,Yes,No,,,,,,,,,,,,,e1b2045a-e972-4041-8e84-3901a2a9453c,,execute_actions,1110;200
+4,wait_for_response,2;3,,,,,checkin_managed,,,,,,,,,,,,,,,,646ddb86-3903-427e-8287-cd8a8471b1e6,,wait_for_response,820;400
+5,save_value,4,Yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,e14e5d82-33a1-4221-a68b-5c959839ed14,,execute_actions,20;460
+6,save_value,4,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,a7652672-5847-461a-8bde-9a454f6ba226,,execute_actions,1590;580
+7,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,dcae34b2-8a73-46c5-aafa-e6c018b0b395,,execute_actions,1550;260
+8,save_value,7,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8911d7dc-0f57-4951-bbe3-71c70a92f3c1,,execute_actions,1550;400
+9,go_to,8,,,,,,1,,,,,,,,,,,,,,,,,,
+10,split_by_value,5,,,,,,@fields.user_name,,,,,,,,,,,,,,,4f1c5557-6b41-4c98-a258-8c374dd69a52,,split_by_expression,205;600
+11,send_message,10,,@fields.user_name,has_text,user_name,,Good job @fields.user_name! Resolving conflicts isn’t always easy. How was your experience?,Great,Neutral,Bad,,,,,,,,,,,,4465119a-e2c6-42ea-a23f-62200ce17d97,,execute_actions,80;800
+12,send_message,10,,,,,,Good job! Resolving conflicts isn’t always easy. How was your experience?,Great,Neutral,Bad,,,,,,,,,,,,20074d01-0e92-4b53-9816-ffaa4003f094,,execute_actions,330;800
+13,wait_for_response,11;12,,,,,checkin_how,,,,,,,,,,,,,,,,9bdf7fb1-fdac-45b8-9442-1cc4406eb321,,wait_for_response,330;1000
+14,send_message,13,great,,has_any_word,Great,,That is great!,,,,,,,,,,,,,,,da5c9397-05c9-4862-b5c0-2d2cc70d3c6b,,execute_actions,;1200
+15,send_message,13,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,000bb701-ca33-4b41-a429-0648fa120b05,,execute_actions,820;920
+16,go_to,15,,,,,,10,,,,,,,,,,,,,,,,,,
+17,send_message,13;13;6,neutral;bad;,,has_any_word;has_any_word;,Neutral;Bad;,,Sorry to hear this. What was difficult for you about resolving conflicts between you and your partner?,I didn’t stay calm during a disagreement,I got angry and yelled at my partner,My partner got angry and yelled at me,I forgot to take a pause when I started feeling angry,,,,,,,,,,,f4bb0e7c-fd98-411b-8ecc-8f638da69073,,execute_actions,1610;940
+18,wait_for_response,17,,,,,checkin_problem,,,,,,,,,,,,,,,,c562a8db-7f3d-415a-8aa2-4c6b2af5862b,,wait_for_response,1730;1320
+19,send_message,18,I didn’t stay calm during a disagreement,,has_only_phrase,1,,It can be really hard to stay calm when we’re having a disagreement with others. Try to think of something that you can do that might help like taking a couple deep breaths.,,,,,,,,,,,,,,,3a5179e7-28d7-4a85-a230-6f04a85060a7,,execute_actions,1450;1300
+20,send_message,18,I got angry and yelled at my partner,,has_only_phrase,2,,"By taking a pause before responding, it can help us stay calm and respond better. When you feel yourself getting angry, try taking a pause. You can do this!",,,,,,,,,,,,,,,468a58c3-3a4d-45aa-a48b-93c35f1b7121,,execute_actions,1670;1480
+21,send_message,18,My partner got angry and yelled at me,,has_only_phrase,3,,"Sometimes others respond to us negatively when we’re having a disagreement. In these situations, it is sometimes best to walk away for a bit until those involved have calmed down.",,,,,,,,,,,,,,,e9b6c06f-dd81-44f3-b9dd-3a0571c0f377,,execute_actions,1890;1480
+22,send_message,18,I forgot to take a pause when I started feeling angry,,has_only_phrase,4,,"It can be easy to forget, but don’t give up! Next time when you start feeling angry, try taking a deep breath before responding. You can also try walking away for a bit if you start feeling frustrated.",,,,,,,,,,,,,,,c40e54ac-facc-4ced-9fb1-fe340dc86792,,execute_actions,2170;1300
+23,send_message,18,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,87098eb8-5618-4b53-8603-37208be426c0,,execute_actions,1610;1180
+24,go_to,23,,,,,,17,,,,,,,,,,,,,,,,,,
+25,send_message,14;19;20;21;22,,,,,,Would you like to review the content on this?,Yes,No,,,,,,,,,,,,,794e3237-4854-4016-b4c1-aefc92f4c2d2,,execute_actions,;1340
+26,wait_for_response,25,,,,,Result 5,,,,,,,,,,,,,,,,8eb8236c-79db-4ee6-9b24-ea313da09d64,,wait_for_response,350;1480
+27,start_new_flow,26,yes y,,has_any_word,Yes,,PLH - Content - Positive - IPV - Tip 4,,,,,,,,,,,,,,56ab11c9-a317-41ef-89e0-4b6e192eee60,6ebd6466-6ad6-43ea-838f-f3163cc4926b,,split_by_subflow,;2000
+28,split_by_value,26,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,3af08dc3-d892-4146-a9e4-fab725d0b8ee,,split_by_expression,655;1660
+29,send_message,28,,@fields.user_name,has_text,user_name,,"That is okay! Remember you can access this content at anytime by typing ""Help"". Chat to you later @fields.user_name!",,,,,,,,,,,,,,,70e9f8d2-ab11-410c-bb96-c9ae81ab26fd,,execute_actions,530;1860
+30,send_message,28,,,,,,"That is okay! Remember you can access this content at anytime by typing ""Help"". Chat to you later!",,,,,,,,,,,,,,,fdf64765-5e10-4828-8196-360b9b8f457c,,execute_actions,780;1860
+31,send_message,26,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,cd6233e7-9fdc-44c1-ad8c-1253afa965d5,,execute_actions,820;1360
+32,go_to,31,,,,,,25,,,,,,,,,,,,,,,,,,

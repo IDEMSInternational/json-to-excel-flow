@@ -1,0 +1,28 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Setting household rules,,,,,,,,,,,,,,,aca3bb65-32a2-44aa-a736-328d66b977e6,,execute_actions,620;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,85fbde93-c2cb-4e32-b45a-429c0ffe7fbb,,split_by_subflow,620;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,7c0518fc-f0cf-438a-9ad8-927af86d336b,,split_by_expression,1005;240
+4,send_message,3,,@fields.user_name,has_text,user_name,,Hello @fields.user_name! Today's Parenting Tip is about how we can involve our children in creating consistent household rules.,,,,,,,,,,,,,,,0457965d-159f-4953-bc03-16ce3b5f4768,,execute_actions,880;440
+5,send_message,3,,,,,,Hello! Today's Parenting Tip is about how we can involve our children in creating consistent household rules.,,,,,,,,,,,,,,,71532922-33a4-4ee0-a069-e0e8757c6f5a,,execute_actions,1130;440
+6,send_message,4;5,,,,,,Household rules can help keep our children safe from potential dangers both inside the house and in the community. They also help children to know what kind of behaviour is expected from them.,,,,,,,,,,,,,,,b15c7693-b821-4bb8-a0bc-75a461023c4c,,execute_actions,1390;200
+7,split_by_value,6,,,,,,@fields.toolkit,,,,,,,,,,,,,,,bdd708c1-9120-4a0a-a1c4-e939af54419a,,split_by_contact_field,760;620
+8,split_by_group,7,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,a7e5de4e-76ca-4dd9-9c3b-c34669580f3a,,split_by_expression,125;700
+9,send_message,8,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/Positive_instructions.jpg,,,,b7ef9309-d930-489a-b6f6-9b3e2886fcae,,execute_actions,500;900
+10,send_message,8;8,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/Positive_instructions.jpg,,,,acf350d9-fbaa-4827-9a79-decb449d65d0,,execute_actions,;900
+11,send_message,7,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/Positive_instructions.jpg,,,,c941df7a-1cbf-4cae-a336-445eb503b1f4,,execute_actions,1250;900
+12,wait_for_response,10;11;9,,,,,Result 1,,,,,,,,,,,,,,,,395686b5-2ca9-4708-97d3-e4d3fb79d190,,wait_for_response,780;1020
+13,save_value,12,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,17ec20fd-b044-42e5-a082-a31d75f1c352,,execute_actions,1150;1160
+14,save_value,13,,,,,last interaction,@(now()),,,,,,,,,,,,,,,17ec20fd-b044-42e5-a082-a31d75f1c352,,execute_actions,1150;1160
+15,start_new_flow,14,,,,,,PLH - Content - Positive - Rules,,,,,,,,,,,,,,60b7961b-13a8-4670-a966-748ec8f06766,67e66301-6a4b-4bc8-8753-1c5d1727d55b,,split_by_subflow,1170;1340
+16,save_value,15,Complete,,,,from theme,no,,,,,,,,,,,,,,,d64b80e2-b3f8-4ea1-847d-e7f8e85327dd,,execute_actions,560;1260
+17,split_by_value,16,,,,,,@fields.user_name,,,,,,,,,,,,,,,678861d9-2c44-474d-ba75-ab994e4ac478,,split_by_expression,375;1380
+18,send_message,17,,@fields.user_name,has_text,user_name,,"Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Tech Support."" Chat to you later @fields.user_name!",,,,,,,,,,,,,,,e8260e09-81ad-4f4c-953a-089911b46fad,,execute_actions,250;1580
+19,send_message,17,,,,,,"Remember that you can also change the type of messages you receive for an older or younger child. Just select ""Tech Support."" Chat to you later!",,,,,,,,,,,,,,,ce26f198-9d70-4d8a-adb3-2b13771b6286,,execute_actions,500;1580
+20,save_value,15,Expired,,,,from theme,no,,,,,,,,,,,,,,,0fe0808e-e0a2-4d64-aede-c1a285f447c2,,execute_actions,1350;1680
+21,save_value,20,,,,,has expired,yes,,,,,,,,,,,,,,,0fe0808e-e0a2-4d64-aede-c1a285f447c2,,execute_actions,1350;1680
+22,send_message,21,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,3f8d1b32-0338-4407-ae02-9f3e71a73024,,execute_actions,1350;1860
+23,send_message,12,no n,,has_any_word,No,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,316c1144-d683-4eec-b5e5-be5f9e49c023,,execute_actions,1790;1160
+24,save_value,23,,,,,last interaction,@(now()),,,,,,,,,,,,,,,44e7b3cf-07d1-44e7-8393-6710d202860d,,execute_actions,1850;1320
+25,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,d9d5aa3b-6415-4259-8e58-1e0a9ffb83e5,,execute_actions,1830;680
+26,send_message,25,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,dd3bfbee-e4c8-4cb3-bbfb-4807132de00d,,execute_actions,1670;540
+27,go_to,26,,,,,,7,,,,,,,,,,,,,,,,,,

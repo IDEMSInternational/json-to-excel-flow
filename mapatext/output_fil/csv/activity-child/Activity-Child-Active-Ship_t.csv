@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Mula Bangka Patungong Pampang 
+•	Isang nakakaaliw na laro kung saan ang mga bata ay natututo ng iba't-ibang parte ng isang bangka. Ang lahat ay kailangan pumunta sa lugar o gawain na sasabihin mo.
+•	Ang ibig sabihin ng ""Bow"" ay tumakbo sa harapan ng bangka (kuwarto).
+•	Ang ibig sabihin ng ""Stern"" ay tumakbo sa likod ng bangka.
+•	""Starboard"" ay nangangahulugang tumakbo sa kanang bahagi at ang ""Port"" naman ay tumakbo sa kaliwang bahagi.
+•	""Umakyat sa Katig"": Magpanggap na umaakyat.
+•	""Maglinis ng Bangka"": Magpanggap na nililinis ang sahig.
+•	""Lifeboat, [bilang] mga tao!"": maghawakan ng mga kamay at bumuo ng bilog kasama ang bilang ng mga tao at gawin ang knee bends.
+•	Ang lahat ng wala sa lifeboat ay kailangang lumangoy!",,,,,,,,,,,,,,,b87b8bc7-dc19-480a-9cc0-67f2e24b8cc4,,execute_actions,;

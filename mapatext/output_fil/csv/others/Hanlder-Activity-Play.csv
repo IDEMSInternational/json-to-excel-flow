@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.age_group_for_tips,,,,,,,,,,,,,,,fa2083d3-9bc4-48a2-9a03-79796eb1b3a2,,split_by_contact_field,520;80
+2,split_random,1,baby,@fields.age_group_for_tips,has_any_word,Baby,,,,,,,,,,,,,,,,,1e086fe8-a8c2-49f1-a967-8d9da679af46,,split_by_random,20;480
+3,start_new_flow,2;2;2;2,1;2;3;4,,,,,PLH - Handler - Activity - Babies - Active,,,,,,,,,,,,,,87c515ca-25a8-48f7-a4e7-addf0ce53a08,bc6bb910-f24f-4b1b-9eb6-e2b6c121e0db,,split_by_subflow,;660
+4,start_new_flow,2,5,,,,,PLH - Handler - Activity - Babies - Calm,,,,,,,,,,,,,,1bc29927-fdb8-487d-b254-bd711c0c7348,7a3cb10a-6abb-4081-82d3-11778d870e3f,,split_by_subflow,220;660
+5,split_random,1,teen,@fields.age_group_for_tips,has_any_word,Teen,,,,,,,,,,,,,,,,,dff0553d-8328-4791-9d4f-e043751a14a6,,split_by_random,160;840
+6,start_new_flow,5,1,,,,,PLH - Handler - Activity - Teenagers - Active,,,,,,,,,,,,,,d4b44ae4-fdd1-48ef-bb9a-a141d58a923e,df7d9d96-719f-4fab-8c3c-37fa918b72b6,,split_by_subflow,40;940
+7,start_new_flow,5,2,,,,,PLH - Handler - Activity - Teenagers - Calm,,,,,,,,,,,,,,c49678f3-b049-4919-ab85-ceaaf4d98457,1aecc8a2-0a23-4fc8-be09-900412e87353,,split_by_subflow,260;940
+8,split_random,1,,,,,,,,,,,,,,,,,,,,,7de06499-6c08-4486-9c09-c7537a1ea3db,,split_by_random,180;1120
+9,start_new_flow,8,1,,,,,PLH - Handler - Activity - Young children - Active,,,,,,,,,,,,,,11b412bd-a5e4-46cf-bac1-1890e0a82443,3dbf693e-fa4b-4698-8b51-d1b975f8ec79,,split_by_subflow,80;1240
+10,start_new_flow,8,2,,,,,PLH - Handler - Activity - Young children - Calm,,,,,,,,,,,,,,c9b62c05-a1df-4df2-8d48-481c58039069,68940305-0b06-4c29-a093-66593ca3334f,,split_by_subflow,320;1220

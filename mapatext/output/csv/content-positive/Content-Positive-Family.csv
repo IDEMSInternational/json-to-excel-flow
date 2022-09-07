@@ -1,0 +1,85 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Making a happy and peaceful home,,,,,,,,,,,,,,,d60d4df9-dedc-456f-b3d3-412d2278a9fa,,execute_actions,240;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,95c864d7-d575-4d69-a48e-10eeca758166,,split_by_subflow,260;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,370f57ff-1dfe-4c03-b51e-0ad6425a752c,,split_by_contact_field,260;360
+4,send_message,3,,,,,,"When we are able to have peaceful and loving relationships, our children feel more secure and loved. Kindness and taking care of yourself help.",,,,,,,,,,,,,,,08f4186f-a02d-45c6-86e5-c54a588214dd,,execute_actions,1430;520
+5,split_by_value,4,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,1759a405-0cb7-495b-a262-c8e555a748ea,,split_by_expression,1230;720
+6,split_by_value,3;5,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,4864bac9-1f03-480e-849a-f460596be3d1,,split_by_contact_field,120;920
+7,send_message,6,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you support positive family relationships at home.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Family_Harmony.m4v,,ca620d7a-226c-4f95-9da6-613cbb9f0af1,,execute_actions,20;1100
+8,send_message,6,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message to help you support positive family relationships at home.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Family_Harmony.mp3,,,4e715709-21bc-47a6-9b87-6db424f7054a,,execute_actions,260;1100
+9,wait_for_response,7;8,,,,,Result 4,,,,,,,,,,,,,,,,34c531ad-9dad-4c6e-9f78-73e3a011348f,120,wait_for_response,;1500
+10,start_new_flow,6;9;9,;;No Response,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,236f013e-20af-49b3-8852-fff0264dd86b,,split_by_subflow,1410;1560
+11,send_message,5,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,0df701b5-75b7-42a1-bcd6-419468f4167c,,execute_actions,1880;700
+12,wait_for_response,11,,,,,know_more,,,,,,,,,,,,,,,,7d0fa711-b588-4c37-b5fe-b6c353ee8df8,,wait_for_response,1310;900
+13,go_to,12,yes y yep sure yeah,,has_any_word,Yes,,6,,,,,,,,,,,,,,,,,,
+14,split_by_value,12,no not n nope,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,88366612-1868-4ead-8ceb-06c5dddcd5de,,split_by_expression,1735;1200
+15,send_message,14,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,70d37e82-87b8-4e92-8f36-356599b70572,,execute_actions,1610;1400
+16,send_message,14,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,a1de3ce5-46bd-414e-abcb-fc9db732b81d,,execute_actions,1860;1400
+17,send_message,12,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,cd86ebbc-617a-4d26-b545-ae18c2510552,,execute_actions,1570;880
+18,go_to,17,,,,,,11,,,,,,,,,,,,,,,,,,
+19,send_message,10;10,Complete;Expired,,,,,"Here are 6 simple steps that you can do to support family harmony at home:
+
+1. Be a model of behaviour for your kids
+2. Keep it positive
+3. Listen carefully to others
+4. Share the load
+5. Take care of yourself
+6. Do nice things together as a family.
+
+Type ""1"" to 6"" to learn more about these tips. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,7badf1fd-0418-4d4a-8fd5-1ba2a6efadb1,,execute_actions,280;1800
+20,wait_for_response,19,,,,,list_of_tips,,,,,,,,,,,,,,,,60f1cf69-0f8b-4802-a22d-5f3c71da3143,,wait_for_response,160;2240
+21,send_message,20,1,,has_number_eq,1,,"Step 1. Be a model of behaviour for your kids
+
+How we talk and behave in front of our children is a big influence on how they behave too! Try to talk kindly to everyone in the family, adults and children.",,,,,,,,,,,,,,,b2fe22a9-54d7-4436-8121-9ffd03074105,,execute_actions,40;2380
+22,send_message,21,,,,,,"Bad communication between adults in the household can have a negative impact on our children. The more we practice modeling peaceful, loving relationships for our children, the more secure and loved they will feel.",,,,,,,,,,,,,,,63a62233-3e37-4915-9573-bc406f7839db,,execute_actions,40;2660
+23,send_message,20,2,,has_number_eq,2,,"Step 2. Use positive language. It works!
+
+Tell others what you want them to do instead of what you don’t want them to do: Instead of “Stop shouting,” try “Please speak more quietly”",,,,,,,,,,,,,,,377e83c9-147e-494d-b3f3-fc42a0c016f2,,execute_actions,260;2380
+24,send_message,23,,,,,,"Praise others to make them feel appreciated and good about themselves. Simple words like, “Thank you for clearing the dinner,” or “Thank you for watching the baby” can make a big difference",,,,,,,,,,,,,,,19cebdc0-b849-4ea7-bfdf-ff4a6a961711,,execute_actions,260;2620
+25,send_message,20,3,,has_number_eq,3,,"Step 3. Be a great listener
+
+Listen to others when they are talking with you. Be open and show them that you hear what they are saying. It can help to summarise what you have heard before responding: “What I hear you saying is…”",,,,,,,,,,,,,,,86b13e0e-28f4-41b8-b7d3-fc92588f85a2,,execute_actions,1230;3200
+26,send_message,20,4,,has_number_eq,4,,"Step 4. Share the load
+
+Looking after children and other family members is difficult, but it’s much easier when responsibilities are shared. Try to share household chores, childcare, and other tasks equally amongst family members",,,,,,,,,,,,,,,22b6603f-b4f9-48de-94e6-441ea18d94a3,,execute_actions,1450;2160
+27,send_message,20,5,,has_number_eq,5,,"Step 5. Take care of yourself
+
+Create a schedule for time “on” and time “off” with other adults in your household. It is okay to ask for help when you are feeling tired or stressed so that you can take a break",,,,,,,,,,,,,,,16a7790b-15fc-423c-98e6-eab105c8a788,,execute_actions,1920;2160
+28,send_message,27,,,,,,"Decide to take a break from arguing when you see arguments building up, and go into another room or outside if you can.
+
+You can always type ""Help"" if you need an activity to help you with stress.",,,,,,,,,,,,,,,4062261d-24c7-453f-abf0-63e8db15f013,,execute_actions,1920;2420
+29,send_message,20,6,,has_number_eq,6,,"Step 6. Do nice things together as a family
+
+Let each family member take turns choosing a whole family activity. Find ways to spend time alone with other adults in your home, too!",,,,,,,,,,,,,,,ce87a423-0d0c-494e-80f6-0254aaa812db,,execute_actions,2890;2180
+30,send_message,22;24;25;26;28;29,,,,,,"Please select another number if you want to learn more about how to support family harmony at home:
+
+1. Be a model of behaviour for your kids
+2. Keep it positive
+3. Listen carefully to others
+4. Share the load
+5. Take care of yourself
+6. Do nice things together as a family.
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,e2c8e664-0909-4aac-9279-517fe08f504d,,execute_actions,60;3180
+31,save_value,30,,,,,last interaction,@(now()),,,,,,,,,,,,,,,8f080308-d442-4c8c-ad2a-504963ead886,,execute_actions,1230;3860
+32,save_value,31,,,,,family list of tips,"@(fields.family_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,8f080308-d442-4c8c-ad2a-504963ead886,,execute_actions,1230;3860
+33,go_to,32,,,,,,20,,,,,,,,,,,,,,,,,,
+34,split_by_group,20,n no,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,7b169a00-4e16-4691-8e57-2e225c86a726,,split_by_expression,2315;4340
+35,split_by_group,34,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,cd48ee07-a8a5-4cfb-953f-622d9456d0d9,,split_by_expression,2565;4740
+36,send_message,35,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try taking a deep breath or walking away for a bit when you start getting angry at someone. Every time you find a way to resolve conflicts in a peaceful way, you increase your child's brain development. Be proud of yourself when you do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,58bd69fc-c398-414f-9834-6251b61d8fbd,,execute_actions,2690;4940
+37,send_message,35;35,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try taking a deep breath or walking away for a bit when you start getting angry at someone. Every time you find a way to resolve conflicts in a peaceful way, you increase your child's brain development. Be proud of yourself when you do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,895c37a9-0f7a-4653-abf8-94df186bbfdc,,execute_actions,2440;4940
+38,split_by_group,34;34,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,5abf346d-a584-4f01-b9fa-8bd4658239da,,split_by_expression,2065;4540
+39,send_message,38,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try taking a deep breath or walking away for a bit when you start getting angry at someone. Every time you find a way to resolve conflicts in a peaceful way, you increase your child's brain development. Be proud of yourself when you do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,90135980-7f1f-498b-b448-64c3fcb55983,,execute_actions,2190;4940
+40,send_message,38;38,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try taking a deep breath or walking away for a bit when you start getting angry at someone. Every time you find a way to resolve conflicts in a peaceful way, you increase your child's brain development. Be proud of yourself when you do it!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,6a1c9649-d2da-49c3-a86a-7cbb9a7d0bbd,,execute_actions,1940;4940
+41,save_value,36;37;39;40,,,,,current type assessed,tip,,,,,,,,,,,,,,,326cc86a-0912-47d6-b714-925da3435636,,execute_actions,360;5260
+42,save_value,41,,,,,current activity,family,,,,,,,,,,,,,,,326cc86a-0912-47d6-b714-925da3435636,,execute_actions,360;5260
+43,start_new_flow,42,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,4d05bb3a-f5cd-4e0a-9474-9aad32215509,,split_by_subflow,1150;5440
+44,split_by_value,43;43,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,edf5548e-5449-421a-beee-6bdbe778b5b2,,split_by_expression,775;5720
+45,split_by_group,44,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,f4bb88ce-1626-4a9c-9cb4-7afa5a44d835,,split_by_expression,525;5920
+46,send_message,45,ABTest_test-first-person_alternative,,,,,"I understand that these times can be really difficult. Please type ""Help"" if you want any extra support or guidance. Chat later @fields.user_name!",,,,,,,,,,,,,,,4405e664-5ff8-431b-941b-a89425162c88,,execute_actions,650;6320
+47,send_message,45;45,ABTest_test-first-person_Default;,,,,,"We understand that these times can be really difficult. Please type ""Help"" if you want any extra support or guidance. Chat later @fields.user_name!",,,,,,,,,,,,,,,ca443180-3c53-4319-892b-a6dbc6b9ae2e,,execute_actions,400;6320
+48,split_by_group,44,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,a2c796bb-dde5-4ece-82f1-79997e893777,,split_by_expression,1025;6120
+49,send_message,48,ABTest_test-first-person_alternative,,,,,"I understand that these times can be really difficult. Please type ""Help"" if you want any extra support or guidance. Chat later!",,,,,,,,,,,,,,,7288644e-078a-412b-bfdb-4863286c237e,,execute_actions,1150;6320
+50,send_message,48;48,ABTest_test-first-person_Default;,,,,,"We understand that these times can be really difficult. Please type ""Help"" if you want any extra support or guidance. Chat later!",,,,,,,,,,,,,,,a3d8bfb8-e3ce-49c0-89c6-21fd22875aa3,,execute_actions,900;6320
+51,send_message,20,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,2005220d-eaf7-4646-b32f-1a96dcdd3d70,,execute_actions,1410;2000
+52,go_to,51,,,,,,19,,,,,,,,,,,,,,,,,,

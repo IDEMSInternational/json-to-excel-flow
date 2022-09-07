@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Sumasayaw Kasama ang Mga Anghel
+•	Ang aktibidad na ito ay makakatulong sa mga bata na matutunan kung paano mamuno. Nakakabuo rin ito ng tiwala sa sarili at sa iyong anak.
+•	Tumugtog ng isang bahagi ng tugtugin na marahan at nakaka-relax para magkaroon ng magaan at kalmadong galaw.
+•	Isang tao ang mauuna at ipipikit niya ang kanyang mga mata habang may ibang tao na magiging guardian angel o tagapagtanggol.
+•	Ang guardian angel ay dapat maprotektahan ang tao mula sa kapahamakan habang nakapikit at dahan-dahan silang sasayaw nang magkasama.
+•	Kapag natapos na ang tugtugin, ang tagasayaw ay maari nang buksan ang kanyang mga mata bago sila magpalit ng papel.",,,,,,,,,,,,,,,c8cc230d-4ae0-4006-ad80-2da3fb9afaf2,,execute_actions,;

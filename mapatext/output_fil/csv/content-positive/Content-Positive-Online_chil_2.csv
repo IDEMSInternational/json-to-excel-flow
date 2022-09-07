@@ -1,0 +1,171 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Keeping your child safe online,,,,,,,,,,,,,,,785072c0-89f7-43d1-ab6e-7cfe264c0b9f,,execute_actions,610;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,215be7b7-2c4d-4b4e-8ae3-a9a98c47b1b2,,split_by_subflow,1060;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,5ca883d0-ecd3-4cb2-af9b-e33524b4ff9b,,split_by_contact_field,350;280
+4,send_message,3,,,,,,Ang ating mga nakababatang anak at teenager ay mas marami nang iginugugol na oras online. Ang pagiging konektado ay nakatutulong sa kanila na manatiling positibo...pero may mga panganib din ito.,,,,,,,,,,,,,,,61025f26-dcb7-49a7-a18c-bfeded7dcb99,,execute_actions,1120;520
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,451e4d79-f810-411d-8482-014096be1f26,,split_by_contact_field,670;840
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Narito ang isang video upang mapanatiling ligtas ang inyong anak sa internet.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Online_Child_Safety.m4v,,61dbdca0-e078-4923-a82a-a5d795180bb6,,execute_actions,350;940
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Narito ang isang audio message na pwedeng pakinggan upang mapanatiling ligtas ang mga anak mo sa loob ng internet.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Online_Child_Safety.mp3,,,88d4bc8a-c43f-4d42-b7c6-f71ec13af26a,,execute_actions,630;960
+8,wait_for_response,6;7,,,,,Result 4,,,,,,,,,,,,,,,,421c40d6-0cd7-4b29-9596-ed9b2a37d183,120,wait_for_response,370;1320
+9,start_new_flow,5;8;8,;;No Response,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,66d26200-b337-450a-885d-e622d73271b1,,split_by_subflow,1060;1320
+10,send_message,4,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/children_sitting_on_a_couch_with_tablet.jpg,,,,d54c41ba-e696-4792-b9fb-383e102c68d2,,execute_actions,3710;560
+11,wait_for_response,10,,,,,Result 3,,,,,,,,,,,,,,,,8a2d6ed0-4535-4415-9943-b2ae98af25e5,3600,wait_for_response,3050;780
+12,go_to,11,Oo y o,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+13,send_message,11,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,e3431d06-24df-4f7a-8453-7046d9e1c5a7,,execute_actions,4180;820
+14,go_to,13,,,,,,10,,,,,,,,,,,,,,,,,,
+15,split_by_value,11;11,Hindi n h;No Response,,has_any_word;,No;,,@fields.user_name,,,,,,,,,,,,,,,a37a6d08-8218-4821-afe1-e6c2bb39ab8d,,split_by_expression,3565;1000
+16,send_message,15,,@fields.user_name,has_text,user_name,,"Okay lang ‘yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa iyong mga anak. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,8394303b-cc5a-45ed-b8a8-fbaf97426ee5,,execute_actions,3440;1200
+17,send_message,15,,,,,,"Okay lang ‘yan! I-type lamang ang ""Help"" sakaling kailanganin mo ng suporta sa iyong mga anak. Usap tayo mamaya!",,,,,,,,,,,,,,,73f84b35-be38-43e5-a9bf-b0c8a7bfbb5c,,execute_actions,3690;1200
+18,send_message,9;9,Complete;Expired,,,,,"Narito ang 6 na tip na makatutulong na maging ligtas ang inyong mga anak sa internet:
+
+1. Pag-aralan ang mga pwedeng maging panganib.
+2. Pag-aayos ng mga problema sa tech
+3. Pagtatag ng mabuti at ligtas na gawi online
+4. Bigyan ng oras ang iyong anak sa internet.
+5. Panatilihing bukas ang inyong komunikasyon
+6. Mag-report at maghanap ng tulong
+
+Para mas matuto pa tungkol sa mga ito, i-type ang ""1"" hanggang ""6"". Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,3129236c-f7b5-410c-b1c2-ab2a455486ba,,execute_actions,710;1520
+19,wait_for_response,18,,,,,list_of_tips,,,,,,,,,,,,,,,,bddc419a-8a53-407a-9364-6cf489354ce8,,wait_for_response,490;1940
+20,send_message,19,1,,has_number_eq,1,,"1. Pag-aralan ang mga pwedeng maging panganib
+
+• Mga matatandang nagtatarget ng mga menor de edad para sa mga hangaring sekswal sa social media, laro, at messaging platfroms.
+• Mga content na mapanganib - tulad ng mga nagtuturo ng karahasan, galit sa mga kababaihan, galit sa mga dayuhan, paghihikayat ng suicide at pananakit sa sarili, maling impormasyon, pornograpiya
+• Mga kabataang nagbabahagi ng personal na impormasyon at mga sekswal na larawan at video ng kanilang sarili.
+• Cyberbullying galing sa ibang kabataan at mga di kilalang tao.",,,,,,,,,,,,,,,b0a138ab-ce64-483c-abc9-a53e0dd0a822,,execute_actions,;1920
+21,send_message,20,,,,,,Hindi ibig sabihin nito na pagbabawalan natin ang ating mga anak sa paglalaan ng oras online. Ibig sabihin lang nito na kailangan nating matutunan kung paano sila mapoprotektahan sa isang bagong mundo.,,,,,,,,,,,,,,,0e5ab748-2fd8-43a9-bac1-b78017a84241,,execute_actions,;2760
+22,send_message,19,2,,has_number_eq,2,,"2. Mga diskarte upang maprotektahan ang mga bata sa internet:
+
+• I-on ang SafeSearch sa browser upang masala ang adult content.
+https://www.internetmatters.org/blog/parental-controls/entertainment-search-engines/
+• Maglagay ng parental controls.
+https://www.internetmatters.org/parental-controls/
+• Maglagay ng striktong privacy settings sa mga applications at games sa internet.
+ https://www.internetmatters.org/blog/parental-controls/social-media/
+• Takpan ang webcam kung hindi ginagamit.",,,,,,,,,,,,,,,b2d549bd-81b8-4c53-bb6c-bf9163f06f23,,execute_actions,510;2280
+23,split_by_value,19,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,7db979bf-631f-46dc-8c50-84faec2e14d6,,split_by_expression,895;2080
+24,send_message,23,,@fields.child_nickname,has_text,child_nickname,,"3. Pagtatag ng mabuti at ligtas na gawi online
+
+Isama si @fields.child_nickname sa paggawa ng mga kasunduan para sa mabuting paggamit ng gadyet ng buong pamilya.
+Maglaan ng mga oras at espasyo na hindi saklaw sa paggamit ng gadyets sa inyong bahay.
+(pagkain, paglaro, gawaing pampaaralan, at pagtulog).
+
+Child tech agreement:
+https://www.esafety.gov.au/sites/default/files/2020-01/Our%20Family%20Tech%20Agreement_0.pdf
+Teen tech agreement: 
+https://www.childnet.com/ufiles/Family-Agreement.pdf
+
+https://www.saferkidsph.org/stay-safe-online/",,,,,,,,,,,,,,,21dfb094-cf2d-48a7-845c-ee13d9a20d91,,execute_actions,770;2280
+25,send_message,23,,,,,,"3. Pagtatag ng mabuti at ligtas na gawi online
+
+Isama ang inyong mga anak sa paggawa ng mga kasunduan tungkol sa tech para sa mabuting paggamit ng gadyet.
+Maglaan ng mga oras at espasyo na hindi saklaw sa paggamit ng gadyets sa inyong bahay.
+(pagkain, paglaro, gawaing pampaaralan, at pagtulog).
+
+Child tech agreement:
+https://www.esafety.gov.au/sites/default/files/2020-01/Our%20Family%20Tech%20Agreement_0.pdf
+Teen tech agreement: 
+https://www.childnet.com/ufiles/Family-Agreement.pdf
+
+https://www.saferkidsph.org/stay-safe-online/",,,,,,,,,,,,,,,0dd1a398-ed3b-4114-965d-4dc748a1c9f5,,execute_actions,1020;2280
+26,split_by_value,24;25,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,845fafa2-f57e-490d-9af2-4739850eba9c,,split_by_expression,3215;2360
+27,send_message,26,,@fields.child_nickname,has_text,child_nickname,,"Tulungan si @fields.child_nickname na matuto kung paano gawing pribado ang mga personal na impormasyon, lalo na sa mga di kilalang tao - may mga taong nagpapanggap!
+Paalalahanan ang inyong mga anak na kung ano ang nangyayari sa internet ay nananatili sa internet (mga mensahe, larawan, at mga video).
+ Pangasiwaan nang aktibo ang mga oras nila sa internet, pati na sa computer, smartphones at tablet.",,,,,,,,,,,,,,,2c8ae5f7-b7c7-45e1-ad18-09ee61cc0432,,execute_actions,3090;2560
+28,send_message,26,,,,,,"Ituro sa inyong anak kung papaano gawing pribado ang mga personal na impormasyon, lalo na sa mga di kilalang tao - may mga taong hindi totoong sila ang sinasabi nilang sila!
+Paalalahanan ang inyong mga anak na kung ano ang nangyayari sa internet ay nananatili sa internet (mga mensahe, larawan, at mga video).
+ Pangasiwaan nang aktibo ang mga oras nila sa internet, pati na sa computer, smartphones at tablet.",,,,,,,,,,,,,,,7cc70b43-2a7c-41a2-bd79-be3f48db2e79,,execute_actions,3340;2560
+29,split_by_value,19,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,c94bc4ee-7612-4e58-bbfc-4f0de6e64440,,split_by_expression,185;3220
+30,send_message,29,,@fields.child_nickname,has_text,child_nickname,,"4. Samahan ang inyong anak sa internet
+
+Alamin ang mga karanasan ni @fields.child_nickname sa internet.
+Magkasamang magbukas ng mga websites, social media, games, at mga apps.
+Kausapin ang inyong anak kung paano magreport ng mga bagay na hindi ok.
+
+Ang Common Sense Media at SaferKidsPH ay may magagandang payo para sa mga apps, games, at mga entertainment para sa iba't ibang edad.
+
+https://www.commonsensemedia.org/app-reviews
+
+https://www.saferkidsph.org/stay-safe-online/",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_with_tablet.jpg,,,,cc63fce1-3d61-4e0e-8caa-a1f9d941c7ad,,execute_actions,60;3420
+31,send_message,29,,,,,,"4. Samahan ang inyong anak sa internet
+
+Alamin ang mga karanasan ng anak mo sa internet.
+Magkasamang magbukas ng mga websites, social media, games, at mga apps.
+Kausapin ang inyong anak kung paano magreport ng mga bagay na hindi ok.
+
+Ang Common Sense Media at SaferKidsPH ay may magagandang payo para sa mga apps, games, at mga entertainment para sa iba't ibang edad.
+
+https://www.commonsensemedia.org/app-reviews
+
+https://www.saferkidsph.org/stay-safe-online/",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_with_tablet.jpg,,,,23ca5609-3fca-40df-b2dc-f7bf5dedb7cb,,execute_actions,310;3420
+32,send_message,19,5,,has_number_eq,5,,"5. Lumikha ng bukas na komunikasyon at mapagtiwalang relasyon
+
+Ipaalam sa mga anak na kung may mga mararanasang kakaiba online (o kahit saan) na nakakagalit, di komportable, o nakakatakot, na pwede silang lumapit sa iyo at hindi ka magagalit at paparusahan sila.",,,,,,,,,,,,,,,81be0123-32c3-4c0e-a03c-6e1f34387542,,execute_actions,610;3420
+33,send_message,19,6,,has_number_eq,6,,"6. Mag-report at maghanap ng tulong
+
+Mag-report sa SAFERKIDSPH at BANTAYBATA163 para makakuha ng tulong kung ikaw o ang anak mo ay nakararanas ng karahasan sa internet o ibang mga di katanggap-tanggap na bagay.
+
+SAFERKIDSPH: https://www.saferkidsph.org/
+
+BANTAYBATA163: https://corporate.abs-cbn.com/lingkodkapamilya/bantay-bata/about
+
+PNP Aling Pulis
+http://wcpc.pnp.gov.ph/index.php/about-wcpc/contact-information
+
+UP-PGH Child Protection Unit
+https://cpu.upm.edu.ph/node/17",,,,,,,,,,,,,,,e5746d4e-a8da-492c-8408-b205c5b6986d,,execute_actions,1140;3440
+34,send_message,21;22;27;28;30;31;32;33,,,,,,"Pumili ng ibang numero kung gusto mo matuto ng ibang paraan para protektahan ang iyong anak sa internet:
+
+1. Pag-aralan ang mga pwedeng maging panganib.
+2. Pag-aayos ng mga problema sa tech
+3. Pagtatag ng mabuti at ligtas na gawi online
+4. Bigyan ng oras ang iyong anak sa internet.
+5. Panatilihing bukas ang inyong komunikasyon
+6. Mag-report at maghanap ng tulong
+
+Maaari mo ring i-type ang ""H"" upang ihinto ang tip na ito.",,,,,,,,,,,,,,,c5c7ec0e-fff7-4a34-8599-806a25a4faa4,,execute_actions,650;4240
+35,save_value,34,,,,,online children list of tips,"@(fields.online_children_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,514e9d37-5257-44ed-9e7f-4015b9c81f1c,,execute_actions,650;4660
+36,save_value,35,,,,,last interaction,@(now()),,,,,,,,,,,,,,,18e609d4-e02f-4ec2-aa62-0ea80535f72a,,execute_actions,650;4800
+37,go_to,36,,,,,,19,,,,,,,,,,,,,,,,,,
+38,send_message,19,n hindi tigil h,,has_any_word,N,,Narito ang isang komiks sa pagkikipag-usap sa iyong anak tungkol sa mga online na gawain,,,,,,,,,,,,,,,56be980c-6954-42eb-b881-5535d976aa62,,execute_actions,3050;4660
+39,send_message,38,,,,,,"Magulang: “Jen, nagawa mo na ba ang homework mo?”
+
+Anak: “Sandali lang, tinatapos ko pa itong tiktok video.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/tiktok_comic_1.png,,,,56be980c-6954-42eb-b881-5535d976aa62,,execute_actions,3050;4660
+40,send_message,39,,,,,,"Magulang: “Mahusay ka talagang sumayaw! Ikuwento mo nga sa akin kung bakit mo ito gusto.”
+
+Anak: “Lahat ng kaibigan ko ay mahilig dito. Meron na akong lagpas sa 600 likes at 120 followers.”
+
+Magulang: “Proud ako sa galing mong sumayaw, Jen. Ngunit dapat masiguro nating ligtas ka dito. Alam kong tumitingin sa TikTok ang mga kaibigan mo, ngunit kapag bukas ang iyong account, mayroon ding mga paedophile na tumitingin sa mga video ng mga teenager. Ang mga paedophile ay mga matatanda na gustong mambiktima ng mga bata at teenager.""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/tiktok_comic_2.png,,,,56be980c-6954-42eb-b881-5535d976aa62,,execute_actions,3050;4660
+41,send_message,40,,,,,,"Magulang: “Sabay tayong tumingin online kung paano natin mapapanatiling masaya ito para sa iyo, pero dapat ligtas din. Tingnan mo, puwedeng gawing pribado ang iyong account, at kontrolin kung sino ang puwedeng mag-follow sa iyo. Kaya puwede mo lang tanggapin iyong mga kilala mo pero hindi ang mga hindi mo kilala. Okay lang ba na gumawa tayo ng patakaran na puwede kang gumamit ng TikTok pero dapat pribado ang iyong account? Nagtitiwala akong alam mo kung sino lamang ang puwedeng tanggapin!”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/tiktok_comic_3.png,,,,56be980c-6954-42eb-b881-5535d976aa62,,execute_actions,3050;4660
+42,send_message,41,,,,,,"Magulang: “Proud ako sa iyo, Jen...”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/tiktok_comic_4.png,,,,56be980c-6954-42eb-b881-5535d976aa62,,execute_actions,3050;4660
+43,split_by_group,42,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,9c72c4b8-e917-41dc-b8e7-e23a4b0b682d,,split_by_expression,2175;5900
+44,split_by_group,43,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,a9b35381-1414-49f8-a911-9f3c08845c96,,split_by_expression,2675;6300
+45,split_by_value,44,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,fa23ebda-2c23-4510-af4b-bdce8ab2511e,,split_by_expression,2925;7100
+46,send_message,45,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,2cf11fd1-e690-4e23-b392-47f2eb7653b2,,execute_actions,2800;7300
+47,send_message,45,,,,,,"Mahusay! Nagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,d167ea49-e6ef-4637-98b9-5d6a61bce390,,execute_actions,3050;7300
+48,split_by_value,44;44,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,221cf0e9-726a-4666-a41e-c7a879c01afb,,split_by_expression,2425;6900
+49,send_message,48,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,3376a1a7-fadf-4f26-a2c7-c6d0e43669d4,,execute_actions,2300;7300
+50,send_message,48,,,,,,"Mahusay! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,03d90a9c-28af-48f8-976b-0934c3cf32bb,,execute_actions,2550;7300
+51,split_by_group,43;43,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,7c7c83c9-ecce-4b8f-bebc-8b88a5da1158,,split_by_expression,1675;6100
+52,split_by_value,51,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,d91fa3ed-a6cf-47d5-aced-64426fa435fc,,split_by_expression,1925;6700
+53,send_message,52,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,b495fb78-e9f1-4966-be7d-8271f1cb175e,,execute_actions,1800;7300
+54,send_message,52,,,,,,"Mahusay! Nagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,230390c9-ca65-4f2c-ba2a-953c9b4bb0bd,,execute_actions,2050;7300
+55,split_by_value,51;51,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,56b1b0bd-19a6-49d3-98ad-10ed7cd71679,,split_by_expression,1425;6500
+56,send_message,55,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,8cdcf1f2-b772-4560-8342-ea1ab75f367d,,execute_actions,1300;7300
+57,send_message,55,,,,,,"Mahusay! Nakapagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Sa mga susunod na araw, subukang gumawa ng kasunduan tungkol sa paggamit ng gadget kasama ang iyong anak. Ang pagiging magulang sa digital na mundo ay katulad din ng pagiging magulang sa totoong mundo. Nakagawa ka ng isang MALAKING HAKBANG sa pagsiguro na ang inyong anak ay ligtas online. Mahusay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,855c55dd-c26e-49ac-99b4-82773f2f010b,,execute_actions,1550;7300
+58,save_value,46;47;49;50;53;54;56;57,,,,,current type assessed,tip,,,,,,,,,,,,,,,e8775edd-a82a-47c7-9028-6971a7f8c9d1,,execute_actions,3770;5600
+59,save_value,58,,,,,current activity,online_child,,,,,,,,,,,,,,,e8775edd-a82a-47c7-9028-6971a7f8c9d1,,execute_actions,3770;5600
+60,start_new_flow,59,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,8b091da5-dee1-417b-a927-68b52571af65,,split_by_subflow,3770;5780
+61,split_by_value,60;60,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,c16a7f5e-b3b6-482c-85cd-9255e61f0530,,split_by_expression,3915;7340
+62,send_message,61,,@fields.user_name,has_text,user_name,,"Tandaan na pwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,5e70e218-f7cb-40ef-b4f7-78c9c3239d7c,,execute_actions,3790;7540
+63,send_message,61,,,,,,"Tandaan na puwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Usap tayo mamaya!",,,,,,,,,,,,,,,e7fe20ea-d948-454a-a8e0-be06fab934c2,,execute_actions,4040;7540
+64,send_message,19,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,764ececa-7591-48c6-83fa-d09ed4ac3d0c,,execute_actions,3770;1680
+65,go_to,64,,,,,,18,,,,,,,,,,,,,,,,,,

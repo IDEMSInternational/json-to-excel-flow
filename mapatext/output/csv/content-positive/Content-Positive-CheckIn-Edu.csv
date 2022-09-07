@@ -1,0 +1,59 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,a1217a69-8728-46d7-a417-3daaa1296bbe,,split_by_expression,1955;
+2,split_by_value,1,,@fields.user_name,has_text,user_name,,@fields.child_nickname,,,,,,,,,,,,,,,c61a95c0-1bf6-4bfd-a1e8-ad904e85a0bb,,split_by_expression,1705;200
+3,send_message,2,,@fields.child_nickname,has_text,child_nickname,,Hi @fields.user_name! Have you been able to support @fields.child_nickname's learning and education recently?,Yes,No,,,,,,,,,,,,,28b8224e-7904-4cbd-8486-b8327c63fc06,,execute_actions,1580;600
+4,send_message,2,,,,,,Hi @fields.user_name! Have you been able to support your child's learning and education recently?,Yes,No,,,,,,,,,,,,,08ff1e48-f1c1-4e26-84ab-82f5e9f4f8b6,,execute_actions,1830;600
+5,split_by_value,1,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,f8fc6928-9fae-4291-9eab-2ccc200c617a,,split_by_expression,2205;400
+6,send_message,5,,@fields.child_nickname,has_text,child_nickname,,Hi! Have you been able to support @fields.child_nickname's learning and education recently?,Yes,No,,,,,,,,,,,,,800f89f4-a2be-4332-a09b-8ba658875bc6,,execute_actions,2080;600
+7,send_message,5,,,,,,Hi! Have you been able to support your child's learning and education recently?,Yes,No,,,,,,,,,,,,,246a4260-2c51-4a77-8588-91700f69d936,,execute_actions,2330;600
+8,wait_for_response,3;4;6;7,,,,,checkin_managed,,,,,,,,,,,,,,,,b0bab225-9ccf-4f81-bafd-2847654e228f,,wait_for_response,2330;760
+9,save_value,8,yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,71e4e42d-d5c7-4c41-b82b-49811c4b0b92,,execute_actions,620;740
+10,save_value,8,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,1de93c86-cd22-4059-b5ee-bd6751e54f17,,execute_actions,1560;1100
+11,send_message,8,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,836995de-60cd-40d8-8337-b5cdff6008f6,,execute_actions,3400;820
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,836995de-60cd-40d8-8337-b5cdff6008f6,,execute_actions,3400;820
+13,go_to,12,,,,,,1,,,,,,,,,,,,,,,,,,
+14,split_by_value,9,,,,,,@fields.user_name,,,,,,,,,,,,,,,68ced76d-897a-4e60-8c76-1a74cdc85122,,split_by_expression,475;840
+15,send_message,14,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! How did it go?,Great,Neutral,Bad,,,,,,,,,,,,54f5f3cb-893d-4827-b3ab-875256bf6895,,execute_actions,350;1040
+16,send_message,14,,,,,,Well done! How did it go?,Great,Neutral,Bad,,,,,,,,,,,,f42fc9f0-8638-4caa-b5c2-e81517d9ec24,,execute_actions,600;1040
+17,wait_for_response,15;16,,,,,checkin_how,,,,,,,,,,,,,,,,dc1aca26-28f3-42a1-ad03-bbd18a7ef51d,,wait_for_response,330;1280
+18,split_by_group,17,great,,has_any_word,Great,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,e9052a69-41a1-46ec-8f18-ccb8fac3ecff,,split_by_expression,125;1620
+19,send_message,18,ABTest_test-first-person_alternative,,,,,I am happy to hear that it went well Research has found that parental support helps children's academic achievements!,,,,,,,,,,,,,,,fb629f43-a197-434d-85ca-dfdb81495ac6,,execute_actions,250;1820
+20,send_message,18;18,ABTest_test-first-person_Default;,,,,,We are happy to hear that it went well! Research has found that parental support helps children's academic achievements!,,,,,,,,,,,,,,,edae0226-94dc-4b0a-b70a-5247ac6041be,,execute_actions,;1820
+21,send_message,17,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,9f349672-e1e2-4bce-b74a-f75a99121465,,execute_actions,1130;1600
+22,go_to,21,,,,,,14,,,,,,,,,,,,,,,,,,
+23,split_by_value,10;17;17,;neutral;bad,,;has_any_word;has_any_word,;Neutral;Bad,,@fields.user_name,,,,,,,,,,,,,,,dbaae8a2-ff2e-4541-b511-c2563833a37e,,split_by_expression,2885;1340
+24,send_message,23,,@fields.user_name,has_text,user_name,,"That is okay @fields.user_name! Remember you are a parent, not a teacher. What did you find difficult about remote learning?",I don't know what to do with my child,My child does not want to learn,I am feeling overwhelmed,I do not know where to find resources to support my child's learning,I did not have the time to involve myself in my child's learning or education,,,,,,,,,,37e33fb5-65eb-491b-a64b-8c7ff723f05d,,execute_actions,2760;1540
+25,send_message,23,,,,,,"That is okay! Remember you are a parent, not a teacher. What did you find difficult about remote learning?",I don't know what to do with my child,My child does not want to learn,I am feeling overwhelmed,I do not know where to find resources to support my child's learning,I did not have the time to involve myself in my child's learning or education,,,,,,,,,,34188bde-2524-47f9-aaa0-f8286a1f08e6,,execute_actions,3010;1540
+26,wait_for_response,24;25,,,,,checkin_problem,,,,,,,,,,,,,,,,2d9edf08-5d05-489a-bdd8-99eb64e52061,,wait_for_response,1540;2480
+27,split_by_value,26,I don't know what to do with my child,,has_only_phrase,I don't know what to do with my chil,,@fields.child_nickname,,,,,,,,,,,,,,,16dce807-2ed7-4c75-94fc-a837fe2021d1,,split_by_expression,1295;2680
+28,send_message,27,,@fields.child_nickname,has_text,child_nickname,,"It is completely normal to experience this, it can be really hard for the whole family to adjust to remote learning. Try making a weekly plan with @fields.child_nickname. Include educational, relaxation and fun activities activities so that it balanced and enjoyable for @fields.child_nickname. You can do this!",,,,,,,,,,,,,,,97e5c6ad-8c65-4f64-a679-14ddf41b5e77,,execute_actions,1170;3480
+29,send_message,27,,,,,,"It is completely normal to experience this, it can be really hard for the whole family to adjust to remote learning. Try making a weekly plan with your child. Include educational, relaxation and fun activities activities so that it balanced and enjoyable for your child. You can do this!",,,,,,,,,,,,,,,71150f31-12ce-49c8-b7aa-8ded437be344,,execute_actions,1420;3480
+30,split_by_value,26,My child does not want to learn ,,has_only_phrase,My child does not want to learn ,,@fields.child_nickname,,,,,,,,,,,,,,,a0543599-ef7e-479e-8889-07190c3fb402,,split_by_expression,2515;2880
+31,send_message,30,,@fields.child_nickname,has_text,child_nickname,,"Sorry to hear that you are finding this challenging. Try thinking of playful and interesting ways to teach @fields.child_nickname their school curriculum. Children are interested in learning if they are having fun. If you need any tips on fun ideas type ""Help"".",,,,,,,,,,,,,,,f6ee6d3a-2096-4bad-abf9-5ad50a4842c6,,execute_actions,2390;3480
+32,send_message,30,,,,,,"Sorry to hear that you are finding this challenging. Try thinking of playful and interesting ways to teach your child their school curriculum. Children are interested in learning if they are having fun. If you need any tips on fun ideas type ""Help"".",,,,,,,,,,,,,,,f14ce71b-d6a0-44a9-a42f-4c281afa3588,,execute_actions,2640;3480
+33,split_by_value,26,I am feeling overwhelmed,,has_only_phrase,I am feeling overwhelmed,,@fields.child_nickname,,,,,,,,,,,,,,,ffc2314a-641c-40e9-b909-ddba327fd415,,split_by_expression,3235;3780
+34,send_message,33,,@fields.child_nickname,has_text,child_nickname,,It is completely normal to feel overwhelmed. Try staying in touch with @fields.child_nickname's teacher or school to receive some guidance. Asking for help is a sign of strength. You can do this!,,,,,,,,,,,,,,,cb7db403-f2b7-414b-92c2-114b6a018c75,,execute_actions,3110;3980
+35,send_message,33,,,,,,It is completely normal to feel overwhelmed. Try staying in touch with your child's teacher or school to receive some guidance. Asking for help is a sign of strength. You can do this!,,,,,,,,,,,,,,,d3f2d878-24db-4ad5-946b-45d95ae12547,,execute_actions,3360;3980
+36,split_by_value,26,I do not know where to find resources to support my child's learning,,has_only_phrase,I do not know where to find resource,,@fields.child_nickname,,,,,,,,,,,,,,,a21d947a-deb1-4015-b277-b7f1490a798d,,split_by_expression,3685;3080
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"That is okay! Here are some resources to help you with supporting @fields.child_nickname's learning:
+
+https://www.unicef.org/coronavirus/supporting-your-childs-mental-health-during-covid-19-school-return
+https://www.unicef.org/philippines/pag-aalaga-sa-mga-bata-sa-panahon-ng-covid-19",,,,,,,,,,,,,,,30ac1a95-a18c-4edd-ac4b-4ddf888ad273,,execute_actions,3560;3480
+38,send_message,36,,,,,,"That is okay! Here are some resources to help you with supporting your child's learning:
+
+https://www.unicef.org/coronavirus/supporting-your-childs-mental-health-during-covid-19-school-return
+https://www.unicef.org/philippines/pag-aalaga-sa-mga-bata-sa-panahon-ng-covid-19",,,,,,,,,,,,,,,e5a56cba-ab37-4a16-87ee-f325081a3e75,,execute_actions,3810;3480
+39,split_by_value,26,I did not have the time to involve myself in my child's learning or education,,has_only_phrase,I did not have the time to involve m,,@fields.child_nickname,,,,,,,,,,,,,,,f4031bad-1ca3-4a7c-b11d-3bcdb3163505,,split_by_expression,4195;3280
+40,send_message,39,,@fields.child_nickname,has_text,child_nickname,,"It can be hard to find time during your day, with work, chores, and everything else. Can you think of a time each day that you can make 5 minutes or a bit more to help @fields.child_nickname with their learning? Perhaps try starting them off on an activity and then checking in with them every few minutes. You can do it!",,,,,,,,,,,,,,,8a4baf75-138d-466d-bab6-6957fc4382c6,,execute_actions,4070;3480
+41,send_message,39,,,,,,"It can be hard to find time during your day, with work, chores, and everything else. Can you think of a time each day that you can make 5 minutes or a bit more to help your child with their learning? Perhaps try starting them off on an activity and then checking in with them every few minutes. You can do it!",,,,,,,,,,,,,,,3efb5b08-5ae1-49ad-a7c5-c31e55781d4e,,execute_actions,4320;3480
+42,send_message,26,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,c2b673d2-6a17-4f6c-a3ab-f447427e6346,,execute_actions,3930;2100
+43,go_to,42,,,,,,23,,,,,,,,,,,,,,,,,,
+44,send_message,19;20;28;29;31;32;34;35;37;38;40;41,,,,,,Would you like to review the content? ,Yes,No,,,,,,,,,,,,,e3dbc465-302e-45ef-ac23-844976e18bf1,,execute_actions,250;2000
+45,wait_for_response,44,,,,,Result 3,,,,,,,,,,,,,,,,0e7b4755-33c1-48fd-9588-02f7a2e32ca7,,wait_for_response,250;2140
+46,save_value,45,yes y,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,bbe42c01-38d6-4399-8161-76bb85f97a5c,,execute_actions,290;2480
+47,start_new_flow,46,,,,,,PLH - Content - Positive - Education,,,,,,,,,,,,,,d281a3b5-b601-492a-9a2c-da0a67303ec3,b12c65ee-c61b-430f-ab12-376e32426caa,,split_by_subflow,270;2580
+48,split_by_value,45,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,7eedd8fc-5e3f-4497-9060-526b0eba2b0b,,split_by_expression,925;2260
+49,send_message,48,,@fields.user_name,has_text,user_name,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later @fields.user_name! ",,,,,,,,,,,,,,,5160fa23-3f7e-4502-ad02-342d2891f720,,execute_actions,800;2460
+50,send_message,48,,,,,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later! ",,,,,,,,,,,,,,,cfb36e08-76cd-4a0b-bbc1-3fa7e782e351,,execute_actions,1050;2460
+51,send_message,45,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,d7119ef4-f32f-49a3-94b9-428b3e3e8439,,execute_actions,780;1940
+52,go_to,51,,,,,,44,,,,,,,,,,,,,,,,,,

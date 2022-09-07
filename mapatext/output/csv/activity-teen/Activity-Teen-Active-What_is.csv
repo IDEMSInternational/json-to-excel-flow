@@ -1,0 +1,5 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"What’s new?
+•	Think of a new skill you could learn together with your teen. For example, keeping a ball in the air or your foot, juggling, learning a new language, or playing an instrument?
+•	Take turns in trying the new skill out.
+•	Make sure to praise each other, and try to learn and play together!",,,,,,,,,,,,,,,32576a2f-c29c-4fc3-8666-9944713dae50,,execute_actions,;

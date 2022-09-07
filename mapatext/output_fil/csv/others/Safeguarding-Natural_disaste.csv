@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Kailangan mo ba ng agarang tulong?,Oo,Hindi,,,,,,,,,,,,,9dc838ac-c949-40f5-b89f-eeab7e7d517d,,execute_actions,520;80
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,4e2e079d-466d-480a-a3ec-89b6aefda9cf,,wait_for_response,520;260
+3,start_new_flow,2,oo o yes y,,has_any_word,Yes,,PLH - Safeguarding - Natural disasters - Referrals,,,,,,,,,,,,,,14c4df09-22d4-493e-81bb-04c67b44f0b9,458ccb8d-3aa3-4c6b-826c-b9b92e8d72c8,,split_by_subflow,300;420
+4,send_message,2,hindi,,has_any_word,No,,I-type ang “SOS” kung sakaling nais mong malaman ang mga detalye ng emergency services o iba pang hotline. Tandaan na ang lahat ng sasabihin mo ay mananatiling pribado!,,,,,,,,,,,,,,,802c1aa8-3e60-4c53-a2dc-d5a8f493c4be,,execute_actions,780;400
+5,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,6bfeebfe-f6de-45eb-9f1f-3b0254a3672c,,execute_actions,880;160
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Tumigil Nang Sandali
+•	Umupo at ipikit ang iyong mga mata.
+•	Pakinggan ang iyong paghinga habang ito ay papasok at papalabas. 
+•	Pansinin ang iyong nararamdaman. 
+•	Huminga nang malalim ng ilang beses pa.
+•	Kapag handa ka na, buksan muli ang iyong mga mata. Nag-iba ba ang iyong nararamdaman? 
+•	Paalalahanan mo ang iyong sarili na ""magiging okay din ako""",,,,,,,,,,,,,,,f4cf7954-292a-4371-89fc-47dd96aa5526,,execute_actions,;

@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Family Work Out
+•	Choose a sport or exercise to do together
+•	Decide on a schedule. Are you going to do it every day? For how long? 
+•	Try it out for a week. 
+•	At the end of the week, ask yourself and your family these questions. How’s it going? How did you feel at the start of the week? How do you feel at the end of the week? What can we do differently next week?",,,,,,,,,,,,,,,dacf301a-c3d8-4287-b0ea-d52cbab4bc69,,execute_actions,;

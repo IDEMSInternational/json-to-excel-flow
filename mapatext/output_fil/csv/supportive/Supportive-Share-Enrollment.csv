@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Paano mo natuklasan ang MaPaText?,Kaibigan,Kapamilya,NGO,,,,,,,,,,,,17b3f3e1-c247-4d8b-bdcf-28c32276a003,,execute_actions,1120;180
+2,wait_for_response,1,,,,,enrollment,,,,,,,,,,,,,,,,bed17d21-de07-427f-a4c8-6961ee9eff92,,wait_for_response,1120;340
+3,save_value,2;2;2,kaibigan;ngo;pamilya,,has_any_word;has_any_word;has_any_word,Friend;Ngo;Family,enrollment,@results.enrollment.category,,,,,,,,,,,,,,,abb496b7-9809-4b15-9718-3711ba347d93,,execute_actions,1100;480
+4,save_value,3,,,,,last interaction,@(now()),,,,,,,,,,,,,,,abb496b7-9809-4b15-9718-3711ba347d93,,execute_actions,1100;480
+5,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,e51cf86e-27de-4f96-8a68-40e134fe54f5,,execute_actions,1400;280
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

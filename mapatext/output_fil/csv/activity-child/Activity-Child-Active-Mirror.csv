@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Salamin
+•	Ang laro na ito ay puweding laruin nang dalawahan o kahit na pang-grupo.
+•	Tumayo nang nakaharap sa bawat isa o ng nakabilog.  
+•	May isang mangunguna muna habang ang iba naman ay kailangan kumopya, susubukang gumalaw kasabay ng lider.
+•	Siguraduhin na ang lider ay gumagalaw nang mabagal para makasunod ang iba. Subukang igalaw ang iba't-ibang bahagi ng katawan at sa iba't ibang lebel.
+•	Pagkatapos, palitan naman kung sino ang lider. Bigyan ng pagkakataon ang lahat na maging lider.
+•	Subukan ito ng walang lider!",,,,,,,,,,,,,,,36b49d4e-58cd-4884-af40-4505b2961c14,,execute_actions,;

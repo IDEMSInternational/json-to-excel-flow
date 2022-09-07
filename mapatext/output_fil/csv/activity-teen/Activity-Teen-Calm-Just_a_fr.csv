@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Isang simpleng kumustahan
+•	Makipag-usap sa iyong teenager tungkol sa isang bagay na gusto nila.
+•	Maaari itong maging tungkol sa anumang pipiliin nilang pag-usapan: sports, mga kaibigan, musika, mga sikat na tao…
+•	Subukang makinig sa iyong teenager at bigyan sila ng pagkakataon na magsalita.
+•	Anong bagong bagay ang natutunan mo tungkol sa iyong teenager mula sa iyong pakikipag-usap?",,,,,,,,,,,,,,,589faea1-651e-4a9b-a681-a7a50a42e9bf,,execute_actions,;

@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Paano mo natuklasan ang MaPaText?,Social media (Facebook),DSWD o iba pang ahensiya ng gobyerno,CPU o iba pang NGO,Sa kakilala o kamag-anak ko,Iba pa,,,,,,,,,,3a5bb9ab-f0c3-4d7f-b98b-497ee7f84e5b,,execute_actions,580;100
+2,wait_for_response,1,,,,,enrollment,,,,,,,,,,,,,,,,34236420-ecb1-4397-81aa-ce5d190beb54,,wait_for_response,420;320
+3,save_value,2;2;2;2;2,sa kakilala o kamag-anak ko;gobyerno dswd;cpu ngo;social media facebook;iba pa,,has_only_phrase;has_any_word;has_any_word;has_any_word;has_only_phrase,Someone;Government;Ngo;Social;Other channel,enrollment,@results.enrollment.category,,,,,,,,,,,,,,,596d60b6-243e-46f8-b177-7b43764686b4,,execute_actions,520;600
+4,save_value,3,,,,,last interaction,@(now()),,,,,,,,,,,,,,,596d60b6-243e-46f8-b177-7b43764686b4,,execute_actions,520;600
+5,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,c8dbe982-de4f-41fd-a962-b1279cad2be1,,execute_actions,1120;320
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

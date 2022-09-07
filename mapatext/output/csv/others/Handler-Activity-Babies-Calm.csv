@@ -1,0 +1,4 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_random,start,,,,,,,,,,,,,,,,,,,,,fc97147f-1874-4123-856a-3cace688de01,,split_by_random,620;140
+2,start_new_flow,1,1,,,,,PLH - Activity - Baby - Calm - Lullaby,,,,,,,,,,,,,,46884529-c094-4960-8a9c-c84338dc75d7,b08fd7d2-1b0a-485d-a447-69c491c27f3a,,split_by_subflow,380;360
+3,start_new_flow,1,2,,,,,PLH - Activity - Baby - Calm - At the end of the day,,,,,,,,,,,,,,04acf6f4-1689-4230-8b6b-207e72319058,410898c0-48d2-4e9e-89a6-34ce4dbdb0a8,,split_by_subflow,780;360

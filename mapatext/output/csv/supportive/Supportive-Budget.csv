@@ -1,0 +1,18 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,3180dccf-b02e-4132-947c-3a2f6cca224a,,split_by_expression,555;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,I am really sorry to hear that you are experiencing money challenges. Would these things be useful?,Learn about family budgeting,Look for support organisations in your area,I am not interested,,,,,,,,,,,,5af98f5e-e086-4ff1-abb2-766b7289751f,,execute_actions,680;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,We are really sorry to hear that you are experiencing money challenges. Would these things be useful?,Learn about family budgeting,Look for support organisations in your area,I am not interested,,,,,,,,,,,,8f3a798f-31c4-480c-bd7a-247662b1b831,,execute_actions,430;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,c05061e6-bbe1-44a6-9751-eb1941a9aa08,,wait_for_response,410;440
+5,send_message,4,Look for support organisations in your area,,has_only_phrase,Look,,Budget Support - Department of Social Welfare and Development (DSWD) Pantawid Pamilyang Pilipino Program (4Ps): https://pantawid.dswd.gov.ph ,,,,,,,,,,,,,,,e5fa98f8-4653-4407-9ad1-c2af6378a578,,execute_actions,20;600
+6,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,f8d6483e-4651-4a1b-b336-e9a05c8ab182,,execute_actions,1360;500
+7,go_to,6,,,,,,1,,,,,,,,,,,,,,,,,,
+8,send_message,5,,,,,,Would you like to learn more about family budgeting?,Yes,No,,,,,,,,,,,,,2d3775be-24a3-4747-9ef4-679ae0a57438,,execute_actions,40;820
+9,wait_for_response,8,,,,,Result 2,,,,,,,,,,,,,,,,bbcab4ce-1a00-4747-9ef8-d6776a40f7f8,,wait_for_response,;1060
+10,split_by_value,4;9,Learn about family budgeting;yes,,has_only_phrase;has_any_word,Learn;Yes,,@fields.age_group_for_tips,,,,,,,,,,,,,,,beaed4bb-f12c-45a5-a119-891bfe048172,,split_by_contact_field,1020;620
+11,start_new_flow,10,baby,@fields.age_group_for_tips,has_any_word,Baby,,PLH - Content - Positive - Budget adults,,,,,,,,,,,,,,30d3d9bf-4ce1-4034-94bb-8c10cb89e6d1,aecbe854-09c2-4733-aff4-d045433c563c,,split_by_subflow,920;740
+12,start_new_flow,10,,,,,,PLH - Content - Positive - Budget with children,,,,,,,,,,,,,,7b46af18-d9da-428f-bb8b-2f5e04add8e8,ac828dda-4580-41a9-8bd3-50551e917f0d,,split_by_subflow,1220;720
+13,split_by_value,4;9,interested;no,,has_any_word;has_any_word,Interested;No,,@fields.user_name,,,,,,,,,,,,,,,928df495-aec4-477e-bf8a-101b3dbfd1b5,,split_by_expression,185;1200
+14,send_message,13,,@fields.user_name,has_text,user_name,,"That's okay! You can always get more information by typing ""Help"". Chat later @fields.user_name!",,,,,,,,,,,,,,,a4d9d6b7-b265-4cf6-99d6-00e2bade45c5,,execute_actions,60;1400
+15,send_message,13,,,,,,"That's okay! You can always get more information by typing ""Help"". Chat later!",,,,,,,,,,,,,,,abcf2cfa-7b8c-4a87-8cfe-a8225b827b69,,execute_actions,310;1400
+16,send_message,9,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,50b135f0-37d4-41ac-a593-cf6638570748,,execute_actions,880;1080
+17,go_to,16,,,,,,8,,,,,,,,,,,,,,,,,,

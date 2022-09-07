@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Crazy Chicken
+•	Alugin ang iyong kaliwang kamay ng walong beses habang bumibilang ng hanggang walo. 
+•	Gawin ito nang mabilis at maingay sa abot ng iyong makakaya.
+•	• Ulitin ito gamit ang kabilang kamay, tapos gawin ito gamit ang bawat paa. 
+•	Gawin ito nang 7 na ulit, pagkatapos ay 6 na ulit at magpatuloy hanggang makaabot nang 1.
+•	Ang bawat isa ay magsabi ng ""Crazy Chicken"" kung ikaw ay tapos na at gawin ang pinakamagaling nilang crazy chicken dance!",,,,,,,,,,,,,,,36c0c171-5304-4183-904d-16715e564910,,execute_actions,;

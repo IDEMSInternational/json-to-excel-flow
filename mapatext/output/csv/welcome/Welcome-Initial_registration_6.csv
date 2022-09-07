@@ -1,0 +1,14 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,447b7dae-b66a-4975-8066-26e9591adc2e,,split_by_expression,500;20
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"What is your relationship status?
+
+If you don't want to tell me, that's okay. Please type ""N"".",Single (not in a relationship),Married,Partnered but not married,Divorced or separated,Widowed,,,,,,,,,,4e3218d8-0af7-43f3-a794-8a1fd2f5eed6,,execute_actions,625;220
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"What is your relationship status?
+
+If you don't want to tell us, that's okay. Please type ""N"".",Single (not in a relationship),Married,Partnered but not married,Divorced or separated,Widowed,,,,,,,,,,2f660fc8-7f21-41fe-8828-0c30f2b60047,,execute_actions,375;220
+4,wait_for_response,2;3,,,,,marital status,,,,,,,,,,,,,,,,640f85a5-e9aa-4d40-885c-146985bc0470,,wait_for_response,255;620
+5,save_value,4;4,married;Partnered but not married,,has_only_phrase;has_only_phrase,Married;Partnered,get ipv content,yes,,,,,,,,,,,,,,,7e170e13-fdfa-4e2f-970a-daf1b289d982,,execute_actions,685;960
+6,save_value,4;4;4;4,single;Divorced separated;Widowed;N,,has_any_word;has_any_word;has_any_word;has_any_word,Single;Divorced;Widowed;no,get ipv content,no,,,,,,,,,,,,,,,915d1bef-7d11-489d-a939-1f1250ad1e80,,execute_actions,175;960
+7,save_value,5;6,,,,,marital status,@results.marital_status.category,,,,,,,,,,,,,,,1a988f00-1ecf-4e04-ab10-6e3058843076,,execute_actions,275;1080
+8,send_message,4,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,34bff6ba-9176-4762-b440-fc975998083c,,execute_actions,1125;620
+9,go_to,8,,,,,,1,,,,,,,,,,,,,,,,,,

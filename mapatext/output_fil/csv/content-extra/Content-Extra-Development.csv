@@ -1,0 +1,147 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Child development,,,,,,,,,,,,,,,21a6b29a-83d7-4d6a-87dc-4493a86ef14f,,execute_actions,1070;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,d995dc6e-d514-4cee-9446-ec7613be3dcb,,split_by_subflow,1070;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,a6e7e7e2-c767-485d-bbbe-c987bd94bec7,,split_by_contact_field,1090;260
+4,send_message,3,,,,,,Minsan nakadarama tayo ng pagkabigo sa ating mga anak dahil inaasahan natin na kumilos sila sa mga paraang hindi pa nila kaya dahil sa kanilang edad.,,,,,,,,,,,,,,,c83b3942-a821-483f-98ed-090a3e0c94f0,,execute_actions,1370;400
+5,send_message,4,,,,,,Ang pag-aaral tungkol sa child development ay nangangahulugang maaari tayong magkaroon ng makatotohanang inaasahan sa ating mga anak at upang makita din ang anumang mga problema sa kanilang paglaki at pag-unlad.,,,,,,,,,,,,,,,c8eae3a3-e5bb-45e0-99ce-d2a221d7337d,,execute_actions,1880;420
+6,split_by_value,5,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,a85f9856-79b8-4e69-aff6-221f6c58b673,,split_by_expression,1370;620
+7,split_by_value,3;6,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,9d36e938-57e7-4e71-bd32-f868b5f7cdd7,,split_by_contact_field,1010;760
+8,send_message,7,high,@fields.type_of_media,has_any_word,High,,Ang lahat ng mga bata ay iba-iba ang bilis ng paglaki at pag-unlad. Narito ang isang video upang matulungan kang maunawaan kung ano ang aasahan mula sa iyong mga anak.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Child_Development_Introduction.m4v,,292f38c7-ed43-4d74-b652-8deb84cf85cb,,execute_actions,;840
+9,send_message,7,medium,@fields.type_of_media,has_any_word,Medium,,Ang lahat ng mga bata ay iba-iba ang bilis ng paglaki at pag-unlad. Narito ang isang video upang matulungan kang maunawaan kung ano ang aasahan mula sa iyong mga anak.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Child_Development_Introduction.mp3,,,b3489a62-f661-481d-80a1-ed5f3f4f0a75,,execute_actions,990;920
+10,wait_for_response,8;9,,,,,Result 4,,,,,,,,,,,,,,,,4dafb720-650f-4cee-b928-fd78ddf0d933,120,wait_for_response,80;1100
+11,send_message,10;10;7,;No Response;,,,,,Ang lahat ng mga bata ay iba-iba ang bilis ng paglaki. Ngunit may ilang mga bagay na inaasahan nating magagawa ng mga bata base sa kanilang edad. Tinatawag itong mga 'development' milestones.,,,,,,,,,,,,,,,a995c38c-1b4f-4e6f-afec-c362876ea2dd,,execute_actions,1350;1040
+12,send_message,11,,,,,,"Maraming bagay ang nakakaapekto sa pag-unlad ng ating mga anak. Halimbawa, ang pag-unlad ay natutulungan ng pagkain ng masustansyang pagkain, pagkakaroon ng mga bakuna, at mga magulang o tagapag-alaga na laging nakikipag-usap sa kanila. ",,,,,,,,,,,,,,,6db7ced2-de49-4096-8220-c95d1eb6ac24,,execute_actions,1410;1240
+13,send_message,6,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,0a22ced8-5038-4fe0-8f6a-c7cae1dbf1d0,,execute_actions,2060;640
+14,wait_for_response,13,,,,,Result 3,,,,,,,,,,,,,,,,07474a35-9bb4-4192-9edb-36abce74b50a,900,wait_for_response,1720;900
+15,go_to,14,Oo y o,,has_any_word,Yes,,7,,,,,,,,,,,,,,,,,,
+16,send_message,14,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,6ad6afb1-fa91-4093-b5ab-33528ccaa7ed,,execute_actions,1920;780
+17,go_to,16,,,,,,13,,,,,,,,,,,,,,,,,,
+18,send_message,14;14,Hindi n h;No Response,,has_any_word;,No;,,"Okay lang 'yan! Puwede mo laging i-type ang ""Help"" kung nais mong matuto nang higit pa tungkol sa child development. ",,,,,,,,,,,,,,,ab8d6fb7-0e90-4d92-aa87-e7a2dcdad3b5,,execute_actions,2020;940
+19,send_message,18,,,,,,"Kung nag-aalala ka na maaaring maantala ang inyong anak sa kanyang pag-unlad, narito ang isang link sa mga serbisyo sa iyong lugar na maaaring makatulong din:
+https://eccdcouncil.gov.ph/index.html
+
+Maaari mo ring bisitahin ang website ng UNICEF para sa higit na kapaki-pakinabang na impormasyon tungkol sa child development:
+https://www.unicef.org/philippines/",,,,,,,,,,,,,,,3432e60b-5b79-4002-9532-30661b15e9f5,,execute_actions,2020;1080
+20,split_by_value,19,,,,,,@fields.user_name,,,,,,,,,,,,,,,a8d8dcf7-c6be-4326-9cc4-5f97fe16212b,,split_by_expression,2515;1400
+21,send_message,20,,@fields.user_name,has_text,user_name,,Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,4220f7b3-2da2-4310-bb89-d0229884581c,,execute_actions,2390;1600
+22,send_message,20,,,,,,Usap tayo mamaya!,,,,,,,,,,,,,,,73cfb6d5-0afa-4c6e-ac48-f28fdb544343,,execute_actions,2640;1600
+23,send_message,12,,,,,,Aling child development milestones ang nais mong malaman?,Sanggol (0-2 taon),Batang anak (2-9 taon),Teenager (10-17 taon),,,,,,,,,,,,af385a87-3c16-4fcd-8c63-d02613ce17b8,,execute_actions,1030;1360
+24,wait_for_response,23,,,,,response_category,,,,,,,,,,,,,,,,5e8f2ba0-a7b8-451e-80a0-71dfbf3edee9,,wait_for_response,1370;1680
+25,split_by_value,24,sanggol mga sanggol,,has_any_word,baby,,@fields.type_of_media,,,,,,,,,,,,,,,f2476de7-d85e-4811-9f84-00cab0f6f83b,,split_by_contact_field,950;1860
+26,send_message,25,high,@fields.type_of_media,has_any_word,High,,Kinakailangan ng mga sanggol edad 0 hanggang 1 taon ng maraming atensyon at laro. Narito ang isang video para tulungan kang mas maunawaan ang mga pangangailangan ng iyong anak sa kanyang paglaki.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Child_Development_Babies_Toddlers_0to2_Years.m4v,,ddc6c791-cd09-485b-9b3b-0af995242ed8,,execute_actions,60;2420
+27,send_message,25,medium,@fields.type_of_media,has_any_word,Medium,,Kinakailangan ng mga sanggol edad 0 hanggang 1 taon ng maraming atensyon at laro. Narito ang isang video para tulungan kang mas maunawaan ang mga pangangailangan ng iyong anak sa kanyang paglaki.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Child_Development_Babies_Toddlers_0to2_Years.mp3,,,f0fe22ee-7283-4e23-849a-fd2432a81438,,execute_actions,1030;2420
+28,wait_for_response,26;27,,,,,Result 5,,,,,,,,,,,,,,,,ce7e3c72-29a6-43db-b57b-87970d99a2c1,120,wait_for_response,140;2640
+29,send_message,25;28;28,;;No Response,,,,,"Kailangan ng sanggol (0-1 taon):
+Tayo upang magbigay ng pagkain, pagtulog, paglilinis, ginhawa at kaligtasan.
+Matibay na relasyon sa magulang/tagapangalaga.
+Maraming paglalaro at atensyon- ang pinaka-aktibong oras ng pag-unlad ng utak ay sa unang 1000 araw ng buhay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/development_1.png,,,,d530910e-7684-4609-817b-fa109ad92396,,execute_actions,910;2840
+30,send_message,29,,,,,,"Sanggol (0-1):
+• 0-6 na buwan Ngumingiti, gumagawa ng tunog at umiiyak para kunin ang iyong atensiyon. Kailangan nating bigyan ng pag-aaruga, yakap at proteksiyon.
+• 6-11 na buwan: Kumakapit sa iyo, lalo na kapag pakiramdam niya ay hindi siya ligtas o siya ay takot. 
+• 12-23 na buwan: Nagsisimula nang maglakad, magsalita at tumuklas ng mga bagay sa kanilang paligid!",,,,,,,,,,,,,,,df06ac47-4add-446e-adf4-c92d440b9fd2,,execute_actions,910;3120
+31,send_message,30,,,,,,"Mga maliliit na bata (2-3 taon):
+Nagiging mapag-usisa at gustong tumuklas - mag-ingat sa pag-akyat-akyat! 
+Natututo sa pamamagitan ng paglalaro at pagsubok sa mga bagay
+Gustong matuto kung paano gawin ang mga bagong bagay (tulad ng pagbibihis) at gumawa ng sarili nilang mga desisyon.
+Gusto ng iyong papuri at pagsang-ayon",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/development_2.png,,,,b5a74b62-57a4-408d-8886-340d92a3cbe5,,execute_actions,1050;3420
+32,send_message,31,,,,,,"Mga maliliit na bata (2-3 taon):
+Nagsisimulang magsalita na buo ang mga pangungusap at natututo ng mga bagong salita.
+Ayaw nang natatalo o magbigayan, ngunit natuturo ang pakikipaghati.
+Maaaring ipahayag ang mga damdamin sa mga dramatikong paraan (tulad ng pagsisigaw sa sahig!). Maaaring magsimulang malaman kung paano pangasiwaan ang kanilang nararamdaman.",,,,,,,,,,,,,,,31017aa2-e460-4376-a924-20caf168a87c,,execute_actions,140;3740
+33,split_by_value,24,batang anag mga bata,,has_any_word,child,,@fields.type_of_media,,,,,,,,,,,,,,,1da222f2-f2c2-4ee9-ac55-9af47cfd6d8e,,split_by_contact_field,1330;1880
+34,send_message,33,high,@fields.type_of_media,has_any_word,High,,Ang mga maliliit na bata ay may katulad na pangangailangan ng mga sanggol. Narito ang isang audio message upang matulungan kang mas maunawaan ang mga pangangailangan  ng iyong anak sa kanyang paglaki.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Child_Development_Children_2to9_Years.m4v,,472c10cd-8c57-4dc5-8642-2cdbf42ccb53,,execute_actions,1290;2420
+35,send_message,33,medium,@fields.type_of_media,has_any_word,Medium,,Ang mga maliliit na bata ay may katulad na pangangailangan ng mga sanggol. Narito ang isang audio message upang matulungan kang mas maunawaan ang mga pangangailangan  ng iyong anak sa kanyang paglaki.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Child_Development_Children_2to9_Years.mp3,,,c188662b-dc6d-4b56-ae17-0758063664e3,,execute_actions,1760;2400
+36,wait_for_response,34;35,,,,,Result 6,,,,,,,,,,,,,,,,75b1f6e8-fe62-4452-936a-05cd8d631502,120,wait_for_response,1390;2620
+37,send_message,33;36;36,;;No Response,,,,,"Mga bata (4-6 na gulang):
+Pareho sa mga maliliit na bata, pero gayundin...
+Alamin sa pamamagitan ng mga aksyon at laro.
+Pakikipagkaibigan sa ibang mga bata
+Nahihirapang paghiwalayin ang pagkukunwari sa realidad. Ipinipahayag pa rin ang mga damdamin sa ma-dramang paraan!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/development_3.png,,,,84975d1f-17c0-46c4-bb32-ef953804a5e4,,execute_actions,1410;2760
+38,send_message,37,,,,,,"Mga bata (4-6 na gulang):
+Maaaring madaldal; madaming tanong. Dapat tayong maging matapat kapag sumagot tayo! Maaaring tanungin muli ng ating anak kung hindi nila naiintindihan o may gusto pa silang malaman
+Ayaw nang natatalo, magbahagi o magbigayan, pero ang pagkatalo at pagbibigayan ay maaaring maituro.",,,,,,,,,,,,,,,8f42c4e5-2b5b-4ba8-926a-ab487600f5f4,,execute_actions,1290;3480
+39,send_message,38,,,,,,"Mga nakakatandang bata (7-9 taon)
+Pareho ng maagang pagkabata, ngunit…
+Interesadong matuto sa paaralan.
+Nagsisimulang gustuhin ang kalayaan at tiwala.
+Gustong makasama ang ibang mga bata.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/development_4.png,,,,bfa3e3c3-2ae0-42a0-b900-d8b96051960d,,execute_actions,1290;3820
+40,send_message,39,,,,,,"Mga nakakatandang bata (7-9 taon)
+Maaaring magsimulang magtanong ng mga tanong tungkol sa relihiyon
+Maaaring sumagot pabalik sa mga adult upang ipakita na ""alam"" nila.
+• Maaaring maging napaka-conscious sa sarili at sensitibo. Maaaring masyadong aktibo. Sa puntong ito, gumagaling na dapat sila sa pangangasiwa ng kanilang galit at pagkabigo.",,,,,,,,,,,,,,,65512e06-fd5b-440b-afaf-be4fe22386f6,,execute_actions,1330;4100
+41,split_by_value,24,teenager teenagers teenager teenager,,has_any_word,teen,,@fields.type_of_media,,,,,,,,,,,,,,,72705cec-0d0d-4e71-b908-6e4c798bd1bf,,split_by_contact_field,3240;1860
+42,split_by_value,41,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,ca069d73-b12d-4ef4-8097-c29860925ffc,,split_by_expression,2205;2000
+43,send_message,42,,@fields.child_nickname,has_text,child_nickname,,Ang pagiging teenager ay ang pangalawang pinaka-aktibong panahon ng pag-unlad ng pag-iisip ng iyong anak! Narito ang isang video para tulungan kang maintindihan kung paano suportahan si @fields.child_nickname sa panahong ito.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Child_Development_Teenagers_10to17_Years.m4v,,bf414c02-5840-4791-9f8a-7e9d3160e0c8,,execute_actions,2080;2400
+44,send_message,42,,,,,,Ang pagiging teenager ay ang pangalawang pinaka-aktibong panahon ng pag-unlad ng pag-iisip ng iyong anak! Narito ang isang video para tulungan kang maintindihan kung paano suportahan ang iyong anak sa panahong ito.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/Child_Development_Teenagers_10to17_Years.m4v,,acff68d3-f12a-4318-a6df-82b6628ed317,,execute_actions,2330;2400
+45,split_by_value,41,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,2823466a-70ed-4627-85cb-3b12ca039659,,split_by_expression,3465;2200
+46,send_message,45,,@fields.child_nickname,has_text,child_nickname,,Ang pagiging teenager ay ang pangalawang pinaka-aktibong panahon ng pag-unlad ng pag-iisip ng iyong anak! Narito ang isang audio message para tulungan kang maintindihan kung paano suportahan si @fields.child_nickname sa panahong ito.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Child_Development_Teenagers_10to17_Years.mp3,,,2c45f959-ef95-4239-8549-ba667b6a9dde,,execute_actions,3340;2400
+47,send_message,45,,,,,,Ang pagiging teenager ay ang pangalawang pinaka-aktibong panahon ng brain development ng iyong anak! Narito ang isang audio message para tulungan kang maintindihan kung paano suportahan ang iyong anak sa panahong ito.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/Child_Development_Teenagers_10to17_Years.mp3,,,30745a2f-a7b9-44e3-aec1-05260eecf036,,execute_actions,3590;2400
+48,wait_for_response,43;44;46;47,,,,,Result 7,,,,,,,,,,,,,,,,639b0c53-f818-43db-8844-b0a3ae9d7dbe,120,wait_for_response,3200;2660
+49,send_message,41;48;48,;;No Response,,,,,"Mga batang teenager (10-12 taon)
+Mas interesadong mag-aral sa paaralan.
+Nagsisimulang gustuhin ang kalayaan at tiwala.
+Nais na sumama sa iba pang mga bata at mga teenager.
+Maaaring maging interesado sa relihiyon o ispirituwalidad",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/development_5.png,,,,1bdf2d9c-9367-4cc4-bc46-7a4844ea6a1d,,execute_actions,3200;2800
+50,send_message,49,,,,,,"Mga batang teenager (10-12 taon)
+Maaaring sumagot pabalik sa mga adult upang ipakita na ""alam"" nila.
+Maaaring maging napaka-conscious sa sarili at sensitibo
+Maaaring matuto kung paano mas mapangasiwaan ang galit at tiisin ang pagkabigo.",,,,,,,,,,,,,,,0ae5448d-b614-4f9d-b8dd-d390c22dc800,,execute_actions,1980;2820
+51,send_message,50,,,,,,"Mga teenager na nasa gitna (13-14 taon)
+Simulang kuwestiyonin ang mga patakaran na para sa mga adult
+Madalas ay walang katiyakan at nalilito.
+Madaling masaktan ang damdamin at pabago-bago ang nararamdaman
+Sinusubukang maging boss at hindi nasisiyahan kung natalo siya.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/development_6.png,,,,6547e824-9981-4a1e-9c14-3701a49e9945,,execute_actions,1980;3060
+52,send_message,51,,,,,,"Mga teenager na nasa gitna (13-14 taon)
+Importante ang kanilang mga kaibigan at naaapektuhan nito ang kanilang mga desisyon
+Kailangan ng kaunting kalayaan pero kailangan din ang mga maaasahang patakaran na hindi nagbabago
+Kailangan ng pagmamahal, pagpapanatag, pagpapahalaga sa sarili, pagbibigay ng lakas at pag-asa para maniwala sila sa kanilang mga kakayahan",,,,,,,,,,,,,,,19a9f240-a3ec-47f6-bd62-894a8452223a,,execute_actions,2000;3320
+53,send_message,52,,,,,,"Mas nakatatandang teenager (15-19 taon)
+Ang mga taon bilang teenager ay ang pangalawang pinakaaktibong panahon ng paglago ng utak!
+Ang iyong anak ay halos nasa hustong gulang na, maaari silang makipag-usap sa iyo tungkol sa
+halos kahit anong bagay.
+• Maaari silang mag-isip ng mga bagong ideya, bumuo ng kanilang sariling mga paniniwala at itakda ang kanilang sariling daan.",,,,,,,,,,,,,,,25842569-6a5d-412d-9e87-356d045442ed,,execute_actions,2060;3580
+54,send_message,53,,,,,,"Mas nakatatandang teenager (15-19 taon)
+Ang mga ito ay bumubuo ng kanilang sariling pagkakakilanlan at mayroong lumalaking pakiramdam ng kanilang
+
+sekswalidad
+Maaaring mas gusto nilang makasama ang kanilang mga kaibigan kaysa sa iyo
+• Maaari silang magpakita ng mga delikadong gawain, madalas na pagbabago ng nararamdaman, at rebeldeng pag-uugali. Kaya rin nilang magkaroon ng mga kapana-panabik na bagong ideya!",,,,,,,,,,,,,,,18818e31-41ff-4876-bdcd-378d07d2a637,,execute_actions,2330;3920
+55,split_by_value,54,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,708f9b60-ad5c-46d6-81b7-86e0a090656b,,split_by_expression,2930;4480
+56,send_message,55,man,@fields.gender_personalisation,has_any_word,man,,"Ang pinakamahalagang bagay na maaari mong gawin para sa iyong teenager sa yugtong ito ay:
+Ipagpatuloy ang pagbibigay ng pagmamahal, suporta at patnubay, at magkaroon ng malakas na
+koneksiyon ng tatay at anak
+Subaybayan kung sino ang kanilang mga kaibigan, magkaroon ng malinaw na mga patakaran upang mapanatili silang ligtas
+Pagyamanin ang kanilang kalayaan",,,,,,,,,,,,,,,aaa1c48f-bf42-4a24-b22d-1073b68439c3,,execute_actions,2680;4680
+57,send_message,55,woman,@fields.gender_personalisation,has_any_word,woman,,"Ang pinakamahalagang bagay na maaari mong gawin para sa iyong teenager sa yugtong ito ay:
+Ipagpatuloy ang pagbibigay ng pagmamahal, suporta at patnubay, at magkaroon ng malakas na
+koneksiyon ng nanay at anak
+Subaybayan kung sino ang kanilang mga kaibigan, magkaroon ng malinaw na mga patakaran upang mapanatili silang ligtas
+Pagyamanin ang kanilang kalayaan",,,,,,,,,,,,,,,ef2f7fb0-e0ef-48f8-8252-7fcccf96daa6,,execute_actions,2930;4680
+58,send_message,55,,,,,,"Ang pinakamahalagang bagay na maaari mong gawin para sa iyong teenager sa yugtong ito ay:
+• Ipagpatuloy ang pagbibigay ng pagmamahal, suporta at patnubay, at palakasin ang relasyon mo sa iyong anak
+Subaybayan kung sino ang kanilang mga kaibigan, magkaroon ng malinaw na mga patakaran upang mapanatili silang ligtas
+Pagyamanin ang kanilang kalayaan",,,,,,,,,,,,,,,82d8a05e-43de-41e1-89db-1c64b7974796,,execute_actions,3180;4680
+59,send_message,56;57;58,,,,,,"Maging mapagpasensya at tanggapin ang nabubuo nilang pagkatao - kahit na hindi ito ang iyong inaasahan
+Himukin silang simulang akuin ang responsibilidad para sa kanilang kinabukasan
+Ipagpatuloy ang pagsuporta at pagmamahal sa kanila upang maging kumportable, sigurado, at ligtas sila",,,,,,,,,,,,,,,60755cf7-3c89-4e8c-8bc1-959b1a05f502,,execute_actions,2350;5020
+60,start_new_flow,32;40;59,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,03aa55f5-2126-4e90-98db-3800f3d9abf6,,split_by_subflow,930;5360
+61,split_by_group,60;60,Complete;Expired,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,2ab25171-ce25-45cc-b316-f162bfdaa3a7,,split_by_expression,535;5500
+62,split_by_group,61,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,6f245850-6aa7-460b-94de-364ccabbb218,,split_by_expression,785;5900
+63,send_message,62,ABTest_test-gamification_alternative,,,,,"Magaling at nakapagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Kapag may kaalaman ang magulang tungkol sa child development, maaaring mabawasan ang pagkainis sa mga anak.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,c4311e3a-13ab-4178-b78f-3552cbebeffb,,execute_actions,910;6100
+64,send_message,62;62,ABTest_test-gamification_Default;,,,,,"Magaling at nagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Kapag may kaalaman ang magulang tungkol sa child development, maaaring mabawasan ang pagkainis sa mga anak.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,5a6bd20a-c483-4479-8faa-602f985faf03,,execute_actions,660;6100
+65,split_by_group,61;61,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,8e9a034e-15b7-4a46-8cec-d9adf36a3e69,,split_by_expression,285;5700
+66,send_message,65,ABTest_test-gamification_alternative,,,,,"Magaling at nakapagdagdag ka ng isa pang antas sa iyong Masayang Tahanan! Kapag may kaalaman ang magulang tungkol sa child development, maaaring mabawasan ang pagkainis sa mga anak.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,fb8d6e74-6396-4c41-b80e-b6c2df1c9303,,execute_actions,410;6100
+67,send_message,65;65,ABTest_test-gamification_Default;,,,,,"Magaling at nagdagdag ka ng isa pang kasanayan sa iyong Parenting Toolkit! Kapag may kaalaman ang magulang tungkol sa child development, maaaring mabawasan ang pagkainis sa mga anak.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,9eac67a2-4348-45d0-b5e4-57b4af17255e,,execute_actions,160;6100
+68,send_message,63;64;66;67,,,,,,"Kung nag-aalala ka na maaaring maantala ang inyong anak sa kanyang pag-unlad, narito ang isang link sa mga serbisyo sa iyong lugar na maaaring makatulong din:
+https://eccdcouncil.gov.ph/index.html
+
+Maaari mo ring bisitahin ang website ng UNICEF para sa higit na kapaki-pakinabang na impormasyon tungkol sa child development:
+https://www.unicef.org/philippines/",,,,,,,,,,,,,,,459fe80a-54c8-4103-8842-74e67c01cbd1,,execute_actions,1800;6160
+69,save_value,68,,,,,current type assessed,tip,,,,,,,,,,,,,,,350d6596-b694-4f5e-8794-2f1292f4bab8,,execute_actions,1780;6660
+70,save_value,69,,,,,current activity,development,,,,,,,,,,,,,,,350d6596-b694-4f5e-8794-2f1292f4bab8,,execute_actions,1780;6660
+71,start_new_flow,70,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,dae61052-d1f6-4996-9b97-2e4d42f129f8,,split_by_subflow,1720;6940
+72,split_by_value,71,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,769bc1ef-137c-4cde-8d4a-64bca1884f39,,split_by_expression,1595;7080
+73,send_message,72,,@fields.user_name,has_text,user_name,,"Tandaan na pwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,34758408-a2ad-42ff-a479-1ae6361d9f88,,execute_actions,1470;7280
+74,send_message,72,,,,,,"Tandaan na puwede mong i-type ang ""Help"" kung gusto mo ng iba pang tips o suporta tungkol sa pagiging magulang. Usap tayo mamaya!",,,,,,,,,,,,,,,7d2edd38-476d-4872-a477-893ddae2b423,,execute_actions,1720;7280
+75,send_message,24,,,,,,Paumanhin hindi ko naintindihan ang ibig mong sabihin.,,,,,,,,,,,,,,,30d61257-c957-4cf5-a79c-7652a39b2c0f,,execute_actions,1920;1620
+76,go_to,75,,,,,,23,,,,,,,,,,,,,,,,,,

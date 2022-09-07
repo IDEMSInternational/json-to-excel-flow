@@ -1,0 +1,3 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Here is the link:
+https://m.me/103836985553464",,,,,,,,,,,,,,,98fffeca-e1dc-4f79-85b2-826099378a15,,execute_actions,380;40

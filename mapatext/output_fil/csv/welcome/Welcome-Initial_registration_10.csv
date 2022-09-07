@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Ano ang inyong pangalan o palayaw?
+
+Kung mas gusto ninyong huwag magbahagi, paki-type ang “H”",,,,,,,,,,,,,,,9f305811-8284-4c0d-8a6a-38550281f08e,,execute_actions,420;20
+2,wait_for_response,1,,,,,name,,,,,,,,,,,,,,,,73569e84-880e-4e2e-8634-d37dcb9769a6,,wait_for_response,420;200
+3,save_value,2,,,,,user name,@results.name,,,,,,,,,,,,,,,5e2a69b0-496d-4d84-8110-a78e49533c44,,execute_actions,600;340
+4,send_message,3,,,,,,"Natutuwa akong makilala ka, @fields.user_name! ",,,,,,,,,,,,,,,d10e2e11-6173-41d5-a237-ce22a0e55ef6,,execute_actions,400;500

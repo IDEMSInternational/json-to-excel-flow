@@ -1,0 +1,15 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,7a0e4214-49bc-422c-8793-af15400222f4,,split_by_expression,565;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Maaari ka bang gumugol ng mas maraming oras para sa inyong mga anak at mas kaunti sa paggamit ng cellphone? Ibaba ang inyong cellphone at gumawa ng masayang bagay kasama sila!,,,,,,,,,,,,,,,b16649fd-54b3-44d7-8a51-ec0131703b6f,,execute_actions,440;200
+3,send_message,1,,,,,,Magandang araw! Maaari ka bang gumugol ng mas maraming oras para sa inyong mga anak at mas kaunti sa paggamit ng cellphone? Ibaba ang inyong cellphone at gumawa ng masayang bagay kasama sila!,,,,,,,,,,,,,,,3b33cd8b-5adf-439d-b85b-3c82a8157cd6,,execute_actions,690;200
+4,send_message,2;3,,,,,,Gusto mo ba ng mungkahi para sa isang aktibidad na pwedeng gawin kasama ng inyong mga anak?,Oo,Hindi,,,,,,,,,,,,,39297cec-6c0a-4fe0-bc5e-9024d045b54f,,execute_actions,710;380
+5,wait_for_response,4,,,,,Result 1,,,,,,,,,,,,,,,,20df098d-ec14-4ddc-a043-6accc614478a,,wait_for_response,710;600
+6,save_value,5,Oo y o,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,71f8d6dd-3966-424c-b024-8afbf48a22d5,,execute_actions,20;660
+7,start_new_flow,6,,,,,,PLH - Handler - Activity,,,,,,,,,,,,,,a962e2fd-b75f-4a46-b930-41658dc89f0a,5898b543-63cb-4cfb-a9c6-0ff62fa83e5c,,split_by_subflow,;1000
+8,split_by_value,5,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,0f44a10c-43bc-4913-8daf-26dec35228a4,,split_by_expression,855;760
+9,send_message,8,,@fields.user_name,has_text,user_name,,"Okay lang ‘yan! Maaari ka palaging makakuha ng mga mungkahi tungkol sa mga aktibidad na pwedeng gawin sa pamamagitan ng pag-type ng ""Help"". Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,eb0c3490-b97c-49fa-8135-5bffd1ef13bb,,execute_actions,730;960
+10,send_message,8,,,,,,"Okay lang ‘yan! Maaari ka palaging makakuha ng mga mungkahi tungkol sa mga aktibidad na pwedeng gawin sa pamamagitan ng pag-type ng ""Help"". Usap tayo mamaya!",,,,,,,,,,,,,,,f466fc19-9b4f-4b9e-9bff-29c4dbaddd90,,execute_actions,980;960
+11,save_value,10;9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,6cec4f0c-6ae3-467c-8841-38fe936cbd1f,,execute_actions,710;1100
+12,send_message,5,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,509eeb49-fbd2-49fb-90cb-9512e67dcbae,,execute_actions,1340;480
+13,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,c1f22703-7bee-49f0-8bf2-71dbed22d7ca,,execute_actions,1340;600
+14,go_to,13,,,,,,4,,,,,,,,,,,,,,,,,,

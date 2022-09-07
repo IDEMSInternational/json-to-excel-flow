@@ -1,0 +1,654 @@
+{
+  "PLH - Activity - Adult - Active - Relax": [
+    {
+      "row_id": 1,
+      "_nodeId": "74f6b360-27ed-4415-bddb-b6a74f8da182",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        320,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Magandang araw @fields.user_name! Kumusta ang pakiramdam mo? Kung nakakaramdam ka ng pagkataranta o stress, narito ang isang masayang gawain para mawala ang iyong stress.",
+      "_nodeId": "818ad1c1-2ab0-44f2-b40e-56e9169d03a6",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        195,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Magandang araw! Kumusta ang pakiramdam mo? Kung nakakaramdam ka ng pagkataranta o stress, narito ang isang masayang gawain para mawala ang iyong stress.",
+      "_nodeId": "7e8ef7c7-2522-406f-b087-273add14c8f4",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        445,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Tumayo at mag-inat ng mga braso pataas sa langit. Itulak papalayo ang anumang ulap at hayaan ang Sinag ng Positibong Atensyon ang magliwanag sa iyo. Mag-inat sa bawat gilid. Mag-inat paharap at sa likod.",
+      "_nodeId": "066badd7-c4b8-4ff2-a902-cb7352b4e224",
+      "from": [
+        2,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        115,
+        380
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Hayaan mong nakabitin ang iyong mga kamay sa iyong tagiliran. Habang humihinga ka ng paloob, itaas ang iyong balikat hanggang sa tainga, ipikit mo ang iyong mga mata, at pigilin ang iyong hininga. Pakawalan ang iyong balikat habang humihinga palabas at i-relax ang iyong katawan.",
+      "_nodeId": "2c3cb033-362f-4f81-bcd0-f14af639daa3",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        135,
+        940
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "I-relax mo ang iyong mga braso at hayaan itong mag-swing sa unahan at likuran. Huminga nang malalim ng apat na beses habang ginagawa mo ito. Maganda ito para sa ibaba ng iyong likod.\n\nI-relax mo ang iyong mga braso at hayaan mo itong mag-swing ng pagilid habang ibinabaling mo ang itaas na bahagi ng katawan. Ang iyong mga braso ay dapat tumama sa iyong likod habang binabaling sa magkabilang gilid.",
+      "_nodeId": "26b81019-b84e-4c25-976b-0cc48980a0c2",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        115,
+        1180
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Ilagay mo ang isang paa sa harapan ng kabilang paa at gumawa ng maliit na bilog mula sa iyong bukung-bukong. Alalahaning ilipat ang paa sa magkabilang direksyon- mula sa kaliwa pagkatapos ay papunta sa kanan. Gawin ito sa bawat paa na may apat na bilog sa bawat direksyon.",
+      "_nodeId": "61049016-1ba4-45c1-9540-54046298296d",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        700
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "Ngayon, alug-alugin mo ang iyong katawan nang mabilis. Alugin mo nang pataas! Alugin mo nang pababa! Alugin mo sa iba't-ibang direksyon!",
+      "_nodeId": "909e2ae6-71af-4ab6-bb73-332abeb29ddf",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Ipikit mo ang iyong mga mata at dahan-dahang itaas ang iyong mga kamay sa taas ng iyong ulo habang humihinga ka nang paloob. Ibaba mo nang dahan-dahan ang mga kamay sa iyong tagiliran habang humihinga ka nang papalabas. Ulitin ito nang 4 na beses.",
+      "_nodeId": "3a15fb8e-b7cf-4321-a594-4a5793f89d6c",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        1100
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Maglaan ng sandali para pagnilayan ang karanasan. Alalahanin na puwede mong gawin ito sa kahit anong oras kung nais mong maglabas ng stress at pasiglahin ang iyong isip at katawan.",
+      "_nodeId": "ba9b6e72-3e2a-4876-a11e-e0f5cee6022b",
+      "from": [
+        9
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        665,
+        1320
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Activity - Adult - Active - 2 truths 1 lie": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "2 katotohanan, 1 kasinungalingan\n•\tMag-isip ka ng tatlong pahayag tungkol sa iyong sarili. Ang dalawa ay dapat totoo, at ang isa nama'y dapat kasinungalingan.\n•\tMakatutulong siguro kung iisipin mo ang mga hiling, mga pangarap, mga gusto o hindi gusto. Halimbawa, ayaw ko ng saging, gusto ko ng ice cream, at hinihiling ko talaga na sana marunong akong kumanta. \n•\tSabihin mo ang mga ito sa iyong kinakasama o mga kaibigan. Pahulaan sa kanila kung ano ang hindi totoo. \n•\tTama ba ang hula nila? Ito ba ay nakakagulat?\n•\tNgayon, sabihin sa kanya na gawin din ito. May natutunan ba kayong bago tungkol sa isa't-isa? ",
+      "_nodeId": "8da6a93d-621e-49e5-9584-fccef58bf881",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Active - Crazy chicken": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Crazy Chicken\n• I-shake ang iyong kamay sa hangin nang 8 beses habang nagbibilang hanggang 8.\n• Gawin ito nang mabilis at maingay sa abot ng iyong makakaya.\n• Ulitin ito gamit ang kabilang kamay, tapos gawin ito gamit ang bawat paa. \n• Gawin ito ng 7 beses, tapos 6 beses hanggang sa umabot ng 1.\n• Kapag tapos na, isigaw mo sa pinakamalakas na kaya mo ang \"Crazy Chicken\"\n• Na-i-release mo ba lahat ng stress mo? Kung hindi, gawin mo ulit nang mas mabilis at mas malakas!  ",
+      "_nodeId": "a5a25ea4-9472-42b0-9d9f-a86b3d6970f1",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Active - Family work out": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Pampamilyang Pag-eehersisyo\n•\tMamili ng isport o ehersisyo na gagawin niyo nang magkasama\n•\tMagtakda ng schedule. Gagawin niyo ba ito ng araw-araw? Gaano katagal? \n•\tSubukan ninyong gawin sa loob ng isang linggo. \n•\tSa katapusan ng linggo, tanungin ang sarili at ang pamilya ang mga tanong na ito. Kumusta ka? Ano ang naramdaman mo sa umpisa ng linggo? Ano ang naramdaman mo sa katapusan ng linggo? Ano ang puwede nating gawing iba sa susunod na linggo?",
+      "_nodeId": "dacf301a-c3d8-4287-b0ea-d52cbab4bc69",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Stop and listen": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Tumigil at Makinig\nTumigil nang saglit at ipikit ang iyong mga mata. \nIlang tunog ang iyong naririnig? Pakinggan mo ang mga tunog sa loob at labas ng kwarto. Bilangin mo sa iyong mga daliri. (Tumigil ng 10 segundo)\nIlang mga daliri mo ang nakataas? Anu-ano ang mga tunog na narinig mo? \nSubukan natin muli. Nakakarinig ka ba ng mga bagong tunog ngayon? Nakakarinig ka ba ng ilang tunog sa loob ng iyong katawan? (tumigil nang 10 segundo)\nBuksan ang iyong mga mata. Anu-anong mga tunog ang iyong narinig?",
+      "_nodeId": "b275c4dc-fd3e-4133-bc81-fdb0f20ff6f6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - A short pause": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Tumigil Nang Sandali\n•\tUmupo at ipikit ang iyong mga mata.\n•\tPakinggan ang iyong paghinga habang ito ay papasok at papalabas. \n•\tPansinin ang iyong nararamdaman. \n•\tHuminga nang malalim ng ilang beses pa.\n•\tKapag handa ka na, buksan muli ang iyong mga mata. Nag-iba ba ang iyong nararamdaman? \n•\tPaalalahanan mo ang iyong sarili na \"magiging okay din ako\"",
+      "_nodeId": "f4cf7954-292a-4371-89fc-47dd96aa5526",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Give yourself a hug": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Bigyan mo ang Sarili ng Isang Yakap\n•\tBella mama, bella mama hey. \n•\tKumusta ang pakiramdam mo ngayon? Maganda ba ang pakiramdam mo?!\n•\tMaaring hindi. Baka sinigawan mo na naman ang iyong mga anak ngayon araw? Baka nagalit ka at nakapagsabi ng mga salitang hindi maganda? Okay lang iyon. Sobrang nakaka-stress ngayon. \n•\tHuminga nang malalim at mag-isip ng isang bagay na ginawa mo ngayong araw na maipagmamalaki mo. Hindi kailangang ito ay malaking bagay. Ipalibot ang mga braso sa iyong katawan at bigyan mo ang sarili ng isang yakap. At ngayon, mag-isip ka ng isang bagay na iyong nagawa ngayong araw na hindi mo maipagmamalaki. Ano ang magagawa mong iba bukas? Ipalibot mo ang iyong mga braso sa iyong katawan at bigyan mo ang sarili ng isang yakap. \n•\tBella mama, bella mama, bella mama, bella mama, bella mama hey\".",
+      "_nodeId": "e7fe92fd-037d-45ee-94fc-519722c1204c",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Magical number": [
+    {
+      "row_id": 1,
+      "_nodeId": "e0b9a0c9-c0a3-4b6b-9b70-817e248c0e10",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        125,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Magandang araw @fields.user_name! Alam mo bang ang 3 ay mahiwagang numero? Bumilang ng hanggang tatlo habang humihinga nang papasok, bumilang muli ng hanggang tatlo habang humihinga nang palabas. Anong nararamdaman mo ngayon? Nag-iba ba ang iyong nararamdaman? ",
+      "_nodeId": "1cd44f29-1b8f-4f6c-a402-d5fd0dee5a2f",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Magandang araw! Alam mo bang ang 3 ay mahiwagang numero? Bumilang ng hanggang tatlo habang humihinga nang papasok, bumilang muli ng hanggang tatlo habang humihinga nang palabas. Anong nararamdaman mo ngayon? Nag-iba ba ang iyong nararamdaman?",
+      "_nodeId": "b39759e5-caa2-4f46-a760-2224bb455a50",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        250,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Ano ang tatlong paborito mong pagkain? Kaya mo bang pangalanan ang tatlong bagay na nakikita mo ngayon? Nakakarinig ka ba ng tatlong tunog ngayon? Anong tatlong bagay ang pinagpapasalamat mo ngayon? ",
+      "_nodeId": "a1f948ea-2972-4e5e-b409-a42745c73035",
+      "from": [
+        2,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        530,
+        300
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Bumilang ng hanggang tatlo habang humihinga nang papasok, at bumilang ng hanggang tatlo habang humihinga nang palabas? Anong nararamdaman mo ngayon? Nag-iba ba ang iyong nararamdaman? Ang tatlo ay mahiwagang numero!",
+      "_nodeId": "463d2e24-b000-4e36-a551-96d558a48776",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        550,
+        560
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Release some energy": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Maglabas ng Lakas\n•\tBaba da bi da ba da baaa! Pause Power! \n•\tAno ang Pause Power na naririnig kong sinasabi mo? Ito ang kakayahang baguhin ang masungit at galit na tao na maging kalmado at maaliwalas na tao. \n•\tKapag ako ay nakakaramdam ng pagkabigo, nilalapat ko nang maigi ang aking mga paa sa lupa at humihinga ng tatlong beses nang dahan-dahan. Minsan iniisip kong ako'y umaamoy ng bulaklak at umiihip ng isang kandila. \n•\tTa da! Pause Power! Kumpleto na ang aking pagbabago mula sa pagiging sumpungin hanggang sa pagiging kalmado!",
+      "_nodeId": "360c54a9-80f6-40d0-81e4-df4a45048b85",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        220,
+        80
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Taking care of yourself": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Pag-aalaga sa Sarili\n\nHeto ang isang gawain na makakatulong sa iyo kapag nararamdaman mong kailangan mo ng suporta para malagpasan ang araw.",
+      "_nodeId": "6b527073-e490-478f-b7db-5c24c3ef80d6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Pansinin ang nararamdaman sa oras na ito. Ano ang iyong iniisip? Positibo o negatibo ba ang mga ito. Ano ang iyong nararamdaman? Kaaya-aya o hindi ba ang mga ito? Ano ang nararamdaman mo sa iyong katawan? May tensyon ba o relax ka lang?",
+      "_nodeId": "e8a142e7-6ac1-4ba9-9cef-594ac4f635e2",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        400,
+        280
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Kumonekta sa iyong puso sa mabait at banayad na paraan. Puwede mong ilapat ang isang kamay mo sa iyong puso or dibdib.",
+      "_nodeId": "ea533160-db49-4d3b-8e52-6f36a2c805ab",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        180,
+        520
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Pagkatapos ay maaring sabihin ng tahimik ang mga sumusunod na salita sa iyong sarili:\nNawa'y maging payapa ako.\nNawa'y maging ligtas ako.\nNawa'y maging malusog ako.\nNawa'y maging masaya ako.\nNawa'y mgkaroon ng pagmamahalan sa aking pamilya.\nNawa'y makaramdam ako ng pagmamahal.",
+      "_nodeId": "1521daba-368b-4412-9d5b-300e33fe0ab4",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        280,
+        740
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Tumigil sandali at pagnilayan ang iyong karanasan. Alalahanin na puwede mong gawin ang gawaing ito sa tuwing mararamdaman mo na kailangan mo ng iba pang suporta.",
+      "_nodeId": "aea07356-19fd-4539-a92d-ece6bbc2c4a5",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        260,
+        1040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ]
+}

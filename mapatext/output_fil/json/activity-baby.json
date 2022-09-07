@@ -1,0 +1,242 @@
+{
+  "PLH - Activity - Baby - Active - Cooking together": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Pagluluto nang magkasama\n•\tGustung-gusto ng mga bata gawin ang mga ginagawa mo!\n•\tHayaan mong maglaro ang iyong sanggol gamit ang mga kaldero at kutsara habang nagluluto ka ng hapunan.",
+      "_nodeId": "e3d9d334-6ab7-4729-a7b2-fa391880edc1",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Dance party": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Sayawan\n•\tPatugtugin ang iyong paboritong musika o awitin mo ang paborito mong kanta at sumayaw sa iyong kwarto kasama ang iyong batang anak. Kung mayroon kang sanggol, hawakan mo siya habang ikaw ay sumasayaw. \n•\tSumayaw ng iba't-ibang paraan o gamit ang iba't-ibang bahagi ng iyong katawan.\n•\tHalimbawa, \"Sumayaw nang parang unggoy\", \"Sumayaw nang parang manok\" o \"Sumayaw tayo gamit ang ating tuhod at tagiliran.\"\n•\tMag-isip ng iba-ibang direksyon. Maging masaya at mapaglaro! \n•\tKapag tumigil ang tugtog, ang lahat ay gagawa ng nakakatawang pagtigil.\n•\tPansinin kung anong mga ritmo o galaw ang gusto nila!",
+      "_nodeId": "9e9b3975-7067-498c-a8c5-9986c770c73d",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Down in a ditch": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Down in a ditch!\n•\tUmupo sa isang bangko at ilagay ang iyong anak sa iyong kandungan paharap sa iyo. Hawakan siya ng mabuti sa ilalim ng mga braso.\n•\tDahan-dahan mong ialog ang iyong mga binti at sabihin nang malumanay, \"Baby horse, baby horse, baby horse, baby horse\"\n•\tAlugin ang iyong mga binti nang higit pa at sabihin ng mas malakas ng kaunti ang \"Little horse, little horse, little horse, little horse\"\n•\tMas alugin pa ang iyong mga binti at sabihin nang malakas Ang \"Big horse, big horse, big horse, big horse\"\n•\tKapag sasabihin mo ang \"Down in a ditch!\" Ibuka ang mga tuhod at hayaan ang iyong anak na mahulog sa pagitan nila. Siguraduhing hawak mo siya para di siya mahulog ng lubos! ",
+      "_nodeId": "610ee186-1e81-440f-8825-be1bd1dd3cd4",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Funny faces": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Nakakatawang Mukha\n•\tTignan mo ang iyong sanggol sa kanyang mga mata at gumawa kayo ng iba ibang mga nakakatawang mukha. \n•\tGumawa ng malaking mukha. Gumawa ng maliit na mukha. Gumawa ng masayang mukha. Gumawa ng gulat na mukha. \n•\tAlin sa mga iyon ang nagpangiti o nagpatawa sa iyong sanggol? Gawin ito ulit, mas malaki naman ngayon!\n•\tMaglaro nang may iba't ibang damdamin at dagdagan ito ng mga tunog. \n•\tKopyahin ang kanyang mga ekspresyon. Sobrahan ang paggaya ng mga ekspresyon para maging katawa-tawa.\n•\tPalaging magtapos ng may positibong ekspresyon!",
+      "_nodeId": "26e400be-fe4e-46d6-91a6-b769c7ab170f",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Mirror game": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Mirror Game\nPantayan ang lebel ng iyong sanggol para makita at marinig ka niya. \nKopyahin ang mga ekspresyon ng kanilang mukha at mga tunog. \nIto ay simple lang at nakakatulong sa pagbuo ng matibay na ugnayan sa pagitan mo at ng iyong sanggol!",
+      "_nodeId": "0756ce69-3e9c-42cc-9d7f-33553eab487e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Musical Toes": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Musical Toes\n•\tIhiga mo ang iyong sanggol.\n•\tGalawin ang kanyang hinlalaki sa paa at sabihin, \"Ang maliit na daliring ito ay [nakakaaliw na tunog].\"\n•\tGumawa ng nakakatawang tunog sa bawat daliri.\n•\tPaglaruan ang iba't ibang mga tunog. Halimbawa, tunog ng mga hayop, pumuputok na tunog, matitinis na tunog, pag-utot na tunog. \n•\tUlitin ito sa lahat ng sampung daliri sa paa. \n•\tSubukang gawin ang pinakamalakas at nakakatawang tunog sa huling daliri!",
+      "_nodeId": "7832bb7a-0f85-4b6c-9f1e-76b15809dafe",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Peek a boo": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Peek-a-boo! \nTakpan ang iyong mukha gamit ang iyong mga kamay. \n• Bigla mong ipakita ang iyong mukha at sabihin \"Bulaga!\" o \"Hello!\"\n  \nGustong-gusto ng mga sanggol iyon!",
+      "_nodeId": "3b42b025-a31a-4203-9784-1a5ab9c52b0e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        380,
+        60
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - Shakers": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Shakers\n•\tMaghanap ng isang plastik na bote na walang laman at malinis o kaya ay kalderong may mahigpit na takip.\n•\tPunuan ito ng buhangin, mga bato, mga binhi o kahit anong maliliit na bagay na nakakagawa ng nakaka-aliw na tunog. \r\n•\tIgalaw mo ang iyong katawan habang inaalog mo ito sa harapan ng iyong anak.\n•\tKung ito ay ligtas, ibigay mo ito sa iyong sanggol para alugin!\n•\tMaging malikhain! Makakahanap ka ba ng isang makulay na bagay, o kaya'y subukan ito nang may tubig? \n•\tAnong mga tunog ang gusto ng iyong sanggol?",
+      "_nodeId": "780bc84c-7ab0-4240-8b78-207aa4953f9b",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - The sun is coming": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Ang Araw ay Paparating Na! \n•\tPahigain ang iyong anak pagkatapos siyang paliguan o pagkatapos palitan ang kanyang lampin.\n•\tSabihin mo sa kanya na ang araw ay paparating na! Pagalawin ang iyong mga daliri na katulad ng sinag ng araw sa taas ng kanyang ulo at gawin ang mukha mo na parang isang malaking nakangiting araw.\n•\tSabihin mo na ang hangin ay paparating na! Hipan mo ng dahan-dahan ang kanyang katawan.\n•\tSabihin mo sa kanya na ang ulan ay paparating na! Gamitin mo ang iyong mga daliri para hipuin ng dahan-dahan ang kanyang buong katawan katulad ng ambon o mahinang patak ng ulan.\n•\tSabihin mo sa kanya na, ang mga ulap ay paparating na! Ibalot ang tuwalya o damit sa kanya at yakapin siya. \n•\tMakipaglaro gamit ang iba't ibang panahon. Alin sa mga ito ang pinakagusto ng iyong sanggol?\n•\tDagdagan ng iba't ibang tunog o gawin itong isang kanta. Gamitin ang himig ng iba pang kantang alam mo! ",
+      "_nodeId": "ca58b40b-c642-4603-8c2b-67e58d3ae801",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Calm - At the end of the day": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Sa Katapusan ng Araw\n•\tSa bawat pagtatapos ng araw, maglaan ng isang minuto para isipin ang araw.  \n•\tKausapin ang iyong anak tungkol sa isang positibo o masayang bagay na kanilang ginawa.\n•\tPurihin mo ang sarili mo para sa isang bagay na ginawa mo nang mabuti ngayong araw.\n•\tMag-isip ng isang bagay na pinagpapasalamat mo.  \n•\tIsa kang bituin!",
+      "_nodeId": "b99e2acb-065a-4ab4-ae8d-37ff4166411c",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Calm - Lullaby": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Oyayi\n•\tKapag ang iyong batang anak o sanggol ay umiiyak, kantahan siya ng isang malumanay na kanta para mapahinahon kayong dalawa.\n•\tUmawit ng nakakakalmang kanta na alam mo o gumawa ka kantang may simpleng himig at mayroong ilang nakakakalmang mga salita.\n•\tUlit-ulitin ito sa paraang may ritmo.  Halimbawa, “Anak, o anak”. \r\n•\tKantahin ang parehong kanta nang madalas para masanay dito ang iyong anak!",
+      "_nodeId": "938faa47-82e4-48f2-9efa-391766ea3b2a",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Baby - Active - See it Be it": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Gayahin Mo Ang Nakikita Mo\n•\tTumingin sa paligid at pangalanan ang isang bagay na nakikita mo. Halimbawa, isang puno o isang baso.\n•\tSabihin sa iyong anak \"May nakikita akong puno, tara at maging puno tayo\".\n•\tMagbilang mula lima at gawin ang hugis puno gamit ang iyong mga katawan. Maging malaki at nakakatawa sa abot ng iyong makakaya.\n•\tNgayon hayaan na ang anak mo naman. Ano ang nakikita niya?\n•\tKung maaari, lumabas ng bahay at pumunta sa may maraming puno o sa dagat. Kung hindi maaari, laruin ito sa loob. \n•\tKapag nagawa na nang ilang ulit, magdagdag ng galaw at tunog!",
+      "_nodeId": "3ecae3e2-cc94-4103-8693-dda692ad062e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ]
+}

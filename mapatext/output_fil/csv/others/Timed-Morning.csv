@@ -1,0 +1,21 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,"@(and(fields.next_tip_morning = fields.total_tip_days, fields.next_tip_evening = fields.total_tip_days, fields.next_tip_main = fields.total_tip_days))",,,,,,,,,,,,,,,be37ce9e-2f4c-4871-bf4b-7c0df4f445d0,,split_by_expression,660;20
+2,split_by_group,1,true,"@(and(fields.next_tip_morning = fields.total_tip_days, fields.next_tip_evening = fields.total_tip_days, fields.next_tip_main = fields.total_tip_days))",has_any_word,completed programme,,completed programme,,,,,,,,,,,,,,0c044dad-7251-469f-8297-0b886501eadd,713390d7-e96b-4863-8f21-fb1d27565de9,,split_by_groups,360;80
+3,start_new_flow,2,,,,,,PLH - Supportive - Congratulations for finishing the programme,,,,,,,,,,,,,,6176674e-48e6-4656-a919-4a830eb05055,70b0a842-995d-4b97-88bf-f4a17b77fbd0,,split_by_subflow,940;180
+4,save_value,3,Expired,,,,has expired,final_congrats,,,,,,,,,,,,,,,f6ea410b-a921-4b09-bacf-571ddd5098fd,,execute_actions,1000;400
+5,save_value,1;2,;completed programme,,,,morning frequency counter,"@(mod(fields.morning_frequency_counter+1, fields.frequency))",,,,,,,,,,,,,,,1a920ebb-1abd-4d8b-9744-842f2bac74d5,,execute_actions,460;200
+6,save_flow_result,5,,,,,time of day,morning,,,,,,,,,,,,,,,fa066c1a-3cac-42aa-82b3-71db176bd6eb,,execute_actions,500;300
+7,split_by_value,6,,,,,,@fields.morning_frequency_counter,,,,,,,,,,,,,,,eb28d4c3-faba-431e-a78a-847e18d1ec1c,,split_by_contact_field,480;400
+8,split_by_value,7,0,@fields.morning_frequency_counter,has_any_word,content,,@fields.next_tip_morning,,,,,,,,,,,,,,,26e2cb68-0f63-44d3-9cad-3c5a35c57739,,split_by_contact_field,120;460
+9,save_value,8,,,,,next tip morning,"@(min(fields.next_tip_morning+1,fields.total_tip_days))",,,,,,,,,,,,,,,c11882c9-8afc-44ac-b841-2fb0b4e6b3fa,,execute_actions,80;620
+10,start_new_flow,9,,,,,,PLH - Handler - Content - Morning,,,,,,,,,,,,,,58c3d4b3-eff3-4850-942d-63f6c1bf95fe,0c08a88f-75b4-4570-a74a-7aff55916941,,split_by_subflow,80;720
+11,split_by_value,10;10,Complete;Expired,,,,,@child.results.morning_content,,,,,,,,,,,,,,,073d29a7-0864-4df5-89f4-93aedefdf1e7,,split_by_expression,40;920
+12,save_value,11;7;8,no;;@(fields.next_tip_main+1),@child.results.morning_content;;@fields.next_tip_morning,has_any_word;;has_number_gt,No content;;>= Fields,calm praise supportive counter,"@(if(fields.calm_praise_supportive_counter<3, fields.calm_praise_supportive_counter+1,0))",,,,,,,,,,,,,,,f7f56b1c-a18c-453b-bf39-b8d191d05541,,execute_actions,600;540
+13,split_by_value,12,,,,,,@fields.calm_praise_supportive_counter,,,,,,,,,,,,,,,e040d9dc-71ea-4e46-af1c-14cdcbedce98,,split_by_contact_field,720;640
+14,start_new_flow,13,0,@fields.calm_praise_supportive_counter,has_number_eq,praise,,PLH - Supportive - Praise,,,,,,,,,,,,,,ca8f0488-a308-4475-8eae-f6a9ee04b828,1a1116dc-556e-4672-a16c-154e73c3836d,,split_by_subflow,580;740
+15,save_value,14,Expired,,,,has expired,praise,,,,,,,,,,,,,,,3ec0a418-fef8-4476-8ec8-a8c11cf8ac80,,execute_actions,660;900
+16,start_new_flow,13,2,@fields.calm_praise_supportive_counter,has_any_word,calm,,PLH - Supportive - Calm,,,,,,,,,,,,,,8adf0beb-24df-4563-a57a-95ed147fe629,9f576a71-9317-45cc-a7fb-b9862f0bfc70,,split_by_subflow,820;740
+17,save_value,16,Expired,,,,has expired,calm,,,,,,,,,,,,,,,a9fbd453-8203-410f-b783-76d989007742,,execute_actions,940;920
+18,start_new_flow,13,,,,,,PLH - Supportive - Activities,,,,,,,,,,,,,,6ce87097-f45a-4fd7-b6c0-b339c9c3625b,c349bcd2-8484-4a5f-8d2a-dd9ccaa35a53,,split_by_subflow,1060;760
+19,save_value,18,Expired,,,,has expired,supp_act,,,,,,,,,,,,,,,7281f1eb-1642-46e1-bd0f-3fa534df2760,,execute_actions,1120;1020
+20,send_message,15;17;19;4,,,,,,"Mukhang abala ka ngayon.  Maaari mong i-type ang ""GoBack"" para matanggap muli ang mga pinakabagong mensahe.",,,,,,,,,,,,,,,63e40654-82f2-4a00-a103-02f3b4aa41a6,,execute_actions,780;1060

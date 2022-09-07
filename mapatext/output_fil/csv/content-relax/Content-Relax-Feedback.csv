@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,current type assessed,relaxation,,,,,,,,,,,,,,,daf1a253-eced-40cd-916b-b7cf1e652e1c,,execute_actions,355;
+2,save_value,1,,,,,current activity,relaxation activities in general,,,,,,,,,,,,,,,daf1a253-eced-40cd-916b-b7cf1e652e1c,,execute_actions,355;
+3,start_new_flow,2,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,cd662f24-e0dd-4623-a26a-1a4aee631d9c,,split_by_subflow,625;180
+4,split_by_value,3,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,625a7c65-3fe0-497a-9cb2-e1c3830010bc,,split_by_expression,500;380
+5,send_message,4,,@fields.user_name,has_text,user_name,,"Pwede mong i-type ang ""Help"" anumang oras kung kailangan mo ng gawain na makakatulong sa iyong mag-relax o magbawas ng stress. Usap tayo mamaya @fields.user_name!",,,,,,,,,,,,,,,78fb3473-5bbe-4c59-85cb-770c765d6a35,,execute_actions,375;580
+6,send_message,4,,,,,,"Pwede mong i-type ang ""Help"" anumang oras kung kailangan mo ng gawain na makakatulong sa iyong mag-relax o magbawas ng stress. Usap tayo mamaya!",,,,,,,,,,,,,,,9db91787-47ef-4a65-b29d-83f6e0459fb1,,execute_actions,625;580

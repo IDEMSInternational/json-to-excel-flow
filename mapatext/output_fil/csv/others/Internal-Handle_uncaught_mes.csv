@@ -1,0 +1,61 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,below age,,,,,,,,,,,,,,bd334342-df0f-4b66-b7f2-8701d5f70545,b9d51b72-5958-483d-a6f9-66933180565a,,split_by_groups,530;
+2,save_value,1,,,,,last interaction,@(now()),,,,,,,,,,,,,,,87a79312-31d1-494d-8e17-cbbfdd6ca354,,execute_actions,850;100
+3,split_by_group,2,,,,,,passive drop out,,,,,,,,,,,,,,aa78bb36-9167-4217-9be2-7f82014ac9f7,99f23eda-37d2-4d53-add3-8d01d30db1a7,,split_by_groups,1190;80
+4,save_value,3,passive drop out,,,,hook message,"@(fields.hook_message&"",""&now()&""|"")",,,,,,,,,,,,,,,265c9d56-8150-43eb-89e9-e5d5a2be412c,,execute_actions,1210;180
+5,remove_from_group,4,,,,,,passive drop out,,,,,,,,,,,,,,aa78bb36-9167-4217-9be2-7f82014ac9f7,265c9d56-8150-43eb-89e9-e5d5a2be412c,,execute_actions,1210;180
+6,split_by_group,3;5,,,,,,joined,,,,,,,,,,,,,,65cdf496-e35b-4b66-bb2c-5442c1e1c3fc,9d7955fa-52e4-4273-b504-71b7bdf2e682,,split_by_groups,550;200
+7,add_to_group,6,,,,,,joined,,,,,,,,,,,,,,65cdf496-e35b-4b66-bb2c-5442c1e1c3fc,766f743a-e4e3-4d5e-b37f-8aac9af09bd8,,execute_actions,950;200
+8,save_flow_result,7,,,,,new member,yes,,,,,,,,,,,,,,,766f743a-e4e3-4d5e-b37f-8aac9af09bd8,,execute_actions,950;200
+9,start_new_flow,6;8,joined;,,,,,PLH - Safeguarding - Redirect to topic,,,,,,,,,,,,,,8071d32a-67b5-4130-bc21-ce449ff1cbf1,7d383238-fb22-430a-b3e3-59b8c64debf8,,split_by_subflow,20;260
+10,split_by_group,9;9,Complete;Expired,,,,,consent,,,,,,,,,,,,,,4fba34b6-fba5-4334-9f96-81f3fee6bf60,3c059af0-1b3c-4859-8bee-6286cfb44c08,,split_by_groups,650;320
+11,split_by_group,10,consent,,,,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,95060854-43f1-48c2-a7de-088957189a34,,split_by_groups,180;420
+12,split_by_value,11,in program,,,,,@input.text,,,,,,,,,,,,,,,9495410a-3f67-4d4f-a231-863e7ab5c73e,,split_by_expression,;540
+13,start_new_flow,12;12,toolkit;skills,@input.text;@input.text,has_only_phrase;has_only_phrase,Toolkit;Toolkit,,PLH - Help - Access toolkit,,,,,,,,,,,,,,ddc9840d-140f-494d-bd3e-9617183ba7ee,26d3e2cd-ed09-4da5-8bf8-ec78607ebfa7,,split_by_subflow,120;860
+14,start_new_flow,12,goback,@input.text,has_only_phrase,Goback,,PLH - Internal - Restart expired flow,,,,,,,,,,,,,,7286514e-b250-41bb-a616-4aa289b08518,4892bff5-f289-400b-8037-d24d45679e2f,,split_by_subflow,570;1200
+15,start_new_flow,12,play,@input.text,has_any_word,Play,,PLH - Hanlder - Activity - Play,,,,,,,,,,,,,,d21afbf9-c0af-4222-8eec-09f319bbe30f,60243803-f03f-45ba-a2e3-f229ae8ada1b,,split_by_subflow,20;720
+16,start_new_flow,12,relax,@input.text,has_any_word,Relax,,PLH - Handler - Activity - Adults - Calm,,,,,,,,,,,,,,396b8ab3-9bfe-4402-ae05-9c0bcd300dec,a12b72a1-44a5-477f-ab19-a14375a71df1,,split_by_subflow,530;660
+17,split_by_value,11,,,,,,@input.text,,,,,,,,,,,,,,,d83c353e-f18c-482f-8552-7ed1a38f9c43,,split_by_expression,790;520
+18,start_new_flow,17;17,toolkit;skills,@input.text;@input.text,has_only_phrase;has_any_word,Toolkit;Toolkit,,PLH - Help - Access toolkit,,,,,,,,,,,,,,ddc9840d-140f-494d-bd3e-9617183ba7ee,7f9e82af-b645-4927-b89b-2da22e33b2d7,,split_by_subflow,1110;700
+19,start_new_flow,17,play,@input.text,has_any_word,Play,,PLH - Hanlder - Activity - Play,,,,,,,,,,,,,,d21afbf9-c0af-4222-8eec-09f319bbe30f,68f37182-c818-43a8-999b-3857d0215c1b,,split_by_subflow,770;800
+20,start_new_flow,17,relax,@input.text,has_any_word,Relax,,PLH - Handler - Activity - Adults - Calm,,,,,,,,,,,,,,396b8ab3-9bfe-4402-ae05-9c0bcd300dec,44689bc9-8f73-4062-a044-cac85276902d,,split_by_subflow,890;640
+21,split_by_group,18;18;19;19;20;20,Complete;Expired;Complete;Expired;Complete;Expired,,,,,completed programme,,,,,,,,,,,,,,0c044dad-7251-469f-8297-0b886501eadd,80f5fdf9-6183-463d-8f17-9d1c595de16d,,split_by_groups,1130;920
+22,split_by_group,17,,,,,,completed programme,,,,,,,,,,,,,,0c044dad-7251-469f-8297-0b886501eadd,89516e10-3705-4596-a12b-ccb5d868e444,,split_by_groups,850;1240
+23,split_by_value,12;22,;completed programme,,,,,@child.results.other_trigger,,,,,,,,,,,,,,,f7ebafb6-d1a0-480d-aa47-c0f59f49ca57,,split_by_expression,650;1360
+24,split_by_group,23,yes,@child.results.other_trigger,has_any_word,Yes,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,f9ec53a1-9cda-4cea-91fd-5be9e1c88d14,,split_by_expression,345;1460
+25,send_message,24,ABTest_test-first-person_alternative,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin. Dadalhin kita sa help menu.",,,,,,,,,,,,,,,748db50b-1a3c-4f7d-a3e1-b628da0a89f6,,execute_actions,470;1660
+26,send_message,24;24,ABTest_test-first-person_Default;,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin. Dadalhin ka namin sa help menu.",,,,,,,,,,,,,,,f5a6f89e-f6e9-4604-88ea-c10d092ee970,,execute_actions,220;1660
+27,start_new_flow,25;26,,,,,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,99ae2c2a-9641-4ff8-bfb1-220952b435b8,,split_by_subflow,100;2020
+28,split_by_value,10,,,,,,@results.new_member,,,,,,,,,,,,,,,005e5fb4-ea20-4603-ba85-6a10480dccdf,,split_by_run_result,1580;400
+29,split_by_value,28,,,,,,@input.text,,,,,,,,,,,,,,,2fb09a1b-ea6e-4148-ace4-ce8bd6af8f46,,split_by_expression,1800;520
+30,start_new_flow,12,moretips,@input.text,has_only_phrase,Moretips,,PLH - Internal - Restart campaign for WA,,,,,,,,,,,,,,fdb09625-7f46-42de-bb5e-2107e7e11bce,bb54f7b1-dcef-433e-965f-d1ea69042ca8,,split_by_subflow,;1200
+31,send_message,17;21;22,moretips;;,@input.text;;,has_any_word;;,Moretips;;,,Gusto mo bang sumali ulit sa programa?,Oo,Hindi,,,,,,,,,,,,,1c4d73de-c93e-4894-8cf2-d4fd85ca00bb,,execute_actions,1150;1240
+32,wait_for_response,31,,,,,Result 3,,,,,,,,,,,,,,,,f7b94823-9ec0-415a-ac9e-1b567ba272dd,,wait_for_response,790;1660
+33,split_by_group,32,hindi,,has_any_word,No,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,69d8d28c-d6aa-40e1-b26f-822dd265b96c,,split_by_expression,1355;1760
+34,send_message,33,ABTest_test-first-person_alternative,,,,,"Okay lang ‘yan. Kung gusto mong bumalik sa programa, i-type ang ""KaragdagangTips"". 
+
+Sana ay makita ka namin ulit sa susunod. Isang maligaya at mapayapang araw sa iyo! ",,,,,,,,,,,,,,,d66b9434-86a2-4459-9dec-6ee00076323c,,execute_actions,1480;1960
+35,send_message,33;33,ABTest_test-first-person_Default;,,,,,"Okay lang ‘yan. Kung gusto mong bumalik sa programa, i-type ang ""KaragdagangTips"". 
+
+Sana ay makita ka namin ulit sa susunod. Isang maligaya at mapayapang araw sa iyo! ",,,,,,,,,,,,,,,c1f5103c-3bdd-44f3-a5be-52b9227e2123,,execute_actions,1230;1960
+36,send_message,32,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,2e4504ba-6090-45e6-8bcc-179024d5660e,,execute_actions,1480;1400
+37,go_to,36,,,,,,31,,,,,,,,,,,,,,,,,,
+38,start_new_flow,28;29,yes;start_messages,@results.new_member;@input.text,has_any_word;has_only_phrase,Yes;Start_messages,,PLH - Handler - Welcome,,,,,,,,,,,,,,a01802e3-b4ac-45f7-85c2-41c2f2427811,590a4542-6bdf-4123-adf5-6dfe8f59e946,,split_by_subflow,1480;520
+39,send_message,29,,,,,,Hindi ka pa nagbigay ng pahintulot na lumahok sa programang ito. Gusto mo bang sumali?,Oo,Hindi,,,,,,,,,,,,,a0e09c41-d8e5-463d-bab1-bf0055c7ea62,,execute_actions,1820;640
+40,wait_for_response,39,,,,,Result 2,,,,,,,,,,,,,,,,90044882-bcf2-4a8a-896b-de958ccbe395,,wait_for_response,1800;840
+41,go_to,40,Oo y o,,has_any_word,yes,,38,,,,,,,,,,,,,,,,,,
+42,split_by_group,40,Hindi n h,,has_any_word,No,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,2c0617b4-26fe-447f-b446-6b6862b1fb49,,split_by_expression,1985;1000
+43,send_message,42,ABTest_test-first-person_alternative,,,,,"Kung magpasya kang lumahok sa programa, i-type ang ""MAGPADALA_NG MGA MENSAHE"". 
+Sana ay makita ka namin ulit sa susunod. Isang maligaya at mapayapang araw sa iyo! ",,,,,,,,,,,,,,,0696d933-c358-45ca-a043-5f3a0a9bb665,,execute_actions,2110;1200
+44,send_message,42;42,ABTest_test-first-person_Default;,,,,,"Kung magpasya kang lumahok sa programa, i-type ang ""MAGPADALA_NG MGA MENSAHE"". 
+Sana ay makita ka namin ulit sa susunod. Isang maligaya at mapayapang araw sa iyo! ",,,,,,,,,,,,,,,cb9809cb-956f-4ccb-8a69-46e4a85d6fd7,,execute_actions,1860;1200
+45,send_message,40,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,67e58d34-6acd-4fb3-83c0-183623f03dba,,execute_actions,2290;840
+46,go_to,45,,,,,,39,,,,,,,,,,,,,,,,,,
+47,send_message,32,oo o yes y,,has_any_word,Yes,,Gusto mo bang magsimula sa umpisa o magsimula sa kung saan ka tumigil noong umalis ka sa programa?,Mula sa umpisa,Mula sa parte kung saan ako huling umalis sa programa,,,,,,,,,,,,,6f6733d2-f82d-46e8-95fd-54aedda18399,,execute_actions,850;2000
+48,wait_for_response,47,,,,,Result 4,,,,,,,,,,,,,,,,5fe6d9b3-5f1f-4c4d-9bdb-3704a4aa0941,,wait_for_response,830;2200
+49,save_value,48,mula sa umpisa,,has_only_phrase,Start,completed welcome,no,,,,,,,,,,,,,,,37046efa-62b4-4ef9-a6a3-dd524c3f521e,,execute_actions,630;2340
+50,go_to,49,,,,,,38,,,,,,,,,,,,,,,,,,
+51,add_to_group,48,mula sa parte kung saan ako huling umalis sa programa,,has_only_phrase,Left,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,69a340e0-de67-401f-af84-e6b54886e73a,,execute_actions,910;2420
+52,go_to,51,,,,,,30,,,,,,,,,,,,,,,,,,
+53,send_message,48,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,69da3d2d-9118-43b8-a816-34397f230228,,execute_actions,1090;2280
+54,go_to,53,,,,,,47,,,,,,,,,,,,,,,,,,

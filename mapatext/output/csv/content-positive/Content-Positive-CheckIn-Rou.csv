@@ -1,0 +1,53 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.age_group_for_tips,,,,,,,,,,,,,,,b6c86ea6-75bd-4a43-b5dc-45fe56894dc4,,split_by_contact_field,1670;
+2,split_by_value,1,teen,@fields.age_group_for_tips,has_any_word,Teen,,@fields.user_name,,,,,,,,,,,,,,,4032004d-00d3-4005-8fb9-1e5e98173e48,,split_by_expression,725;780
+3,split_by_value,2,,@fields.user_name,has_text,user_name,,@fields.child_nickname,,,,,,,,,,,,,,,8dbf73ea-929e-4b48-a2e6-d6b7fe1d9c71,,split_by_expression,475;980
+4,send_message,3,,@fields.child_nickname,has_text,child_nickname,,Hi @fields.user_name! Have you been able to give @fields.child_nickname any responsibilities during the last week?,Yes,No,,,,,,,,,,,,,53fdd4f0-d9f7-4bb5-8077-dfbc947f8c1c,,execute_actions,350;1380
+5,send_message,3,,,,,,Hi @fields.user_name! Have you been able to give your teen any responsibilities during the last week?,Yes,No,,,,,,,,,,,,,a3286afc-b343-41f7-aca0-df88488fa722,,execute_actions,600;1380
+6,split_by_value,2,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,9b7840f7-dbbd-4a79-8dda-0af6a5dc4de9,,split_by_expression,975;1180
+7,send_message,6,,@fields.child_nickname,has_text,child_nickname,,Hi! Have you been able to give @fields.child_nickname any responsibilities during the last week?,Yes,No,,,,,,,,,,,,,d8385833-a226-4f08-9375-14b4e4b0ad83,,execute_actions,850;1380
+8,send_message,6,,,,,,Hi! Have you been able to give your teen any responsibilities during the last week?,Yes,No,,,,,,,,,,,,,0a7dfc41-0e32-42df-8fd4-1334842eb4e7,,execute_actions,1100;1380
+9,wait_for_response,4;5;7;8,,,,,checkin_managed,,,,,,,,,,,,,,,,20e22acd-b678-439d-b0c3-4ef5f1a33be3,,wait_for_response,1100;1560
+10,split_by_value,9,yes y,,has_any_word,Yes,,@fields.child_nickname,,,,,,,,,,,,,,,8aaccd81-719c-4e54-a7bc-18dcb83923fa,,split_by_expression,125;2000
+11,send_message,10,,@fields.child_nickname,has_text,child_nickname,,"Well done! As @fields.child_nickname shows more responsibility, you can also give them extra privileges. Try to share responsibilities equally amongst women/men and girls/boys. Praise @fields.child_nickname whenever they do their job!",,,,,,,,,,,,,,,35cffd02-0d32-4af7-bb6f-627cc4312269,,execute_actions,;2200
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,35cffd02-0d32-4af7-bb6f-627cc4312269,,execute_actions,;2200
+13,send_message,10,,,,,,"Well done! As your teen shows more responsibility, you can also give them extra privileges. Try to share responsibilities equally amongst women/men and girls/boys. Praise your teen whenever they do their job!",,,,,,,,,,,,,,,cb1dec4a-c750-435b-99d5-014475962c7c,,execute_actions,250;2200
+14,save_value,13,,,,,last interaction,@(now()),,,,,,,,,,,,,,,cb1dec4a-c750-435b-99d5-014475962c7c,,execute_actions,250;2200
+15,split_by_value,9,no n,,has_any_word,No,,@fields.child_nickname,,,,,,,,,,,,,,,d301ab93-1cd3-4499-94e8-4395a4f39842,,split_by_expression,1875;1680
+16,send_message,15,,@fields.child_nickname,has_text,child_nickname,,"That's okay. It can be hard sometimes to remember. Next time you have a task that @fields.child_nickname could do, you can give the job to them. Children often respond well when they are given the opportunity to become more responsible. Praise your teen whenever they complete their job, you can say “thank you for doing such a great job!”.",,,,,,,,,,,,,,,cb0a252b-56e3-4393-a4e0-f91eebbb8805,,execute_actions,1750;1880
+17,save_value,16,,,,,last interaction,@(now()),,,,,,,,,,,,,,,cb0a252b-56e3-4393-a4e0-f91eebbb8805,,execute_actions,1750;1880
+18,send_message,15,,,,,,"That's okay. It can be hard sometimes to remember. Next time you have a task that your teen could do, you can give the job to them. Children often respond well when they are given the opportunity to become more responsible. Praise your teen whenever they complete their job, you can say “thank you for doing such a great job!”.",,,,,,,,,,,,,,,55156703-9290-417b-b03b-55d988820cd8,,execute_actions,2000;1880
+19,save_value,18,,,,,last interaction,@(now()),,,,,,,,,,,,,,,55156703-9290-417b-b03b-55d988820cd8,,execute_actions,2000;1880
+20,send_message,9,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,bf3c48bc-f411-40e7-9385-c10b064c892c,,execute_actions,1260;1940
+21,save_value,20,,,,,last interaction,@(now()),,,,,,,,,,,,,,,bf3c48bc-f411-40e7-9385-c10b064c892c,,execute_actions,1260;1940
+22,go_to,21,,,,,,2,,,,,,,,,,,,,,,,,,
+23,split_by_value,1,,,,,,@fields.user_name,,,,,,,,,,,,,,,51fe0506-0750-4f25-9d0f-03a5fc32262f,,split_by_expression,2615;140
+24,split_by_value,23,,@fields.user_name,has_text,user_name,,@fields.child_nickname,,,,,,,,,,,,,,,df5f395d-30e4-4eec-9605-2e72e34eab7c,,split_by_expression,2365;340
+25,send_message,24,,@fields.child_nickname,has_text,child_nickname,,Hi @fields.user_name! Have you been able to create a daily routine with @fields.child_nickname these past few days?,Yes,No,,,,,,,,,,,,,c4c77464-207d-4a62-863a-0b42f0ad9b74,,execute_actions,2240;740
+26,send_message,24,,,,,,Hi @fields.user_name! Have you been able to create a daily routine with your child these past few days?,Yes,No,,,,,,,,,,,,,f01b306e-6117-4fa1-8179-1dd69aa0d461,,execute_actions,2490;740
+27,split_by_value,23,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,b955468a-f512-430c-934c-da3054eff790,,split_by_expression,2865;540
+28,send_message,27,,@fields.child_nickname,has_text,child_nickname,,Hi! Have you been able to create a daily routine with @fields.child_nickname these past few days?,Yes,No,,,,,,,,,,,,,c564af6e-9c51-4132-8067-cd24b938e287,,execute_actions,2740;740
+29,send_message,27,,,,,,Hi! Have you been able to create a daily routine with your child these past few days?,Yes,No,,,,,,,,,,,,,20a45a79-4179-414b-b3e9-ab38819f7d65,,execute_actions,3740;740
+30,wait_for_response,25;26;28;29,,,,,checkin_managed,,,,,,,,,,,,,,,,9f8fada7-b0ac-4683-b65f-5d40cf3a10a5,,wait_for_response,3880;1500
+31,save_value,30,yes y,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,bdfd796e-8201-416c-b2a2-747ae9b55e52,,execute_actions,3740;1900
+32,split_by_value,31,,,,,,@fields.user_name,,,,,,,,,,,,,,,09b75414-3d5d-4409-8a34-db875a0d5edb,,split_by_expression,3365;2220
+33,split_by_value,32,,@fields.user_name,has_text,user_name,,@fields.child_nickname,,,,,,,,,,,,,,,8a10e4aa-36de-4187-803e-70410e17c3da,,split_by_expression,3115;2420
+34,send_message,33,,@fields.child_nickname,has_text,child_nickname,,"Well done, you are doing a great job @fields.user_name! Having regular routines allows your children to feel safe and secure. Remember that it is important to schedule free time for @fields.child_nickname (and for you!). Keep it up! ",,,,,,,,,,,,,,,947e677d-0ca5-4f84-8359-9d95d216e1df,,execute_actions,2990;2820
+35,send_message,33,,,,,,"Well done, you are doing a great job @fields.user_name! Having regular routines allows your children to feel safe and secure. Remember that it is important to schedule free time for your child (and for you!). Keep it up! ",,,,,,,,,,,,,,,3b3dd49c-64e7-4e5f-9a37-9552fbaac856,,execute_actions,3240;2820
+36,split_by_value,32,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,bd282a9c-a904-4082-97f3-dc4e2b9bcc1d,,split_by_expression,3615;2620
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"Well done, you are doing a great job! Having regular routines allows your children to feel safe and secure. Remember that it is important to schedule free time for @fields.child_nickname (and for you!). Keep it up! ",,,,,,,,,,,,,,,95fc81ac-6323-4545-98bd-d311491c25ee,,execute_actions,3490;2820
+38,send_message,36,,,,,,"Well done, you are doing a great job! Having regular routines allows your children to feel safe and secure. Remember that it is important to schedule free time for your child (and for you!). Keep it up! ",,,,,,,,,,,,,,,ed49e9c9-5623-4953-8d9f-44e611a0124c,,execute_actions,3740;2820
+39,save_value,30,no n,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,55c36eea-27bc-46d3-86ad-1243bb6d8584,,execute_actions,3960;2820
+40,send_message,39,,,,,,"It can be hard sometime to remember. Routines help your children feel safe and secure. Try to have regular mealtimes and bedtimes. Remember to schedule One-on-One time with your children, too!",,,,,,,,,,,,,,,9f4e7f3a-aa3b-46b0-8389-ade762889047,,execute_actions,3960;2920
+41,save_value,30,,,,,last interaction,@(now()),,,,,,,,,,,,,,,3ab06382-b0a3-4f38-aa43-611f5ecf85ee,,execute_actions,4140;1620
+42,send_message,41,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,3ab06382-b0a3-4f38-aa43-611f5ecf85ee,,execute_actions,4140;1620
+43,go_to,42,,,,,,23,,,,,,,,,,,,,,,,,,
+44,send_message,12;14;17;19;34;35;37;38;40,,,,,,Would you like to review the content?,Yes,No,,,,,,,,,,,,,81f946f8-d836-4b6f-b298-b6f6f7fd49d8,,execute_actions,1180;3080
+45,wait_for_response,44,,,,,Result 2,,,,,,,,,,,,,,,,0568f5ad-50c0-4fce-894c-03e090178c07,,wait_for_response,1140;3220
+46,save_value,45,yes y,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,789ff523-b52f-4dd4-957e-40be38bbc791,,execute_actions,290;3360
+47,start_new_flow,46,,,,,,PLH - Content - Positive - Behave - Routines,,,,,,,,,,,,,,3a875a61-978c-4873-a2c1-e085f036266a,9d0985f3-0fb8-4182-ab5b-fb4d0fc26d98,,split_by_subflow,310;3460
+48,split_by_value,45,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,4d561589-3209-4573-bb03-1b3711a439ad,,split_by_expression,1445;3560
+49,send_message,48,,@fields.user_name,has_text,user_name,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later @fields.user_name!",,,,,,,,,,,,,,,adc34b0f-0ca7-477f-b66e-cc468b7577ef,,execute_actions,1320;3760
+50,send_message,48,,,,,,"That is okay! Remember you can access parenting content at anytime by typing ""Help"". Chat to you later!",,,,,,,,,,,,,,,6c9cae5c-b5a1-4e9b-9c30-068707f2a902,,execute_actions,1570;3760
+51,send_message,45,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,9c5c6345-7afa-4118-9e58-281b06e79987,,execute_actions,1610;3420
+52,go_to,51,,,,,,44,,,,,,,,,,,,,,,,,,

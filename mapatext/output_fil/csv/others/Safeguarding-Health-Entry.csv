@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Sa ngayon, may nararanasan ka bang isyu sa iyong kalusugan?",Oo,Hindi,,,,,,,,,,,,,314aa5d0-22a8-4165-897a-85493e9b79df,,execute_actions,520;80
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,e010451d-fbcf-4434-8fdb-30e1c95c8339,,wait_for_response,520;260
+3,start_new_flow,2,oo o yes y,,has_any_word,Yes,,PLH - Safeguarding - Health - Referrals,,,,,,,,,,,,,,da186195-7e59-42dc-9f32-edbe46127da4,d0aaff81-1b0b-4680-86b2-2d18a270ef82,,split_by_subflow,340;460
+4,send_message,2,hindi,,has_any_word,No,,I-type ang “SOS” kung sakaling nais mong malaman ang mga detalye ng emergency services o iba pang hotline. Tandaan na ang lahat ng sasabihin mo ay mananatiling pribado!,,,,,,,,,,,,,,,169e5f60-8404-4fbd-861d-320422c2cbc2,,execute_actions,780;400
+5,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,400a44ad-3f07-479e-a106-faa8587aa2fb,,execute_actions,880;160
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

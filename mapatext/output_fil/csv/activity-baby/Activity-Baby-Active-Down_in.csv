@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Down in a ditch!
+•	Umupo sa isang bangko at ilagay ang iyong anak sa iyong kandungan paharap sa iyo. Hawakan siya ng mabuti sa ilalim ng mga braso.
+•	Dahan-dahan mong ialog ang iyong mga binti at sabihin nang malumanay, ""Baby horse, baby horse, baby horse, baby horse""
+•	Alugin ang iyong mga binti nang higit pa at sabihin ng mas malakas ng kaunti ang ""Little horse, little horse, little horse, little horse""
+•	Mas alugin pa ang iyong mga binti at sabihin nang malakas Ang ""Big horse, big horse, big horse, big horse""
+•	Kapag sasabihin mo ang ""Down in a ditch!"" Ibuka ang mga tuhod at hayaan ang iyong anak na mahulog sa pagitan nila. Siguraduhing hawak mo siya para di siya mahulog ng lubos! ",,,,,,,,,,,,,,,610ee186-1e81-440f-8825-be1bd1dd3cd4,,execute_actions,;

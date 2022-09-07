@@ -1,0 +1,11 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.frequency,,,,,,,,,,,,,,,db0f97ee-a831-4b22-a45e-f2ed01540375,,split_by_contact_field,480;380
+2,send_message,1,1,@fields.frequency,has_number_eq,1,,"Would you like to continue receiving these tips at the same frequency or less often? You can also change the time of day that you receive messages.
+
+Change these settings by typing ""Help"" and then selecting ""Technical Support.""",Same frequency,A little less often,,,,,,,,,,,,,eec557df-282f-473b-bef8-419d3099d644,,execute_actions,520;660
+3,wait_for_response,2,,,,,frequency,,,,,,,,,,,,,,,,52ad485d-f3ae-4b57-af16-69ce9452f8ba,,wait_for_response,500;1260
+4,save_value,3,less often,,has_any_word,less,frequency,2,,,,,,,,,,,,,,,166c7baa-4ee0-4b7f-aa23-38b336ac38f4,,execute_actions,500;1460
+5,save_value,3;4,same ;,,has_any_word;,same;,last interaction,@(now()),,,,,,,,,,,,,,,57b7819a-5a3c-4108-a420-17ef6aeea213,,execute_actions,140;1360
+6,save_value,3,,,,,last interaction,@(now()),,,,,,,,,,,,,,,3e8405a2-2618-4e81-8ee8-0d3038712aab,,execute_actions,840;1040
+7,send_message,6,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1d7530aa-2f2d-4351-890b-91fdeae9c6a6,,execute_actions,840;1200
+8,go_to,7,,,,,,2,,,,,,,,,,,,,,,,,,

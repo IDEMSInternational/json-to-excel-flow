@@ -1,0 +1,26 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Redirecting behaviour,,,,,,,,,,,,,,,0c87fd44-561d-4033-9371-32747597f05e,,execute_actions,650;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,db06528b-067d-44a3-9eff-0d90cd920851,,split_by_subflow,710;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,0d88ea59-abe9-459a-acf2-073a049cab76,,split_by_expression,1505;240
+4,send_message,3,,@fields.user_name,has_text,user_name,,"Hello @fields.user_name! All children misbehave sometimes. It is normal when they are tired, scared, hungry, or learning independence. Today's tips are all about what to do when our children misbehave…",,,,,,,,,,,,,,,68e4bee9-0a8e-413e-95aa-9ff3f22f488b,,execute_actions,1380;440
+5,send_message,3,,,,,,"Hello! All children misbehave sometimes. It is normal when they are tired, scared, hungry, or learning independence. Today's tips are all about what to do when our children misbehave…",,,,,,,,,,,,,,,6430ecf0-02ec-41e5-8d9f-e78c81c8b82e,,execute_actions,1630;440
+6,send_message,4;5,,,,,,"Stop it before it starts! When your children get restless, you can distract them with something interesting or fun: ""Come, let's play a game together!""",,,,,,,,,,,,,,,78e2eb27-3c7f-4afc-a159-2edd0561baf0,,execute_actions,790;500
+7,split_by_value,6,,,,,,@fields.toolkit,,,,,,,,,,,,,,,f3ca6378-bb11-48e9-95bd-8f45b83cd14c,,split_by_contact_field,350;540
+8,split_by_group,7,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,7419f03b-8ca9-4231-a8e9-5c0955325547,,split_by_expression,125;680
+9,send_message,8,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg,,,,f21c842b-2bc0-4c32-b11d-0aebee95bacb,,execute_actions,250;880
+10,send_message,8;8,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg,,,,e71f85ac-7a79-441b-9bcb-7b5bb3941158,,execute_actions,;880
+11,send_message,7,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg,,,,132ac8ea-16ef-42c5-a0e6-f79539bab30c,,execute_actions,490;900
+12,wait_for_response,10;11;9,,,,,know_more,,,,,,,,,,,,,,,,e783ffd2-3489-467f-b5e4-72cd30ab056c,,wait_for_response,630;1060
+13,save_value,12,YES Y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,75639733-5edd-40c4-9fe3-28ac3cd90896,,execute_actions,330;1360
+14,save_value,13,,,,,last interaction,@(now()),,,,,,,,,,,,,,,75639733-5edd-40c4-9fe3-28ac3cd90896,,execute_actions,330;1360
+15,start_new_flow,14,,,,,,PLH - Content - Positive - Behave - Redirect,,,,,,,,,,,,,,f896a544-cb05-43a6-9657-9993a0568e71,37eb1711-ad92-4876-b480-cd9b0e904756,,split_by_subflow,330;1520
+16,save_value,15,Expired,,,,has expired,yes,,,,,,,,,,,,,,,720963fc-7116-43a0-a7de-59371da4d31a,,execute_actions,530;1660
+17,send_message,16,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,69c98ca5-fa7a-4e68-b7f4-2e7df47cf35b,,execute_actions,530;1800
+18,save_value,15;17,Complete;,,,,from theme,no,,,,,,,,,,,,,,,987517a2-36c9-4d58-8424-827ed248d9d7,,execute_actions,270;1660
+19,split_by_value,12,NO N,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,83a95917-da10-4fef-ab59-dcaec3f71b27,,split_by_expression,1055;1120
+20,send_message,19,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,53d01713-fdc7-4fca-b524-e1108491189c,,execute_actions,930;1320
+21,send_message,19,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,37d586ee-c09e-4cce-b63b-f57aca45a42d,,execute_actions,1180;1320
+22,save_value,20;21,,,,,last interaction,@(now()),,,,,,,,,,,,,,,1cd50306-85e5-4cbb-b455-2e597e06c0f4,,execute_actions,1180;1500
+23,send_message,12,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,31118653-272e-493a-9da3-437f376d01c2,,execute_actions,1200;1000
+24,save_value,23,,,,,last interaction,@(now()),,,,,,,,,,,,,,,7cca478d-f2ff-4ce3-8c98-63f1eacd1c06,,execute_actions,1200;900
+25,go_to,24,,,,,,7,,,,,,,,,,,,,,,,,,

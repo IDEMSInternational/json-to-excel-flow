@@ -1,0 +1,33 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,5f49edde-437c-4c83-ac17-ef05fe9e215a,,split_by_expression,360;
+2,send_message,1,man,@fields.gender_personalisation,has_any_word,man,,"1. Treat each other as equals
+
+Family and friends might tell you how a husband or a father should act. But both men and women benefit when they talk to each other and make decisions together! For example, next time you’re making a decision, try involving your partner and ask what they think.",,,,,,,,,,,,,,,ae67ae88-c455-47cb-be00-6ccc39f5f5ad,,execute_actions,110;200
+3,send_message,1,woman,@fields.gender_personalisation,has_any_word,woman,,"1. Treat each other as equals
+
+Family and friends might tell you how a wife or a mother should act compared to a husband or father.  But both men and women benefit when they talk to each other and make decisions together! For example, next time you’re making a decision, try involving your partner and ask what they think.",,,,,,,,,,,,,,,c67c208c-1c64-4eb8-82ce-d112a37006d5,,execute_actions,360;200
+4,send_message,1,,,,,,"1. Treat each other as equals
+
+Family and friends might tell you how a partner or a parent should act. But both men and women benefit when they talk to each other and make decisions together! For example, next time you’re making a decision, try involving your partner and ask what they think.",,,,,,,,,,,,,,,ffc80ff4-2d3a-4c55-94c3-44474d4afcb0,,execute_actions,610;200
+5,send_message,2;3;4,,,,,,Would you like to see a comic about treating each other as equals?,Yes,No,,,,,,,,,,,,,f5bf3b18-445a-44fc-bcbd-ecb92cfdcce8,,execute_actions,990;500
+6,wait_for_response,5,,,,,Result 1,,,,,,,,,,,,,,,,644d307d-0cf4-4f53-bde4-c200cbdb59da,,wait_for_response,970;680
+7,send_message,6,yes y,,has_any_word,Yes,,"Parent 1: “My dear, you look worried. What’s wrong?”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/treat_each_other_as_equals_comic_1.png,,,,04aee8ad-e8f7-497a-8564-881a57c73b9b,,execute_actions,610;520
+8,send_message,7,,,,,,"Parent 2: “The stove has not been working very well recently. I think the stove might be broken.”
+
+Parent 1: “I noticed this too when I was cooking last week. I wanted to ask you: do you think we should buy a new one?”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/treat_each_other_as_equals_comic_2.png,,,,04aee8ad-e8f7-497a-8564-881a57c73b9b,,execute_actions,610;520
+9,send_message,8,,,,,,"Parent 2: “Buying a new one would be really expensive. How about we talk about it after dinner, and we can make a decision together?
+
+Parent 1: “That sounds great. Thank you for cooking dinner, my dear!”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/treat_each_other_as_equals_comic_3.png,,,,04aee8ad-e8f7-497a-8564-881a57c73b9b,,execute_actions,610;520
+10,send_message,9,,,,,,"Parent 1: “I am grateful we can talk about this and make this decision together. It makes a lot more sense to try to get it repaired first.”
+
+Parent 2: “Me too. I feel a lot better now that we have talked about it together.” 
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/treat_each_other_as_equals_comic_4.png,,,,04aee8ad-e8f7-497a-8564-881a57c73b9b,,execute_actions,610;520
+11,send_message,6,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,4f32791c-577b-4e03-a405-0896f2bd1fb9,,execute_actions,1330;760
+12,go_to,11,,,,,,5,,,,,,,,,,,,,,,,,,

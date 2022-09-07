@@ -1,0 +1,143 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,survey covid count,"@(if( fields.survey_covid_count  < fields.max_skip_survey, if(fields.survey_covid_count = 0, 0, fields.survey_covid_count +1),0))",,,,,,,,,,,,,,,dbe0588f-1b1e-4acb-b8ee-6a059f89305e,,execute_actions,2780;
+2,split_by_value,1,,,,,,@fields.user_name,,,,,,,,,,,,,,,a970ff95-7019-4321-bf95-867ec6bd15da,,split_by_expression,2405;120
+3,split_by_group,2,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,68c48311-680a-40d5-a762-93237ee1757b,,split_by_expression,2155;320
+4,send_message,3,ABTest_test-first-person_alternative,,,,,"Hi @fields.user_name! I am delighted that you have signed up for these messages. It shows that you care!
+
+Can I ask you some questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,0cd170cf-5b46-4549-8248-3f518d592fc2,,execute_actions,2280;720
+5,send_message,3;3,ABTest_test-first-person_Default;,,,,,"Hi @fields.user_name! We are delighted that you have signed up for these messages. It shows that you care!
+
+Can we ask you some questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,08eea34b-96fa-476c-9b57-6540096fde6c,,execute_actions,2030;720
+6,split_by_group,2,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,923154a9-d2f8-4ac8-9aa9-531f4a37089b,,split_by_expression,2655;520
+7,send_message,6,ABTest_test-first-person_alternative,,,,,"Hi! I am delighted that you have signed up for these messages. It shows that you care!
+
+Can I ask you some questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,bc7eb465-31d7-48f0-8ea6-3d683c9f99ef,,execute_actions,2780;720
+8,send_message,6;6,ABTest_test-first-person_Default;,,,,,"Hi! We are delighted that you have signed up for these messages. It shows that you care!
+
+Can we ask you some questions about COVID-19 in your area?",Yes,No,,,,,,,,,,,,,c406e1fd-11b2-4f5f-bb10-199429864ed7,,execute_actions,2530;720
+9,wait_for_response,4;5;7;8,,,,,consent_survey,,,,,,,,,,,,,,,,740ea43a-7373-4aec-bf95-00412b3c3d49,,wait_for_response,2010;980
+10,save_value,9,YES Y ,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,9f3e2fda-0b34-4768-8744-66864b1d7338,,execute_actions,2800;1140
+11,save_value,10,,,,,surveycovid datestamps,"@(fields.surveycovid_datestamps & ""yes,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,9f3e2fda-0b34-4768-8744-66864b1d7338,,execute_actions,2800;1140
+12,send_message,11,,,,,,Thanks! ,,,,,,,,,,,,,,,4521a4a1-c832-49e0-9132-2456b6795ac8,,execute_actions,3900;1300
+13,save_value,9,NO N,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,05bb21fa-c898-4c73-bf05-4222213e08c5,,execute_actions,1020;1100
+14,save_value,13,,,,,surveycovid datestamps,"@(fields.surveycovid_datestamps & ""no,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,05bb21fa-c898-4c73-bf05-4222213e08c5,,execute_actions,1020;1100
+15,split_by_value,14,,,,,,@fields.survey_covid_count,,,,,,,,,,,,,,,c8d2d2d6-279b-4135-86a8-9594d15ca471,,split_by_contact_field,1040;1260
+16,split_by_value,15,@fields.max_skip_survey,@fields.survey_covid_count,has_number_lte,<= Fields,,@fields.user_name,,,,,,,,,,,,,,,64a8813b-827c-45fe-9178-08ce8b166b4a,,split_by_expression,375;1700
+17,split_by_group,16,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,e3055750-1d4d-47f0-87bd-604f6f4e5135,,split_by_expression,125;1900
+18,send_message,17,ABTest_test-first-person_alternative,,,,,It is okay if this is not a good time. I will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,1246a293-29cb-4549-9a6c-58d76d90fff7,,execute_actions,250;2300
+19,send_message,17;17,ABTest_test-first-person_Default;,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later @fields.user_name!,,,,,,,,,,,,,,,91f0f85b-7217-4329-bfe0-c2b664a7f95d,,execute_actions,;2300
+20,split_by_group,16,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,3b8cef8a-60b5-4525-adfc-de013f6b25bd,,split_by_expression,625;2100
+21,send_message,20,ABTest_test-first-person_alternative,,,,,It is okay if this is not a good time. I will try again tomorrow. Chat later!,,,,,,,,,,,,,,,6146bf07-5940-4501-ab6a-93975b497201,,execute_actions,1000;2300
+22,send_message,20;20,ABTest_test-first-person_Default;,,,,,It is okay if this is not a good time. We will try again tomorrow. Chat later!,,,,,,,,,,,,,,,c9c7a488-0c89-4f33-9acd-df92a019af1b,,execute_actions,500;2300
+23,split_by_value,15,,,,,,@fields.user_name,,,,,,,,,,,,,,,f931850d-9b35-438f-9be3-9a1be7a44f98,,split_by_expression,1785;1360
+24,send_message,23,,@fields.user_name,has_text,user_name,,It is okay if this is not a good time. Chat later @fields.user_name!,,,,,,,,,,,,,,,b9e97a02-305f-4507-ac06-ad99c4a83293,,execute_actions,1660;1560
+25,send_message,23,,,,,,It is okay if this is not a good time. Chat later!,,,,,,,,,,,,,,,405a2653-920d-4735-916a-db301d11ffba,,execute_actions,1910;1560
+26,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,35498ba7-9e1b-4347-8eba-9bec05fc6e75,,execute_actions,4290;940
+27,send_message,26,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,59037272-00ce-4dde-98e3-015e0aeb6037,,execute_actions,4660;760
+28,go_to,27,,,,,,2,,,,,,,,,,,,,,,,,,
+29,send_message,12,,,,,,Which is most like your experience?,Curfews,Non-essential shops closed,Non-essential production closed,Cancellation of recreational venues and closing of public places like parks,Stay-at-home orders and total movement controls,Social distancing and movement restrictions,No restrictions,Does not apply,Prefer not to answer,,,,,,93b5595f-0cda-41ab-a029-0e0b2f7fa3cb,,execute_actions,4680;1060
+30,wait_for_response,29,,,,,main diff,,,,,,,,,,,,,,,,f04c0fa5-27fc-4ba5-9956-5c3ac8b645d6,,wait_for_response,3900;1600
+31,save_value,30;30;30;30;30;30;30;30;30,Curfews;shops;production;recreational venues;Stay-at-home orders;distancing;no restrictions;apply;prefer,,has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_any_word;has_only_phrase;has_any_word;has_any_word,Curfews;Shops;Production;Recreational venues;Stay at home;Distancing;no Restrictions;Apply;Prefer,survey covid experience,@results.main_diff.category,,,,,,,,,,,,,,,d506f4b7-184d-4dcb-ab80-2ebfca3bbf4e,,execute_actions,4720;2360
+32,send_message,30,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,9d08fd9e-acaf-4c97-95ff-593dee94380c,,execute_actions,5290;940
+33,go_to,32,,,,,,29,,,,,,,,,,,,,,,,,,
+34,send_message,31,,,,,,Are your children currently going to school/daycare? ,Yes,No,,,,,,,,,,,,,cfd1e6af-2aea-4160-a0a8-48407b324f4a,,execute_actions,4250;2440
+35,wait_for_response,34,,,,,school,,,,,,,,,,,,,,,,5d041e5c-cef0-4045-89e1-afe0b261029e,,wait_for_response,4270;2640
+36,split_by_group,35,no n,,has_any_word,No,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,bd9b16f9-5f67-4ee7-a23a-ccad090bf5d1,,split_by_expression,5005;2740
+37,send_message,36,ABTest_test-first-person_alternative,,,,,"It is normal to feel overwhelmed or stressed about your children's education during this time. Remember that you are not alone and that I am here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,2bab927e-4fbf-4080-a061-3d37c05821d5,,execute_actions,5130;2940
+38,send_message,36;36,ABTest_test-first-person_Default;,,,,,"It is normal to feel overwhelmed or stressed about your children's education during this time. Remember that you are not alone and that we are here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,0e4ad089-d5f6-410a-9669-c36e17160306,,execute_actions,4880;2940
+39,save_value,35;37;38,yes y;;,,has_any_word;;,Yes;;,survey covid school,@results.school.category,,,,,,,,,,,,,,,c494311f-6356-4a0f-84d5-683313db5b31,,execute_actions,3980;3040
+40,send_message,35,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a4e16add-35a6-42b2-88f7-7f3e30a55418,,execute_actions,5130;2540
+41,go_to,40,,,,,,34,,,,,,,,,,,,,,,,,,
+42,send_message,39,,,,,,Have you had money problems because of COVID-19 or pandemic restrictions?,Yes,No,,,,,,,,,,,,,d1f89e61-1074-4800-9f1f-515543cda83d,,execute_actions,1990;3140
+43,wait_for_response,42,,,,,money,,,,,,,,,,,,,,,,5b85f2c8-c57f-4341-baab-5190bddff5e5,,wait_for_response,1970;3320
+44,split_by_group,43,yes y,,has_any_word,Yes,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,ace08eae-682b-41f3-8f8e-8a1050c64b9d,,split_by_expression,875;3400
+45,send_message,44,ABTest_test-first-person_alternative,,,,,I am sorry that you have been dealing with money problems due to COVID-19. ,,,,,,,,,,,,,,,1459a4b8-7394-4b76-8e0b-c45b9a9b496c,,execute_actions,1000;3600
+46,send_message,44;44,ABTest_test-first-person_Default;,,,,,We are sorry that you have been dealing with money problems due to COVID-19. ,,,,,,,,,,,,,,,bf83137e-e55c-41a8-a9d2-93719d5e5105,,execute_actions,750;3600
+47,split_by_group,43,no n,,has_any_word,No,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,dd25e63c-450f-4b78-b121-fd42db2d9270,,split_by_expression,4125;3660
+48,send_message,47,ABTest_test-first-person_alternative,,,,,I am happy to hear that. Because money is often a big issue you can also find family budgeting tips in the Help menu.,,,,,,,,,,,,,,,a2f03769-149e-49d9-a86b-aa63cfa268eb,,execute_actions,4250;3860
+49,send_message,47;47,ABTest_test-first-person_Default;,,,,,We are happy to hear that. Because money is often a big issue you can also find family budgeting tips in the Help menu.,,,,,,,,,,,,,,,866c569e-8fb6-4c77-a964-a4ae54022cf9,,execute_actions,4000;3860
+50,save_value,45;46;48;49,,,,,surveyCOVIDmoney,@results.money.category,,,,,,,,,,,,,,,5684c3f5-bcde-4ef6-a611-605f81993ce6,,execute_actions,2780;3900
+51,send_message,43,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,cfcfe458-f6fa-4650-b468-73c5c19f3932,,execute_actions,4290;3240
+52,go_to,51,,,,,,42,,,,,,,,,,,,,,,,,,
+53,send_message,50,,,,,,Has someone in your family been sick for a long time with COVID-19?,Yes,No,,,,,,,,,,,,,51535dfd-cb1f-4812-a726-c8f8536698d2,,execute_actions,1930;4000
+54,wait_for_response,53,,,,,sick,,,,,,,,,,,,,,,,372c53ab-ce52-48ff-bc22-f670f2b19b4f,,wait_for_response,3130;4180
+55,split_by_group,54,yes y,,has_any_word,Yes,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,a6829294-e38a-40e2-93df-13df676e8879,,split_by_expression,1225;4280
+56,send_message,55,ABTest_test-first-person_alternative,,,,,"I am sorry that you have been struggling with a sick family member. Caring for someone with COVID-19 for so long is hard. Remember that caring for yourself is equally important and we will remind you regularly to relax, recognise and reward yourself. You deserve this.",,,,,,,,,,,,,,,35c8a4e3-ede1-4339-901b-ecfea60ae255,,execute_actions,1600;4480
+57,send_message,55;55,ABTest_test-first-person_Default;,,,,,"We are sorry that you have been struggling with a sick family member. Caring for someone with COVID-19 for so long is hard. Remember that caring for yourself is equally important and we will remind you regularly to relax, recognise and reward yourself. You deserve this.",,,,,,,,,,,,,,,fa407636-17de-4235-a5ab-1fb6ca9b3df6,,execute_actions,1100;4480
+58,split_by_group,54,no n,,has_any_word,No,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,3649f434-4769-4cad-9f6f-de1d3d35f51f,,split_by_expression,2945;4960
+59,send_message,58,ABTest_test-first-person_alternative,,,,,I am happy to hear that.,,,,,,,,,,,,,,,4e522b62-a2a1-485f-8705-0d76347ecbad,,execute_actions,3070;5160
+60,send_message,58;58,ABTest_test-first-person_Default;,,,,,We are happy to hear that.,,,,,,,,,,,,,,,6f3936e6-299f-48d6-a620-2c326f11654b,,execute_actions,2820;5160
+61,save_value,56;57;59;60,,,,,surveyCOVIDsick,@results.sick.category,,,,,,,,,,,,,,,ea3f3fd9-b9d5-495a-92a8-5107dd84b175,,execute_actions,1930;5300
+62,send_message,54,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,882e114d-dfd4-4e72-ad90-5a771c4561c5,,execute_actions,4660;4040
+63,go_to,62,,,,,,53,,,,,,,,,,,,,,,,,,
+64,send_message,61,,,,,,"Have you felt very worried, sad, or afraid because of COVID-19?",Yes,No,,,,,,,,,,,,,0a2fbe7a-3c59-4255-8183-1a9e9a346479,,execute_actions,5170;4480
+65,wait_for_response,64,,,,,worried,,,,,,,,,,,,,,,,caf07a21-9136-4371-aa7b-1652830a1aeb,,wait_for_response,5170;4620
+66,split_by_group,65,yes y,,has_any_word,Yes,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,d27c8107-6ef1-4f8c-bc58-1525b3cb6806,,split_by_expression,4435;4700
+67,send_message,66,ABTest_test-first-person_alternative,,,,,I am sorry that you have been struggling. COVID-19 makes almost everyone feel this way. You are not alone in this! You can always access some helpful activities about how to manage stress through the Help menu.,,,,,,,,,,,,,,,744a5305-fee2-40f7-9dc0-fcdec605ec60,,execute_actions,4560;4900
+68,send_message,66;66,ABTest_test-first-person_Default;,,,,,We are sorry that you have been struggling. COVID-19 makes almost everyone feel this way. You are not alone in this! You can always access some helpful activities about how to manage stress through the Help menu.,,,,,,,,,,,,,,,305eb802-7944-4af1-812f-895f4f038413,,execute_actions,4310;4900
+69,send_message,65,no n,,has_any_word,No,,"It’s great to hear that you have been coping with COVID-19 related stress. We will remind you regularly to relax, recognise and reward yourself, to help you continue to manage your stress and feel calm. 
+",,,,,,,,,,,,,,,46429e10-3202-421a-8289-04b2cf340ae5,,execute_actions,5290;5160
+70,save_value,67;68;69,,,,,surveyCOVIDstress,@results.worried.category,,,,,,,,,,,,,,,83adb70a-c066-4828-b20f-451514f37390,,execute_actions,4840;5400
+71,send_message,65,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,496fa911-02ab-4427-81f0-22b578035d55,,execute_actions,5170;4120
+72,go_to,71,,,,,,64,,,,,,,,,,,,,,,,,,
+73,send_message,70,,,,,,Has someone in your family passed away from COVID-19 or breathing problems?,Yes,No,,,,,,,,,,,,,492375fa-4754-49d3-8ce5-9ab174403768,,execute_actions,5230;5700
+74,wait_for_response,73,,,,,loss,,,,,,,,,,,,,,,,86953e30-e2d2-41d4-b107-6875227e69cd,,wait_for_response,4660;5700
+75,save_value,74,yes y,,has_any_word,Yes,surveyCOVIDloss,@results.loss.category,,,,,,,,,,,,,,,aba140d1-ebab-4a9b-a4f6-8ea6d9fd7de5,,execute_actions,3090;5800
+76,save_value,75,,,,,survey covid count,0,,,,,,,,,,,,,,,aba140d1-ebab-4a9b-a4f6-8ea6d9fd7de5,,execute_actions,3090;5800
+77,save_value,76,,,,,surveycovid completion,"@(fields.surveycovid_completion & fields.survey_number & "","" & now() &""|"")",,,,,,,,,,,,,,,aba140d1-ebab-4a9b-a4f6-8ea6d9fd7de5,,execute_actions,3090;5800
+78,split_by_group,77,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,31cff00e-7e9c-458f-bbf8-51a0058bed75,,split_by_expression,1475;5460
+79,send_message,78,ABTest_test-first-person_alternative,,,,,"I am so sorry for your loss. Thank you for chatting with me and for seeking help. Dealing with your own grief, whilst being a parent is difficult and you should be proud of yourself, I am very proud of you.",,,,,,,,,,,,,,,d536f787-cf88-4312-9a64-ca8955a068b1,,execute_actions,1600;5660
+80,send_message,78;78,ABTest_test-first-person_Default;,,,,,"We are so sorry for your loss. Thank you for chatting with us and for seeking help. Dealing with your own grief, whilst being a parent is difficult and you should be proud of yourself, we are very proud of you.",,,,,,,,,,,,,,,bda9145e-e290-410e-a3ad-7cca935dc6c9,,execute_actions,1350;5660
+81,save_value,74,no n,,has_any_word,No,surveyCOVIDloss,@results.loss.category,,,,,,,,,,,,,,,cab4a281-89a8-46eb-8072-6f464bc659cc,,execute_actions,4660;5840
+82,save_value,81,,,,,survey covid count,0,,,,,,,,,,,,,,,a4bf1252-e189-4a93-9145-71e70f07d445,,execute_actions,4680;6140
+83,save_value,82,,,,,surveycovid completion,"@(fields.surveycovid_completion & fields.survey_number & "","" & now() &""|"")",,,,,,,,,,,,,,,a4bf1252-e189-4a93-9145-71e70f07d445,,execute_actions,4680;6140
+84,split_by_group,83,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,9e88e48a-9e85-48c8-aa5c-c1b0e68e8ef0,,split_by_expression,5455;5880
+85,send_message,84,ABTest_test-first-person_alternative,,,,,"I am glad to hear that. If you know people who have lost someone, you can support them by sharing the bereavement tips which you can find in the Help menu.",,,,,,,,,,,,,,,1374b120-da92-433f-87c0-451169560ffe,,execute_actions,5580;6080
+86,send_message,84;84,ABTest_test-first-person_Default;,,,,,"We are glad to hear that. If you know people who have lost someone, you can support them by sharing our bereavement tips which you can find in the Help menu.",,,,,,,,,,,,,,,5f04054d-db50-4f86-8189-69f052106404,,execute_actions,5330;6080
+87,split_by_value,85;86,,,,,,@fields.user_name,,,,,,,,,,,,,,,575eaed3-c138-49ac-8e80-13a96771e85c,,split_by_expression,5975;6460
+88,split_by_group,87,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,bdcb5f2c-79d1-4029-b18b-35c4a4718b6c,,split_by_expression,5725;6660
+89,send_message,88,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions @fields.user_name. I really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that I am here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,d61a56c3-8071-41ec-971d-ab1affd27b1f,,execute_actions,5850;7060
+90,send_message,88;88,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions @fields.user_name. We really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that we are here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,5c90857c-b28a-42dc-ab1b-2e3836760830,,execute_actions,5600;7060
+91,split_by_group,87,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,1ae3350f-beaa-4911-95b5-a4f1f5de5d6b,,split_by_expression,6225;6860
+92,send_message,91,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions. I really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that I am here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,a8fdec5a-2d08-4703-94b8-ed204903de53,,execute_actions,6350;7060
+93,send_message,91;91,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions. We really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that we are here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,67083e70-247c-46b6-93dd-e068434ac9bb,,execute_actions,6100;7060
+94,send_message,89;90;92;93,,,,,,"If you have any further questions about COVID-19, you can always check your local COVID-19 hotline:
+Local Covid-19 Hotline - Department of Health (DOH): 02-894-COVID (02-894-26843) and 1555 (for mobile subscribers)
+
+General Covid-19 Support - Department of Health (DOH) website:https://doh.gov.ph//",,,,,,,,,,,,,,,2d3f63dd-b0d1-448c-bc8c-4fa8dd221fa1,,execute_actions,5230;7960
+95,send_message,74,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,5b10aeae-3075-4ad4-8a04-6809a8468a72,,execute_actions,5270;6300
+96,go_to,95,,,,,,73,,,,,,,,,,,,,,,,,,
+97,send_message,79;80,,,,,,Would you like some tips on coping with loss as a parent or caregiver?,Yes,No,,,,,,,,,,,,,4a96f42e-70f3-4ccc-9041-2bb8aeaa9869,,execute_actions,2010;6240
+98,wait_for_response,97,,,,,Result 10,,,,,,,,,,,,,,,,d78b5eea-fa67-4869-931e-d3edb8d780f9,,wait_for_response,3070;6420
+99,save_value,98,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,1c9b39fa-64ca-4a6a-84db-14a75a8891e5,,execute_actions,1640;7760
+100,start_new_flow,99,,,,,,PLH - Content - Extra - Covid bereavement,,,,,,,,,,,,,,5c080ee8-3f89-454a-94fb-bd47e1ff3a22,959794e4-8676-4f22-80c0-8f258a181030,,split_by_subflow,1600;7860
+101,save_value,100;100,Complete;Expired,,,,from theme,no,,,,,,,,,,,,,,,442a5a54-677d-4bbc-bcdb-ac9a03c535b7,,execute_actions,1620;8000
+102,split_by_value,98,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,6cf4605b-fd53-4d1e-86a6-0b1e2ab49487,,split_by_expression,3525;7160
+103,split_by_group,102,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,6d25796c-df67-4e88-9ca7-fdd004a4f3f1,,split_by_expression,3275;7360
+104,send_message,103,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions @fields.user_name. I really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that I am here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,b51f5858-2670-41e2-a6d4-b3aba9ccda99,,execute_actions,3400;7760
+105,send_message,103;103,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions @fields.user_name. We really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that we are here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,1b834fcd-4637-4e76-a5a2-594216e33e30,,execute_actions,3150;7760
+106,split_by_group,102,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,14ffdfa4-45ca-4ac7-b2c5-30acb1ecff93,,split_by_expression,3775;7560
+107,send_message,106,ABTest_test-first-person_alternative,,,,,"Thanks so much for answering these questions. I really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that I am here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,725f62eb-4159-49ef-bc31-897ba7b2e63f,,execute_actions,3900;7760
+108,send_message,106;106,ABTest_test-first-person_Default;,,,,,"Thanks so much for answering these questions. We really appreciate it especially since COVID-19 has been a very difficult time for many families. 
+
+Remember that you are not alone and that we are here to help. Just type ""Help"" at anytime.",,,,,,,,,,,,,,,7fe69b8e-06e1-4a63-b427-13ec0caf124c,,execute_actions,3650;7760
+109,send_message,104;105;107;108,,,,,,"If you have any further questions about COVID-19, you can always check your local COVID-19 hotline:
+Local Covid-19 Hotline - Department of Health (DOH): 02-894-COVID (02-894-26843) and 1555 (for mobile subscribers)
+
+General Covid-19 Support - Department of Health (DOH) website:https://doh.gov.ph//",,,,,,,,,,,,,,,1233ba09-913e-452a-af7d-e1a9930e9e02,,execute_actions,3900;8060
+110,send_message,98,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,ecc9ada7-192c-4468-a33d-37faef780d84,,execute_actions,4560;6320
+111,go_to,110,,,,,,97,,,,,,,,,,,,,,,,,,

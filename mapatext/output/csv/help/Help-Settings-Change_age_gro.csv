@@ -1,0 +1,25 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.know_age_group_for_tips,,,,,,,,,,,,,,,3def500e-66dd-454c-aa56-4aaf24a58d4e,,split_by_contact_field,580;
+2,split_by_value,1,,,,,,@fields.age_group_for_tips,,,,,,,,,,,,,,,6aff7c73-c74c-4148-b8bc-3ad7d2bb908e,,split_by_contact_field,420;100
+3,send_message,2,baby,@fields.age_group_for_tips,has_any_word,Baby,,The age group you are currently receiving parenting tips for is: Baby (0 to 23 months old).,,,,,,,,,,,,,,,c3f77cfd-2829-4a0f-b3c5-ca5bc144002a,,execute_actions,140;160
+4,send_message,2,teen,@fields.age_group_for_tips,has_any_word,teen,,The age group you are currently receiving parenting tips for is: Teenager (10 to 17 years).,,,,,,,,,,,,,,,7b3a8f56-d336-4957-a327-9861e576c5bc,,execute_actions,440;220
+5,send_message,2,,,,,,The age group you are currently receiving parenting tips for is: Young child (2 to 9 years).,,,,,,,,,,,,,,,c5588553-26df-4e4a-b11e-1070d10001c9,,execute_actions,740;180
+6,send_message,1,no,@fields.know_age_group_for_tips,has_any_word,No,,Which age group would you like to receive parenting tips for? ,Baby (0 to 23 months old),Young child (2 to 9 years),Teenager (10 to 17 years),,,,,,,,,,,,daef1ab4-6249-4c14-b50b-1a1b4c13fa8f,,execute_actions,360;840
+7,wait_for_response,6,,,,,Result 2,,,,,,,,,,,,,,,,df82a1cf-e11f-4771-a23f-c163131be9ec,,wait_for_response,460;1080
+8,save_value,7,baby,,has_any_word,baby,age group for tips,baby,,,,,,,,,,,,,,,df43b89c-694e-4b73-8e1e-02dce12e3032,,execute_actions,260;1280
+9,save_value,8,,,,,total skills,17,,,,,,,,,,,,,,,df43b89c-694e-4b73-8e1e-02dce12e3032,,execute_actions,260;1280
+10,save_value,7,young child,,has_any_word,child,age group for tips,child,,,,,,,,,,,,,,,56fa552b-5a2f-488e-9eb6-b186f8948029,,execute_actions,480;1280
+11,save_value,10,,,,,total skills,22,,,,,,,,,,,,,,,56fa552b-5a2f-488e-9eb6-b186f8948029,,execute_actions,480;1280
+12,save_value,7,teen teenager,,has_any_word,teen,age group for tips,teen,,,,,,,,,,,,,,,b9dadab9-1359-4f9e-bd37-37a36147b45f,,execute_actions,700;1280
+13,save_value,12,,,,,total skills,21,,,,,,,,,,,,,,,b9dadab9-1359-4f9e-bd37-37a36147b45f,,execute_actions,700;1280
+14,save_value,11;13;9,,,,,know age group for tips,yes,,,,,,,,,,,,,,,eedb5404-ea03-47e9-878e-26094fe400bf,,execute_actions,440;1460
+15,save_value,14,,,,,house of support path,"@(fields.path & ""house_of_support/house_type/"" & fields.house_type & ""/age_group/"" & fields.age_group_for_tips & ""/family_type/"" & fields.family_type &""/"")",,,,,,,,,,,,,,,eedb5404-ea03-47e9-878e-26094fe400bf,,execute_actions,440;1460
+16,split_by_value,15,,,,,,@fields.get_disability_content,,,,,,,,,,,,,,,517cd062-05c3-436c-b0e7-2f5f27c0abe1,,split_by_contact_field,420;1640
+17,save_value,16,yes,@fields.get_disability_content,has_any_word,Yes,total skills,@(fields.total_skills + 1),,,,,,,,,,,,,,,012f5136-a9bc-4ed9-b9a3-0945b3c0c846,,execute_actions,360;1780
+18,send_message,7,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,080cba90-34b4-4460-8251-c6c5c6e31d7d,,execute_actions,700;1000
+19,go_to,18,,,,,,6,,,,,,,,,,,,,,,,,,
+20,send_message,3;4;5,,,,,,Would you like to receive parenting tips for another age group? ,Yes,No,,,,,,,,,,,,,afcccec4-0034-4793-b20d-e8cf3fc22d6e,,execute_actions,460;500
+21,wait_for_response,20,,,,,Result 1,,,,,,,,,,,,,,,,c1c797e6-3a89-447f-85fa-16b9d0b44d73,,wait_for_response,460;680
+22,go_to,21,yes y,,has_any_word,Yes,,6,,,,,,,,,,,,,,,,,,
+23,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,0d9e1670-0729-439a-9b39-685d424903f0,,execute_actions,800;600
+24,go_to,23,,,,,,20,,,,,,,,,,,,,,,,,,

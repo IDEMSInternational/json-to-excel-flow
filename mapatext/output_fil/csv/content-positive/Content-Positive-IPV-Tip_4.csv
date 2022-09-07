@@ -1,0 +1,31 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"4. Lutasin ang mga hindi pagkakasunduan sa payapang paraan
+
+Lahat ng nakatatanda ay may mga pagtatalo minsan. Ngunit ang pag-aaway para lutasin ang mga isyu ay hindi epektibo. Sa halip, kapag ikaw ay nagsimulang makaramdam ng galit, pwede kang lumayo sandali o huminga nang malalim bago tumugon nang mas kalmado.",,,,,,,,,,,,,,,fd124355-26eb-4f5d-9414-daf05ac69676,,execute_actions,460;
+2,send_message,1,,,,,,Gusto mo bang makakita ng komiks tungkol sa kalmadong paglutas ng mga pagtatalo?,Oo,Hindi,,,,,,,,,,,,,dfb72b37-79a9-4631-97f6-f592fbac6e08,,execute_actions,840;280
+3,wait_for_response,2,,,,,Result 1,,,,,,,,,,,,,,,,169348bf-f369-42f6-9c02-792e66f7bf4f,,wait_for_response,820;500
+4,send_message,3,Oo y o,,has_any_word,Yes,,"Parent 1: “Handa na ang hapunan!”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/resolve_conflict_peacefully_comic_1.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+5,send_message,4,,,,,,"Anak: “Tingnan niyo, ang lakas ng ulan sa labas!”
+
+Parent 1: “Mabuti na lang at naipasok mo na ang mga labada kanina, mahal ko. Kung hindi, basang basa na sana ang mga damit ngayon!”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/resolve_conflict_peacefully_comic_2.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+6,send_message,5,,,,,,"Parent 2: “Akala ko ba sabi mo na ikaw ang magpapasok ng labada ngayon?”
+
+Parent 1: “Hindi, naging abala ako sa pagluto ng hapunan! Sinabi mo sa akin na ikaw na ang bahala doon! Paano mo naman nakalimutan? Ngayon basang-basa na ang mga labada!”
+
+Parent 2: “Pasensiya na talaga. Nagkamali lang!”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/resolve_conflict_peacefully_comic_3.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+7,send_message,6,,,,,,"Parent 1 (nag-iisip): Hindi ako makapaniwalang nakalimutan niya! Pero lahat ay puwedeng magkamali. Huminga nang malalim…
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/resolve_conflict_peacefully_comic_4.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+8,send_message,7,,,,,,"Parent 1: “Sorry kung nagalit ako. Na-stress lang ako dahil napagod ako ngayon.”
+
+Parent 2: “Sorry din at nakalimutan ko ang labada. Alam kong marami kang ginawa buong araw. Sisiguraduhin kong maayos ito pagkatapos ng hapunan.”
+
+(5)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/resolve_conflict_peacefully_comic_5.png,,,,8dee97bc-3ab9-493a-a46c-eedb5a485fe2,,execute_actions,460;300
+9,send_message,3,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,43be1437-f8aa-49ce-b995-40a68d33de47,,execute_actions,900;620
+10,go_to,9,,,,,,2,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Pakikinig sa Mga Tunog
+•	Umupo at ipikit ang iyong mga mata
+•	Ilang tunog ang iyong naririnig? Pakinggan ang mga tunog sa loob at labas ng kuwarto. Bilangin ang mga ito sa iyong mga daliri
+•	Pagkatapos ng sampung segundo, Ilang daliri ang nakataas? Ano-anong mga tunog ang narinig mo?
+•	Subukan muli sa sampung segundo. 
+•	Nakakarinig ka ba ng kahit anong bagong tunog? Nakakarinig ka ba ng kahit anong tunog sa loob ng iyong sariling katawan?
+•	Pansinin kung ano ang nararamdaman mo at tanungin ang iyong anak kung kumusta ang nararamdaman nila.",,,,,,,,,,,,,,,1f24c5c6-15a3-44b5-b4db-d5031cfa5387,,execute_actions,;

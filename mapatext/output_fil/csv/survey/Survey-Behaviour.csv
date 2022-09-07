@@ -1,0 +1,161 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,survey behave count,"@(if( fields.survey_behave_count  < fields.max_skip_survey, if(fields.survey_behave_count = 0, 0, fields.survey_behave_count +1),0))",,,,,,,,,,,,,,,e0ad4b4c-f668-4d03-8095-34383a32e6a3,,execute_actions,1040;
+2,split_by_value,1,,,,,,@fields.know_survey_behave_child,,,,,,,,,,,,,,,a221d3f4-2d4a-4ecf-b33e-60db1c1edbbd,,split_by_contact_field,1020;220
+3,split_by_value,2,yes,@fields.know_survey_behave_child,has_any_word,Yes,,@fields.survey_behave_age,,,,,,,,,,,,,,,175c86cb-8198-4aa8-b17f-252408a36ed1,,split_by_contact_field,1240;4400
+4,send_message,3,"0,1",@fields.survey_behave_age,has_number_between,0 - 1,,"Lahat ng bata ay nagpapakita ng hindi magandang pag-uugali paminsan-minsan. Narito ang listahan ng mga tipikal na pag-uugali na maaaring maging hamon para sa mga magulang:
+
+1. Madalas na pag-iyak
+2. Problema sa pagtulog
+3. Ayaw humiwalay
+4. Umaangal dahil sa mga bagay
+5. Sumpungin o bugnutin
+6. Problema sa pagkain
+7. Matigas ang ulo o maselan
+8. Pagiging makulit
+9. Pag-aalboroto
+
+Paki-type ang numero na naglalarawan ng pag-uugali ni @fields.survey_behave_name na nagdudulot ng pinakamaraming hamon. Maaari mo ring i-type ang ""H"" kung hindi mo gustong sumagot. ",,,,,,,,,,,,,,,4fbf98f6-ae50-487c-9b70-99c105678148,,execute_actions,1000;4640
+5,send_message,3,11,@fields.survey_behave_age,has_number_gte,>= 11,,"Lahat ng bata ay nagpapakita ng hindi magandang pag-uugali paminsan-minsan. Narito ang listahan ng mga tipikal na pag-uugali na maaaring maging hamon para sa mga magulang:
+
+1. Hindi sumusunod sa mga direksyon
+2. Madalas nagagalit
+3. Kabastusan, kawalan nang respeto
+4. Naiirita, madalas magbago ang mood
+5. Hindi sumusunod sa mga patakaran
+6. Katigasan ng ulo
+7. Naninira ng mga bagay
+8. Nakikipag-away
+9. Panunukso o pang-iinis ng iba
+
+Paki-type ang numero na naglalarawan ng pag-uugali ni @fields.survey_behave_name na nagdudulot ng pinakamaraming hamon. Maaari mo ring i-type ang ""H"" kung hindi mo gustong sumagot. ",,,,,,,,,,,,,,,81ee3c91-0f0d-4aac-ba34-d70cec1d62af,,execute_actions,3870;4580
+6,send_message,3;3,"2,10;",@fields.survey_behave_age;,has_number_between;,2 - 10;,,"Lahat ng bata ay nagpapakita ng hindi magandang pag-uugali paminsan-minsan. Narito ang listahan ng mga tipikal na pag-uugali na maaaring maging hamon para sa mga magulang:
+
+1. Hindi sumusunod sa mga direksyon
+2. Pag-aalboroto
+3. Kabastusan
+4. Umaangal dahil sa mga bagay
+5. Napakalikot, hindi makatagal sa isang lugar
+6. Nananakit ng iba
+7. Naninira ng mga bagay
+8. Nakikipag-away
+9. Panunukso o pang-iinis ng iba
+
+Paki-type ang numero na naglalarawan ng pag-uugali ni @fields.survey_behave_name na nagdudulot ng pinakamaraming hamon. Maaari mo ring i-type ang ""H"" kung hindi mo gustong sumagot. ",,,,,,,,,,,,,,,fa9d5a16-7a2d-4c3c-a8d0-75ae8a0a111b,,execute_actions,2360;4740
+7,split_by_group,2,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,00467e28-cdce-47ba-8b98-c63a936f856a,,split_by_expression,2235;240
+8,send_message,7,ABTest_test-first-person_alternative,,,,,Maaari ka rin bang tanungin ng ilang maiiksing tanong tungkol sa mga kilos ng iyong mga anak?,Oo,Hindi,,,,,,,,,,,,,404ad40f-98f5-48d9-a5da-31ccf8967f8e,,execute_actions,2360;440
+9,send_message,7;7,ABTest_test-first-person_Default;,,,,,Maaari ka rin ba naming tanungin ng ilang maiiksing tanong tungkol sa pag-uugali ng iyong mga anak?,Oo,Hindi,,,,,,,,,,,,,5ad409c7-4865-4dde-8015-1e5e3855e239,,execute_actions,2110;440
+10,wait_for_response,8;9,,,,,consent_survey,,,,,,,,,,,,,,,,694e40dd-7d7d-467f-997f-f9d2a3fe44f8,,wait_for_response,1100;520
+11,save_value,10,Oo y o,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,ebd5dc35-047d-4948-a13d-0538d4818fe9,,execute_actions,350;540
+12,save_value,11,,,,,surveybehave datestamps,"@(fields.surveybehave_datestamps & ""yes,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,ebd5dc35-047d-4948-a13d-0538d4818fe9,,execute_actions,350;540
+13,save_value,10,Hindi n h,,has_any_word,No,last interaction,@(now()),,,,,,,,,,,,,,,865f62ba-347f-4d7c-bb8f-54c63eb11ef3,,execute_actions,2690;800
+14,save_value,13,,,,,surveybehave datestamps,"@(fields.surveybehave_datestamps & ""no,"" & fields.survey_number & "","" & now() & ""|"") ",,,,,,,,,,,,,,,865f62ba-347f-4d7c-bb8f-54c63eb11ef3,,execute_actions,2690;800
+15,split_by_value,14,,,,,,@fields.survey_behave_count,,,,,,,,,,,,,,,8538b207-88ce-49f2-b155-5b71142f7601,,split_by_contact_field,2690;960
+16,split_by_value,15,@fields.max_skip_survey,@fields.survey_behave_count,has_number_lte,ask again,,@fields.user_name,,,,,,,,,,,,,,,b61b6a76-bf8c-4c30-b941-4b165272b128,,split_by_expression,1675;1060
+17,split_by_group,16,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,bf031643-2f48-4037-9b39-eb9ef8cf54e7,,split_by_expression,1425;1260
+18,send_message,17,ABTest_test-first-person_alternative,,,,,Okay lang kung hindi ito ang tamang panahon. Susubukan ko muli bukas. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,7b02cbcd-b637-4485-9017-e7fba3edb889,,execute_actions,1550;1860
+19,send_message,17;17,ABTest_test-first-person_Default;,,,,,Okay lang kung hindi ito ang tamang panahon. Subukan muli natin bukas. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,cd1ec1ce-0857-4019-a4c7-024109182386,,execute_actions,1300;1860
+20,split_by_group,16,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,520b4878-df67-4ec8-bdec-3ec16cc1ecac,,split_by_expression,1925;1460
+21,send_message,20,ABTest_test-first-person_alternative,,,,,Okay lang kung hindi ito ang tamang panahon. Susubukan ko muli bukas. Usap tayo mamaya!,,,,,,,,,,,,,,,0b4bfbbe-9b17-49b1-873a-8c961df21785,,execute_actions,2050;1860
+22,send_message,20;20,ABTest_test-first-person_Default;,,,,,Okay lang kung hindi ito ang tamang panahon. Subukan muli natin bukas. Usap tayo mamaya!,,,,,,,,,,,,,,,6a9612a2-dc86-42ee-bedc-66e0fedafc5f,,execute_actions,1800;1860
+23,split_by_value,15,,,,,,@fields.user_name,,,,,,,,,,,,,,,bf20c282-7f55-4357-acb0-6d7ced2b8acf,,split_by_expression,2895;1660
+24,send_message,23,,@fields.user_name,has_text,user_name,,Okay lang kung hindi ito ang tamang panahon. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,211ce773-1762-4cb5-85ff-aa88fd8d3024,,execute_actions,2770;1860
+25,send_message,23,,,,,,Okay lang kung hindi ito ang tamang panahon. Usap tayo mamaya!,,,,,,,,,,,,,,,c6b522c5-37b6-456f-a141-ed0270d18688,,execute_actions,3020;1860
+26,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,961ca9f2-e0d1-4b37-8408-d15a56a2f6fe,,execute_actions,3890;700
+27,send_message,26,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,7a518d18-c7a2-4de7-9941-c2cab664255b,,execute_actions,3970;540
+28,go_to,27,,,,,,7,,,,,,,,,,,,,,,,,,
+29,wait_for_response,4;5;6,,,,,chosen_bh,,,,,,,,,,,,,,,,6515c0f3-cc8c-4e85-9e91-553cdae943b1,,wait_for_response,1180;5420
+30,save_value,29,"1,9",,has_number_between,1 - 9,survey behave most challenging,@results.chosen_bh,,,,,,,,,,,,,,,f73dd5b7-03a5-4f91-b9bd-4a0e940f9e34,,execute_actions,350;5500
+31,send_message,30,,,,,,Gaano kahirap ang problemang ito sa sukatan na 0 hanggang 7 (0 = hindi problema at 7 = grabe sa hirap)?,,,,,,,,,,,,,,,3064d5ea-cd11-4b22-8c92-fa30886cf53b,,execute_actions,570;5640
+32,send_message,29,,,,,,"Patawad, hindi ko maintindihan ang ibig mong sabihin. Paki-type ng isang numero sa pagitan ng 1 at 9. Maaari mo ring i-type ang ""H"" kung hindi mo gustong sumagot. ",,,,,,,,,,,,,,,2040eddd-c710-4ebe-852b-60cc86087330,,execute_actions,3970;5440
+33,go_to,32,,,,,,29,,,,,,,,,,,,,,,,,,
+34,send_message,12,,,,,,Ikaw ba ay magulang/tagapag-alaga ng batang may kapansanan?,Oo,Hindi,,,,,,,,,,,,,fca6c1ed-07fa-4c53-9a53-82bba05ee39f,,execute_actions,390;820
+35,wait_for_response,34,,,,,parent,,,,,,,,,,,,,,,,a265c851-495a-4142-a963-c1a84898cf47,,wait_for_response,390;1900
+36,save_value,35,Oo y o,,has_any_word,Yes,has disability,yes,,,,,,,,,,,,,,,4ac97ff1-dad7-4961-ba13-95e701171c77,,execute_actions,;2500
+37,start_new_flow,36,,,,,,PLH - Internal - Update disability variables,,,,,,,,,,,,,,9eeb7958-d624-4be6-baee-8fbd18909ed9,d335a3ea-17ad-4cf4-b746-a802eb1f2b80,,split_by_subflow,;2600
+38,save_value,35,Hindi n h,,has_any_word,No,has disability,no,,,,,,,,,,,,,,,918d9d78-6de9-4e20-a1ee-365471c54195,,execute_actions,490;2440
+39,split_by_value,37;37;38,Complete;Expired;,,,,,@fields.child_nickname,,,,,,,,,,,,,,,3af22fe9-5bf0-4d59-a29c-1e33cbe805aa,,split_by_contact_field,1180;2000
+40,save_value,39,,@fields.child_nickname,has_text,Has Text,survey behave name,@fields.child_nickname,,,,,,,,,,,,,,,167cabcd-9c71-4ada-8706-a0eaa1187519,,execute_actions,1160;2360
+41,send_message,35,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,989587fb-b0f4-4234-af23-f5ffd4fff57d,,execute_actions,550;2260
+42,go_to,41,,,,,,34,,,,,,,,,,,,,,,,,,
+43,wait_for_response,31,,,,,current_rate,,,,,,,,,,,,,,,,a858de9d-a0ae-4392-bd8e-f27f27f8b1e8,,wait_for_response,550;5820
+44,save_value,43,"0,7",,has_number_between,0 - 7,surveybehave rate,"@(fields.surveybehave_rate & results.current_rate &""|"")",,,,,,,,,,,,,,,d86df472-8264-4ee6-83f2-546f07faf286,,execute_actions,370;6020
+45,save_value,44,,,,,surveybehave rate datetime,"@(fields.surveybehave_rate_datetime & results.current_rate & "","" & fields.survey_number  & "","" & now() & ""|"")",,,,,,,,,,,,,,,d86df472-8264-4ee6-83f2-546f07faf286,,execute_actions,370;6020
+46,save_value,45,,,,,know survey behave challenge,yes,,,,,,,,,,,,,,,f15d309e-df5f-4536-bbc1-e72433022d0f,,execute_actions,370;6200
+47,save_value,46,,,,,survey behave count,0,,,,,,,,,,,,,,,f15d309e-df5f-4536-bbc1-e72433022d0f,,execute_actions,370;6200
+48,save_value,47,,,,,surveybehave completion,"@(fields.surveybehave_completion & fields.survey_number & "","" & now() &""|"")",,,,,,,,,,,,,,,f15d309e-df5f-4536-bbc1-e72433022d0f,,execute_actions,370;6200
+49,split_by_value,48,,,,,,@results.rate,,,,,,,,,,,,,,,9c662cdc-0cf9-4799-987e-9937fb2fd323,,split_by_run_result,960;6700
+50,split_by_value,49,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,4912b665-6aa7-4e79-9406-89958858c70c,,split_by_expression,755;7240
+51,send_message,50,,@fields.child_nickname,has_text,child_nickname,,Mas mahusay ang iyong ginagawa kaysa sa karamihan. Ipagpatuloy ang pagbibigay ng One-on-One Time kasama si @fields.child_nickname!,,,,,,,,,,,,,,,39dd8e71-e9bd-4c33-bff6-f930af4e568e,,execute_actions,630;7440
+52,send_message,50,,,,,,Mas mahusay ang iyong ginagawa kaysa sa karamihan. Ipagpatuloy ang pagbibigay ng One-on-One Time sa iyong anak!,,,,,,,,,,,,,,,245d250f-2be3-4a14-b8df-ac30c8af4812,,execute_actions,880;7440
+53,send_message,43,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin. Paki-type ng isang numero sa pagitan ng 0 at 7.",,,,,,,,,,,,,,,3e99c30b-6033-40a6-9db5-904f0553eea3,,execute_actions,2090;5800
+54,go_to,53,,,,,,43,,,,,,,,,,,,,,,,,,
+55,split_by_value,29;51;52,n hindi h;;,,has_any_word;;,no;;,,@fields.fromparentingbehave,,,,,,,,,,,,,,,f2a5cd3b-c1c2-4016-8edb-8265e4052a0d,,split_by_contact_field,1240;7660
+56,save_value,55,,,,,n surveys completed,"@(if(fields.n_surveys_completed < fields.total_n_surveys-1, fields.n_surveys_completed +1, ""final""))",,,,,,,,,,,,,,,6842277a-fbd2-4891-8b8f-d164eb392f4e,,execute_actions,3850;7880
+57,split_by_value,56,,,,,,@fields.user_name,,,,,,,,,,,,,,,28cb7a76-1588-4402-9597-c8bc02b9d9b8,,split_by_expression,3455;8040
+58,split_by_group,57,,@fields.user_name,has_text,user_name,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,32e2946a-461c-4469-9816-62637e1ceea5,,split_by_expression,3205;8240
+59,send_message,58,ABTest_test-first-person_alternative,,,,,"Maraming salamat sa pagsagot sa mga tanong na ito. Pinahahalagahan ko ito. 
+
+Alalahaning andito ako para tumulong. I-type lamang ang “Help” upang makakuha ng karagdagang parenting tips o iba pang suporta. Salamat uli @fields.user_name!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/certificate/fil/certificate_research_2.jpg,,,,c7ae3d0a-4b11-43fa-a0c5-6e20d8e17b55,,execute_actions,3330;8640
+60,send_message,58;58,ABTest_test-first-person_Default;,,,,,"Maraming salamat sa pagsagot sa mga tanong na ito. Pinahahalagahan namin ito. 
+
+Alalahaning andito kami para tumulong. I-type lamang ang “Help” upang makakuha ng karagdagang parenting tips o iba pang suporta. Salamat uli @fields.user_name!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/certificate/fil/certificate_research_2.jpg,,,,bb4b8c49-df2a-4abf-9951-f84576abfdaa,,execute_actions,3080;8640
+61,split_by_group,57,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,11823d63-9330-4dbf-928c-d704d7b7c73f,,split_by_expression,3705;8440
+62,send_message,61,ABTest_test-first-person_alternative,,,,,"Maraming salamat sa pagsagot sa mga tanong na ito. Pinahahalagahan ko ito. 
+
+Alalahaning andito ako para tumulong. I-type lamang ang “Help” upang makakuha ng karagdagang parenting tips o iba pang suporta. Salamat uli!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/certificate/fil/certificate_research_2.jpg,,,,51116f3a-681d-48b4-ab98-44dbc5a3648f,,execute_actions,3830;8640
+63,send_message,61;61,ABTest_test-first-person_Default;,,,,,"Maraming salamat sa pagsagot sa mga tanong na ito. Pinahahalagahan namin ito. 
+
+Alalahaning andito kami para tumulong. I-type lamang ang “Help” upang makakuha ng karagdagang parenting tips o iba pang suporta. Salamat uli!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/certificate/fil/certificate_research_2.jpg,,,,6181641c-1ebe-4d74-963a-0bbac96ff83b,,execute_actions,3580;8640
+64,send_message,40,,,,,,Lalaki ba o babae si @fields.survey_behave_name?,Batang lalaki,Batang babae,Mas pinipiling hindi sabihin,,,,,,,,,,,,055e7078-9caa-4abf-8513-b9383f6ba936,,execute_actions,2690;2720
+65,wait_for_response,64,,,,,sex,,,,,,,,,,,,,,,,a9702777-7a2b-49b2-8523-5c6c37d5b824,,wait_for_response,2420;2900
+66,save_value,65,batang lalaki,,has_any_word,Boy,survey behave sex,male,,,,,,,,,,,,,,,6e669ae8-4a88-4b58-8d50-77ad347ad095,,execute_actions,40;3000
+67,save_value,65,batang babae,,has_any_word,Girl,survey behave sex,female,,,,,,,,,,,,,,,f67e35a1-0be6-4849-a904-d3cff66c040f,,execute_actions,450;2880
+68,save_value,65,hindi gustong sabihin,,has_any_word,not,survey behave sex,no,,,,,,,,,,,,,,,f65e4bb2-4fd0-485e-a0a9-8b2202764eb1,,execute_actions,590;3000
+69,send_message,65,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,6b52f6a9-6abc-478f-8437-65ec5b8876cc,,execute_actions,3990;2740
+70,go_to,69,,,,,,64,,,,,,,,,,,,,,,,,,
+71,split_by_group,39,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,cfec2426-8b2f-4849-a076-bf4e5e39d3d8,,split_by_expression,2565;2020
+72,send_message,71,ABTest_test-first-person_alternative,,,,,"Lahat ng bata ay nagpapakita ng hindi magandang kilos minsan. Upang mabigyan ka namin ng tamang impormasyon, pakisabi ang pangalan o palayaw ng iyong anak na higit kang nahihirapan.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg,,,,faaffced-3c77-4e19-aaac-e181552b7199,,execute_actions,2690;2220
+73,send_message,71;71,ABTest_test-first-person_Default;,,,,,"Lahat ng bata ay nagpapakita ng hindi magandang kilos o asal minsan. Upang mabigyan ka namin ng tamang impormasyon, pakisabi ang pangalan o palayaw ng iyong anak na pinakanahihirapan ka.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg,,,,92b95a1e-c4ae-47ac-8cc1-53ec5b2b167a,,execute_actions,2440;2220
+74,wait_for_response,72;73,,,,,name,,,,,,,,,,,,,,,,2a786180-2b28-49fa-97c6-97813b2e91f1,,wait_for_response,2420;2480
+75,save_value,74,,,has_text,Has Text,survey behave name,@results.name,,,,,,,,,,,,,,,e6b2e8f9-11fe-45fc-bbd5-8e11a3c07b48,,execute_actions,2420;2620
+76,go_to,75,,,,,,64,,,,,,,,,,,,,,,,,,
+77,send_message,74,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,a743805e-008a-4d50-9db7-933477005b6a,,execute_actions,3930;2320
+78,go_to,77,,,,,,71,,,,,,,,,,,,,,,,,,
+79,split_by_group,49,5,@results.rate,has_number_gte,>= 5,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,c07b6aec-5734-4e7c-ba6b-8d041638a70e,,split_by_expression,225;7000
+80,send_message,79,ABTest_test-first-person_alternative,,,,,Nauunawaan kong talagang mahirap ito para sa iyo at sa iyong anak. Gusto mo ba ng payo kung paano pangasiwaan ang kilos na ito?,Oo,Hindi,,,,,,,,,,,,,810d47d1-658c-4fe0-9318-864835e0697c,,execute_actions,350;7200
+81,send_message,79;79,ABTest_test-first-person_Default;,,,,,Naiintindihan naming maaaring mahirap ito para sa iyo at sa iyong anak. Gusto mo ba ng payo kung paano pangasiwaan ang pag-uugali na ito?,Oo,Hindi,,,,,,,,,,,,,87c373c7-b60e-49c5-9805-ea1bb38d2ec1,,execute_actions,100;7200
+82,wait_for_response,80;81,,,,,manage_advice,,,,,,,,,,,,,,,,f09efb72-1435-4960-81e1-3588fffd1543,,wait_for_response,410;7800
+83,start_new_flow,82,Oo y o,,has_any_word,Yes,,PLH - Survey - Behave - Tips for difficult behaviours,,,,,,,,,,,,,,9ef0d8d2-e496-4649-a7d5-b52aa0aeff52,bc897368-0ff4-4ecf-bd65-16c9f0b211a6,,split_by_subflow,370;8820
+84,go_to,83,Complete;Expired,,,,,55,,,,,,,,,,,,,,,,,,
+85,go_to,83,Complete;Expired,,,,,55,,,,,,,,,,,,,,,,,,
+86,go_to,82,Hindi n h,,has_any_word,No,,55,,,,,,,,,,,,,,,,,,
+87,send_message,82,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,a34006ff-4933-41bf-9f84-cc2f0b5d7048,,execute_actions,590;7680
+88,go_to,87,,,,,,79,,,,,,,,,,,,,,,,,,
+89,send_message,66;67;68,,,,,,Ilang taong gulang na si @fields.survey_behave_name? Magbigay ng isang numero sa pagitan ng 0 at 17.,,,,,,,,,,,,,,,30903994-f1c2-40ab-a1b3-a76051d56c90,,execute_actions,410;3120
+90,wait_for_response,89,,,,,age,,,,,,,,,,,,,,,,e2c6c058-041c-4150-bb02-fddbc9ccd533,,wait_for_response,410;3280
+91,save_value,90,"0,17",,has_number_between,0 - 17,survey behave age,@results.age,,,,,,,,,,,,,,,cfa70ce3-5486-41b5-bc88-5b5f24317ddd,,execute_actions,80;3420
+92,split_by_value,91,,,,,,@fields.survey_behave_age,,,,,,,,,,,,,,,7506232b-7f88-4376-acfb-078262e4f0a3,,split_by_contact_field,470;3520
+93,send_message,90,18,,has_number_gte,>=18,,Mukhang masyado nang matanda ito. ,,,,,,,,,,,,,,,bf172631-e6a8-4cdf-ae63-797578ffeb68,,execute_actions,940;3240
+94,go_to,93,,,,,,89,,,,,,,,,,,,,,,,,,
+95,send_message,90,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,501451bb-e092-4565-86e0-9e3627926a2c,,execute_actions,980;3100
+96,go_to,95,,,,,,89,,,,,,,,,,,,,,,,,,
+97,send_message,92,2,@fields.survey_behave_age,has_number_lt,< 2,,Ilang buwang gulang na si @fields.survey_behave_name? Magbigay ng isang numero sa pagitan ng 0 at 23.,,,,,,,,,,,,,,,9b630445-352b-4011-baaf-5b52ace39224,,execute_actions,1020;3380
+98,wait_for_response,97,,,,,months,,,,,,,,,,,,,,,,8ad5cf0c-1bc6-4087-be1e-b4fbd29c9b34,,wait_for_response,2050;3440
+99,save_value,98,"0,23",,has_number_between,0 - 23,survey behave age in months,@results.months,,,,,,,,,,,,,,,52096147-befb-4813-bee1-72674fbe9b7f,,execute_actions,1240;3600
+100,send_message,98,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,72c61891-87ca-4a24-b655-7f0c001953ff,,execute_actions,3040;3360
+101,go_to,100,,,,,,97,,,,,,,,,,,,,,,,,,
+102,send_message,92;99,,,,,,"Ano ang relasyon mo kay @fields.survey_behave_name?
+
+Maaari mo ring i-type ang ""H"" kung ayaw mong sagutin ang tanong. ",Magulang,Lolo/lola,Tiya/Tiyo,Tatay-tatayan/Nanay-nanayan,Iba pa,,,,,,,,,,ae049453-8471-4ced-a7dc-7db0ea1af608,,execute_actions,60;3620
+103,wait_for_response,102,,,,,relationship,,,,,,,,,,,,,,,,a816966e-7454-455a-a448-922252b173ba,,wait_for_response,450;3860
+104,save_value,103,magulang,,has_only_phrase,parent,survey behave relationship,parent,,,,,,,,,,,,,,,b10971ef-bc5a-48fc-9d7c-757e3716e1b3,,execute_actions,;4000
+105,save_value,103,lolo/lola,,has_any_word,grand,survey behave relationship,grandparent,,,,,,,,,,,,,,,5896c418-38f6-4698-afa3-8677679f27a2,,execute_actions,370;4120
+106,save_value,103,tiya/tiyo tiya tiyo,,has_any_word,uncle,survey behave relationship,uncle,,,,,,,,,,,,,,,5937dc39-aea6-4cc1-ae04-c380ca770072,,execute_actions,510;4000
+107,save_value,103,Tatay-tatayan/Nanay-nanayan tatay tatayan nanay nanayan,,has_any_word,foster,survey behave relationship,foster,,,,,,,,,,,,,,,fb777cdc-4aa6-43a7-8afc-5ee74950f46e,,execute_actions,880;4100
+108,save_value,103,iba pa,,has_any_word,other relat,survey behave relationship,other,,,,,,,,,,,,,,,b380faf9-bc5b-4d5d-98c8-495e5c44ea2c,,execute_actions,1040;4000
+109,save_value,103,Hindi n h,,has_any_word,n,survey behave relationship,no,,,,,,,,,,,,,,,58bbd50a-950a-4f2d-b613-87bc7f2851fd,,execute_actions,1120;4100
+110,save_value,104;105;106;107;108;109,,,,,know survey behave child,yes,,,,,,,,,,,,,,,5138bb6c-0c5d-4163-a969-1e0d20d95d98,,execute_actions,410;4240
+111,save_value,110,,,,,survey behave child info,"@(fields.survey_behave_name &""|""& fields.survey_behave_age &""|""& fields.survey_behave_sex &""|"" & fields.survey_behave_relationship)",,,,,,,,,,,,,,,5138bb6c-0c5d-4163-a969-1e0d20d95d98,,execute_actions,410;4240
+112,go_to,111,,,,,,3,,,,,,,,,,,,,,,,,,
+113,send_message,103,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,dce16509-0de0-408c-8f9f-1611d21645c5,,execute_actions,1200;3740
+114,go_to,113,,,,,,102,,,,,,,,,,,,,,,,,,

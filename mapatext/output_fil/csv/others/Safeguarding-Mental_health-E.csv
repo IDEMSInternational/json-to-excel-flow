@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Kailangan mo ba ng suporta para sa isyung emosyonal?,Oo,Hindi,,,,,,,,,,,,,60c2cdaa-8bb8-4312-baa4-7ca1f867597e,,execute_actions,520;80
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,b6dc5d68-762b-41eb-a1a6-beb8cce29a4f,,wait_for_response,520;260
+3,start_new_flow,2,oo o yes y,,has_any_word,Yes,,PLH - Safeguarding - Mental health - Referrals,,,,,,,,,,,,,,14757b5f-d523-4772-8318-62772b3752ae,f79d65a2-f781-4465-8d15-5c9b3db9efe5,,split_by_subflow,320;440
+4,send_message,2,hindi,,has_any_word,No,,I-type ang “SOS” kung sakaling nais mong malaman ang mga detalye ng emergency services o iba pang hotline. Tandaan na ang lahat ng sasabihin mo ay mananatiling pribado!,,,,,,,,,,,,,,,c8af6d6d-f780-49c3-9ecb-a261dc1e3923,,execute_actions,780;400
+5,send_message,2,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,ada507dc-d858-41e6-ae4f-ed92178cd36c,,execute_actions,880;160
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

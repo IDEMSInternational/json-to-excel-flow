@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Shakers
+•	Find an empty, clean plastic bottle or pot with a lid that closes tight.
+•	Fill it with sand, stones, beans or any small objects that make an interesting sound. 
+•	Move your body as you shake it in front of your baby.
+•	If it is safe, give it to your baby to shake!
+•	Get creative! Can you find something colourful or try it with water? 
+•	What sounds does your baby like?",,,,,,,,,,,,,,,780bc84c-7ab0-4240-8b78-207aa4953f9b,,execute_actions,;

@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@input.text,,,,,,,,,,,,,,,b169efd7-32b0-4908-81f1-dd7e1c5b9b0d,,split_by_expression,320;20
+2,start_new_flow,1,emergency,@input.text,has_any_word,generic,,PLH - Safeguarding - Generic - Entry,,,,,,,,,,,,,,24ebf343-708d-4c9e-bf43-768d6ee601aa,996bd15e-3a2e-461a-80ef-c61dc657198c,,split_by_subflow,;140
+3,start_new_flow,1,depression,@input.text,has_any_word,mental health,,PLH - Safeguarding - Mental health - Entry,,,,,,,,,,,,,,e21a4f25-190c-4fc1-ad54-cbdca2ada937,eefcb85a-1848-45cb-b228-cf3b0e89b117,,split_by_subflow,240;160
+4,start_new_flow,1,health,@input.text,has_any_word,health,,PLH - Safeguarding - Health - Entry,,,,,,,,,,,,,,cd7dfafc-c66e-41d8-aabe-c9e879c72073,2d7d4dcd-ca7d-481b-bbe1-3db406f7b389,,split_by_subflow,340;360
+5,start_new_flow,1,violence,@input.text,has_any_word,violence,,PLH - Safeguarding - Violence - Entry,,,,,,,,,,,,,,973dec27-6298-489b-9d3d-4947c74052db,f0f9a6df-d10b-47bd-b5da-c6e4b5c4514b,,split_by_subflow,520;220
+6,start_new_flow,1,natural,@input.text,has_any_word,natural disasters,,PLH - Safeguarding - Natural disasters - Entry,,,,,,,,,,,,,,d383d542-2e28-4ed3-a9e6-358be3d4732d,0e6ace4a-c207-42c7-8448-77994367cb8c,,split_by_subflow,620;400
+7,start_new_flow,1,help,@input.text,has_any_word,Help,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,15086495-cbff-4d9d-978f-6949dccebd1b,,split_by_subflow,740;220
+8,start_new_flow,1,sos,@input.text,has_any_word,Sos,,PLH - Safeguarding - SOS,,,,,,,,,,,,,,4594b367-bf49-4544-8e32-6362e64e7214,9c42809a-f10e-4d68-b8c4-52be6318f13f,,split_by_subflow,960;220
+9,save_flow_result,1,,,,,other trigger,yes,,,,,,,,,,,,,,,b2f57ba6-e21d-4736-ac4a-9c98d572de48,,execute_actions,1040;120

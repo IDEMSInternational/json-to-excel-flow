@@ -1,0 +1,104 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Helping your children learn,,,,,,,,,,,,,,,d8fb514d-3aae-438e-8018-f9f987990d4b,,execute_actions,410;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,e849d617-3daf-4f75-b55b-01071212634c,,split_by_subflow,390;120
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,68f35bc5-817e-49cf-a6da-b51839ffc506,,split_by_contact_field,410;320
+4,send_message,3,,,,,,"COVID-19 has interrupted our children's education with school closures and remote learning. It is normal to feel overwhelmed about to do this alone, especially when we also have stress about work and money. ",,,,,,,,,,,,,,,d0e4e443-5f86-4ac5-8ae1-7fb5d0480e3f,,execute_actions,3760;340
+5,split_by_value,4,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,71908864-069d-413a-b302-6549af9301df,,split_by_expression,1090;520
+6,split_by_value,3;5,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,2d758593-beed-4ec1-84a3-96d86c0abe8e,,split_by_contact_field,390;840
+7,send_message,6,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you support your child's learning.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Helping_Your_Children_Learn.m4v,,318ce5c9-b878-4b4c-85f9-aae9067123d2,,execute_actions,270;960
+8,send_message,6,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message to help you support your child's learning.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Helping_Your_Children_Learn.mp3,,,ad964ec3-c8b0-49c0-8629-dd6cc4ea11c3,,execute_actions,800;960
+9,wait_for_response,7;8,,,,,Result 4,,,,,,,,,,,,,,,,d25b2bad-f286-4e28-9ce7-bc566a8c6494,120,wait_for_response,1380;1340
+10,start_new_flow,6;9;9,;;No Response,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,fc7df27f-a7b7-402a-9cda-77d9c389c162,,split_by_subflow,330;1420
+11,send_message,5,,,,,,Would you like to learn more about how to support your children with remote learning and returning to school?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/Family_writing_together.jpg,,,,2ca015f1-5af1-4f2d-bbbb-7358c3cfd456,,execute_actions,1540;620
+12,wait_for_response,11,,,,,know_more,,,,,,,,,,,,,,,,a9e60c58-12b8-44af-bf08-86a5d927a617,3600,wait_for_response,1560;820
+13,go_to,12,yes y,,has_any_word,Yes,,6,,,,,,,,,,,,,,,,,,
+14,send_message,12,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,4c3622c8-669d-4cd0-a347-c929d6709819,,execute_actions,4170;640
+15,go_to,14,,,,,,11,,,,,,,,,,,,,,,,,,
+16,split_by_value,12;12,no n;No Response,,has_any_word;,No;,,@fields.user_name,,,,,,,,,,,,,,,ac512e66-dee3-4891-9849-ac02fdc07caa,,split_by_expression,3905;1020
+17,send_message,16,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,33795b0c-0c65-4691-b22f-a6077ffd1444,,execute_actions,3780;1220
+18,send_message,16,,,,,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,f181ae5b-1c4c-443b-921a-3001daafa5ef,,execute_actions,4030;1220
+19,send_message,10;10,Complete;Expired,,,,,"Here are 5 steps that you can do to help your children continue learning during this time:
+
+1. Create a routine around learning and schoolwork
+2. Make learning fun and playful
+3. Remember that you are a parent NOT a substitute teacher 
+4. Stay connected with your child's school and teachers
+5. Support your child when they return to school
+
+Type ""1"" to ""5"" to learn more about each tip. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,4c1efc89-fcd3-4c2d-8a98-502692d94fc8,,execute_actions,290;1560
+20,wait_for_response,19,,,,,list_of_tips,,,,,,,,,,,,,,,,a2035a32-279e-428f-a542-51e8e3e21af6,,wait_for_response,1110;1860
+21,split_by_value,20,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,6e29cb41-c489-4197-ad3d-e62dbc56d5c0,,split_by_expression,125;3040
+22,send_message,21,,@fields.child_nickname,has_text,child_nickname,,"Step 1. Create a routine around learning and schoolwork
+
+Make a daily plan with @fields.child_nickname for when they can spend time doing educational activities. This can include structured schoolwork and other activities online, reading, writing, or arts. Allow flexibility and time for play and relaxation too.",,,,,,,,,,,,,,,ad1e2992-4382-4e0b-b91d-d80de0e55609,,execute_actions,;3240
+23,send_message,21,,,,,,"Step 1. Create a routine around learning and schoolwork
+
+Make a daily plan with your child for when they can spend time doing educational activities. This can include structured schoolwork and other activities online, reading, writing, or arts. Allow flexibility and time for play and relaxation too.",,,,,,,,,,,,,,,4f4ddc36-7761-4285-9ac9-76470df6079a,,execute_actions,250;3240
+24,split_by_value,20,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,9ea578da-21c3-41ee-a9ca-7ecd24585d9d,,split_by_expression,655;2080
+25,send_message,24,,@fields.child_nickname,has_text,child_nickname,,"Step 2. Make learning fun and playful
+
+Children learn best when learning is fun! Try to find ways to make learning playful to keep @fields.child_nickname interested and engaged. Type ""Help"" if you ever need any fun ideas!",,,,,,,,,,,,,,,fdd03eaf-c5e5-4f0a-a161-8a7f9b4d6b14,,execute_actions,530;2280
+26,send_message,24,,,,,,"Step 2. Make learning fun and playful
+
+Children learn best when learning is fun! Try to find ways to make learning playful to keep your child interested and engaged. Type ""Help"" if you ever need any fun ideas!",,,,,,,,,,,,,,,2c0ef3b0-ddc3-44ff-a0d8-b44a92f3d938,,execute_actions,780;2280
+27,split_by_value,20,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,6bfd19ce-5558-4663-b073-3ce905587a96,,split_by_expression,2995;2320
+28,split_by_value,27,,@fields.child_nickname,has_text,child_nickname,,@fields.gender_personalisation,,,,,,,,,,,,,,,9b3943ba-2e26-41ea-9d03-ae36b5a04e6d,,split_by_expression,2620;2520
+29,send_message,28,man,@fields.gender_personalisation,has_any_word,man,,"Step 3. Remember that you are a father NOT a substitute teacher! 
+
+Your role is to support your child by creating a space to learn. You do not need to know all the answers. Help them explore their interests and ask questions. Go at @fields.child_nickname's pace and be patient with yourself. ",,,,,,,,,,,,,,,a2fbc9fd-664e-4f6a-ad5f-9909ef27c4d9,,execute_actions,2370;2920
+30,send_message,28,woman,@fields.gender_personalisation,has_any_word,woman,,"Step 3. Remember that you are a mother NOT a substitute teacher! 
+
+Your role is to support your child by creating a space to learn. You do not need to know all the answers. Help them explore their interests and ask questions. Go at @fields.child_nickname's pace and be patient with yourself. ",,,,,,,,,,,,,,,31ab4d6a-4d2d-4733-8c17-e2d5eb6a9060,,execute_actions,2620;2920
+31,send_message,28,,,,,,"Step 3. Remember that you are a parent NOT a substitute teacher! 
+
+Your role is to support your child by creating a space to learn. You do not need to know all the answers. Help them explore their interests and ask questions. Go at @fields.child_nickname's pace and be patient with yourself. ",,,,,,,,,,,,,,,501f4821-c6c5-4039-b364-9017d7d50d59,,execute_actions,2870;2920
+32,split_by_value,27,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,f55e361a-b7a4-4ab2-bfdf-8a0d3831daab,,split_by_expression,3370;2720
+33,send_message,32,man,@fields.gender_personalisation,has_any_word,man,,"Step 3. Remember that you are a father NOT a substitute teacher! 
+
+Your role is to support your child by creating a space to learn. You do not need to know all the answers. Help them explore their interests and ask questions. Go at your child's pace and be patient with yourself. ",,,,,,,,,,,,,,,bf1304db-df25-4615-b224-de59640ca300,,execute_actions,3120;2920
+34,send_message,32,woman,@fields.gender_personalisation,has_any_word,woman,,"Step 3. Remember that you are a mother NOT a substitute teacher! 
+
+Your role is to support your child by creating a space to learn. You do not need to know all the answers. Help them explore their interests and ask questions. Go at your child's pace and be patient with yourself. ",,,,,,,,,,,,,,,49171f55-3ca5-48bb-94db-e75585e443e6,,execute_actions,3370;2920
+35,send_message,32,,,,,,"Step 3. Remember that you are a parent NOT a substitute teacher! 
+
+Your role is to support your child by creating a space to learn. You do not need to know all the answers. Help them explore their interests and ask questions. Go at your child's pace and be patient with yourself. ",,,,,,,,,,,,,,,20020b8c-268b-40cf-94b5-b35afcbe1351,,execute_actions,3620;2920
+36,split_by_value,20,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,aff75969-366f-4720-be44-72ed5b277a4d,,split_by_expression,1255;4000
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"Step 4. Stay connected with your child's school and teachers
+
+Find out how to stay in touch with @fields.child_nickname’s teacher or school to stay informed, ask questions and get more guidance. If you are struggling or know someone who is struggling with school work or the home situation, please discuss this with a teacher that you feel close to. Parent groups or community groups can also be a good way to support each other with your home schooling.",,,,,,,,,,,,,,,510a412e-2a9d-40b5-95eb-78653e7c2715,,execute_actions,1130;4200
+38,send_message,36,,,,,,"Step 4. Stay connected with your child's school and teachers
+
+Find out how to stay in touch with your children’s teacher or school to stay informed, ask questions and get more guidance. If you are struggling or know someone who is struggling with school work or the home situation, please discuss this with a teacher that you feel close to. Parent groups or community groups can also be a good way to support each other with your home schooling.",,,,,,,,,,,,,,,f5e61755-90f0-46fb-ac1e-64ae1d79830e,,execute_actions,1380;4200
+39,split_by_value,20,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,4cb15bcd-19f9-44d3-9c2b-21eab905522e,,split_by_expression,4495;1640
+40,send_message,39,,@fields.child_nickname,has_text,child_nickname,,"Step 5. Support your child when they go back to school
+
+Tell @fields.child_nickname that it is okay to feel scared or worried about going back to school. Allow your child to share how they are feeling. It is also normal if your child behaves differently to their usual behaviour. Discuss how going to school might be different and how they can protect themselves from COVID-19. Ask them how their day went and support them if they experienced any difficulties.",,,,,,,,,,,,,,,cb5b63cd-8a79-4518-a38a-21ed7451e38a,,execute_actions,4370;1840
+41,send_message,39,,,,,,"Step 5. Support your child when they go back to school
+
+Tell your child that it is okay to feel scared or worried about going back to school. Allow your child to share how they are feeling. It is also normal if your child behaves differently to their usual behaviour. Discuss how going to school might be different and how they can protect themselves from COVID-19. Ask them how their day went and support them if they experienced any difficulties.",,,,,,,,,,,,,,,3248964e-b3b1-4b02-b745-1c5033e5e577,,execute_actions,4620;1840
+42,send_message,22;23;25;26;29;30;31;33;34;35;37;38;40;41,,,,,,"Please select another number if you want to learn more about how to support your child's learning:
+
+1. Create a routine around learning and schoolwork
+2. Make learning fun and playful
+3. Remember that you are a parent NOT a substitute teacher 
+4. Stay connected with your child's school and teachers
+5. Support your child when they return to school
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,623c758d-1463-46df-9563-999eb51c0dd0,,execute_actions,330;3860
+43,save_value,42,,,,,education list of tips,"@(fields.education_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,58a59e99-cece-41c3-89db-3ab9c631b785,,execute_actions,290;4540
+44,go_to,43,,,,,,20,,,,,,,,,,,,,,,,,,
+45,split_by_group,20,no n,,has_any_word,No,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,44a08cbd-8119-4d13-8b59-b810f0759df0,,split_by_expression,1955;4620
+46,split_by_group,45,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,e1611732-572f-44d5-8966-ac34d80a18f3,,split_by_expression,2205;5020
+47,send_message,46,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try creating a learning plan with your child that includes both fun and focused educational activities. Helping your child continue learning during this difficult time is so important. Your best efforts will make a difference!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,03564443-fb4e-4caa-9906-420b8d118540,,execute_actions,2330;5220
+48,send_message,46;46,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try creating a learning plan with your child that includes both fun and focused educational activities. Helping your child continue learning during this difficult time is so important. Your best efforts will make a difference!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,8fece259-de2c-41f8-92c3-70da078e827d,,execute_actions,2080;5220
+49,split_by_group,45;45,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,869f7163-ab36-480e-9882-21f11dfbd028,,split_by_expression,1705;4820
+50,send_message,49,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try creating a learning plan with your child that includes both fun and focused educational activities. Helping your child continue learning during this difficult time is so important. Your best efforts will make a difference!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,613b56a5-970f-4ea2-91fe-cb1e18bcde6c,,execute_actions,1830;5220
+51,send_message,49;49,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try creating a learning plan with your child that includes both fun and focused educational activities. Helping your child continue learning during this difficult time is so important. Your best efforts will make a difference!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,4cf8bf55-24df-430f-8138-833def4fa1e2,,execute_actions,1580;5220
+52,save_value,47;48;50;51,,,,,current type assessed,tip,,,,,,,,,,,,,,,63633968-399f-44e3-9571-6056a4bc72da,,execute_actions,1070;5620
+53,save_value,52,,,,,current activity,education,,,,,,,,,,,,,,,63633968-399f-44e3-9571-6056a4bc72da,,execute_actions,1070;5620
+54,start_new_flow,53,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,dd26feb9-4647-46ec-803f-406a76e7ece5,,split_by_subflow,1070;5820
+55,split_by_value,54;54,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,daf0c7e7-dc0f-431a-9af2-eca9c9acfed5,,split_by_expression,945;6060
+56,send_message,55,,@fields.user_name,has_text,user_name,,"We understand that these times can be really difficult. Please type ""Help"" if you want any extra support or guidance. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,87617172-fd04-4b6c-90c8-4d882f1da20b,,execute_actions,820;6260
+57,send_message,55,,,,,,"We understand that these times can be really difficult. Please type ""Help"" if you want any extra support or guidance. Chat to you later!",,,,,,,,,,,,,,,36620814-c323-4cd3-9f07-b9593817e984,,execute_actions,1070;6260
+58,send_message,20,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,23423cb2-011c-42dc-88d4-e3c8eb748e80,,execute_actions,3760;1440
+59,go_to,58,,,,,,19,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Dance choreography
+•	Gumawa ka ng mga galaw o sayaw para sa mga paboritong kanta ng iyong anak.
+•	May mauunang gagawa ng galaw at ang iba ay kokopyahin lang Ito. 
+•	Ang lahat ay magsasalitan sa pagiging lider.
+•	Gawin ito sa harap ng mga kasama ninyo sa bahay!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_dancing_and_playing_instruments.jpg,,,,b8a4b331-406c-4555-be9d-a547b8cddc92,,execute_actions,;

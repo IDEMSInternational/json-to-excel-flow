@@ -1,0 +1,24 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Family budgeting,,,,,,,,,,,,,,,e75bd48e-77c5-4eba-bcad-f56e72a82e9c,,execute_actions,660;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,62a2fc58-3f79-4aff-88b6-25c33c8bd3cd,,split_by_subflow,660;100
+3,send_message,2;2,Complete;Expired,,,,,"Millions of families are struggling to make ends meet especially due to the COVID-19 pandemic. When money is tight, this can make us feel anxious, stressed, and sad. How we understand and talk about money with our children is important. Our children can also help us to spend and save in ways that will benefit the family.",,,,,,,,,,,,,,,b3ab36c3-f5c3-404d-80c4-864c39e4adf1,,execute_actions,660;280
+4,split_by_value,3,,,,,,@fields.toolkit,,,,,,,,,,,,,,,3105e89f-2a6b-4076-826d-08f8afe416d2,,split_by_contact_field,640;580
+5,split_by_group,4,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,7c381f25-8ea2-4c2c-b4ae-fc424ee86bb3,,split_by_expression,125;680
+6,send_message,5,ABTest_test-first-person_alternative,,,,,I know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_budgeting.jpg,,,,52f140a2-10e7-4f7e-973f-6024623a540d,,execute_actions,250;880
+7,send_message,5;5,ABTest_test-first-person_Default;,,,,,We know that you have already received this tip (well done!). Would you like to review it again?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_budgeting.jpg,,,,5d319e0b-987b-4855-881d-d3118f414497,,execute_actions,;880
+8,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/family_budgeting.jpg,,,,ca339391-90a7-42cf-87e3-4f68133c7404,,execute_actions,760;880
+9,wait_for_response,6;7;8,,,,,know_more,,,,,,,,,,,,,,,,d1dd40ea-6c1e-4b48-8c1b-a358b1873e3d,,wait_for_response,620;1100
+10,save_value,9,yes y,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,56b6e837-fe69-43d1-a77c-b75f7fa2f3c6,,execute_actions,1440;360
+11,save_value,10,,,,,chosen difficult age,@fields.age_group_for_tips,,,,,,,,,,,,,,,56b6e837-fe69-43d1-a77c-b75f7fa2f3c6,,execute_actions,1440;360
+12,save_value,11,,,,,last interaction,@(now()),,,,,,,,,,,,,,,56b6e837-fe69-43d1-a77c-b75f7fa2f3c6,,execute_actions,1440;360
+13,start_new_flow,12,,,,,,PLH - Content - Positive - Budget with children,,,,,,,,,,,,,,7b46af18-d9da-428f-bb8b-2f5e04add8e8,f7afae58-2d25-43c8-ac72-a302a2ce17b5,,split_by_subflow,1440;580
+14,save_value,13,Expired,,,,has expired,tip,,,,,,,,,,,,,,,be8ce7a6-2627-4971-afb0-1f8c32a8b76b,,execute_actions,1560;940
+15,send_message,14,,,,,,"It looks like you are busy right now. You can always type ""GoBack"" to restart this parenting tip or ""Help"" for other support.",,,,,,,,,,,,,,,024a8752-79e0-4129-96e4-4acbc7e2262d,,execute_actions,1580;1060
+16,save_value,13;15,Complete;,,,,from theme,no,,,,,,,,,,,,,,,6434157d-d8eb-40f4-89b0-aa39a3108c10,,execute_actions,1260;920
+17,split_by_value,9,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,4933ed28-e241-442a-9a77-0a899f4c28f6,,split_by_expression,455;1240
+18,send_message,17,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you want this tip at another time. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,49c52e6e-d46c-4d1f-9774-1b5e8eef2173,,execute_actions,330;1440
+19,send_message,17,,,,,,"That's okay! You can always type ""Help"" at anytime if you want this tip at another time. Chat to you later!",,,,,,,,,,,,,,,c5c146a5-c0b4-4dda-9f2c-8e910a7ee93f,,execute_actions,580;1440
+20,save_value,18;19,,,,,last interaction,@(now()),,,,,,,,,,,,,,,a02834ea-be9c-46f8-acc9-ce9f3c5f1f1f,,execute_actions,580;1600
+21,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f6359f7a-faed-40c9-ac0b-6105e8e69cc8,,execute_actions,820;1440
+22,send_message,21,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,e6b60c8f-e72a-40f3-a553-785cb5548aa8,,execute_actions,860;1520
+23,go_to,22,,,,,,4,,,,,,,,,,,,,,,,,,

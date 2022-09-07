@@ -1,0 +1,21 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Hi! How are you feeling?,Great,Okay,Bad,,,,,,,,,,,,d1b82b15-1a1d-4150-8ff2-6ad480dc0d98,,execute_actions,460;20
+2,wait_for_response,1,,,,,checkin_how,,,,,,,,,,,,,,,,85ac1161-8e84-4a21-ae25-b49b891feb4d,,wait_for_response,440;160
+3,send_message,2,great,,has_any_word,Great,,So good to hear that you are doing well. What a wonderful feeling!,,,,,,,,,,,,,,,365f92db-909c-4b2a-8ff2-f3f845b1e1b9,,execute_actions,140;320
+4,send_message,2,ok okay,,has_any_word,Ok,,Sometimes we're up. Sometimes we're down. And sometimes we are neither up nor down...and that's totally okay!,,,,,,,,,,,,,,,925eb82f-5adf-409d-806f-4ff9bb75169d,,execute_actions,400;320
+5,send_message,2,bad,,has_any_word,Bad,,Sorry to hear that you are not having a good day. It is completely normal to be going through a difficult time now. Remember that you are not alone. Here is an activity that might also help...,,,,,,,,,,,,,,,0da9d2c1-63ef-4f24-838b-682944acd5c2,,execute_actions,660;320
+6,send_message,3;4;5,,,,,,"Make a list of healthy activities that you like to do. Here are some suggestions:
+• Listening to your favourite music
+• Going for a walk (if allowed)
+• Doing some exercise
+• Drinking a cup of tea by yourself
+• Calling up a friend
+• Videoke, singing, dancing, praying, or reading
+• Sitting in the sun with your eyes closed
+• Watching Kdrama or your favourite T.V. show 
+• Playing Mobile Legends
+• Gardening
+Pick one and do it today!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/adults_talking_on_stools.jpg,,,,859b06fa-bb51-49d6-b553-41384bfedc1e,,execute_actions,420;680
+7,send_message,6,,,,,,"We hope that was helpful! Remember you can always type ""Help"" at anytime if you need an activity to help you relax or reduce stress. Chat to you later!",,,,,,,,,,,,,,,08231d5d-a495-41a1-a752-ec62f2f41361,,execute_actions,420;1160
+8,send_message,2,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,b349c743-17b2-4617-b270-ff6d7199e3bd,,execute_actions,840;120
+9,go_to,8,,,,,,1,,,,,,,,,,,,,,,,,,

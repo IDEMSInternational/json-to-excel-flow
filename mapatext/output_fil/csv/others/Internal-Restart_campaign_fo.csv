@@ -1,0 +1,3 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_value,start,,,,,last interaction,@(now()),,,,,,,,,,,,,,,2a0d6e2f-c0ca-42e9-94a2-5502e55be424,,execute_actions,460;60
+2,start_new_flow,1,,,,,,PLH - Timed - Campaign,,,,,,,,,,,,,,df5c699c-3b07-4843-b128-68864f6abb1c,4ef2d0be-1107-4309-96fd-7ef10216b5a7,,split_by_subflow,440;200

@@ -1,0 +1,28 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Giving emotional support,,,,,,,,,,,,,,,32efb35f-f147-4d73-b26f-a4c1f85bd3fb,,execute_actions,1000;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,4e808301-0c2d-4ba1-9668-bf232060a011,,split_by_subflow,1020;100
+3,send_message,2;2,Complete;Expired,,,,,"Ang tip ngayon ay tungkol sa kung paano natin masusuportahan ang ating mga anak kapag sila ay nalulungkot, natatakot, nagagalit, at naguguluhan.",,,,,,,,,,,,,,,522bf045-f734-401a-b3fc-0b558120facb,,execute_actions,680;140
+4,split_by_value,3,,,,,,@fields.toolkit,,,,,,,,,,,,,,,2249b385-608e-4059-be91-750ebe65f29c,,split_by_contact_field,780;300
+5,split_by_group,4,@results.skill,@fields.toolkit,has_phrase,already completed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,dce31d2d-286e-4233-b458-e8cda614047b,,split_by_expression,145;420
+6,send_message,5,ABTest_test-first-person_alternative,,,,,Alam kong nakuha mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,,,,,3c76ebd5-5e61-4ebd-91eb-4823c8cf09d9,,execute_actions,520;620
+7,send_message,5;5,ABTest_test-first-person_Default;,,,,,Alam naming natanggap mo na ang tip na ito (mahusay!). Gusto mo bang balikan at aralin itong muli?,Oo,Hindi,,,,,,,,,,,,,eae415d2-17a3-455c-a450-eadbc3b9b187,,execute_actions,20;620
+8,send_message,4,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,b82de0f3-8569-4e77-b561-5ac7c6018894,,execute_actions,1350;620
+9,wait_for_response,6;7;8,,,,,know_more,,,,,,,,,,,,,,,,e4c25c9c-b585-47a8-9535-2e481d36add1,,wait_for_response,;800
+10,save_value,9,Oo y o,,has_any_word,Yes,from theme,yes,,,,,,,,,,,,,,,3ea8151b-9d04-4f8c-a027-b0d410dbd506,,execute_actions,1370;860
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,3ea8151b-9d04-4f8c-a027-b0d410dbd506,,execute_actions,1370;860
+12,start_new_flow,11,,,,,,PLH - Content - Positive - Behave - Emotion,,,,,,,,,,,,,,530536dd-3ac9-475c-b80b-b0b0659535cd,f1d9a48e-fa75-43f6-b538-fcd5a4aebe20,,split_by_subflow,1370;1020
+13,save_value,12,Complete,,,,from theme,no,,,,,,,,,,,,,,,194a2e6c-280a-46eb-8f44-9903bd533e74,,execute_actions,1290;1160
+14,split_by_value,13,,,,,,@fields.user_name,,,,,,,,,,,,,,,36273308-f438-4dc6-a611-51eeeb325c1c,,split_by_expression,1165;1280
+15,send_message,14,,@fields.user_name,has_text,user_name,,Tandaan na maaari mo ring baguhin ang uri ng mensahe na iyong natatanggap para sa mas matanda o mas batang anak. Piliin lamang ang “Tech Support”. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,d8f79093-b226-4ec6-b22f-89ec6084f49e,,execute_actions,1040;1480
+16,send_message,14,,,,,,Tandaan na maaari mo ring baguhin ang uri ng mensahe na iyong natatanggap para sa mas matanda o mas batang anak. Piliin lamang ang “Tech Support”. Usap tayo mamaya!,,,,,,,,,,,,,,,e98db43d-c863-4c4e-8f8e-354ee53556ab,,execute_actions,1290;1480
+17,save_value,12,Expired,,,,from theme,no,,,,,,,,,,,,,,,9c42b4bf-c4b4-4bce-afb6-ffe9ee3cd566,,execute_actions,1550;1160
+18,save_value,17,,,,,has expired,tip,,,,,,,,,,,,,,,9c42b4bf-c4b4-4bce-afb6-ffe9ee3cd566,,execute_actions,1550;1160
+19,send_message,18,,,,,,"Mukhang abala ka ngayon. Pwede mong i-type ang ""GoBack"" para ulitin ang parenting tip na ito o ""Help"" para sa iba pang suporta.",,,,,,,,,,,,,,,739b9553-6233-4afc-bcd6-8e48f2afd597,,execute_actions,1570;1540
+20,send_message,9,Hindi n h,,has_any_word,No,,"Okay lang 'yan! Puwede mong laging i-type ang ""Help"" kung gusto mong makatanggap ng mas maraming tip tungkol sa kung paano pangasiwaan ang pag-uugali ng iyong anak.",,,,,,,,,,,,,,,133d24de-8d26-491f-b942-cb2fc45fbe68,,execute_actions,;1200
+21,split_by_value,20,,,,,,@fields.user_name,,,,,,,,,,,,,,,19a9d9e6-48f6-495e-a3bb-aa0b468b51ab,,split_by_expression,395;1560
+22,send_message,21,,@fields.user_name,has_text,user_name,,Tandaan na maaari mo ring baguhin ang uri ng mensahe na iyong natatanggap para sa mas matanda o mas batang anak. Piliin lamang ang “Tech Support”. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,2a86f2d7-09f3-4272-9135-673d43d48320,,execute_actions,270;1760
+23,send_message,21,,,,,,Tandaan na maaari mo ring baguhin ang uri ng mensahe na iyong natatanggap para sa mas matanda o mas batang anak. Piliin lamang ang “Tech Support”. Usap tayo mamaya!,,,,,,,,,,,,,,,1ec566c1-32b6-4eda-ae54-e39f1020be08,,execute_actions,520;1760
+24,save_value,22;23,,,,,last interaction,@(now()),,,,,,,,,,,,,,,89650f6c-8693-4219-82ab-1eec1a35e994,,execute_actions,520;1940
+25,send_message,9,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,a25e4e23-0046-4dc9-95db-98de67b48c4e,,execute_actions,660;960
+26,save_value,25,,,,,last interaction,@(now()),,,,,,,,,,,,,,,accb6316-299a-469d-b3ef-5e572c6ee9c2,,execute_actions,660;1100
+27,go_to,26,,,,,,4,,,,,,,,,,,,,,,,,,

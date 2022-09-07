@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Maging aktibo!
+•	Mag-isip ng tatlong klase ng ehersisyo nang magkasama. Halimbawa, paglalakad, jogging, basketball, o pagsasayaw.
+•	Pumili kayo ng isa magkasama at subukan ito. 
+•	Kung pareho ninyong gusto ito, magpasya kung gaano mo kadalas gagawin ito. Isa o dalawang beses sa isang linggo? Tuwing umaga?
+•	Sama-samang mag-isip ng mga paraan upang gawin itong mas masaya. Maaari ka bang mag-jogging hanggang sa isang lugar? Magpalitan sa pagiging coach? Hikayatin ang bawat isa sa pamamagitan ng isang libreng gantimpala o reward? ",,,,,,,,,,,,,,,5d6c41af-09d6-4d79-9980-f24b9ae2d3a3,,execute_actions,;

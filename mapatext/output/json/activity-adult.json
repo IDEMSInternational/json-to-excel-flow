@@ -1,0 +1,654 @@
+{
+  "PLH - Activity - Adult - Active - Relax": [
+    {
+      "row_id": 1,
+      "_nodeId": "74f6b360-27ed-4415-bddb-b6a74f8da182",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        320,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Hello @fields.user_name! How are you feeling? If you are feeling overwhelmed or stressed, here's a fun activity that can also release some stress.",
+      "_nodeId": "818ad1c1-2ab0-44f2-b40e-56e9169d03a6",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        195,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Hello! How are you feeling? If you are feeling overwhelmed or stressed, here's a fun activity that can also release some stress.",
+      "_nodeId": "7e8ef7c7-2522-406f-b087-273add14c8f4",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        445,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Stand up and stretch your arms up to the sky. Push away any clouds and let the Sunshine of Positive Attention shine down on you. Stretch to both sides. Stretch to the front and to the back.",
+      "_nodeId": "066badd7-c4b8-4ff2-a902-cb7352b4e224",
+      "from": [
+        2,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        115,
+        380
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Let your hand hang by your side. As you breathe in, squeeze your shoulders up to your ears, scrunch your eyes, and hold your breath. Release your shoulders as you breathe out and relax your body.",
+      "_nodeId": "2c3cb033-362f-4f81-bcd0-f14af639daa3",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        135,
+        940
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Relax your arms and let them swing to the front and back. Take 4 deep breaths while you do this. This is good for your lower back.\n\nRelax your arms and let your arms swing sideways as you turn your upper body. Your arms should gently hit your back as you twist from side to side.",
+      "_nodeId": "26b81019-b84e-4c25-976b-0cc48980a0c2",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        115,
+        1180
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Place one foot in front of the other and make small circles from your ankles. Remember to turn your foot to both sides - to the left and then to the right. Do each foot with four circles in each direction.",
+      "_nodeId": "61049016-1ba4-45c1-9540-54046298296d",
+      "from": [
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        700
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "Now shake your whole body as fast as you can. Shake it up high! Shake it down low! Shake it all around!",
+      "_nodeId": "909e2ae6-71af-4ab6-bb73-332abeb29ddf",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Close your eyes and raise your arms slowly above your head as you breathe in. Lower your arms slowly to your side as you breathe out. Repeat 4 times.",
+      "_nodeId": "3a15fb8e-b7cf-4321-a594-4a5793f89d6c",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        1100
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Take a moment to reflect on your experience. Remember that you can do this activity at any time whenever you feel like you need to release stress and energise your mind and body.",
+      "_nodeId": "ba9b6e72-3e2a-4876-a11e-e0f5cee6022b",
+      "from": [
+        9
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        665,
+        1320
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Activity - Adult - Active - 2 truths 1 lie": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "2 Truths, 1 Lie\n•\tThink of three statements about yourself. Two must be true and one must be a lie.\n•\tIt might help to think of wishes, dreams, likes or dislikes. For example, I hate bananas, I love ice cream and I really wish I could sing. \n•\tSay them to your partner or friends. Ask them to guess which one is a lie. \n•\tDid they guess correctly? Was it a surprise?\n•\tNow ask them to do the same. Did you learn something new about each other? ",
+      "_nodeId": "8da6a93d-621e-49e5-9584-fccef58bf881",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Active - Crazy chicken": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Crazy Chicken\n•    Shake your hand in the air 8 times while counting to 8.\n•    Do it as fast and loud as you can.\n•    Repeat with your other hand, then do it with each foot. \n•    Do it 7 times, then 6 times until you get to 1.\n•    Call out “Crazy chicken” as loud as you can when you’re finished!\n•    Have you released all your stress? If not, do it again even faster and louder! ",
+      "_nodeId": "a5a25ea4-9472-42b0-9d9f-a86b3d6970f1",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Active - Family work out": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Family Work Out\n•\tChoose a sport or exercise to do together\n•\tDecide on a schedule. Are you going to do it every day? For how long? \n•\tTry it out for a week. \n•\tAt the end of the week, ask yourself and your family these questions. How’s it going? How did you feel at the start of the week? How do you feel at the end of the week? What can we do differently next week?",
+      "_nodeId": "dacf301a-c3d8-4287-b0ea-d52cbab4bc69",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Stop and listen": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Stop & Listen\n• Stop for a moment and close your eyes. \n• How many sounds can you hear? Listen to sounds inside and outside the room. Count them on your fingers. (Pause for 10 seconds)\n• How many fingers do you have up? What sounds did you hear? \n• Let’s try again. Can you hear any new sounds this time? Can you hear any sounds inside your own body? (Pause for 10 seconds)\n• Open your eyes. What new sounds did you hear?",
+      "_nodeId": "b275c4dc-fd3e-4133-bc81-fdb0f20ff6f6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - A short pause": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "A Short Pause\n•\tSit down and close your eyes.\n•\tListen to your breath as it goes in and out. \n•\tNotice how you feel. \n•\tTake a few more deep breaths.\n•\tWhen you are ready open your eyes again. Do you feel any different? \n•\tRemind yourself that “I will be ok.”",
+      "_nodeId": "f4cf7954-292a-4371-89fc-47dd96aa5526",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Give yourself a hug": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Give Yourself A Hug\n•\tBella mama, bella mama hey. \n•\tHey there! How are you feeling today? Do you feel great?!\n•\tMaybe not. Maybe you shouted again at your children today? Maybe you got angry and said something you don't feel proud of? It’s ok. It’s super stressful right now. \n•\tTake a deep breath and think of one thing you did today that you do feel proud of. It doesn't have to be big. And wrap your arms around your body and give yourself a hug. And now think of one thing you did today that you don't feel proud of. What can you do differently tomorrow? And wrap your arms around your body and give yourself a hug. \n•\tBella mama, bella mama, bella mama, bella mama, bella mama, bella mama hey”.",
+      "_nodeId": "e7fe92fd-037d-45ee-94fc-519722c1204c",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Magical number": [
+    {
+      "row_id": 1,
+      "_nodeId": "e0b9a0c9-c0a3-4b6b-9b70-817e248c0e10",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        125,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Hello @fields.user_name! Did you know that 3 is a magical number? Breathe in to the count of three and breathe out to the count of three. How do you feel now? Do you feel any different? ",
+      "_nodeId": "1cd44f29-1b8f-4f6c-a402-d5fd0dee5a2f",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        200
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Hello! Did you know that 3 is a magical number? Breathe in to the count of three and breathe out to the count of three. How do you feel now? Do you feel any different? ",
+      "_nodeId": "b39759e5-caa2-4f46-a760-2224bb455a50",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        250,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "What are your three favourite foods? Can you name three things you can see right now? Can you hear three sounds you can hear right now? What are three things you are grateful for right now? ",
+      "_nodeId": "a1f948ea-2972-4e5e-b409-a42745c73035",
+      "from": [
+        2,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        530,
+        300
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Breathe in to the count of three and breathe out to the count of three? How do you feel now? Do you feel any different? Three is a magical number!",
+      "_nodeId": "463d2e24-b000-4e36-a551-96d558a48776",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        550,
+        560
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Release some energy": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Release Some Energy\n•\tBaba da bi da ba da baaa! Pause Power! \n•\tWhat’s Pause Power I hear you say? It’s the ability to transform from a grumpy, angry person into a calm, clear one. \n•\tWhen I’m feeling frustrated I plant my feet firmly on the ground and I breathe in and out three times as slowly as I can. Sometimes I imagine I’m smelling a flower and blowing out a candle. \n•\tDa ta! Pause Power! My transformation from grumpy to calm is complete!",
+      "_nodeId": "360c54a9-80f6-40d0-81e4-df4a45048b85",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        220,
+        80
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    }
+  ],
+  "PLH - Activity - Adult - Calm - Taking care of yourself": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Taking care of yourself\n\nHere is a short activity that can help when you are feeling like needing some more support to get through the day.",
+      "_nodeId": "6b527073-e490-478f-b7db-5c24c3ef80d6",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Recognise what is happening for you in this moment. What are you thinking? Are your thoughts positive or negative. How do you feel? Do you feel pleasant or unpleasant? How does your body feel? Do you feel tense or relaxed? ",
+      "_nodeId": "e8a142e7-6ac1-4ba9-9cef-594ac4f635e2",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        400,
+        280
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Connect to your heart in a kind and gentle way. You may want to place one hand on your heart or chest.",
+      "_nodeId": "ea533160-db49-4d3b-8e52-6f36a2c805ab",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        180,
+        520
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "You can then say the following words silently to yourself:\nMay I be peaceful.\nMay I be safe.\nMay I be healthy.\nMay I be happy.\nMay there be love in my family.\nMay I feel loved.",
+      "_nodeId": "1521daba-368b-4412-9d5b-300e33fe0ab4",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        280,
+        740
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Take a moment to reflect on your experience. Remember that you can do this activity at any time whenever you feel like you need extra support.",
+      "_nodeId": "aea07356-19fd-4539-a92d-ece6bbc2c4a5",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        260,
+        1040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ]
+}

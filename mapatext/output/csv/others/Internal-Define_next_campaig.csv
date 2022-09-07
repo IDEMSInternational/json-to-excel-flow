@@ -1,0 +1,50 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,temporary next time,@(now()),,,,,,,,,,,,,,,c0538d2e-eae9-4fde-a82b-c6821b7fd5f4,,execute_actions,480;20
+2,split_by_value,1,,,,,,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",,,,,,,,,,,,,,,70b47ed2-dc1e-4ee5-8499-cec5bcf467ec,,split_by_expression,480;200
+3,save_flow_result,2,,,,,temporary next time,"@(datetime_add(date(results.temporary_next_time),1,""D""))",,,,,,,,,,,,,,,cf10cde4-1b61-4bac-8a9c-aa8600c9ab73,,execute_actions,600;380
+4,start_new_flow,3,,,,,,PLH - Internal - Update time counters,,,,,,,,,,,,,,38f907e4-ca89-4036-b302-4d2a9de1ddf1,149c571e-73c7-4015-a70d-6473fecd47d2,,split_by_subflow,700;540
+5,split_by_value,4,Complete,,,,,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",,,,,,,,,,,,,,,7a9bca40-ce42-4f2a-8649-4716ccb87692,,split_by_expression,660;740
+6,save_flow_result,5,,,,,temporary next time,"@(datetime_add(date(results.temporary_next_time),1,""D""))",,,,,,,,,,,,,,,20cd5ecc-d1d6-486c-b87d-67733c8a7784,,execute_actions,720;880
+7,start_new_flow,6,,,,,,PLH - Internal - Update time counters,,,,,,,,,,,,,,38f907e4-ca89-4036-b302-4d2a9de1ddf1,3e989ae4-846a-4c8c-b81b-e863bf076458,,split_by_subflow,700;1040
+8,split_by_value,7,Complete,,,,,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",,,,,,,,,,,,,,,b9cbe071-5a9a-4784-bee8-16720b3953c1,,split_by_expression,640;1220
+9,save_flow_result,8,,,,,temporary next time,"@(datetime_add(date(results.temporary_next_time),1,""D""))",,,,,,,,,,,,,,,cf518e0b-ce35-42be-b049-7ce8b75a0b98,,execute_actions,680;1400
+10,start_new_flow,9,,,,,,PLH - Internal - Update time counters,,,,,,,,,,,,,,38f907e4-ca89-4036-b302-4d2a9de1ddf1,d4433b3d-f68b-4409-bc48-8f4122ad31c0,,split_by_subflow,660;1580
+11,split_by_value,10,Complete,,,,,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",,,,,,,,,,,,,,,0cb136e4-23a8-401b-aad4-e55d49e1e574,,split_by_expression,600;1760
+12,save_flow_result,11,,,,,temporary next time,"@(datetime_add(date(results.temporary_next_time),1,""D""))",,,,,,,,,,,,,,,18a31d94-b632-4b18-9a13-ff3ef679c2ad,,execute_actions,640;1880
+13,start_new_flow,12,,,,,,PLH - Internal - Update time counters,,,,,,,,,,,,,,38f907e4-ca89-4036-b302-4d2a9de1ddf1,90e4ecd2-70c4-40b4-b4cb-6190a9229abf,,split_by_subflow,620;2080
+14,split_by_value,13,Complete,,,,,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",,,,,,,,,,,,,,,ed87337d-db3e-4e1f-bde6-3729c8815807,,split_by_expression,620;2280
+15,save_flow_result,14,,,,,temporary next time,"@(datetime_add(date(results.temporary_next_time),1,""D""))",,,,,,,,,,,,,,,86576a1d-e8ed-4b26-a027-4baa93c02009,,execute_actions,640;2440
+16,start_new_flow,15,,,,,,PLH - Internal - Update time counters,,,,,,,,,,,,,,38f907e4-ca89-4036-b302-4d2a9de1ddf1,f8748082-374f-4516-adb7-1d35c2efcc9a,,split_by_subflow,620;2600
+17,split_by_value,16,Complete,,,,,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",,,,,,,,,,,,,,,f7ac86f4-79c1-424d-b2e1-ee6bfb46b23e,,split_by_expression,560;2760
+18,save_flow_result,17,,,,,temporary next time,"@(datetime_add(date(results.temporary_next_time),1,""D""))",,,,,,,,,,,,,,,6f58d7fd-2999-482a-a349-0838d06dc58e,,execute_actions,600;2920
+19,start_new_flow,18,,,,,,PLH - Internal - Update time counters,,,,,,,,,,,,,,38f907e4-ca89-4036-b302-4d2a9de1ddf1,75abd85c-2363-4d3c-98ea-2f30b1e8ff7f,,split_by_subflow,600;3080
+20,split_by_value,19,Complete,,,,,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",,,,,,,,,,,,,,,1527adeb-2386-437d-b642-0050909f8587,,split_by_expression,580;3240
+21,split_by_value,11;14;17;2;20;5;8,0;0;0;0;0;0;0,"@(min(fields.morning_counter, fields.main_counter, fields.evening_counter));@(min(fields.morning_counter, fields.main_counter, fields.evening_counter));@(min(fields.morning_counter, fields.main_counter, fields.evening_counter));@(min(fields.morning_counter, fields.main_counter, fields.evening_counter));@(min(fields.morning_counter, fields.main_counter, fields.evening_counter));@(min(fields.morning_counter, fields.main_counter, fields.evening_counter));@(min(fields.morning_counter, fields.main_counter, fields.evening_counter))",has_number_lte;has_number_lte;has_number_lte;has_number_lte;has_number_lte;has_number_lte;has_number_lte,<= 0;<= 0;<= 0;<= 0;<= 0;<= 0;<= 0,,@fields.morning_counter,,,,,,,,,,,,,,,566a07bf-3810-4242-bdc5-3b555b13b176,,split_by_contact_field,160;580
+22,save_flow_result,21,0,@fields.morning_counter,has_number_lte,<= 0,morning time,"@(datetime(date(results.temporary_next_time)& "" "" & time(fields.morning_time_of_day)))",,,,,,,,,,,,,,,056e442b-2533-43ff-8f04-0c70839c40f7,,execute_actions,60;700
+23,save_flow_result,22,,,,,morning diff,"@(datetime_diff(results.temporary_next_time, results.morning_time,""h""))",,,,,,,,,,,,,,,056e442b-2533-43ff-8f04-0c70839c40f7,,execute_actions,60;700
+24,save_flow_result,21,,,,,morning diff,25,,,,,,,,,,,,,,,e7a1dadb-823b-4560-851a-6241e4bc5f99,,execute_actions,280;700
+25,split_by_value,23;24,,,,,,@fields.main_counter,,,,,,,,,,,,,,,301e4733-ab63-4339-b760-31ce67bbd881,,split_by_contact_field,200;1060
+26,save_flow_result,25,0,@fields.main_counter,has_number_lte,<= 0,main time,"@(datetime(date(results.temporary_next_time)& "" "" & time(fields.main_time_of_day)))",,,,,,,,,,,,,,,d9c3c233-5b71-4ad2-993f-37997004a862,,execute_actions,40;1200
+27,save_flow_result,26,,,,,main diff,"@(datetime_diff(results.temporary_next_time, results.main_time,""h""))",,,,,,,,,,,,,,,d9c3c233-5b71-4ad2-993f-37997004a862,,execute_actions,40;1200
+28,save_flow_result,25,,,,,main diff,25,,,,,,,,,,,,,,,2ce6b517-e812-466a-9c1f-1e5963911e7b,,execute_actions,320;1220
+29,split_by_value,27;28,,,,,,@fields.evening_counter,,,,,,,,,,,,,,,ba7f29ff-dfe4-4569-b369-78be08e96c40,,split_by_contact_field,180;1520
+30,save_flow_result,29,0,@fields.evening_counter,has_number_lte,<= 0,evening time,"@(datetime(date(results.temporary_next_time)& "" "" & time(fields.evening_time_of_day)))",,,,,,,,,,,,,,,bc2d3414-22ce-401f-9948-af8839da43d8,,execute_actions,40;1760
+31,save_flow_result,30,,,,,evening diff,"@(datetime_diff(results.temporary_next_time, results.evening_time,""h""))",,,,,,,,,,,,,,,bc2d3414-22ce-401f-9948-af8839da43d8,,execute_actions,40;1760
+32,save_flow_result,29,,,,,evening diff,25,,,,,,,,,,,,,,,d76576bd-7cc9-4293-855c-8376f8bb8d2e,,execute_actions,280;1760
+33,save_flow_result,31;32,,,,,min diff,"@(min(if(results.morning_diff<0, 25, results.morning_diff), if(results.main_diff<0,25, results.main_diff), if( results.evening_diff<0, 25, results.evening_diff)))",,,,,,,,,,,,,,,07956985-086f-4f36-8a46-6c0dd7987a13,,execute_actions,120;2140
+34,split_by_value,33,,,,,,@results.min_diff,,,,,,,,,,,,,,,363331f3-45aa-4572-bafa-4bb255adbeaf,,split_by_run_result,120;2400
+35,save_flow_result,34,,,,,min diff,"@(min(results.morning_diff,results.main_diff,results.evening_diff))",,,,,,,,,,,,,,,4802c738-6530-4073-8e86-2f49de2ba944,,execute_actions,260;2520
+36,split_by_value,34;35,"0,24;",@results.min_diff;,has_number_between;,0 - 24;,,@results.morning_diff,,,,,,,,,,,,,,,d61e06b7-a47b-4a3d-ba36-961571b8be85,,split_by_run_result,120;2720
+37,save_value,36,@results.min_diff,@results.morning_diff,has_number_eq,is morning,next campaign event,@results.morning_time,,,,,,,,,,,,,,,88edba44-9c67-4c8e-8618-83b3ffeac11b,,execute_actions,60;2840
+38,save_value,37,,,,,next flow,morning,,,,,,,,,,,,,,,88edba44-9c67-4c8e-8618-83b3ffeac11b,,execute_actions,60;2840
+39,save_value,38,,,,,morning counter,@(fields.morning_counter+ fields.morning_days_to_add),,,,,,,,,,,,,,,88edba44-9c67-4c8e-8618-83b3ffeac11b,,execute_actions,60;2840
+40,split_by_value,36,,,,,,@results.main_diff,,,,,,,,,,,,,,,2f1665c7-94d6-4866-8525-8035b958920b,,split_by_run_result,200;3080
+41,save_value,40,@results.min_diff,@results.main_diff,has_number_eq,is main,next campaign event,@results.main_time,,,,,,,,,,,,,,,6c31adef-3ba1-4930-bebb-440c417b6f8e,,execute_actions,120;3200
+42,save_value,41,,,,,next flow,main,,,,,,,,,,,,,,,6c31adef-3ba1-4930-bebb-440c417b6f8e,,execute_actions,120;3200
+43,save_value,42,,,,,main counter,@(fields.main_counter+ fields.main_days_to_add),,,,,,,,,,,,,,,6c31adef-3ba1-4930-bebb-440c417b6f8e,,execute_actions,120;3200
+44,split_by_value,40,,,,,,@results.evening_diff,,,,,,,,,,,,,,,78b881e8-3241-4348-9510-ff5d30c67bad,,split_by_run_result,320;3440
+45,save_value,44,@results.min_diff,@results.evening_diff,has_number_eq,is evening,next campaign event,@results.evening_time,,,,,,,,,,,,,,,d5bc165f-69c5-4f4e-8e7a-3a49fa2b6081,,execute_actions,320;3540
+46,save_value,45,,,,,next flow,evening,,,,,,,,,,,,,,,d5bc165f-69c5-4f4e-8e7a-3a49fa2b6081,,execute_actions,320;3540
+47,save_value,46,,,,,evening counter,@(fields.evening_counter+ fields.evening_days_to_add),,,,,,,,,,,,,,,d5bc165f-69c5-4f4e-8e7a-3a49fa2b6081,,execute_actions,320;3540
+48,split_by_value,39;43;47,,,,,,@results.min_diff,,,,,,,,,,,,,,,ce885afe-f14a-4e9e-94fb-a4366a46c7a5,,split_by_run_result,180;3820
+49,save_value,48,0,@results.min_diff,has_number_lte,<= 0,next campaign event,"@(datetime_add(fields.next_campaign_event,1,""D""))",,,,,,,,,,,,,,,f566e4cd-c89d-49f0-bc9c-01a414913bbd,,execute_actions,200;3940

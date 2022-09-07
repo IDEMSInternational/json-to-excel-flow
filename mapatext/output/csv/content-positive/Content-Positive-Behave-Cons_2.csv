@@ -1,0 +1,98 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Using appropriate consequences,,,,,,,,,,,,,,,f2117aed-9cec-497c-accc-b854a9032933,,execute_actions,620;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,da714b70-971e-4b1e-a248-bb507cc1933f,,split_by_subflow,600;140
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,ad44c2c9-f95c-495f-be52-2a7bb03424d3,,split_by_contact_field,600;300
+4,send_message,3,,,,,,Use consequences for refusing to follow instructions or forgetting household rules. Consequences help teach our children responsibility for what they do. They also allow discipline that is controlled. This is more effective than hitting or shouting. ,,,,,,,,,,,,,,,47e5632d-89cd-4abb-85ea-3a753f6d203f,,execute_actions,1980;260
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,c0227e78-a889-4247-9a8f-46cd31cbbe0e,,split_by_contact_field,700;580
+6,split_by_value,5,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,a0ff7a77-f526-431c-ada5-2feb03318b04,,split_by_expression,145;700
+7,send_message,6,,@fields.child_nickname,has_text,child_nickname,,Here's a video that explains how you can use consequences to discipline @fields.child_nickname.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Consequences.m4v,,4c3ff830-0c7b-4b2b-9579-3cf2b6de5790,,execute_actions,20;1100
+8,send_message,6,,,,,,Here's a video that explains how you can use consequences to discipline your child.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Consequences.m4v,,729fee2d-1169-4557-ba5d-406989ea195e,,execute_actions,270;1100
+9,split_by_value,5,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,cb6a15b1-c8ab-4a6b-b711-0f98403114b0,,split_by_expression,905;900
+10,send_message,9,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message that explains how you can use consequences to discipline @fields.child_nickname.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Consequences.mp3,,,c6c4e580-503f-414b-a8b4-5ac6972bcb4e,,execute_actions,780;1100
+11,send_message,9,,,,,,Here's an audio message that explains how you can use consequences to discipline your child.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Consequences.mp3,,,debb1ed4-62fd-4de1-b293-4ea7aa90c88f,,execute_actions,1030;1100
+12,wait_for_response,10;11;7;8,,,,,Result 6,,,,,,,,,,,,,,,,c9824b1e-7095-4d6a-815a-1fdf165b549c,120,wait_for_response,;1280
+13,send_message,12;12;5,;No Response;,,,,,"Children and teens often act disrespectfully or like they only care about themselves. Growing up is a difficult time when they are learning about who they are and how they want to be in the world. Luckily, there are other ways to discipline your teen without using violence…and they work well!",,,,,,,,,,,,,,,fbb86e69-fa45-4506-bd3d-65d8615f2e03,,execute_actions,700;1420
+14,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,ac516714-e828-4658-90f8-8157fa2be973,,execute_actions,2650;340
+15,wait_for_response,14,,,,,Result 3,,,,,,,,,,,,,,,,8aafd62c-73f3-4d46-a889-92ca4ec29ebc,3600,wait_for_response,2220;520
+16,go_to,15,y yes,,has_any_word,Y,,5,,,,,,,,,,,,,,,,,,
+17,send_message,15,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,f4767d21-5c30-4894-8ddd-88d646cf532c,,execute_actions,3120;440
+18,go_to,17,,,,,,14,,,,,,,,,,,,,,,,,,
+19,send_message,15;15,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,3235ee4b-e84a-4971-bbe9-2d4fee9b2862,,execute_actions,2220;1120
+20,send_message,13,,,,,,Would you like to learn more?,Yes,No,,,,,,,,,,,,,d5b66ecc-fb5d-45cc-b8ed-3ff947b71ce5,,execute_actions,700;1700
+21,wait_for_response,20,,,,,Result 2,,,,,,,,,,,,,,,,5181c69c-e222-4708-8203-d9f13f90c284,,wait_for_response,1070;1840
+22,start_new_flow,21,YES Y,,has_any_word,Yes,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,46a8ce4c-cd5a-493f-9209-bf14932c9de7,,split_by_subflow,620;2140
+23,send_message,21,NO N,,has_any_word,No,,"That's okay! You can always type ""Help"" at anytime if you need any support with your children. Chat to you later!",,,,,,,,,,,,,,,dad0f070-ad61-46f8-8df1-e1fe51d38391,,execute_actions,1190;2020
+24,send_message,21,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,5c41d9b3-97c3-4cea-899c-45da14cded32,,execute_actions,2100;1860
+25,go_to,24,,,,,,20,,,,,,,,,,,,,,,,,,
+26,send_message,22;22,Complete;Expired,,,,,"Giving calm consequences help teach our children responsibility for what they do. They also allow discipline that is controlled. This is more effective than hitting or shouting. 
+
+Here are 5 tips for using consequences:
+
+1. Give a choice before consequence
+2. Stay calm but be firm
+3. Be realistic and follow through
+4. Reconnect afterwards
+5. Consequences for breaking rules
+
+To learn more about one of these tips, type ""1"" to ""5"". You can also type ""N"" to move on.",,,,,,,,,,,,,,,23fd96eb-525a-4ea7-92fc-91fe448fe819,,execute_actions,740;2280
+27,wait_for_response,26,,,,,list_of_tips,,,,,,,,,,,,,,,,273056cf-0876-4d66-9c87-e5a3427b24fd,,wait_for_response,1110;3000
+28,split_by_value,27,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,d965a816-4551-489a-adc0-a23bf0338cc9,,split_by_expression,415;2800
+29,send_message,28,,@fields.child_nickname,has_text,child_nickname,,1. Give @fields.child_nickname a choice to follow your instruction before giving them the consequence.,,,,,,,,,,,,,,,a37d887a-0356-4ad7-bfb4-d46937e3ba14,,execute_actions,290;3000
+30,send_message,28,,,,,,1. Give your child a choice to follow your instruction before giving them the consequence.,,,,,,,,,,,,,,,140168c5-bbaf-49d7-8647-ce65ee692225,,execute_actions,540;3000
+31,send_message,27,2,,has_number_eq,2,,"2. Try to stay calm but firm when giving the consequence.
+If you start yelling, it will just make things worse. Take a deep breath before you speak in a clear, calm, and firm voice.",,,,,,,,,,,,,,,5d2aceb0-2ecc-4fe3-8801-d223eb64b01e,,execute_actions,1030;3340
+32,send_message,27,3,,has_number_eq,3,,"3. Be realistic and follow through
+Make sure you can follow through with the consequence. For example, taking away a teenager’s phone for a week is hard to enforce. Taking it away for one hour is more realistic.",,,,,,,,,,,,,,,b14755df-821b-4bcb-99e0-af66160f16d9,,execute_actions,2020;3340
+33,split_by_value,27,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,17d89762-6084-4741-80f2-95200846cfdb,,split_by_expression,2385;3060
+34,send_message,33,,@fields.child_nickname,has_text,child_nickname,,"4. Reconnect afterwards. 
+Once the consequence is over, give @fields.child_nickname a chance to do something good, and praise them for it.",,,,,,,,,,,,,,,84ec326a-4c4d-4d0b-906d-ff7a941106b9,,execute_actions,2260;3260
+35,send_message,33,,,,,,"4. Reconnect afterwards. 
+Once the consequence is over, give your child a chance to do something good, and praise them for it.",,,,,,,,,,,,,,,b9f88f80-16b7-4286-806a-d5516e3779ef,,execute_actions,2510;3260
+36,send_message,27,5,,has_number_eq,5,,"5. Consequences for breaking rules
+Consequences can also be used when your children forget a household rule, like going to bed at a certain hour or doing schoolwork before T.V.",,,,,,,,,,,,,,,150ffc44-a6e4-4575-9f39-ea9d8cfda787,,execute_actions,2980;3040
+37,split_by_value,36,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,76ea75d0-470c-47e7-96ec-39c2a4013aad,,split_by_expression,2855;3460
+38,send_message,37,,@fields.child_nickname,has_text,child_nickname,,"For example, you can tell @fields.child_nickname that if they do not do their schoolwork before dinner, they cannot watch their favourite T.V. show that evening.",,,,,,,,,,,,,,,bbace2a6-9cad-4906-a2eb-e6c8afa81886,,execute_actions,2730;3660
+39,send_message,37,,,,,,"For example, you can tell your child that if they do not do their schoolwork before dinner, they cannot watch their favourite T.V. show that evening.",,,,,,,,,,,,,,,f223b084-3c4d-45b2-b761-d3d7fe0ec3d9,,execute_actions,2980;3660
+40,send_message,29;30;31;32;34;35;38;39,,,,,,"Please select another number if you want to learn more about using consequences:
+
+1. Give a choice before consequence
+2. Stay calm but be firm
+3. Be realistic and follow through
+4. Reconnect afterwards
+5. Consequences for breaking rules
+
+You can also type ""N"" to move on.",,,,,,,,,,,,,,,154359a7-78f0-44c5-8c71-8a7d0f2cfcf2,,execute_actions,1980;3880
+41,save_value,40,,,,,consequences list of tips,"@(fields.consequences_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,b6c134bc-0466-4799-a023-12d7dcd54956,,execute_actions,1980;4300
+42,save_value,41,,,,,last interaction,@(now()),,,,,,,,,,,,,,,333cfca9-6bda-4847-80fd-1bc6e968c68a,,execute_actions,1980;4440
+43,go_to,42,,,,,,27,,,,,,,,,,,,,,,,,,
+44,send_message,27,n no,,has_any_word,N,,Here is a comic that shows a parent giving their child a choice to follow the instruction or receive a consequence.,,,,,,,,,,,,,,,5eb2c2d8-a817-4642-b4e9-1ce3f0ce0453,,execute_actions,1210;4640
+45,send_message,44,,,,,,"Parent: “In 5 minutes it will be time to give me back the phone and start your school work.” 
+
+Teen (distractedly): “Uh-huh…”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/consequences_comic_1.png,,,,5eb2c2d8-a817-4642-b4e9-1ce3f0ce0453,,execute_actions,1210;4640
+46,send_message,45,,,,,,"Parent: “5 minutes is up. Please give me the phone.” 
+
+Teen: “No, I am not done. I just need to get to the next level.”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/consequences_comic_2.png,,,,5eb2c2d8-a817-4642-b4e9-1ce3f0ce0453,,execute_actions,1210;4640
+47,send_message,46,,,,,,"Parent: “You have a choice, either you give me the phone now, or you cannot use it after dinner.” 
+
+Teen (not happy but agreeing): “Fine.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/consequences_comic_3.png,,,,5eb2c2d8-a817-4642-b4e9-1ce3f0ce0453,,execute_actions,1210;4640
+48,send_message,47,,,,,,"Parent: “Thank you for giving me the phone back, Carter. Now please do your school work. After that we can take a walk or play a game together.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/consequences_comic_4.png,,,,5eb2c2d8-a817-4642-b4e9-1ce3f0ce0453,,execute_actions,1210;4640
+49,split_by_group,48,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,74059ef5-8486-4d3e-9caa-a8f7c699bbf8,,split_by_expression,1605;5620
+50,split_by_group,49,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,3adb5ded-a87b-4d6f-9644-132222cafe5a,,split_by_expression,1855;6020
+51,send_message,50,ABTest_test-gamification_alternative,,,,,"Well done! You have added another layer to your House of Support! When your child is behaving badly, try responding in a calm way with a fair consequence. It will help them learn that their actions have an impact on themselves and others. It also teaches them about responsibility and respect!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,08e47b97-8ae3-472f-9c11-664288c56a54,,execute_actions,1980;6220
+52,send_message,50;50,ABTest_test-gamification_Default;,,,,,"Well done! You have added another skill to your Parenting Toolkit! When your child is behaving badly, try responding in a calm way with a fair consequence. It will help them learn that their actions have an impact on themselves and others. It also teaches them about responsibility and respect!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,704bedd3-ba7e-42b8-810e-a0bcccbef16a,,execute_actions,1730;6220
+53,split_by_group,49;49,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,6b832979-f840-4ab5-9366-5cf0b9496012,,split_by_expression,1355;5820
+54,send_message,53,ABTest_test-gamification_alternative,,,,,"Well done! You have added another layer to your House of Support! When your child is behaving badly, try responding in a calm way with a fair consequence. It will help them learn that their actions have an impact on themselves and others. It also teaches them about responsibility and respect!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,ce75322f-193c-48b7-8ec6-0ba381d93088,,execute_actions,1480;6220
+55,send_message,53;53,ABTest_test-gamification_Default;,,,,,"Well done! You have added another skill to your Parenting Toolkit! When your child is behaving badly, try responding in a calm way with a fair consequence. It will help them learn that their actions have an impact on themselves and others. It also teaches them about responsibility and respect!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,d71e9856-1032-4b57-b06c-76dba1ccf6ba,,execute_actions,1230;6220
+56,save_value,51;52;54;55,,,,,current type assessed,tip,,,,,,,,,,,,,,,bfa42fb0-9fda-48da-97ba-2ee6c95abe38,,execute_actions,640;6760
+57,save_value,56,,,,,current activity,consequences,,,,,,,,,,,,,,,bfa42fb0-9fda-48da-97ba-2ee6c95abe38,,execute_actions,640;6760
+58,start_new_flow,57,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,d5221cab-f8f3-4903-bcd4-4dfcd511cfdb,,split_by_subflow,640;6920
+59,send_message,27,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,94494dfa-f472-41bf-aba6-8066cdd4e811,,execute_actions,2710;2580
+60,go_to,59,,,,,,26,,,,,,,,,,,,,,,,,,

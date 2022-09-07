@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Oyayi
+•	Kapag ang iyong batang anak o sanggol ay umiiyak, kantahan siya ng isang malumanay na kanta para mapahinahon kayong dalawa.
+•	Umawit ng nakakakalmang kanta na alam mo o gumawa ka kantang may simpleng himig at mayroong ilang nakakakalmang mga salita.
+•	Ulit-ulitin ito sa paraang may ritmo.  Halimbawa, “Anak, o anak”. 
+•	Kantahin ang parehong kanta nang madalas para masanay dito ang iyong anak!",,,,,,,,,,,,,,,938faa47-82e4-48f2-9efa-391766ea3b2a,,execute_actions,;

@@ -1,0 +1,40 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,cf6af429-7895-47f4-a3b3-f179f5824d4a,,split_by_expression,1565;
+2,split_by_value,1,,@fields.user_name,has_text,user_name,,@fields.child_nickname,,,,,,,,,,,,,,,441648ba-e55c-4bce-9f0c-a92192193cdc,,split_by_expression,1315;200
+3,send_message,2,,@fields.child_nickname,has_text,child_nickname,,Magandang araw @fields.user_name! Pinuri mo ba si @fields.child_nickname noong kayo ay nag-one-on-one time o kahit sa iba pang mga oras buong araw? ,Oo,Hindi,,,,,,,,,,,,,b9909097-92dc-458a-ba1d-52f1fc21398c,,execute_actions,1190;600
+4,send_message,2,,,,,,Magandang araw @fields.user_name! Pinuri mo ba ang inyong anak noong kayo ay nag-one-on-one time o kahit sa iba pang mga oras buong araw? ,Oo,Hindi,,,,,,,,,,,,,b19b218f-b5f6-47cc-a6c6-ee3fa54d08af,,execute_actions,1440;600
+5,split_by_value,1,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,e61af84e-19a5-488c-ad13-88c62061c463,,split_by_expression,1815;400
+6,send_message,5,,@fields.child_nickname,has_text,child_nickname,,Magandang araw! Pinuri mo ba si @fields.child_nickname noong kayo ay nag-one-on-one time o kahit sa iba pang mga oras buong araw? ,Oo,Hindi,,,,,,,,,,,,,e3f7097d-7fb2-4bce-b399-9cd8f7cbfec7,,execute_actions,1690;600
+7,send_message,5,,,,,,Magandang araw! Pinuri mo ba ang inyong anak noong kayo ay nag-one-on-one time o kahit sa iba pang mga oras buong araw? ,Oo,Hindi,,,,,,,,,,,,,a786807e-598d-49dc-899d-72675064a09a,,execute_actions,1940;600
+8,wait_for_response,3;4;6;7,,,,,checkin_managed,,,,,,,,,,,,,,,,39700f56-5846-461d-a0cd-90d8669c7221,,wait_for_response,1940;800
+9,save_value,8,Oo y o,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,ca496443-e4db-4740-b6e8-69be08039791,,execute_actions,580;900
+10,send_message,8,Hindi n h,,has_any_word,No,,"Minsan, mahirap talagang maalala. Kung kakausapin mo sila ulit nang one-on-one, subukan na mag-isip ng isang bagay kung saan pwede mo silang puriin. Pwede mo rin ngang sabihin ang ""Salamat at nakabigay ka ng oras para magkausap tayo!"".",,,,,,,,,,,,,,,108c62a6-f5be-4f79-b14f-dac100571dec,,execute_actions,2330;980
+11,save_value,10,,,,,last interaction,@(now()),,,,,,,,,,,,,,,0a0fc57b-2a1c-4928-970c-a8624c48d213,,execute_actions,2330;1400
+12,send_message,8,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,11016bb8-c6b9-4d69-b554-ffceebb592b1,,execute_actions,2630;820
+13,save_value,12,,,,,last interaction,@(now()),,,,,,,,,,,,,,,3c39c3ad-d96c-4029-9527-d2f48b661cad,,execute_actions,2630;940
+14,go_to,13,,,,,,1,,,,,,,,,,,,,,,,,,
+15,split_by_value,9,,,,,,@fields.user_name,,,,,,,,,,,,,,,d2c0123b-7dc9-439f-a765-678c02da0ba7,,split_by_expression,455;1000
+16,send_message,15,,@fields.user_name,has_text,user_name,,Mahusay! Mabuti na naalala mo @fields.user_name. Paano tumugon ang inyong anak o teenager?,Nagulat,Masaya,Hindi nagustuhan ng aking anak,Hindi ko alam,,,,,,,,,,,fe755ebd-71f8-4bb9-9754-fe3887d02671,,execute_actions,330;1200
+17,send_message,15,,,,,,Mahusay at naalala mo. Paano tumugon ang inyong nakababatang anak o teenager?,Nagulat,Masaya,Hindi nagustuhan ng aking anak,Hindi ko alam,,,,,,,,,,,724849df-6e57-4c29-92cf-598466983c45,,execute_actions,580;1200
+18,wait_for_response,16;17,,,,,checkin_how,,,,,,,,,,,,,,,,1d1072fe-ac97-4761-a499-9ab207d82799,,wait_for_response,310;1460
+19,split_by_value,18,nagulat,,has_any_word,surprised,,@fields.child_nickname,,,,,,,,,,,,,,,06d11633-f801-4dec-a9b9-aee3755babf0,,split_by_expression,125;1660
+20,send_message,19,,@fields.child_nickname,has_text,child_nickname,,"Tandaan, kailangan ng panahon upang masanay si @fields.child_nickname na pinupuri mo siya. Kapag mas maraming oras ang inilalaan mo para sa inyong anak, mas makakabuti ito!",,,,,,,,,,,,,,,862e11e2-4150-4f9c-b7ab-83a0b15cf261,,execute_actions,;1860
+21,send_message,19,,,,,,"Tandaan, kailangan ng panahon upang masanay ang inyong nakababatang anak o teenager na pinupuri mo siya. Kapag mas maraming oras ang inilalaan mo para sa inyong anak, mas makakabuti ito!",,,,,,,,,,,,,,,2225babe-f745-440f-9c22-ebab2d5a1f38,,execute_actions,250;1860
+22,split_by_value,18,masaya,,has_any_word,happy,,@fields.child_nickname,,,,,,,,,,,,,,,72792a1c-55e9-4380-9682-10ba59fb694a,,split_by_expression,865;1880
+23,send_message,22,,@fields.child_nickname,has_text,child_nickname,,Ang galing dahil napansin mo kung ano ang naramdaman ni @fields.child_nickname! Ituloy mo lang ito!,,,,,,,,,,,,,,,2120793b-20ba-4512-a3d6-404a775e92d1,,execute_actions,740;2080
+24,send_message,22,,,,,,Ang galing mo dahil nakita mo kung ano ang naramdaman ng inyong anak o teen! Ituloy mo lang ito!,,,,,,,,,,,,,,,3eb7aa39-1900-4f2f-af27-7acc68a5ede0,,execute_actions,990;2080
+25,split_by_value,18,hindi nagustuhan ng anak ko,,has_only_phrase,My child did not like it,,@fields.child_nickname,,,,,,,,,,,,,,,b147c297-0312-43e0-9475-c3f7d54464c1,,split_by_expression,2205;2100
+26,send_message,25,,@fields.child_nickname,has_text,child_nickname,,"Nangyayari talaga 'yan, pagtiyagaan mo lang. Siguraduhing maglaan ng oras para kay @fields.child_nickname, upang mas mapahalagahan nila ang opinyon mo. Kapag totoo ang inyong pagpuri, makikita mo ang magandang kalalabasan nito!",,,,,,,,,,,,,,,fdb89f63-2263-4e44-ae39-a589b59dab79,,execute_actions,2080;2300
+27,send_message,25,,,,,,"Nangyayari talaga 'yan, pagtiyagaan mo lang. Siguraduhing maglaan ng oras para sa inyong nakababatang anak o teenager, upang mas mapahalagahan nila ang opinyon mo. Kapag totoo ang inyong pagpuri, makikita mo ang magandang kalalabasan nito!",,,,,,,,,,,,,,,131eef15-9634-490e-86e2-3ba03d09d7ce,,execute_actions,2330;2300
+28,send_message,18,hindi ko alam,,has_only_phrase,I don't know,,"Walang problema, subukan mo ulit na mapansin sa susunod na pagkakataon!",,,,,,,,,,,,,,,875508b1-5517-4ae4-a5f6-8cf1ec34abf8,,execute_actions,2610;2080
+29,send_message,18,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,ab443fe1-3c63-4927-a1a1-7e1929cc7880,,execute_actions,1070;1340
+30,go_to,29,,,,,,15,,,,,,,,,,,,,,,,,,
+31,send_message,11;20;21;23;24;26;27;28,,,,,,Gusto mo bang balikan ang mga nilalaman nito?,Oo,Hindi,,,,,,,,,,,,,b6218070-9841-4fc7-bfa3-4134c9c350bc,,execute_actions,2950;1500
+32,wait_for_response,31,,,,,Result 3,,,,,,,,,,,,,,,,30025ce8-9507-4ccf-91f7-59273f7056b0,,wait_for_response,2950;2080
+33,save_value,32,Oo y o,,has_any_word,Yes,from theme,no,,,,,,,,,,,,,,,1570af10-f1c4-4316-8c94-d71523032d85,,execute_actions,2890;2640
+34,start_new_flow,33,,,,,,PLH - Content - Positive - Behave - Praise,,,,,,,,,,,,,,3894dff4-93f0-42a8-92a3-6220bff18bc8,6f76c60e-d3c8-4e38-805e-6b4349b2f326,,split_by_subflow,2850;2740
+35,split_by_value,32,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,1e8234b7-8f7d-40aa-81d8-292016f4cba4,,split_by_expression,3255;2420
+36,send_message,35,,@fields.user_name,has_text,user_name,,"Okay lang ‘yan! Tandaang pwede mong makuha ang mga impormasyon tungkol sa parenting anumang oras sa pamamagitan ng pag-type ng ""Help"". Usap tayo mamaya @fields.user_name! ",,,,,,,,,,,,,,,353c71fa-c3fc-45c5-9592-c4f58fc225b3,,execute_actions,3130;2620
+37,send_message,35,,,,,,"Okay lang ‘yan! Tandaang pwede mong makuha ang mga impormasyon tungkol sa parenting anumang oras sa pamamagitan ng pag-type ng ""Help"". Usap tayo mamaya! ",,,,,,,,,,,,,,,586dc760-75a5-4a45-9648-25b11e11e7b9,,execute_actions,3380;2620
+38,send_message,32,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,383e9c6c-dd9b-46d1-9a93-bd41947bfdb9,,execute_actions,3460;1620
+39,go_to,38,,,,,,31,,,,,,,,,,,,,,,,,,

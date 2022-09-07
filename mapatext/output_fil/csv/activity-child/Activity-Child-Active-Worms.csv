@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Uwi Mga Bulate
+•	Humiga sa iyong tiyan at magpanggap na ang iyong mga hintuturo ay mga malilikot na bulate. 
+•	Gamit ang iyong kabilang kamay, gumawa ka ng isang bahay ng bulate sa pamamagitan ng paggawa ng bilog gamit ang iyong mga daliri at hinlalaki, at ilagay ito sa ibabaw ng sahig. 
+•	Sumigaw ng isang utos para sa paghawak ng iyong daliri, kagaya ng ""Mga bulate sa ilong"" o ""Mga bulate sa tainga""
+•	Kapag nakatawag ka na ng ""Uwi mga bulate"", ang iyong malikot na bulate ay kailangang maghanap agad-agad ng bahay ng bulate. 
+•	Ang huling uod na makahanap ng tirahan ang magsasabi ng mga susunod na direksyon. 
+•	Maglaro ka lang hanggang maramdaman mo na sumisigla ka na mula sa pagkakahiga. ",,,,,,,,,,,,,,,4da59b3b-5ea0-4343-ae75-931771fff35f,,execute_actions,;

@@ -1,0 +1,7 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Tumigil at Makinig
+Tumigil nang saglit at ipikit ang iyong mga mata. 
+Ilang tunog ang iyong naririnig? Pakinggan mo ang mga tunog sa loob at labas ng kwarto. Bilangin mo sa iyong mga daliri. (Tumigil ng 10 segundo)
+Ilang mga daliri mo ang nakataas? Anu-ano ang mga tunog na narinig mo? 
+Subukan natin muli. Nakakarinig ka ba ng mga bagong tunog ngayon? Nakakarinig ka ba ng ilang tunog sa loob ng iyong katawan? (tumigil nang 10 segundo)
+Buksan ang iyong mga mata. Anu-anong mga tunog ang iyong narinig?",,,,,,,,,,,,,,,b275c4dc-fd3e-4133-bc81-fdb0f20ff6f6,,execute_actions,;

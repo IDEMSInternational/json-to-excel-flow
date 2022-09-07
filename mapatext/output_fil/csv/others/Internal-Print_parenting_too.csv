@@ -1,0 +1,115 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,list of skills,[,,,,,,,,,,,,,,,ce34ad36-aaa5-471a-a55c-75dbabd4c912,,execute_actions,320;
+2,save_flow_result,1,,,,,count,1,,,,,,,,,,,,,,,ce34ad36-aaa5-471a-a55c-75dbabd4c912,,execute_actions,320;
+3,split_by_value,2,,,,,,@parent.results.type_of_toolkit,,,,,,,,,,,,,,,e82a70eb-caae-4a98-bee7-37add9b1e2df,,split_by_expression,620;100
+4,save_flow_result,3,full_toolkit,@parent.results.type_of_toolkit,has_any_word,Full_toolkit,toolkit,@fields.toolkit,,,,,,,,,,,,,,,34521d00-d5eb-4451-a432-d439f8c6efc4,,execute_actions,380;200
+5,save_flow_result,3,full_incomplete,@parent.results.type_of_toolkit,has_any_word,Full_incomplete,toolkit,@fields.incomplete_toolkit,,,,,,,,,,,,,,,ae5af46c-a785-41cc-9aff-249ce4c8dc40,,execute_actions,640;240
+6,save_flow_result,3,week_toolkit,@parent.results.type_of_toolkit,has_any_word,Week_toolkit,toolkit,@fields.week_toolkit,,,,,,,,,,,,,,,8513735d-5fe7-457e-9f34-3f1f6dc9292c,,execute_actions,860;280
+7,save_flow_result,3,week_incomplete,@parent.results.type_of_toolkit,has_any_word,Week_incomplete,toolkit,@fields.week_toolkit_incompletes,,,,,,,,,,,,,,,9e54d34a-db1b-4b5e-8215-036013b2f915,,execute_actions,1100;240
+8,split_by_value,4;5;6;7,,,,,,@results.toolkit,,,,,,,,,,,,,,,f59e5a83-625f-4b39-82c5-d239e5e35240,,split_by_run_result,680;440
+9,send_message,8,One-on-one time,@results.toolkit,has_pattern,yes One-one,,@results.count One-on-One Time,,,,,,,,,,,,,,,fd9dcec8-0e07-4d51-85eb-bcf1426b8999,,execute_actions,280;440
+10,save_flow_result,9,,,,,list of skills,"@(results.list_of_skills &""1,"")",,,,,,,,,,,,,,,fd9dcec8-0e07-4d51-85eb-bcf1426b8999,,execute_actions,280;440
+11,save_flow_result,10,,,,,count,@(results.count +1),,,,,,,,,,,,,,,fd9dcec8-0e07-4d51-85eb-bcf1426b8999,,execute_actions,280;440
+12,split_by_value,11;8,,,,,,@results.toolkit,,,,,,,,,,,,,,,0ab67cb2-27ee-484f-ac1a-c96d15543151,,split_by_run_result,680;720
+13,send_message,12,Taking a Pause,@results.toolkit,has_pattern,yes pause,,@results.count Tumigil Nang Sandali,,,,,,,,,,,,,,,5d49dde3-dc56-49ee-b5a2-98432e44683f,,execute_actions,300;760
+14,save_flow_result,13,,,,,list of skills,"@(results.list_of_skills &""2,"")",,,,,,,,,,,,,,,5d49dde3-dc56-49ee-b5a2-98432e44683f,,execute_actions,300;760
+15,save_flow_result,14,,,,,count,@(results.count +1),,,,,,,,,,,,,,,5d49dde3-dc56-49ee-b5a2-98432e44683f,,execute_actions,300;760
+16,split_by_value,12;15,,,,,,@results.toolkit,,,,,,,,,,,,,,,14a7fb7b-4a6e-4db2-9efd-93b84159ea56,,split_by_run_result,680;1020
+17,send_message,16,Managing anger,@results.toolkit,has_pattern,yes anger,,@results.count Pangangasiwa ng galit,,,,,,,,,,,,,,,137929e6-51cf-4fd7-a9b8-7b19ccee8657,,execute_actions,300;1020
+18,save_flow_result,17,,,,,list of skills,"@(results.list_of_skills &""3,"")",,,,,,,,,,,,,,,137929e6-51cf-4fd7-a9b8-7b19ccee8657,,execute_actions,300;1020
+19,save_flow_result,18,,,,,count,@(results.count +1),,,,,,,,,,,,,,,137929e6-51cf-4fd7-a9b8-7b19ccee8657,,execute_actions,300;1020
+20,split_by_value,16;19,,,,,,@results.toolkit,,,,,,,,,,,,,,,2066a672-2ebf-47f8-a99f-3092f046fddb,,split_by_run_result,660;1300
+21,send_message,20,Giving positive instructions,@results.toolkit,has_pattern,yes instructions,,@results.count Pagbibigay ng positibong direksyon,,,,,,,,,,,,,,,ae4c9cbb-0f29-4532-9063-ad3a3746d3e4,,execute_actions,300;1340
+22,save_flow_result,21,,,,,list of skills,"@(results.list_of_skills &""4,"")",,,,,,,,,,,,,,,ae4c9cbb-0f29-4532-9063-ad3a3746d3e4,,execute_actions,300;1340
+23,save_flow_result,22,,,,,count,@(results.count +1),,,,,,,,,,,,,,,ae4c9cbb-0f29-4532-9063-ad3a3746d3e4,,execute_actions,300;1340
+24,split_by_value,20;23,,,,,,@results.toolkit,,,,,,,,,,,,,,,95722012-8627-4591-8ca1-f8c5aa2dcbb5,,split_by_run_result,700;1620
+25,send_message,24,Praising your children,@results.toolkit,has_pattern,yes praise,,@results.count Pagpuri sa anak,,,,,,,,,,,,,,,35eaba5f-9337-4f1d-9cdf-9b20c8baa196,,execute_actions,300;1620
+26,save_flow_result,25,,,,,list of skills,"@(results.list_of_skills &""5,"")",,,,,,,,,,,,,,,35eaba5f-9337-4f1d-9cdf-9b20c8baa196,,execute_actions,300;1620
+27,save_flow_result,26,,,,,count,@(results.count +1),,,,,,,,,,,,,,,35eaba5f-9337-4f1d-9cdf-9b20c8baa196,,execute_actions,300;1620
+28,split_by_value,24;27,,,,,,@results.toolkit,,,,,,,,,,,,,,,92314ebd-d412-494e-8ea8-c859fddd5831,,split_by_run_result,720;1880
+29,send_message,28,Establishing daily routines,@results.toolkit,has_pattern,yes routines,,@results.count Pagtatag ng regular na gawain,,,,,,,,,,,,,,,012b9e28-5706-488b-bbb8-b01260d2df8b,,execute_actions,280;1920
+30,save_flow_result,29,,,,,list of skills,"@(results.list_of_skills &""6,"")",,,,,,,,,,,,,,,012b9e28-5706-488b-bbb8-b01260d2df8b,,execute_actions,280;1920
+31,save_flow_result,30,,,,,count,@(results.count +1),,,,,,,,,,,,,,,012b9e28-5706-488b-bbb8-b01260d2df8b,,execute_actions,280;1920
+32,split_by_value,28;31,,,,,,@results.toolkit,,,,,,,,,,,,,,,475f16d4-15b8-4361-a2bd-fc7d9da2bff2,,split_by_run_result,740;2200
+33,send_message,32,Setting household rules,@results.toolkit,has_pattern,yes rules,,@results.count Pagtatag ng patakaran sa tahanan,,,,,,,,,,,,,,,4adaaf4e-00cf-4073-b444-13ef450a4e58,,execute_actions,280;2200
+34,save_flow_result,33,,,,,list of skills,"@(results.list_of_skills &""7,"")",,,,,,,,,,,,,,,4adaaf4e-00cf-4073-b444-13ef450a4e58,,execute_actions,280;2200
+35,save_flow_result,34,,,,,count,@(results.count +1),,,,,,,,,,,,,,,4adaaf4e-00cf-4073-b444-13ef450a4e58,,execute_actions,280;2200
+36,split_by_value,32;35,,,,,,@results.toolkit,,,,,,,,,,,,,,,6fc36b58-bddf-4cab-8900-62eb14481939,,split_by_run_result,740;2500
+37,send_message,36,Redirecting behaviour,@results.toolkit,has_pattern,yes redirect,,@results.count Pagbaling ng atensyon mula sa negatibong kilos,,,,,,,,,,,,,,,7b30b129-87a1-496e-ba31-43015423ab33,,execute_actions,280;2500
+38,save_flow_result,37,,,,,list of skills,"@(results.list_of_skills &""8,"")",,,,,,,,,,,,,,,7b30b129-87a1-496e-ba31-43015423ab33,,execute_actions,280;2500
+39,save_flow_result,38,,,,,count,@(results.count +1),,,,,,,,,,,,,,,7b30b129-87a1-496e-ba31-43015423ab33,,execute_actions,280;2500
+40,split_by_value,36;39,,,,,,@results.toolkit,,,,,,,,,,,,,,,e263bfe3-50d6-405d-a80a-40f0d11d3fa6,,split_by_run_result,740;2780
+41,send_message,40,Using appropriate consequences,@results.toolkit,has_pattern,yes consequences,,@results.count Paggamit ng nararapat ng konsekwensya,,,,,,,,,,,,,,,fb7f2a0a-1bbc-49d6-9fda-36e64e96e2a4,,execute_actions,300;2780
+42,save_flow_result,41,,,,,list of skills,"@(results.list_of_skills &""9,"")",,,,,,,,,,,,,,,fb7f2a0a-1bbc-49d6-9fda-36e64e96e2a4,,execute_actions,300;2780
+43,save_flow_result,42,,,,,count,@(results.count +1),,,,,,,,,,,,,,,fb7f2a0a-1bbc-49d6-9fda-36e64e96e2a4,,execute_actions,300;2780
+44,split_by_value,40;43,,,,,,@results.toolkit,,,,,,,,,,,,,,,21daa508-a9d7-4b98-bd0f-58e5833654bb,,split_by_run_result,740;3100
+45,send_message,44,Shared reading,@results.toolkit,has_pattern,yes reading,,@results.count Magkasamang pagbabasa,,,,,,,,,,,,,,,6a375c4a-18e5-44ad-b138-2382b1055c71,,execute_actions,260;3140
+46,save_flow_result,45,,,,,list of skills,"@(results.list_of_skills &""10,"")",,,,,,,,,,,,,,,6a375c4a-18e5-44ad-b138-2382b1055c71,,execute_actions,260;3140
+47,save_flow_result,46,,,,,count,@(results.count +1),,,,,,,,,,,,,,,6a375c4a-18e5-44ad-b138-2382b1055c71,,execute_actions,260;3140
+48,split_by_value,44;47,,,,,,@results.toolkit,,,,,,,,,,,,,,,eb81189d-4917-479a-98e0-a5639c634725,,split_by_run_result,760;3400
+49,send_message,48,Ignoring demanding behaviours,@results.toolkit,has_pattern,yes ignore,,@results.count Hindi pagpansin sa negatibong kilos,,,,,,,,,,,,,,,905f6853-d57c-4d16-aacb-ead12bba8f96,,execute_actions,280;3420
+50,save_flow_result,49,,,,,list of skills,"@(results.list_of_skills &""11,"")",,,,,,,,,,,,,,,905f6853-d57c-4d16-aacb-ead12bba8f96,,execute_actions,280;3420
+51,save_flow_result,50,,,,,count,@(results.count +1),,,,,,,,,,,,,,,905f6853-d57c-4d16-aacb-ead12bba8f96,,execute_actions,280;3420
+52,split_by_value,48;51,,,,,,@results.toolkit,,,,,,,,,,,,,,,be813eed-d63c-489c-8710-f809acf02dcd,,split_by_run_result,780;3680
+53,send_message,52,Solving problems with your teen,@results.toolkit,has_pattern,yes pb solving,,@results.count Paglutas ng mga problema kasama ang inyong teenager,,,,,,,,,,,,,,,5a61d9dd-112a-4e1a-b18a-70a839efd575,,execute_actions,280;3740
+54,save_flow_result,53,,,,,list of skills,"@(results.list_of_skills &""12,"")",,,,,,,,,,,,,,,5a61d9dd-112a-4e1a-b18a-70a839efd575,,execute_actions,280;3740
+55,save_flow_result,54,,,,,count,@(results.count +1),,,,,,,,,,,,,,,5a61d9dd-112a-4e1a-b18a-70a839efd575,,execute_actions,280;3740
+56,split_by_value,52;55,,,,,,@results.toolkit,,,,,,,,,,,,,,,d0ba8205-36d0-4502-a871-cfdf9ecd5167,,split_by_run_result,780;3980
+57,send_message,56,Keeping your child safe online,@results.toolkit,has_pattern,yes online,,@results.count Pagiging ligtas ng mga bata sa internet,,,,,,,,,,,,,,,c2b4c4c5-3d3c-4f82-9fae-f1442254e32e,,execute_actions,320;4080
+58,save_flow_result,57,,,,,list of skills,"@(results.list_of_skills &""13,"")",,,,,,,,,,,,,,,c2b4c4c5-3d3c-4f82-9fae-f1442254e32e,,execute_actions,320;4080
+59,save_flow_result,58,,,,,count,@(results.count +1),,,,,,,,,,,,,,,c2b4c4c5-3d3c-4f82-9fae-f1442254e32e,,execute_actions,320;4080
+60,split_by_value,56;59,,,,,,@results.toolkit,,,,,,,,,,,,,,,a274b566-fb3f-4f16-a176-f37ece1f55bb,,split_by_run_result,860;4280
+61,send_message,60,Coping with crying,@results.toolkit,has_pattern,yes cry,,@results.count Pagtugon sa pag-iyak,,,,,,,,,,,,,,,b2d512d6-a9e7-449c-932c-50111d09468f,,execute_actions,300;4420
+62,save_flow_result,61,,,,,list of skills,"@(results.list_of_skills &""14,"")",,,,,,,,,,,,,,,b2d512d6-a9e7-449c-932c-50111d09468f,,execute_actions,300;4420
+63,save_flow_result,62,,,,,count,@(results.count +1),,,,,,,,,,,,,,,b2d512d6-a9e7-449c-932c-50111d09468f,,execute_actions,300;4420
+64,split_by_value,60;63,,,,,,@results.toolkit,,,,,,,,,,,,,,,b86b5f2f-fe88-450f-9356-48822aee4cb6,,split_by_run_result,860;4700
+65,send_message,64,Giving emotional support,@results.toolkit,has_pattern,yes emotion,,@results.count Pagbibigay ng suportang emosyonal,,,,,,,,,,,,,,,3176e541-dcc9-4d54-8777-b56cae0ffd6a,,execute_actions,360;4740
+66,save_flow_result,65,,,,,count,@(results.count +1),,,,,,,,,,,,,,,3176e541-dcc9-4d54-8777-b56cae0ffd6a,,execute_actions,360;4740
+67,save_flow_result,66,,,,,list of skills,"@(results.list_of_skills &""15,"")",,,,,,,,,,,,,,,3176e541-dcc9-4d54-8777-b56cae0ffd6a,,execute_actions,360;4740
+68,split_by_value,64;67,,,,,,@results.toolkit,,,,,,,,,,,,,,,7e07ee7a-573d-4a74-9102-85f1e3d33d61,,split_by_run_result,860;4980
+69,send_message,68,Responding to crises,@results.toolkit,has_pattern,yes crisis,,@results.count Pagtugon sa krisis,,,,,,,,,,,,,,,0357f731-c2ea-4be7-90cf-88af8ac2cd97,,execute_actions,340;5140
+70,save_flow_result,69,,,,,list of skills,"@(results.list_of_skills &""16,"")",,,,,,,,,,,,,,,0357f731-c2ea-4be7-90cf-88af8ac2cd97,,execute_actions,340;5140
+71,save_flow_result,70,,,,,count,@(results.count +1),,,,,,,,,,,,,,,0357f731-c2ea-4be7-90cf-88af8ac2cd97,,execute_actions,340;5140
+72,split_by_value,68;71,,,,,,@results.toolkit,,,,,,,,,,,,,,,9e91d221-ae69-4257-9b6f-9fbddae09b37,,split_by_run_result,880;5400
+73,send_message,72,Understanding safe/unsafe touch,@results.toolkit,has_pattern,yes safe touch,,@results.count Pag-unawa sa ligtas/hindi ligtas na paghawak,,,,,,,,,,,,,,,9f02b6ad-b308-43b9-b7d7-9dd420292817,,execute_actions,340;5500
+74,save_flow_result,73,,,,,list of skills,"@(results.list_of_skills &""17,"")",,,,,,,,,,,,,,,9f02b6ad-b308-43b9-b7d7-9dd420292817,,execute_actions,340;5500
+75,save_flow_result,74,,,,,count,@(results.count +1),,,,,,,,,,,,,,,9f02b6ad-b308-43b9-b7d7-9dd420292817,,execute_actions,340;5500
+76,split_by_value,72;75,,,,,,@results.toolkit,,,,,,,,,,,,,,,aff92c82-7cc1-45ab-b38a-f69bba3e6084,,split_by_run_result,880;5700
+77,send_message,76;76,Making a happy and peaceful home;IPV,@results.toolkit;@results.toolkit,has_pattern;has_pattern,yes family harmony or ipv;yes family harmony or ipv,,@results.count Pagtaguyod ng isang masaya at mapayapang tahanan,,,,,,,,,,,,,,,aaa8ff80-a0c6-4e10-9cac-d60b5e32ad1f,,execute_actions,320;5900
+78,save_flow_result,77,,,,,list of skills,"@(results.list_of_skills &""18,"")",,,,,,,,,,,,,,,aaa8ff80-a0c6-4e10-9cac-d60b5e32ad1f,,execute_actions,320;5900
+79,save_flow_result,78,,,,,count,@(results.count +1),,,,,,,,,,,,,,,aaa8ff80-a0c6-4e10-9cac-d60b5e32ad1f,,execute_actions,320;5900
+80,split_by_value,76;79,,,,,,@results.toolkit,,,,,,,,,,,,,,,61fc0b74-e0f4-4db0-8942-fd8bd1ea65b4,,split_by_run_result,900;6020
+81,send_message,80,Family budgeting,@results.toolkit,has_pattern,yes budget,,@results.count Pagbabudget ng pamilya,,,,,,,,,,,,,,,02d1d5eb-b926-4879-9b4e-8a4eae6d5c15,,execute_actions,320;6320
+82,save_flow_result,81,,,,,list of skills,"@(results.list_of_skills &""19,"")",,,,,,,,,,,,,,,02d1d5eb-b926-4879-9b4e-8a4eae6d5c15,,execute_actions,320;6320
+83,save_flow_result,82,,,,,count,@(results.count +1),,,,,,,,,,,,,,,02d1d5eb-b926-4879-9b4e-8a4eae6d5c15,,execute_actions,320;6320
+84,split_by_value,80;83,,,,,,@results.toolkit,,,,,,,,,,,,,,,71af0117-062e-4b50-a508-2a01d027c707,,split_by_run_result,940;6580
+85,send_message,84,Talking about COVID19,@results.toolkit,has_pattern,yes covid,,@results.count Pakikipag-usap tungkol sa COVID-19,,,,,,,,,,,,,,,bac7b253-2f98-4e66-a7b9-57aa9ecb8b80,,execute_actions,320;6700
+86,save_flow_result,85,,,,,list of skills,"@(results.list_of_skills &""20,"")",,,,,,,,,,,,,,,bac7b253-2f98-4e66-a7b9-57aa9ecb8b80,,execute_actions,320;6700
+87,save_flow_result,86,,,,,count,@(results.count +1),,,,,,,,,,,,,,,bac7b253-2f98-4e66-a7b9-57aa9ecb8b80,,execute_actions,320;6700
+88,split_by_value,84;87,,,,,,@results.toolkit,,,,,,,,,,,,,,,8efc3050-06b8-45fd-8cf9-31c38be18632,,split_by_run_result,980;6960
+89,send_message,88,Supporting children with disabilities,@results.toolkit,has_pattern,yes disability,,@results.count Pagsuporta sa mga batang may kapansanan,,,,,,,,,,,,,,,caccf819-0e9b-4e29-9d8d-5266219b4e96,,execute_actions,320;7100
+90,save_flow_result,89,,,,,list of skills,"@(results.list_of_skills &""21,"")",,,,,,,,,,,,,,,caccf819-0e9b-4e29-9d8d-5266219b4e96,,execute_actions,320;7100
+91,save_flow_result,90,,,,,count,@(results.count +1),,,,,,,,,,,,,,,caccf819-0e9b-4e29-9d8d-5266219b4e96,,execute_actions,320;7100
+92,split_by_value,88;91,,,,,,@results.toolkit,,,,,,,,,,,,,,,1b6090f6-0a39-4324-afb5-aa4c1b64ce80,,split_by_run_result,940;7320
+93,send_message,92,Child development,@results.toolkit,has_pattern,yes development,,@results.count Child Development,,,,,,,,,,,,,,,59a1bf12-99e4-4a29-916d-a7a14920ec6b,,execute_actions,340;7480
+94,save_flow_result,93,,,,,list of skills,"@(results.list_of_skills &""22,"")",,,,,,,,,,,,,,,59a1bf12-99e4-4a29-916d-a7a14920ec6b,,execute_actions,340;7480
+95,save_flow_result,94,,,,,count,@(results.count +1),,,,,,,,,,,,,,,59a1bf12-99e4-4a29-916d-a7a14920ec6b,,execute_actions,340;7480
+96,split_by_value,92;95,,,,,,@results.toolkit,,,,,,,,,,,,,,,63f391c3-8e10-42ee-bc2d-0c6aed86c6bb,,split_by_run_result,920;7780
+97,send_message,96,Helping your children learn,@results.toolkit,has_pattern,yes education,,@results.count Pagtulong sa pagkatuto ng mga anak,,,,,,,,,,,,,,,67c21927-a779-4b17-90f7-3904ebc2c1f5,,execute_actions,320;7880
+98,save_flow_result,97,,,,,list of skills,"@(results.list_of_skills &""23,"")",,,,,,,,,,,,,,,67c21927-a779-4b17-90f7-3904ebc2c1f5,,execute_actions,320;7880
+99,save_flow_result,98,,,,,count,@(results.count +1),,,,,,,,,,,,,,,67c21927-a779-4b17-90f7-3904ebc2c1f5,,execute_actions,320;7880
+100,split_by_value,96;99,,,,,,@results.toolkit,,,,,,,,,,,,,,,37cda7ed-7902-4451-ba43-08cf31df9409,,split_by_run_result,920;8280
+101,send_message,100,Keeping healthy,@results.toolkit,has_pattern,yes healthy,,@results.count Pananatiling malusog,,,,,,,,,,,,,,,073ddccc-ec1f-4646-9f1a-23ccf684a4cb,,execute_actions,340;8380
+102,save_flow_result,101,,,,,list of skills,"@(results.list_of_skills &""24,"")",,,,,,,,,,,,,,,073ddccc-ec1f-4646-9f1a-23ccf684a4cb,,execute_actions,340;8380
+103,save_flow_result,102,,,,,count,@(results.count +1),,,,,,,,,,,,,,,073ddccc-ec1f-4646-9f1a-23ccf684a4cb,,execute_actions,340;8380
+104,split_by_value,100;103,,,,,,@results.toolkit,,,,,,,,,,,,,,,b94cb90c-e787-47ea-917d-4c3debd45ea9,,split_by_run_result,900;8620
+105,send_message,104,Keeping it positive,@results.toolkit,has_pattern,yes positive,,@results.count Pananatiling positibo,,,,,,,,,,,,,,,a62524d1-f029-4129-96d9-ed283bf01a5a,,execute_actions,320;8780
+106,save_flow_result,105,,,,,list of skills,"@(results.list_of_skills &""25,"")",,,,,,,,,,,,,,,a62524d1-f029-4129-96d9-ed283bf01a5a,,execute_actions,320;8780
+107,save_flow_result,106,,,,,count,@(results.count +1),,,,,,,,,,,,,,,a62524d1-f029-4129-96d9-ed283bf01a5a,,execute_actions,320;8780
+108,split_by_value,104;107,,,,,,@results.toolkit,,,,,,,,,,,,,,,4ee705f2-80a8-419a-b03f-66f836df630e,,split_by_run_result,900;8960
+109,send_message,108,Keeping calm,@results.toolkit,has_pattern,yes keeping calm,,@results.count Pananatiling kalmado,,,,,,,,,,,,,,,e6ac6184-38ed-4a2c-94a8-0ebc11b47d2c,,execute_actions,320;9180
+110,save_flow_result,109,,,,,list of skills,"@(results.list_of_skills &""26,"")",,,,,,,,,,,,,,,e6ac6184-38ed-4a2c-94a8-0ebc11b47d2c,,execute_actions,320;9180
+111,save_flow_result,110,,,,,count,@(results.count +1),,,,,,,,,,,,,,,e6ac6184-38ed-4a2c-94a8-0ebc11b47d2c,,execute_actions,320;9180
+112,split_by_value,108;111,,,,,,@results.toolkit,,,,,,,,,,,,,,,a7156d52-9deb-4e5e-8eba-1fe17cb6339e,,split_by_run_result,940;9380
+113,send_message,112,Community safety,@results.toolkit,has_pattern,yes community safety,,@results.count Kaligtasan ng komunidad,,,,,,,,,,,,,,,a40df2d7-3eb4-48dd-a468-00abcadc6089,,execute_actions,320;9540
+114,save_flow_result,113,,,,,list of skills,"@(results.list_of_skills &""27,"")",,,,,,,,,,,,,,,a40df2d7-3eb4-48dd-a468-00abcadc6089,,execute_actions,320;9540

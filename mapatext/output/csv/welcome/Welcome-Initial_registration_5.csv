@@ -1,0 +1,16 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,d0584a70-589c-4e97-8387-d858c42e79a3,,split_by_expression,540;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"Can you please tell me your age? Please reply with the number only. Example: 28
+
+If you don't want to tell me your age, that's okay. Please type ""N"".",,,,,,,,,,,,,,,2161969e-11a8-478a-9329-d398e2dd1d48,,execute_actions,665;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"Can you please tell us your age? Please reply with the number only. Example: 28
+
+If you don't want to tell us your age, that's okay. Please type ""N"".",,,,,,,,,,,,,,,2b370fc2-f7d2-4d97-86a5-a7363d422d5d,,execute_actions,415;200
+4,wait_for_response,2;3,,,,,age,,,,,,,,,,,,,,,,3e07f199-6ca1-4bca-89df-ae0d589068b3,,wait_for_response,395;500
+5,send_message,4,18,,has_number_lt,< 18,,This looks too young. MaPaText is only for people over the age of 18.,,,,,,,,,,,,,,,8e1202a0-0c38-4ae9-adc8-45d160a940b8,,execute_actions,335;740
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,
+7,send_message,4,99,,has_number_gt,>99,,This looks too old.,,,,,,,,,,,,,,,7de22f62-1f36-407b-8ffb-4864ac18656e,,execute_actions,885;680
+8,go_to,7,,,,,,1,,,,,,,,,,,,,,,,,,
+9,save_value,4;4,"18,99;n no",,has_number_between;has_any_word,18 - 99;N,age,@results.age,,,,,,,,,,,,,,,88dff0df-5c0a-4a18-af68-ac15b8579e2b,,execute_actions,155;640
+10,send_message,4,,,,,,Sorry I don't understand what you mean.,,,,,,,,,,,,,,,576f3f30-c2fd-4c65-8daf-f6230f0f07da,,execute_actions,1085;480
+11,go_to,10,,,,,,1,,,,,,,,,,,,,,,,,,

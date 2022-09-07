@@ -1,0 +1,71 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,Family budgeting,,,,,,,,,,,,,,,4125c6e1-b280-42fe-a545-e222a66bb63d,,execute_actions,120;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,3fa5350c-86eb-44ab-bfe1-cc9ac05aae6c,,split_by_subflow,120;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,2efc1100-fd28-4502-8627-07e2bba5eb7a,,split_by_contact_field,120;280
+4,send_message,3,,,,,,"Millions of families are struggling to make ends meet. When money is tight, this can make us feel anxious, stressed, and sad. How we understand and talk about money is important. We can also learn about how we can save in ways that will benefit the family.",,,,,,,,,,,,,,,bcfbdeea-5d2e-43fa-9268-aca06fc4bfd8,,execute_actions,1820;260
+5,split_by_value,3,yes,@fields.from_theme,has_any_word,Yes,,@fields.type_of_media,,,,,,,,,,,,,,,c8fc554d-dcbc-4860-9387-2e2d4e7c180f,,split_by_contact_field,100;720
+6,send_message,5,high,@fields.type_of_media,has_any_word,High,,Here's a video to help you make a budget and save money together as a family.,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/Family_Budgeting.m4v,,99afc408-143f-40e6-948e-cbe79ae6a99f,,execute_actions,40;840
+7,send_message,5,medium,@fields.type_of_media,has_any_word,Medium,,Here's an audio message to help you make a budget and save money together as a family.,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/Family_Budgeting.mp3,,,3008b9b2-c759-4e25-be36-5ef5a4fa534d,,execute_actions,1030;860
+8,wait_for_response,6;7,,,,,Result 8,,,,,,,,,,,,,,,,75216cae-925a-4fc7-8d35-d9bc2d71ec19,60,wait_for_response,1030;1240
+9,send_message,5;8;8,;;No Response,,,,,"Making a budget.
+A budget is how we decide what we will spend our money on, even in stressful times. Making a budget can help you have enough at the end of the month so that you need to borrow less.",,,,,,,,,,,,,,,a3baabb7-3cb9-473f-9edc-a779e910f8b8,,execute_actions,1010;1380
+10,send_message,4,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/adults_budgeting.jpg,,,,35d62fe8-5d36-4a02-b28d-aec0ecd495d4,,execute_actions,1640;540
+11,wait_for_response,10,,,,,Result 3,,,,,,,,,,,,,,,,6dade851-c83c-4e2a-b639-0d9b28051723,3600,wait_for_response,1250;700
+12,go_to,11,yes y,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+13,send_message,11,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,9cf638a6-8b8e-4dcb-93e7-52cac92e47b2,,execute_actions,2150;600
+14,go_to,13,,,,,,10,,,,,,,,,,,,,,,,,,
+15,send_message,9,,,,,,Do you want 4 quick steps to help you make a budget and save money?,Yes,No,,,,,,,,,,,,,059e31b8-d994-4501-9e51-4785d22e7a70,,execute_actions,;1580
+16,wait_for_response,15,,,,,Result 4,,,,,,,,,,,,,,,,bda3158a-3f84-4d9b-a28b-b28653a29884,,wait_for_response,1010;1660
+17,send_message,16,yes y,,has_any_word,Yes,,"Step 1: What do we spend on now?
+
+• Get a piece of paper (or old newspaper or a cardboard box) and a pen.
+• Draw pictures of all the things that you and your family spend money on each month.
+• Write next to each picture how much each thing costs.
+• Add up how much money you have to spend each month.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/budgeting_2.png,,,,35bcd8fa-9c2c-4e3f-af21-5933ad64360c,,execute_actions,180;1820
+18,send_message,16,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,19fec34b-9966-4ea9-bec1-adf0b82a5ede,,execute_actions,1290;1540
+19,go_to,18,,,,,,15,,,,,,,,,,,,,,,,,,
+20,split_by_value,11;11;16,no n;No Response;no n,,has_any_word;;has_any_word,No;;No,,@fields.user_name,,,,,,,,,,,,,,,ceefaf84-4810-40cb-b09d-52b77d6deaca,,split_by_expression,2025;1040
+21,send_message,20,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" at anytime if you want this tip at another time. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,faa3301f-6107-4c23-af93-269203e74de4,,execute_actions,1900;1240
+22,send_message,20,,,,,,"That's okay! You can always type ""Help"" at anytime if you want this tip at another time. Chat to you later!",,,,,,,,,,,,,,,836dfbae-a9d0-4657-90d5-5636a313dbf2,,execute_actions,2150;1240
+23,send_message,17,,,,,,Do you want to receive Step 2? ,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/draw_budget.jpg,,,,18894644-709e-4ab2-9d1a-1a661b1d6365,,execute_actions,1130;2160
+24,wait_for_response,23,,,,,Result 5,,,,,,,,,,,,,,,,6d74accf-d245-40db-aa1c-5dffcd3f55aa,,wait_for_response,1780;2160
+25,send_message,24,yes y,,has_any_word,Yes,,"Step 2: Talk about needs and wants
+
+• Needs: Which things are important or must haves for your family to survive? (like food, soap to wash hands, needs for ill or disabled family members).
+• Wants: Which things are nice to have but not essential?",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/budgeting_1.png,,,,cb108203-1e95-4e7d-b4c7-baeda0e20094,,execute_actions,100;2340
+26,go_to,24,no n,,has_any_word,No,,20,,,,,,,,,,,,,,,,,,
+27,send_message,24,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,e27cbbb2-16ff-4cbb-8911-02192e166555,,execute_actions,2250;2340
+28,go_to,27,,,,,,23,,,,,,,,,,,,,,,,,,
+29,send_message,25,,,,,,Do you want to receive Step 3?,Yes,No,,,,,,,,,,,,,aa56274f-4ff9-4cd4-b029-0ced3c246ea3,,execute_actions,1150;2640
+30,wait_for_response,29,,,,,Result 6,,,,,,,,,,,,,,,,c0726d8a-f483-4861-a199-04673d7a98a6,,wait_for_response,1760;2840
+31,send_message,30,yes y,,has_any_word,Yes,,"Step 3: Build your own budget
+
+• Find a bag of stones or anything with lots of bits. This is your money for the month.
+• As a family, decide what you will spend on what, and put the stones on your picture.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/budgeting_3.png,,,,2727fcc6-4bdd-4ade-bc41-35a20d2af747,,execute_actions,1090;3040
+32,send_message,31,,,,,,"• If you can save even a tiny amount for the future, or for an emergency  – it can make a big difference over time.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/budgeting_4.png,,,,55ec626c-452b-4d7c-93b8-8693f1ce9e9c,,execute_actions,160;3320
+33,go_to,30,no n,,has_any_word,No,,20,,,,,,,,,,,,,,,,,,
+34,send_message,30,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,463be3b7-462b-48e5-8823-d415a825ec0c,,execute_actions,2350;2680
+35,go_to,34,,,,,,29,,,,,,,,,,,,,,,,,,
+36,send_message,32,,,,,,Do you want to receive Step 4?,Yes,No,,,,,,,,,,,,,bd0b37ef-dda0-447a-90e1-d5ea5e6a7548,,execute_actions,1170;3420
+37,wait_for_response,36,,,,,Result 7,,,,,,,,,,,,,,,,122a43e8-cb84-4b14-be3f-daf1f5540dee,,wait_for_response,1840;3360
+38,send_message,37,yes y,,has_any_word,Yes,,"Step 4: Find out where you can get extra help
+
+Your government or community groups may be giving money, vouchers, or food parcels to families in need. Ask about whether places in your community are giving support.",,,,,,,,,,,,,,,eaa5a685-2069-495a-bf85-08424a13657e,,execute_actions,1150;3600
+39,start_new_flow,38,,,,,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,9959c566-4f44-497d-8225-80c0bb71903a,,split_by_subflow,1030;3840
+40,split_by_group,39;39,Complete;Expired,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,40abc484-b37f-45b8-a3b6-db3dfbf0d3d2,,split_by_expression,635;4040
+41,split_by_group,40,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,f9d80adc-95b8-4c46-a81a-1d25ca9db1ef,,split_by_expression,885;4440
+42,send_message,41,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try following these steps to create a family budget. You can even involve your partner in the discussion. Millions of families find that learning ways to manage money as a family reduces family arguments and brings everyone together. That's real success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,1f8b388a-6ad0-4ed1-91c1-e92a35faf40a,,execute_actions,1010;4640
+43,send_message,41;41,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try following these steps to create a family budget. You can even involve your partner in the discussion. Millions of families find that learning ways to manage money as a family reduces family arguments and brings everyone together. That's real success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,fac656ba-f25b-4543-822f-052158c6c004,,execute_actions,760;4640
+44,split_by_group,40;40,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,f664104b-6e51-4a65-a63c-ee6bd918b9c8,,split_by_expression,385;4240
+45,send_message,44,ABTest_test-gamification_alternative,,,,,"Well done for adding another layer to your House of Support! Over the next few days, try following these steps to create a family budget. You can even involve your partner in the discussion. Millions of families find that learning ways to manage money as a family reduces family arguments and brings everyone together. That's real success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,e4d0a337-4687-4d4b-9bda-30d514cdebc5,,execute_actions,510;4640
+46,send_message,44;44,ABTest_test-gamification_Default;,,,,,"Well done for adding another skill to your Parenting Toolkit! Over the next few days, try following these steps to create a family budget. You can even involve your partner in the discussion. Millions of families find that learning ways to manage money as a family reduces family arguments and brings everyone together. That's real success!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,bdea83da-f7ae-4603-ad64-158ac9b19ad4,,execute_actions,260;4640
+47,save_value,42;43;45;46,,,,,last interaction,@(now()),,,,,,,,,,,,,,,236c1b64-cd80-46b2-9ead-9d4a7864888b,,execute_actions,1130;4980
+48,save_value,47,,,,,current activity,budget_adult,,,,,,,,,,,,,,,43853f38-064e-4e97-87c7-90fc0f0978cc,,execute_actions,1780;4640
+49,save_value,48,,,,,current type assessed,tip,,,,,,,,,,,,,,,43853f38-064e-4e97-87c7-90fc0f0978cc,,execute_actions,1780;4640
+50,start_new_flow,49,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,3b73c6af-989d-4417-886a-fabf6ecbe600,,split_by_subflow,1680;4920
+51,split_by_value,50;50,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,d9c844f5-04c4-4a6e-ab64-48a57f8b4bc2,,split_by_expression,1475;5200
+52,send_message,51,,@fields.user_name,has_text,user_name,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,1e24f5eb-7f99-457b-be38-73bd1c8bd658,,execute_actions,1350;5400
+53,send_message,51,,,,,,"Remember you can always type ""Help"" if you ever want more parenting tips or support. Chat to you later!",,,,,,,,,,,,,,,683a1706-f15f-4a6c-972b-531dc8b5f4d0,,execute_actions,1600;5400
+54,go_to,37,no n,,has_any_word,No,,20,,,,,,,,,,,,,,,,,,
+55,send_message,37,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,2be5d6ab-aa8b-48fb-83b6-c0930953c4b0,,execute_actions,2170;3540
+56,go_to,55,,,,,,36,,,,,,,,,,,,,,,,,,

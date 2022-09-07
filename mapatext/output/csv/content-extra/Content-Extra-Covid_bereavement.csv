@@ -1,0 +1,106 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.from_theme,,,,,,,,,,,,,,,99056b74-8b79-437d-93d3-63274dd76733,,split_by_contact_field,260;
+2,split_by_group,1,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,c8d00ca6-4250-4c67-a23f-473b6a0a8b11,,split_by_expression,1005;160
+3,send_message,2,ABTest_test-first-person_alternative,,,,,A lot of families are dealing with grief due to COVID-19. I am here to support you and your family through this difficult time.,,,,,,,,,,,,,,,66ec2bca-f368-4fd1-9b08-b4c3fbe1bb2e,,execute_actions,1130;360
+4,send_message,2;2,ABTest_test-first-person_Default;,,,,,A lot of families are dealing with grief due to COVID-19. We are here to support you and your family through this difficult time.,,,,,,,,,,,,,,,211f5cc2-5a65-403c-ac28-9c5d0929912d,,execute_actions,880;360
+5,send_message,1,yes,@fields.from_theme,has_any_word,Yes,,"Here are 10 tips for coping with bereavement as a parent/caregiver:
+
+1. Looking after yourself helps your child
+2. Be honest and tell your children
+3. Children grieve in different ways 
+4. Be kind to yourself
+5. Practical things you may need
+6. Find a group or person to talk to
+7. Grieving in your own way
+8. Relaxing helps coping
+9. Giving chances to say goodbye
+10. One on one time with your child
+
+Type ""1"" to ""10"" to learn more about  of these tips. Type ""N"" to stop this tip.",,,,,,,,,,,,,,,2e77e34c-31e2-4387-a9e2-fd76609e63dd,,execute_actions,400;1420
+6,send_message,3;4,,,,,,Would you like some tips on coping with COVID-19 bereavement?,Yes,No,,,,,,,,,,,,,e30abf86-7dc9-4e01-b8b0-e860266afd30,,execute_actions,1150;540
+7,wait_for_response,6,,,,,know_more,,,,,,,,,,,,,,,,a36e7873-48a7-4a69-9fdc-ed0c0c9002c3,900,wait_for_response,380;700
+8,go_to,7,yes y,,has_any_word,Yes,,5,,,,,,,,,,,,,,,,,,
+9,send_message,7,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,97c0fe41-2ec4-42b6-a0c4-f2e086a4e69b,,execute_actions,1230;700
+10,go_to,9,,,,,,6,,,,,,,,,,,,,,,,,,
+11,send_message,7;7,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" if you want to learn more about how to cope with COVID-19 related loss.",,,,,,,,,,,,,,,058cc6ae-5758-482c-969a-108f98498594,,execute_actions,1290;1000
+12,send_message,11,,,,,,"If you have any further questions about COVID-19, you can always check your local COVID-19 hotline:
+Local Covid-19 Hotline - Department of Health (DOH): 02-894-COVID (02-894-26843) and 1555 (for mobile subscribers)
+
+General Covid-19 Support - Department of Health (DOH) website:https://doh.gov.ph//",,,,,,,,,,,,,,,503895fa-4c7a-4110-956b-a5012ff5813b,,execute_actions,1310;1160
+13,wait_for_response,5,,,,,list_of_tips,,,,,,,,,,,,,,,,9e055372-a90e-4e37-8adf-66c5dca307a3,,wait_for_response,280;2060
+14,split_by_value,13,no n ,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,8af1f812-1de2-4ab4-b859-7c693f9ed14a,,split_by_expression,1675;2520
+15,send_message,14,,@fields.user_name,has_text,user_name,,Well done @fields.user_name! You should be proud of yourself for exploring ways to get help for you and your family.,,,,,,,,,,,,,,,764c135a-f93d-4648-8d52-5ff43740828e,,execute_actions,1550;2720
+16,send_message,14,,,,,,Well done! You should be proud of yourself for exploring ways to get help for you and your family.,,,,,,,,,,,,,,,b7aad81d-1a5c-479d-99c3-83862afa926b,,execute_actions,1800;2720
+17,send_message,15;16,,,,,,"If you have any further questions about COVID-19, you can always check your local COVID-19 hotline:
+Local Covid-19 Hotline - Department of Health (DOH): 02-894-COVID (02-894-26843) and 1555 (for mobile subscribers)
+
+General Covid-19 Support - Department of Health (DOH) website:https://doh.gov.ph//",,,,,,,,,,,,,,,f41e2553-1495-4f9b-a431-cb5e659ca14e,,execute_actions,1800;2880
+18,save_value,17,,,,,current type assessed,tip,,,,,,,,,,,,,,,5cf476b8-2ac5-4930-99fb-4091b9c96c36,,execute_actions,1820;3080
+19,save_value,18,,,,,current activity,covid_bereavement,,,,,,,,,,,,,,,5cf476b8-2ac5-4930-99fb-4091b9c96c36,,execute_actions,1820;3080
+20,start_new_flow,19,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,cd3bc521-f1d9-4bb0-af12-7de7140cc406,,split_by_subflow,2110;3260
+21,split_by_value,20,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,43be8f01-7eff-42a4-aa54-011062d4b3f0,,split_by_expression,1985;3400
+22,send_message,21,,@fields.user_name,has_text,user_name,,Chat later @fields.user_name!,,,,,,,,,,,,,,,c24a31a2-742a-49b0-8b57-7d8a6efbcbcf,,execute_actions,1860;3600
+23,send_message,21,,,,,,Chat later!,,,,,,,,,,,,,,,f4703f25-3625-4939-9178-cd899fa0e629,,execute_actions,2110;3600
+24,send_message,13,1,,has_number_eq,1,,"1. Looking after yourself helps your child
+
+Although it may seem like the most important thing is to make sure your children are okay, when you look after yourself, you are also helping your child.",,,,,,,,,,,,,,,9d83f049-8e42-4d49-a5a2-d3baa9f6e8cc,,execute_actions,;2220
+25,send_message,24,,,,,,"Here are three steps that you can aim to do every day to look after yourself: 
+1. Get enough sleep and food every day. 
+2. Take a few minutes to relax and have a break
+3. Find one or two adults who can support you, listen, and talk. ",,,,,,,,,,,,,,,ea333576-e702-4c98-a7ea-28e9b5ff3848,,execute_actions,20;2500
+26,send_message,13,2,,has_number_eq,2,,"2. Be honest and tell your children
+
+You should tell your children that the person had died - sometimes children do not realise when someone has passed away. When you tell them use words they understand.",,,,,,,,,,,,,,,54385c4e-e6fd-445d-8fb2-a6e72a3a01b9,,execute_actions,260;2200
+27,send_message,26,,,,,,"If they do not understand what death is, help explain that the person they love is not coming back. Try not call it 'sleep' or 'a trip away'. You may have to tell your children about the passing many times before they grasp what happened.",,,,,,,,,,,,,,,aba71590-45a4-4176-91d8-e435cce0436d,,execute_actions,240;2480
+28,send_message,27,,,,,,"Children can respond in many different ways (e.g. crying, shouting, not believing, going very quiet), and all reactions are okay. Allow your child to ask questions and to talk about it. Most importantly, remind them that you are there for them.",,,,,,,,,,,,,,,ef27862f-46ac-490e-b830-7f428fea557e,,execute_actions,260;2920
+29,send_message,13,3,,has_number_eq,3,,"3. Children grieve in different ways
+
+Grief can affect us for weeks, months, or years. Do not feel pressured to feel better quickly. 
+Children, like adults, experience grief in different ways. Children might be sad, angry, not understand or believe it, feel numb, unwell or have pains, nightmares, or problems at school. Children may also seem happy, but still be sad. Children may behave if they are much younger than they are for a while.",,,,,,,,,,,,,,,fb017ab3-d3a1-46a2-abb8-0a666f274a02,,execute_actions,520;2200
+30,send_message,29,,,,,,"These reactions may not make sense to you, but they are all normal. Children may also feel like it was their fault - that they passed on the virus or that they behaved badly. Tell them clearly that they did nothing wrong.",,,,,,,,,,,,,,,fcaaf53a-98b8-4da4-833f-ab8186106914,,execute_actions,540;2840
+31,send_message,30,,,,,,"If there is a support group that your child can be part of, this can help. If your child talks about wanting to hurt or kill themselves, ask for help as soon as you can.",,,,,,,,,,,,,,,db7e22b9-b214-4647-bd76-0c32e454ceac,,execute_actions,540;3060
+32,send_message,13,4,,has_number_eq,4,,"4. Be kind to yourself
+
+Remember to be kind to yourself, you are also dealing with the loss of a loved one. It is okay to not feel good and it is okay to cry. Try taking some time out of each day for yourself and making a list of things that make you feel better and do them. These small acts can help and make sure that you are being kind to yourself.",,,,,,,,,,,,,,,f23c9241-beef-4c7c-9cfe-f1345772952d,,execute_actions,760;2220
+33,send_message,13,5,,has_number_eq,5,,"5. Practical things you may need
+
+Ask someone you trust for help, food or childcare can be useful. You may also need documents for inheritance, for children, or to access services. Make sure you find out about your rights, sometimes people try to take money or inheritance from a grieving person.
+",,,,,,,,,,,,,,,789930ae-1d0c-485c-824f-4e7e2cddba66,,execute_actions,1290;2220
+34,send_message,13,6,,has_number_eq,6,,"6. Find a group or person to talk to
+
+Talking with someone who can support you and listen to you can help. It can also help to join a group of people who have also lost someone. Remember nobody is perfect. It is okay to talk about the good and the bad times. ",,,,,,,,,,,,,,,51ff13f7-a161-4689-a0d3-b5d891bd0d3a,,execute_actions,40;3180
+35,send_message,13,7,,has_number_eq,7,,"7. Grieving in your own way
+
+We all grieve in our own ways, from shouting, crying, feeling angry or sad. It can also feel different every day. Sometimes we feel better, then we feel worse again. Whatever you feel, your feelings are valid and it is okay. ",,,,,,,,,,,,,,,5f385dc1-6271-469b-ab23-062b6345d665,,execute_actions,280;3180
+36,send_message,35,,,,,,"It can help to take part in any mourning or cultural rituals that feel helpful, or to think about bonds and connections with the person you have lost.",,,,,,,,,,,,,,,72037c6f-4f7a-4e95-9319-26f1dad26d4d,,execute_actions,280;3660
+37,send_message,13,8,,has_number_eq,8,,"8. Relaxing helps coping
+
+Try to do one simple thing to relax each day with your child or teenage, and also for yourself. It can also help to use this when you are upset or angry.",,,,,,,,,,,,,,,78f75e93-793a-4fa8-ae78-db540bc02318,,execute_actions,540;3280
+38,send_message,37,,,,,,"Sit down comfortably, close your eyes
+Listen to your breath as it goes in and out for a minute
+When you are ready, open your eyes.",,,,,,,,,,,,,,,2144be93-05b5-4764-9b46-550b00603d2d,,execute_actions,540;3720
+39,send_message,13,9,,has_number_eq,9,,"9. Giving changes to say goodbye
+
+Saying goodbye is difficult and you should do whatever feels like the right thing to do for you and your child. Families, children and parents are not perfect. When someone has died, it is okay to talk about the good and the bad things we remember. It can help to write a letter or make a drawing of the person that passed away.",,,,,,,,,,,,,,,6a716dc1-6f9b-4570-97c7-5b95ee7108ec,,execute_actions,840;2760
+40,send_message,39,,,,,,"Some people hold a ceremony or have a special meal to celebrate the person and say goodbye. Others make a box of memories, to put things that remind them of the person. It can also help just to talk about the person when you think about them.",,,,,,,,,,,,,,,bef20d36-07cc-4fc5-a4f6-208ba55e528a,,execute_actions,800;3160
+41,send_message,13,10,,has_number_eq,10,,"10. One on one time with your child
+
+Spending a few minutes every day focused on your child helps to make them feel more secure and give them a chance to play or talk about things that are upsetting them. ",,,,,,,,,,,,,,,ecc8ef0b-19ca-424c-9217-d1ba643fe510,,execute_actions,840;3720
+42,send_message,25;28;31;32;33;34;36;38;40;41,,,,,,"Please select another number if you want to learn more about how to cope with bereavement as a parent/caregiver:
+
+1. Looking after yourself helps your child
+2. Be honest and tell your children
+3. Children grieve in different ways 
+4. Be kind to yourself
+5. Practical things you may need
+6. Find a group or person to talk to
+7. Grieving in your own way
+8. Relaxing helps coping
+9. Giving chances to say goodbye
+10. One on one time with your child
+
+You can also type ""N"" to stop this tip.",,,,,,,,,,,,,,,15df7c69-57d9-4af2-8890-e3509a2b6631,,execute_actions,520;4100
+43,save_value,42,,,,,covid bereavement list of tips,"@(fields.covid_bereavement_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,fdb7d5fa-5c46-43d2-9891-d1736194fbbf,,execute_actions,480;4680
+44,go_to,43,,,,,,13,,,,,,,,,,,,,,,,,,
+45,send_message,13,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,cc9aface-e389-4092-b563-89be84f9fd52,,execute_actions,1270;1420
+46,go_to,45,,,,,,5,,,,,,,,,,,,,,,,,,

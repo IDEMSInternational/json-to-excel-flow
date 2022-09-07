@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Sayawan
+•	Patugtugin ang iyong paboritong musika o awitin mo ang paborito mong kanta at sumayaw sa iyong kwarto kasama ang iyong batang anak. Kung mayroon kang sanggol, hawakan mo siya habang ikaw ay sumasayaw. 
+•	Sumayaw ng iba't-ibang paraan o gamit ang iba't-ibang bahagi ng iyong katawan.
+•	Halimbawa, ""Sumayaw nang parang unggoy"", ""Sumayaw nang parang manok"" o ""Sumayaw tayo gamit ang ating tuhod at tagiliran.""
+•	Mag-isip ng iba-ibang direksyon. Maging masaya at mapaglaro! 
+•	Kapag tumigil ang tugtog, ang lahat ay gagawa ng nakakatawang pagtigil.
+•	Pansinin kung anong mga ritmo o galaw ang gusto nila!",,,,,,,,,,,,,,,9e9b3975-7067-498c-a8c5-9986c770c73d,,execute_actions,;

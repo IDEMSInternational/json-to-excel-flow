@@ -1,0 +1,10 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,9ceebcc0-45bc-4736-9669-76d54b66fb70,,split_by_expression,420;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"Can you please tell me the name or nickname of this child?
+
+Please type ""N"" if you prefer not to answer.",,,,,,,,,,,,,,,bbb051a5-e86b-4011-a69e-5161a2cbcf76,,execute_actions,545;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"Can you please tell us the name or nickname of this child?
+
+Please type ""N"" if you prefer not to answer.",,,,,,,,,,,,,,,74f578d7-7022-474a-95ad-df91e81790b6,,execute_actions,295;200
+4,wait_for_response,2;3,,,,,name,,,,,,,,,,,,,,,,5e206613-4764-4569-9125-121a06580b0b,,wait_for_response,545;380
+5,save_value,4,,,,,child nickname,@results.name,,,,,,,,,,,,,,,6ffb6110-2649-415a-8640-a2d21b109cac,,execute_actions,725;520

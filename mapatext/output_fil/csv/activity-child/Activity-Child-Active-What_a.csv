@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,"Anong Ginagawa Mo? 
+• Ang laro ay mas magandang laruin kapag higit pa sa 2 tao ang naglalaro.
+• Ang bawat isa ay magpapanggap na may ginagawa--halimbawa, nagsusuklay ng buhok 
+• Ang pangalawang tao ay magtatanong, ""Ano ang ginagawa mo?""
+• Ang unang tao ay kailangan magsabi ng isang bagay na walang ugnayan sa pagsuklay ng buhok, halimbawa, ""Pagtatali ng aking mga sapatos.""  
+• Ang pangalawang tao ngayon ay magpapanggap na nagtatali ng kanyang sapatos hanggang ang bagong magtatanong, ""Ano ang ginagawa mo?"" 
+• Ang sagot ng pangalawang tao ay dapat iba sa kung ano talaga ang kanilang ginagawa!
+Dapat i-arte o i-akting ng susunod na tao ang sagot ng pangalawang tao at kapag may nagtanong kung ano ang ginagawa nila, ang kanilang sagot ay dapat na naiiba sa talagang ginagawa nila!",,,,,,,,,,,,,,,cdb75de1-082a-489f-b529-895a38dc7937,,execute_actions,;

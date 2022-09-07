@@ -1,0 +1,44 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,6c608791-e5d0-4357-8cc2-ebdde89e1c73,,split_by_expression,645;420
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"Alam mo bang higit sa 200 milyong mga magulang sa buong mundo ang gumamit na nitong mga resources na ginawa ng Parenting for Lifelong Health, WHO, at UNICEF?",,,,,,,,,,,,,,,a03dc984-182d-49ea-aef9-9db39245f5d4,,execute_actions,770;620
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"Alam mo bang higit sa 200 milyong mga magulang sa buong mundo ang gumamit na ng aming mga resources na ginawa ng Parenting for Lifelong Health, WHO, at UNICEF?",,,,,,,,,,,,,,,35c18a1e-61c5-43eb-9d62-ab93cb89d1fc,,execute_actions,520;620
+4,send_message,2;3,,,,,,Ang programang ito ay para sa mga magulang at tagapag-alaga tulad mo (may edad na 18 pataas).,,,,,,,,,,,,,,,b68e1c56-b080-445e-8001-51246f0c810b,,execute_actions,770;860
+5,send_message,4,,,,,,"Ang iyong pakikilahok at anumang impormasyon na iyong ibibigay ay tanging mga mananaliksik lamang ang makakakita. Ito ay upang mapag-aralan kung paano mas mapapabuti ang suportang maibibigay para sa mga pamilyang tulad ninyo. 
+
+Mag-click dito para sa karagdagang impormasyon:
+https://covid19parenting.com/assets/consents/PH_fil.pdf",,,,,,,,,,,,,,,59b33491-3a53-4b28-9ce5-f7a4f3f17600,,execute_actions,770;1060
+6,send_message,5,,,,,,"I-type ang ""Oo"" kung sumasang-ayon ka dito. I-type ang ""Exit"" kung hindi mo gustong lumahok. ",,,,,,,,,,,,,,,ec803b34-3e64-46fa-b778-a73bbd0ae7a8,,execute_actions,770;1480
+7,wait_for_response,6,,,,,Result 17,,,,,,,,,,,,,,,,77d7b0fe-75ac-4f49-9d9e-d00a3aca985f,,wait_for_response,830;1900
+8,send_message,7,Oo y o,,has_any_word,Yes,,"Napakaganda niyan, maraming salamat! ",,,,,,,,,,,,,,,1fa64852-6002-4abb-9c09-252ef8ec76a8,,execute_actions,100;1800
+9,send_message,7,,,,,,"Pasensiya na, hindi ko naintindihan. I-type ang ""Oo"" kung sumasang-ayon ka dito. I-type ang ""Exit"" kung hindi mo gustong lumahok.",,,,,,,,,,,,,,,0dbf5e4a-f8f2-494e-b439-b24fca7ffbf1,,execute_actions,1440;1780
+10,go_to,9,,,,,,7,,,,,,,,,,,,,,,,,,
+11,send_message,8,,,,,,Maaari mo bang kumpirmahing ikaw ay 18 taong gulang pataas?,"Oo, ako ay lagpas 18 taong gulang","Hindi, ako ay mas bata sa 18 taong gulang",,,,,,,,,,,,,1f5d5405-c920-47d5-9958-883c7cc360a5,,execute_actions,140;1920
+12,wait_for_response,11,,,,,Result 4,,,,,,,,,,,,,,,,3ab2eef0-53d7-42cf-ae0f-7bf81692a1d8,,wait_for_response,120;2120
+13,send_message,12,yes y lagpas oo o,,has_any_word,Yes,,Maraming salamat sa pagkumpirma nito. Handa ka na simulan ang iyong MaPaText journey!,,,,,,,,,,,,,,,dfa00ad2-dbd7-4c01-a9ff-a2d19f275cf3,,execute_actions,;2720
+14,add_to_group,13,,,,,,in program,,,,,,,,,,,,,,328730ed-02aa-4731-8a7c-350acde7a8f5,6faed9fd-a8d9-4eef-a109-52cd7a589726,,execute_actions,80;3160
+15,add_to_group,14,,,,,,consent,,,,,,,,,,,,,,4fba34b6-fba5-4334-9f96-81f3fee6bf60,6faed9fd-a8d9-4eef-a109-52cd7a589726,,execute_actions,80;3160
+16,start_new_flow,15,,,,,,PLH - Internal - Empty,,,,,,,,,,,,,,4b369cbf-188c-4a1a-8599-ce726d4bd831,368ba942-d9fa-44ed-9c50-8f436c3b4704,,split_by_subflow,120;3420
+17,send_message,12,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,66bfacfb-e56c-47ec-b983-1a70f85ce980,,execute_actions,420;2080
+18,go_to,17,,,,,,11,,,,,,,,,,,,,,,,,,
+19,send_message,7,exit,,has_any_word,Exit,,"Sigurado ka bang ayaw mong makatanggap ng mga mensaheng ito? Kung ayaw mo nang makatanggap ng anumang mensahe, paki-type ang ""ITIGIL ANG MGA MENSAHE."" Kung ikaw ay nagkamali, paki-type ang ""balik"" at pumili sa iba pang pagpipilian.",,,,,,,,,,,,,,,db8b5db4-de5c-4b95-8e42-dffc81b05a6f,,execute_actions,1030;2100
+20,wait_for_response,19,,,,,Result 3,,,,,,,,,,,,,,,,7aee399a-27ca-4683-9d2b-f73708998010,,wait_for_response,1010;2340
+21,save_value,20,itigil ang pagpapadala ng mga mensahe,,has_only_phrase,no consent,did not consent,yes,,,,,,,,,,,,,,,418fdde5-552f-4d6e-82fd-088016fee277,,execute_actions,1300;2480
+22,start_new_flow,21,,,,,,PLH - Welcome - Entry - No consent - Interview,,,,,,,,,,,,,,bf1cf6b2-97bf-4f5e-abd9-35c2747f9391,17545c54-bc9d-4657-abbc-fbff59bd493a,,split_by_subflow,1300;2620
+23,split_by_group,22;22,Complete;Expired,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,7993380f-57a1-4931-8701-a6e3226add8d,,split_by_expression,1175;2760
+24,send_message,23,ABTest_test-first-person_alternative,,,,,"Kung bumalik ka para lumahok sa programa, i-type ang ""MAGPADALA_NG MGA MENSAHE"". 
+
+Sana ay makita ka namin ulit sa susunod. Isang maligaya at mapayapang araw sa iyo! ",,,,,,,,,,,,,,,0ed51a7e-f439-47e0-9d3c-49b9dadea676,,execute_actions,1300;2960
+25,send_message,23;23,ABTest_test-first-person_Default;,,,,,"Kung bumalik ka para lumahok sa programa, i-type ang ""MAGPADALA_NG MGA MENSAHE"". 
+
+Sana ay makita ka namin ulit sa susunod. Isang maligaya at mapayapang araw sa iyo! ",,,,,,,,,,,,,,,481e3ad6-1f44-4bb6-af9b-3f55a2c5f67d,,execute_actions,1050;2960
+26,go_to,20,balik,,has_any_word,Back,,5,,,,,,,,,,,,,,,,,,
+27,send_message,20,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,adaa426c-61f2-4d75-9ff5-4a942a6841d8,,execute_actions,1600;2100
+28,go_to,27,,,,,,19,,,,,,,,,,,,,,,,,,
+29,send_message,12,no n under hindi h,,has_any_word,No,,"Paumanhin, ang MaPaText ay para lang sa mga taong higit sa 18 taong gulang. Kinukumpirma mo bang ikaw ay mas bata sa 18 taong gulang?",Oo,Hindi,,,,,,,,,,,,,abac073e-6b9c-4b56-9126-9f51e6e242b8,,execute_actions,160;2280
+30,wait_for_response,29,,,,,Result 5,,,,,,,,,,,,,,,,8da90bd6-5025-4cbf-b1fb-c645fad49261,,wait_for_response,200;2460
+31,add_to_group,30,Oo y o,,has_any_word,Yes,,below age,,,,,,,,,,,,,,bd334342-df0f-4b66-b7f2-8701d5f70545,8a594722-3136-454b-8b65-f0c553ee2b89,,execute_actions,360;2620
+32,send_message,31,,,,,,"Kung gusto mong maranasan ang MaPaText, maaari mo itong ibahagi sa iyong mga magulang o tagapag-alaga.",,,,,,,,,,,,,,,56af4449-5568-4698-85a2-f5f3e5cc9a56,,execute_actions,340;2720
+33,start_new_flow,32,,,,,,PLH - Supportive - Share - Link,,,,,,,,,,,,,,a8233166-1c54-4c76-a8fa-9e6fe9be489e,342aa95b-e9f0-4df9-b300-dde1446f6950,,split_by_subflow,380;3100
+34,go_to,30,Hindi n h,,has_any_word,No,,11,,,,,,,,,,,,,,,,,,
+35,send_message,30,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,4576cb4a-f0de-49ad-a42c-5d1dbaa3f847,,execute_actions,480;2460
+36,go_to,35,,,,,,29,,,,,,,,,,,,,,,,,,

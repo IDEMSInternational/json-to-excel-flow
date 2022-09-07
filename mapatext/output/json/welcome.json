@@ -1,0 +1,6963 @@
+{
+  "PLH - Welcome - Initial registration - Region": [
+    {
+      "row_id": 1,
+      "type": "save_value",
+      "message_text": "17",
+      "save_name": "n states",
+      "_nodeId": "3b79dceb-d411-41df-a8c7-a2a7dbd2bf72",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        400,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "In what region do you live?\n\nPlease select the number for the following options:\n1. Region I – Ilocos Region\n2. Region II – Cagayan Valley\n3. Region III – Central Luzon\n4. Region IV-A – CALABARZON\n5. Region IV-B – MIMAROPA Region\n6. Region V – Bicol Region\n7. Region VI – Western Visayas\n8. Region VII – Central Visayas\n9. Region VIII – Eastern Visayas\n10. Region IX – Zamboanga Peninsula\n11. Region X – Northern Mindanao\n12. Region XI – Davao Region\n13. Region XII – SOCCSKSARGEN\n14. Region XIII – Caraga\n15. NCR – National Capital Region\n16. CAR – Cordillera Administrative Region\n17. BARMM – Bangsamoro Autonomous Region in Muslim Mindanao",
+      "_nodeId": "3b79dceb-d411-41df-a8c7-a2a7dbd2bf72",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        400,
+        20
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "a5997f12-0a3e-4f24-8537-a1cbcdbd0acb",
+      "from": [
+        2
+      ],
+      "type": "wait_for_response",
+      "save_name": "state",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        360,
+        300
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "22dcbf4f-3572-498f-a156-b1e308c0f3d8",
+      "from": [
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@(and(results.state <= fields.n_states, results.state>=1)) ",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        360,
+        460
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_number"
+      ],
+      "condition_name": [
+        "Has Number"
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "@results.state",
+      "save_name": "state of origin",
+      "_nodeId": "7d57463c-17dc-4937-96d0-5ea5ae54bed7",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        240,
+        620
+      ],
+      "condition": [
+        [
+          "true"
+        ]
+      ],
+      "condition_var": [
+        "@(and(results.state <= fields.n_states, results.state>=1)) "
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "True"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean. Please reply with a number between 1 and @fields.n_states.",
+      "_nodeId": "615ee6b8-521b-4813-9b94-b03bb655296a",
+      "from": [
+        3,
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        740,
+        280
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "go_to",
+      "from": [
+        6
+      ],
+      "message_text": 3,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Entry - Set language": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Hi! Thank you for signing up to receive MaPaText tips. Please tell us which language you would like:\n1. English",
+      "image": "@(\"https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/\" & fields.deployment & \"/resourceGroup/image/universal/you_deserve_a_star.jpg",
+      "_nodeId": "f6a50c43-b9da-4daf-a842-372c255d4ab5",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        520,
+        280
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "dfe19fd3-8bab-4eee-96f0-c068600cda75",
+      "from": [
+        1
+      ],
+      "type": "wait_for_response",
+      "save_name": "language",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        520,
+        620
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "set_language",
+      "message_text": "eng",
+      "_nodeId": "6b629b10-c91f-4b85-9b28-0e26809b8de8",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        340,
+        760
+      ],
+      "condition": [
+        [
+          "1"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "english"
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "15577f66-a426-45d1-945e-f7f170a53264",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        960,
+        440
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "go_to",
+      "from": [
+        4
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Tips": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "Thanks so much! We all want the best for our children as parents.",
+      "_nodeId": "13808433-c61b-4c59-bcb1-f17cf289499f",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5080,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Could you please choose the goal that is most important to you as a parent?",
+      "choice_1": "Improve my relationship with my child",
+      "choice_2": "My child to behave better",
+      "choice_3": "Help my child learn",
+      "choice_4": "Reduce family stress",
+      "choice_5": "Keep my child safe",
+      "choice_6": "Learn about child development",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/stressed_parent.jpg",
+      "_nodeId": "13808433-c61b-4c59-bcb1-f17cf289499f",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5080,
+        0
+      ]
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "a61af7ac-7a58-40f0-9c36-4cd372a9a334",
+      "from": [
+        2
+      ],
+      "type": "wait_for_response",
+      "save_name": "parenting goal",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        1270,
+        400
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "da0bbcd0-fd2f-4d94-929f-c3385783042a",
+      "from": [
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.age_group_for_tips",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        330,
+        560
+      ],
+      "condition": [
+        [
+          "Improve my relationship with my child"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "1"
+      ]
+    },
+    {
+      "row_id": 5,
+      "_nodeId": "515d89e2-5945-4540-bd9e-13c192d7c209",
+      "from": [
+        4
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        125,
+        700
+      ],
+      "condition": [
+        [
+          "baby"
+        ]
+      ],
+      "condition_var": [
+        "@fields.age_group_for_tips"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Baby"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Quick tip: When you give your baby your full attention, you make them feel secure and loved. Try to spend at least 20 minutes a day playing with @fields.child_nickname. Switch off the television and put away phones. Make it fun!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/parent_and_baby.jpg",
+      "_nodeId": "46ca5da9-9e87-49b1-9c72-4e76344971fe",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        1500
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "Quick tip: When you give your baby your full attention, you make them feel secure and loved. Try to spend at least 20 minutes a day playing with your baby. Switch off the television and put away phones. Make it fun!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/parent_and_baby.jpg",
+      "_nodeId": "d5c07b9f-f759-4ffb-96f1-e5e2ceca3124",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        250,
+        1500
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "4d02df4a-ca63-44f1-a650-b9214a00033d",
+      "from": [
+        4
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        595,
+        900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "Quick tip: Spending time with your child is free and even 5 minutes a day can make a difference. Try asking @fields.child_nickname what they would like to do together. It can be fun and relaxing for you too!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/playing_family.jpg",
+      "_nodeId": "591234b5-a969-4613-a3ea-6b2976c37135",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        470,
+        1500
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Quick tip: Spending time with your child is free and even 5 minutes a day can make a difference. Try asking your child what they would like to do together. It can be fun and relaxing for you too!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/playing_family.jpg",
+      "_nodeId": "b2cdf3bf-2541-40b5-ae47-8ab6d40bb2ad",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        720,
+        1500
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "_nodeId": "10c205d1-abae-42c2-8e90-2e12b9ce384f",
+      "from": [
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1065,
+        1100
+      ],
+      "condition": [
+        [
+          "My child to behave better"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "2"
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "send_message",
+      "message_text": "Quick tip: All children misbehave. One thing that can help is to praise @fields.child_nickname anytime that they do something good – however small. They may not look like they want your praise but they still really, really do.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg",
+      "_nodeId": "b8064a1d-6e6b-4b24-a0a1-ef9b4269e4f2",
+      "from": [
+        11
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        940,
+        1500
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "send_message",
+      "message_text": "Quick tip: All children misbehave. One thing that can help is to praise your child anytime that they do something good – however small. They may not look like they want your praise but they still really, really do.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/misbehaving_children.jpg",
+      "_nodeId": "fd70bb97-0765-49aa-82e7-b22956c86a75",
+      "from": [
+        11
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1190,
+        1500
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "Quick tip: It is really hard to help our children continue learning when schools are closed or part-open. One thing that might be helpful is to try and set up a daily schedule that includes time for schoolwork and time for fun.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/Family_writing_together.jpg",
+      "_nodeId": "6c3b3d34-4133-4c51-8a58-23bb8aa85fdc",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5160,
+        1500
+      ],
+      "condition": [
+        [
+          "Help my child learn"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "3"
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "Quick tip: This is a stressful time for all of us. When a problem comes up, talk about it together! What is the problem exactly? What different solutions are there and what are the consequences of one? That way, you can find a solution that can be OK for everyone.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/two_parents_talking_together.jpg",
+      "_nodeId": "9ea498f0-63bf-409a-920c-84ffeaefe0df",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5400,
+        1500
+      ],
+      "condition": [
+        [
+          "Reduce family stress"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "4"
+      ]
+    },
+    {
+      "row_id": 16,
+      "_nodeId": "10dc7654-533c-471f-9bd3-0dac83a395e3",
+      "from": [
+        3
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        5995,
+        1300
+      ],
+      "condition": [
+        [
+          "Keep my child safe"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "5"
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "send_message",
+      "message_text": "Quick tip: Try to start a conversation with @fields.child_nickname about safe and unsafe places in your community and online. They may even know some you don’t. This will help you make a plan together about how to stay safe.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/parent_and_child_with_tablet.jpg",
+      "_nodeId": "da8adc41-75c3-479c-9e98-b9c44a27b547",
+      "from": [
+        16
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5870,
+        1500
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 18,
+      "type": "send_message",
+      "message_text": "Quick tip: Try to start a conversation with your child about safe and unsafe places in your community and online. They may even know some you don’t. This will help you make a plan together about how to stay safe.",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/parent_and_child_with_tablet.jpg",
+      "_nodeId": "6b8d892d-67e2-4477-a51a-8b8032592c5d",
+      "from": [
+        16
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        6370,
+        1500
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "send_message",
+      "message_text": "Quick Tip: All children develop and grow at different rates. Understanding how your child is developing can help you meet their needs and give them the best start in life. It will also help you understand your child better!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/development.jpg",
+      "_nodeId": "da7c980e-0cb1-4d23-a7b5-d6f3aa441c44",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        6860,
+        1540
+      ],
+      "condition": [
+        [
+          "Learn about child development"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "6"
+      ]
+    },
+    {
+      "row_id": 20,
+      "type": "save_value",
+      "message_text": "@results.parenting_goal.category",
+      "save_name": "parenting goal",
+      "_nodeId": "195a15fe-fec2-464b-b6ce-3151853d7691",
+      "from": [
+        10,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        6,
+        7,
+        9
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5040,
+        1880
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "_nodeId": "b1381bb0-25df-4bc6-907d-640dfa216a0a",
+      "from": [
+        20
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "5602b823-dfb8-4a0f-a8dc-8588b1f9af6e",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        3165,
+        2040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 22,
+      "_nodeId": "35690837-fb59-4453-bcb7-98b33644de97",
+      "from": [
+        21
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "5602b823-dfb8-4a0f-a8dc-8588b1f9af6e",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        4165,
+        2440
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 23,
+      "_nodeId": "130f2e6b-fd1e-46cb-bacc-1aa1ffba771e",
+      "from": [
+        22
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        4665,
+        3240
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 24,
+      "_nodeId": "d4e05947-6ffc-464e-a1f4-b80bb006d9e5",
+      "from": [
+        23
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        4415,
+        4640
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 25,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "c4caf433-6652-4783-8fdd-655483d51e00",
+      "from": [
+        24
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        4290,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 26,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "6a343cd1-9497-43b2-8caa-ede8ce765bf4",
+      "from": [
+        24
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        4540,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 27,
+      "_nodeId": "4fe94d2e-4c50-4ac1-a378-3986b7cf05f4",
+      "from": [
+        23
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        4915,
+        4840
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 28,
+      "type": "send_message",
+      "message_text": "Congratulations! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "218ba8f0-a223-4f18-8555-8e434a6a8bf0",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        4790,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 29,
+      "type": "send_message",
+      "message_text": "Congratulations! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "68b68937-461e-4e46-add1-fb181374b8cf",
+      "from": [
+        27
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5040,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 30,
+      "_nodeId": "99326a7e-394c-4637-9bcc-8541d81e5d4a",
+      "from": [
+        22,
+        22
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        3665,
+        3040
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 31,
+      "_nodeId": "aa330531-e42b-4bd9-baab-9a3c005f71d6",
+      "from": [
+        30
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        3415,
+        4240
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 32,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "01f352eb-702f-4bd6-923e-4d9cb69c1760",
+      "from": [
+        31
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3290,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 33,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "7153e7b3-b4b9-4d05-937d-56693a8ead35",
+      "from": [
+        31
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3540,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 34,
+      "_nodeId": "39659d6d-4e3f-4ced-a1fb-457256df3005",
+      "from": [
+        30
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        3915,
+        4440
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 35,
+      "type": "send_message",
+      "message_text": "Congratulations! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "87387e67-ab68-44e0-b732-c0f2ff6675b6",
+      "from": [
+        34
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3790,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 36,
+      "type": "send_message",
+      "message_text": "Congratulations! You have added your first layer to your House of Support.  Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "4c6c1c63-7c9e-4555-a5df-2f1ceff765b2",
+      "from": [
+        34
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        4040,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 37,
+      "_nodeId": "5fb27bb8-bed8-416e-8a98-83859d181087",
+      "from": [
+        21,
+        21
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-gamification_Default",
+      "obj_id": "5602b823-dfb8-4a0f-a8dc-8588b1f9af6e",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2165,
+        2240
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 38,
+      "_nodeId": "5c1fe569-d919-407d-a109-4146edb6d297",
+      "from": [
+        37
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2665,
+        2840
+      ],
+      "condition": [
+        "ABTest_test-gamification_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 39,
+      "_nodeId": "d6a197a4-454c-4ef7-9f04-d906171abc46",
+      "from": [
+        38
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2415,
+        3840
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 40,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "ee8a179f-6d6d-4ec2-8f56-f6c7db062d51",
+      "from": [
+        39
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2290,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 41,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "d676bc88-7046-4af7-a669-42df91f30b18",
+      "from": [
+        39
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2540,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 42,
+      "_nodeId": "ef7451ee-a85c-410f-ace0-f2aed53b8bda",
+      "from": [
+        38
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        2915,
+        4040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 43,
+      "type": "send_message",
+      "message_text": "Congratulations! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "c61b449e-4275-4b58-9d17-dae6277fbff7",
+      "from": [
+        42
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2790,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 44,
+      "type": "send_message",
+      "message_text": "Congratulations! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg",
+      "_nodeId": "775e31a4-e5e2-40ca-a7f0-3aff708f3313",
+      "from": [
+        42
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        3040,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 45,
+      "_nodeId": "48a08c63-2afc-40be-9b52-600894117a31",
+      "from": [
+        37,
+        37
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1665,
+        2640
+      ],
+      "condition": [
+        "ABTest_test-gamification_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 46,
+      "_nodeId": "1163d2fd-c294-4a87-bfe3-53a393e9f96a",
+      "from": [
+        45
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1415,
+        3440
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 47,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "e56eb437-45d2-4661-836b-c706b6f29405",
+      "from": [
+        46
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1290,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 48,
+      "type": "send_message",
+      "message_text": "Congratulations @fields.user_name! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "a52e3a40-17f4-47f3-a0cb-c736ca2b193c",
+      "from": [
+        46
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1540,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 49,
+      "_nodeId": "b012683a-0adf-41ee-93b8-cd042629a976",
+      "from": [
+        45
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.child_nickname",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1915,
+        3640
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 50,
+      "type": "send_message",
+      "message_text": "Congratulations! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and @fields.child_nickname. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "fafbeb0c-0428-423c-8dc4-06cf09d6d458",
+      "from": [
+        49
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1790,
+        5040
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.child_nickname"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "child_nickname"
+      ]
+    },
+    {
+      "row_id": 51,
+      "type": "send_message",
+      "message_text": "Congratulations! You have completed your first parenting tip. Setting Goals is the foundation to building a positive relationship between you and your children. Well done!",
+      "image": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg",
+      "_nodeId": "f0a7debd-dec0-4dcb-a41b-bb6cb9d482a2",
+      "from": [
+        49
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        2040,
+        5040
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 52,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "7bdd5304-5e5b-43a8-83f8-43d031d96eff",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5540,
+        400
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 53,
+      "type": "go_to",
+      "from": [
+        52
+      ],
+      "message_text": null,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 54,
+      "_nodeId": "21bfdf6f-7775-4242-a553-e30fd0a89e59",
+      "from": [
+        25,
+        26,
+        28,
+        29,
+        32,
+        33,
+        35,
+        36,
+        40,
+        41,
+        43,
+        44,
+        47,
+        48,
+        50,
+        51
+      ],
+      "type": "split_by_value",
+      "message_text": "@results.parenting_goal.category",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1270,
+        5320
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 55,
+      "type": "send_message",
+      "message_text": "Would you like to know more about how to improve your relationship with your child?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "a7561855-622b-4c08-a86d-8f5cc550122d",
+      "from": [
+        54
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        350,
+        5420
+      ],
+      "condition": [
+        [
+          "1"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "1"
+      ]
+    },
+    {
+      "row_id": 56,
+      "type": "send_message",
+      "message_text": "Would you like to know more about how to help your child learn?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "1b448a6b-0147-401b-8d62-cd5e37d4d7ed",
+      "from": [
+        54
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5040,
+        5440
+      ],
+      "condition": [
+        [
+          "3"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "3"
+      ]
+    },
+    {
+      "row_id": 57,
+      "type": "send_message",
+      "message_text": "Would you like to know more about how to reduce family stress?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "d3ac713d-d7fb-4416-93fc-6af829bc249a",
+      "from": [
+        54
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5280,
+        5440
+      ],
+      "condition": [
+        [
+          "4"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "4"
+      ]
+    },
+    {
+      "row_id": 58,
+      "type": "send_message",
+      "message_text": "Would you like to know more about how to keep your child safe?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "2e0b2dff-8fda-4389-a279-376d0d0f7cd6",
+      "from": [
+        54
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5520,
+        5440
+      ],
+      "condition": [
+        [
+          "5"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "5"
+      ]
+    },
+    {
+      "row_id": 59,
+      "type": "send_message",
+      "message_text": "Would you like to know more about child development?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "5d4f7df8-054d-4dde-abc9-448e8bce8a2a",
+      "from": [
+        54
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        6490,
+        5440
+      ],
+      "condition": [
+        [
+          "6"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "6"
+      ]
+    },
+    {
+      "row_id": 60,
+      "type": "send_message",
+      "message_text": "Would you like to know more about managing your child's behaviour?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "9a039945-c223-40e6-8b59-56444b711267",
+      "from": [
+        54,
+        54
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        820,
+        5420
+      ],
+      "condition": [
+        [
+          "2"
+        ],
+        null
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category",
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        null
+      ],
+      "condition_name": [
+        "2",
+        null
+      ]
+    },
+    {
+      "row_id": 61,
+      "_nodeId": "726fe888-a1b0-400f-99fd-852622b0efe5",
+      "from": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 2",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        1270,
+        5640
+      ],
+      "condition": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 62,
+      "type": "save_value",
+      "message_text": "no",
+      "save_name": "from theme",
+      "_nodeId": "f9b727a1-750b-4474-b652-3b027ac5808b",
+      "from": [
+        61
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1190,
+        5900
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 63,
+      "type": "save_flow_result",
+      "message_text": "yes",
+      "save_name": "fromwelcome",
+      "_nodeId": "c0db16cc-142e-47a0-8b10-943775e806ee",
+      "from": [
+        62
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        860,
+        6000
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 64,
+      "_nodeId": "03f93e35-8649-4a77-8af8-f5a1446a9f2e",
+      "from": [
+        63
+      ],
+      "type": "split_by_value",
+      "message_text": "@results.parenting_goal.category",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        920,
+        6300
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 65,
+      "_nodeId": "8ec54576-bd26-4956-82e7-29e655f620da",
+      "from": [
+        64
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.age_group_for_tips",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        290,
+        6320
+      ],
+      "condition": [
+        [
+          "1"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "1"
+      ]
+    },
+    {
+      "row_id": 66,
+      "_nodeId": "5d4915ce-706c-4775-9b08-7c7313e71e5c",
+      "from": [
+        65
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Time - One on one time baby",
+      "obj_id": "fa62e24a-204a-4092-aa68-7f568cc1cf95",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        270,
+        6440
+      ],
+      "condition": [
+        [
+          "baby"
+        ]
+      ],
+      "condition_var": [
+        "@fields.age_group_for_tips"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Baby"
+      ]
+    },
+    {
+      "row_id": 67,
+      "_nodeId": "fa68c716-2683-49af-bd02-4d9fa52605c3",
+      "from": [
+        65
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Time - One on one time teen",
+      "obj_id": "f2a08ac3-1ff4-44a4-91b5-fe503139517b",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        270,
+        6800
+      ],
+      "condition": [
+        [
+          "teen"
+        ]
+      ],
+      "condition_var": [
+        "@fields.age_group_for_tips"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Teen"
+      ]
+    },
+    {
+      "row_id": 68,
+      "_nodeId": "ba60a855-1f41-4414-9742-014393c9a8ed",
+      "from": [
+        65
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Time - One on one time child",
+      "obj_id": "882e7d69-3d84-4c55-90a6-e7be1204dc66",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        290,
+        7180
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 69,
+      "_nodeId": "8f8e5dea-3a98-4a3e-a69f-7825a0652a6d",
+      "from": [
+        64
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Positive - Education",
+      "obj_id": "d281a3b5-b601-492a-9a2c-da0a67303ec3",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        1270,
+        6400
+      ],
+      "condition": [
+        [
+          "3"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "3"
+      ]
+    },
+    {
+      "row_id": 70,
+      "_nodeId": "55c9abfc-2114-4c96-ae1e-53bd8749b88d",
+      "from": [
+        64
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Initial registration - Relationship",
+      "obj_id": "758e1e77-1ce7-45ec-a5a9-4f76b2553747",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        840,
+        6900
+      ],
+      "condition": [
+        [
+          "4"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "4"
+      ]
+    },
+    {
+      "row_id": 71,
+      "_nodeId": "ea9b61ed-ca62-4927-b316-46fc82aea5ec",
+      "from": [
+        70
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.get_ipv_content",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        860,
+        7240
+      ],
+      "condition": [
+        "Complete"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 72,
+      "_nodeId": "a016f259-95da-475d-ae38-6b80cbf51f49",
+      "from": [
+        71
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Positive - IPV",
+      "obj_id": "902cc573-5ec6-43f3-8ebd-57a042bf1cf2",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        780,
+        7360
+      ],
+      "condition": [
+        [
+          "yes"
+        ]
+      ],
+      "condition_var": [
+        "@fields.get_ipv_content"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 73,
+      "_nodeId": "afe45db5-3995-42af-86e9-27711dc5e28b",
+      "from": [
+        71
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Positive - Family",
+      "obj_id": "dc87cd8d-5d4b-44f6-91d9-5cfa7b1ed631",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        1250,
+        7360
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 74,
+      "_nodeId": "7b0a7fa8-c655-4197-b37f-d4239f6302fb",
+      "from": [
+        64
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Positive - Community safety",
+      "obj_id": "0e983cc8-388d-4d56-b540-5c491edbc7a6",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        5080,
+        6820
+      ],
+      "condition": [
+        [
+          "5"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "5"
+      ]
+    },
+    {
+      "row_id": 75,
+      "_nodeId": "1d2f5924-35bf-4582-944a-52cae757ac36",
+      "from": [
+        64
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Extra - Development",
+      "obj_id": "cc9b8048-d44d-4bd5-aeb9-d2b32ec5fb1f",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        5240,
+        7240
+      ],
+      "condition": [
+        [
+          "6"
+        ]
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "6"
+      ]
+    },
+    {
+      "row_id": 76,
+      "_nodeId": "053d2dfb-9012-4601-a58b-49c1661f6bf2",
+      "from": [
+        64,
+        64
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Content - Extra - Behave",
+      "obj_id": "6ec3c018-d7e9-4649-91f6-80d95d5ca5ed",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        800,
+        6460
+      ],
+      "condition": [
+        [
+          "2"
+        ],
+        null
+      ],
+      "condition_var": [
+        "@results.parenting_goal.category",
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        null
+      ],
+      "condition_name": [
+        "2",
+        null
+      ]
+    },
+    {
+      "row_id": 77,
+      "type": "send_message",
+      "message_text": "That's okay! Remember that you can always get more information by typing \"Help\".",
+      "_nodeId": "c43a59e5-b90c-45cd-a930-733e959cc64b",
+      "from": [
+        61
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5850,
+        5900
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 78,
+      "_nodeId": "989b6384-857b-402e-917d-fe2a35821f2c",
+      "from": [
+        66,
+        66,
+        67,
+        67,
+        68,
+        68,
+        69,
+        69,
+        70,
+        72,
+        72,
+        73,
+        73,
+        74,
+        74,
+        75,
+        75,
+        76,
+        76,
+        77
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        6245,
+        6040
+      ],
+      "condition": [
+        "Complete",
+        "Expired",
+        "Complete",
+        "Expired",
+        "Complete",
+        "Expired",
+        "Complete",
+        "Expired",
+        "Expired",
+        "Complete",
+        "Expired",
+        "Complete",
+        "Expired",
+        "Complete",
+        "Expired",
+        "Complete",
+        "Expired",
+        "Complete",
+        "Expired",
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 79,
+      "type": "send_message",
+      "message_text": "Thanks so much for a great chat session! Over the next few weeks, you will receive messages to help you manage stress and maintain positive relationships at home. I am really happy you signed up for these tips. Chat later!",
+      "_nodeId": "8e163623-af64-4ee3-bf35-868808112f6e",
+      "from": [
+        78
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        6370,
+        6240
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 80,
+      "type": "send_message",
+      "message_text": "Thanks so much for a great chat session! Over the next few weeks, you will receive messages to help you manage stress and maintain positive relationships at home. We are really happy you signed up for these tips. Chat later!",
+      "_nodeId": "26c8c888-a53d-490c-9111-64b1e045dba7",
+      "from": [
+        78,
+        78
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        6120,
+        6240
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 81,
+      "_nodeId": "f7ea9b8c-d7a1-4a55-b1e0-1af641cb2cd1",
+      "from": [
+        79,
+        80
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.type_of_media",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        6370,
+        6500
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 82,
+      "_nodeId": "8043a17f-6e7f-4a77-a68f-d33b98ffb52b",
+      "from": [
+        81
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        5705,
+        6600
+      ],
+      "condition": [
+        [
+          "high"
+        ]
+      ],
+      "condition_var": [
+        "@fields.type_of_media"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 83,
+      "type": "send_message",
+      "message_text": "One last thing. Here is a song made just for parents like you. Chat to you tomorrow @fields.user_name!",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/video/eng/LetsSlowDown.m4v",
+      "_nodeId": "bf50645e-b15f-4ced-a08e-b8e43debc5d9",
+      "from": [
+        82
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5580,
+        6800
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 84,
+      "type": "send_message",
+      "message_text": "One last thing. Here is a song made just for parents like you. Chat to you tomorrow!",
+      "video": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/video/eng/LetsSlowDown.m4v",
+      "_nodeId": "84f57854-6f16-482d-afd0-a83fe84359dc",
+      "from": [
+        82
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5830,
+        6800
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 85,
+      "_nodeId": "6edb67ab-3f6c-4e59-9924-44f8ab88ad35",
+      "from": [
+        81
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.user_name",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        6655,
+        6980
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 86,
+      "type": "send_message",
+      "message_text": "One last thing. Here is a song made just for parents like you. Chat to you tomorrow @fields.user_name!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/audio/eng/LetsSlowDown.mp3",
+      "_nodeId": "a68a8d16-bf44-49f1-89c4-19ce866be01c",
+      "from": [
+        85
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        6530,
+        7180
+      ],
+      "condition": [
+        []
+      ],
+      "condition_var": [
+        "@fields.user_name"
+      ],
+      "condition_type": [
+        "has_text"
+      ],
+      "condition_name": [
+        "user_name"
+      ]
+    },
+    {
+      "row_id": 87,
+      "type": "send_message",
+      "message_text": "One last thing. Here is a song made just for parents like you. Chat to you tomorrow!",
+      "audio": "https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/animated/resourceType/audio/eng/LetsSlowDown.mp3",
+      "_nodeId": "a142f20e-b99a-4ae3-aab9-17a1aa25412a",
+      "from": [
+        85
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        6780,
+        7180
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 88,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "07b7caf4-bff0-435f-ad2b-df7fbb7a1342",
+      "from": [
+        61
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        5300,
+        5700
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 89,
+      "type": "go_to",
+      "from": [
+        88
+      ],
+      "message_text": 54,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Entry": [
+    {
+      "row_id": 1,
+      "_nodeId": "173289a6-ce96-45b9-8e7c-e997edc8119b",
+      "from": [
+        "start"
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Set up default contact fields",
+      "obj_id": "1f87fe57-93ae-4b26-befe-9831ea86b4f2",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        520,
+        180
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "b50b07f9-47db-400f-ba01-4489746a5b8b",
+      "from": [
+        1,
+        1
+      ],
+      "type": "start_new_flow",
+      "message_text": "PH - PLH - Welcome - Entry - Set language",
+      "obj_id": "7d3034a2-fa82-410a-aa19-b92b1a27b94c",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        520,
+        460
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "3aa586a3-6ace-4023-bd4a-9cf9468b9078",
+      "from": [
+        2
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Define attachments paths",
+      "obj_id": "89d00fef-a0a2-48f9-8a6c-27348218fa29",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        500,
+        640
+      ],
+      "condition": [
+        "Complete"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "113152c0-a77c-4af0-b93a-9d09c1b0453b",
+      "from": [
+        3,
+        3
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Entry - Consent",
+      "obj_id": "4dcf3906-8c15-4177-b011-c0a88f9d04c2",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        460,
+        820
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "welcome_entry",
+      "save_name": "has expired",
+      "_nodeId": "fffdc467-beab-46f7-adc3-1d20bf1afc61",
+      "from": [
+        2,
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        900,
+        460
+      ],
+      "condition": [
+        "Expired",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.",
+      "_nodeId": "2179b9a5-3fea-4c22-a025-61ab16c17ca6",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        900,
+        600
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration": [
+    {
+      "row_id": 1,
+      "_nodeId": "af48771d-ecc1-4613-a012-e46db11051db",
+      "from": [
+        "start"
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Initial registration - Media",
+      "obj_id": "8d5d3818-7718-4a82-a12e-07778c6d61bd",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        830,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "2e13dd0b-e02e-4a30-b101-4b4633a937ac",
+      "from": [
+        1
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Initial registration - Gender",
+      "obj_id": "ac47332f-6ecf-468a-b44c-50402b03d970",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        290,
+        180
+      ],
+      "condition": [
+        "Complete"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 3,
+      "_nodeId": "68c5be78-aa39-4091-b4a8-d0064fd25ce5",
+      "from": [
+        2
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        125,
+        340
+      ],
+      "condition": [
+        "Complete"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Thank you! Anytime you need support, just type \"Help\" and I will do my best to help you. ",
+      "_nodeId": "4289d45c-093c-4117-811e-4dc527bf517c",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        250,
+        540
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Thank you! Anytime you need support, just type \"Help\" and we will do our best to help you. ",
+      "_nodeId": "0f6734db-bf1f-4f22-8d5c-92cba2c4a06c",
+      "from": [
+        3,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        540
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "_nodeId": "d6dc4326-6b09-420c-8c42-c065338fb779",
+      "from": [
+        4,
+        5
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-personalisation_Default",
+      "obj_id": "d44ae170-6a10-4f54-829b-2dd5bf2c406b",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        435,
+        960
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "_nodeId": "20288912-e7cb-46bc-8905-4c1520c81f40",
+      "from": [
+        6
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Empty",
+      "obj_id": "4b369cbf-188c-4a1a-8599-ce726d4bd831",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        810,
+        1160
+      ],
+      "condition": [
+        "ABTest_test-personalisation_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "_nodeId": "81d2dab8-efb5-471c-b792-8c53303c1697",
+      "from": [
+        6,
+        6
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Initial registration - Nickname",
+      "obj_id": "f320923d-275c-45ba-9f38-83dac7cf501d",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        310,
+        1160
+      ],
+      "condition": [
+        "ABTest_test-personalisation_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "_nodeId": "564420f0-5d86-4cee-9d55-3e1eb21d98b7",
+      "from": [
+        7,
+        8
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Initial registration - Age group for tips",
+      "obj_id": "9b51bb16-8aff-4319-99cf-8de73457913d",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        810,
+        1300
+      ],
+      "condition": [
+        "Complete",
+        "Complete"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 10,
+      "_nodeId": "89d491ca-7322-4e04-8201-2fe406f32446",
+      "from": [
+        9
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-personalisation_Default",
+      "obj_id": "d44ae170-6a10-4f54-829b-2dd5bf2c406b",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        685,
+        1440
+      ],
+      "condition": [
+        "Complete"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 11,
+      "_nodeId": "e5d9d926-76e5-424c-90b3-c3d3ec303931",
+      "from": [
+        10
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Empty",
+      "obj_id": "4b369cbf-188c-4a1a-8599-ce726d4bd831",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        810,
+        1640
+      ],
+      "condition": [
+        "ABTest_test-personalisation_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "_nodeId": "03ff748d-d855-4499-8f12-96c0a9334fac",
+      "from": [
+        10,
+        10
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Initial registration - Child nickname",
+      "obj_id": "c3a82457-5766-4278-bced-1e1a0dfc66fe",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        560,
+        1640
+      ],
+      "condition": [
+        "ABTest_test-personalisation_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "save_value",
+      "message_text": "welcome_registration",
+      "save_name": "has expired",
+      "_nodeId": "f7fc14e7-6e14-4ef0-8f97-886f83405fd8",
+      "from": [
+        1,
+        11,
+        12,
+        2,
+        7,
+        8,
+        9
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1570,
+        540
+      ],
+      "condition": [
+        "Expired",
+        "Expired",
+        "Expired",
+        "Expired",
+        "Expired",
+        "Expired",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 14,
+      "type": "send_message",
+      "message_text": "It looks like you are busy right now. Please type “GoBack” to receive the most recent messages again.",
+      "_nodeId": "1d18e007-08cd-4c5e-b104-34c83d1e9ea0",
+      "from": [
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1610,
+        660
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Gender with other": [
+    {
+      "row_id": 1,
+      "_nodeId": "6fb4a185-d3b2-42eb-8a0f-40ae6a949f19",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        815,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "These tips are for YOU. So that our chats can be as helpful as possible, could you please tell me your gender?\n\nIf you would prefer not to answer, type \"N\".",
+      "choice_1": "Woman",
+      "choice_2": "Man",
+      "choice_3": "Other",
+      "_nodeId": "036d993c-7424-4c6f-85f4-cc2b25f84a63",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        940,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "These tips are for YOU. So that our chats can be as helpful as possible, could you please tell us your gender?\n\nIf you would prefer not to answer, type \"N\".",
+      "choice_1": "Woman",
+      "choice_2": "Man",
+      "choice_3": "Other",
+      "_nodeId": "160c94e2-9c59-44b1-b757-7cff9f6d418c",
+      "from": [
+        1,
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        690,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "ca28b45c-4e6f-45e1-90b5-9f4f72eda03c",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "gender",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        590,
+        460
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "woman",
+      "save_name": "gender",
+      "_nodeId": "03b7358b-6304-491a-a512-45729c491e58",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        330,
+        660
+      ],
+      "condition": [
+        [
+          "woman"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Woman"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "save_value",
+      "message_text": "@fields.default_deployment",
+      "save_name": "deployment",
+      "_nodeId": "3d6df358-d4ac-4110-8f9b-d6c23fad0b8b",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        310,
+        840
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "save_value",
+      "message_text": "man",
+      "save_name": "gender",
+      "_nodeId": "1f810356-75e4-40e4-afc6-5ff3a07a2847",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        570,
+        680
+      ],
+      "condition": [
+        [
+          "man"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Man"
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "save_value",
+      "message_text": "@fields.chatbot_name_male",
+      "save_name": "chatbot name",
+      "_nodeId": "82414bb5-897e-4567-ae69-69495e22c09a",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        570,
+        780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "save_value",
+      "message_text": "@(fields.default_deployment & \"Man\")",
+      "save_name": "deployment",
+      "_nodeId": "13448798-9dae-42ba-ae1a-cb5fdfc196f5",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        590,
+        880
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "save_value",
+      "message_text": "no",
+      "save_name": "gender",
+      "_nodeId": "6b34abb9-96ee-4e8b-aaa9-cd379963273f",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1080,
+        680
+      ],
+      "condition": [
+        [
+          "n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "N"
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "save_value",
+      "message_text": "other",
+      "save_name": "gender",
+      "_nodeId": "74302264-d16e-4e93-ae1d-fe560317a736",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1320,
+        680
+      ],
+      "condition": [
+        [
+          "other"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Other gender"
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "save_value",
+      "message_text": "@(fields.default_deployment & \"Other\")",
+      "save_name": "deployment",
+      "_nodeId": "74302264-d16e-4e93-ae1d-fe560317a736",
+      "from": [
+        11
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1320,
+        680
+      ]
+    },
+    {
+      "row_id": 13,
+      "_nodeId": "bbf8975e-d512-47d3-a69b-aaa0d297b121",
+      "from": [
+        12,
+        6,
+        9
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Define attachments paths",
+      "obj_id": "89d00fef-a0a2-48f9-8a6c-27348218fa29",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        370,
+        1020
+      ],
+      "condition": [
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "_nodeId": "db3b4106-554a-49e1-9a11-cda034103e6b",
+      "from": [
+        13,
+        13
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-personalisation_Default",
+      "obj_id": "d44ae170-6a10-4f54-829b-2dd5bf2c406b",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        125,
+        1160
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 15,
+      "type": "save_value",
+      "message_text": "",
+      "save_name": "gender personalisation",
+      "_nodeId": "e12f7b47-e1cb-4ada-9e87-6d329b236d27",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        250,
+        1360
+      ],
+      "condition": [
+        "ABTest_test-personalisation_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "save_value",
+      "message_text": "@fields.gender",
+      "save_name": "gender personalisation",
+      "_nodeId": "6ee898c0-ae5e-482a-b5a6-9a95bb7108bb",
+      "from": [
+        14,
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        1360
+      ],
+      "condition": [
+        "ABTest_test-personalisation_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "5e6d2f00-db93-4b7a-ace0-b658b937d53a",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1320,
+        420
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "type": "go_to",
+      "from": [
+        17
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Gender": [
+    {
+      "row_id": 1,
+      "_nodeId": "da53fcf7-1f4f-49d5-8c4f-0760fc4c07b2",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        755,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "These tips are for YOU. So that our chats can be as helpful as possible, could you please tell me whether you are a WOMAN or MAN?\n\nIf you would prefer not to answer, type \"N\".",
+      "choice_1": "Woman",
+      "choice_2": "Man",
+      "_nodeId": "1b687810-2eff-4e1c-aea7-05fc5b840e02",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        880,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "These tips are for YOU. So that our chats can be as helpful as possible, could you please tell us whether you are a WOMAN or MAN?\n\nIf you would prefer not to answer, type \"N\".",
+      "choice_1": "Woman",
+      "choice_2": "Man",
+      "_nodeId": "e442c9e5-4214-4755-a98d-a6a903edf520",
+      "from": [
+        1,
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        630,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "3e88a00f-ccb8-4807-9f25-74f7f0781c7d",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "gender",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        530,
+        460
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "woman",
+      "save_name": "gender",
+      "_nodeId": "f4e2608c-42a7-4ea5-b859-317d9e5c2875",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        20,
+        660
+      ],
+      "condition": [
+        [
+          "woman"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Woman"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "save_value",
+      "message_text": "@fields.default_deployment",
+      "save_name": "deployment",
+      "_nodeId": "592aec11-4255-4063-8e8f-8cb1802167ee",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "save_value",
+      "message_text": "man",
+      "save_name": "gender",
+      "_nodeId": "fb56528d-4e96-48e2-8452-77ea00afd7f3",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        510,
+        680
+      ],
+      "condition": [
+        [
+          "man"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Man"
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "save_value",
+      "message_text": "@fields.chatbot_name_male",
+      "save_name": "chatbot name",
+      "_nodeId": "85cf02c0-a441-47e0-9d5a-840882accd21",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        510,
+        780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "save_value",
+      "message_text": "@(fields.default_deployment & \"Man\")",
+      "save_name": "deployment",
+      "_nodeId": "02eb6b20-127a-4c6f-8aaf-35021df782a0",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        530,
+        880
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 10,
+      "_nodeId": "8af1c27f-a913-4f71-8ddd-273943713560",
+      "from": [
+        6,
+        9
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Define attachments paths",
+      "obj_id": "89d00fef-a0a2-48f9-8a6c-27348218fa29",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        120,
+        1000
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "_nodeId": "565391a7-68fb-4423-b6d8-c1f805041505",
+      "from": [
+        10,
+        10
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-personalisation_Default",
+      "obj_id": "d44ae170-6a10-4f54-829b-2dd5bf2c406b",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        265,
+        1180
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 12,
+      "type": "save_value",
+      "message_text": "",
+      "save_name": "gender personalisation",
+      "_nodeId": "2b052545-281a-41e2-bcad-2207f49e10b4",
+      "from": [
+        11
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        390,
+        1380
+      ],
+      "condition": [
+        "ABTest_test-personalisation_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "save_value",
+      "message_text": "@fields.gender",
+      "save_name": "gender personalisation",
+      "_nodeId": "c26068e0-56f6-491e-8679-119de8b90eea",
+      "from": [
+        11,
+        11
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        140,
+        1380
+      ],
+      "condition": [
+        "ABTest_test-personalisation_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "save_value",
+      "message_text": "no",
+      "save_name": "gender",
+      "_nodeId": "7e9fe1ba-a4e0-480a-a317-b080988e1988",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1020,
+        680
+      ],
+      "condition": [
+        [
+          "n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "N"
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "1d6c5b18-dabb-4338-8ad8-21dcdc9ffe4b",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1260,
+        420
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "go_to",
+      "from": [
+        15
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Age": [
+    {
+      "row_id": 1,
+      "_nodeId": "d0584a70-589c-4e97-8387-d858c42e79a3",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        540,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Can you please tell me your age? Please reply with the number only. Example: 28\n\nIf you don't want to tell me your age, that's okay. Please type \"N\".",
+      "_nodeId": "2161969e-11a8-478a-9329-d398e2dd1d48",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        665,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Can you please tell us your age? Please reply with the number only. Example: 28\n\nIf you don't want to tell us your age, that's okay. Please type \"N\".",
+      "_nodeId": "2b370fc2-f7d2-4d97-86a5-a7363d422d5d",
+      "from": [
+        1,
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        415,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "3e07f199-6ca1-4bca-89df-ae0d589068b3",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "age",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        395,
+        500
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "This looks too young. MaPaText is only for people over the age of 18.",
+      "_nodeId": "8e1202a0-0c38-4ae9-adc8-45d160a940b8",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        335,
+        740
+      ],
+      "condition": [
+        [
+          "18"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_number_lt"
+      ],
+      "condition_name": [
+        "< 18"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "go_to",
+      "from": [
+        5
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "send_message",
+      "message_text": "This looks too old.",
+      "_nodeId": "7de22f62-1f36-407b-8ffb-4864ac18656e",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        885,
+        680
+      ],
+      "condition": [
+        [
+          "99"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_number_gt"
+      ],
+      "condition_name": [
+        ">99"
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "go_to",
+      "from": [
+        7
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "save_value",
+      "message_text": "@results.age",
+      "save_name": "age",
+      "_nodeId": "88dff0df-5c0a-4a18-af68-ac15b8579e2b",
+      "from": [
+        4,
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        155,
+        640
+      ],
+      "condition": [
+        [
+          "18",
+          "99"
+        ],
+        [
+          "n no"
+        ]
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        "has_number_between",
+        "has_any_word"
+      ],
+      "condition_name": [
+        "18 - 99",
+        "N"
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "send_message",
+      "message_text": "Sorry I don't understand what you mean.",
+      "_nodeId": "576f3f30-c2fd-4c65-8daf-f6230f0f07da",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1085,
+        480
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "go_to",
+      "from": [
+        10
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Relationship": [
+    {
+      "row_id": 1,
+      "_nodeId": "447b7dae-b66a-4975-8066-26e9591adc2e",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        500,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "What is your relationship status?\n\nIf you don't want to tell me, that's okay. Please type \"N\".",
+      "choice_1": "Single (not in a relationship)",
+      "choice_2": "Married",
+      "choice_3": "Partnered but not married",
+      "choice_4": "Divorced or separated",
+      "choice_5": "Widowed",
+      "_nodeId": "4e3218d8-0af7-43f3-a794-8a1fd2f5eed6",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        625,
+        220
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "What is your relationship status?\n\nIf you don't want to tell us, that's okay. Please type \"N\".",
+      "choice_1": "Single (not in a relationship)",
+      "choice_2": "Married",
+      "choice_3": "Partnered but not married",
+      "choice_4": "Divorced or separated",
+      "choice_5": "Widowed",
+      "_nodeId": "2f660fc8-7f21-41fe-8828-0c30f2b60047",
+      "from": [
+        1,
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        375,
+        220
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "640f85a5-e9aa-4d40-885c-146985bc0470",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "marital status",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        255,
+        620
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "yes",
+      "save_name": "get ipv content",
+      "_nodeId": "7e170e13-fdfa-4e2f-970a-daf1b289d982",
+      "from": [
+        4,
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        960
+      ],
+      "condition": [
+        [
+          "married"
+        ],
+        [
+          "Partnered but not married"
+        ]
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase",
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "Married",
+        "Partnered"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "save_value",
+      "message_text": "no",
+      "save_name": "get ipv content",
+      "_nodeId": "915d1bef-7d11-489d-a939-1f1250ad1e80",
+      "from": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        175,
+        960
+      ],
+      "condition": [
+        [
+          "single"
+        ],
+        [
+          "Divorced separated"
+        ],
+        [
+          "Widowed"
+        ],
+        [
+          "N"
+        ]
+      ],
+      "condition_var": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        "has_any_word",
+        "has_any_word",
+        "has_any_word",
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Single",
+        "Divorced",
+        "Widowed",
+        "no"
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "save_value",
+      "message_text": "@results.marital_status.category",
+      "save_name": "marital status",
+      "_nodeId": "1a988f00-1ecf-4e04-ab10-6e3058843076",
+      "from": [
+        5,
+        6
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        275,
+        1080
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "Sorry I don't understand what you mean.",
+      "_nodeId": "34bff6ba-9176-4762-b440-fc975998083c",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1125,
+        620
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "go_to",
+      "from": [
+        8
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Age group for tips": [
+    {
+      "row_id": 1,
+      "_nodeId": "250a3c95-06d9-4995-8406-824434c3a4df",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        480,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "So I can give you the right information, please choose a child age group that best meets your needs.  You can choose the age for the child you are concerned about the most. \n\nYou can always change this later by typing \"Help\" and selecting \"Technical support\".",
+      "choice_1": "Baby (0 to 23 months)",
+      "choice_2": "Young child (2 to 9 years)",
+      "choice_3": "Teenager (10 to 17 years)",
+      "_nodeId": "1352ecd9-312e-4258-a56b-68ec8812a468",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        605,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "So we can give you the right information, please choose a child age group that best meets your needs. You can choose the age for the child you are concerned about the most. \n\nYou can always change this later by typing \"Help\" and selecting \"Technical support\".",
+      "choice_1": "Baby (0 to 23 months)",
+      "choice_2": "Young child (2 to 9 years)",
+      "choice_3": "Teenager (10 to 17 years)",
+      "_nodeId": "26a22140-d81d-4152-b97d-6f7f638d470b",
+      "from": [
+        1,
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        355,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "2352db6c-a124-46b2-97db-c74add60d710",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 3",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        335,
+        560
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "baby",
+      "save_name": "age group for tips",
+      "_nodeId": "ea365b21-d4ad-456f-9ef8-14cdb8b7a78c",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        215,
+        740
+      ],
+      "condition": [
+        [
+          "baby"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Baby"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "save_value",
+      "message_text": "17",
+      "save_name": "total skills",
+      "_nodeId": "00ee0358-3d11-48af-a9aa-12217d61aa8e",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        215,
+        840
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "save_value",
+      "message_text": "child",
+      "save_name": "age group for tips",
+      "_nodeId": "b03900f9-6c69-4f4a-91c0-c2aee94bde7a",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        760
+      ],
+      "condition": [
+        [
+          "young child"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Young"
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "save_value",
+      "message_text": "22",
+      "save_name": "total skills",
+      "_nodeId": "04cbf2ea-d9cd-467e-b1aa-eb2f2abf55d0",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        685,
+        860
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "save_value",
+      "message_text": "teen",
+      "save_name": "age group for tips",
+      "_nodeId": "b393dcb0-9c50-4769-9982-422aba8dcbe2",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        905,
+        760
+      ],
+      "condition": [
+        [
+          "teenager"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Teenager"
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "save_value",
+      "message_text": "21",
+      "save_name": "total skills",
+      "_nodeId": "1585e50e-2bbe-45b5-bd0c-3e7ba0ec56f2",
+      "from": [
+        9
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        905,
+        860
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "save_value",
+      "message_text": "@(fields.path & \"house_of_support/house_type/\" & fields.house_type & \"/age_group/\" & fields.age_group_for_tips & \"/family_type/\" & fields.family_type &\"/\")",
+      "save_name": "house of support path",
+      "_nodeId": "3195a622-6140-4fa0-ba84-95019c316102",
+      "from": [
+        10,
+        6,
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        315,
+        1020
+      ],
+      "condition": [
+        null,
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "type": "save_value",
+      "message_text": "yes",
+      "save_name": "know age group for tips",
+      "_nodeId": "3195a622-6140-4fa0-ba84-95019c316102",
+      "from": [
+        11
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        315,
+        1020
+      ]
+    },
+    {
+      "row_id": 13,
+      "_nodeId": "a263c59b-cec4-4f46-a098-c26b22916b5e",
+      "from": [
+        12
+      ],
+      "type": "split_by_value",
+      "message_text": "@fields.get_disability_content",
+      "_ui_type": "split_by_contact_field",
+      "_ui_position": [
+        315,
+        1220
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "save_value",
+      "message_text": "@(fields.total_skills + 1)",
+      "save_name": "total skills",
+      "_nodeId": "815f13a0-3300-47bd-9d88-2cf4451faff8",
+      "from": [
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        255,
+        1360
+      ],
+      "condition": [
+        [
+          "yes"
+        ]
+      ],
+      "condition_var": [
+        "@fields.get_disability_content"
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "573f1f29-4c81-4ab0-a169-3ce643773f06",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1085,
+        500
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 16,
+      "type": "go_to",
+      "from": [
+        15
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Media": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "How would you like to receive your messages? You can always change this setting at any time by typing \"Help\" and selecting Technical Support.",
+      "choice_1": "Core (text and images)",
+      "choice_2": "Boosted (text, images, audio)",
+      "choice_3": "Star (text, images, audio, video)",
+      "_nodeId": "00640ac3-1f5c-4f44-8124-721ff4f8cb0c",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        500,
+        120
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "fb967b5a-72c1-476c-9c69-d851bb262a31",
+      "from": [
+        1
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 4",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        520,
+        360
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "save_value",
+      "message_text": "high",
+      "save_name": "type of media",
+      "_nodeId": "364841ed-404a-4ac5-afe3-3edd63bc8533",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        320,
+        520
+      ],
+      "condition": [
+        [
+          "star"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "High"
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "save_value",
+      "message_text": "medium",
+      "save_name": "type of media",
+      "_nodeId": "57bb5738-7726-49ff-8390-a1d1bc0dcecc",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        540,
+        520
+      ],
+      "condition": [
+        [
+          "boosted"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Medium"
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "low",
+      "save_name": "type of media",
+      "_nodeId": "9eac8021-0c9e-43c2-9371-bad2d5ef7ae2",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        780,
+        540
+      ],
+      "condition": [
+        [
+          "core"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Low"
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "4b1c4fe6-9216-40fb-884f-0b42e884ad2f",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        800,
+        260
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "type": "go_to",
+      "from": [
+        6
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Entry - Consent": [
+    {
+      "row_id": 1,
+      "_nodeId": "6c608791-e5d0-4357-8cc2-ebdde89e1c73",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        645,
+        420
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Did you know that over 200 million parents around the world have used these resources developed by Parenting for Lifelong Health, WHO, and UNICEF?",
+      "_nodeId": "a03dc984-182d-49ea-aef9-9db39245f5d4",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        770,
+        620
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Did you know that over 200 million parents around the world have used our resources developed by Parenting for Lifelong Health, WHO, and UNICEF?",
+      "_nodeId": "35c18a1e-61c5-43eb-9d62-ab93cb89d1fc",
+      "from": [
+        1,
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        520,
+        620
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "This programme is for parents and caregivers like you (aged 18 or older).",
+      "_nodeId": "b68e1c56-b080-445e-8001-51246f0c810b",
+      "from": [
+        2,
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        770,
+        860
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Your participation and any information you provide will be used anonymously by researchers to learn about how to better support families like yours. \n\nClick here for more information:\nhttps://covid19parenting.com/assets/consents/PH_eng.pdf",
+      "_nodeId": "59b33491-3a53-4b28-9ce5-f7a4f3f17600",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        770,
+        1060
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "send_message",
+      "message_text": "Type \"Yes\" if you agree with this. Type \"Exit\" if you do not want to participate. ",
+      "_nodeId": "ec803b34-3e64-46fa-b778-a73bbd0ae7a8",
+      "from": [
+        5
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        770,
+        1480
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 7,
+      "_nodeId": "77d7b0fe-75ac-4f49-9d9e-d00a3aca985f",
+      "from": [
+        6
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 17",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        830,
+        1900
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 8,
+      "type": "send_message",
+      "message_text": "That is wonderful, thank you so much! ",
+      "_nodeId": "1fa64852-6002-4abb-9c09-252ef8ec76a8",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        100,
+        1800
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 9,
+      "type": "send_message",
+      "message_text": "I am sorry I did not understand. Please type \"Yes\" if you agree with this. Type \"Exit\" if you do not want to participate.",
+      "_nodeId": "0dbf5e4a-f8f2-494e-b439-b24fca7ffbf1",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1440,
+        1780
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 10,
+      "type": "go_to",
+      "from": [
+        9
+      ],
+      "message_text": 7,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 11,
+      "type": "send_message",
+      "message_text": "Can you please confirm that you are 18 years old or older?",
+      "choice_1": "Yes, I am over 18",
+      "choice_2": "No, I am under 18",
+      "_nodeId": "1f5d5405-c920-47d5-9958-883c7cc360a5",
+      "from": [
+        8
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        140,
+        1920
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 12,
+      "_nodeId": "3ab2eef0-53d7-42cf-ae0f-7bf81692a1d8",
+      "from": [
+        11
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 4",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        120,
+        2120
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 13,
+      "type": "send_message",
+      "message_text": "Thank you so much for confirming this. You are now ready to begin your MaPaText journey!",
+      "_nodeId": "dfa00ad2-dbd7-4c01-a9ff-a2d19f275cf3",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        0,
+        2720
+      ],
+      "condition": [
+        [
+          "yes y over"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 14,
+      "type": "add_to_group",
+      "message_text": "in program",
+      "obj_id": "328730ed-02aa-4731-8a7c-350acde7a8f5",
+      "_nodeId": "6faed9fd-a8d9-4eef-a109-52cd7a589726",
+      "from": [
+        13
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        80,
+        3160
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 15,
+      "type": "add_to_group",
+      "message_text": "consent",
+      "obj_id": "4fba34b6-fba5-4334-9f96-81f3fee6bf60",
+      "_nodeId": "6faed9fd-a8d9-4eef-a109-52cd7a589726",
+      "from": [
+        14
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        80,
+        3160
+      ]
+    },
+    {
+      "row_id": 16,
+      "_nodeId": "368ba942-d9fa-44ed-9c50-8f436c3b4704",
+      "from": [
+        15
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Internal - Empty",
+      "obj_id": "4b369cbf-188c-4a1a-8599-ce726d4bd831",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        120,
+        3420
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 17,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "66bfacfb-e56c-47ec-b983-1a70f85ce980",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        420,
+        2080
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 18,
+      "type": "go_to",
+      "from": [
+        17
+      ],
+      "message_text": 11,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 19,
+      "type": "send_message",
+      "message_text": "Are you sure you do not want to get these messages? If you do not want to receive any more messages, please type \"STOP MESSAGES.\" If you made a mistake, please type \"back\" and choose another option.",
+      "_nodeId": "db8b5db4-de5c-4b95-8e42-dffc81b05a6f",
+      "from": [
+        7
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1030,
+        2100
+      ],
+      "condition": [
+        [
+          "exit"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Exit"
+      ]
+    },
+    {
+      "row_id": 20,
+      "_nodeId": "7aee399a-27ca-4683-9d2b-f73708998010",
+      "from": [
+        19
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 3",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        1010,
+        2340
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 21,
+      "type": "save_value",
+      "message_text": "yes",
+      "save_name": "did not consent",
+      "_nodeId": "418fdde5-552f-4d6e-82fd-088016fee277",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1300,
+        2480
+      ],
+      "condition": [
+        [
+          "stop messages"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_only_phrase"
+      ],
+      "condition_name": [
+        "no consent"
+      ]
+    },
+    {
+      "row_id": 22,
+      "_nodeId": "17545c54-bc9d-4657-abbc-fbff59bd493a",
+      "from": [
+        21
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Welcome - Entry - No consent - Interview",
+      "obj_id": "bf1cf6b2-97bf-4f5e-abd9-35c2747f9391",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        1300,
+        2620
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 23,
+      "_nodeId": "7993380f-57a1-4931-8701-a6e3226add8d",
+      "from": [
+        22,
+        22
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        1175,
+        2760
+      ],
+      "condition": [
+        "Complete",
+        "Expired"
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": []
+    },
+    {
+      "row_id": 24,
+      "type": "send_message",
+      "message_text": "If you ever return to participate in the programme, type \"START_MESSAGES\". \n\nI hope to see you again soon, and I wish you a happy and peaceful day! ",
+      "_nodeId": "0ed51a7e-f439-47e0-9d3c-49b9dadea676",
+      "from": [
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1300,
+        2960
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 25,
+      "type": "send_message",
+      "message_text": "If you ever return to participate in the programme, type \"START_MESSAGES\". \n\nWe hope to see you again soon, and we wish you a happy and peaceful day! ",
+      "_nodeId": "481e3ad6-1f44-4bb6-af9b-3f55a2c5f67d",
+      "from": [
+        23,
+        23
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1050,
+        2960
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 26,
+      "type": "go_to",
+      "from": [
+        20
+      ],
+      "message_text": 5,
+      "condition": [
+        [
+          "back"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Back"
+      ]
+    },
+    {
+      "row_id": 27,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "adaa426c-61f2-4d75-9ff5-4a942a6841d8",
+      "from": [
+        20
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1600,
+        2100
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 28,
+      "type": "go_to",
+      "from": [
+        27
+      ],
+      "message_text": 19,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 29,
+      "type": "send_message",
+      "message_text": "Sorry, MaPaText is only for people over the age of 18. Do you confirm that you are under the age of 18?",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "abac073e-6b9c-4b56-9126-9f51e6e242b8",
+      "from": [
+        12
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        160,
+        2280
+      ],
+      "condition": [
+        [
+          "no n under"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 30,
+      "_nodeId": "8da90bd6-5025-4cbf-b1fb-c645fad49261",
+      "from": [
+        29
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 5",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        200,
+        2460
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 31,
+      "type": "add_to_group",
+      "message_text": "below age",
+      "obj_id": "bd334342-df0f-4b66-b7f2-8701d5f70545",
+      "_nodeId": "8a594722-3136-454b-8b65-f0c553ee2b89",
+      "from": [
+        30
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        360,
+        2620
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 32,
+      "type": "send_message",
+      "message_text": "If you want to experience MaPaText, you can always share it with your parents or caregivers.",
+      "_nodeId": "56af4449-5568-4698-85a2-f5f3e5cc9a56",
+      "from": [
+        31
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        340,
+        2720
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 33,
+      "_nodeId": "342aa95b-e9f0-4df9-b300-dde1446f6950",
+      "from": [
+        32
+      ],
+      "type": "start_new_flow",
+      "message_text": "PLH - Supportive - Share - Link",
+      "obj_id": "a8233166-1c54-4c76-a8fa-9e6fe9be489e",
+      "_ui_type": "split_by_subflow",
+      "_ui_position": [
+        380,
+        3100
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 34,
+      "type": "go_to",
+      "from": [
+        30
+      ],
+      "message_text": 11,
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 35,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "4576cb4a-f0de-49ad-a42c-5d1dbaa3f847",
+      "from": [
+        30
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        480,
+        2460
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 36,
+      "type": "go_to",
+      "from": [
+        35
+      ],
+      "message_text": 29,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Entry - No consent - Interview": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "We would love to learn more about how we can improve our programme. Would you be willing to chat with us about why you chose not to receive these messages? You will receive a free data voucher if you are contacted for an interview!",
+      "choice_1": "Yes",
+      "choice_2": "No",
+      "_nodeId": "c19a3551-3722-4a95-911e-53cf5048d66a",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        600,
+        60
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "328ed6db-3933-4b58-91b4-c03a709b1d8e",
+      "from": [
+        1
+      ],
+      "type": "wait_for_response",
+      "save_name": "Result 1",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        580,
+        320
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Thank you so much! Here is a link to sign up! \nhttps://tinyurl.com/4s8kre42",
+      "_nodeId": "8da21722-3a65-4174-adfd-35184ea37e67",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        340,
+        460
+      ],
+      "condition": [
+        [
+          "yes y"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "Yes"
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "It is okay!",
+      "_nodeId": "4c2a0ebf-f2d2-4206-b044-4493b4b66774",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        640,
+        480
+      ],
+      "condition": [
+        [
+          "no n"
+        ]
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        "has_any_word"
+      ],
+      "condition_name": [
+        "No"
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "send_message",
+      "message_text": "Sorry, I don't understand what you mean.",
+      "_nodeId": "03ef2c85-ce18-44a0-a83d-2a7b3b805067",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        1020,
+        340
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 6,
+      "type": "go_to",
+      "from": [
+        5
+      ],
+      "message_text": 1,
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Child nickname": [
+    {
+      "row_id": 1,
+      "_nodeId": "9ceebcc0-45bc-4736-9669-76d54b66fb70",
+      "from": [
+        "start"
+      ],
+      "type": "split_by_group",
+      "message_text": "ABTest_test-first-person_Default",
+      "obj_id": "de3d94de-a0a7-4340-b688-05c31e0f634d",
+      "_ui_type": "split_by_expression",
+      "_ui_position": [
+        420,
+        0
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "type": "send_message",
+      "message_text": "Can you please tell me the name or nickname of this child?\n\nPlease type \"N\" if you prefer not to answer.",
+      "_nodeId": "bbb051a5-e86b-4011-a69e-5161a2cbcf76",
+      "from": [
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        545,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_alternative"
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "send_message",
+      "message_text": "Can you please tell us the name or nickname of this child?\n\nPlease type \"N\" if you prefer not to answer.",
+      "_nodeId": "74f578d7-7022-474a-95ad-df91e81790b6",
+      "from": [
+        1,
+        1
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        295,
+        200
+      ],
+      "condition": [
+        "ABTest_test-first-person_Default",
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "_nodeId": "5e206613-4764-4569-9125-121a06580b0b",
+      "from": [
+        2,
+        3
+      ],
+      "type": "wait_for_response",
+      "save_name": "name",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        545,
+        380
+      ],
+      "condition": [
+        null,
+        null
+      ],
+      "condition_var": [
+        null,
+        null
+      ],
+      "condition_type": [
+        null,
+        null
+      ],
+      "condition_name": [
+        null,
+        null
+      ]
+    },
+    {
+      "row_id": 5,
+      "type": "save_value",
+      "message_text": "@results.name",
+      "save_name": "child nickname",
+      "_nodeId": "6ffb6110-2649-415a-8640-a2d21b109cac",
+      "from": [
+        4
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        725,
+        520
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ],
+  "PLH - Welcome - Initial registration - Nickname": [
+    {
+      "row_id": 1,
+      "type": "send_message",
+      "message_text": "What is your name or nickname?\n\nIf you prefer not to share, please type \"N\"",
+      "_nodeId": "9f305811-8284-4c0d-8a6a-38550281f08e",
+      "from": [
+        "start"
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        420,
+        20
+      ],
+      "condition": [],
+      "condition_var": [],
+      "condition_type": [],
+      "condition_name": []
+    },
+    {
+      "row_id": 2,
+      "_nodeId": "73569e84-880e-4e2e-8634-d37dcb9769a6",
+      "from": [
+        1
+      ],
+      "type": "wait_for_response",
+      "save_name": "name",
+      "_ui_type": "wait_for_response",
+      "_ui_position": [
+        420,
+        200
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 3,
+      "type": "save_value",
+      "message_text": "@results.name",
+      "save_name": "user name",
+      "_nodeId": "5e2a69b0-496d-4d84-8110-a78e49533c44",
+      "from": [
+        2
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        600,
+        340
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    },
+    {
+      "row_id": 4,
+      "type": "send_message",
+      "message_text": "Nice to meet you, @fields.user_name! ",
+      "_nodeId": "d10e2e11-6173-41d5-a237-ce22a0e55ef6",
+      "from": [
+        3
+      ],
+      "_ui_type": "execute_actions",
+      "_ui_position": [
+        400,
+        500
+      ],
+      "condition": [
+        null
+      ],
+      "condition_var": [
+        null
+      ],
+      "condition_type": [
+        null
+      ],
+      "condition_name": [
+        null
+      ]
+    }
+  ]
+}

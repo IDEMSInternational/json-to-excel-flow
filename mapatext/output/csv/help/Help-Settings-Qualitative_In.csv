@@ -1,0 +1,8 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,We would love to learn more about how we can improve these messages. Would you be willing to chat with us about your experience? You will receive a free data voucher if you are contacted for an interview!,Yes,No,,,,,,,,,,,,,1f68ed44-73cd-4479-a8b7-490ef99fb184,,execute_actions,600;60
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,0533aa02-6a13-48e8-a2a8-2e2308382de8,,wait_for_response,580;320
+3,send_message,2,yes y,,has_any_word,Yes,,"Thank you so much! Here is a link to sign up!
+https://tinyurl.com/4s8kre42",,,,,,,,,,,,,,,b8c61acb-0c70-4665-8731-45f359c8c843,,execute_actions,340;460
+4,send_message,2,no n,,has_any_word,No,,It is okay!,,,,,,,,,,,,,,,125ab43a-a471-4438-8503-54a51928fbe2,,execute_actions,640;480
+5,send_message,2,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,ee2b792f-feae-4215-98c7-f0c055ffdf69,,execute_actions,1020;340
+6,go_to,5,,,,,,1,,,,,,,,,,,,,,,,,,

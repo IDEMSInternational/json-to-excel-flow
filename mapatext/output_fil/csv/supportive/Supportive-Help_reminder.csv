@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,b319362e-e129-45ee-8e4c-cff33afffec2,,split_by_expression,560;
+2,send_message,1,,@fields.user_name,has_text,user_name,,Magandang araw @fields.user_name! Gusto mo ba ng suporta o karagdagang tips sa pagiging magulang?,Oo,Hindi,,,,,,,,,,,,,2451172e-8780-4c1a-b09f-76db50d3e99f,,execute_actions,435;200
+3,send_message,1,,,,,,Magandang araw! Gusto mo ba ng suporta o karagdagang tips sa pagiging magulang?,Oo,Hindi,,,,,,,,,,,,,4309c19a-b5eb-46c0-9fc3-a1fc033fd121,,execute_actions,685;200
+4,wait_for_response,2;3,,,,,Result 1,,,,,,,,,,,,,,,,9751669a-0131-4e57-a3f3-8fbe5d211c33,,wait_for_response,415;400
+5,save_value,4,Oo y o,,has_any_word,Yes,last interaction,@(now()),,,,,,,,,,,,,,,5ac78a90-f10a-4835-9217-2f40bff14cac,,execute_actions,95;560
+6,start_new_flow,5,,,,,,PLH - Help - Entry,,,,,,,,,,,,,,3aad1291-ad9a-4a18-bb99-d5357e49345b,4ddfbcec-9b25-48a4-b278-eeebaabb754d,,split_by_subflow,75;700
+7,send_message,4,Hindi n h,,has_any_word,No,,Okay lang ‘yan! Itype lamang ang “Help” para makakuha ng supporta at parenting tips. Usap tayo mamaya!,,,,,,,,,,,,,,,f9229dc7-13bd-4d55-8372-b4e081f6404a,,execute_actions,725;680
+8,save_value,7,,,,,last interaction,@(now()),,,,,,,,,,,,,,,f9229dc7-13bd-4d55-8372-b4e081f6404a,,execute_actions,725;680
+9,send_message,4,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,77b89ec5-f381-47c7-8bee-48062cf021e7,,execute_actions,905;420
+10,save_value,9,,,,,last interaction,@(now()),,,,,,,,,,,,,,,77b89ec5-f381-47c7-8bee-48062cf021e7,,execute_actions,905;420
+11,go_to,10,,,,,,1,,,,,,,,,,,,,,,,,,

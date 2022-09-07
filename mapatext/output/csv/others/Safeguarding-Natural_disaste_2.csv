@@ -1,0 +1,9 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Here are the contact details of your local emergency services:,,,,,,,,,,,,,,,0ca3c1df-ba9d-4bc7-bb3f-e13681bc3c31,,execute_actions,600;40
+2,send_message,1,,,,,,"Bureau of Fire Protection. Helplines: (02) 8426-0219 or (02) 8426-0246
+
+National Emergency Hotline: 911
+
+Philippine Red Cross Helpline: 143 or (02) 8527-8385 to 95",,,,,,,,,,,,,,,a263c7f5-67a9-4b83-89d2-f331d5c938e3,,execute_actions,600;160
+3,send_message,2,,,,,,You should be proud of yourself for exploring ways to get help for you and your family.,,,,,,,,,,,,,,,f993bed6-510f-47f2-8b61-31b3203e0e05,,execute_actions,580;280
+4,send_message,3,,,,,,"Type ""SOS"" at any time if you would like the details of any other emergency service or hotline. Remember everything you say will be completely private!",,,,,,,,,,,,,,,ce8b527a-0e57-4d49-a912-73c0aa9c1ee9,,execute_actions,580;420

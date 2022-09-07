@@ -1,0 +1,6 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Magandang araw! Mayroon kaming isang update para sa iyo. Paki-reply ang *START* para magpatuloy. Salamat.,,,,,,,,,,,,,,,f6779e8e-7bbf-4624-9a97-4d0b2d9ff4f0,,execute_actions,260;120
+2,wait_for_response,1,,,,,Result 1,,,,,,,,,,,,,,,,4c732c85-913c-444c-83b3-d14214acceb6,,wait_for_response,580;260
+3,send_message,2,,,,,,"Gusto ka naming kumustahin! Maaari ka rin ba naming tanungin tungkol sa iyong relasyon sa iyong kinakasama? Lahat ng sasabihin mo ay mananatiling pribado. Kung ayaw mong sagutin ang anumang katanungan, okay lang ito.",,,,,,,,,,,,,,,64c0c1ef-ee14-4afc-a3bb-021522661213,,execute_actions,260;340
+4,send_message,3,,,,,,"Para sagutan ang mga tanong na ito, i-click ang link na ito para dalhin ka sa isang external site para sa karagdagang privacy:
+https://tinyurl.com/93e2afzc",,,,,,,,,,,,,,,0a22465f-bdc0-4de8-a371-5fbe3410f41a,,execute_actions,260;560

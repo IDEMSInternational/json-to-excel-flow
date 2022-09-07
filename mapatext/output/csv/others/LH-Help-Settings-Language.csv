@@ -1,0 +1,12 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,send_message,start,,,,,,Would you like to change the language you are currently receiving messages in?,Yes,No,,,,,,,,,,,,,8b4a56a8-5414-4c15-9015-b298312f9d5f,,execute_actions,560;80
+2,wait_for_response,1,,,,,Result 2,,,,,,,,,,,,,,,,da79425a-7088-4736-b494-cf2efaa5b4f4,,wait_for_response,420;260
+3,send_message,2,,,,,,"Sorry, I don't understand what you mean. ",,,,,,,,,,,,,,,864c7455-024c-4292-bd64-9ffe504e54d6,,execute_actions,800;380
+4,go_to,3,,,,,,1,,,,,,,,,,,,,,,,,,
+5,send_message,2,yes y,,has_any_word,Yes,,Which language would you like?,English,Filipino,,,,,,,,,,,,,f9bba4c7-b3ff-479d-8706-6152d9541117,,execute_actions,280;400
+6,wait_for_response,5,,,,,language,,,,,,,,,,,,,,,,3df70880-a1a0-425e-9fef-94e33285119f,,wait_for_response,460;720
+7,set_language,6,english,,has_any_word,English,,eng,,,,,,,,,,,,,,,a3a84ccf-97e5-46c4-9ef2-1ce9fa61dd7e,,execute_actions,340;880
+8,set_language,6,Filipino,,has_any_word,Filipino,,fil,,,,,,,,,,,,,,,43a63792-88a9-4c58-82e4-415e7b44be99,,execute_actions,580;880
+9,start_new_flow,7;8,,,,,,PLH - Internal - Define attachments paths,,,,,,,,,,,,,,89d00fef-a0a2-48f9-8a6c-27348218fa29,e5c02528-17b3-4712-825c-ee6226882ccd,,split_by_subflow,340;1000
+10,send_message,6,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,32fcb26d-ab87-42d8-90c3-04a9f4d65d09,,execute_actions,1040;720
+11,go_to,10,,,,,,5,,,,,,,,,,,,,,,,,,

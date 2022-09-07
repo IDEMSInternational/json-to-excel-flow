@@ -1,0 +1,145 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,One-on-one time,,,,,,,,,,,,,,,12af35cd-fcd1-414f-98f3-42d19e2f6bc2,,execute_actions,2220;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,6bf0e550-d941-4918-8daf-a5a9af74f746,,split_by_subflow,2220;160
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,2bc41b56-90b9-4505-b7c9-9e0314ef621e,,split_by_contact_field,1890;300
+4,send_message,3,,,,,,"Invest in One-on-One Time! The more time you spend with your children, the more likely they will listen to you and behave well at other times. It really works!",,,,,,,,,,,,,,,d114a1b0-8392-4811-9189-274c0671cdb0,,execute_actions,3750;280
+5,split_by_value,4,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,4207c4a6-b4c1-455d-9f91-80094c7a1e1a,,split_by_expression,3730;500
+6,split_by_value,3;5,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,bbb6544f-7435-4646-8c36-89d78fb823c5,,split_by_contact_field,1040;980
+7,split_by_value,6,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,5e1e5b1f-7bee-4d85-8aaf-bc5c72fe5122,,split_by_expression,1205;1120
+8,send_message,7,,@fields.child_nickname,has_text,child_nickname,,Here's a video about spending one-on-one time with @fields.child_nickname!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/One_On_One_Time_Babies.m4v,,9af407bd-a96e-4cdd-b9e9-7c1640289f6b,,execute_actions,1080;1320
+9,send_message,7,,,,,,Here's a video about spending one-on-one time with your baby!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/eng/One_On_One_Time_Babies.m4v,,7b9672c2-fb78-425e-b6f3-ab3de5bd404f,,execute_actions,1330;1320
+10,split_by_value,6,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,8be81084-a9f3-47bd-9229-29bc7be6f43d,,split_by_expression,2985;1340
+11,send_message,10,,@fields.child_nickname,has_text,child_nickname,,Here's an audio message about spending one-on-one time with @fields.child_nickname!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/One_On_One_Time_Babies.mp3,,,c184076e-a314-401c-bbb0-8a8cb3c1233f,,execute_actions,2860;1540
+12,send_message,10,,,,,,Here's an audio message about spending one-on-one time with your baby!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/eng/One_On_One_Time_Babies.mp3,,,c4bcca16-ce33-4a28-a1d3-c55e8eecc79e,,execute_actions,3110;1540
+13,wait_for_response,11;12;8;9,,,,,Result 6,,,,,,,,,,,,,,,,8a20c2f2-40c1-4c58-ab8e-090aa48e3eff,120,wait_for_response,3130;1800
+14,send_message,13;13;6,;No Response;,,,,,"The first 1000 days of life are a window of opportunity for your baby. It is when their brain develops faster than any other time in their life. When you spend time with your baby, you build a healthy attachment between you both that will make them feel secure and loved. ",,,,,,,,,,,,,,,0a057ff8-8a8b-473e-8b95-65002e4790d4,,execute_actions,1330;2160
+15,split_by_value,14,,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,aa413da8-04c5-4a0f-b6c0-e874b663b6a4,,split_by_expression,1600;2480
+16,send_message,15,man,@fields.gender_personalisation,has_any_word,man,,"It is normal for men of the family to struggle to think of what to do with their babies, especially when it seems they just eat, sleep, cry, poop, and repeat. It can be especially challenging when your baby is very young and not able to talk to you.",,,,,,,,,,,,,,,75b76ac2-ec99-4531-90ab-1569749aa4d5,,execute_actions,1350;2680
+17,send_message,15,woman,@fields.gender_personalisation,has_any_word,woman,,"It is normal for mothers to struggle to think of what to do with their babies, especially when it seems they just eat, sleep, cry, poop, and repeat. It can be especially challenging when your baby is very young and not able to talk to you.",,,,,,,,,,,,,,,e20a1bba-b823-42fe-95f1-e95e29f44df0,,execute_actions,1600;2680
+18,send_message,15,,,,,,"It is normal to struggle to think of what to do with our babies, especially when it seems they just eat, sleep, cry, poop, and repeat. It can be especially challenging when your baby is very young and not able to talk to you.",,,,,,,,,,,,,,,64b10b3f-cfa3-431b-ac2b-07840014550d,,execute_actions,1850;2680
+19,send_message,5,,,,,,Would you like to learn more about this tip?,Yes,No,,,,,,,,,,,,,4d55e9c5-828c-4363-a485-2f411b8688d0,,execute_actions,6340;300
+20,wait_for_response,19,,,,,Result 10,,,,,,,,,,,,,,,,ce26a149-a8c5-4229-9fdc-5dd46f8f2be9,,wait_for_response,6340;480
+21,go_to,20,Y yes,,has_any_word,Yes,,6,,,,,,,,,,,,,,,,,,
+22,send_message,20,no n,,has_any_word,No,,"That's okay! You can always type ""Help"" if you want to receive more tips about how to manage your child's behaviour.",,,,,,,,,,,,,,,e38190fd-18cc-4590-bcf8-9206e136c71d,,execute_actions,6540;620
+23,send_message,20,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,1b1553ba-f9df-4d94-b53f-fabbf93f17c9,,execute_actions,6680;400
+24,go_to,23,,,,,,19,,,,,,,,,,,,,,,,,,
+25,send_message,16;17;18,,,,,,Would you like to learn more?,Yes,No,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/holding_baby.jpg,,,,ae7e4a87-d9e2-4ba7-8877-9f3ad54a1b55,,execute_actions,1330;2920
+26,wait_for_response,25,,,,,Result 14,,,,,,,,,,,,,,,,b2623441-2bfc-4ad6-a840-a734d7169ef4,,wait_for_response,1060;3180
+27,start_new_flow,26,yes y ,,has_any_word,Yes,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,7b5f7143-25da-4a4c-90d9-6538aa79d8f1,,split_by_subflow,1040;3700
+28,split_by_value,26,no n,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,5718c9bc-69d1-4bf1-a5df-5198f642c12f,,split_by_expression,4205;3300
+29,send_message,28,,@fields.user_name,has_text,user_name,,"That's okay! You can always type ""Help"" whenever you want to learn more about how to spend One-on-One Time with your baby. Chat to you later @fields.user_name!",,,,,,,,,,,,,,,ea717db0-41d0-43ae-af8d-d8f469d80c23,,execute_actions,4080;3500
+30,send_message,28,,,,,,"That's okay! You can always type ""Help"" whenever you want to learn more about how to spend One-on-One Time with your baby. Chat to you later!",,,,,,,,,,,,,,,84b556b1-e48f-47cd-a41b-ff237f42533b,,execute_actions,4330;3500
+31,save_value,29;30,,,,,last interaction,@(now()),,,,,,,,,,,,,,,b421f1f2-441e-411c-b4c0-cc24af973504,,execute_actions,6240;3740
+32,send_message,26,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,85164942-03b8-4280-a6d1-b5b6293e53f2,,execute_actions,2800;2980
+33,go_to,32,,,,,,25,,,,,,,,,,,,,,,,,,
+34,send_message,27;27,Complete;Expired,,,,,"Here are 7 easy tips to make One-on-One Time with your baby a success:
+
+1. Do it every day
+2. Be close to your baby
+3. Let your baby take the lead
+4. Observe and listen to your child
+5. Play with your baby
+6. Talk to your baby
+7. You can have quality time with your baby anytime! 
+
+To learn more about one of these tips, type ""1"" to ""7"". You can also type ""N"" to move on.",,,,,,,,,,,,,,,17aa8b69-d0b3-4229-9ff5-6ff66e2542c1,,execute_actions,1060;3840
+35,wait_for_response,34,,,,,list_of_tips,,,,,,,,,,,,,,,,22efb328-fa1e-462b-b57a-fda4b0cd4918,,wait_for_response,1020;4420
+36,split_by_value,35,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,e6ba6121-15df-41b0-bf17-809eea8c094c,,split_by_expression,125;4560
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"1. Do it every day!
+Try to spend time playing with @fields.child_nickname every day for at least 20 minutes where you are giving them your full attention. Choose a time when you are unlikely to be interrupted. Switch off the television and put away phones.",,,,,,,,,,,,,,,7b4b5df7-5625-44be-99a2-941ec4974181,,execute_actions,;4760
+38,send_message,36,,,,,,"1. Do it every day!
+Try to spend time playing with your baby every day for at least 20 minutes where you are giving them your full attention. Choose a time when you are unlikely to be interrupted. Switch off the television and put away phones.",,,,,,,,,,,,,,,2820563c-0128-4dfb-804f-1dd646eb4b37,,execute_actions,750;4760
+39,send_message,35,2,,has_number_eq,2,,"2. Be close to your child. 
+Skin-to-skin contact is especially important for new-borns and infants. For older toddlers, make sure you are at the same level as they are.",,,,,,,,,,,,,,,e5cfc3f8-c220-4ca8-b91b-4d0f7f9fbfd9,,execute_actions,2220;4780
+40,send_message,35,3,,has_number_eq,3,,"3. Let your baby take the lead
+Children need to do things in their own time. Try to give them time to explore and be patient. Remember that the world is brand new to your child!",,,,,,,,,,,,,,,cd4dd600-81d1-426c-9613-b5f49d826fcf,,execute_actions,1020;5020
+41,split_by_value,40,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,e76cf4e2-0894-47b5-966c-46fc298f73fd,,split_by_expression,895;5440
+42,send_message,41,,@fields.child_nickname,has_text,child_nickname,,"Give just enough help to let it be the child’s achievement. It is okay to play alongside and copy what they are doing but try to let them keep the initiative. If @fields.child_nickname gets frustrated, you can reassure @fields.child_nickname by gently stroking their back.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/playing_with_baby_lego.jpg,,,,4b492880-e6c1-40bc-b9f7-adc0cc4708fa,,execute_actions,770;5640
+43,send_message,41,,,,,,"Give just enough help to let it be the child’s achievement. It is okay to play alongside and copy what they are doing but try to let them keep the initiative. If your child gets frustrated, you can reassure your child by gently stroking their back.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/playing_with_baby_lego.jpg,,,,ac29e254-0284-4254-bbd6-40b444718b78,,execute_actions,1020;5640
+44,split_by_value,35,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,18f6b52f-9716-49c9-9591-6f238331c1d2,,split_by_expression,2365;5080
+45,send_message,44,,@fields.child_nickname,has_text,child_nickname,,"4. Observe your child. 
+See what facial expressions @fields.child_nickname is making. Notice what @fields.child_nickname is interested in or looking at. ",,,,,,,,,,,,,,,7ff430ab-2710-45ea-8e75-8e1543941ce4,,execute_actions,2240;5280
+46,send_message,44,,,,,,"4. Observe your child. 
+See what facial expressions your child is making. Notice what your child is interested in or looking at. ",,,,,,,,,,,,,,,a33d4f53-bc3e-4303-b862-09673bb74ba3,,execute_actions,2740;5280
+47,split_by_value,45;46,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,ab9213d2-8c62-43ae-a9f2-b3daa003fc10,,split_by_expression,2095;5920
+48,send_message,47,,@fields.child_nickname,has_text,child_nickname,,Listen to the sounds or words @fields.child_nickname is making. You can even make the same sounds by copying @fields.child_nickname!,,,,,,,,,,,,,,,f95e82ce-c3eb-4ed1-b16f-5560c71a9543,,execute_actions,1970;6120
+49,send_message,47,,,,,,Listen to the sounds or words your child is making. You can even make the same sounds by copying your child!,,,,,,,,,,,,,,,88fa15d5-179a-4187-8156-38842889d521,,execute_actions,2220;6120
+50,split_by_value,35,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,94668cdc-e9b5-4213-a6ac-aa5f82fb3e14,,split_by_expression,375;6180
+51,send_message,50,,@fields.child_nickname,has_text,child_nickname,,"5. Play with your baby
+Babies learn through play! Help your child explore the world through the five senses. Let @fields.child_nickname use all of their senses when exploring the world. Sometimes when you read to @fields.child_nickname, @fields.child_nickname will want to put the book in their mouth. That is okay!",,,,,,,,,,,,,,,a1125481-ca1e-4870-8091-1df1993e4f58,,execute_actions,250;6380
+52,send_message,50,,,,,,"5. Play with your baby
+Babies learn through play! Help your child explore the world through the five senses. Let your child use all of their senses when exploring the world. Sometimes when you read to your child, your child will want to put the book in their mouth. That is okay!",,,,,,,,,,,,,,,9221abba-d971-4afc-99d7-48bab444ba2b,,execute_actions,750;6380
+53,split_by_value,51;52,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,2eefb50a-5a6d-4eb9-9148-fe78d1e37dab,,split_by_expression,625;6880
+54,send_message,53,,@fields.child_nickname,has_text,child_nickname,,"It is okay for @fields.child_nickname to want to do many different things. @fields.child_nickname’s attention may wander to many different things during One-on-One Time. Anything that is happening can grab their attention: the sound of a car, the feeling of a breeze from a fan, feelings in the body. Just keep your attention on @fields.child_nickname.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/Crawing.jpg,,,,777fd205-2f6a-4522-a051-24230839baef,,execute_actions,500;7080
+55,send_message,53,,,,,,"It is okay for your child to want to do many different things. Your child’s attention may wander to many different things during One-on-One Time. Anything that is happening can grab their attention: the sound of a car, the feeling of a breeze from a fan, feelings in the body. Just keep your attention on your child.",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/Crawing.jpg,,,,a3d36f8f-3144-4dee-a252-8b823e7d2f7c,,execute_actions,750;7080
+56,split_by_value,35,6,,has_number_eq,6,,@fields.child_nickname,,,,,,,,,,,,,,,02f06669-7e69-47d3-b263-03f52f4c562d,,split_by_expression,3585;6480
+57,send_message,56,,@fields.child_nickname,has_text,child_nickname,,"6. Talk to your baby
+Start talking to @fields.child_nickname from the moment they are born (even before when they are in the womb). Did you know @fields.child_nickname can even recognise their name at a very early age? Try saying your baby's name and notice how they respond! ",,,,,,,,,,,,,,,72cf3a6e-7631-4dac-a322-dbb47a62da03,,execute_actions,3460;6680
+58,send_message,56,,,,,,"6. Talk to your baby
+Start talking to your baby from the moment they are born (even before when they are in the womb). Did you know your baby can even recognise their name at a very early age? Try saying your baby's name and notice how they respond! ",,,,,,,,,,,,,,,7474ce3c-5d38-4192-a8d0-ed701a327385,,execute_actions,3710;6680
+59,split_by_value,57;58,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,527956cb-3c6f-4fd2-a2c8-92f71957cfe4,,split_by_expression,3295;7200
+60,send_message,59,,@fields.child_nickname,has_text,child_nickname,,"Use words to describe actions, colours, shapes, numbers, sizes, textures, temperatures, tastes, sounds, and anything else that is happening. Speak with enthusiasm when describing what @fields.child_nickname is doing.",,,,,,,,,,,,,,,605a2a9d-0b2d-463b-ac41-70c99e8ad808,,execute_actions,3170;7400
+61,send_message,59,,,,,,"Use words to describe actions, colours, shapes, numbers, sizes, textures, temperatures, tastes, sounds, and anything else that is happening. Speak with enthusiasm when describing what your child is doing.",,,,,,,,,,,,,,,8e4d02d3-7dff-4d1d-b978-1a54ecae474d,,execute_actions,3420;7400
+62,split_by_value,35,7,,has_number_eq,7,,@fields.child_nickname,,,,,,,,,,,,,,,f8b60472-0169-4b07-9ce3-80acc0ed51d4,,split_by_expression,2615;7660
+63,send_message,62,,@fields.child_nickname,has_text,child_nickname,,"7. You can have quality time with your baby anytime! 
+Look for ways you can connect with @fields.child_nickname playfully during feeding, bathing, and dressing. You can even make bedtime a fun and nurturing experience for you and @fields.child_nickname in a calm way.",,,,,,,,,,,,,,,dec79cdf-7489-4150-9a56-f1c0f9540eb0,,execute_actions,2490;7860
+64,send_message,62,,,,,,"7. You can have quality time with your baby anytime! 
+Look for ways you can connect with your baby playfully during feeding, bathing, and dressing. You can even make bedtime a fun and nurturing experience for you and your baby in a calm way.",,,,,,,,,,,,,,,c2d8e942-3b16-437f-b1c5-ee0ad545b69f,,execute_actions,2740;7860
+65,send_message,37;38;39;42;43;48;49;54;55;60;61;63;64,,,,,,"Please select another number if you want to learn more about how to spend One-on-One Time with your baby:
+
+1. Do it every day
+2. Be close to your baby
+3. Let your baby take the lead
+4. Observe and listen to your child
+5. Play with your baby
+6. Talk to your baby
+7. You can have quality time with your baby anytime! 
+
+You can also type ""N"" to move on.",,,,,,,,,,,,,,,795a65b4-05bb-4ffe-9e05-45f8bd939d78,,execute_actions,1060;8160
+66,save_value,65,,,,,one time baby list of tips,"@(fields.one_time_baby_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,a6175f65-0cce-4df1-8762-eda28eecbb9d,,execute_actions,1060;10060
+67,go_to,66,,,,,,35,,,,,,,,,,,,,,,,,,
+68,send_message,35,n no ,,has_any_word,N,,Here is a comic on how to communicate with your baby. ,,,,,,,,,,,,,,,699e7b74-dd50-4b7d-b7ab-6f778d75ce65,,execute_actions,6240;6740
+69,send_message,68,,,,,,"Parent: ""You are such a beautiful person""
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/communicating_to_baby_comic_1.png,,,,699e7b74-dd50-4b7d-b7ab-6f778d75ce65,,execute_actions,6240;6740
+70,send_message,69,,,,,,"Parent: ""Buh, buh, buh, big baby!""
+
+Baby: ""Buh, buh, buh…""
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/communicating_to_baby_comic_2.png,,,,699e7b74-dd50-4b7d-b7ab-6f778d75ce65,,execute_actions,6240;6740
+71,send_message,70,,,,,,"Parent: ""And then there were two green parrots in the mango tree!""
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/communicating_to_baby_comic_3.png,,,,699e7b74-dd50-4b7d-b7ab-6f778d75ce65,,execute_actions,6240;6740
+72,send_message,71,,,,,,"Parent: ""And now I am cleaning your toes, and your feet, and your knees…""
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/communicating_to_baby_comic_4.png,,,,699e7b74-dd50-4b7d-b7ab-6f778d75ce65,,execute_actions,6240;6740
+73,split_by_group,72,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,b75403e9-574b-4d2f-a05c-8470b22f3918,,split_by_expression,5365;8500
+74,split_by_group,73,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,b3323ead-af44-4ba7-ac4e-1c3042fc313b,,split_by_expression,5865;8900
+75,split_by_value,74,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,e40f6467-855b-4b0c-9ede-52793d311d40,,split_by_expression,6115;9700
+76,send_message,75,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,4a303a07-abcf-4572-97da-c639ab3fdc2c,,execute_actions,5990;9900
+77,send_message,75,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,54efdc06-8309-4c9a-ae93-2bb683bc649d,,execute_actions,6240;9900
+78,split_by_value,74;74,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,752c2864-5277-4fa0-95f0-9cab4ce669bb,,split_by_expression,5615;9500
+79,send_message,78,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,bfaf104a-c4e3-4c01-998f-ac25bc45368c,,execute_actions,5490;9900
+80,send_message,78,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,d925c2a4-17bd-42ee-ae0a-2ec86bae8736,,execute_actions,5740;9900
+81,split_by_group,73;73,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,0e48982f-f485-4a8a-937b-8d4b3be29edc,,split_by_expression,4865;8700
+82,split_by_value,81,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,72a081ad-0d07-4054-9680-b675e490599f,,split_by_expression,5115;9300
+83,send_message,82,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,3b6e6f94-f2fb-4717-99a8-3785babfaae5,,execute_actions,4990;9900
+84,send_message,82,,,,,,"Well done! You have added another layer to your House of Support. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,761f5ebb-8043-425c-868c-6d3fd2441f7b,,execute_actions,5240;9900
+85,split_by_value,81;81,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,e8e64ff6-bf65-4d77-b5de-e0a7a698de82,,split_by_expression,4615;9100
+86,send_message,85,,@fields.user_name,has_text,user_name,,"Well done @fields.user_name! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,4fe663ca-55c0-4ffa-be46-5d8b8aa49a86,,execute_actions,4490;9900
+87,send_message,85,,,,,,"Well done! You have added another skill to your Parenting Toolkit. Over the next few days, try spending at least 5 minutes of One-on-One Time with your baby. Quality time is the best gift that you can ever give your child!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,a3db5ad7-ee21-4f4d-8ce4-0feb609eaa8b,,execute_actions,4740;9900
+88,send_message,35,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,9ee2ef78-2464-42b8-93c2-5bd0ed495a35,,execute_actions,2760;4280
+89,go_to,88,,,,,,34,,,,,,,,,,,,,,,,,,
+90,send_message,76;77;79;80;83;84;86;87,,,,,,Would you like some suggestions for activities to do with your baby?,Yes,No,,,,,,,,,,,,,f50cc547-de00-4ac0-8a8b-808f53377e72,,execute_actions,1020;10640
+91,wait_for_response,90,,,,,Result 7,,,,,,,,,,,,,,,,80d0b563-ad01-4a88-a71d-d3afe4eb2bca,3600,wait_for_response,1020;10820
+92,start_new_flow,91,yes y,,has_any_word,Yes,,PLH - Handler - Activity - Babies,,,,,,,,,,,,,,8f2db494-657a-4229-b360-d6e82dbe4af6,f49942e3-c50c-4211-87a8-627e7052c767,,split_by_subflow,2780;11160
+93,send_message,91,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,c47b4752-0ce2-435e-886d-61937bcc54d9,,execute_actions,1060;11300
+94,go_to,93,,,,,,90,,,,,,,,,,,,,,,,,,
+95,send_message,91;91,no n;No Response,,has_any_word;,No;,,"That's okay! You can always type ""Help"" at anytime if you need an activity.",,,,,,,,,,,,,,,f172b396-7075-4220-8136-87fa5e5d649b,,execute_actions,3150;10860
+96,save_value,95,,,,,last interaction,@(now()),,,,,,,,,,,,,,,2892cf7e-c655-42da-b948-ffd3d275ff84,,execute_actions,6360;11120
+97,save_value,92;92;96,Complete;Expired;,,,,current type assessed,tip,,,,,,,,,,,,,,,70b1d9db-159f-4c4a-8534-ff0a41b7f963,,execute_actions,4430;11320
+98,save_value,97,,,,,current activity,one_on_one_time_baby,,,,,,,,,,,,,,,70b1d9db-159f-4c4a-8534-ff0a41b7f963,,execute_actions,4430;11320
+99,start_new_flow,98,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,34644b3b-20c3-46c0-85d3-beb2b16e9364,,split_by_subflow,4410;11480
+100,split_by_value,99,Complete,,,,,@fields.user_name,,,,,,,,,,,,,,,111ef11a-7a33-4a3a-a008-32eb8e6c605d,,split_by_expression,3895;11680
+101,send_message,100,,@fields.user_name,has_text,user_name,,Chat later @fields.user_name!,,,,,,,,,,,,,,,eae3fe5f-a41c-4831-8ad6-bffacb6d83b4,,execute_actions,3770;11880
+102,send_message,100,,,,,,Chat later!,,,,,,,,,,,,,,,152963ab-b063-4447-8f4b-d3357cddaad7,,execute_actions,4020;11880

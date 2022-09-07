@@ -1,0 +1,65 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_value,start,,,,,,@fields.user_name,,,,,,,,,,,,,,,2494a9f5-6343-4847-aa7f-088bc7c420dd,,split_by_contact_field,1710;
+2,send_message,1,,@fields.user_name,has_text,Has Text,,Your name or nickname is @fields.user_name.,,,,,,,,,,,,,,,688b0611-e1be-40ea-bfc5-816761983443,,execute_actions,1010;100
+3,split_by_value,1;2,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,65a10dfa-3b1f-47c5-849d-65e73af656a9,,split_by_contact_field,1630;240
+4,send_message,3,,@fields.child_nickname,has_text,Has Text,,The name or nickname of your child is @fields.child_nickname.,,,,,,,,,,,,,,,ff15d500-cfbd-4a14-97c3-5f039d382e5b,,execute_actions,890;240
+5,split_by_value,3;4,,,,,,@fields.age,,,,,,,,,,,,,,,a8e9b016-7a1b-4d0b-980c-92508a3c57ce,,split_by_contact_field,1610;340
+6,split_by_group,5,,@fields.age,has_number,Has Number,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,03a8ede4-7509-4e81-9322-83e2ddf6f8ac,,split_by_expression,665;360
+7,send_message,6,ABTest_test-first-person_alternative,,,,,You told me that you are @fields.age years old.,,,,,,,,,,,,,,,aff26420-b542-4427-86d9-c3c69dd0ada2,,execute_actions,790;560
+8,send_message,6;6,ABTest_test-first-person_Default;,,,,,You told us that you are @fields.age years old.,,,,,,,,,,,,,,,b5927749-723d-4d46-8a40-84c664a6ae3c,,execute_actions,540;560
+9,split_by_group,5,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,ddc25b0a-acdf-4a6b-8fe7-edf466884caa,,split_by_expression,2185;640
+10,send_message,9,ABTest_test-first-person_alternative,,,,,You did not tell me your age.,,,,,,,,,,,,,,,602a94d1-e00f-4603-a581-63cbb57f1e0f,,execute_actions,2560;840
+11,send_message,9;9,ABTest_test-first-person_Default;,,,,,You did not tell us your age.,,,,,,,,,,,,,,,144137ba-62fe-45f0-b3eb-b381e976a81b,,execute_actions,2060;840
+12,split_by_value,10;11;7;8,,,,,,@fields.gender,,,,,,,,,,,,,,,12159497-0174-4097-bd2e-c5ed8b3e56f3,,split_by_contact_field,1010;840
+13,split_by_group,12,woman,@fields.gender,has_any_word,woman,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,6200bb4a-bafa-450f-a394-e28b32fff5d8,,split_by_expression,1155;1160
+14,send_message,13,ABTest_test-first-person_alternative,,,,,You told me that you are a woman.,,,,,,,,,,,,,,,1bb54d3e-51c6-4622-9dda-37da79b72a77,,execute_actions,1280;1560
+15,send_message,13;13,ABTest_test-first-person_Default;,,,,,You told us that you are a woman.,,,,,,,,,,,,,,,27aa8c29-bc6f-4888-86ea-cf671ad57477,,execute_actions,1030;1560
+16,split_by_group,12,man,@fields.gender,has_any_word,man,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,7bce1b5a-d1b6-4daf-9b68-64112f935ac9,,split_by_expression,145;900
+17,send_message,16,ABTest_test-first-person_alternative,,,,,You told me that you are a man.,,,,,,,,,,,,,,,329ea87d-1213-4608-97c5-f4111edcc2fb,,execute_actions,520;1100
+18,send_message,16;16,ABTest_test-first-person_Default;,,,,,You told us that you are a man.,,,,,,,,,,,,,,,7bb0ac61-d9cd-41bf-bcdf-23f4153a5128,,execute_actions,20;1100
+19,split_by_group,12,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,7245c3a3-733f-4647-abb1-e44e0d706723,,split_by_expression,2435;1360
+20,send_message,19,ABTest_test-first-person_alternative,,,,,You did not tell me if you are a man or a woman.,,,,,,,,,,,,,,,e5f19423-53e2-4864-96fc-c2948a950d3e,,execute_actions,2560;1560
+21,send_message,19;19,ABTest_test-first-person_Default;,,,,,You did not tell us if you are a man or a woman.,,,,,,,,,,,,,,,1be40e88-fccf-418d-96f7-0a11d4791f53,,execute_actions,2310;1560
+22,split_by_value,14;15;17;18;20;21,,,,,,@fields.marital_status,,,,,,,,,,,,,,,3cd71b87-e0a3-47c7-b33e-7eea163dbc85,,split_by_contact_field,1550;2120
+23,split_by_group,22,single,@fields.marital_status,has_any_word,Single,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,83ef92f6-8dd5-495c-971c-b1756f821a4c,,split_by_expression,395;2220
+24,send_message,23,ABTest_test-first-person_alternative,,,,,You told me that you are single.,,,,,,,,,,,,,,,62a7a2e2-d323-47b7-a99c-80040c935275,,execute_actions,520;2820
+25,send_message,23;23,ABTest_test-first-person_Default;,,,,,You told us that you are single.,,,,,,,,,,,,,,,54268969-736b-4f27-ab1c-f693ad33a749,,execute_actions,270;2820
+26,split_by_group,22,married,@fields.marital_status,has_any_word,Married,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,a2fa8a6c-94c8-4481-b170-5a97d82b7a29,,split_by_expression,1425;2420
+27,send_message,26,ABTest_test-first-person_alternative,,,,,You tod me that you are married.,,,,,,,,,,,,,,,55dd37c7-83d6-4876-b387-9dcb5c2b665b,,execute_actions,1550;2820
+28,send_message,26;26,ABTest_test-first-person_Default;,,,,,You told us that you are married.,,,,,,,,,,,,,,,b1b2f353-9219-410b-a371-6b8074c0ccdc,,execute_actions,1300;2820
+29,split_by_group,22,partnered,@fields.marital_status,has_any_word,Partnered,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,470e3f58-773a-4ac5-8d95-f515beb1b522,,split_by_expression,1895;2620
+30,send_message,29,ABTest_test-first-person_alternative,,,,,You told me that you are partnered but not married,,,,,,,,,,,,,,,20636a9f-4917-4532-9896-60e502d64fcb,,execute_actions,2020;2820
+31,send_message,29;29,ABTest_test-first-person_Default;,,,,,You told us that you are partnered but not married.,,,,,,,,,,,,,,,89485dc2-4965-4705-b606-8e2b032bffe4,,execute_actions,1770;2820
+32,split_by_group,22,divorced,@fields.marital_status,has_any_word,Divorced,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,b6e3b9a5-5704-4b3f-a385-b034157fa75c,,split_by_expression,2905;1920
+33,send_message,32,ABTest_test-first-person_alternative,,,,,You told me that you are divorced or seperated.,,,,,,,,,,,,,,,385986b4-5da2-496d-be4a-cfd6f3b87ce3,,execute_actions,3030;2120
+34,send_message,32;32,ABTest_test-first-person_Default;,,,,,You told us that you are divorced or separated.,,,,,,,,,,,,,,,bd5de468-02ad-441c-a6e9-f00616edc3b9,,execute_actions,2780;2120
+35,split_by_group,22,widowed,@fields.marital_status,has_any_word,Widowed,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,e21352aa-48a0-4faa-b206-9cdd788cf7df,,split_by_expression,3335;2860
+36,send_message,35,ABTest_test-first-person_alternative,,,,,You told me that you are widowed.,,,,,,,,,,,,,,,a0d2d69b-cd56-4f0f-b5e8-e15ebc86bd88,,execute_actions,3460;3060
+37,send_message,35;35,ABTest_test-first-person_Default;,,,,,You told us that you are widowed.,,,,,,,,,,,,,,,49c71478-bee5-4d8d-b86c-f301469fe8e5,,execute_actions,3210;3060
+38,split_by_group,22,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,5e78b57b-8c63-492f-b693-7502d7cdf350,,split_by_expression,3665;1660
+39,send_message,38,ABTest_test-first-person_alternative,,,,,You did not tell me your relationship status. ,,,,,,,,,,,,,,,abaaa5ac-1f63-49c5-a603-af36f2127f58,,execute_actions,3790;1860
+40,send_message,38;38,ABTest_test-first-person_Default;,,,,,You did not tell us your relationship status.,,,,,,,,,,,,,,,4c217d16-727f-4658-84cd-01b2a35e4a49,,execute_actions,3540;1860
+41,split_by_value,24;25;27;28;30;31;33;34;36;37;39;40,,,,,,@fields.user_name,,,,,,,,,,,,,,,75dfd150-5ec0-44d2-a22f-3b8734f242ed,,split_by_contact_field,910;3220
+42,split_by_value,41,,@fields.user_name,has_text,Has Text,,@fields.child_nickname,,,,,,,,,,,,,,,218bac1b-4ce6-4958-b6f4-fe699f653a28,,split_by_contact_field,850;3320
+43,send_message,42,,@fields.child_nickname,has_text,Has Text,,What would you like to update?,Your name,Your child's nickname,Age,Gender,Relationship status,Go back to the previous options,,,,,,,,,34d36276-645a-4d11-afa1-2b81a6b87ecd,,execute_actions,;3440
+44,wait_for_response,43,,,,,Result 6,,,,,,,,,,,,,,,,6b76ed88-5221-484c-bdf2-d7f01b95a855,,wait_for_response,;3760
+45,send_message,42,,,,,,What would you like to update?,Your name,Age,Gender,Relationship status,Go back to the previous options,,,,,,,,,,a7de4775-38cd-42f1-9d56-5a56656cd634,,execute_actions,970;3440
+46,wait_for_response,45,,,,,Result 3,,,,,,,,,,,,,,,,4c969055-91df-4b82-8765-e1cd7a534ac5,,wait_for_response,2020;3740
+47,start_new_flow,44;46,your name;your name,,has_only_phrase;has_only_phrase,Name;Name,,PLH - Welcome - Initial registration - Nickname,,,,,,,,,,,,,,f320923d-275c-45ba-9f38-83dac7cf501d,9df14b2c-1c09-4720-a338-84b687fbede2,,split_by_subflow,1710;3960
+48,split_by_value,41,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,fde0250a-8e43-4109-8e9b-3f76ceb1de1a,,split_by_contact_field,1670;3320
+49,send_message,48,,@fields.child_nickname,has_text,Has Text,,What would you like to update?,Your child's nickname,Age,Gender,Relationship status,Go back to the previous options,,,,,,,,,,f5dcd24a-ee93-4816-9360-cfbbeb79c05b,,execute_actions,1690;3460
+50,wait_for_response,49,,,,,Result 4,,,,,,,,,,,,,,,,dbeb2b69-2294-48b6-b883-0528f4616c84,,wait_for_response,3190;3740
+51,start_new_flow,44;50,child child's;child  child's,,has_any_word;has_any_word,Child;Child,,PLH - Welcome - Initial registration - Child nickname,,,,,,,,,,,,,,c3a82457-5766-4278-bced-1e1a0dfc66fe,17f3ad17-4275-4670-8fe3-05cd9c54f822,,split_by_subflow,890;4240
+52,send_message,48,,,,,,What would you like to update?,Age,Gender,Relationship status,Go back to the previous options,,,,,,,,,,,6a2e6a0f-a677-4dc5-9895-44e810849157,,execute_actions,2680;3460
+53,wait_for_response,52,,,,,Result 5,,,,,,,,,,,,,,,,455abb03-8bf1-44d4-9279-9444755f1d25,,wait_for_response,4130;3720
+54,start_new_flow,44;46;50;53,age;age;age;age,,has_any_word;has_any_word;has_any_word;has_any_word,Age;Age;Age;Age,,PLH - Welcome - Initial registration - Age,,,,,,,,,,,,,,f1428e89-c0e2-48a9-b5d5-9fd840efad70,43b172be-41b3-4e3f-86fb-2b90b93d305a,,split_by_subflow,1550;4100
+55,start_new_flow,44;46;50;53,gender;gender;gender;gender,,has_any_word;has_any_word;has_any_word;has_any_word,Gender;Gender;Gender;Gender,,PLH - Welcome - Initial registration - Gender,,,,,,,,,,,,,,ac47332f-6ecf-468a-b44c-50402b03d970,b4544ff0-b74c-42f2-8e7e-09a899101a6a,,split_by_subflow,3110;4100
+56,start_new_flow,44;46;50;53,relationship;relationship;relationship;relationship,,has_any_word;has_any_word;has_any_word;has_any_word,Relationship;Relationship;Relationship;Relationship,,PLH - Welcome - Initial registration - Relationship,,,,,,,,,,,,,,758e1e77-1ce7-45ec-a5a9-4f76b2553747,c47cbc37-6680-4c99-9c4d-d1c23453a206,,split_by_subflow,3870;4040
+57,start_new_flow,44;46;50;53,back no n;back no n;back n no;back no n,,has_any_word;has_any_word;has_any_word;has_any_word,Back;Back;Back;Back,,PLH - Help - Settings - Entry,,,,,,,,,,,,,,aeae100d-bf65-4f7f-a1bf-3b57c2c68497,f2fbdc5b-97bf-4adf-9be2-af37310ef3df,,split_by_subflow,2640;4140
+58,send_message,44;46;50;53,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,a3205c2b-a5ee-4cd4-85a3-55649304ee08,,execute_actions,3460;3340
+59,go_to,58,,,,,,41,,,,,,,,,,,,,,,,,,
+60,send_message,47;51;54;55;56,Complete;Complete;Complete;Complete;Complete,,,,,Would you like to update any other information?,Yes,No,,,,,,,,,,,,,72ad92c1-8aa2-41a7-96c2-dc52ce252030,,execute_actions,1280;4480
+61,wait_for_response,60,,,,,Result 2,,,,,,,,,,,,,,,,e6bac030-0849-4f5d-a48a-ac6792a20a87,,wait_for_response,1280;4620
+62,go_to,61,yes y,,has_any_word,Yes,,41,,,,,,,,,,,,,,,,,,
+63,send_message,61,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,e20577e2-52b6-431e-a020-dfe917e89b46,,execute_actions,2720;4420
+64,go_to,63,,,,,,60,,,,,,,,,,,,,,,,,,

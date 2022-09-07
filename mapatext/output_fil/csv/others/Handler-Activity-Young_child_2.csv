@@ -1,0 +1,15 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_random,start,,,,,,,,,,,,,,,,,,,,,ac6ea937-0aef-4533-b520-45cb767b14d7,,split_by_random,660;140
+2,split_random,1,1,,,,,,,,,,,,,,,,,,,,948ae559-b942-4007-b3e6-8f248a2f1957,,split_by_random,140;320
+3,start_new_flow,2,1,,,,,PLH - Activity - Child - Calm - Listening to sounds,,,,,,,,,,,,,,dfab00b5-eed3-414c-b02f-c37d37f8538a,07c16f16-1e72-4273-8fe9-07578ebdbca8,,split_by_subflow,420;580
+4,start_new_flow,2,2,,,,,PLH - Activity - Child - Calm - Story time,,,,,,,,,,,,,,012b6e12-3e76-43f7-8b55-b4c68e83a780,3ba7c1c7-0622-4db7-bc8c-ad37b434a374,,split_by_subflow,740;620
+5,start_new_flow,2,3,,,,,PLH - Activity - Child - Calm - Three options,,,,,,,,,,,,,,2069ff34-9e9e-4ae9-a44f-23c3b016dd2f,d59d0684-9ee1-4335-a57d-50b587758c93,,split_by_subflow,80;680
+6,start_new_flow,2,4,,,,,PLH - Activity - Child - Calm - Drawing,,,,,,,,,,,,,,f4cf74e6-e034-4d63-aa93-1f60bf8db2f7,525f6c42-818c-48e2-9998-b08c79bd19cb,,split_by_subflow,1160;620
+7,start_new_flow,2,5,,,,,PLH - Activity - Child - Calm - Self portrait,,,,,,,,,,,,,,05f3a6eb-b8b6-40c5-b7ef-f53b5b1fc38b,c7f0230b-6897-453b-a74e-42b8fa7309f1,,split_by_subflow,180;820
+8,start_new_flow,2,6,,,,,PLH - Activity - Child - Calm - Memory game,,,,,,,,,,,,,,6d8aa5ea-448e-4e3a-bb7b-21ed0762e573,25cde071-a993-4e5f-9acf-2ec9343dc2fd,,split_by_subflow,500;800
+9,split_random,1,2,,,,,,,,,,,,,,,,,,,,2e4547a5-76f6-4fd0-80b9-8c96aa2d45d6,,split_by_random,860;280
+10,start_new_flow,9,1,,,,,PLH - Activity - Child - Calm - Blind Dragon,,,,,,,,,,,,,,debe05b2-8004-42c5-8282-b22524779a97,ffdef98a-f8e3-4a18-844f-11ce80680ef6,,split_by_subflow,340;980
+11,start_new_flow,9,2,,,,,PLH - Activity - Child - Calm - At the end of the day,,,,,,,,,,,,,,983e06d6-bf02-4e51-9f8e-532d91bf4bae,cb1e1058-b1cb-4b2e-adf9-744b058fec3a,,split_by_subflow,700;1180
+12,start_new_flow,9,3,,,,,PLH - Activity - Child - Calm - When I was younger,,,,,,,,,,,,,,ab115750-91b3-4aed-9d8a-2083ce21d443,5191cca9-c198-4e9b-a30a-cf9b71104fa3,,split_by_subflow,820;980
+13,start_new_flow,9,4,,,,,PLH - Activity - Child - Calm - Dancing with Angels,,,,,,,,,,,,,,d5c8ae5e-53a7-4954-9d1a-e0420eeaf6f1,5cfe3a9b-f539-416c-afe4-2944311a1ce7,,split_by_subflow,1060;980
+14,start_new_flow,9,5,,,,,PLH - Activity - Child - Calm - The Interrupter,,,,,,,,,,,,,,6d8f93b9-c90d-4854-843a-2dc7af61c51d,226da096-011b-418e-bc6d-afa04f6892ff,,split_by_subflow,1280;1000

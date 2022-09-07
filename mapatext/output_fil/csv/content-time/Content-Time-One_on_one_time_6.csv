@@ -1,0 +1,159 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,save_flow_result,start,,,,,skill,One-on-one time,,,,,,,,,,,,,,,16c22f1b-7c2f-4c02-a601-c8474916fbee,,execute_actions,680;
+2,start_new_flow,1,,,,,,PLH - Internal - Update incomplete toolkits,,,,,,,,,,,,,,5754719c-42f8-4256-82c4-7953bc4870ec,96c14014-3209-4e51-bd73-012e0c1b2039,,split_by_subflow,370;100
+3,split_by_value,2;2,Complete;Expired,,,,,@fields.from_theme,,,,,,,,,,,,,,,d68f3241-b6bd-4f7f-adc8-817d0f6b3224,,split_by_contact_field,350;280
+4,send_message,3,,,,,,"Mamuhunan sa One-on-One Time! Kapag mas madalas kang naglalaan ng oras kasama ang iyong mga anak, lalo silang makikinig sa iyo at magpapakabait din sa ibang pagkakataon. Ito ay talagang epektibo!",,,,,,,,,,,,,,,5d6e36ed-f604-423a-90d4-c505d2988a1c,,execute_actions,1090;340
+5,split_by_value,4,,,,,,@parent.results.fromwelcome,,,,,,,,,,,,,,,997b15e3-a80c-4cf2-9a14-a6aaf0373624,,split_by_expression,1010;580
+6,split_by_value,3;5,yes;yes,@fields.from_theme;@parent.results.fromwelcome,has_any_word;has_any_word,Yes;Yes,,@fields.type_of_media,,,,,,,,,,,,,,,0f34b4bc-dd99-4975-9ae8-b1640486ee45,,split_by_contact_field,5300;1060
+7,split_by_value,6,high,@fields.type_of_media,has_any_word,High,,@fields.child_nickname,,,,,,,,,,,,,,,1837a53d-f1b5-41f3-a27a-b4a75d5461d9,,split_by_expression,1315;1160
+8,send_message,7,,@fields.child_nickname,has_text,child_nickname,,Narito ang isang video tungkol sa paglaan ng One-on-One time kasama si @fields.child_nickname!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/One_On_One_Time_Teens.m4v,,e706face-9b7c-4513-8673-39820be5ee46,,execute_actions,1190;1360
+9,send_message,7,,,,,,Narito ang isang video tungkol sa paglaan ng One-on-One time kasama ang inyong teenager!,,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/video/fil/One_On_One_Time_Teens.m4v,,1c7f2795-19af-436a-a09d-3e6c17c28b9a,,execute_actions,1440;1360
+10,split_by_value,6,medium,@fields.type_of_media,has_any_word,Medium,,@fields.child_nickname,,,,,,,,,,,,,,,3491e860-f91a-44ea-aef8-0f9a7a26a456,,split_by_expression,2285;1400
+11,send_message,10,,@fields.child_nickname,has_text,child_nickname,,Narito ang isang mensahe tungkol sa paglaan ng One-on-One time kasama si @fields.child_nickname!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/One_On_One_Time_Teens.mp3,,,4e6a60f6-46fa-41ef-ac53-f8c843028e50,,execute_actions,2160;1600
+12,send_message,10,,,,,,Narito ang isang audio message tungkol sa paglaan ng One-on-One time kasama ang inyong teenager!,,,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/voiceover/resourceType/audio/fil/One_On_One_Time_Teens.mp3,,,7f7e88b8-a193-4219-8ebc-dcc950399989,,execute_actions,2910;1600
+13,wait_for_response,11;12;8;9,,,,,Result 6,,,,,,,,,,,,,,,,5a597178-d033-4bcf-97e4-0b80ef1b28be,120,wait_for_response,1460;1860
+14,split_by_value,13;13;6,;No Response;,,,,,@fields.gender_personalisation,,,,,,,,,,,,,,,e1038a10-49d2-47c6-a619-b32a69125f18,,split_by_expression,2660;2380
+15,send_message,14,man,@fields.gender_personalisation,has_any_word,man,,"Maaaring maging mahirap ang relasyon ng mga ama sa kanilang mga teenager, maaaring mahirap ding matuwa sa paglalaan ng oras kasama sila. Sa halip, malaking bahagi ng ating oras ay napupunta sa pagdisiplina sa kanila o sa pagreklamo tungkol sa kanilang kilos.",,,,,,,,,,,,,,,ff529a8c-8051-42e0-a2eb-3a8db5c3fecf,,execute_actions,2410;2580
+16,send_message,14,woman,@fields.gender_personalisation,has_any_word,woman,,"Maaaring maging mahirap ang relasyon ng mga ina sa kanilang mga teenager, mahirap ding matuwa sa paglalaan ng oras para makasama sila. Sa halip, malaking bahagi ng ating oras ay napupunta sa pagdisiplina sa kanila o sa pagreklamo tungkol sa kanilang kilos.",,,,,,,,,,,,,,,5dc5584b-947a-45a0-ae70-90597acea63f,,execute_actions,2660;2580
+17,send_message,14,,,,,,"Kapag hindi maganda ang relasyon natin sa ating mga teenager, maaaring mahirap ding matuwa sa paglalaan ng oras kasama sila. Sa halip, malaking bahagi ng ating oras ay napupunta sa pagdisiplina sa kanila o sa pagreklamo tungkol sa kanilang kilos.",,,,,,,,,,,,,,,d3920f47-c49d-4c46-9ecf-9031a9f9bdc6,,execute_actions,2910;2580
+18,send_message,15;16;17,,,,,,"Ang One-on-One Time kasama ang inyong teenager ay makakatulong sa pagkakaroon ng positibo at may pagtitiwalang pagsasama. Kung talagang mapapansin sila at mapapakinggan ang kanilang mga sinasabi at kung ano ang mga gusto nila, mapapadama mo sa kanilang sila ay pinapahalagahan.",,,,,,,,,,,,,,,1ea164c8-131a-4202-960f-74755da1d54c,,execute_actions,2970;3060
+19,send_message,5,,,,,,Nais mo bang malaman ang tungkol sa tip na ito?,Oo,Hindi,,,,,,,,,,,,,fa41c205-9e34-4daf-9a28-b20bed8fb525,,execute_actions,2140;260
+20,wait_for_response,19,,,,,Result 10,,,,,,,,,,,,,,,,d5118ebb-e7bc-4e09-9d82-560915754668,3600,wait_for_response,1790;540
+21,go_to,20,y Oo o,,has_any_word,Y,,6,,,,,,,,,,,,,,,,,,
+22,send_message,20,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,e50ef239-b8a3-4d0c-b022-4dd29e7bd2e9,,execute_actions,5900;480
+23,go_to,22,,,,,,19,,,,,,,,,,,,,,,,,,
+24,send_message,20;20,Hindi n h;No Response,,has_any_word;,No;,,"Okay lang 'yan! Puwede mong laging i-type ang ""Help"" kung gusto mong makatanggap ng mas maraming tip tungkol sa kung paano pangasiwaan ang pag-uugali ng iyong anak.",,,,,,,,,,,,,,,5503dd60-e345-4ee1-9c98-86c34718232f,,execute_actions,5300;700
+25,send_message,18,,,,,,Gusto mo pa bang magkaroon ng dagdag kaalaman?,Oo,Hindi,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/playing_with_teen.jpg,,,,89ecd275-6fef-423a-864f-b95c2c0be4ae,,execute_actions,6500;3380
+26,wait_for_response,25,,,,,Result 13,,,,,,,,,,,,,,,,3637f02e-950a-4a7e-aa04-1e1b1736fc65,,wait_for_response,700;3600
+27,start_new_flow,26,Oo y o,,has_any_word,Yes,,PLH - Internal - Update toolkits,,,,,,,,,,,,,,302bcfa6-93f7-4f45-88b2-2d31ca59a1aa,b39c4825-e42c-49e9-b066-90869db258e9,,split_by_subflow,1110;4240
+28,split_by_value,26,Hindi n h,,has_any_word,No,,@fields.user_name,,,,,,,,,,,,,,,98d176d2-d969-4da6-bbee-13547606c557,,split_by_expression,3385;3800
+29,send_message,28,,@fields.user_name,has_text,user_name,,Okay lang ‘yan! Maaari mong i-type ang “Help” kapag gusto mo pang matuto tungkol sa paglaan ng One-on-One Time kasama ang inyong teenager. Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,9aa5811f-4c51-46f0-99dd-656a0f3340f2,,execute_actions,3260;4000
+30,send_message,28,,,,,,Okay lang ‘yan! Maaari mong i-type ang “Help” kapag gusto mo pang matuto tungkol sa paglaan ng One-on-One Time kasama ang inyong teenager. Usap tayo mamaya!,,,,,,,,,,,,,,,19c262a1-977c-4495-8b87-0a0c0354ceb0,,execute_actions,5260;4000
+31,save_value,29;30,,,,,last interaction,@(now()),,,,,,,,,,,,,,,d224b0f0-f87a-4c7b-8da5-67ac0e7ad55b,,execute_actions,6600;4080
+32,send_message,26,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,f9d23256-4d32-4276-b3de-a93d2ec58146,,execute_actions,2930;3600
+33,go_to,32,,,,,,25,,,,,,,,,,,,,,,,,,
+34,send_message,27;27,Complete;Expired,,,,,"Narito ang 6 na tip kung paano magiging positibong karanasan ang One-on-One Time para sa iyo at sa inyong teenager:
+
+1. Gawin ito araw-araw
+2. Hayaan ang inyong teenager na piliin ang gawain
+3. Sundin ang pangunguna ng inyong teenager
+4. Ibigay sa inyong teenager ang inyong buong atensiyon
+5. Ipakita mo sa inyong teenager na ikaw ay nakikinig
+6. Mag-enjoy ka!
+
+I-type ang ""1"" hanggang ""6"" para mas matuto pa tungkol sa mga tips na ito. Maaari mo ring i-type ang ""H"" para pumunta sa susunod.",,,,,,,,,,,,,,,09591146-bcc8-4a20-b2db-b2528a650c00,,execute_actions,2120;4320
+35,wait_for_response,34,,,,,list_of_tips,,,,,,,,,,,,,,,,22a34a22-4396-49b8-9a60-278dfa4662ba,,wait_for_response,1050;4720
+36,split_by_value,35,1,,has_number_eq,1,,@fields.child_nickname,,,,,,,,,,,,,,,89f85aa6-c31c-49a5-9705-a7d208b33c2d,,split_by_expression,125;5360
+37,send_message,36,,@fields.child_nickname,has_text,child_nickname,,"1. Gawin ito araw-araw
+Maglaan ng nakatakdang oras para sa One-on-One Time kasama si @fields.child_nickname araw-araw. Pumili ng oras na hindi kayo ni @fields.child_nickname maiistorbo at oras na walang ibang gustong gawin si @fields.child_nickname, tulad ng panonood ng TV o paglalaro ng cellphone.",,,,,,,,,,,,,,,370fb884-99b5-4a21-b16e-b798d3ddb728,,execute_actions,;5560
+38,send_message,36,,,,,,"1. Gawin ito araw-araw
+Maglaan ng nakatakdang oras para sa One-on-One Time kasama ng inyong teenager bawat araw. Pumili ng oras na hindi kayo maiistorbo ng inyong anak na teenager at oras na walang siyang ibang gustong gawin, tulad ng panonood ng TV o paglalaro ng cellphone.",,,,,,,,,,,,,,,65696b5a-a33f-4481-bdd8-6160f05faa60,,execute_actions,250;5560
+39,split_by_value,35,2,,has_number_eq,2,,@fields.child_nickname,,,,,,,,,,,,,,,2e14f28c-c5ca-497e-8e9a-10561d989f60,,split_by_expression,6105;4760
+40,send_message,39,,@fields.child_nickname,has_text,child_nickname,,"2. Hayaan ang inyong teenager na piliin ang gawain
+Sabihin mo kay @fields.child_nickname na gusto mong maglaan ng oras kasama niya kung saan pwede siyang pumili ng gagawin o pag-uusapan ninyo. Maaaring isipin ni @fields.child_nickname na ito'y kataka-taka sa simula, pero sa kalaunan, matutuwa rin siya na nagkaroon kayo ng oras kasama ang isa’t isa!",,,,,,,,,,,,,,,fc150468-3b5b-44c5-a1f7-eb32e8282e38,,execute_actions,5980;4960
+41,send_message,39,,,,,,"2. Hayaan ang inyong teenager na piliin ang gawain
+Sabihin mo sa inyong teenager na gusto mong maglaan ng oras kasama siya at pwede siyang pumili kung ano ang gagawin o pag-uusapan ninyo. Maaaring isipin ng inyong teenager na ito'y kakaiba o kataka-taka sa simula, pero ikatutuwa rin niya ang pagkakaroon ng nakatalagang oras kasama ka!",,,,,,,,,,,,,,,79a42e91-28f5-4a2c-9b56-9ca5b0d828be,,execute_actions,6480;4960
+42,split_by_value,40;41,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,4fba24af-1e1e-4a66-adf4-29dc4246d650,,split_by_expression,6355;5640
+43,send_message,42,,@fields.child_nickname,has_text,child_nickname,,"Subukang may ibang gawin maliban sa panonood ng TV o paglalaro ng tablet/cellphone. Subalit, maaaring kailangan mo munang sabayan si @fields.child_nickname sa panonood ng kanyang paboritong palabas sa TV. Sa kalaunan, maaaring maging kumportable na sila sa ibang gawain.",,,,,,,,,,,,,,,0d2e5090-4df6-48a0-9a9f-51b81be26217,,execute_actions,6230;5840
+44,send_message,42,,,,,,"Subukang may ibang gawin maliban sa panonood ng TV o paglalaro ng tablet/cellphone. Subalit, maaaring kailangan mo munang sabayan ang iyong teenager sa panonood ng kanyang paboritong palabas sa TV. Sa kalaunan, maaaring maging kumportable na sila sa ibang gawain.",,,,,,,,,,,,,,,52ee4bb4-f94a-41d0-b5f8-eab05c4f66f3,,execute_actions,6480;5840
+45,split_by_value,35,3,,has_number_eq,3,,@fields.child_nickname,,,,,,,,,,,,,,,99361979-13a9-48dd-a025-1f10092a820d,,split_by_expression,1935;5140
+46,send_message,45,,@fields.child_nickname,has_text,child_nickname,,"3. Sundin ang pangunguna ng inyong teenager
+Subukang sundan ang gustong gawin ni @fields.child_nickname tuwing One-on-One Time ninyo. Tanggapin ang kanilang mga mungkahi o komento. Tandaan na ito ay gawain ni @fields.child_nickname. Tungkulin mong magpakita ng interes at magbigay ng magagandang komento.",,,,,,,,,,,,,,,186edef8-56b6-408f-8967-a166fe3fa659,,execute_actions,1810;5340
+47,send_message,45,,,,,,"3. Sundin ang pangunguna ng inyong teenager
+Subukang sundan ang gustong gawin ng iyong teenager tuwing One-on-One Time ninyo. Tanggapin ang kanilang mga mungkahi o komento. Tandaan na ito ay gawain ng inyong teenager. Tungkulin mong magpakita ng interes at magbigay ng magagandang komento.",,,,,,,,,,,,,,,2d279393-5b37-4993-9ff1-eea464a6df54,,execute_actions,2060;5340
+48,split_by_value,35,4,,has_number_eq,4,,@fields.child_nickname,,,,,,,,,,,,,,,ea46294e-f748-428f-8853-61e29ee9ea0a,,split_by_expression,5525;6620
+49,send_message,48,,@fields.child_nickname,has_text,child_nickname,,"4. Ibigay ang inyong buong atensyon sa inyong teenager. 
+Patayin ang TV at itabi ang mga cellphone. Siguraduhing kaya mong maibigay ang inyong buong atensyon kay @fields.child_nickname.",,,,,,,,,,,,,,,db6622be-b372-40c9-adf2-eb76799ec552,,execute_actions,5400;6820
+50,send_message,48,,,,,,"4. Ibigay ang inyong buong atensyon sa inyong teenager. 
+Patayin ang TV at itabi ang mga cellphone. Siguraduhing kaya mong maibigay ang inyong buong atensyon sa inyong teenager.",,,,,,,,,,,,,,,9370e25f-bb57-4ff8-8aca-c568a2446d25,,execute_actions,5900;6820
+51,split_by_value,49;50,,,,,,@fields.child_nickname,,,,,,,,,,,,,,,3ab94739-6df4-488e-9aa2-0dfe01820ba3,,split_by_expression,5775;7020
+52,send_message,51,,@fields.child_nickname,has_text,child_nickname,,Tingnan si @fields.child_nickname.. Ang pagtango o pagsabi ng “Nakikita ko” ay nagpapakita kay @fields.child_nickname na talagang nagbibigay ka ng inyong buong atensyon. Tanggapin ang sinasabi nila nang walang paghuhusga.,,,,,,,,,,,,,,,8c0544f7-d5d7-4036-a045-34a0a78baf4b,,execute_actions,5650;7220
+53,send_message,51,,,,,,Tingnan ang inyong teenager. Ang pagtango o pagsabi ng “Nakikita ko” ay nagpapakita sa iyong teenager na talagang nagbibigay ka ng inyong buong atensyon. Tanggapin ang sinasabi nila nang walang paghuhusga.,,,,,,,,,,,,,,,50399581-42ae-40f6-b8de-29792e79c3dc,,execute_actions,5900;7220
+54,split_by_value,35,5,,has_number_eq,5,,@fields.child_nickname,,,,,,,,,,,,,,,4f707f31-f1f6-4c60-8fd1-5d3e790bb01b,,split_by_expression,885;5900
+55,send_message,54,,@fields.child_nickname,has_text,child_nickname,,"5. Ipakita mo sa inyong teenager na ikaw ay nakikinig
+
+Pwede mong subukang ulitin ang sinabi ni @fields.child_nickname kapag kinakausap ka niya. Halimbawa, kapag sinabi ni @fields.child_nickname na “Napakahirap nitong math problem,” pwede mong sabihin, “Oo nga, nakikita ko na nahihirapan ka.” Pinapakita nito sa kanya na ikaw ay nakikinig at mararamdaman niyang sinusuportahan mo siya.",,,,,,,,,,,,,,,cc4f9215-7732-4e4c-9b9d-d1e9550a11b7,,execute_actions,760;6100
+56,send_message,54,,,,,,"5. Ipakita mo sa inyong teenager na ikaw ay nakikinig
+
+Pwede mong subukang ulitin ang sinabi ng inyong teenager kapag kinakausap ka niya. Halimbawa, kapag sinabi ng iyong teen na “Napakahirap nitong math problem,” pwede mong sabihin, “Oo nga, nakikita ko na nahihirapan ka.” Pinapakita nito sa kanya na ikaw ay nakikinig at mararamdaman niyang sinusuportahan mo siya.",,,,,,,,,,,,,,,f66daf88-5184-484a-94fb-553236de2eb8,,execute_actions,1010;6100
+57,split_by_value,35,6,,has_number_eq,6,,@fields.child_nickname,,,,,,,,,,,,,,,d09b5e53-2790-4179-8ad3-72fede9d8d07,,split_by_expression,1625;7560
+58,send_message,57,,@fields.child_nickname,has_text,child_nickname,,"6. Mag-enjoy ka!
+Ang One-on-One Time kasama ng inyong teenager ay pwede ring maging masaya para sa inyo! Maaaring mapansin mo na nabawasan ang inyong stress pagkatapos mong maglaan ng oras kasama si @fields.child_nickname.",,,,,,,,,,,,,,,da81cc5d-2809-4190-918e-ab4c4e56d6d4,,execute_actions,1500;7760
+59,send_message,57,,,,,,"6. Mag-enjoy ka!
+Ang One-on-One Time kasama ng inyong teenager ay pwede ring maging masaya para sa inyo!  Maaaring mapansin mo na nabawasan ang inyong stress pagkatapos mong maglaan ng oras kasama ang inyong teenager.",,,,,,,,,,,,,,,437bd9b6-2433-46bc-8c6a-957fce35cc78,,execute_actions,1750;7760
+60,send_message,37;38;43;44;46;47;52;53;55;56;58;59,,,,,,"Mangyaring pumili ng isa pang numero kung gusto mong mas matuto kung paano maglaan ng One-on-One Time kasama ang inyong teenager:
+
+1. Gawin ito araw-araw
+2. Hayaan ang inyong teenager na piliin ang gawain
+3. Sundin ang pangunguna ng inyong teenager
+4. Ibigay sa inyong teenager ang inyong buong atensiyon
+5. Ipakita mo sa inyong teenager na ikaw ay nakikinig
+6. Mag-enjoy ka!
+
+Maaari mo ring i-type ang ""H"" para pumunta sa susunod.",,,,,,,,,,,,,,,99a10c75-4376-4c94-a3ff-b5a400f8cc34,,execute_actions,270;6940
+61,save_value,60,,,,,one time teen list of tips,"@(fields.one_time_teen_list_of_tips&results.list_of_tips&"","")",,,,,,,,,,,,,,,8868819b-f19e-4a09-8b4e-33c3886aa260,,execute_actions,250;7760
+62,go_to,61,,,,,,35,,,,,,,,,,,,,,,,,,
+63,split_by_value,35,n hindi h,,has_any_word,N,,@fields.child_nickname,,,,,,,,,,,,,,,5e1b21db-629d-4f1d-b364-f091d2820797,,split_by_expression,3115;7980
+64,send_message,63,,@fields.child_nickname,has_text,child_nickname,,Narito ang isang komiks na nagpapakita kung paano ka makakapagbigay ng pagmamahal at suporta kay @fields.child_nickname kapag sila ay nagsasabi sa inyo ng kaniyang mabibigat na damdamin.,,,,,,,,,,,,,,,7244d963-375f-4547-9f63-c7e8487eec14,,execute_actions,2990;8180
+65,send_message,64,,,,,,"Magulang: “Kumusta ka, Andy?”
+
+Teenager (mukhang malungkot): “Sana pwede kong makasama ang mga kaibigan ko.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_1.png,,,,7244d963-375f-4547-9f63-c7e8487eec14,,execute_actions,2990;8180
+66,send_message,65,,,,,,"Magulang (nag-iisip): “Hmmm... makakapaghintay ‘yan...”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,7244d963-375f-4547-9f63-c7e8487eec14,,execute_actions,2990;8180
+67,send_message,66,,,,,,"Magulang (tumingin muli sa teenager):  “Naiintindihan kong mahirap na mahiwalay sa iyong mga kaibigan. Lalo na at sigurado akong namimiss ka rin nila. Mag-isip tayo ng paraan kung paano mo sila makakausap.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_3.png,,,,7244d963-375f-4547-9f63-c7e8487eec14,,execute_actions,2990;8180
+68,send_message,67,,,,,,"Teenager: “Baka pwede akong gumawa ng TikTok video na ibabahagi ko sa kanila. Pero hindi ako sigurado kung paano...pwede mo ba akong tulungan?”
+
+Magulang: “Masaya akong tulungan ka at gusto ko rin matuto pa tungkol sa TikTok.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_4.png,,,,7244d963-375f-4547-9f63-c7e8487eec14,,execute_actions,2990;8180
+69,send_message,63,,,,,,Narito ang isang komiks na nagpapakita kung paano ka makakapagbigay ng pagmamahal at suporta sa inyong teenager kapag siya ay nagsasabi sa iyo ng kanyang mabibigat na damdamin.,,,,,,,,,,,,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+70,send_message,69,,,,,,"Magulang: “Kumusta ka, Andy?”
+
+Teenager (mukhang malungkot): “Sana pwede kong makasama ang mga kaibigan ko.”
+
+(1)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_1.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+71,send_message,70,,,,,,"Magulang (nag-iisip): “Hmmm... makakapaghintay ‘yan...”
+
+(2)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_2.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+72,send_message,71,,,,,,"Magulang (tumingin muli sa teenager):  “Naiintindihan kong mahirap na mahiwalay sa iyong mga kaibigan. Lalo na at sigurado akong namimiss ka rin nila. Mag-isip tayo ng paraan kung paano mo sila makakausap.”
+
+(3)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_3.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+73,send_message,72,,,,,,"Teenager: “Baka pwede akong gumawa ng TikTok video na ibabahagi ko sa kanila. Pero hindi ako sigurado kung paano...pwede mo ba akong tulungan?”
+
+Magulang: “Masaya akong tulungan ka at gusto ko rin matuto pa tungkol sa TikTok.”
+
+(4)",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/comic/giving_your_teen_attention_comic_4.png,,,,39562d23-5ffa-41b1-8f30-6bd99af4d285,,execute_actions,3240;8180
+74,split_by_group,68;73,,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,9c5dc138-5a8d-48d7-9b96-1d79b52330fa,,split_by_expression,4385;9200
+75,split_by_group,74,ABTest_test-gamification_alternative,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,a64e74cf-707f-4464-848f-9ad9933766cb,,split_by_expression,4885;9600
+76,split_by_value,75,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,77dc0677-191c-4932-a5d9-bbe773b4946b,,split_by_expression,5135;10400
+77,send_message,76,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa inyong Masayang Tahanan. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang iyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,20628fc2-1cee-4278-b7c3-2c817f7820ee,,execute_actions,5010;10600
+78,send_message,76,,,,,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang inyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,3470fd19-226c-431c-8a17-5fc0b6ca5d99,,execute_actions,5260;10600
+79,split_by_value,75;75,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,87d66710-2d9d-4112-81cf-3983976ca784,,split_by_expression,4635;10200
+80,send_message,79,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang inyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,90e18d5e-65ee-46e2-a4aa-e4f8cecd4509,,execute_actions,4510;10600
+81,send_message,79,,,,,,"Mahusay! May naidagdag ka na isa pang kasanayan sa inyong Parenting Toolkit. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang iyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/house_of_support/house_type/european/age_group/baby/family_type/normal/house_12.jpg,,,,20920d14-fc84-4f1f-9da9-70a5c23c2f8f,,execute_actions,4760;10600
+82,split_by_group,74;74,ABTest_test-gamification_Default;,,,,,ABTest_test-gamification_Default,,,,,,,,,,,,,,5602b823-dfb8-4a0f-a8dc-8588b1f9af6e,3e592e19-01c4-4a34-8942-59372f049401,,split_by_expression,3885;9400
+83,split_by_value,82,ABTest_test-gamification_alternative,,,,,@fields.user_name,,,,,,,,,,,,,,,f602ee27-ed83-4bff-9a2a-1e0fbd6954b1,,split_by_expression,4135;10000
+84,send_message,83,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! Nakadagdag ka ng isa pang antas sa inyong Masayang Tahanan. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang iyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,6772d97c-abb9-45a1-b4da-03200935665c,,execute_actions,4010;10600
+85,send_message,83,,,,,,"Mahusay! Nakadagdag ka ng isa pang antas sa iyong Masayang Tahanan. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang inyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,c5b5345b-4bf8-4048-bd36-b4f8eaaafcd2,,execute_actions,4260;10600
+86,split_by_value,82;82,ABTest_test-gamification_Default;,,,,,@fields.user_name,,,,,,,,,,,,,,,20192e94-5f15-45d7-aa21-39d6158ebef4,,split_by_expression,3635;9800
+87,send_message,86,,@fields.user_name,has_text,user_name,,"Mahusay @fields.user_name! May naidagdag ka na isa pang kasanayan sa iyong Parenting Toolkit. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang inyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,bf224d68-b8b7-43b4-9d6d-0e3618fd652f,,execute_actions,3510;10600
+88,send_message,86,,,,,,"Mahusay! May naidagdag ka na isa pang kasanayan sa inyong Parenting Toolkit. Sa mga susunod na araw, subukang maglaan ng kahit 5 minuto ng One-on-One Time kasama ang iyong teenager. Quality time ang pinakamagandang regalo na maibibigay mo sa inyong anak!",,,,,,,,,,,https://idems-media-recorder.web.app/storage/project/PLH/subproject/Rapidpro/deployment/Philippines/resourceGroup/image/universal/congratulation.jpg,,,,415e6dd0-7a64-491c-a27b-0a1bbb3ad65a,,execute_actions,3760;10600
+89,send_message,35,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,269b2811-1ed8-4f5e-9e27-af804eba11b8,,execute_actions,740;4440
+90,go_to,89,,,,,,34,,,,,,,,,,,,,,,,,,
+91,send_message,77;78;80;81;84;85;87;88,,,,,,Gusto mo ba ng ilang halimbawa ng mga aktibidad na pwedeng gawin kasama ang inyong teenager?,Oo,Hindi,,,,,,,,,,,,,66fe1719-fda2-4169-a626-0dfa5edb989b,,execute_actions,5960;10880
+92,wait_for_response,91,,,,,Result 9,,,,,,,,,,,,,,,,4ae2be8a-8987-4b86-9afc-d09f2ccfa102,3600,wait_for_response,5940;11040
+93,start_new_flow,92,Oo y o,,has_any_word,Yes,,PLH - Handler - Activity - Teenagers,,,,,,,,,,,,,,56b9a9eb-e4aa-40e4-a227-d53624fca99e,14166925-cd1a-40f7-aaa7-9c4373b0337f,,split_by_subflow,1050;10880
+94,send_message,92,,,,,,"Paumanhin, hindi ko naiintindihan ang ibig mong sabihin.",,,,,,,,,,,,,,,456fa320-a546-4e92-927f-4e0e83a15a2e,,execute_actions,5940;11340
+95,go_to,94,,,,,,91,,,,,,,,,,,,,,,,,,
+96,send_message,92;92,Hindi n h;No Response,,has_any_word;,No;,,"Okay lang ‘yan! Pwede mong i-type ang ""Help"" anumang oras kung kailangan mo ng isang aktibidad.",,,,,,,,,,,,,,,e2caafff-6cc4-4c63-8998-b9137dfcd5bc,,execute_actions,2080;11080
+97,save_value,93;96,Complete;,,,,current activity,one_on_one_time_teen,,,,,,,,,,,,,,,f8d3db66-fe8f-413c-bcdb-6af336ae17a3,,execute_actions,720;11240
+98,save_value,97,,,,,current type assessed,tip,,,,,,,,,,,,,,,f8d3db66-fe8f-413c-bcdb-6af336ae17a3,,execute_actions,720;11240
+99,start_new_flow,98,,,,,,PLH - Feedback - Feedback for content,,,,,,,,,,,,,,2d088e4d-2c71-4480-9cac-0403ba3c5461,138500af-8b75-4d62-bd79-1279f308cf72,,split_by_subflow,700;11400
+100,split_by_value,99;99,Complete;Expired,,,,,@fields.user_name,,,,,,,,,,,,,,,f7bc34c0-af0b-4871-a3ea-4475e9533b05,,split_by_expression,555;11620
+101,send_message,100,,@fields.user_name,has_text,user_name,,Usap tayo mamaya @fields.user_name!,,,,,,,,,,,,,,,d1aa1aac-8bab-4614-92c8-c340d1b5b7b2,,execute_actions,430;11820
+102,send_message,100,,,,,,Usap tayo mamaya!,,,,,,,,,,,,,,,39136936-124a-4839-980f-ce482fc240c2,,execute_actions,680;11820

@@ -1,0 +1,23 @@
+row_id,type,from,condition,condition_var,condition_type,condition_name,save_name,message_text,choice_1,choice_2,choice_3,choice_4,choice_5,choice_6,choice_7,choice_8,choice_9,choice_10,image,audio,video,obj_id,_nodeId,no_response,_ui_type,_ui_position
+1,split_by_group,start,,,,,,ABTest_test-first-person_Default,,,,,,,,,,,,,,de3d94de-a0a7-4340-b688-05c31e0f634d,6fb4a185-d3b2-42eb-8a0f-40ae6a949f19,,split_by_expression,815;
+2,send_message,1,ABTest_test-first-person_alternative,,,,,"These tips are for YOU. So that our chats can be as helpful as possible, could you please tell me your gender?
+
+If you would prefer not to answer, type ""N"".",Woman,Man,Other,,,,,,,,,,,,036d993c-7424-4c6f-85f4-cc2b25f84a63,,execute_actions,940;200
+3,send_message,1;1,ABTest_test-first-person_Default;,,,,,"These tips are for YOU. So that our chats can be as helpful as possible, could you please tell us your gender?
+
+If you would prefer not to answer, type ""N"".",Woman,Man,Other,,,,,,,,,,,,160c94e2-9c59-44b1-b757-7cff9f6d418c,,execute_actions,690;200
+4,wait_for_response,2;3,,,,,gender,,,,,,,,,,,,,,,,ca28b45c-4e6f-45e1-90b5-9f4f72eda03c,,wait_for_response,590;460
+5,save_value,4,woman,,has_any_word,Woman,gender,woman,,,,,,,,,,,,,,,03b7358b-6304-491a-a512-45729c491e58,,execute_actions,330;660
+6,save_value,5,,,,,deployment,@fields.default_deployment,,,,,,,,,,,,,,,3d6df358-d4ac-4110-8f9b-d6c23fad0b8b,,execute_actions,310;840
+7,save_value,4,man,,has_any_word,Man,gender,man,,,,,,,,,,,,,,,1f810356-75e4-40e4-afc6-5ff3a07a2847,,execute_actions,570;680
+8,save_value,7,,,,,chatbot name,@fields.chatbot_name_male,,,,,,,,,,,,,,,82414bb5-897e-4567-ae69-69495e22c09a,,execute_actions,570;780
+9,save_value,8,,,,,deployment,"@(fields.default_deployment & ""Man"")",,,,,,,,,,,,,,,13448798-9dae-42ba-ae1a-cb5fdfc196f5,,execute_actions,590;880
+10,save_value,4,n,,has_any_word,N,gender,no,,,,,,,,,,,,,,,6b34abb9-96ee-4e8b-aaa9-cd379963273f,,execute_actions,1080;680
+11,save_value,4,other,,has_any_word,Other gender,gender,other,,,,,,,,,,,,,,,74302264-d16e-4e93-ae1d-fe560317a736,,execute_actions,1320;680
+12,save_value,11,,,,,deployment,"@(fields.default_deployment & ""Other"")",,,,,,,,,,,,,,,74302264-d16e-4e93-ae1d-fe560317a736,,execute_actions,1320;680
+13,start_new_flow,12;6;9,,,,,,PLH - Internal - Define attachments paths,,,,,,,,,,,,,,89d00fef-a0a2-48f9-8a6c-27348218fa29,bbf8975e-d512-47d3-a69b-aaa0d297b121,,split_by_subflow,370;1020
+14,split_by_group,13;13,Complete;Expired,,,,,ABTest_test-personalisation_Default,,,,,,,,,,,,,,d44ae170-6a10-4f54-829b-2dd5bf2c406b,db3b4106-554a-49e1-9a11-cda034103e6b,,split_by_expression,125;1160
+15,save_value,14,ABTest_test-personalisation_alternative,,,,gender personalisation,,,,,,,,,,,,,,,,e12f7b47-e1cb-4ada-9e87-6d329b236d27,,execute_actions,250;1360
+16,save_value,14;14,ABTest_test-personalisation_Default;,,,,gender personalisation,@fields.gender,,,,,,,,,,,,,,,6ee898c0-ae5e-482a-b5a6-9a95bb7108bb,,execute_actions,;1360
+17,send_message,4,,,,,,"Sorry, I don't understand what you mean.",,,,,,,,,,,,,,,5e6d2f00-db93-4b7a-ace0-b658b937d53a,,execute_actions,1320;420
+18,go_to,17,,,,,,1,,,,,,,,,,,,,,,,,,
